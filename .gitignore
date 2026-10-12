@@ -12,8 +12,9 @@ medical_rag/data/kg_cache/
 # 生成的图表（可重新生成）
 medical_rag/eval_data/charts/
 
-# 本地模型文件（体积约 6.4GB，不入库）
-models/
+# 本地模型文件（体积约 6.4GB，不入库；仅锚定项目根目录的 models/，
+# 避免误伤 medical_rag/models/ Python 包）
+/models/
 
 # IDE
 .idea/
