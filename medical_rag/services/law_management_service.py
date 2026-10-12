@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import List, Dict, Optional, Tuple
 
 from core.config import settings
-from core.jurisdiction import get_jurisdiction_info, JURISDICTION_INFO
+from core.domain_enums import get_cancer_type_info, CANCER_TYPE_INFO
 from repositories.elasticsearch import ElasticsearchRepository
 from services.abstract_service import AbstractService
 from utils.chunker import chunk_text, chunk_from_structure
@@ -32,8 +32,8 @@ class LawManagementService:
                             parts = stem.split("_")
                             if len(parts) >= 2:
                                 # 如果目录名是中文，转换为英文目录名
-                                if item.name in JURISDICTION_INFO:
-                                    dir_name, prefix_code = JURISDICTION_INFO[item.name]
+                                if item.name in CANCER_TYPE_INFO:
+                                    dir_name, prefix_code = CANCER_TYPE_INFO[item.name]
                                     self._dir_prefix_cache[dir_name.lower()] = f"SMP_{prefix_code}"
                                 else:
                                     self._dir_prefix_cache[item.name.lower()] = f"SMP_{parts[1]}"
@@ -46,8 +46,8 @@ class LawManagementService:
         """
         jur_lower = jurisdiction.lower().strip()
         
-        # 使用法域信息获取标准英文目录名和ID前缀
-        dir_name, prefix_code = get_jurisdiction_info(jurisdiction)
+        # 使用癌种信息获取标准英文目录名和ID前缀
+        dir_name, prefix_code = get_cancer_type_info(jurisdiction)
         prefix = f"SMP_{prefix_code}"
         
         # 检查缓存中是否有该目录
