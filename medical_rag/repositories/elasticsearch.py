@@ -391,6 +391,11 @@ class ElasticsearchRepository:
         self._law_title_index_cache = None  # 法规标题索引缓存：{简体归一标题: law_id}
         self._init_classifier()
         self._create_index_if_not_exists()
+        # C2 §8：5 索引首次启动自动建（mapping 错误在启动时暴露，而非首次使用时）
+        # cache / KG 保留懒加载 ensure（幂等），此处提前触发一次。
+        self._ensure_disease_index()
+        self._ensure_cache_index()
+        self._ensure_kg_indices()
     
     def _init_classifier(self):
         self.classifier = TopicClassifier()
@@ -443,7 +448,19 @@ class ElasticsearchRepository:
                     }
                 },
                 "mappings": {
+                    # 医疗主索引 medical_knowledge（C2《ES 索引与 Mapping 规范》§3.3）
+                    # 四类 data_type（doc / rec / drug / term）共存；metadata 塞杂物
+                    # 模式废止，全部结构化字段显式声明。
                     "properties": {
+                        # ---- 通用层（全部 data_type 共有）----
+                        "data_type": {"type": "keyword"},  # doc / rec / drug / term
+                        "title": {
+                            "type": "text",
+                            "analyzer": "chinese_analyzer",
+                            "fields": {
+                                "keyword": {"type": "keyword", "ignore_above": 256}
+                            }
+                        },
                         "content": {
                             "type": "text",
                             "analyzer": "chinese_analyzer",
@@ -457,24 +474,9 @@ class ElasticsearchRepository:
                             "index": True,
                             "similarity": "cosine"
                         },
-                        "metadata": {"type": "object"},
-                        "law_id": {"type": "keyword"},
-                        "jurisdiction": {"type": "keyword"},
-                        "title": {
-                            "type": "text",
-                            "analyzer": "chinese_analyzer",
-                            "fields": {
-                                "keyword": {"type": "keyword", "ignore_above": 256}
-                            }
-                        },
-                        "article_number": {"type": "keyword"},
-                        "chunk_index": {"type": "integer"},
-                        "passing_date": {"type": "keyword"},
-                        "effective_date": {"type": "keyword"},
-                        "publication_date": {"type": "keyword"},
-                        "topic": {"type": "keyword"},
-                        "topics": {"type": "keyword"},
-                        "topic_labels": {"type": "keyword"},
+                        "chunk_index": {"type": "integer"},  # 仅 drug 分块生效，其余 = 0
+                        "review_status": {"type": "keyword"},  # draft / reviewed / approved
+                        "taxonomy_version": {"type": "keyword"},
                         "topics_details": {
                             "type": "nested",
                             "properties": {
@@ -484,11 +486,149 @@ class ElasticsearchRepository:
                                 "matched_keywords": {"type": "keyword"}
                             }
                         },
-                        "taxonomy_version": {"type": "keyword"}
+                        "updated_at": {"type": "date"},
+                        # ---- DOC 专属层（指南 / 规范 / 共识元数据）----
+                        "doc_id": {"type": "keyword"},       # 亦作 ES _id
+                        "doc_type": {"type": "keyword"},      # guideline / standard / consensus
+                        "issuer": {"type": "keyword"},
+                        "publish_date": {"type": "date", "format": "yyyy-MM-dd||strict_date_optional_time"},
+                        "cancer_types": {"type": "keyword"},
+                        "license_note": {"type": "text", "index": False},  # 仅展示（D2-04）
+                        "file_path": {"type": "keyword"},
+                        "doc_hash": {"type": "keyword"},
+                        # ---- REC 专属层（推荐条目，检索主单元）----
+                        "rec_id": {"type": "keyword"},        # 亦作 ES _id
+                        "cancer_type": {"type": "keyword"},
+                        "breadcrumb": {"type": "keyword"},    # 如 第三部分/3.2 早期治疗
+                        "scenario": {"type": "keyword"},      # 15 类场景枚举
+                        "stage": {"type": "keyword"},
+                        "stage_detail": {"type": "keyword"},
+                        "biomarker": {"type": "keyword"},
+                        "population": {"type": "text", "analyzer": "chinese_analyzer"},
+                        "verbatim": {"type": "boolean"},
+                        "evidence_level": {"type": "keyword"},
+                        "evidence_level_original": {"type": "keyword"},
+                        "rec_strength": {"type": "keyword"},
+                        "refs": {"type": "keyword"},
+                        "page": {"type": "integer"},
+                        # ---- DRUG 专属层（药品说明书）----
+                        "drug_id": {"type": "keyword"},       # 亦作 ES _id
+                        "generic_name": {"type": "keyword"},
+                        "brand_names": {"type": "keyword"},
+                        "atc_code": {"type": "keyword"},
+                        "approval_no": {"type": "keyword"},
+                        "indications": {
+                            "type": "text",
+                            "analyzer": "chinese_analyzer",
+                            "fields": {
+                                "keyword": {"type": "keyword", "ignore_above": 256}
+                            }
+                        },
+                        "dosage": {"type": "object"},          # {standard, adjustment}，仅展示
+                        "contraindications": {"type": "text", "analyzer": "chinese_analyzer"},
+                        "adverse_reactions": {"type": "object", "enabled": False},  # 原始 JSON 整存整取
+                        "adverse_reaction_terms": {"type": "keyword"},  # 抽平：不良反应术语
+                        "interactions": {"type": "text", "analyzer": "chinese_analyzer"},
+                        # ---- TERM 专属层（术语字典）----
+                        "term_id": {"type": "keyword"},        # 亦作 ES _id
+                        "canonical": {"type": "keyword"},
+                        "category": {"type": "keyword"},       # disease/drug/examination/symptom/gene/staging
+                        "synonyms": {"type": "keyword"},
+                        "icd10": {"type": "keyword"},
+                        "icd_o3": {"type": "keyword"},
+                        "atc": {"type": "keyword"},
+                        "pinyin": {"type": "keyword"},
+                        "en_name": {"type": "keyword"},
+                        "mapping_status": {"type": "keyword"}  # confirmed / pending
                     }
                 }
             }
             self.client.indices.create(index=settings.es_index_name, body=index_settings)
+
+    def _ensure_disease_index(self) -> bool:
+        """确保疾病档案索引存在（C2 §4.2：检索抽平层 + 存储层 enabled:false 分离）
+
+        一条 ES 文档 = 一个疾病 profile；详情大 JSON（sections / patient_version /
+        links）不索引、整存整取；症状 / 亚型 / 分期 / 治疗手段抽平为 keyword 数组，
+        支撑疾病名检索、症状反查、分类浏览三个入口。
+        失败返回 False（查询方降级为空结果，不影响启动）。
+        """
+        try:
+            if self.client.indices.exists(index=settings.es_disease_index_name):
+                return True
+            self.client.indices.create(
+                index=settings.es_disease_index_name,
+                body={
+                    "settings": {
+                        "number_of_shards": 1,
+                        "number_of_replicas": 0,
+                        # 与主索引同套分析器（C2 §3.2），中文分词检索依赖
+                        "analysis": {
+                            "analyzer": {
+                                "text_analyzer": {
+                                    "type": "custom",
+                                    "tokenizer": "standard",
+                                    "filter": ["lowercase", "stop"],
+                                },
+                                "chinese_analyzer": {
+                                    "type": "custom",
+                                    "tokenizer": "ik_max_word",
+                                    "filter": ["lowercase"],
+                                },
+                            }
+                        },
+                    },
+                    "mappings": {
+                        "properties": {
+                            # ---- 检索抽平层 ----
+                            "disease_id": {"type": "keyword"},  # 亦作 ES _id
+                            "name_canonical": {
+                                "type": "text",
+                                "analyzer": "chinese_analyzer",
+                                "fields": {
+                                    "keyword": {"type": "keyword", "ignore_above": 256}
+                                }
+                            },
+                            "synonyms": {"type": "text", "analyzer": "chinese_analyzer"},
+                            "pinyin": {"type": "keyword"},
+                            "name_en": {"type": "text", "analyzer": "text_analyzer"},
+                            "icd10": {"type": "keyword"},
+                            "icd_o3": {"type": "keyword"},
+                            "category": {"type": "keyword"},  # 四类枚举（disease_profile.category）
+                            "body_system": {"type": "keyword"},
+                            "departments": {"type": "keyword"},
+                            "cancer_type": {"type": "keyword"},
+                            "symptoms": {"type": "keyword"},  # 抽平：early+late+signs 全集
+                            "symptom_early": {"type": "keyword"},
+                            "symptom_late": {"type": "keyword"},
+                            "signs": {"type": "keyword"},
+                            "pathology_subtypes": {"type": "keyword"},
+                            "stages": {"type": "keyword"},
+                            "treatment_methods": {"type": "keyword"},
+                            "overview_text": {"type": "text", "analyzer": "chinese_analyzer"},
+                            "embedding": {
+                                "type": "dense_vector",
+                                "dims": 1024,
+                                "index": True,
+                                "similarity": "cosine",
+                            },
+                            # ---- 存储层（不索引，整存整取）----
+                            "sections": {"type": "object", "enabled": False},      # 14 section 专业版
+                            "patient_version": {"type": "object", "enabled": False},  # 患者版（同构）
+                            "links": {"type": "object", "enabled": False},          # 图谱关联（查询走 KG 索引）
+                            # ---- 管理层 ----
+                            "section_gaps": {"type": "keyword"},
+                            "sources": {"type": "keyword"},
+                            "profile_version": {"type": "keyword"},
+                            "last_updated": {"type": "date"},
+                        }
+                    },
+                },
+            )
+            return True
+        except Exception as e:
+            logger.warning(f"[Disease] 疾病档案索引创建/检查失败: {e}")
+            return False
     
     def _embed_texts(self, texts: List[str]) -> List[List[float]]:
         import torch
@@ -1900,10 +2040,10 @@ class ElasticsearchRepository:
             return []
 
     # ================================================================
-    #  跨法域专题分析 — 缓存层（analysis_reports_cache）
+    #  专题分析缓存层（medical_analysis_cache，C2 §6）
     # ================================================================
 
-    CACHE_INDEX = "analysis_reports_cache"
+    CACHE_INDEX = settings.es_cache_index_name
 
     def _ensure_cache_index(self):
         """确保缓存索引存在，不存在则自动创建（静默失败）"""
@@ -1916,10 +2056,10 @@ class ElasticsearchRepository:
                     "settings": {"number_of_shards": 1, "number_of_replicas": 0},
                     "mappings": {
                         "properties": {
-                            "cache_type": {"type": "keyword"},  # "analysis" | "compare"
+                            "cache_type": {"type": "keyword"},  # "analysis" | "compare" | "summary"
                             "topic_id": {"type": "keyword"},
-                            "jurisdiction_a": {"type": "keyword"},
-                            "jurisdiction_b": {"type": "keyword"},
+                            "target_a": {"type": "keyword"},
+                            "target_b": {"type": "keyword"},
                             "fingerprint": {"type": "keyword"},
                             "report_data": {"type": "object", "enabled": False},
                             "created_at": {"type": "date"},
@@ -1933,7 +2073,7 @@ class ElasticsearchRepository:
             print(f"[Cache] 索引创建/检查失败（缓存功能将不可用）: {e}")
 
     def _cache_doc_id(self, cache_type: str, topic_id: str, jurisdiction_a: str, jurisdiction_b: str) -> str:
-        """生成缓存文档 ID"""
+        """生成缓存文档 ID（沿用 {cache_type}::{topic_id}::{a}::{b} 格式）"""
         return f"{cache_type}::{topic_id}::{jurisdiction_a}::{jurisdiction_b}"
 
     def save_analysis_cache(
@@ -1992,8 +2132,10 @@ class ElasticsearchRepository:
                 body={
                     "cache_type": cache_type,
                     "topic_id": topic_id,
-                    "jurisdiction_a": jurisdiction_a,
-                    "jurisdiction_b": jurisdiction_b,
+                    # ES 字段为 target_a/b（C2 §6）；方法签名沿用旧参数名，
+                    # 待 BE-08 服务重写时统一更名。
+                    "target_a": jurisdiction_a,
+                    "target_b": jurisdiction_b,
                     "fingerprint": fingerprint,
                     "report_data": cache_data,
                     "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -2128,10 +2270,9 @@ class ElasticsearchRepository:
                 id=doc_id,
                 body={
                     "cache_type": "summary",
-                    "law_id": law_id,
                     "topic_id": law_id,
-                    "jurisdiction_a": "_",
-                    "jurisdiction_b": "_",
+                    "target_a": "_",
+                    "target_b": "_",
                     "fingerprint": fingerprint,
                     "report_data": cache_data,
                     "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -2215,20 +2356,23 @@ class ElasticsearchRepository:
             return False
 
     # ================================================================
-    #  法规知识层（KG）持久化 — legal_kg_triples / legal_kg_entities
+    #  医疗知识层（KG）持久化 — medical_kg_triples / medical_kg_entities（C2 §5）
     #  ------------------------------------------------------------
-    #  设计要点：
-    #   1. 按 law_id 组织数据：新增法规只抽新增部分，不做全量重建，
+    #  设计要点（沿用法规版架构，仅字段医疗化）：
+    #   1. 按 source_id 组织数据：新增来源只抽新增部分，不做全量重建，
     #      这是数据量持续增长时唯一可扩展的形态；
     #   2. 三元组文档 ID 由内容哈希决定（幂等 upsert），
-    #      同一法规重复抽取不会产生重复记录；
-    #   3. 用 law 指纹判断缓存是否失效，指纹未变则完全跳过 LLM 抽取；
+    #      同一来源重复抽取不会产生重复记录；
+    #   3. 用源文档指纹判断缓存是否失效，指纹未变则完全跳过 LLM 抽取；
     #   4. entities 索引预留 1024 维向量字段：dense_vector 的 dims 建索引后
     #      不可修改，故此处一次性建好，供实体消歧的跨语言向量对齐使用。
+    #  字段映射：law_id->source_id / jurisdiction->cancer_type /
+    #           source_article->source_ref / jurisdictions->cancer_types
+    #  方法签名（参数名）沿用旧名，待 BE-20/BE-21 服务重写时统一更名。
     # ================================================================
 
-    KG_TRIPLE_INDEX = "legal_kg_triples"
-    KG_ENTITY_INDEX = "legal_kg_entities"
+    KG_TRIPLE_INDEX = settings.es_kg_triples_index_name
+    KG_ENTITY_INDEX = settings.es_kg_entities_index_name
 
     def _ensure_kg_indices(self) -> bool:
         """确保知识层索引存在，不存在则创建（失败时返回 False，调用方降级为实时抽取）"""
@@ -2240,8 +2384,8 @@ class ElasticsearchRepository:
                         "settings": {"number_of_shards": 1, "number_of_replicas": 0},
                         "mappings": {
                             "properties": {
-                                "law_id": {"type": "keyword"},
-                                "jurisdiction": {"type": "keyword"},
+                                "source_id": {"type": "keyword"},
+                                "cancer_type": {"type": "keyword"},
                                 "fingerprint": {"type": "keyword"},
                                 "head_id": {"type": "keyword"},
                                 "head_type": {"type": "keyword"},
@@ -2253,7 +2397,7 @@ class ElasticsearchRepository:
                                 "tail_name": {"type": "keyword"},
                                 "tail_canonical_id": {"type": "keyword"},
                                 "relation": {"type": "keyword"},
-                                "source_article": {"type": "keyword"},
+                                "source_ref": {"type": "keyword"},
                                 "confidence": {"type": "float"},
                                 "extracted_at": {"type": "date"},
                             }
@@ -2271,7 +2415,7 @@ class ElasticsearchRepository:
                                 "name": {"type": "keyword"},
                                 "type": {"type": "keyword"},
                                 "aliases": {"type": "keyword"},
-                                "jurisdictions": {"type": "keyword"},
+                                "cancer_types": {"type": "keyword"},
                                 "embedding": {
                                     "type": "dense_vector",
                                     "dims": 1024,
@@ -2336,8 +2480,8 @@ class ElasticsearchRepository:
                 "_index": self.KG_TRIPLE_INDEX,
                 "_id": self._kg_triple_doc_id(law_id, t),
                 "_source": {
-                    "law_id": law_id,
-                    "jurisdiction": jurisdiction or t.get("source_jurisdiction", ""),
+                    "source_id": law_id,
+                    "cancer_type": jurisdiction or t.get("source_jurisdiction", ""),
                     "fingerprint": fingerprint,
                     "head_id": head.get("id", ""),
                     "head_type": head.get("type", ""),
@@ -2348,7 +2492,7 @@ class ElasticsearchRepository:
                     "tail_name": tail.get("name", ""),
                     "tail_canonical_id": tail.get("canonical_id") or tail.get("id", ""),
                     "relation": t.get("relation", ""),
-                    "source_article": t.get("source_article", ""),
+                    "source_ref": t.get("source_article", ""),
                     "confidence": float(t.get("confidence", 0.8)),
                     "extracted_at": now,
                 },
@@ -2378,9 +2522,9 @@ class ElasticsearchRepository:
             resp = self.client.search(
                 index=self.KG_TRIPLE_INDEX,
                 body={
-                    "query": {"term": {"law_id": law_id}},
+                    "query": {"term": {"source_id": law_id}},
                     "size": size,
-                    "sort": [{"source_article": "asc"}, {"confidence": "desc"}],
+                    "sort": [{"source_ref": "asc"}, {"confidence": "desc"}],
                 },
             )
         except NotFoundError:
@@ -2406,8 +2550,8 @@ class ElasticsearchRepository:
                     "name": s.get("tail_name", ""),
                     "canonical_id": s.get("tail_canonical_id", ""),
                 },
-                "source_article": s.get("source_article", ""),
-                "source_jurisdiction": s.get("jurisdiction", ""),
+                "source_article": s.get("source_ref", ""),
+                "source_jurisdiction": s.get("cancer_type", ""),
                 "confidence": s.get("confidence", 0.8),
             })
         return triples
@@ -2421,7 +2565,7 @@ class ElasticsearchRepository:
             resp = self.client.search(
                 index=self.KG_TRIPLE_INDEX,
                 body={
-                    "query": {"term": {"law_id": law_id}},
+                    "query": {"term": {"source_id": law_id}},
                     "size": 1,
                     "sort": [{"extracted_at": "desc"}],
                     "_source": ["fingerprint", "extracted_at"],
@@ -2450,7 +2594,7 @@ class ElasticsearchRepository:
         try:
             resp = self.client.delete_by_query(
                 index=self.KG_TRIPLE_INDEX,
-                body={"query": {"term": {"law_id": law_id}}},
+                body={"query": {"term": {"source_id": law_id}}},
                 refresh=True,
                 conflicts="proceed",
             )
@@ -2470,7 +2614,7 @@ class ElasticsearchRepository:
                 body={
                     "size": 0,
                     "track_total_hits": True,
-                    "aggs": {"laws": {"cardinality": {"field": "law_id"}}},
+                    "aggs": {"laws": {"cardinality": {"field": "source_id"}}},
                 },
             )
             result["triple_count"] = resp.get("hits", {}).get("total", {}).get("value", 0)
@@ -2545,8 +2689,10 @@ class ElasticsearchRepository:
                 "name": ent.get("name", "") or old.get("name", ""),
                 "type": ent.get("type", "") or old.get("type", ""),
                 "aliases": sorted(set(old.get("aliases", [])) | set(ent.get("aliases", []))),
-                "jurisdictions": sorted(
-                    set(old.get("jurisdictions", [])) | set(ent.get("jurisdictions", []))
+                # ES 字段 cancer_types；输入 dict 键沿用 jurisdictions（消歧服务
+                # 层格式，BE-21 重写时统一更名）
+                "cancer_types": sorted(
+                    set(old.get("cancer_types", [])) | set(ent.get("jurisdictions", []))
                 ),
                 "updated_at": now,
             }
@@ -2634,7 +2780,7 @@ class ElasticsearchRepository:
                     "query": query,
                     "size": size,
                     "_source": ["entity_id", "name", "type", "aliases",
-                                "jurisdictions", "embedding"],
+                                "cancer_types", "embedding"],
                 },
             )
         except NotFoundError:
