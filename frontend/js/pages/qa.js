@@ -1,7 +1,7 @@
 /**
  * 法规智能问答页面
  */
-const QA_STORAGE_KEY = 'legal_rag_qa_state';
+const QA_STORAGE_KEY = 'medical_rag_qa_state';
 
 function loadQAState() {
     try {

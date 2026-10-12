@@ -7,7 +7,7 @@
   3. Relevance    - 生成答案是否准确回答用户问题（LLM-as-judge, 1-5分）
 
 使用方式:
-  cd legal_rag
+  cd medical_rag
   python run_qa_eval.py
 
 输出:

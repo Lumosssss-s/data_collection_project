@@ -6,7 +6,7 @@ RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
     pip install --no-cache-dir --upgrade pip
 
 WORKDIR /build
-COPY legal_rag/requirements.txt .
+COPY medical_rag/requirements.txt .
 
 # 安装 CPU 版 PyTorch（需在 sentence-transformers 之前安装，避免自动下载 GPU 版）
 # 走阿里云 pytorch-wheels 镜像：download.pytorch.org 在容器网络下 TLS 握手不稳定（SSLEOF）
@@ -44,7 +44,7 @@ COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/pytho
 COPY --from=builder /usr/local/bin /usr/local/bin
 
 # 复制后端源代码
-COPY legal_rag/ .
+COPY medical_rag/ .
 
 # 创建数据目录（用于挂载宿主机数据）
 RUN mkdir -p /app/data/raw /models

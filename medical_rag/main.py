@@ -344,7 +344,7 @@ if __name__ == "__main__":
     import signal
 
     # 日志配置已在模块级 _configure_logging() 完成（uvicorn 启动方式下同样生效），此处不再重复配置。
-    logger = logging.getLogger("legal_rag")
+    logger = logging.getLogger("medical_rag")
 
     def _handle_signal(signum, frame):
         logger.warning(f"收到信号 {signum}，正在退出...")

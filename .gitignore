@@ -7,10 +7,10 @@ dist/
 build/
 
 # 生成的缓存数据（可重新生成）
-legal_rag/data/kg_cache/
+medical_rag/data/kg_cache/
 
 # 生成的图表（可重新生成）
-legal_rag/eval_data/charts/
+medical_rag/eval_data/charts/
 
 # 本地模型文件（体积约 6.4GB，不入库）
 models/
