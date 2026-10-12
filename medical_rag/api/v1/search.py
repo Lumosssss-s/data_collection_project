@@ -34,23 +34,33 @@ def search(
 
     search_results = []
     for result in results:
+        # 结果 dict 键为医疗语义（BE-05 重写检索服务后由 ES 四类字段直供）；
+        # 当前检索层尚未重写，统一 .get 防御取值（空库阶段恒为空结果）。
         search_results.append(SearchResult(
-            content=result['content'],
+            content=result.get('content', ''),
             metadata=DocumentMetadata(
-                law_id=result['law_id'],
-                jurisdiction=result['jurisdiction'],
-                title=result['title'],
-                article_number=result['article_number'],
-                chunk_index=result['chunk_index'],
-                topics=result.get('topics', []),
-                topic_labels=result.get('topic_labels', [])
+                item_id=result.get('item_id', ''),
+                data_type=result.get('data_type', ''),
+                title=result.get('title', ''),
+                cancer_type=result.get('cancer_type'),
+                cancer_types=result.get('cancer_types', []),
+                breadcrumb=result.get('breadcrumb'),
+                scenario=result.get('scenario'),
+                stage=result.get('stage', []),
+                stage_detail=result.get('stage_detail'),
+                biomarker=result.get('biomarker', []),
+                evidence_level=result.get('evidence_level'),
+                rec_strength=result.get('rec_strength'),
+                chunk_index=result.get('chunk_index', 0),
+                publish_date=result.get('publish_date'),
+                source_file=result.get('source_file'),
             ),
-            similarity=result['score'],
+            similarity=result.get('score', 0.0),
             retrieval_hop=result.get('retrieval_hop'),
             referenced_by=result.get('referenced_by'),
-            cross_law=result.get('cross_law'),
-            referenced_law_id=result.get('referenced_law_id'),
-            referenced_law_name=result.get('referenced_law_name'),
+            cross_doc=result.get('cross_doc'),
+            referenced_doc_id=result.get('referenced_doc_id'),
+            referenced_doc_name=result.get('referenced_doc_name'),
             match_score=result.get('match_score'),
         ))
 
