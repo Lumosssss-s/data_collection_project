@@ -21,7 +21,7 @@ from services.entity_disambiguation_service import EntityDisambiguationService
 logger = logging.getLogger(__name__)
 
 # ---- 标准化本体定义 ----
-LEGAL_ONTOLOGY = {
+MEDICAL_ONTOLOGY = {
     "entities": {
         "Article":       { "label": "条款",     "description": "法律条文的具体条款" },
         "LegalSubject":  { "label": "法律主体",  "description": "拥有法律权利义务的实体（如数据控制者、监管机构、数据主体）" },
@@ -130,11 +130,11 @@ class KGExtractionService:
         # 将 ontology 转为 LLM 易读的格式
         entity_types_str = "\n".join([
             f"  - {k}: {v['label']} — {v['description']}"
-            for k, v in LEGAL_ONTOLOGY["entities"].items()
+            for k, v in MEDICAL_ONTOLOGY["entities"].items()
         ])
         relation_types_str = "\n".join([
             f"  - {r['type']}: {r['label']} — {r['description']}"
-            for r in LEGAL_ONTOLOGY["relations"]
+            for r in MEDICAL_ONTOLOGY["relations"]
         ])
 
         prompt = f"""你是一位法律知识工程专家。请从以下法条中提取法律实体和关系。
@@ -210,13 +210,13 @@ class KGExtractionService:
             # 校验实体类型
             head_type = head.get("type", "")
             tail_type = tail.get("type", "")
-            if head_type not in LEGAL_ONTOLOGY["entities"]:
+            if head_type not in MEDICAL_ONTOLOGY["entities"]:
                 head_type = "Concept"
-            if tail_type not in LEGAL_ONTOLOGY["entities"]:
+            if tail_type not in MEDICAL_ONTOLOGY["entities"]:
                 tail_type = "Concept"
 
             # 校验关系类型
-            valid_relations = {r["type"] for r in LEGAL_ONTOLOGY["relations"]}
+            valid_relations = {r["type"] for r in MEDICAL_ONTOLOGY["relations"]}
             if relation not in valid_relations:
                 continue
 
@@ -382,7 +382,7 @@ class KGExtractionService:
                         "label": ent["name"],
                         "title": ent["name"],
                         "entity_type": ent["type"],
-                        "entity_label": LEGAL_ONTOLOGY["entities"].get(ent["type"], {}).get("label", "条款"),
+                        "entity_label": MEDICAL_ONTOLOGY["entities"].get(ent["type"], {}).get("label", "条款"),
                         "entity_color": _ENTITY_COLORS.get(ent["type"], "#6B7280"),
                         "entity_shape": _ENTITY_SHAPES.get(ent["type"], "ellipse"),
                         "degree": 0,

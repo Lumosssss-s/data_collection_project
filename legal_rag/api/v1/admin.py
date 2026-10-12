@@ -12,7 +12,7 @@ law_service = LawManagementService()
 repo = ElasticsearchRepository()
 catalog = LawCatalog()
 
-# 管理员Token，从环境变量 LEGAL_ADMIN_TOKEN 读取（见 core/config.py 的 admin_token）
+# 管理员Token，从环境变量 MEDICAL_ADMIN_TOKEN 读取（见 core/config.py 的 admin_token）
 # 默认值仅供本地开发使用，生产环境务必在 .env 中覆盖
 ADMIN_TOKEN = settings.admin_token
 

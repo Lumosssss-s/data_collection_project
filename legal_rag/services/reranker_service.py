@@ -133,7 +133,7 @@ class ReRankerService:
                 "常见原因：镜像缺少 accelerate（low_cpu_mem_usage 依赖）或模型未下载。"
                 f"模型={settings.reranker_model}，错误={e}。"
                 "修复：docker compose build backend && docker compose up -d backend；"
-                "或临时用 LEGAL_RERANKER_ENABLED=false 关闭精排。"
+                "或临时用 MEDICAL_RERANKER_ENABLED=false 关闭精排。"
             )
             sys.stdout.flush()
             return False

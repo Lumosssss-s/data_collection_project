@@ -121,7 +121,7 @@ def _load_and_warm_reranker(_log) -> None:
     from core.config import settings
 
     if not settings.reranker_enabled:
-        _log("Re-ranker 已禁用（LEGAL_RERANKER_ENABLED=false），跳过预热")
+        _log("Re-ranker 已禁用（MEDICAL_RERANKER_ENABLED=false），跳过预热")
         return
 
     t0 = time.time()

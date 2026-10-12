@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     es_verify_certs: bool = False
     es_request_timeout: int = 30
 
-    # 管理端鉴权 Token（环境变量 LEGAL_ADMIN_TOKEN）
+    # 管理端鉴权 Token（环境变量 MEDICAL_ADMIN_TOKEN）
     # 仅用于保护 /api/v1/admin/* 接口；默认值仅供本地开发使用，生产环境务必通过 .env 覆盖
     admin_token: str = "dev_admin_token_change_me"
     
@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     
     # DeepSeek API 配置
     llm_api_type: str = "deepseek"  # deepseek
-    # 密钥不设默认值：必须通过 .env 的 LEGAL_LLM_API_KEY 或环境变量注入，避免明文入库
+    # 密钥不设默认值：必须通过 .env 的 MEDICAL_LLM_API_KEY 或环境变量注入，避免明文入库
     llm_api_key: str = ""
     llm_api_base_url: str = "https://api.deepseek.com/v1"
     llm_model: str = "deepseek-flash"  # 默认模型
@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     # 场景特定模型配置
     llm_summary_model: str = "deepseek-flash"  # 摘要生成（批量任务）
     # DeepSeek 连接配置（abstract_service 独立客户端使用）
-    llm_deepseek_api_key: str = ""  # 通过 .env 或环境变量 LEGAL_DEEPSEEK_API_KEY 设置
+    llm_deepseek_api_key: str = ""  # 通过 .env 或环境变量 MEDICAL_DEEPSEEK_API_KEY 设置
     llm_deepseek_api_base_url: str = "https://api.deepseek.com/v1"  # DeepSeek API 地址
     llm_deepseek_model: str = "deepseek-flash"  # DeepSeek 模型名
     llm_dashboard_model: str = "deepseek-flash"  # 仪表盘数据（快速响应）- 速度优先
@@ -43,7 +43,7 @@ class Settings(BaseSettings):
     llm_qa_model: str = "deepseek-flash"  # 智能问答
     # 思考模式开关：平台默认开启思考，思考内容走 delta.reasoning_content，
     # 会挤占 max_tokens（思考吃满时 finish_reason=length、content 为空）并显著增加首字延迟。
-    # 默认关闭；如确需深度推理可设 LEGAL_LLM_ENABLE_THINKING=true。
+    # 默认关闭；如确需深度推理可设 MEDICAL_LLM_ENABLE_THINKING=true。
     llm_enable_thinking: bool = False
 
     # 多模态配置
@@ -62,7 +62,7 @@ class Settings(BaseSettings):
 
     # CPU 推理线程数
     # 原实现硬编码为 2，在 16 核容器上导致 CPU 严重闲置（检索耗时被放大约 4 倍）。
-    # 默认 8：兼顾单次请求延迟与并发请求间的公平性；可通过 LEGAL_TORCH_NUM_THREADS 覆盖。
+    # 默认 8：兼顾单次请求延迟与并发请求间的公平性；可通过 MEDICAL_TORCH_NUM_THREADS 覆盖。
     torch_num_threads: int = 8
     
     # 检索参数
@@ -168,7 +168,7 @@ class Settings(BaseSettings):
         当前平台默认开启思考模式：思考内容通过 delta.reasoning_content 返回，
         会占用 max_tokens 预算（思考吃满时 finish_reason=length 且 content 为空，
         表现为"生成无内容"），并显著拉高响应耗时。默认显式关闭；
-        需要深度推理时可通过 LEGAL_LLM_ENABLE_THINKING=true 打开。
+        需要深度推理时可通过 MEDICAL_LLM_ENABLE_THINKING=true 打开。
         """
         if self.llm_enable_thinking:
             return None
@@ -176,7 +176,7 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(
         env_file=".env",
-        env_prefix="LEGAL_",
+        env_prefix="MEDICAL_",
         case_sensitive=False
     )
 
