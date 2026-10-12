@@ -11,7 +11,16 @@ class Settings(BaseSettings):
     es_hosts: List[str] = ["http://localhost:9200"]
     es_user: str = "elastic"
     es_password: str = "123456"
-    es_index_name: str = "legal_documents"
+    # 五索引名统一走 config（C2《ES 索引与 Mapping 规范》§8 约定）
+    # 主索引：医疗知识库（doc/rec/drug/term 四类 data_type 共存，C2 §3）
+    es_index_name: str = "medical_knowledge"
+    # 疾病档案索引（可检索抽平层 + 存储层 enabled:false，C2 §4）
+    es_disease_index_name: str = "medical_disease_profiles"
+    # 图谱双索引（三元组 / 实体，C2 §5）
+    es_kg_triples_index_name: str = "medical_kg_triples"
+    es_kg_entities_index_name: str = "medical_kg_entities"
+    # 专题分析缓存索引（C2 §6）
+    es_cache_index_name: str = "medical_analysis_cache"
     es_verify_certs: bool = False
     es_request_timeout: int = 30
 
