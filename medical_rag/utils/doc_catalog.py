@@ -6,30 +6,25 @@
 - 支持新增、更新、查询文档目录记录
 - 与 ES 数据保持同步
 
-注：本文件当前记录字段仍为法规口径（law_id / jurisdiction 等）。
-BE-33 步骤 B 将切换为 C2 DOC 域口径（doc_id / doc_type / issuer / cancer_types 等）。
-
-数据结构：
+数据结构（记录口径对齐 C2 主索引 DOC 域 / C4 文档目录口径）：
 {
   "version": "1.0",
-  "last_updated": "2024-01-15T10:30:00",
-  "total_laws": 21,
-  "laws": [
+  "last_updated": "2026-10-13T10:00:00",
+  "total_docs": 1,
+  "docs": [
     {
-      "law_id": "MAC_LEI_13_2019",
-      "law_name_zh": "網絡安全法",
-      "law_name_original": "",
-      "jurisdiction": "澳门",
-      "law_type": "法律",
-      "passing_date": "2019-06-06",
-      "effective_date": "2019-08-05",
-      "total_articles": 28,
-      "total_chunks": 28,
-      "topics": ["网络安全", "关键基础设施"],
-      "ingest_date": "2024-01-15",
-      "last_updated": "2024-01-15",
+      "doc_id": "DOC-LUNG-CACA-2025",
+      "title": "CACA 肺癌诊疗指南（2025 版）",
+      "doc_type": "guideline",
+      "issuer": "中国抗癌协会",
+      "cancer_types": ["lung"],
+      "item_count": 128,
+      "version": "2025",
+      "publish_date": "2025-01-01",
+      "file_path": "data/clean/guidelines/DOC-LUNG-CACA-2025.json",
       "status": "active",
-      "source_file": "MO_13196741_cleaned.json"
+      "ingest_date": "2026-10-13",
+      "last_updated": "2026-10-13"
     }
   ]
 }
@@ -42,7 +37,7 @@ from typing import List, Dict, Optional, Any
 
 
 class DocCatalog:
-    """文档目录管理器"""
+    """文档目录管理器（记录口径：C2 DOC 域）"""
 
     def __init__(self, catalog_path: str = None):
         """
@@ -63,14 +58,17 @@ class DocCatalog:
         """确保 catalog 文件存在"""
         if not self.catalog_path.exists():
             self.catalog_path.parent.mkdir(parents=True, exist_ok=True)
-            initial_data = {
+            self._write({
                 "version": "1.0",
                 "last_updated": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-                "total_laws": 0,
-                "laws": []
-            }
-            with open(self.catalog_path, "w", encoding="utf-8") as f:
-                json.dump(initial_data, f, ensure_ascii=False, indent=2)
+                "total_docs": 0,
+                "docs": []
+            })
+
+    def _write(self, data: Dict):
+        """落盘（内部工具，不重算统计）"""
+        with open(self.catalog_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
     def load(self) -> Dict:
         """加载 catalog 数据"""
@@ -79,248 +77,214 @@ class DocCatalog:
                 return json.load(f)
         except Exception as e:
             print(f"⚠️  加载 doc_catalog.json 失败: {e}")
-            return {"version": "1.0", "last_updated": "", "total_laws": 0, "laws": []}
+            return {"version": "1.0", "last_updated": "", "total_docs": 0, "docs": []}
 
     def save(self, data: Dict):
-        """保存 catalog 数据"""
+        """保存 catalog 数据（自动刷新 last_updated 与 total_docs）"""
         data["last_updated"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        data["total_laws"] = len(data.get("laws", []))
+        data["total_docs"] = len(data.get("docs", []))
+        self._write(data)
 
-        with open(self.catalog_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-
-    def find_by_law_id(self, law_id: str) -> Optional[Dict]:
-        """根据 law_id 查找法律记录"""
+    def find_by_doc_id(self, doc_id: str) -> Optional[Dict]:
+        """根据 doc_id 查找文档记录"""
         catalog = self.load()
-        for law in catalog.get("laws", []):
-            if law.get("law_id") == law_id:
-                return law
+        for doc in catalog.get("docs", []):
+            if doc.get("doc_id") == doc_id:
+                return doc
         return None
 
     def add_or_update(
         self,
-        law_id: str,
-        law_name_zh: str,
-        jurisdiction: str,
-        total_articles: int,
-        total_chunks: int,
-        law_name_original: str = "",
-        law_type: str = "",
-        passing_date: str = "",
-        effective_date: str = "",
-        publication_date: str = "",
-        topics: List[str] = None,
-        source_file: str = "",
-        status: str = "active"
+        doc_id: str,
+        title: str,
+        doc_type: str = "",
+        issuer: str = "",
+        cancer_types: List[str] = None,
+        item_count: int = 0,
+        version: str = "",
+        publish_date: str = "",
+        file_path: str = "",
+        status: str = "active",
     ) -> Dict:
         """
-        新增或更新法律目录记录
+        新增或更新文档目录记录
 
         参数:
-            law_id: 法律ID
-            law_name_zh: 中文名称
-            jurisdiction: 法域
-            total_articles: 总条款数
-            total_chunks: 总文档块数
-            law_name_original: 原始名称
-            law_type: 法律类型
-            passing_date: 通过日期
-            effective_date: 生效日期
-            publication_date: 发布日期
-            topics: 主题标签列表
-            source_file: 来源文件名
-            status: 状态 (active/amended/repealed/deleted/missing)
+            doc_id: 文档 ID（指南 / 规范 / 共识）
+            title: 文档标题
+            doc_type: 文档类型（guideline / standard / consensus）
+            issuer: 发布机构
+            cancer_types: 适用癌种数组（lung / breast / colorectal / gastric / thyroid）
+            item_count: 该文档切分出的推荐条目数
+            version: 文档版本（如 2025）
+            publish_date: 发布日期
+            file_path: 源文件相对路径
+            status: 状态（active / superseded / deleted）
 
         返回:
-            更新后的法律记录
+            更新后的文档记录
         """
         catalog = self.load()
         now = datetime.now().strftime("%Y-%m-%d")
 
-        existing_record = self.find_by_law_id(law_id)
+        existing_record = self.find_by_doc_id(doc_id)
 
         new_record = {
-            "law_id": law_id,
-            "law_name_zh": law_name_zh,
-            "law_name_original": law_name_original,
-            "jurisdiction": jurisdiction,
-            "law_type": law_type,
-            "passing_date": passing_date,
-            "effective_date": effective_date,
-            "publication_date": publication_date,
-            "total_articles": total_articles,
-            "total_chunks": total_chunks,
-            "topics": topics or [],
+            "doc_id": doc_id,
+            "title": title,
+            "doc_type": doc_type,
+            "issuer": issuer,
+            "cancer_types": cancer_types or [],
+            "item_count": item_count,
+            "version": version,
+            "publish_date": publish_date,
+            "file_path": file_path,
             "ingest_date": now,
             "last_updated": now,
             "status": status,
-            "source_file": source_file
         }
 
         if existing_record:
-            # 更新现有记录，保留历史版本信息
-            index = next(i for i, law in enumerate(catalog["laws"]) if law.get("law_id") == law_id)
-            
-            # 如果状态变化（如从 active 变为 amended），保留旧版本信息
+            index = next(i for i, d in enumerate(catalog["docs"]) if d.get("doc_id") == doc_id)
+
+            # 状态变化（如 active → superseded）时保留旧版本快照，便于版本追溯
             if existing_record.get("status") != status and status != "deleted":
                 if "previous_versions" not in existing_record:
                     existing_record["previous_versions"] = []
-                
-                previous_version = {
+
+                existing_record["previous_versions"].append({
                     "version_date": existing_record.get("last_updated", ""),
                     "status": existing_record.get("status"),
-                    "total_articles": existing_record.get("total_articles", 0),
-                    "total_chunks": existing_record.get("total_chunks", 0),
-                }
-                existing_record["previous_versions"].append(previous_version)
+                    "item_count": existing_record.get("item_count", 0),
+                })
 
-            # 合并新数据
-            new_record["ingest_date"] = existing_record.get("ingest_date", now)  # 首次入库日期不变
-            catalog["laws"][index] = new_record
-            
-            print(f"📝 更新 catalog 记录: {law_id} ({law_name_zh})")
+            # 合并新数据：首次入库日期不变
+            new_record["ingest_date"] = existing_record.get("ingest_date", now)
+            catalog["docs"][index] = new_record
+
+            print(f"📝 更新 catalog 记录: {doc_id} ({title})")
         else:
-            # 新增记录
-            catalog["laws"].append(new_record)
-            print(f"➕ 新增 catalog 记录: {law_id} ({law_name_zh})")
+            catalog["docs"].append(new_record)
+            print(f"➕ 新增 catalog 记录: {doc_id} ({title})")
 
         self.save(catalog)
         return new_record
 
-    def update_from_chunks(self, chunks_data: List[Dict]) -> Dict:
+    def update_from_docs(self, docs_data: List[Dict]) -> Dict:
         """
-        从 chunks 数据中提取元信息并更新 catalog
+        从同一文档的条目数据中提取元信息并更新 catalog
 
         参数:
-            chunks_data: 同一法律的多个 chunk 列表
+            docs_data: 同一文档的条目列表（入库时该文档下的 chunk / 条目记录）
 
         返回:
-            更新后的法律记录
+            更新后的文档记录
         """
-        if not chunks_data:
+        if not docs_data:
             return {}
 
-        first_chunk = chunks_data[0]
-        
-        # 提取基础字段
-        law_id = first_chunk.get("_meta", {}).get("law_id", "") or first_chunk.get("metadata", {}).get("law_id", "")
-        law_name_zh = first_chunk.get("_meta", {}).get("law_name", "") or first_chunk.get("metadata", {}).get("title", "")
-        jurisdiction = first_chunk.get("_meta", {}).get("jurisdiction", "") or first_chunk.get("metadata", {}).get("jurisdiction", "")
-        source_file = first_chunk.get("_meta", {}).get("source_file", "").split("\\")[-1] or ""
-        
-        # 统计条款数（按 article_number 去重）
-        article_numbers = set()
-        for chunk in chunks_data:
-            article_num = chunk.get("article_number", "")
-            if article_num:
-                article_numbers.add(article_num)
-        total_articles = len(article_numbers)
-        
-        total_chunks = len(chunks_data)
-        
-        # 收集所有 topics 并去重
-        all_topics = []
-        for chunk in chunks_data:
-            topics = chunk.get("metadata", {}).get("topic", [])
-            if isinstance(topics, list):
-                all_topics.extend(topics)
-            elif topics:
-                all_topics.append(topics)
-        unique_topics = list(set(all_topics))
-        
-        # 其他可选字段
-        passing_date = first_chunk.get("_meta", {}).get("passing_date", "") or first_chunk.get("metadata", {}).get("passing_date", "")
-        effective_date = first_chunk.get("_meta", {}).get("effective_date", "") or first_chunk.get("metadata", {}).get("effective_date", "")
-        publication_date = first_chunk.get("_meta", {}).get("publication_date", "") or first_chunk.get("metadata", {}).get("publication_date", "")
+        first = docs_data[0]
+        meta = first.get("metadata", {}) or {}
+        inner = first.get("_meta", {}) or {}
 
         return self.add_or_update(
-            law_id=law_id,
-            law_name_zh=law_name_zh,
-            jurisdiction=jurisdiction,
-            total_articles=total_articles,
-            total_chunks=total_chunks,
-            source_file=source_file,
-            passing_date=passing_date,
-            effective_date=effective_date,
-            publication_date=publication_date,
-            topics=unique_topics[:10],  # 最多保留10个主题标签
-            status="active"
+            doc_id=inner.get("doc_id") or meta.get("doc_id") or first.get("doc_id", ""),
+            title=inner.get("title") or meta.get("title", ""),
+            doc_type=meta.get("doc_type", ""),
+            issuer=meta.get("issuer", ""),
+            cancer_types=meta.get("cancer_types", []) or [],
+            item_count=len(docs_data),
+            version=meta.get("version", ""),
+            publish_date=meta.get("publish_date", ""),
+            file_path=meta.get("file_path", ""),
+            status="active",
         )
 
-    def delete(self, law_id: str) -> bool:
+    def delete(self, doc_id: str) -> bool:
         """
-        删除或标记删除法律记录
+        标记删除文档记录
 
         参数:
-            law_id: 要删除的法律ID
+            doc_id: 要删除的文档 ID
 
         返回:
-            是否成功删除
+            是否成功标记删除
         """
         catalog = self.load()
-        original_count = len(catalog["laws"])
-        
+
         # 标记为 deleted 而非物理删除（便于审计）
-        for i, law in enumerate(catalog["laws"]):
-            if law.get("law_id") == law_id:
-                catalog["laws"][i]["status"] = "deleted"
-                catalog["laws"][i]["last_updated"] = datetime.now().strftime("%Y-%m-%d")
-                print(f"🗑️  标记删除 catalog 记录: {law_id}")
+        for i, doc in enumerate(catalog.get("docs", [])):
+            if doc.get("doc_id") == doc_id:
+                catalog["docs"][i]["status"] = "deleted"
+                catalog["docs"][i]["last_updated"] = datetime.now().strftime("%Y-%m-%d")
+                print(f"🗑️  标记删除 catalog 记录: {doc_id}")
                 self.save(catalog)
                 return True
-        
-        print(f"⚠️  未找到 catalog 记录: {law_id}")
+
+        print(f"⚠️  未找到 catalog 记录: {doc_id}")
         return False
 
-    def get_all_laws(self, jurisdiction: str = None, status: str = None) -> List[Dict]:
+    def get_all_docs(
+        self,
+        doc_type: str = None,
+        cancer_type: str = None,
+        status: str = None,
+    ) -> List[Dict]:
         """
-        获取所有法律记录（支持筛选）
+        获取所有文档记录（支持筛选）
 
         参数:
-            jurisdiction: 法域筛选（可选）
+            doc_type: 文档类型筛选（可选：guideline / standard / consensus）
+            cancer_type: 癌种筛选（可选，命中 cancer_types 数组即算匹配）
             status: 状态筛选（可选）
 
         返回:
-            法律记录列表
+            文档记录列表
         """
         catalog = self.load()
-        laws = catalog.get("laws", [])
+        docs = catalog.get("docs", [])
 
-        if jurisdiction:
-            laws = [l for l in laws if l.get("jurisdiction") == jurisdiction]
+        if doc_type:
+            docs = [d for d in docs if d.get("doc_type") == doc_type]
+
+        if cancer_type:
+            docs = [d for d in docs if cancer_type in (d.get("cancer_types") or [])]
 
         if status:
-            laws = [l for l in laws if l.get("status") == status]
+            docs = [d for d in docs if d.get("status") == status]
 
-        return laws
+        return docs
 
     def get_statistics(self) -> Dict:
         """
         获取统计信息
 
         返回:
-            包含各种统计数据的字典
+            包含文档总数、类型分布、癌种覆盖、状态分布、年份分布、条目总数的字典
         """
         catalog = self.load()
-        laws = [l for l in catalog.get("laws", []) if l.get("status") != "deleted"]
+        docs = [d for d in catalog.get("docs", []) if d.get("status") != "deleted"]
 
         stats = {
-            "total_laws": len(laws),
-            "by_jurisdiction": {},
+            "total_docs": len(docs),
+            "total_items": sum(d.get("item_count", 0) for d in docs),
+            "by_doc_type": {},
+            "by_cancer_type": {},
             "by_status": {},
             "by_year": {},
-            "total_chunks": sum(l.get("total_chunks", 0) for l in laws),
-            "total_articles": sum(l.get("total_articles", 0) for l in laws),
         }
 
-        for law in laws:
-            jur = law.get("jurisdiction", "未知")
-            stats["by_jurisdiction"][jur] = stats["by_jurisdiction"].get(jur, 0) + 1
+        for doc in docs:
+            dtype = doc.get("doc_type", "未知")
+            stats["by_doc_type"][dtype] = stats["by_doc_type"].get(dtype, 0) + 1
 
-            status_val = law.get("status", "未知")
+            for ct in doc.get("cancer_types") or []:
+                stats["by_cancer_type"][ct] = stats["by_cancer_type"].get(ct, 0) + 1
+
+            status_val = doc.get("status", "未知")
             stats["by_status"][status_val] = stats["by_status"].get(status_val, 0) + 1
 
-            year = law.get("passing_date", "")[:4] if law.get("passing_date") else "未知"
+            year = doc.get("publish_date", "")[:4] if doc.get("publish_date") else "未知"
             stats["by_year"][year] = stats["by_year"].get(year, 0) + 1
 
         return stats
@@ -334,44 +298,46 @@ class DocCatalog:
 
         返回:
             重建后的统计数据
+
+        说明:
+            仓库层方法名（get_all_laws / get_law_by_id）为法规遗留命名，其医疗化
+            归 BE-31 / BE-06 批次（涉及 D-03 冻结文件，本批次不改名）。此处仅按
+            C2 DOC 域字段读取，仓库层未同步前 doc_type / issuer 等字段为空。
         """
         print("🔄 开始从 ES 重建 doc_catalog.json...")
-        
-        all_laws = es_repo.get_all_laws()
-        catalog = {"version": "1.0", "last_updated": "", "total_laws": 0, "laws": []}
+
+        all_docs = es_repo.get_all_laws()
+        catalog = {"version": "1.0", "last_updated": "", "total_docs": 0, "docs": []}
         now = datetime.now().strftime("%Y-%m-%d")
 
-        for law_info in all_laws:
-            law_id = law_info.get("law_id")
-            
-            # 获取该法律的详细信息
-            law_detail = es_repo.get_law_by_id(law_id)
-            if law_detail:
-                record = {
-                    "law_id": law_id,
-                    "law_name_zh": law_detail.get("title", ""),
-                    "law_name_original": "",
-                    "jurisdiction": law_detail.get("jurisdiction", ""),
-                    "law_type": "",
-                    "passing_date": law_detail.get("passing_date", ""),
-                    "effective_date": "",
-                    "total_articles": law_info.get("article_count", 0),
-                    "total_chunks": law_info.get("article_count", 0),
-                    "topics": [],
-                    "ingest_date": now,
-                    "last_updated": now,
-                    "status": "active",
-                    "source_file": ""
-                }
-                catalog["laws"].append(record)
+        for doc_info in all_docs:
+            doc_id = doc_info.get("doc_id")
+            if not doc_id:
+                continue
+
+            doc_detail = es_repo.get_law_by_id(doc_id) or {}
+            catalog["docs"].append({
+                "doc_id": doc_id,
+                "title": doc_detail.get("title", "") or doc_info.get("title", ""),
+                "doc_type": doc_info.get("doc_type", ""),
+                "issuer": doc_info.get("issuer", ""),
+                "cancer_types": doc_info.get("cancer_types", []) or [],
+                "item_count": doc_info.get("item_count", 0),
+                "version": doc_info.get("version", ""),
+                "publish_date": doc_info.get("publish_date", ""),
+                "file_path": "",
+                "ingest_date": now,
+                "last_updated": now,
+                "status": "active",
+            })
 
         self.save(catalog)
         stats = self.get_statistics()
 
-        print(f"✅ Catalog 重建完成:")
-        print(f"   - 总法规数: {stats['total_laws']}")
-        print(f"   - 总文档块数: {stats['total_chunks']}")
-        
+        print("✅ Catalog 重建完成:")
+        print(f"   - 总文档数: {stats['total_docs']}")
+        print(f"   - 总条目数: {stats['total_items']}")
+
         return stats
 
 

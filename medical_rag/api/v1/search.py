@@ -79,7 +79,7 @@ def get_laws(
     """
     # 1) 从 catalog 获取所有非删除状态的法规
     cat_data = catalog.load()
-    all_laws = [l for l in cat_data.get("laws", []) if l.get("status") != "deleted"]
+    all_laws = [l for l in cat_data.get("docs", []) if l.get("status") != "deleted"]
 
     # 2) 法域筛选（catalog 中 jurisdiction 已为中文）
     if jurisdiction:
@@ -104,14 +104,14 @@ def get_laws(
     # 5) 转换为前端期望的响应字段名（保持向后兼容）
     result = []
     for law in all_laws:
-        law_id = law.get("law_id", "")
+        law_id = law.get("doc_id", "")
         es_info = es_stats.get(law_id, {})
         result.append({
             "law_id": law_id,
-            "title": law.get("law_name_zh") or law.get("law_name_original") or "",
+            "title": law.get("title") or "",
             "jurisdiction": law.get("jurisdiction", ""),
-            "chunk_count": es_info.get("chunk_count") or law.get("total_chunks", 0),
-            "article_count": es_info.get("article_count") or law.get("total_articles", 0),
+            "chunk_count": es_info.get("chunk_count") or law.get("item_count", 0),
+            "article_count": es_info.get("article_count") or law.get("item_count", 0),
             # 额外字段（前端可选使用）
             "passing_date": law.get("passing_date", ""),
             "effective_date": law.get("effective_date", ""),

@@ -177,10 +177,10 @@ async def get_catalog(
     返回所有法律的元信息（不含全文）
     """
     try:
-        laws = catalog.get_all_laws(jurisdiction=jurisdiction, status=status)
+        laws = catalog.get_all_docs(status=status)
         stats = catalog.get_statistics()
         return APIResponse(success=True, data={
-            "laws": laws,
+            "docs": laws,
             "statistics": stats,
             "catalog_path": str(catalog.catalog_path),
             "last_updated": catalog.load().get("last_updated")
@@ -212,7 +212,7 @@ async def get_catalog_record(
 ):
     """根据 law_id 获取单个法律的目录记录"""
     try:
-        record = catalog.find_by_law_id(law_id)
+        record = catalog.find_by_doc_id(law_id)
         if not record:
             raise HTTPException(status_code=404, detail=f"未找到法律 {law_id} 的目录记录")
         return APIResponse(success=True, data=record)
@@ -285,23 +285,21 @@ async def update_catalog_record(
     - total_articles, total_chunks
     """
     try:
-        existing = catalog.find_by_law_id(law_id)
+        existing = catalog.find_by_doc_id(law_id)
         if not existing:
             raise HTTPException(status_code=404, detail=f"未找到法律 {law_id}")
 
         # 合并更新字段
         updated_record = catalog.add_or_update(
-            law_id=law_id,
-            law_name_zh=updates.get("law_name_zh", existing.get("law_name_zh", "")),
-            jurisdiction=existing.get("jurisdiction", ""),
-            total_articles=updates.get("total_articles", existing.get("total_articles", 0)),
-            total_chunks=updates.get("total_chunks", existing.get("total_chunks", 0)),
-            law_name_original=updates.get("law_name_original", existing.get("law_name_original", "")),
-            law_type=updates.get("law_type", existing.get("law_type", "")),
-            passing_date=updates.get("passing_date", existing.get("passing_date", "")),
-            effective_date=updates.get("effective_date", existing.get("effective_date", "")),
-            topics=updates.get("topics", existing.get("topics", [])),
-            source_file=existing.get("source_file", ""),
+            doc_id=law_id,
+            title=updates.get("title", existing.get("title", "")),
+            doc_type=updates.get("doc_type", existing.get("doc_type", "")),
+            issuer=updates.get("issuer", existing.get("issuer", "")),
+            cancer_types=updates.get("cancer_types", existing.get("cancer_types", [])),
+            item_count=updates.get("item_count", existing.get("item_count", 0)),
+            version=updates.get("version", existing.get("version", "")),
+            publish_date=updates.get("publish_date", existing.get("publish_date", "")),
+            file_path=existing.get("file_path", ""),
             status=updates.get("status", existing.get("status", "active"))
         )
 

@@ -219,8 +219,8 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
         initial_data = {
             "version": "1.0",
             "last_updated": "",
-            "total_laws": 0,
-            "laws": []
+            "total_docs": 0,
+            "docs": []
         }
         from utils.doc_catalog import json as json_module
         from datetime import datetime as dt
@@ -289,7 +289,7 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
     catalog_updated_count = 0
     for law_id, chunks_data in law_chunks_map.items():
         try:
-            catalog.update_from_chunks(chunks_data)
+            catalog.update_from_docs(chunks_data)
             catalog_updated_count += 1
         except Exception as e:
             print(f"⚠️  更新 {law_id} 的 catalog 记录失败: {e}")
@@ -309,21 +309,20 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
         for law_id in sorted(processed_laws):
             count = repo.get_law_chunk_count(law_id)
             # 从 catalog 获取更详细的信息
-            cat_record = catalog.find_by_law_id(law_id)
-            title = cat_record.get('law_name_zh', '') if cat_record else ''
+            cat_record = catalog.find_by_doc_id(law_id)
+            title = cat_record.get('title', '') if cat_record else ''
             jur = cat_record.get('jurisdiction', '') if cat_record else ''
             print(f"   • {law_id} | {title} ({jur}) | {count} 个文档块")
 
     # 显示 catalog 统计信息
     stats = catalog.get_statistics()
     print(f"\n📊 Catalog 统计:")
-    print(f"   总法规数: {stats['total_laws']}")
-    print(f"   总文档块数: {stats['total_chunks']}")
-    print(f"   总条款数: {stats['total_articles']}")
-    if stats['by_jurisdiction']:
-        print(f"   按法域分布:")
-        for jur, count in sorted(stats['by_jurisdiction'].items()):
-            print(f"      • {jur}: {count} 部法律")
+    print(f"   总文档数: {stats['total_docs']}")
+    print(f"   总条目数: {stats['total_items']}")
+    if stats['by_cancer_type']:
+        print(f"   按癌种分布:")
+        for ct, count in sorted(stats['by_cancer_type'].items()):
+            print(f"      • {ct}: {count} 份文档")
 
     count = repo.count()
     print(f"\n🎉 完成！向量数据库中共有 {count} 个文档块")

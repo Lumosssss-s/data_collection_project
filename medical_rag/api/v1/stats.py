@@ -50,7 +50,7 @@ def _get_best_date(law: Dict) -> str:
 def _fetch_overview_data() -> dict:
     """获取总览数据（内部函数）"""
     cat_data = catalog.load()
-    laws = [l for l in cat_data.get("laws", []) if l.get("status") != "deleted"]
+    laws = [l for l in cat_data.get("docs", []) if l.get("status") != "deleted"]
     
     total_laws = len(laws)
     total_chunks = sum(l.get("total_chunks", 0) for l in laws)
@@ -108,7 +108,7 @@ def _fetch_overview_data() -> dict:
 def _fetch_jurisdiction_data() -> list:
     """获取法域统计数据（内部函数）"""
     cat_data = catalog.load()
-    laws = [l for l in cat_data.get("laws", []) if l.get("status") != "deleted"]
+    laws = [l for l in cat_data.get("docs", []) if l.get("status") != "deleted"]
     
     # 按 jurisdiction 分组统计
     jurisdiction_stats: Dict[str, Dict] = {}
@@ -156,7 +156,7 @@ def _fetch_topic_data(limit: int = 50) -> list:
     
     # 回退到从 catalog 统计
     cat_data = catalog.load()
-    laws = [l for l in cat_data.get("laws", []) if l.get("status") != "deleted"]
+    laws = [l for l in cat_data.get("docs", []) if l.get("status") != "deleted"]
     
     topic_distribution: Dict[str, Dict] = {}
     
@@ -201,7 +201,7 @@ def _fetch_topic_data(limit: int = 50) -> list:
 def _fetch_time_data(group_by: str = "year") -> dict:
     """获取时间统计数据（内部函数）"""
     cat_data = catalog.load()
-    laws = [l for l in cat_data.get("laws", []) if l.get("status") != "deleted"]
+    laws = [l for l in cat_data.get("docs", []) if l.get("status") != "deleted"]
     
     time_stats: Dict[str, Dict] = {}
     
@@ -288,7 +288,7 @@ def _fetch_time_data(group_by: str = "year") -> dict:
 def _fetch_timeline_data(jurisdiction: Optional[str] = None) -> dict:
     """获取时间轴数据（内部函数）"""
     cat_data = catalog.load()
-    laws = [l for l in cat_data.get("laws", []) if l.get("status") != "deleted"]
+    laws = [l for l in cat_data.get("docs", []) if l.get("status") != "deleted"]
     
     # 筛选法域
     if jurisdiction:

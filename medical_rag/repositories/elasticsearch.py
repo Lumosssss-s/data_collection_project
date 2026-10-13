@@ -1143,14 +1143,14 @@ class ElasticsearchRepository:
             logger.warning(f"[时效过滤] 读取法规目录失败，本次不做时效过滤: {e}")
             return []
 
-        laws = data.get("laws", []) if isinstance(data, dict) else data
+        laws = data.get("docs", []) if isinstance(data, dict) else data
         if isinstance(laws, dict):
             laws = list(laws.values())
 
         ids = [
-            x.get("law_id")
+            x.get("doc_id")
             for x in laws
-            if isinstance(x, dict) and x.get("law_id")
+            if isinstance(x, dict) and x.get("doc_id")
             and x.get("status") in self._NON_RETRIEVABLE_STATUS
         ]
         if ids:
