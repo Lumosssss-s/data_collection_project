@@ -265,6 +265,23 @@ _MEDICAL_DOC_FIELDS: Tuple[str, ...] = (
 )
 
 
+def _medical_metadata(source: Dict) -> Dict[str, Any]:
+    """读侧 metadata 组装：通用字段 + §5.7.2 白名单透传（C2 §3.3）。
+
+    与写侧 add_documents 的 _MEDICAL_DOC_FIELDS 同源，保证「写进去什么、读出来什么」；
+    不再给 metadata 塞 law_id / jurisdiction / article_number 等法规遗留字段。
+    """
+    meta: Dict[str, Any] = {
+        "title": source.get("title", ""),
+        "chunk_index": source.get("chunk_index", 0),
+        "topics_details": source.get("topics_details", []),
+    }
+    for field in _MEDICAL_DOC_FIELDS:
+        if source.get(field) is not None:
+            meta[field] = source[field]
+    return meta
+
+
 # ====================================================================
 #  同法规条款引用解析（组件D：引用链多跳）
 #  ----------------------------------------------------------------
@@ -823,14 +840,7 @@ class ElasticsearchRepository:
                 query_ids.append(hit.get("_id"))
                 query_docs.append(source.get("content", ""))
                 # 合并顶层字段到 metadata 中
-                metadata = source.get("metadata", {}).copy()
-                metadata["law_id"] = source.get("law_id", "")
-                metadata["title"] = source.get("title", "")
-                metadata["jurisdiction"] = source.get("jurisdiction", "")
-                metadata["article_number"] = source.get("article_number", "")
-                metadata["chunk_index"] = source.get("chunk_index", 0)
-                # 附加主题信息（C2 §3.3：仅 topics_details）
-                metadata["topics_details"] = source.get("topics_details", [])
+                metadata = _medical_metadata(source)
                 query_metas.append(metadata)
                 score = hit.get("_score", 0)
                 query_distances.append(1 - score if score > 0 else 1.0)
@@ -923,14 +933,7 @@ class ElasticsearchRepository:
             query_ids.append(item["_id"])
             query_docs.append(source.get("content", ""))
 
-            metadata = source.get("metadata", {}).copy()
-            metadata["law_id"] = source.get("law_id", "")
-            metadata["title"] = source.get("title", "")
-            metadata["jurisdiction"] = source.get("jurisdiction", "")
-            metadata["article_number"] = source.get("article_number", "")
-            metadata["chunk_index"] = source.get("chunk_index", 0)
-            metadata["topics_details"] = source.get("topics_details", [])
-            query_metas.append(metadata)
+            query_metas.append(_medical_metadata(source))
 
             rrf_score = item["rrf_score"]
             query_scores.append(rrf_score)
@@ -1688,14 +1691,7 @@ class ElasticsearchRepository:
             query_ids.append(hit.get("_id"))
             query_docs.append(source.get("content", ""))
             # 合并顶层字段到 metadata 中
-            metadata = source.get("metadata", {}).copy()
-            metadata["law_id"] = source.get("law_id", "")
-            metadata["title"] = source.get("title", "")
-            metadata["jurisdiction"] = source.get("jurisdiction", "")
-            metadata["article_number"] = source.get("article_number", "")
-            metadata["chunk_index"] = source.get("chunk_index", 0)
-            # 附加主题信息（C2 §3.3：仅 topics_details）
-            metadata["topics_details"] = source.get("topics_details", [])
+            metadata = _medical_metadata(source)
             query_metas.append(metadata)
             query_distances.append(0.0)
         
