@@ -205,6 +205,56 @@ class RetrieverService:
         merged.sort(key=lambda x: x["rrf_score"], reverse=True)
         return merged
 
+    def _expand_context(self, results: List[Dict]) -> List[Dict]:
+        """同指南上下文扩展（BE-15）：把命中条目所在指南的「相邻条目」补到结果尾部。
+
+        医疗模型下推荐条目之间无「第X条」式互引（原法规版引用链已移除），改为按
+        「同 doc_id + 同节（breadcrumb 前缀）优先」补齐同指南的相邻条目，帮助用户
+        在不改查询的情况下看到同一节/同一指南的关联推荐。
+
+        扩展项追加在原有结果之后且 score 置 0，不挤占主结果排序位置；单次最多补入
+        settings.reference_expand_max 条。扩展失败静默降级为不扩展，不影响主检索链路。
+        """
+        if not settings.reference_expand_enabled or not results:
+            return results
+
+        seeds = results[: settings.reference_expand_sources]
+        existing = {r.get("item_id") for r in results if r.get("item_id")}
+        expanded: List[Dict] = []
+
+        for seed in seeds:
+            doc_id = seed.get("doc_id")
+            if not doc_id:
+                continue
+            breadcrumb = seed.get("breadcrumb") or ""
+            # 同节前缀：去掉最后一段（本节的条目视为兄弟），无「/」时用整段
+            prefix = breadcrumb.rsplit("/", 1)[0] if "/" in breadcrumb else breadcrumb
+
+            try:
+                docs = self.repo.get_doc_context_recs(
+                    doc_id, existing, prefix, settings.reference_expand_max
+                )
+            except Exception:
+                continue
+
+            for doc in docs:
+                item_id = doc.get("item_id")
+                if not item_id or item_id in existing:
+                    continue
+                existing.add(item_id)
+                # 上下文条目不是语义命中：score 置 0、无余弦（前端不显示百分比）
+                doc["score"] = 0.0
+                doc["_cosine"] = None
+                doc["match_type"] = "context"
+                doc["retrieval_hop"] = 2
+                doc["referenced_by"] = seed.get("item_id") or breadcrumb
+                doc["cross_doc"] = False
+                expanded.append(doc)
+                if len(expanded) >= settings.reference_expand_max:
+                    return results + expanded
+
+        return results + expanded
+
     def search(self, query: str, top_k: int = 5,
                filters: Optional[Dict[str, Any]] = None) -> List[Dict]:
         """
@@ -302,7 +352,8 @@ class RetrieverService:
         # 统一用「原查询」做精排，保证与单跳路径同一打分基准（sub_queries[0] 即锚点）
         merged = self._rerank_two_stage(query=sub_queries[0], candidates=merged)
         merged = merged[:top_k]
-        # 合并后统一补齐展示分：合并会引入无 _cosine 的条目，需保证 match_score 键齐全
+        # 合并后补同指南上下文条目（不占 top_k 名额），再统一补齐展示分
+        merged = self._expand_context(merged)
         return self._attach_match_scores(merged)
 
     def hybrid_search(self, query: str, top_k: int = 5,
@@ -369,7 +420,12 @@ class RetrieverService:
         # 主结果按 top_k 截断：上面的 dedup_k 只是为精排保留的候选余量，不应外泄。
         formatted_results = formatted_results[:top_k]
 
-        # 展示用匹配度（真实余弦）统一计算
+        # 上下文扩展在其后追加：扩展项是「同指南相邻条目」而非排名结果，不计入 top_k 名额。
+        # 若先追加再截断，因主结果始终填满 top_k，扩展项会被永久截掉（多跳在检索页失效）。
+        if _rerank:
+            formatted_results = self._expand_context(formatted_results)
+
+        # 展示用匹配度（真实余弦）统一计算：扩展补入的条目无余弦，置 None
         formatted_results = self._attach_match_scores(formatted_results)
 
         if cache is not None:

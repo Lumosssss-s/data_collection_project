@@ -1,4 +1,4 @@
-from typing import List, Dict, Optional, Any, Tuple
+from typing import List, Dict, Optional, Any, Tuple, Iterable
 import json
 import os
 import re
@@ -1649,6 +1649,57 @@ class ElasticsearchRepository:
         response = self.client.search(index=settings.es_index_name, body=query)
         return response.get("hits", {}).get("total", {}).get("value", 0)
     
+    def get_doc_context_recs(self, doc_id: str, exclude_ids: Optional[Iterable[str]] = None,
+                             breadcrumb_prefix: str = "", max_n: int = 5) -> List[Dict]:
+        """同指南上下文条目（BE-15 上下文扩展）。
+
+        取同一 doc_id 下的推荐条目（data_type=rec），排除已命中条目，作为「相邻条目 /
+        同指南条目」补入检索结果尾部。优先返回与种子同节（breadcrumb 前缀相同）的
+        兄弟条目，不足时再按 breadcrumb / page 顺序补同指南的其他条目。
+
+        返回项形状与检索结果一致：{item_id, content} + _medical_metadata(source)。
+        """
+        if not doc_id or max_n <= 0:
+            return []
+
+        exclude = [x for x in (exclude_ids or []) if x]
+        must_not = [{"ids": {"values": exclude}}] if exclude else []
+        body = {
+            "query": {
+                "bool": {
+                    "filter": [
+                        {"term": {"doc_id": doc_id}},
+                        {"term": {"data_type": "rec"}},
+                    ],
+                    "must_not": must_not,
+                }
+            },
+            # 多取候选：先筛「同节」，不足再补齐，故候选需大于最终条数
+            "size": max(max_n * 4, 20),
+        }
+
+        try:
+            response = self.client.search(index=settings.es_index_name, body=body)
+        except Exception:
+            return []
+
+        same_section: List[Dict] = []
+        others: List[Dict] = []
+        for hit in response.get("hits", {}).get("hits", []):
+            source = hit.get("_source", {})
+            item = {"item_id": hit.get("_id"), "content": source.get("content", "")}
+            item.update(_medical_metadata(source))
+            breadcrumb = source.get("breadcrumb") or ""
+            if breadcrumb_prefix and breadcrumb.startswith(breadcrumb_prefix):
+                same_section.append(item)
+            else:
+                others.append(item)
+
+        order_key = lambda d: (d.get("breadcrumb") or "", d.get("page") or 0)
+        same_section.sort(key=order_key)
+        others.sort(key=order_key)
+        return (same_section + others)[:max_n]
+
     def query_with_filters(self, n_results: int = 10, where: Optional[Dict] = None) -> Dict:
         """仅按筛选条件检索，不进行语义搜索"""
         results = {"ids": [], "documents": [], "metadatas": [], "distances": []}

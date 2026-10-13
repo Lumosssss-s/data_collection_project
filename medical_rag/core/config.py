@@ -102,13 +102,13 @@ class Settings(BaseSettings):
     # 事件循环与轻量接口不受影响。
     reranker_max_concurrency: int = 2
 
-    # 引用链多跳（组件D）：把已召回条款在同法规内引用到的条款一并补入候选/上下文。
-    # 解析走正文正则（同法规内「第X條」的编号是局部的，无需解析法规名），
-    # 不发起 LLM 调用，单次扩展只增加 1 次 ES msearch。
+    # 上下文扩展：主检索（BE-15）把命中条目的「同指南相邻条目」（同 doc_id、同节优先）
+    # 补入结果尾部；问答（qa_service，BE-17 待医疗化）沿用同族开关做条款引用扩展。
+    # 扩展不发起 LLM 调用，单次检索只增加 1 次 ES 查询。
     reference_expand_enabled: bool = True
-    # 只对排名前 N 条结果解析引用，控制 ES 往返与扩展规模
+    # 只对排名前 N 条结果做扩展，控制 ES 往返与扩展规模
     reference_expand_sources: int = 3
-    # 单次检索最多补入的引用条款数
+    # 单次检索最多补入的上下文条目数
     reference_expand_max: int = 5
     # 引用条款进入 QA prompt 时的正文长度上限。
     # 定义类条款（如香港《私隐条例》第 2 条）正文可达上万字符，
