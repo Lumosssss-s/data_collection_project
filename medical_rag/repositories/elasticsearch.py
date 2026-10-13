@@ -234,6 +234,37 @@ def _term_clause(field: str, value: Any) -> Dict[str, Any]:
     return term
 
 
+# 主索引 structured 字段白名单（C2 §3.3 mapping ∩ 主方案 §5.7.2）。
+# 落库时按此白名单从 metadata 透传，避免写入法规遗留字段或未声明字段：
+#   通用层：data_type/review_status/updated_at
+#   DOC 层：doc_id/doc_type/issuer/publish_date/cancer_types/license_note/file_path/doc_hash
+#   REC 层：rec_id/cancer_type/breadcrumb/scenario/stage/stage_detail/biomarker/
+#           population/verbatim/evidence_level/evidence_level_original/rec_strength/refs/page
+#   DRUG 层：drug_id/generic_name/brand_names/atc_code/approval_no/indications/dosage/
+#           contraindications/adverse_reactions/adverse_reaction_terms/interactions
+#   TERM 层：term_id/canonical/category/synonyms/icd10/icd_o3/atc/pinyin/en_name/mapping_status
+# 通用字段（content/embedding/title/chunk_index/topics_details/taxonomy_version）
+# 由 add_documents 单独处理，不在此列。
+_MEDICAL_DOC_FIELDS: Tuple[str, ...] = (
+    # 通用
+    "data_type", "review_status", "updated_at",
+    # DOC
+    "doc_id", "doc_type", "issuer", "publish_date", "cancer_types",
+    "license_note", "file_path", "doc_hash",
+    # REC
+    "rec_id", "cancer_type", "breadcrumb", "scenario", "stage", "stage_detail",
+    "biomarker", "population", "verbatim", "evidence_level",
+    "evidence_level_original", "rec_strength", "refs", "page",
+    # DRUG
+    "drug_id", "generic_name", "brand_names", "atc_code", "approval_no",
+    "indications", "dosage", "contraindications", "adverse_reactions",
+    "adverse_reaction_terms", "interactions",
+    # TERM
+    "term_id", "canonical", "category", "synonyms", "icd10", "icd_o3",
+    "atc", "pinyin", "en_name", "mapping_status",
+)
+
+
 # ====================================================================
 #  同法规条款引用解析（组件D：引用链多跳）
 #  ----------------------------------------------------------------
@@ -658,58 +689,22 @@ class ElasticsearchRepository:
             )
         return embeddings.tolist()
     
-    def _extract_topic_ids(self, raw_topics: Any) -> List[str]:
-        """将 metadata 中的 topics（对象数组或字符串数组）统一转换为字符串数组。"""
-        if not isinstance(raw_topics, list):
-            return []
-        result = []
-        for t in raw_topics:
-            if isinstance(t, dict):
-                tid = t.get("id") or t.get("topic_id") or t.get("label_en")
-                if tid:
-                    result.append(str(tid))
-            elif isinstance(t, str) and t:
-                result.append(t)
-        return result
-
     def _normalize_topic_fields(self, content: str, metadata: Dict) -> Dict:
-        """
-        统一生成主题字段。
-        优先使用 metadata 中已有的 topics（如果有效），否则使用分类器自动标注。
-        """
-        # 清理 metadata 中的主题相关字段，避免与顶层字段重复/冲突
-        clean_metadata = {k: v for k, v in metadata.items()
-                          if k not in ('topic', 'topics', 'topic_labels', 'topics_details', 'taxonomy_version',
-                                       'passing_date', 'effective_date', 'publication_date')}
+        """生成主题字段（医疗）。
 
-        # 尝试从 metadata 提取已有的 topic id
-        existing_ids = self._extract_topic_ids(metadata.get("topics"))
+        优先复用 metadata 中已有的 topics_details（由上游/分类器产出的嵌套结构），
+        否则用分类器自动标注。topics_details 为 C2 §3.3 的 nested 结构
+        （id/label_zh/score/matched_keywords），此处不再做 id→label 的再映射。
+        """
         existing_details = metadata.get("topics_details")
-
-        if existing_ids:
-            # 使用已有 topic id，转换为 topics_details 统一格式
-            details = []
-            for tid in existing_ids:
-                label = _to_label_zh(tid)
-                detail = {"id": tid, "label_zh": label, "score": 0.0, "matched_keywords": []}
-                # 如果已有 details，尝试补充 score 和 matched_keywords
-                if isinstance(existing_details, list):
-                    for d in existing_details:
-                        if isinstance(d, dict) and (d.get("id") == tid or d.get("topic_id") == tid):
-                            detail["score"] = d.get("score", 0.0)
-                            detail["matched_keywords"] = d.get("matched_keywords", [])
-                            break
-                details.append(detail)
+        if existing_details:
             return {
-                "metadata": clean_metadata,
-                "topics_details": details,
+                "topics_details": existing_details,
                 "taxonomy_version": metadata.get("taxonomy_version", self.classifier.taxonomy_version),
             }
 
-        # 否则自动标注
         auto = self.classifier.classify_document(content)
         return {
-            "metadata": clean_metadata,
             "topics_details": auto["topics_details"],
             "taxonomy_version": auto["taxonomy_version"],
         }
@@ -725,19 +720,17 @@ class ElasticsearchRepository:
             doc = {
                 "content": content,
                 "embedding": embedding,
-                "metadata": topic_fields["metadata"],
-                "law_id": metadata.get("law_id", ""),
-                "jurisdiction": metadata.get("jurisdiction", ""),
                 "title": metadata.get("title", ""),
-                "article_number": metadata.get("article_number", "") or "",
                 "chunk_index": metadata.get("chunk_index", 0),
-                "passing_date": metadata.get("passing_date", "") or None,
-                "effective_date": metadata.get("effective_date", "") or None,
-                "publication_date": metadata.get("publication_date", "") or None,
                 # 主题字段：仅 topics_details（nested）+ taxonomy_version 入 mapping（C2 §3.3）
                 "topics_details": topic_fields["topics_details"],
                 "taxonomy_version": topic_fields["taxonomy_version"],
             }
+            # 结构化字段按 §5.7.2 白名单透传（C2 §3.3：metadata 塞杂物模式废止，
+            # 法规遗留字段 law_id/jurisdiction/article_number/passing_date 等不再落库）
+            for field in _MEDICAL_DOC_FIELDS:
+                if metadata.get(field) is not None:
+                    doc[field] = metadata[field]
             operations.append(doc)
 
         response = self.client.bulk(body=operations, refresh=True)
@@ -1616,6 +1609,19 @@ class ElasticsearchRepository:
 
         response = self.client.delete_by_query(index=settings.es_index_name, body=query, refresh=True)
         return response.get("deleted", 0)
+
+    def exists_item(self, item_id: str) -> bool:
+        """按 _id 判定条目是否已入库。
+
+        医疗主索引以各类 item id（doc_id / rec_id / drug_id / term_id）作为 ES _id，
+        故「是否存在」等价于 _id 存在性，无需依赖任何类型专属字段。
+        """
+        if not item_id:
+            return False
+        try:
+            return bool(self.client.exists(index=settings.es_index_name, id=item_id))
+        except Exception:
+            return False
 
     def exists_law_id(self, law_id: str) -> bool:
         """检查数据库中是否已存在指定law_id的文档"""

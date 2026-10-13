@@ -6,6 +6,8 @@ from typing import Dict, List, Optional
 class Settings(BaseSettings):
     # 数据目录
     data_dir: str = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "raw")
+    # 清洗后数据目录（G3：14 固定类型目录，C3 §5 权威表）；入库脚本读取此处
+    clean_data_dir: str = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "clean")
     
     # Elasticsearch 配置
     es_hosts: List[str] = ["http://localhost:9200"]
