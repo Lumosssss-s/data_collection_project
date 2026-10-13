@@ -440,7 +440,8 @@ class LawManagementService:
         def _generate_abstract_async():
             try:
                 abstract_service = AbstractService()
-                abstract_service.generate_for_law(law_id, force=force)
+                # 方法名随 BE-38 由 generate_for_law 更名（本文件整体医疗化归 BE-25）
+                abstract_service.generate_for_doc(law_id, force=force)
             except Exception as e:
                 print(f"[LawManagementService] 后台生成摘要异常: {e}")
         
