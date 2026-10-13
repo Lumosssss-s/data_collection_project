@@ -18,7 +18,7 @@
     法条场景返回错误答案的代价远高于省一次检索，故语义命中整体移除。
     附带收益：省去每次请求额外一次查询编码（几十毫秒）。
 
-失效：以 law_catalog.json 的 mtime 作为数据版本，版本变化时整体清空。
+失效：以 doc_catalog.json 的 mtime 作为数据版本，版本变化时整体清空。
 线程安全：路由已由线程池执行，多个请求会并发读写，故所有操作加锁。
 """
 import copy
@@ -49,7 +49,7 @@ class SearchResultCache:
         self._max_entries = max(1, int(max_entries))
         self._catalog_path = catalog_path or os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            "data", "law_catalog.json",
+            "data", "doc_catalog.json",
         )
         self._version: Optional[float] = None
         self._hits = 0

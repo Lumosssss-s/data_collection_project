@@ -133,7 +133,7 @@ class Settings(BaseSettings):
 
     # 检索结果缓存：精排是单次检索的耗时主体（约 93%），而前端刷新页面/切换标签后会
     # 按设计重新发起同一查询，缓存命中后整条链路（含精排）直接跳过。
-    # 失效以 law_catalog.json 的 mtime 作为数据版本，版本变化时整体清空。
+    # 失效以 doc_catalog.json 的 mtime 作为数据版本，版本变化时整体清空。
     # 只做精确命中（含繁简归一）：语义命中经实测不可行，依据见 utils/search_cache.py 模块注释。
     search_cache_enabled: bool = True
     # 条数上限。单条结果约 50 项、每项正文千字量级，500 条在百 MB 以内

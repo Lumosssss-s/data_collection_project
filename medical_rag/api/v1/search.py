@@ -5,14 +5,14 @@ from services.retriever_service import RetrieverService
 from services.similar_law_service import SimilarLawService
 from services.summary_service import SummaryService
 from repositories.elasticsearch import ElasticsearchRepository
-from utils.law_catalog import LawCatalog
+from utils.doc_catalog import DocCatalog
 
 router = APIRouter(prefix="/search", tags=["搜索"])
 retriever = RetrieverService()
 repo = ElasticsearchRepository()
 similar_service = SimilarLawService()
 summary_service = SummaryService()
-catalog = LawCatalog()
+catalog = DocCatalog()
 
 
 @router.get("")
@@ -74,7 +74,7 @@ def get_laws(
 ):
     """获取所有法规列表
 
-    以 LawCatalog (data/law_catalog.json) 为权威数据源，保证返回所有已入库的法规元信息。
+    以 DocCatalog (data/doc_catalog.json) 为权威数据源，保证返回所有已入库的法规元信息。
     仅当 ES 中存在对应索引数据时，附加实时 chunk_count/article_count 统计。
     """
     # 1) 从 catalog 获取所有非删除状态的法规

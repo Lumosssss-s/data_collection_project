@@ -8,7 +8,7 @@ from typing import Iterator, Tuple, List, Dict
 from core.config import settings
 from utils.chunker import chunk_text, chunk_from_structure
 from repositories.elasticsearch import ElasticsearchRepository, _to_label_zh
-from utils.law_catalog import LawCatalog
+from utils.doc_catalog import DocCatalog
 from utils.topic_classifier import TopicClassifier
 from services.abstract_service import AbstractService
 
@@ -207,7 +207,7 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
     print("开始加载数据...")
 
     repo = ElasticsearchRepository()
-    catalog = LawCatalog()
+    catalog = DocCatalog()
 
     # 清空现有索引
     if clear_index:
@@ -215,14 +215,14 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
         repo.clear()
         
         # 同时重建空的 catalog（保留结构）
-        print("重建 law_catalog.json...")
+        print("重建 doc_catalog.json...")
         initial_data = {
             "version": "1.0",
             "last_updated": "",
             "total_laws": 0,
             "laws": []
         }
-        from utils.law_catalog import json as json_module
+        from utils.doc_catalog import json as json_module
         from datetime import datetime as dt
         initial_data["last_updated"] = dt.now().strftime("%Y-%m-%dT%H:%M:%S")
         with open(catalog.catalog_path, "w", encoding="utf-8") as f:
@@ -284,8 +284,8 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
         repo.add_documents(documents_batch, metadatas_batch, ids_batch)
         total_chunks += len(documents_batch)
 
-    # 更新 law_catalog.json
-    print("\n📋 更新法律目录 (law_catalog.json)...")
+    # 更新 doc_catalog.json
+    print("\n📋 更新法律目录 (doc_catalog.json)...")
     catalog_updated_count = 0
     for law_id, chunks_data in law_chunks_map.items():
         try:

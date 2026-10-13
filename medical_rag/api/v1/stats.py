@@ -15,12 +15,12 @@ import json
 
 from models.schemas import APIResponse
 from repositories.elasticsearch import ElasticsearchRepository, _to_label_zh, _jurisdiction_to_zh
-from utils.law_catalog import LawCatalog
+from utils.doc_catalog import DocCatalog
 
 router = APIRouter(prefix="/stats", tags=["数据统计"])
 
 repo = ElasticsearchRepository()
-catalog = LawCatalog()
+catalog = DocCatalog()
 
 
 # ==================== 数据获取辅助函数（不包含路由参数） ====================

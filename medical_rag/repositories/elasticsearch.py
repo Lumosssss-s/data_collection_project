@@ -1105,7 +1105,7 @@ class ElasticsearchRepository:
     # ================================================================
     #  法规时效过滤（组件C）
     #  ------------------------------------------------------------
-    #  law_catalog.json 的 status 标记法规时效。检索层默认剔除已废止/已删除的
+    #  doc_catalog.json 的 status 标记法规时效。检索层默认剔除已废止/已删除的
     #  法规，否则失效条款仍会被检索命中并被 LLM 当作现行法引用 —— 这在法律
     #  场景下是致命错误。
     #  实现上不改 ES 文档（避免重新入库）：状态只影响检索过滤条件，
@@ -1126,7 +1126,7 @@ class ElasticsearchRepository:
         import os
         catalog_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            "data", "law_catalog.json",
+            "data", "doc_catalog.json",
         )
         try:
             mtime = os.path.getmtime(catalog_path)

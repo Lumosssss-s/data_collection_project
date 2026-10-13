@@ -77,7 +77,7 @@ services:
       # 挂载医疗数据
       # data/raw 必须可写：管理端新增/修改/删除文档会写入该目录
       - ./medical_rag/data/raw:/app/data/raw:rw
-      - ./medical_rag/data/law_catalog.json:/app/data/law_catalog.json
+      - ./medical_rag/data/doc_catalog.json:/app/data/doc_catalog.json
       - ./medical_rag/data/taxonomy_merged.json:/app/data/taxonomy_merged.json:ro
     # 就绪探针：打 /health/ready（模型加载完成后才 200，预热期间 503）。
     # 不用 /health：那个只要进程活着就返回 200，无法反映"能不能高效服务"。

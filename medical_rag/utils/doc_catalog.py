@@ -1,10 +1,13 @@
 """
-法律目录管理模块 (law_catalog.json)
+文档目录管理模块 (doc_catalog.json)
 
 功能：
-- 维护法律级别的元信息索引文件
-- 支持新增、更新、查询法律目录记录
+- 维护文档级别的元信息索引文件（指南 / 规范 / 共识）
+- 支持新增、更新、查询文档目录记录
 - 与 ES 数据保持同步
+
+注：本文件当前记录字段仍为法规口径（law_id / jurisdiction 等）。
+BE-33 步骤 B 将切换为 C2 DOC 域口径（doc_id / doc_type / issuer / cancer_types 等）。
 
 数据结构：
 {
@@ -38,21 +41,21 @@ from datetime import datetime
 from typing import List, Dict, Optional, Any
 
 
-class LawCatalog:
-    """法律目录管理器"""
+class DocCatalog:
+    """文档目录管理器"""
 
     def __init__(self, catalog_path: str = None):
         """
         初始化目录管理器
 
         参数:
-            catalog_path: catalog 文件路径，默认为 data/law_catalog.json
+            catalog_path: catalog 文件路径，默认为 data/doc_catalog.json
         """
         if catalog_path:
             self.catalog_path = Path(catalog_path)
         else:
             # 默认路径：与 data 目录同级
-            self.catalog_path = Path(__file__).parent.parent / "data" / "law_catalog.json"
+            self.catalog_path = Path(__file__).parent.parent / "data" / "doc_catalog.json"
 
         self._ensure_catalog_exists()
 
@@ -75,7 +78,7 @@ class LawCatalog:
             with open(self.catalog_path, "r", encoding="utf-8") as f:
                 return json.load(f)
         except Exception as e:
-            print(f"⚠️  加载 law_catalog.json 失败: {e}")
+            print(f"⚠️  加载 doc_catalog.json 失败: {e}")
             return {"version": "1.0", "last_updated": "", "total_laws": 0, "laws": []}
 
     def save(self, data: Dict):
@@ -332,7 +335,7 @@ class LawCatalog:
         返回:
             重建后的统计数据
         """
-        print("🔄 开始从 ES 重建 law_catalog.json...")
+        print("🔄 开始从 ES 重建 doc_catalog.json...")
         
         all_laws = es_repo.get_all_laws()
         catalog = {"version": "1.0", "last_updated": "", "total_laws": 0, "laws": []}
@@ -375,9 +378,9 @@ class LawCatalog:
 # 全局单例实例
 _catalog_instance = None
 
-def get_catalog() -> LawCatalog:
+def get_catalog() -> DocCatalog:
     """获取全局 catalog 实例"""
     global _catalog_instance
     if _catalog_instance is None:
-        _catalog_instance = LawCatalog()
+        _catalog_instance = DocCatalog()
     return _catalog_instance
