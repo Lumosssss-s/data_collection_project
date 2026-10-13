@@ -5,7 +5,7 @@ FROM elasticsearch:8.11.0
 #   1. 构建不再依赖外网，避免网络波动导致构建失败；
 #   2. 插件固化进镜像层，容器重建后不会丢失。
 #      （此前插件是通过 docker exec 手工装进容器可写层的，一旦重建 ES 容器，
-#         legal_documents 索引所依赖的 ik_max_word 分析器缺失，会导致索引无法打开。）
+#         medical_knowledge 索引所依赖的 ik_max_word 分析器缺失，会导致索引无法打开。）
 # 注意：官方镜像以非 root 的 elasticsearch 用户运行，COPY 的文件默认属 root，
 # 在带 sticky 位的 /tmp 下无法删除，故此处显式 chown。
 COPY --chown=elasticsearch:elasticsearch elasticsearch-analysis-ik-8.11.0.zip /tmp/
