@@ -545,13 +545,13 @@ class RetrieverService:
             where_filter["jurisdiction"] = detected_jurisdiction
 
         # 主题筛选：支持多选（OR 关系：命中任一主题即返回）
-        # 前端传中文标签（如"金融监管"），直接用 topic_labels 字段筛选
+        # 前端传中文标签（如"肺癌"），按 nested 字段 topics_details.label_zh 筛选
         active_topics = topics or ([topic] if topic else None)
         if active_topics and len(active_topics) > 0:
             if len(active_topics) == 1:
-                where_filter["topic_labels"] = active_topics[0]
+                where_filter["topics_details.label_zh"] = active_topics[0]
             else:
-                where_filter["topic_labels"] = active_topics
+                where_filter["topics_details.label_zh"] = active_topics
 
         if query.strip():
             enhanced_query = self._enhance_query(query)
@@ -581,9 +581,8 @@ class RetrieverService:
                     'law_id': metadata.get('law_id', '') or '',
                     'source_file': metadata.get('source_file', '') or '',
                     'chunk_index': metadata.get('chunk_index', 0) or 0,
-                    # 返回主题信息供前端展示
-                    'topics': metadata.get('topics', []),
-                    'topic_labels': metadata.get('topic_labels', [])
+                    # 返回主题信息供前端展示（C2：topics_details）
+                    'topics_details': metadata.get('topics_details', [])
                 }
                 formatted_results.append(result)
 
@@ -789,9 +788,9 @@ class RetrieverService:
         active_topics = topics or ([topic] if topic else None)
         if active_topics and len(active_topics) > 0:
             if len(active_topics) == 1:
-                where_filter["topic_labels"] = active_topics[0]
+                where_filter["topics_details.label_zh"] = active_topics[0]
             else:
-                where_filter["topic_labels"] = active_topics
+                where_filter["topics_details.label_zh"] = active_topics
 
         if search_query.strip():
             results = self.repo.hybrid_search(
@@ -830,8 +829,7 @@ class RetrieverService:
                     'law_id': metadata.get('law_id', '') or '',
                     'source_file': metadata.get('source_file', '') or '',
                     'chunk_index': metadata.get('chunk_index', 0) or 0,
-                    'topics': metadata.get('topics', []),
-                    'topic_labels': metadata.get('topic_labels', [])
+                    'topics_details': metadata.get('topics_details', [])
                 }
                 formatted_results.append(result)
 

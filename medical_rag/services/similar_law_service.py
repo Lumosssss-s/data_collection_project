@@ -25,8 +25,10 @@ class SimilarLawService:
         """
         topic_counts: Dict[str, int] = {}
         for chunk in chunks:
-            for topic in chunk.get("topic_labels", []):
-                topic_counts[topic] = topic_counts.get(topic, 0) + 1
+            for detail in chunk.get("topics_details", []):
+                topic = detail.get("label_zh") if isinstance(detail, dict) else detail
+                if topic:
+                    topic_counts[topic] = topic_counts.get(topic, 0) + 1
         return topic_counts
 
     def _compute_topic_overlap(self, query_topics: Dict[str, int], candidate_topics: Dict[str, int]) -> float:

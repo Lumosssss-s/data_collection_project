@@ -161,16 +161,10 @@ def _jurisdiction_to_zh(jur: str) -> str:
     lower_jur = jur.lower().strip()
     return _JURISDICTION_ZH_MAP.get(lower_jur, jur)
 _TOPIC_LABEL_ZH_CACHE: Optional[Dict[str, str]] = None
-_TOPIC_FALLBACK_ZH: Dict[str, str] = {
-    # 美国词表中未在 taxonomy_merged.json 中定义的主题
-    "public_administration": "公共治理",
-    "government_contracting": "政府采购",
-    "intellectual_property_licensing": "知识产权",
-    "information_classification": "信息分类",
-    "administrative_procedures": "行政程序",
-    "records_management": "档案管理",
-    "electronic_transactions": "电子交易与电子政务",
-}
+# 主题标签兜底映射：BE-35 医疗化后 taxonomy_merged.json（v3.0）已覆盖全部
+# 5 癌种 + 3 文档类型 + 15 场景，无需额外硬编码兜底；保留空字典作为
+# _to_label_zh / _label_zh_to_topic_id 的回落占位（找不到时返回原值）。
+_TOPIC_FALLBACK_ZH: Dict[str, str] = {}
 
 
 def _load_topic_label_zh_mapping() -> Dict[str, str]:
@@ -218,6 +212,26 @@ def _label_zh_to_topic_id(label_zh: str) -> str:
         if label == label_zh:
             return tid
     return label_zh
+
+
+# 嵌套字段映射：字段名 → nested path（C2 §3.3：topics_details 为 nested 类型）
+_NESTED_FIELD_PATHS: Dict[str, str] = {
+    "topics_details.label_zh": "topics_details",
+    "topics_details.id": "topics_details",
+}
+
+
+def _term_clause(field: str, value: Any) -> Dict[str, Any]:
+    """构造 term 过滤条件；嵌套字段自动包裹 nested 查询。
+
+    主题字段在 C2 中为 nested（topics_details），直接 ``{"term": {"topics_details.label_zh": ...}}``
+    无法命中，必须包裹为 ``{"nested": {"path": ..., "query": {"term": {...}}}}``。
+    """
+    term = {"term": {field: value}}
+    path = _NESTED_FIELD_PATHS.get(field)
+    if path:
+        return {"nested": {"path": path, "query": term}}
+    return term
 
 
 # ====================================================================
@@ -673,13 +687,10 @@ class ElasticsearchRepository:
         existing_details = metadata.get("topics_details")
 
         if existing_ids:
-            # 使用已有 topics，转换为统一格式
-            topic_ids = existing_ids
-            topic_labels = []
+            # 使用已有 topic id，转换为 topics_details 统一格式
             details = []
-            for tid in topic_ids:
+            for tid in existing_ids:
                 label = _to_label_zh(tid)
-                topic_labels.append(label)
                 detail = {"id": tid, "label_zh": label, "score": 0.0, "matched_keywords": []}
                 # 如果已有 details，尝试补充 score 和 matched_keywords
                 if isinstance(existing_details, list):
@@ -691,8 +702,6 @@ class ElasticsearchRepository:
                 details.append(detail)
             return {
                 "metadata": clean_metadata,
-                "topics": topic_ids,
-                "topic_labels": topic_labels,
                 "topics_details": details,
                 "taxonomy_version": metadata.get("taxonomy_version", self.classifier.taxonomy_version),
             }
@@ -701,8 +710,6 @@ class ElasticsearchRepository:
         auto = self.classifier.classify_document(content)
         return {
             "metadata": clean_metadata,
-            "topics": auto["topics"],
-            "topic_labels": auto["topic_labels"],
             "topics_details": auto["topics_details"],
             "taxonomy_version": auto["taxonomy_version"],
         }
@@ -727,10 +734,7 @@ class ElasticsearchRepository:
                 "passing_date": metadata.get("passing_date", "") or None,
                 "effective_date": metadata.get("effective_date", "") or None,
                 "publication_date": metadata.get("publication_date", "") or None,
-                # 主题字段提升到顶层，供筛选/聚合/统计使用
-                "topic": metadata.get("topic", ""),
-                "topics": topic_fields["topics"],
-                "topic_labels": topic_fields["topic_labels"],
+                # 主题字段：仅 topics_details（nested）+ taxonomy_version 入 mapping（C2 §3.3）
                 "topics_details": topic_fields["topics_details"],
                 "taxonomy_version": topic_fields["taxonomy_version"],
             }
@@ -796,14 +800,14 @@ class ElasticsearchRepository:
                     if isinstance(v, list) and len(v) > 1:
                         filter_clauses.append({
                             "bool": {
-                                "should": [{"term": {k: item}} for item in v],
+                                "should": [(_term_clause(k, item)) for item in v],
                                 "minimum_should_match": 1
                             }
                         })
                     else:
                         # 单值或单元素列表
                         actual_value = v[0] if isinstance(v, list) else v
-                        filter_clauses.append({"term": {k: actual_value}})
+                        filter_clauses.append(_term_clause(k, actual_value))
 
                 # 将 filter 嵌入 KNN 内部，确保 AND 关系（同时满足向量相似 + 过滤条件）
                 search_body = {
@@ -832,10 +836,8 @@ class ElasticsearchRepository:
                 metadata["jurisdiction"] = source.get("jurisdiction", "")
                 metadata["article_number"] = source.get("article_number", "")
                 metadata["chunk_index"] = source.get("chunk_index", 0)
-                # 附加主题信息
-                metadata["topic"] = source.get("topic", "")
-                metadata["topics"] = source.get("topics", [])
-                metadata["topic_labels"] = source.get("topic_labels", [])
+                # 附加主题信息（C2 §3.3：仅 topics_details）
+                metadata["topics_details"] = source.get("topics_details", [])
                 query_metas.append(metadata)
                 score = hit.get("_score", 0)
                 query_distances.append(1 - score if score > 0 else 1.0)
@@ -934,9 +936,7 @@ class ElasticsearchRepository:
             metadata["jurisdiction"] = source.get("jurisdiction", "")
             metadata["article_number"] = source.get("article_number", "")
             metadata["chunk_index"] = source.get("chunk_index", 0)
-            metadata["topic"] = source.get("topic", "")
-            metadata["topics"] = source.get("topics", [])
-            metadata["topic_labels"] = source.get("topic_labels", [])
+            metadata["topics_details"] = source.get("topics_details", [])
             query_metas.append(metadata)
 
             rrf_score = item["rrf_score"]
@@ -972,13 +972,13 @@ class ElasticsearchRepository:
                 if isinstance(v, list) and len(v) > 1:
                     filter_clauses.append({
                         "bool": {
-                            "should": [{"term": {k: item}} for item in v],
+                            "should": [(_term_clause(k, item)) for item in v],
                             "minimum_should_match": 1
                         }
                     })
                 else:
                     actual_value = v[0] if isinstance(v, list) else v
-                    filter_clauses.append({"term": {k: actual_value}})
+                    filter_clauses.append(_term_clause(k, actual_value))
 
         # 时效过滤：剔除已废止/已删除法规（组件C）
         excluded = self._excluded_law_filter()
@@ -1027,13 +1027,13 @@ class ElasticsearchRepository:
                 if isinstance(v, list) and len(v) > 1:
                     filter_clauses.append({
                         "bool": {
-                            "should": [{"term": {k: item}} for item in v],
+                            "should": [(_term_clause(k, item)) for item in v],
                             "minimum_should_match": 1
                         }
                     })
                 else:
                     actual_value = v[0] if isinstance(v, list) else v
-                    filter_clauses.append({"term": {k: actual_value}})
+                    filter_clauses.append(_term_clause(k, actual_value))
 
         # 时效过滤：剔除已废止/已删除法规（组件C）
         excluded = self._excluded_law_filter()
@@ -1239,8 +1239,7 @@ class ElasticsearchRepository:
             metadata["jurisdiction"] = source.get("jurisdiction", "")
             metadata["article_number"] = source.get("article_number", "")
             metadata["chunk_index"] = source.get("chunk_index", 0)
-            metadata["topics"] = source.get("topics", [])
-            metadata["topic_labels"] = source.get("topic_labels", [])
+            metadata["topics_details"] = source.get("topics_details", [])
             return {
                 "content": source.get("content", ""),
                 "title": metadata["title"],
@@ -1250,8 +1249,7 @@ class ElasticsearchRepository:
                 "law_id": metadata["law_id"],
                 "source_file": source.get("source_file", ""),
                 "chunk_index": metadata["chunk_index"],
-                "topics": metadata["topics"],
-                "topic_labels": metadata["topic_labels"],
+                "topics_details": metadata["topics_details"],
             }
         except Exception as e:
             return None
@@ -1373,7 +1371,7 @@ class ElasticsearchRepository:
                 "size": 1000,
                 "_source": ["content", "chunk_index", "title", "jurisdiction",
                             "law_id", "article_number", "source_file",
-                            "topics", "topic_labels"]
+                            "topics_details"]
             })
 
         try:
@@ -1400,8 +1398,7 @@ class ElasticsearchRepository:
                 "law_id": source.get("law_id", ""),
                 "source_file": source.get("source_file", ""),
                 "chunk_index": source.get("chunk_index", 0),
-                "topics": source.get("topics", []),
-                "topic_labels": source.get("topic_labels", []),
+                "topics_details": source.get("topics_details", []),
             }
         return result
 
@@ -1550,7 +1547,7 @@ class ElasticsearchRepository:
             must_clauses.append({"term": {"jurisdiction": jurisdiction}})
         if topics:
             for topic_label in [t.strip() for t in topics.split(",") if t.strip()]:
-                must_clauses.append({"term": {"topic_labels": topic_label}})
+                must_clauses.append(_term_clause("topics_details.label_zh", topic_label))
         
         if must_clauses:
             query["query"] = {"bool": {"must": must_clauses}}
@@ -1657,13 +1654,13 @@ class ElasticsearchRepository:
                     # 多选主题的 OR 逻辑
                     filter_clauses.append({
                         "bool": {
-                            "should": [{"term": {k: item}} for item in v],
+                            "should": [(_term_clause(k, item)) for item in v],
                             "minimum_should_match": 1
                         }
                     })
                 else:
                     actual_value = v[0] if isinstance(v, list) else v
-                    filter_clauses.append({"term": {k: actual_value}})
+                    filter_clauses.append(_term_clause(k, actual_value))
             search_body["query"] = {"bool": {"filter": filter_clauses}}
         else:
             search_body["query"] = {"match_all": {}}
@@ -1688,10 +1685,8 @@ class ElasticsearchRepository:
             metadata["jurisdiction"] = source.get("jurisdiction", "")
             metadata["article_number"] = source.get("article_number", "")
             metadata["chunk_index"] = source.get("chunk_index", 0)
-            # 附加主题信息
-            metadata["topic"] = source.get("topic", "")
-            metadata["topics"] = source.get("topics", [])
-            metadata["topic_labels"] = source.get("topic_labels", [])
+            # 附加主题信息（C2 §3.3：仅 topics_details）
+            metadata["topics_details"] = source.get("topics_details", [])
             query_metas.append(metadata)
             query_distances.append(0.0)
         
@@ -1878,13 +1873,13 @@ class ElasticsearchRepository:
     def get_law_chunk_vectors(self, law_id: str) -> List[Dict]:
         """
         获取指定法规所有 chunk 的向量及元数据（仅取必要字段，不返回 content）
-        返回格式：[{"embedding": [...], "law_id": ..., "title": ..., "jurisdiction": ..., "topic_labels": [...]}, ...]
+        返回格式：[{"embedding": [...], "law_id": ..., "title": ..., "jurisdiction": ..., "topics_details": [...]}, ...]
         """
         query = {
             "query": {"term": {"law_id": law_id}},
             "size": 1000,
             "sort": [{"chunk_index": {"order": "asc"}}],
-            "_source": ["embedding", "law_id", "title", "jurisdiction", "chunk_index", "topic_labels"]
+            "_source": ["embedding", "law_id", "title", "jurisdiction", "chunk_index", "topics_details"]
         }
 
         response = self.client.search(index=settings.es_index_name, body=query)
@@ -1902,7 +1897,7 @@ class ElasticsearchRepository:
                 "title": source.get("title", ""),
                 "jurisdiction": source.get("jurisdiction", ""),
                 "chunk_index": source.get("chunk_index", 0),
-                "topic_labels": source.get("topic_labels", []),
+                "topics_details": source.get("topics_details", []),
             })
 
         return results
