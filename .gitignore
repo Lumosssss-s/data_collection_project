@@ -9,6 +9,9 @@ build/
 # 生成的缓存数据（可重新生成）
 medical_rag/data/kg_cache/
 
+# 清洗后数据（G3 14 目录，数据交付件，体积大，不入库；由 ingest.py 只读消费）
+medical_rag/data/clean/
+
 # 生成的图表（可重新生成）
 medical_rag/eval_data/charts/
 

@@ -1,363 +1,329 @@
-import json
-import sys
+"""医疗知识库入库脚本 —— 容器内执行: python ingest.py [--rebuild] [--force] [--batch-size N]
+
+按 C2 §2 路由表 + C3 §5 目录/前缀/归宿权威表，把 data/clean/ 下 G3 固定目录的数据
+导入 ES：
+
+    guidelines/       DOC  -> medical_knowledge (data_type=doc，元数据)
+    recommendations/  REC  -> medical_knowledge (data_type=rec，检索主单元)
+    drug_labels/      DRUG -> medical_knowledge (data_type=drug)
+    terminology/      TERM -> medical_knowledge (data_type=term)
+    disease_profiles/ DIS  -> medical_disease_profiles（写入方法待建，本轮延后）
+    kg_triples/       KG   -> medical_kg_triples(+entities)（图谱链路，见 BE-20，本轮延后）
+    其余 8 目录为文件态（C3 §5），不入 ES。
+
+要点（C3 I-01）：ES _id = 业务 ID（doc_id / rec_id / drug_id / term_id），幂等重灌；
+--rebuild 清空重建、默认增量 upsert；只认 G2 格式（.json 顶层数组 / .jsonl 每行一条），
+不做旧格式兼容（原「新旧格式兼容 / law_id 推断」逻辑已整体移除）。
+"""
 import argparse
-import time
+import json
 from pathlib import Path
-from typing import Iterator, Tuple, List, Dict
+from typing import Dict, Iterator, List, Tuple
 
 from core.config import settings
-from utils.chunker import chunk_text, chunk_from_structure
-from repositories.elasticsearch import ElasticsearchRepository, _to_label_zh
+from repositories.elasticsearch import ElasticsearchRepository
 from utils.doc_catalog import DocCatalog
 from utils.topic_classifier import TopicClassifier
-from services.abstract_service import AbstractService
 
 
-def process_json_file(json_file: Path, repo, skip_existing: bool = True) -> Iterator[Tuple[str, Dict, str]]:
+# 目录 -> data_type（C3 §5 / C2 §2 路由表）
+_ES_ROUTED_DIRS: Dict[str, str] = {
+    "guidelines": "doc",
+    "recommendations": "rec",
+    "drug_labels": "drug",
+    "terminology": "term",
+}
+
+# 各类型业务 ID 字段（= ES _id）与 G5 前缀（用于前缀一致性校验）
+_ID_FIELD: Dict[str, str] = {
+    "doc": "doc_id", "rec": "rec_id", "drug": "drug_id", "term": "term_id",
+}
+_ID_PREFIX: Dict[str, str] = {
+    "doc": "DOC-", "rec": "REC-", "drug": "DRUG-", "term": "TERM-",
+}
+
+# 已登记但本轮延后（有 ES 归宿，尚缺写入方法 / 链路）
+_DEFERRED_DIRS: Dict[str, str] = {
+    "disease_profiles": "medical_disease_profiles（疾病档案写入方法待建，延后）",
+    "kg_triples": "medical_kg_triples + medical_kg_entities（图谱抽取链路 BE-20，延后）",
+}
+
+# 文件态目录（C3 §5：不入 ES，仅供对应模块直读）
+_FILE_STATE_DIRS: Tuple[str, ...] = (
+    "triage_rules", "preconsult_slots", "followup_templates", "patient_messages",
+    "qc_rules", "eval_sets", "mock_cases", "ops_metrics",
+)
+
+
+def _join_nonempty(values) -> str:
+    """把标量 / 数组拼成一段文本，过滤空值。"""
+    parts: List[str] = []
+    for v in values:
+        if v is None:
+            continue
+        if isinstance(v, (list, tuple)):
+            parts.extend(str(x).strip() for x in v if x is not None and str(x).strip())
+        elif str(v).strip():
+            parts.append(str(v).strip())
+    return " ".join(parts).strip()
+
+
+def _extract_content(data_type: str, record: Dict) -> str:
+    """按类型抽取进入向量检索的正文。"""
+    if data_type == "rec":
+        # 推荐条目：检索主单元，正文即推荐结论原文
+        return _join_nonempty([record.get("recommendation_text")])
+    if data_type == "term":
+        # 术语：规范名 + 同义词，支撑「简称/别名」检索与实体归一
+        return _join_nonempty([record.get("canonical"), record.get("synonyms")])
+    if data_type == "drug":
+        # 说明书：通用名 + 适应证 + 禁忌（说明书内部分块待后续，本轮 1 条 = 1 单元）
+        return _join_nonempty([
+            record.get("generic_name"),
+            record.get("indications"),
+            record.get("contraindications"),
+        ])
+    # doc：文档级元数据记录，正文取指南名（若数据含摘要字段则优先）
+    return _join_nonempty([
+        record.get("summary"), record.get("abstract"), record.get("title"),
+    ])
+
+
+def _default_title(data_type: str, record: Dict) -> str:
+    """按类型给出展示用标题（各类型无统一 title 字段时回落到代表性字段）。"""
+    if data_type == "rec":
+        return record.get("breadcrumb", "") or record.get("doc_id", "") or ""
+    if data_type == "drug":
+        return record.get("generic_name", "") or ""
+    if data_type == "term":
+        return record.get("canonical", "") or ""
+    return record.get("title", "") or ""
+
+
+def _build_metadata(data_type: str, record: Dict) -> Dict:
+    """构造入库 metadata：整条记录 + data_type，并补齐 title。
+
+    结构化字段的白名单落库由 repositories.add_documents 统一裁剪（§5.7.2 ∩ C2 §3.3）。
     """
-    处理单个JSON文件，支持新旧两种格式
+    meta = dict(record)
+    meta["data_type"] = data_type
+    if not meta.get("title"):
+        meta["title"] = _default_title(data_type, record)
+    return meta
 
-    旧格式: 字典 {"law_id": ..., "structure": {...}, ...}
-    新格式: 数组 [{"doc_id": ..., "text_zh": ...}, ...] (cleaned文件)
+
+def _load_records(path: Path) -> List[Dict]:
+    """读取 G2 格式记录（.json 顶层数组 / .jsonl 每行一条）。
+
+    只认 G2，不做旧格式兼容：顶层非数组即视为不合格并跳过。
+    """
+    try:
+        if path.suffix == ".jsonl":
+            records: List[Dict] = []
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        records.append(json.loads(line))
+            return records
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if not isinstance(data, list):
+            print(f"⚠️  {path.name} 顶层非数组（不符 G2），跳过")
+            return []
+        return data
+    except Exception as e:
+        print(f"⚠️  {path.name} 解析失败: {e}")
+        return []
+
+
+def process_json_file(
+    json_file: Path, data_type: str, repo, skip_existing: bool = True
+) -> Iterator[Tuple[str, Dict, str]]:
+    """解析单个 JSON 文件，产出 (正文, metadata, 业务 ID) 三元组。
 
     参数:
-        skip_existing: 如果为True，当数据库中已有相同law_id时跳过
+        data_type: 由目录决定（guidelines->doc / recommendations->rec /
+                   drug_labels->drug / terminology->term）
+        skip_existing: True 时按业务 ID 跳过已存在记录（幂等重灌）
     """
-    with open(json_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    print(f"处理 {json_file.name}（data_type={data_type}）...")
+    records = _load_records(json_file)
+    if not records:
+        return
 
-    # 检测数据格式
-    is_list_format = isinstance(data, list)
+    id_field = _ID_FIELD[data_type]
+    expected_prefix = _ID_PREFIX[data_type]
 
-    if is_list_format:
-        # 新格式：数组（cleaned文件）
-        if not data or len(data) == 0:
-            print(f"⚠️  文件 {json_file.name} 为空数组，跳过")
-            return
-
-        # 从第一个元素提取公共元数据
-        first_item = data[0]
-        law_id = first_item.get('law_id', '')
-        title = first_item.get('law_name', '')
-        jurisdiction = first_item.get('jurisdiction', '')
-        passing_date = first_item.get('passing_date', '')
-        effective_date = first_item.get('effective_date', '')
-        publication_date = first_item.get('publication_date', '')
-
-        # 验证关键字段（从元素级别提取）
-        if not law_id or law_id == 'null':
-            # 尝试从doc_id推断（格式: MAC_LEI_XX_XXXX_ART_XXX 或 ART_XXX）
-            sample_doc_id = first_item.get('doc_id', '')
-            if sample_doc_id and '_' in sample_doc_id:
-                # 从 "MAC_LEI_14_2001_ART_001" 提取 "MAC_LEI_14_2001"
-                parts = sample_doc_id.split('_ART_')[0] if '_ART_' in sample_doc_id else sample_doc_id
-                if parts and not parts.startswith('ART'):
-                    law_id = parts
-                    print(f"ℹ️  文件 {json_file.name} law_id为空，从doc_id推断: {law_id}")
-                else:
-                    # 使用文件名作为law_id（去掉_cleaned后缀）
-                    law_id = json_file.stem.replace('_cleaned', '')
-                    print(f"ℹ️  文件 {json_file.name} 无法推断law_id，使用文件名: {law_id}")
-            else:
-                # 最后的备选方案
-                law_id = json_file.stem.replace('_cleaned', '')
-                print(f"ℹ️  文件 {json_file.name} law_id为空，使用文件名: {law_id}")
-
-        # jurisdiction 可选，如果缺失则使用目录名推断
-        if not jurisdiction:
-            # 尝试从父目录名推断法域
-            parent_dir = json_file.parent.name
-            jurisdiction = parent_dir
-            print(f"ℹ️  文件 {json_file.name} 缺少 jurisdiction，使用目录名: {jurisdiction}")
-
-        # 去重检查：如果数据库中已有该law_id，则跳过
-        if skip_existing and law_id and repo.exists_law_id(law_id):
-            existing_count = repo.get_law_chunk_count(law_id)
-            print(f"⏭️  跳过 {json_file.name} (law_id={law_id}) - 数据库中已存在 ({existing_count} 个文档块)")
-            return
-
-        print(f"✅ 处理新格式文件: {json_file.name}")
-        print(f"   法规ID: {law_id}, 标题: {title}, 条款数: {len(data)}")
-
-        # 使用新的处理函数
-        structure_chunks = chunk_from_structure(data)
-
-        if not structure_chunks:
-            print(f"⚠️  文件 {json_file.name} 未生成任何chunks")
-            return
-
-        for i, chunk in enumerate(structure_chunks):
-            doc_id = chunk.get('_meta', {}).get('doc_id', f"{law_id}_chunk_{i}")
-            article_num = chunk["article_number"] if chunk["article_number"] is not None else ""
-
-            # 提取 topics 信息
-            topics = chunk.get('topics', [])
-            topic_labels = chunk.get('topic_labels', [])
-            # 确保 topic_labels 全部为中文（将英文ID转换为中文）
-            topic_labels = [_to_label_zh(t) for t in topic_labels]
-            # topic 字段：用于 ES keyword 筛选（取第一个或合并）
-            primary_topic = topic_labels[0] if topic_labels else ''
-
-            metadata = {
-                "law_id": law_id,
-                "jurisdiction": jurisdiction,
-                "title": title,
-                "passing_date": passing_date or chunk.get('_meta', {}).get('passing_date', ''),
-                "effective_date": effective_date or chunk.get('_meta', {}).get('effective_date', ''),
-                "publication_date": publication_date or chunk.get('_meta', {}).get('publication_date', ''),
-                "source_file": str(json_file),
-                "chunk_index": i,
-                "article_number": article_num,
-                "part_title": chunk.get("part_title", ""),
-                # 额外保留cleaned数据的元数据
-                "article_title": chunk.get('_meta', {}).get('article_title', ''),
-                # 主题信息（支持筛选）
-                "topic": primary_topic,
-                "topics": topics,
-                "topic_labels": topic_labels
-            }
-            yield chunk["text"], metadata, doc_id
-
-    else:
-        # 旧格式：字典
-        law_id = data.get("law_id", "")
-        title = data.get("title_zh", "") or data.get("title_en", "") or data.get("title_pt", "")
-        full_text = data.get("text_zh", "") or data.get("text_pt", "") or data.get("text_en", "")
-
-        if not law_id:
-            print(f"⚠️  文件 {json_file.name} 缺少 law_id 字段，跳过")
-            return
-
-        # 去重检查：如果数据库中已有该law_id，则跳过
-        if skip_existing and repo.exists_law_id(law_id):
-            existing_count = repo.get_law_chunk_count(law_id)
-            print(f"⏭️  跳过 {json_file.name} (law_id={law_id}) - 数据库中已存在 ({existing_count} 个文档块)")
-            return
-
-        print(f"✅ 处理旧格式文件: {json_file.name}")
-
-        structure_chunks = chunk_from_structure(data)
-
-        if structure_chunks:
-            for i, chunk in enumerate(structure_chunks):
-                doc_id = f"{law_id}_chunk_{i}"
-                article_num = chunk["article_number"] if chunk["article_number"] is not None else ""
-                metadata = {
-                    "law_id": law_id,
-                    "jurisdiction": data.get("jurisdiction", ""),
-                    "title": title,
-                    "law_number": data.get("law_number", "") or "",
-                    "passing_date": data.get("passing_date", "") or "",
-                    "effective_date": data.get("effective_date", "") or "",
-                    "publication_date": data.get("publication_date", "") or "",
-                    "publisher": data.get("publisher", "") or "",
-                    "source_file": str(json_file),
-                    "chunk_index": i,
-                    "article_number": article_num,
-                    "part_title": chunk.get("part_title", "")
-                }
-                yield chunk["text"], metadata, doc_id
-        elif full_text:
-            for i, chunk in enumerate(chunk_text(full_text)):
-                doc_id = f"{law_id}_chunk_{i}"
-                metadata = {
-                    "law_id": law_id,
-                    "jurisdiction": data.get("jurisdiction", ""),
-                    "title": title,
-                    "law_number": data.get("law_number", "") or "",
-                    "passing_date": data.get("passing_date", "") or "",
-                    "effective_date": data.get("effective_date", "") or "",
-                    "publication_date": data.get("publication_date", "") or "",
-                    "publisher": data.get("publisher", "") or "",
-                    "source_file": str(json_file),
-                    "chunk_index": i
-                }
-                yield chunk, metadata, doc_id
-
-
-def load_json_files(data_dir_str: str, repo, skip_existing: bool = True) -> Iterator[Tuple[str, Dict, str]]:
-    data_dir = Path(data_dir_str)
-    json_files = []
-
-    for jurisdiction_dir in data_dir.iterdir():
-        if not jurisdiction_dir.is_dir():
+    for record in records:
+        if not isinstance(record, dict):
+            print(f"⚠️  {json_file.name} 含非对象记录，跳过")
             continue
-        if jurisdiction_dir.name in ["chroma_db", ".chroma", "__pycache__"]:
+
+        item_id = str(record.get(id_field, "") or "").strip()
+        if not item_id:
+            print(f"⚠️  {json_file.name} 记录缺少 {id_field}，跳过")
             continue
-        for json_file in jurisdiction_dir.glob("*.json"):
-            json_files.append(json_file)
+        if not item_id.startswith(expected_prefix):
+            print(f"⚠️  {item_id} 前缀与目录类型 {data_type}（期望 {expected_prefix}）不一致，仍入库")
 
-    print(f"找到 {len(json_files)} 个 JSON 文件待处理:")
-    for f in json_files:
-        print(f"   - {f.name}")
+        if skip_existing and repo.exists_item(item_id):
+            print(f"⏭️  跳过已存在: {item_id}")
+            continue
 
-    for json_file in json_files:
-        yield from process_json_file(json_file, repo, skip_existing)
+        content = _extract_content(data_type, record) or item_id
+        yield content, _build_metadata(data_type, record), item_id
+
+
+def load_json_files(
+    clean_dir: Path, repo, skip_existing: bool = True
+) -> Iterator[Tuple[str, Dict, str]]:
+    """遍历 data/clean/ 的 G3 固定目录，按路由表分流。"""
+    if not clean_dir.exists():
+        print(f"⚠️  清洗数据目录不存在: {clean_dir}")
+        return
+
+    for sub in sorted(clean_dir.iterdir()):
+        if not sub.is_dir():
+            continue
+        name = sub.name
+
+        if name in _FILE_STATE_DIRS:
+            print(f"⏭️  跳过文件态目录 {name}/（C3 §5：不入 ES）")
+            continue
+        if name in _DEFERRED_DIRS:
+            print(f"⏸️  延后目录 {name}/：{_DEFERRED_DIRS[name]}")
+            continue
+
+        data_type = _ES_ROUTED_DIRS.get(name)
+        if data_type is None:
+            print(f"⚠️  目录 {name}/ 不在 G3 14 目录内，跳过")
+            continue
+
+        for json_file in sorted(sub.glob("*.json")) + sorted(sub.glob("*.jsonl")):
+            yield from process_json_file(json_file, data_type, repo, skip_existing)
+
+
+def _print_type_counts(repo: ElasticsearchRepository):
+    """按 data_type 输出 ES 对账表（C3 I-01 ④）。"""
+    try:
+        resp = repo.client.search(
+            index=settings.es_index_name,
+            body={"size": 0, "aggs": {"by_type": {"terms": {"field": "data_type", "size": 20}}}},
+        )
+        buckets = resp["aggregations"]["by_type"]["buckets"]
+        print("按 data_type 对账:")
+        for b in buckets:
+            print(f"   • {b['key']}: {b['doc_count']}")
+        print(f"   索引总条数: {repo.count()}")
+    except Exception as e:
+        print(f"⚠️  统计失败: {e}")
 
 
 def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = False):
-    """
-    入库数据到Elasticsearch
+    """入库 data/clean/ 到 ES。
 
     参数:
-        batch_size: 批量处理大小
-        clear_index: 是否清空现有索引
-        force: 是否强制覆盖已有数据（忽略去重检查）
+        batch_size: 批量写入大小
+        clear_index: 清空主索引后重建（--rebuild）
+        force: 忽略幂等跳过，强制覆盖
     """
-    print("开始加载数据...")
+    print("开始加载医疗数据...")
 
     repo = ElasticsearchRepository()
     catalog = DocCatalog()
 
-    # 清空现有索引
     if clear_index:
-        print("清空现有索引...")
+        print("清空主索引并重建空 catalog...")
         repo.clear()
-        
-        # 同时重建空的 catalog（保留结构）
-        print("重建 doc_catalog.json...")
-        initial_data = {
-            "version": "1.0",
-            "last_updated": "",
-            "total_docs": 0,
-            "docs": []
-        }
-        from utils.doc_catalog import json as json_module
-        from datetime import datetime as dt
-        initial_data["last_updated"] = dt.now().strftime("%Y-%m-%dT%H:%M:%S")
-        with open(catalog.catalog_path, "w", encoding="utf-8") as f:
-            json_module.dump(initial_data, f, ensure_ascii=False, indent=2)
-        print("索引和 catalog 已清空")
+        catalog.save({"version": "1.0", "last_updated": "", "total_docs": 0, "docs": []})
+        print("索引与 catalog 已清空")
 
-    # 统计信息
-    total_chunks = 0
-    skipped_count = 0
-    processed_laws = set()  # 已处理的law_id集合
-    
-    # 用于收集每个法律的 chunks 信息（用于更新 catalog）
-    law_chunks_map: Dict[str, List[Dict]] = {}
+    total = 0
+    doc_metas: Dict[str, Dict] = {}   # doc_id -> DOC 记录（供 catalog 更新）
+    rec_counts: Dict[str, int] = {}   # doc_id -> 推荐条目数（供 catalog item_count）
 
     documents_batch: List[str] = []
     metadatas_batch: List[Dict] = []
     ids_batch: List[str] = []
 
-    for doc, meta, doc_id in load_json_files(settings.data_dir, repo, skip_existing=not force):
-        # 跳过标记（由process_json_file内部处理）
-        if doc is None and meta is None and doc_id is None:
-            skipped_count += 1
-            continue
-
-        documents_batch.append(doc)
+    for content, meta, item_id in load_json_files(
+        Path(settings.clean_data_dir), repo, skip_existing=not force
+    ):
+        documents_batch.append(content)
         metadatas_batch.append(meta)
-        ids_batch.append(doc_id)
+        ids_batch.append(item_id)
 
-        # 记录已处理的law_id
-        law_id = meta.get('law_id', '')
-        if law_id:
-            processed_laws.add(law_id)
-            
-            # 收集 chunk 信息用于 catalog 更新
-            if law_id not in law_chunks_map:
-                law_chunks_map[law_id] = []
-            law_chunks_map[law_id].append({
-                "article_number": meta.get('article_number', ''),
-                "metadata": meta,
-                "_meta": {
-                    "law_id": law_id,
-                    "law_name": meta.get('title', ''),
-                    "jurisdiction": meta.get('jurisdiction', ''),
-                    "passing_date": meta.get('passing_date', ''),
-                    "source_file": meta.get('source_file', ''),
-                }
-            })
+        data_type = meta.get("data_type")
+        if data_type == "doc":
+            doc_metas[item_id] = meta
+        elif data_type == "rec":
+            doc_id = meta.get("doc_id")
+            if doc_id:
+                rec_counts[doc_id] = rec_counts.get(doc_id, 0) + 1
 
         if len(documents_batch) >= batch_size:
-            print(f"处理第 {total_chunks + 1} - {total_chunks + len(documents_batch)} 个文档块...")
+            print(f"写入第 {total + 1} - {total + len(documents_batch)} 条...")
             repo.add_documents(documents_batch, metadatas_batch, ids_batch)
-            total_chunks += len(documents_batch)
-            documents_batch = []
-            metadatas_batch = []
-            ids_batch = []
+            total += len(documents_batch)
+            documents_batch, metadatas_batch, ids_batch = [], [], []
 
     if documents_batch:
-        print(f"处理剩余 {total_chunks + 1} - {total_chunks + len(documents_batch)} 个文档块...")
+        print(f"写入第 {total + 1} - {total + len(documents_batch)} 条...")
         repo.add_documents(documents_batch, metadatas_batch, ids_batch)
-        total_chunks += len(documents_batch)
+        total += len(documents_batch)
 
-    # 更新 doc_catalog.json
-    print("\n📋 更新法律目录 (doc_catalog.json)...")
-    catalog_updated_count = 0
-    for law_id, chunks_data in law_chunks_map.items():
+    # 更新 doc_catalog.json（仅 DOC 记录入目录；item_count 取该文档的 REC 条数）
+    print("\n📋 更新文档目录 (doc_catalog.json)...")
+    for doc_id, meta in doc_metas.items():
         try:
-            catalog.update_from_docs(chunks_data)
-            catalog_updated_count += 1
+            catalog.add_or_update(
+                doc_id=doc_id,
+                title=meta.get("title", ""),
+                doc_type=meta.get("doc_type", ""),
+                issuer=meta.get("issuer", ""),
+                cancer_types=meta.get("cancer_types") or [],
+                item_count=rec_counts.get(doc_id, 0),
+                version=meta.get("version", ""),
+                publish_date=meta.get("publish_date", ""),
+                file_path=meta.get("file_path", ""),
+                status="active",
+            )
         except Exception as e:
-            print(f"⚠️  更新 {law_id} 的 catalog 记录失败: {e}")
+            print(f"⚠️  更新 {doc_id} 的 catalog 记录失败: {e}")
 
-    # 输出统计结果
     print("\n" + "=" * 60)
     print("📊 入库完成统计")
     print("=" * 60)
-    print(f"✅ 成功入库文档块数: {total_chunks}")
-    if skipped_count > 0:
-        print(f"⏭️  跳过已存在法规数: {skipped_count}")
-    print(f"📚 新增/更新法规数量: {len(processed_laws)}")
-    print(f"📝 Catalog 更新记录数: {catalog_updated_count}")
-    
-    if processed_laws:
-        print(f"\n已入库的法规ID:")
-        for law_id in sorted(processed_laws):
-            count = repo.get_law_chunk_count(law_id)
-            # 从 catalog 获取更详细的信息
-            cat_record = catalog.find_by_doc_id(law_id)
-            title = cat_record.get('title', '') if cat_record else ''
-            jur = cat_record.get('jurisdiction', '') if cat_record else ''
-            print(f"   • {law_id} | {title} ({jur}) | {count} 个文档块")
+    print(f"✅ 成功写入条目数: {total}")
+    print(f"📚 文档目录记录数: {len(doc_metas)}")
+    _print_type_counts(repo)
 
-    # 显示 catalog 统计信息
-    stats = catalog.get_statistics()
-    print(f"\n📊 Catalog 统计:")
-    print(f"   总文档数: {stats['total_docs']}")
-    print(f"   总条目数: {stats['total_items']}")
-    if stats['by_cancer_type']:
-        print(f"   按癌种分布:")
-        for ct, count in sorted(stats['by_cancer_type'].items()):
-            print(f"      • {ct}: {count} 份文档")
-
-    count = repo.count()
-    print(f"\n🎉 完成！向量数据库中共有 {count} 个文档块")
-    print(f"📁 法律目录已保存至: {catalog.catalog_path}")
-
-    # 为新增的法规批量生成摘要
-    if processed_laws:
-        print(f"\n📝 开始为 {len(processed_laws)} 个法规生成摘要...")
-        abstract_service = AbstractService()
-        abstract_service.generate_for_laws(list(processed_laws), delay=2.0)
-
-    # 自动重新标注旧数据
-    print(f"\n🔄 开始重新标注所有数据...")
+    # 重新标注主题（topics_details）
+    print("\n🔄 开始重新标注主题...")
     reannotate_all_data(repo)
+
+    print("\n🧾 指南摘要请单独运行 run_abstracts.py（BE-38）")
 
 
 def reannotate_all_data(repo: ElasticsearchRepository):
-    """重新标注所有数据"""
+    """重新标注所有数据的主题字段"""
     print("初始化主题分类器...")
     classifier = TopicClassifier()
     print(f"加载词表版本: {classifier.taxonomy_version}, 主题数: {len(classifier.topics)}")
-    
+
     total_docs = repo.count()
     print(f"开始处理 {total_docs} 条数据...")
-    
-    # 批量读取所有文档
+
     batch_size = 100
     processed = 0
     labeled = 0
-    
+
     # 使用 scroll 游标遍历全部文档, 避免 from+size 超过 10000 限制
     results = repo.client.search(
         index=settings.es_index_name,
         body={"query": {"match_all": {}}, "size": batch_size},
-        scroll="2m"
+        scroll="2m",
     )
     scroll_id = results.get("_scroll_id")
 
@@ -367,35 +333,29 @@ def reannotate_all_data(repo: ElasticsearchRepository):
             if not hits:
                 break
 
-            # 批量更新这批文档
             bulk_actions = []
             for hit in hits:
                 doc_id = hit["_id"]
                 source = hit["_source"]
 
-                # 进行主题分类
                 text = source.get("content", "")
                 topics_info = classifier.classify_document(text)
 
-                # 构建更新操作
                 update_action = {
                     "_op_type": "update",
                     "_index": settings.es_index_name,
                     "_id": doc_id,
                     "doc": {
-                        "topics": topics_info["topics"],
-                        "topic_labels": topics_info["topic_labels"],
+                        # C2 §3.3：主题字段仅 topics_details（nested）+ taxonomy_version
                         "topics_details": topics_info["topics_details"],
-                        "taxonomy_version": topics_info["taxonomy_version"]
-                    }
+                        "taxonomy_version": topics_info["taxonomy_version"],
+                    },
                 }
                 bulk_actions.append(update_action)
 
-                # 统计信息
-                if topics_info["topics"]:
+                if topics_info["topics_details"]:
                     labeled += 1
 
-            # 执行批量更新
             if bulk_actions:
                 from elasticsearch.helpers import bulk
                 bulk(repo.client, bulk_actions)
@@ -404,35 +364,36 @@ def reannotate_all_data(repo: ElasticsearchRepository):
             processed += len(hits)
             print(f"  已处理 {processed}/{total_docs} 条数据...")
 
-            # 获取下一批
             results = repo.client.scroll(scroll_id=scroll_id, scroll="2m")
             scroll_id = results.get("_scroll_id")
     finally:
         if scroll_id:
             repo.client.clear_scroll(scroll_id=scroll_id)
-    
+
     print(f"重新标注完成: {processed} 条数据, 有主题标签: {labeled} 条")
-    
-    # 显示主题分布
+
+    # 主题分布（C2 §3.3：topics_details 为 nested，需 nested 聚合包裹）
     aggs = {
         "size": 0,
         "aggs": {
             "by_topic": {
-                "terms": {"field": "topics", "size": 20}
+                "nested": {"path": "topics_details"},
+                "aggs": {"labels": {"terms": {"field": "topics_details.label_zh", "size": 20}}},
             }
-        }
+        },
     }
     resp = repo.client.search(index=settings.es_index_name, body=aggs)
     print("\n主题分布 TOP20:")
-    for bucket in resp['aggregations']['by_topic']['buckets']:
+    for bucket in resp["aggregations"]["by_topic"]["labels"]["buckets"]:
         print(f"  {bucket['key']}: {bucket['doc_count']}")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="法规数据入库脚本")
-    parser.add_argument("--clear", action="store_true", help="清空现有索引后重新入库")
+    parser = argparse.ArgumentParser(description="医疗知识库入库脚本")
+    parser.add_argument("--rebuild", "--clear", dest="rebuild", action="store_true",
+                        help="清空主索引后重建（删索引 → 自动重建 → 全量灌入）")
     parser.add_argument("--force", action="store_true", help="强制覆盖已有数据（不跳过重复）")
-    parser.add_argument("--batch-size", type=int, default=32, help="批量处理大小")
+    parser.add_argument("--batch-size", type=int, default=32, help="批量写入大小")
 
     args = parser.parse_args()
-    ingest_data(batch_size=args.batch_size, clear_index=args.clear, force=args.force)
+    ingest_data(batch_size=args.batch_size, clear_index=args.rebuild, force=args.force)
