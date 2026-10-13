@@ -106,6 +106,9 @@ services:
   frontend:
     image: nginx:alpine
     container_name: medical-frontend
+    # 与 es/backend 保持一致：前端容器若意外退出（如 nginx 进程异常、宿主重启）
+    # 自动拉起，避免竞赛期间页面静默不可访问。
+    restart: always
     ports:
       - "3001:80"
     volumes:
