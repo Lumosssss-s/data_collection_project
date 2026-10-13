@@ -1667,8 +1667,11 @@ class ElasticsearchRepository:
         
         search_body["size"] = n_results
         # 不指定 _source，获取所有字段
-        search_body["sort"] = [{"law_id": {"order": "asc"}}, {"chunk_index": {"order": "asc"}}]
-        
+        # 注：医疗模型下无需按字段排序——filter-only 检索无相关度；原 [law_id, chunk_index]
+        # 中的 law_id 在新索引 medical_knowledge 无映射，会触发 no-mapping 报错；chunk_index
+        # 对 rec/doc/term 恒为 0，排序无实际效果。省略 sort，交由 ES 隐式 _doc 序返回；
+        # 医学语义排序（如按 publish_date / evidence_level）留给 BE-15 统一设计。
+
         response = self.client.search(index=settings.es_index_name, body=search_body)
         
         hits = response.get("hits", {}).get("hits", [])
