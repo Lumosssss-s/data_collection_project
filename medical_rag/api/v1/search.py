@@ -15,27 +15,53 @@ summary_service = SummaryService()
 catalog = DocCatalog()
 
 
+def _csv_multi(value: Optional[str]):
+    """逗号分隔的多值参数 → 单值字符串或列表（供 ES where 的单值/OR 语义使用）。"""
+    if not value:
+        return None
+    items = [x.strip() for x in value.split(",") if x.strip()]
+    if not items:
+        return None
+    return items[0] if len(items) == 1 else items
+
+
 @router.get("")
 @router.get("/")
 def search(
     query: str = Query("", description="搜索关键词（为空时仅按筛选条件检索）"),
     top_k: int = Query(50, description="返回结果数量"),
-    jurisdiction: str = Query(None, description="法域筛选（澳门/新加坡等）"),
-    topics: Optional[str] = Query(None, description="主题筛选（多选用逗号分隔，如：网络安全,金融监管）")
+    cancer_type: str = Query(None, description="癌种筛选（lung/breast/colorectal/gastric/thyroid）"),
+    doc_type: str = Query(None, description="文档类型（guideline/standard/consensus）"),
+    source: str = Query(None, description="来源机构（对应 issuer，如：中国抗癌协会）"),
+    scenario: Optional[str] = Query(None, description="场景筛选（多选用逗号分隔，如：treatment_first_line,immunotherapy）"),
+    stage: Optional[str] = Query(None, description="分期筛选（多选用逗号分隔，如：III,IV）"),
+    biomarker: Optional[str] = Query(None, description="生物标志物筛选（多选用逗号分隔，如：EGFR,ALK）"),
+    data_type: str = Query(None, description="条目类型（doc/rec/drug/term）"),
+    topic: Optional[str] = Query(None, description="主题标签筛选（多选用逗号分隔，如：肺癌,一线治疗）"),
 ):
-    # 将逗号分隔的主题字符串转为列表
-    topic_list = None
-    if topics:
-        topic_list = [t.strip() for t in topics.split(",") if t.strip()]
-        if not topic_list:
-            topic_list = None
+    # 组装过滤条件（键为 ES 字段名；多值按 OR）
+    filters = {}
+    if cancer_type:
+        filters["cancer_type"] = cancer_type
+    if doc_type:
+        filters["doc_type"] = doc_type
+    if source:
+        filters["issuer"] = source
+    if data_type:
+        filters["data_type"] = data_type
+    for field, value in (("scenario", scenario), ("stage", stage), ("biomarker", biomarker)):
+        parsed = _csv_multi(value)
+        if parsed:
+            filters[field] = parsed
+    topic_parsed = _csv_multi(topic)
+    if topic_parsed:
+        filters["topics_details.label_zh"] = topic_parsed
 
-    results = retriever.hybrid_search(query, top_k, jurisdiction, topic_list)
+    results = retriever.hybrid_search(query, top_k, filters or None)
 
     search_results = []
     for result in results:
-        # 结果 dict 键为医疗语义（BE-05 重写检索服务后由 ES 四类字段直供）；
-        # 当前检索层尚未重写，统一 .get 防御取值（空库阶段恒为空结果）。
+        # 结果 dict 由检索服务按 §5.7.2 白名单直供（BE-15）；统一 .get 防御取值。
         search_results.append(SearchResult(
             content=result.get('content', ''),
             metadata=DocumentMetadata(
@@ -46,14 +72,14 @@ def search(
                 cancer_types=result.get('cancer_types', []),
                 breadcrumb=result.get('breadcrumb'),
                 scenario=result.get('scenario'),
-                stage=result.get('stage', []),
+                stage=result.get('stage') or [],
                 stage_detail=result.get('stage_detail'),
-                biomarker=result.get('biomarker', []),
+                biomarker=result.get('biomarker') or [],
                 evidence_level=result.get('evidence_level'),
                 rec_strength=result.get('rec_strength'),
                 chunk_index=result.get('chunk_index', 0),
                 publish_date=result.get('publish_date'),
-                source_file=result.get('source_file'),
+                source_file=result.get('file_path'),
             ),
             similarity=result.get('score', 0.0),
             retrieval_hop=result.get('retrieval_hop'),
