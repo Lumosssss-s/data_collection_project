@@ -2008,17 +2008,15 @@ class ElasticsearchRepository:
     # ================================================================
     #  医疗知识层（KG）持久化 — medical_kg_triples / medical_kg_entities（C2 §5）
     #  ------------------------------------------------------------
-    #  设计要点（沿用法规版架构，仅字段医疗化）：
-    #   1. 按 source_id 组织数据：新增来源只抽新增部分，不做全量重建，
+    #  设计要点：
+    #   1. 按 source_id（指南 doc_id）组织数据：新增来源只抽新增部分，不做全量重建，
     #      这是数据量持续增长时唯一可扩展的形态；
     #   2. 三元组文档 ID 由内容哈希决定（幂等 upsert），
     #      同一来源重复抽取不会产生重复记录；
     #   3. 用源文档指纹判断缓存是否失效，指纹未变则完全跳过 LLM 抽取；
     #   4. entities 索引预留 1024 维向量字段：dense_vector 的 dims 建索引后
-    #      不可修改，故此处一次性建好，供实体消歧的跨语言向量对齐使用。
-    #  字段映射：law_id->source_id / jurisdiction->cancer_type /
-    #           source_article->source_ref / jurisdictions->cancer_types
-    #  方法签名（参数名）沿用旧名，待 BE-20/BE-21 服务重写时统一更名。
+    #      不可修改，故此处一次性建好，供实体消歧的向量对齐使用。
+    #  ES 字段：source_id / cancer_type / source_ref / head_* / tail_* / relation …
     # ================================================================
 
     KG_TRIPLE_INDEX = settings.es_kg_triples_index_name
@@ -2083,29 +2081,29 @@ class ElasticsearchRepository:
             return False
 
     @staticmethod
-    def _kg_triple_doc_id(law_id: str, triple: Dict) -> str:
-        """三元组文档 ID：由「法规 + 头实体 + 关系 + 尾实体 + 来源条款」哈希得到，保证幂等写入"""
+    def _kg_triple_doc_id(source_id: str, triple: Dict) -> str:
+        """三元组文档 ID：由「来源 + 头实体 + 关系 + 尾实体 + 来源定位」哈希得到，保证幂等写入"""
         import hashlib
         head = triple.get("head", {}) or {}
         tail = triple.get("tail", {}) or {}
         raw = (
-            f"{law_id}|{head.get('id', '')}|{triple.get('relation', '')}"
-            f"|{tail.get('id', '')}|{triple.get('source_article', '')}"
+            f"{source_id}|{head.get('id', '')}|{triple.get('relation', '')}"
+            f"|{tail.get('id', '')}|{triple.get('source_ref', '')}"
         )
         return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
     def save_kg_triples(
         self,
-        law_id: str,
+        source_id: str,
         triples: List[Dict],
-        jurisdiction: str = "",
+        cancer_type: str = "",
         fingerprint: str = "",
     ) -> int:
         """
-        覆盖式保存某法规的实体关系三元组。
+        覆盖式保存某来源（指南）的实体关系三元组。
 
-        采用「先删旧、再批量写入」而非追加：法规被修订后旧抽取结果必须整体失效，
-        否则引用链与实体统计会同时看到新旧两版条款的关系。
+        采用「先删旧、再批量写入」而非追加：指南更新后旧抽取结果必须整体失效，
+        否则引用链与实体统计会同时看到新旧两版的关系。
         写入条数成功返回条数，失败返回 -1（调用方据此判断是否降级）。
         """
         if not self._ensure_kg_indices():
@@ -2114,10 +2112,10 @@ class ElasticsearchRepository:
         import datetime
         now = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
-        # 清除该法规的旧三元组，保证修订后不留残影。
-        # 注意：即使本次抽取结果为空也要执行清除，否则法规被修订为
+        # 清除该来源的旧三元组，保证更新后不留残影。
+        # 注意：即使本次抽取结果为空也要执行清除，否则来源被修订为
         # 「无可提取关系」后，旧版本的三元组会继续参与引用链与实体统计。
-        self.delete_kg_triples(law_id)
+        self.delete_kg_triples(source_id)
 
         if not triples:
             return 0
@@ -2128,10 +2126,10 @@ class ElasticsearchRepository:
             tail = t.get("tail", {}) or {}
             actions.append({
                 "_index": self.KG_TRIPLE_INDEX,
-                "_id": self._kg_triple_doc_id(law_id, t),
+                "_id": self._kg_triple_doc_id(source_id, t),
                 "_source": {
-                    "source_id": law_id,
-                    "cancer_type": jurisdiction or t.get("source_jurisdiction", ""),
+                    "source_id": source_id,
+                    "cancer_type": cancer_type or t.get("cancer_type", ""),
                     "fingerprint": fingerprint,
                     "head_id": head.get("id", ""),
                     "head_type": head.get("type", ""),
@@ -2142,7 +2140,7 @@ class ElasticsearchRepository:
                     "tail_name": tail.get("name", ""),
                     "tail_canonical_id": tail.get("canonical_id") or tail.get("id", ""),
                     "relation": t.get("relation", ""),
-                    "source_ref": t.get("source_article", ""),
+                    "source_ref": t.get("source_ref", ""),
                     "confidence": float(t.get("confidence", 0.8)),
                     "extracted_at": now,
                 },
@@ -2155,7 +2153,7 @@ class ElasticsearchRepository:
                 raise_on_error=False, stats_only=True,
             )
             logger.info(
-                f"[KG] 三元组已落库: law_id={law_id}, 成功={success}, 失败={failed}, "
+                f"[KG] 三元组已落库: source_id={source_id}, 成功={success}, 失败={failed}, "
                 f"fp={(fingerprint or '')[:16]}"
             )
             return int(success)
@@ -2163,16 +2161,16 @@ class ElasticsearchRepository:
             logger.error(f"[KG] 三元组落库失败: {type(e).__name__}: {e}")
             return -1
 
-    def get_kg_triples(self, law_id: str, size: int = 2000) -> List[Dict]:
+    def get_kg_triples(self, source_id: str, size: int = 2000) -> List[Dict]:
         """
-        读取某法规的全部三元组，还原为 kg_extraction_service 的输出格式，
+        读取某来源的全部三元组，还原为 kg_extraction_service 的输出格式，
         使调用方对「读缓存」与「实时抽取」得到的结果形态完全一致。
         """
         try:
             resp = self.client.search(
                 index=self.KG_TRIPLE_INDEX,
                 body={
-                    "query": {"term": {"source_id": law_id}},
+                    "query": {"term": {"source_id": source_id}},
                     "size": size,
                     "sort": [{"source_ref": "asc"}, {"confidence": "desc"}],
                 },
@@ -2200,22 +2198,22 @@ class ElasticsearchRepository:
                     "name": s.get("tail_name", ""),
                     "canonical_id": s.get("tail_canonical_id", ""),
                 },
-                "source_article": s.get("source_ref", ""),
-                "source_jurisdiction": s.get("cancer_type", ""),
+                "source_ref": s.get("source_ref", ""),
+                "cancer_type": s.get("cancer_type", ""),
                 "confidence": s.get("confidence", 0.8),
             })
         return triples
 
-    def get_kg_cache_meta(self, law_id: str) -> Optional[Dict]:
+    def get_kg_cache_meta(self, source_id: str) -> Optional[Dict]:
         """
-        读取某法规的知识层缓存元信息：{fingerprint, triple_count, extracted_at}。
+        读取某来源的知识层缓存元信息：{fingerprint, triple_count, extracted_at}。
         从未抽取过则返回 None。用于判断能否直接复用缓存、跳过 LLM 调用。
         """
         try:
             resp = self.client.search(
                 index=self.KG_TRIPLE_INDEX,
                 body={
-                    "query": {"term": {"source_id": law_id}},
+                    "query": {"term": {"source_id": source_id}},
                     "size": 1,
                     "sort": [{"extracted_at": "desc"}],
                     "_source": ["fingerprint", "extracted_at"],
@@ -2239,12 +2237,12 @@ class ElasticsearchRepository:
             "extracted_at": src.get("extracted_at", ""),
         }
 
-    def delete_kg_triples(self, law_id: str) -> int:
-        """删除某法规的全部三元组（法规被删除或重新抽取前调用）"""
+    def delete_kg_triples(self, source_id: str) -> int:
+        """删除某来源的全部三元组（来源被删除或重新抽取前调用）"""
         try:
             resp = self.client.delete_by_query(
                 index=self.KG_TRIPLE_INDEX,
-                body={"query": {"term": {"source_id": law_id}}},
+                body={"query": {"term": {"source_id": source_id}}},
                 refresh=True,
                 conflicts="proceed",
             )
@@ -2256,19 +2254,19 @@ class ElasticsearchRepository:
             return 0
 
     def get_kg_statistics(self) -> Dict:
-        """知识层统计：三元组总数、已抽取法规数、实体总数（供管理端与验收核对）"""
-        result = {"triple_count": 0, "law_count": 0, "entity_count": 0}
+        """知识层统计：三元组总数、已抽取指南数、实体总数（供管理端与验收核对）"""
+        result = {"triple_count": 0, "source_count": 0, "entity_count": 0}
         try:
             resp = self.client.search(
                 index=self.KG_TRIPLE_INDEX,
                 body={
                     "size": 0,
                     "track_total_hits": True,
-                    "aggs": {"laws": {"cardinality": {"field": "source_id"}}},
+                    "aggs": {"sources": {"cardinality": {"field": "source_id"}}},
                 },
             )
             result["triple_count"] = resp.get("hits", {}).get("total", {}).get("value", 0)
-            result["law_count"] = resp.get("aggregations", {}).get("laws", {}).get("value", 0)
+            result["source_count"] = resp.get("aggregations", {}).get("sources", {}).get("value", 0)
         except Exception as e:
             logger.warning(f"[KG] 三元组统计失败: {e}")
         try:
@@ -2279,10 +2277,10 @@ class ElasticsearchRepository:
             pass
         return result
 
-    # ---- 实体词典（legal_kg_entities）-------------------------------
-    #  实体词典是「全局」的：记录规范实体名、别名集合、实体类型与出现法域。
-    #  刻意不记录 law_ids —— 法规重新抽取后该字段会失真（旧法规仍被列出），
-    #  而「实体出现在哪些法规」可随时由三元组索引查询得出，无需冗余存储。
+    # ---- 实体词典（medical_kg_entities）-----------------------------
+    #  实体词典是「全局」的：记录规范实体名、别名集合、实体类型与出现癌种。
+    #  刻意不记录 source_ids —— 指南重新抽取后该字段会失真（旧指南仍被列出），
+    #  而「实体出现在哪些指南」可随时由三元组索引查询得出，无需冗余存储。
 
     def get_kg_entities_batch(self, entity_ids: List[str]) -> Dict[str, Dict]:
         """按 entity_id 批量读取实体词典条目（单次 msearch），返回 {entity_id: 文档}"""
@@ -2312,10 +2310,10 @@ class ElasticsearchRepository:
 
     def merge_kg_entities(self, entities: List[Dict]) -> int:
         """
-        合并写入实体词典：已有条目累加别名/法域集合，新条目直接写入。
+        合并写入实体词典：已有条目累加别名/癌种集合，新条目直接写入。
 
         采用「批量读 + 批量写」两次往返完成，避免逐条 read-modify-write。
-        别名与法域取并集，因此重复抽取同一法规不会产生重复项，也不会丢历史别名。
+        别名与癌种取并集，因此重复抽取同一指南不会产生重复项，也不会丢历史别名。
         返回写入条数，失败返回 -1。
         """
         if not entities:
@@ -2339,10 +2337,9 @@ class ElasticsearchRepository:
                 "name": ent.get("name", "") or old.get("name", ""),
                 "type": ent.get("type", "") or old.get("type", ""),
                 "aliases": sorted(set(old.get("aliases", [])) | set(ent.get("aliases", []))),
-                # ES 字段 cancer_types；输入 dict 键沿用 jurisdictions（消歧服务
-                # 层格式，BE-21 重写时统一更名）
+                # ES 字段 cancer_types；输入 dict 键同为 cancer_types（消歧服务层格式）
                 "cancer_types": sorted(
-                    set(old.get("cancer_types", [])) | set(ent.get("jurisdictions", []))
+                    set(old.get("cancer_types", [])) | set(ent.get("cancer_types", []))
                 ),
                 "updated_at": now,
             }

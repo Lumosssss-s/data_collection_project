@@ -1,45 +1,40 @@
 """
-法律实体消歧服务 v1.0
+医学实体消歧服务 v2.0
 ----------------------
-在 LLM 抽取出的三元组之上做实体归一，解决同一实体在不同法域、不同语言、
-不同字形下被当作不同实体的问题（例如「个人数据」/「個人資料」/「personal data」）。
+在 LLM 抽取出的三元组之上做实体归一，解决同一实体在不同书写、别名、语言、
+字形下被当作不同实体的问题（例如「肺CA」/「NSCLC」/「非小细胞肺癌」/「肺癌」）。
 
 分层设计（成本由低到高，逐层独立交付）：
     L1 规范化   ：NFKC（全角转半角）+ 繁转简 + 小写 + 去空白标点
-    L2 别名表   ：登记法律领域已知的同义/跨语言写法，直接映射到规范名
-    L3 向量对齐 ：bge-m3 跨语言向量相似度，兜住 L1 字表未覆盖的异体与措辞差异
-    L4 类型约束 ：只在相同实体类型内合并，避免「法律主体」被并进「法律概念」
+    L2 别名表   ：登记医学领域已知的同义/缩写/跨语言写法，直接映射到规范名
+    L3 向量对齐 ：bge-m3 向量相似度，兜住 L1 字表未覆盖的异体与措辞差异
+    L4 类型约束 ：只在相同实体类型内合并，避免「基因」被并进「症状」
 
 关于 L1 的覆盖范围：
-    项目内的繁简字表（repositories.elasticsearch.zh_t2s）是为「法规名称匹配」
-    整理的高频字表，未覆盖全部繁体字。此处在其之上叠加法律实体名常用的补充字表，
-    残留的字形差异由 L2 别名表显式登记 —— 法律领域的核心实体数量有限
-    （数十个），这正是 L2 存在的原因；长尾差异留给 L3 向量对齐。
+    项目内的繁简字表（repositories.elasticsearch.zh_t2s）是为「文本匹配」
+    整理的高频字表，未覆盖全部繁体字。此处在其之上叠加医学实体名常用的补充字表，
+    残留的字形差异由 L2 别名表显式登记 —— 医学术语的核心实体数量有限
+    （癌种数十个、高频基因/药物百余个），这正是 L2 存在的原因；长尾差异留给 L3。
 
-关于 L3 的定位（基于实测证据，重要）：
-    L3 是「变体兜底」，不是「语义聚类」。实测 378 个真实实体、17323 个同类型候选对后
-    确认：bge-m3 无法区分「语义相近但法律含义不同」的名称 —— 「最高一年徒刑或一百二十日
-    罰金」与「最高二年徒刑或二百四十日罰金」余弦 0.933、「總體規劃」与「詳細規劃」0.929，
-    纯阈值方案（0.90）会产生至少 6 对错误合并，这在法律知识图谱里是实质性错误。
+关于 L3 的定位（重要）：
+    L3 是「变体兜底」，不是「语义聚类」。bge-m3 无法区分「语义相近但医学含义不同」
+    的名称 —— 例如「I 期」与「II 期」、「EGFR」与「ALK」在向量空间可能很接近，
+    纯阈值方案会产生错误合并，这在医学知识图谱里是实质性错误。
     因此 L3 采用「向量相似度 + 三重守卫」，且守卫才是判别主力：
-        · 数字一致   ：名称中的数字承载「量」（刑期/金额/期限），不同则必然不同实体
+        · 数字一致   ：名称中的数字承载「量」（分期/剂量/编号），不同则必然不同实体
         · 编辑距离   ：归一化后差异必须 <= entity_align_max_edit，区分变体与语义差异
         · 长度上限   ：超长「描述型串」不参与，其表面相似度虚高而含义各异
-    实测该组合（阈值 0.95 + 数字一致 + 编辑距离<=1 + 长度<=40）在真实词典 378 个实体上
-    仅触发 2 对合并，全部人工核验为纯词缀變体（前缀「處」、助词「的」），可接受；
-    相应地，召回面很窄 —— 这是有意的：法律实体名上「宁可漏并，不可误并」。
+    相应地，召回面很窄 —— 这是有意的：医学实体名上「宁可漏并，不可误并」。
 
 关于比对范围（两轮）：
     第 1 轮「与词典比对」：把新实体归拢到词典里既有的规范实体；
     第 2 轮「批次内部比对」：一对變体若在**同一批次里首次共同出现**、词典里都还没有
-    条目，第 1 轮会因两侧都无处可归而双双落库、形成新的重复实体 —— 这正是历史遗留
-    重复的来源。第 2 轮专堵这个复发源，复用同一套守卫，可整体关闭
-    （entity_align_intra_batch）。
+    条目，第 1 轮会因两侧都无处可归而双双落库、形成新的重复实体。第 2 轮专堵这个
+    复发源，复用同一套守卫，可整体关闭（entity_align_intra_batch）。
 
 重要约束：
-    Article（条款）是「法规内局部实体」：A 法规的「条款 1」与 B 法规的
-    「条款 1」不是同一个东西，因此其规范 ID 必须带 law_id，禁止跨法规合并。
-    L3 同样跳过 Article —— 条款号靠 L1 归一即可，向量对齐对它只会有害。
+    医学实体（癌种/基因/药物/治疗/分期/症状/检查/不良反应）均为**全局**概念，
+    跨指南唯一，无「来源内局部实体」的特例，故规范 ID 直接由「类型 + 规范名」决定。
 """
 
 import logging
@@ -57,132 +52,150 @@ logger = logging.getLogger(__name__)
 # L1：实体名归一化时需要丢弃的字符（空白、分隔符、常见标点）
 _IGNORED_CHARS_RE = re.compile(r"[\s\-_·・,，.。;；:：、/\\|()（）\[\]【】{}｛｝\"'“”‘’!！?？]+")
 
-# L1：法律实体名常用的繁体字补充表（检索层字表未覆盖的部分）
+# L1：医学实体名常用的繁体字补充表（检索层字表未覆盖的部分）
 _T2S_SUPPLEMENT = {
-    '當': '当', '義': '义', '責': '责', '會': '会', '轉': '转', '國': '国',
-    '動': '动', '對': '对', '絕': '绝', '議': '议', '滅': '灭', '刪': '删',
-    '覽': '览', '詢': '询', '問': '问', '徵': '征', '蒐': '搜', '畫': '画',
-    '評': '评', '風': '风', '衝': '冲', '損': '损', '賠': '赔', '償': '偿',
-    '帶': '带', '洩': '泄', '遺': '遗', '擴': '扩', '屬': '属', '於': '于',
-    '與': '与', '為': '为', '從': '从', '違': '违', '項': '项', '許': '许',
-    '課': '课', '補': '补', '檢': '检', '察': '察', '憲': '宪', '環': '环',
-    '態': '态', '廢': '废', '棄': '弃', '質': '质', '個': '个', '戶': '户',
-    '訓': '训', '釋': '释', '費': '费', '稅': '税', '亞': '亚', '來': '来',
-    '東': '东', '門': '门', '臺': '台', '灣': '湾', '馬': '马', '韓': '韩',
-    '縣': '县', '詮': '诠', '島': '岛', '陸': '陆', '陽': '阳', '陰': '阴',
-    '廣': '广', '諮': '咨', '傾': '倾', '猶': '犹',
+    '醫': '医', '藥': '药', '診': '诊', '檢': '检', '驗': '验', '細': '细',
+    '標': '标', '誌': '志', '徵': '征', '療': '疗', '癥': '症', '癒': '愈',
+    '復': '复', '發': '发', '關': '关', '節': '节', '壓': '压', '質': '质',
+    '劑': '剂', '積': '积', '極': '极', '陽': '阳', '陰': '阴', '轉': '转',
+    '擴': '扩', '襲': '袭', '種': '种', '類': '类', '體': '体', '臟': '脏',
+    '腸': '肠', '腎': '肾', '腦': '脑', '頸': '颈', '瘍': '疡',
+    '髓': '髓', '抑': '抑', '嘔': '呕', '瀉': '泻', '疹': '疹',
+    '膚': '肤', '間': '间', '炎': '炎', '狀': '状',
+    '層': '层', '顯': '显', '斷': '断', '測': '测', '掃': '扫', '描': '描',
+    '振': '振', '穿': '穿', '刺': '刺', '射': '射',
+    '術': '术', '疫': '疫', '內': '内', '泌': '泌', '導': '导', '靶': '靶',
+    '酪': '酪', '酶': '酶', '突': '突', '變': '变',
 }
 
 # L2：别名表。每项为 (实体类型, 规范名, 别名列表)
-# 别名可包含繁体、异体与英文写法；命中任一别名即归并到规范名。
+# 别名可包含缩写、异体与英文写法；命中任一别名即归并到规范名。
 # 注意：同一别名不得出现在同类型的两个组中，否则归并结果取决于遍历顺序。
 _ALIAS_GROUPS: List[Tuple[str, str, List[str]]] = [
-    # ---- 法律主体 ----
-    ("LegalSubject", "数据主体", [
-        "数据主体", "資料當事人", "资料当事人", "資料主體", "数据当事人",
-        "当事人", "信息主体", "个人", "個人", "data subject",
+    # ---- 癌种 ----
+    ("Cancer", "肺癌", [
+        "肺癌", "肺CA", "NSCLC", "非小细胞肺癌", "非小細胞肺癌", "肺恶性肿瘤",
+        "肺惡性腫瘤", "lung cancer", "非小细胞性肺癌",
     ]),
-    ("LegalSubject", "数据控制者", [
-        "数据控制者", "資料控制者", "控制者", "控制人", "数据控制人",
-        "控权者", "負責實體", "负责实体", "data controller", "controller",
+    ("Cancer", "乳腺癌", [
+        "乳腺癌", "乳癌", "乳腺恶性肿瘤", "breast cancer", "BC",
     ]),
-    ("LegalSubject", "数据处理者", [
-        "数据处理者", "資料處理者", "处理者", "受託處理者", "受托处理者",
-        "data processor", "processor",
+    ("Cancer", "结直肠癌", [
+        "结直肠癌", "結直腸癌", "大肠癌", "大腸癌", "结肠癌", "直腸癌", "直肠癌",
+        "colorectal cancer", "CRC",
     ]),
-    ("LegalSubject", "监管机构", [
-        "监管机构", "監管機構", "监管机关", "主管机关", "主管機關", "监督机构",
-        "个人信息保护机构", "個資保護機關", "公署", "专员", "專員",
-        "supervisory authority", "data protection authority",
+    ("Cancer", "胃癌", [
+        "胃癌", "胃恶性肿瘤", "胃惡性腫瘤", "gastric cancer", "胃腺癌",
     ]),
-    ("LegalSubject", "接收方", [
-        "接收方", "接收者", "受让方", "受讓方", "第三方", "第三者", "recipient",
+    ("Cancer", "甲状腺癌", [
+        "甲状腺癌", "甲狀腺癌", "甲癌", "thyroid cancer",
     ]),
 
-    # ---- 法律义务 ----
-    ("Obligation", "通知义务", [
-        "通知义务", "通知義務", "告知义务", "告知義務", "通知责任",
-        "notification obligation", "通知",
+    # ---- 基因 / 分子标志物 ----
+    ("Gene", "EGFR", [
+        "EGFR", "表皮生长因子受体", "表皮生長因子受體", "HER1", "ERBB1",
     ]),
-    ("Obligation", "取得同意", [
-        "取得同意", "获得同意", "獲得同意", "征求同意", "徵求同意",
-        "經同意", "obtain consent", "取得当事人同意",
+    ("Gene", "ALK", [
+        "ALK", "间变性淋巴瘤激酶", "間變性淋巴瘤激酶",
     ]),
-    ("Obligation", "安全保障义务", [
-        "安全保障义务", "安全維護義務", "安全维护义务", "安全措施义务",
-        "安全保護義務", "security obligation",
+    ("Gene", "HER2", [
+        "HER2", "ERBB2", "人表皮生长因子受体2", "人表皮生長因子受體2",
     ]),
-    ("Obligation", "配合义务", [
-        "配合义务", "配合義務", "协助义务", "協助義務", "提供协助",
+    ("Gene", "PD-L1", [
+        "PD-L1", "PDL1", "程序性死亡配体1", "程序性死亡配體1", "CD274",
+    ]),
+    ("Gene", "KRAS", [
+        "KRAS", "K-RAS",
+    ]),
+    ("Gene", "MSI", [
+        "MSI", "微卫星不稳定", "微衛星不穩定", "MSI-H", "微卫星高度不稳定",
+    ]),
+    ("Gene", "BRCA1", ["BRCA1"]),
+    ("Gene", "BRCA2", ["BRCA2"]),
+
+    # ---- 药物 ----
+    ("Drug", "奥希替尼", [
+        "奥希替尼", "奧希替尼", "泰瑞沙", "osimertinib", "tagrisso",
+    ]),
+    ("Drug", "吉非替尼", [
+        "吉非替尼", "易瑞沙", "gefitinib", "iressa",
+    ]),
+    ("Drug", "帕博利珠单抗", [
+        "帕博利珠单抗", "帕博利珠單抗", "可瑞达", "pembrolizumab", "keytruda",
+    ]),
+    ("Drug", "曲妥珠单抗", [
+        "曲妥珠单抗", "曲妥珠單抗", "赫赛汀", "trastuzumab", "herceptin",
+    ]),
+    ("Drug", "培美曲塞", [
+        "培美曲塞", "力比泰", "pemetrexed",
+    ]),
+    ("Drug", "顺铂", ["顺铂", "順鉑", "cisplatin"]),
+    ("Drug", "卡铂", ["卡铂", "卡鉑", "carboplatin"]),
+
+    # ---- 治疗方式 ----
+    ("Treatment", "靶向治疗", [
+        "靶向治疗", "靶向療法", "分子靶向治疗", "targeted therapy",
+    ]),
+    ("Treatment", "免疫治疗", [
+        "免疫治疗", "免疫療法", "immunotherapy", "免疫检查点抑制剂治疗",
+    ]),
+    ("Treatment", "化疗", [
+        "化疗", "化療", "化学治疗", "chemotherapy",
+    ]),
+    ("Treatment", "放疗", [
+        "放疗", "放療", "放射治疗", "radiotherapy",
+    ]),
+    ("Treatment", "手术", [
+        "手术", "手術", "外科手术", "surgery",
+    ]),
+    ("Treatment", "内分泌治疗", [
+        "内分泌治疗", "內分泌治療", "hormone therapy",
     ]),
 
-    # ---- 法律权利 ----
-    ("Right", "访问权", [
-        "访问权", "查閱權", "查阅权", "存取權", "查询权", "資訊訪問權",
-        "right of access", "access right",
+    # ---- 检查 / 诊断手段 ----
+    ("Examination", "CT", [
+        "CT", "CT检查", "CT檢查", "计算机断层扫描", "電腦斷層", "computed tomography",
     ]),
-    ("Right", "更正权", [
-        "更正权", "更正權", "修正权", "補充權", "right to rectification",
+    ("Examination", "MRI", [
+        "MRI", "磁共振", "核磁共振", "magnetic resonance imaging",
     ]),
-    ("Right", "删除权", [
-        "删除权", "刪除權", "被遗忘权", "被遺忘權", "消除权",
-        "right to erasure", "right to be forgotten",
+    ("Examination", "PET-CT", [
+        "PET-CT", "PETCT", "正电子发射断层显像", "正子斷層",
     ]),
-    ("Right", "反对权", [
-        "反对权", "反對權", "异议权", "異議權", "right to object",
+    ("Examination", "病理活检", [
+        "病理活检", "病理活檢", "组织活检", "穿刺活检", "biopsy", "病理检查",
     ]),
-
-    # ---- 处罚措施 ----
-    ("Penalty", "罚款", [
-        "罚款", "罰款", "罚金", "罰金", "逾期罚款", "行政罚款", "fine", "penalty",
+    ("Examination", "基因检测", [
+        "基因检测", "基因檢測", "分子检测", "二代测序", "NGS", "genetic testing",
     ]),
-    ("Penalty", "刑事责任", [
-        "刑事责任", "刑事責任", "刑罰", "刑罚", "监禁", "監禁",
-        "criminal liability", "有期徒刑",
-    ]),
-    ("Penalty", "行政处罚", [
-        "行政处罚", "行政處罰", "行政制裁", "限期改正", "administrative sanction",
+    ("Examination", "肿瘤标志物", [
+        "肿瘤标志物", "腫瘤標誌物", "tumor marker",
     ]),
 
-    # ---- 法律概念 ----
-    ("Concept", "个人数据", [
-        "个人数据", "個人資料", "个人资料", "个人信息", "個人信息",
-        "个人资讯", "個人資訊", "個資", "personal data", "personal information",
-    ]),
-    ("Concept", "跨境传输", [
-        "跨境传输", "跨境傳輸", "跨境转移", "跨境轉移", "跨境提供", "跨境流动",
-        "数据出境", "資料出境", "转移至境外", "cross-border transfer",
-    ]),
-    ("Concept", "同意", [
-        "同意", "同意書", "同意书", "明示同意", "知情同意", "consent",
-    ]),
-    ("Concept", "数据泄露", [
-        "数据泄露", "資料洩露", "数据外泄", "資料外洩", "个资外泄", "個資外洩",
-        "洩漏", "洩露", "data breach",
-    ]),
-    ("Concept", "国家安全", [
-        "国家安全", "國家安全", "national security", "公共安全",
-    ]),
-    ("Concept", "公共利益", [
-        "公共利益", "public interest", "社会公共利益", "社會公共利益",
-    ]),
-    ("Concept", "自动化决策", [
-        "自动化决策", "自動化決策", "自动化决定", "用户画像", "用戶畫像",
-        "profiling", "automated decision",
-    ]),
-    ("Concept", "数据主体权利", [
-        "数据主体权利", "資料當事人權利", "当事人权利", "當事人權利", "数据权利",
-    ]),
+    # ---- 症状 / 体征 ----
+    ("Symptom", "咳嗽", ["咳嗽", "干咳", "乾咳", "cough"]),
+    ("Symptom", "咯血", ["咯血", "咳血", "hemoptysis"]),
+    ("Symptom", "胸痛", ["胸痛", "胸闷", "胸悶", "chest pain"]),
+    ("Symptom", "消瘦", ["消瘦", "体重下降", "體重下降", "weight loss"]),
 
-    # ---- 例外情形 ----
-    ("Exception", "国家安全例外", [
-        "国家安全例外", "國家安全例外", "national security exception",
+    # ---- 分期（各期独立，不做「早期/晚期」近似归并）----
+    ("Stage", "I期", ["I期", "Ⅰ期", "1期", "第一期"]),
+    ("Stage", "II期", ["II期", "Ⅱ期", "2期", "第二期"]),
+    ("Stage", "III期", ["III期", "Ⅲ期", "3期", "第三期"]),
+    ("Stage", "IV期", ["IV期", "Ⅳ期", "4期", "第四期"]),
+
+    # ---- 不良反应 ----
+    ("AdverseReaction", "皮疹", ["皮疹", "药疹", "皮肤反应", "皮膚反應", "rash"]),
+    ("AdverseReaction", "腹泻", ["腹泻", "腹瀉", "diarrhea", "diarrhoea"]),
+    ("AdverseReaction", "间质性肺炎", [
+        "间质性肺炎", "間質性肺炎", "间质性肺病", "interstitial lung disease", "ILD",
     ]),
-    ("Exception", "公共利益例外", [
-        "公共利益例外", "public interest exception",
+    ("AdverseReaction", "骨髓抑制", ["骨髓抑制", "myelosuppression"]),
+    ("AdverseReaction", "肝损伤", [
+        "肝损伤", "肝損傷", "肝功能异常", "肝功能異常", "肝毒性", "hepatotoxicity",
     ]),
-    ("Exception", "法定义务例外", [
-        "法定义务例外", "法定義務例外", "遵守法定义务", "法律义务例外",
+    ("AdverseReaction", "恶心呕吐", [
+        "恶心呕吐", "噁心嘔吐", "nausea and vomiting",
     ]),
 ]
 
@@ -299,25 +312,21 @@ class EntityDisambiguationService:
         return self._embedding_model
 
     @staticmethod
-    def resolve(name: str, etype: str, law_id: str = "") -> Tuple[str, str]:
+    def resolve(name: str, etype: str) -> Tuple[str, str]:
         """
         解析单个实体（L1 规范化 + L2 别名表 + L4 类型约束），返回 (规范 ID, 规范展示名)。
 
-        - Article 类型：规范 ID 带 law_id，跨法规不合并；
         - 命中 L2 别名表：归并到规范名；
         - 未命中：以自身归一化结果作为规范名（等价于「保持独立」），
           是否进一步由 L3 向量对齐归并，由 canonicalize() 决定。
 
+        医学实体为全局概念（跨指南唯一），规范 ID 直接由「类型 + 规范名」决定。
         本方法是纯函数（不读词典、不编码向量），L3 因需读实体词典而放在
         canonicalize() 中作为第二阶段，两者职责分离。
         """
         norm = normalize_name(name)
         if not norm:
-            return (f"{etype or 'Concept'}::unknown", name or "unknown")
-
-        if etype == "Article":
-            # 条款为法规内局部实体，禁止跨法规合并
-            return (f"Article::{law_id}::{norm}", (name or "").strip())
+            return (f"{etype or 'Cancer'}::unknown", name or "unknown")
 
         canonical = _ALIAS_LOOKUP.get((etype, norm))
         if canonical:
@@ -351,8 +360,7 @@ class EntityDisambiguationService:
         """
         L3 向量对齐：把 L1/L2 未能归并的实体对齐到实体词典中已有的规范实体。
 
-        只处理「L2 别名表未命中」的实体 —— 已归并的无需再判，且能显著压缩编码量；
-        只处理非 Article 类型 —— 条款是法规内局部实体（见模块 docstring）。
+        只处理「L2 别名表未命中」的实体 —— 已归并的无需再判，且能显著压缩编码量。
 
         词典快照一次性取回后在内存做同类型矩阵比较，避免逐条 ES 往返。
         任何一步失败都返回空 mapping（等价于不启用 L3），不向调用方抛异常。
@@ -375,10 +383,10 @@ class EntityDisambiguationService:
         if not settings.entity_align_enabled or not keys:
             return empty
 
-        # 待对齐集合：L2 未命中、非 Article、名称非空
+        # 待对齐集合：L2 未命中、名称非空
         pending: Dict[str, Dict] = {}
         for (etype, name), (canonical_id, _) in keys.items():
-            if etype == "Article" or not name:
+            if not name:
                 continue
             if _ALIAS_LOOKUP.get((etype, normalize_name(name))):
                 continue
@@ -386,7 +394,7 @@ class EntityDisambiguationService:
         if not pending:
             return empty
 
-        snapshot = self.repo.get_kg_entities_with_vectors(exclude_types=["Article"])
+        snapshot = self.repo.get_kg_entities_with_vectors()
         if snapshot is None:
             logger.warning("[消歧] L3 向量对齐跳过：实体词典读取失败（本次降级为 L1/L2/L4）")
             return empty
@@ -666,7 +674,7 @@ class EntityDisambiguationService:
 
     def _embed_entities(self, entities: Dict[str, Dict], align: Dict) -> None:
         """
-        为非 Article 的规范实体补算 embedding 并挂在实体文档上（由写入路径落库）。
+        为规范实体补算 embedding 并挂在实体文档上（由写入路径落库）。
 
         必要性：向量对齐「匹配已有词典」的前提是词典里有向量。若新入库实体不回写向量，
         词典只能被匹配、不能作为匹配目标，覆盖面无法自增长。
@@ -677,7 +685,7 @@ class EntityDisambiguationService:
         known = align.get("known_vectors") or set()
         targets = [
             doc for doc in entities.values()
-            if doc["type"] != "Article" and doc["entity_id"] not in known and doc["name"]
+            if doc["entity_id"] not in known and doc["name"]
         ][: settings.entity_align_embed_max]
         if not targets:
             return
@@ -697,8 +705,8 @@ class EntityDisambiguationService:
     def canonicalize(
         self,
         triples: List[Dict],
-        law_id: str = "",
-        jurisdiction: str = "",
+        source_id: str = "",
+        cancer_type: str = "",
     ) -> Dict:
         """
         对一批三元组做实体归一（L1/L2/L4 + L3），并汇总出需要写入实体词典的条目。
@@ -710,7 +718,11 @@ class EntityDisambiguationService:
           1. L1/L2/L4 解析出每个 (类型, 名称) 的规范 ID —— 纯函数，无外部依赖；
           2. L3 向量对齐 —— 读实体词典，把 L2 未命中的实体改判到已有规范实体，
              失败静默降级（不影响第 1 步结果）；
-          3. 应用结果：写回 canonical_id、汇总实体、为非 Article 规范实体补算向量。
+          3. 应用结果：写回 canonical_id、汇总实体、为规范实体补算向量。
+
+        Args:
+            source_id: 来源 ID（指南 doc_id，仅用于日志与语义完整，不作为实体作用域）
+            cancer_type: 关联癌种（累加进实体词典的癌种集合）
 
         Returns:
             {
@@ -735,10 +747,10 @@ class EntityDisambiguationService:
                     continue
                 raw_ids.add(ent.get("id", ""))
 
-                etype = ent.get("type", "Concept")
+                etype = ent.get("type", "")
                 key = (etype, ent.get("name", ""))
                 if key not in keys:
-                    keys[key] = self.resolve(key[1], key[0], law_id)
+                    keys[key] = self.resolve(key[1], key[0])
 
         # ---- 第 2 步：L3 向量对齐 ----
         # keys 的键是原始 (类型, 名称)，值是可被改写的规范 ID，故对齐结果直接改 keys，
@@ -765,7 +777,7 @@ class EntityDisambiguationService:
                 ent = t.get(side)
                 if not isinstance(ent, dict):
                     continue
-                etype = ent.get("type", "Concept")
+                etype = ent.get("type", "")
                 canonical_id, display = keys[(etype, ent.get("name", ""))]
                 ent["canonical_id"] = canonical_id
 
@@ -774,13 +786,13 @@ class EntityDisambiguationService:
                     "name": display,
                     "type": etype,
                     "aliases": [],
-                    "jurisdictions": [],
+                    "cancer_types": [],
                 })
                 alias = (ent.get("name") or "").strip()
                 if alias and alias not in doc["aliases"]:
                     doc["aliases"].append(alias)
-                if jurisdiction and jurisdiction not in doc["jurisdictions"]:
-                    doc["jurisdictions"].append(jurisdiction)
+                if cancer_type and cancer_type not in doc["cancer_types"]:
+                    doc["cancer_types"].append(cancer_type)
 
         self._embed_entities(entities, align)
 
@@ -798,14 +810,14 @@ class EntityDisambiguationService:
     def canonicalize_and_index(
         self,
         triples: List[Dict],
-        law_id: str = "",
-        jurisdiction: str = "",
+        source_id: str = "",
+        cancer_type: str = "",
     ) -> Dict:
         """归一三元组并把得到的实体写入实体词典，返回 canonicalize() 的结果"""
-        result = self.canonicalize(triples, law_id, jurisdiction)
+        result = self.canonicalize(triples, source_id, cancer_type)
         saved = self.repo.merge_kg_entities(result["entities"])
         if saved < 0:
-            logger.warning(f"[消歧] 实体词典写入失败，本次仅返回归一结果: law_id={law_id}")
+            logger.warning(f"[消歧] 实体词典写入失败，本次仅返回归一结果: source_id={source_id}")
         return result
 
 
