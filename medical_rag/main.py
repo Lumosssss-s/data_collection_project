@@ -59,9 +59,9 @@ _configure_logging()
 
 
 app = FastAPI(
-    title="Legal RAG API",
+    title="肿瘤循证知识中枢 API",
     version="1.0.0",
-    description="境外法规文本检索问答系统"
+    description="面向肿瘤临床的循证知识检索与问答系统"
 )
 
 
@@ -85,13 +85,13 @@ def _warm_reranker(svc) -> None:
     """
     from core.config import settings
 
-    long_text = ("劳动争议与劳动关系的法律适用及当事人权利义务条款。" * 40)[:500]
+    long_text = ("EGFR 突变非小细胞肺癌的一线靶向治疗推荐与循证证据等级说明。" * 40)[:500]
     batch = max(1, settings.reranker_batch_size)
     candidates = [
         {"content": long_text, "id": f"warmup-{i}"}
         for i in range(batch)
     ]
-    svc.rerank(query="warmup 劳动关系", candidates=candidates, top_k=batch)
+    svc.rerank(query="warmup 肺癌靶向治疗", candidates=candidates, top_k=batch)
 
 
 def _warm_embedding(model) -> None:
@@ -105,7 +105,7 @@ def _warm_embedding(model) -> None:
 
     with torch.no_grad():
         model.encode(
-            ["warmup 劳动关系"],
+            ["warmup 肺癌靶向治疗"],
             batch_size=settings.batch_size,
             normalize_embeddings=True,
             show_progress_bar=False,
@@ -170,7 +170,7 @@ def _load_and_warm_embedding(_log) -> None:
 
 
 def _warmup_models() -> None:
-    """后台预热模型与法域向量（在独立线程中执行）。
+    """后台预热检索模型（在独立线程中执行）。
 
     关键点：
     1. 必须放在独立线程里。模型加载与首次推理都是阻塞的 CPU/IO 重活，原先直接写在
@@ -184,11 +184,7 @@ def _warmup_models() -> None:
        实测就绪时间 68.7s → 60.1s。收益低于理论值的原因是 Re-ranker 推理预热（8 线程满负荷）
        与 bge-m3 加载争抢 CPU，把加载从 34.0s 抬到 43.8s；缩短预热规模后（见 _warm_reranker）
        争抢窗口收窄，加载回落到 40.2s，就绪进一步降到 57.6s。
-       法域向量依赖 bge-m3，必须排在两条链汇合之后，不能一起丢进池子。
-    5. 法域语义向量也纳入本流程串行执行（见下）。它原先在 QAService 构造时以独立线程
-       启动、且每个实例各算一份，实测 2 份并发把 16 核占满约 90 秒，又不受就绪探针门控，
-       才是「就绪后前几个请求 20 秒以上」的真正原因——并非首次前向开销。
-    6. 冷启动优化已收口（判定不再投入）。剩余缺口为：① bge-m3 加载 40.2s（无并发争抢时
+    5. 冷启动优化已收口（判定不再投入）。剩余缺口为：① bge-m3 加载 40.2s（无并发争抢时
        34.0s，现已无可与之争抢的并行伙伴）；② 进程与框架启动开销约 7.7s（容器启停 +
        torch/fastapi import）。继续压缩需引入模型量化（int8）或把第二个模型改为延迟加载，
        两者都会牺牲精度或首请求延迟，边际收益 < 2s 而风险明显上升，故判定收口。
@@ -269,7 +265,7 @@ async def health_check():
     语义保持不变（不反映模型/依赖状态），避免影响既有调用方。
     「能否高效服务」的判断请用 /health/ready。
     """
-    return {"status": "healthy", "service": "legal-rag"}
+    return {"status": "healthy", "service": "medical-rag"}
 
 
 @app.get("/health/ready")
@@ -307,7 +303,7 @@ async def readiness_check(response: Response):
         response.status_code = 503
     return {
         "status": "ready" if ready else "warming_up",
-        "service": "legal-rag",
+        "service": "medical-rag",
         "models": {
             "reranker": reranker_state,
             "embedding": embedding_state,
@@ -333,7 +329,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGTERM, _handle_signal)
 
     try:
-        logger.info("Legal RAG 服务启动中...")
+        logger.info("肿瘤循证知识中枢服务启动中...")
         uvicorn.run(app, host="0.0.0.0", port=8001, log_level="info")
     except Exception as e:
         logger.exception(f"服务异常退出: {type(e).__name__}: {e}")
