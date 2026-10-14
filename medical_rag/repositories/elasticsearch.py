@@ -1790,8 +1790,9 @@ class ElasticsearchRepository:
                 body={
                     "cache_type": cache_type,
                     "topic_id": topic_id,
-                    # ES 字段为 target_a/b（C2 §6）；方法签名沿用旧参数名，
-                    # 待 BE-08 服务重写时统一更名。
+                    # ES 字段为 target_a/b（C2 §6）。方法参数名沿用中性语义位置参数
+                    # （各调用方按位置传入：compare 传两癌种代码、analysis/structured
+                    # 传专题与对比对象），跨服务统一更名留待缓存键口径统一时处理。
                     "target_a": jurisdiction_a,
                     "target_b": jurisdiction_b,
                     "fingerprint": fingerprint,

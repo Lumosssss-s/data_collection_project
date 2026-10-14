@@ -1,495 +1,271 @@
-from typing import List, Dict, Optional
-import time
-import re
+"""双癌种循证对比服务（医疗，BE-08 + BE-19）
+
+核心能力：分别检索两个癌种在固定临床维度上的推荐条目 → 按维度聚合 → 结构化展示 +
+自动总结。与「跨癌种专题分析（BE-09/27）」的区别：专题分析调用 LLM 生成深度报告；
+本对比以检索 + 结构化展示为主，轻量、秒级，可选 LLM 深度增强。
+
+对比维度（简版，固定 5 维）：
+    症状与临床表现 / 病理与分子特征 / 诊断与分期 / 治疗推荐 / 预后与随访
+"""
 import hashlib
 import json
-from collections import defaultdict, Counter
+import logging
+import time
+from typing import Dict, List, Optional, Tuple
 
+from core.domain_enums import CANCER_TYPE_INFO, get_cancer_type_info
 from repositories.elasticsearch import ElasticsearchRepository
+
+logger = logging.getLogger(__name__)
+
+# 癌种代码 -> 标准中文名
+_CODE_TO_NAME = {code: name for name, (code, _) in CANCER_TYPE_INFO.items()}
 
 
 class CompareService:
-    """
-    法规对比服务
+    """双癌种临床维度对比服务"""
 
-    核心能力：分别检索两个法域的条款 → 聚合为法规级 → 结构化表格展示 + 自动总结 + 条款对照 + 关键词提取。
-    与专题分析的区别：专题分析调用LLM生成深度报告；法规对比以检索+展示为主，可选LLM增强。
-    """
+    # 固定对比维度：key 稳定（前端用于定位），query 为该维度的检索词
+    DIMENSIONS: List[Dict[str, str]] = [
+        {"key": "symptom",   "label": "症状与临床表现", "query": "症状 临床表现 体征"},
+        {"key": "pathology", "label": "病理与分子特征", "query": "病理 分子分型 基因突变 免疫组化 标志物"},
+        {"key": "diagnosis", "label": "诊断与分期",     "query": "诊断 影像 病理活检 检查 分期"},
+        {"key": "treatment", "label": "治疗推荐",       "query": "治疗 靶向 免疫 化疗 放疗 手术 推荐"},
+        {"key": "prognosis", "label": "预后与随访",     "query": "预后 生存 复发 随访"},
+    ]
+
+    # 每个维度、每个癌种最多保留的条目数
+    MAX_ITEMS_PER_DIMENSION = 5
 
     def __init__(self):
         self.repo = ElasticsearchRepository()
+        self._retriever = None  # 懒加载，避免导入期加载大模型
 
-    # ===== 中文主题 → 英文检索关键词映射（提升新加坡/英文法域检索准确率）=====
-    _TOPIC_EN_QUERIES: Dict[str, List[str]] = {
-        "数据保护": ["data protection", "personal data", "privacy", "sensitive data"],
-        "网络安全": ["cybersecurity", "critical infrastructure", "network security", "incident"],
-        "人工智能": ["artificial intelligence", "AI governance", "automated decision", "algorithm"],
-        "金融监管": ["financial regulation", "banking supervision", "prudential", "capital adequacy"],
-        "跨境贸易": ["cross-border trade", "customs", "import export", "trade facilitation"],
-        "知识产权": ["intellectual property", "patent", "copyright", "trademark", "IP rights"],
-    }
-
-    def _get_search_queries(self, topic: str, jurisdiction: str) -> List[str]:
-        """根据法域语言特性选择检索词：新加坡等英文法域使用英文查询"""
-        en_jurisdictions = {"新加坡", "香港", "Singapore", "Hong Kong"}
-        if jurisdiction in en_jurisdictions:
-            for cn_key, en_queries in self._TOPIC_EN_QUERIES.items():
-                if cn_key in topic:
-                    return en_queries
-            if re.search(r'[a-zA-Z]', topic):
-                return [topic]
-            return [topic] + self._translate_topic_to_en(topic)
-        return [topic]
-
-    @staticmethod
-    def _translate_topic_to_en(topic: str) -> List[str]:
-        """简单的中文主题→英文关键词启发式映射（覆盖常见法律领域）"""
-        mapping = {
-            "数据": ["data"], "保护": ["protection"], "隐私": ["privacy"], "安全": ["security"],
-            "网络": ["cyber", "network"], "跨境": ["cross-border"], "传输": ["transfer"],
-            "金融": ["financial"], "银行": ["banking"], "洗钱": ["money laundering"],
-            "消费者": ["consumer"], "电信": ["telecom"], "通讯":["communication"],
-            "电子": ["electronic"], "签名": ["signature"], "犯罪": ["crime", "offense"],
-            "知识产权": ["intellectual property"], "监管": ["regulation", "supervision"],
-            "贸易": ["trade"], "人工智能": ["AI", "artificial intelligence"],
-        }
-        en_parts = []
-        for cn, en_list in mapping.items():
-            if cn in topic:
-                en_parts.extend(en_list)
-        return list(set(en_parts))[:5]
+    @property
+    def retriever(self):
+        if self._retriever is None:
+            from services.retriever_service import RetrieverService
+            self._retriever = RetrieverService()
+        return self._retriever
 
     # ================================================================
-    #  缓存指纹机制（与专题分析一致）
+    #  缓存指纹机制
     # ================================================================
 
-    def _compute_fingerprint(self, topic: str, jurisdiction_a: str, jurisdiction_b: str) -> str:
-        """
-        生成对比分析的综合指纹（MD5）。
-
-        指纹仅基于稳定输入参数（topic + jurisdictions + 检索关键词），
-        不依赖 ES 检索结果（向量检索每次返回的列表可能不同）。
-        """
-        queries_a = self._get_search_queries(topic, jurisdiction_a)
-        queries_b = self._get_search_queries(topic, jurisdiction_b)
+    def _compute_fingerprint(self, code_a: str, code_b: str, topic: str) -> str:
+        """生成对比指纹（MD5）：仅基于稳定输入（两癌种 + 主题 + 维度集合）。"""
         raw = json.dumps({
+            "cancer_type_a": code_a,
+            "cancer_type_b": code_b,
             "topic": topic,
-            "jurisdiction_a": jurisdiction_a,
-            "jurisdiction_b": jurisdiction_b,
-            "queries_a": queries_a,
-            "queries_b": queries_b,
+            "dimensions": [d["key"] for d in self.DIMENSIONS],
         }, sort_keys=True, ensure_ascii=False)
-        fp = hashlib.md5(raw.encode("utf-8")).hexdigest()
-        logger.info(f"[Compare-FP] computed={fp[:16]}..., topic={topic}, {jurisdiction_a} vs {jurisdiction_b}")
-        return fp
+        return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
-    def _try_get_cached(self, topic: str, jur_a: str, jur_b: str, current_fp: str) -> Optional[Dict]:
-        """尝试从缓存获取有效结果，返回 report_data 或 None"""
-        cached = self.repo.get_analysis_cache(topic, jur_a, jur_b, cache_type="compare")
-        if not cached:
+    def _cache_key(self, code_a: str, code_b: str, topic: str) -> Tuple[str, str, str]:
+        """缓存三元键（topic_id / target_a / target_b），与 redis 无关，仅用于 ES 缓存文档 ID。"""
+        return code_a, code_b, (topic or "_")
+
+    def _try_get_cached(self, code_a: str, code_b: str, topic: str, current_fp: str) -> Optional[Dict]:
+        """尝试从缓存获取有效结果，返回 report_data 或 None。"""
+        t_id, t_a, t_b = self._cache_key(code_a, code_b, topic)
+        cached = self.repo.get_analysis_cache(t_id, t_a, t_b, cache_type="compare")
+        if not cached or not isinstance(cached, dict):
             return None
-        if not isinstance(cached, dict):
-            logger.warning(f"[Compare-Cache] 缓存数据格式异常（非dict），跳过")
+        if cached.get("fingerprint", "") != current_fp:
+            logger.info("[Compare-Cache] 指纹不匹配，失效")
             return None
-        cached_fp = cached.get("fingerprint", "")
         report_data = cached.get("report_data")
         if not isinstance(report_data, dict):
-            logger.warning(f"[Compare-Cache] report_data 格式异常，跳过")
             return None
-        if cached_fp != current_fp:
-            logger.info(f"[Compare-Cache] 指纹不匹配，失效。cached={cached_fp[:16]}... current={current_fp[:16]}...")
-            return None
-        logger.info(f"[Compare-Cache] 命中！topic={topic}, {jur_a} vs {jur_b}")
-
-        # 反序列化 topic 字段（写入时可能转为JSON字符串）
-        import json
-        if isinstance(report_data, dict):
-            topic_raw = report_data.get("topic")
-            if isinstance(topic_raw, str):
-                try:
-                    report_data["topic"] = json.loads(topic_raw)
-                except (json.JSONDecodeError, TypeError):
-                    pass
-
+        logger.info(f"[Compare-Cache] 命中！{code_a} vs {code_b}, topic={topic or '-'}")
         return report_data
 
-    def _search_and_aggregate(
-        self,
-        topic: str,
-        jurisdiction: str,
-        top_k: int = 10,
-    ) -> List[Dict]:
-        """
-        检索指定法域的法规并聚合为法规级别结果。
+    # ================================================================
+    #  检索与聚合
+    # ================================================================
 
-        Args:
-            topic: 搜索主题
-            jurisdiction: 法域名称
-            top_k: 每个法域返回的条款数上限
+    def _search_cancer(self, code: str, topic: str) -> List[Dict]:
+        """检索某癌种在全部维度上的推荐条目，按维度聚合（跨维度去重）。
+
         Returns:
-            聚合后的法规列表，每个元素包含：
-              - law_id, title, article_numbers (list), chunk_count
-              - passing_date, keywords, chunks_preview (前5条摘要)
-              - max_similarity, all_chunks (完整列表用于前端渲染)
+            [{"dimension_key", "dimension_label", "items": [item, ...]}, ...]
         """
-        start_time = time.time()
+        seen_ids = set()
+        blocks: List[Dict] = []
 
-        # 根据法域选择合适的检索词（新加坡用英文，澳门用中文）
-        queries = self._get_search_queries(topic, jurisdiction)
-        raw = self.repo.query(queries, n_results=top_k, where={"jurisdiction": jurisdiction})
+        for dim in self.DIMENSIONS:
+            query = dim["query"] + (f" {topic}" if topic else "")
+            try:
+                raw = self.retriever.hybrid_search(
+                    query, top_k=self.MAX_ITEMS_PER_DIMENSION,
+                    filters={"cancer_type": code},
+                )
+            except Exception as e:
+                logger.warning(f"[Compare] 检索失败 {code}/{dim['key']}: {type(e).__name__}: {e}")
+                raw = []
 
-        # 将 ChromaDB 格式（{ids: [[...]], documents: [[...]], metadatas: [[...]]}）
-        # 展平为 [{law_id, content, metadata, similarity, _id}, ...]
-        results = []
-        all_ids = raw.get("ids", [])
-        all_docs = raw.get("documents", [])
-        all_metas = raw.get("metadatas", [])
-        all_dists = raw.get("distances", [])
-        for q_idx in range(len(all_ids)):
-            for i in range(len(all_ids[q_idx])):
-                meta = all_metas[q_idx][i] if q_idx < len(all_metas) and i < len(all_metas[q_idx]) else {}
-                dist = all_dists[q_idx][i] if q_idx < len(all_dists) and i < len(all_dists[q_idx]) else 1.0
-                results.append({
-                    "law_id": meta.get("law_id", ""),
-                    "content": all_docs[q_idx][i] if q_idx < len(all_docs) and i < len(all_docs[q_idx]) else "",
-                    "metadata": meta,
-                    "similarity": round(1 - dist, 4),
-                    "_id": all_ids[q_idx][i],
-                })
+            items: List[Dict] = []
+            for r in raw:
+                item_id = r.get("item_id") or ""
+                if item_id and item_id in seen_ids:
+                    continue  # 同一层级已归入更靠前的维度，避免重复
+                if item_id:
+                    seen_ids.add(item_id)
+                items.append(self._format_item(r))
+                if len(items) >= self.MAX_ITEMS_PER_DIMENSION:
+                    break
 
-        if not results:
-            logger.info(f"[Compare] {jurisdiction} 未检索到任何结果（queries={queries}）")
-            return []
-
-        # 按法规聚合
-        laws_map: Dict[str, dict] = defaultdict(lambda: {
-            "title": "", "article_numbers": set(), "chunks": [],
-            "passing_date": None, "all_content": ""
-        })
-        # 同一法条可能命中多个 sub_chunk，按 (law_id, article_number) 去重，只保留相似度最高的一条
-        seen_articles: Dict[tuple, dict] = {}
-
-        for r in results:
-            lid = r.get("law_id", "")
-            # 防御：metadata 可能是字符串（ES 某些场景下）
-            meta = r.get("metadata")
-            if not isinstance(meta, dict):
-                meta = {}
-            art_num = meta.get("article_number") or ""
-
-            entry = laws_map[lid]
-            if not entry["title"]:
-                entry["title"] = meta.get("title", lid)
-            if art_num:
-                entry["article_numbers"].add(art_num)
-
-            content = r.get("content", "")
-            similarity = float(r.get("similarity", 0))
-
-            if art_num:
-                dup = seen_articles.get((lid, art_num))
-                if dup is not None:
-                    # 保留相似度更高的那条（用于排序与对照表展示）
-                    if similarity > dup["similarity"]:
-                        dup["similarity"] = similarity
-                        dup["_id"] = r.get("_id", "")
-                    continue
-
-            chunk = {
-                "content": content,
-                "similarity": similarity,
-                "article_number": art_num,
-                "law_id": lid,
-                "law_title": entry["title"],
-                "_id": r.get("_id", ""),
-                "chunk_index": len(entry["chunks"]),
-            }
-            if art_num:
-                seen_articles[(lid, art_num)] = chunk
-
-            entry["chunks"].append(chunk)
-            entry["all_content"] += " " + content
-            pd = meta.get("passing_date")
-            if pd and not entry["passing_date"]:
-                entry["passing_date"] = pd
-
-        # 回取完整法条原文：向量检索命中的是 sub_chunk（常从词中间截断），
-        # 直接用片段会污染 LLM 上下文和前端条款对照表，这里按 law_id + article_number 聚合回完整条文
-        for lid, info in laws_map.items():
-            for chunk in info["chunks"]:
-                art_num = chunk.get("article_number")
-                if not art_num:
-                    continue
-                full_text = self.repo.get_article_full_text(lid, art_num)
-                if full_text:
-                    chunk["content"] = full_text
-
-        aggregated = []
-        for lid, info in laws_map.items():
-            sorted_chunks = sorted(info["chunks"], key=lambda c: c["chunk_index"])
-            article_list = sorted(
-                [a for a in info["article_numbers"] if a],
-                key=lambda x: x.lstrip("第").rstrip("条")[:5] if x else ""
-            )
-
-            keywords = self._extract_keywords(info["all_content"])
-
-            aggregated.append({
-                "law_id": lid,
-                "title": info["title"],
-                "article_numbers": article_list,
-                "chunk_count": len(sorted_chunks),
-                "article_count": len(article_list),
-                "passing_date": info["passing_date"],
-                "keywords": keywords,
-                "chunks_preview": [
-                    {"content": c["content"][:300], "similarity": c["similarity"],
-                     "article_number": c.get("article_number", "")}
-                    for c in sorted_chunks[:5]
-                ],
-                "max_similarity": max(c["similarity"] for c in sorted_chunks) if sorted_chunks else 0,
-                "all_chunks": [
-                    {"content": c["content"], "similarity": c["similarity"],
-                     "article_number": c.get("article_number", ""), "_id": c["_id"]}
-                    for c in sorted_chunks
-                ]
+            blocks.append({
+                "dimension_key": dim["key"],
+                "dimension_label": dim["label"],
+                "items": items,
             })
 
-        elapsed = time.time() - start_time
-        logger.info(f"[Compare] {jurisdiction}: 命中 {len(aggregated)} 部法规, "
-                     f"共 {sum(a['chunk_count'] for a in aggregated)} 条条款 ({elapsed:.2f}s)")
-        return aggregated
+        return blocks
 
     @staticmethod
-    def _extract_keywords(text: str, top_n: int = 5) -> List[str]:
-        """从文本中提取高频实词作为关键词"""
-        # 简单分词 + 词频统计（实际项目可替换为 jieba）
-        words = re.findall(r'[\u4e00-\u9fff]{2,}|[\w]{3,}', text.lower())
-        stop_words = {
-            'the', 'and', 'for', 'that', 'this', 'with', 'are', 'was', 'has',
-            'been', 'have', 'from', 'they', 'will', 'would', 'could', 'should',
-            'may', 'can', 'shall', 'must', 'which', 'their', 'each', 'other',
-            'into', 'than', 'them', 'being', 'some', 'such', 'only', 'also',
-            'data', 'personal', 'information', 'protection', 'person'
-        }
-        filtered = [w for w in words if w not in stop_words and len(w) >= 2]
-        counter = Counter(filtered)
-        return [word for word, count in counter.most_common(top_n)]
-
-    def _build_stats(
-        self,
-        results_a: List[Dict],
-        results_b: List[Dict],
-        jurisdiction_a: str,
-        jurisdiction_b: str,
-    ) -> Dict:
-        """
-        构建对比指标统计。
-
-        返回结构与前端的 renderCompareStats / renderKeywordsComparison 对齐：
-        {
-            "total_chunks": {jurA: int, jurB: int},
-            "law_counts": {jurA: int, jurB: int},
-            "best_similarity": {jurA: float, jurB: float},
-            "avg_similarity": {jurA: float, jurB: float},
-            "top_keywords": {jurA: list, jurB: list},
-        }
-        """
-        all_chunks_a = [c for r in results_a for c in r.get("all_chunks", [])]
-        all_chunks_b = [c for r in results_b for c in r.get("all_chunks", [])]
-
-        article_count_a = sum(r.get("article_count", 0) for r in results_a)
-        article_count_b = sum(r.get("article_count", 0) for r in results_b)
-
-        sims_a = [float(c.get("similarity", 0)) for c in all_chunks_a]
-        sims_b = [float(c.get("similarity", 0)) for c in all_chunks_b]
-
-        def _avg(sims: List[float]) -> float:
-            return round(sum(sims) / len(sims), 4) if sims else 0.0
-
-        def _merge_keywords(results: List[Dict]) -> List[str]:
-            merged = []
-            for r in results:
-                merged.extend(r.get("keywords", []))
-            counter = Counter(merged)
-            return [word for word, _ in counter.most_common(10)]
-
+    def _format_item(r: Dict) -> Dict:
+        """把检索结果裁剪为对比展示所需字段。"""
         return {
-            "total_chunks": {
-                jurisdiction_a: len(all_chunks_a),
-                jurisdiction_b: len(all_chunks_b),
-            },
-            "total_articles": {
-                jurisdiction_a: article_count_a,
-                jurisdiction_b: article_count_b,
-            },
-            "law_counts": {
-                jurisdiction_a: len(results_a),
-                jurisdiction_b: len(results_b),
-            },
-            "best_similarity": {
-                jurisdiction_a: round(max(sims_a), 4) if sims_a else 0.0,
-                jurisdiction_b: round(max(sims_b), 4) if sims_b else 0.0,
-            },
-            "avg_similarity": {
-                jurisdiction_a: _avg(sims_a),
-                jurisdiction_b: _avg(sims_b),
-            },
-            "top_keywords": {
-                jurisdiction_a: _merge_keywords(results_a),
-                jurisdiction_b: _merge_keywords(results_b),
-            },
+            "item_id": r.get("item_id", ""),
+            "rec_id": r.get("rec_id", ""),
+            "title": r.get("title", ""),
+            "content": (r.get("content") or "")[:500],
+            "score": round(float(r.get("score", 0.0)), 4),
+            "cancer_type": r.get("cancer_type", ""),
+            "scenario": r.get("scenario", ""),
+            "evidence_level": r.get("evidence_level", ""),
+            "rec_strength": r.get("rec_strength", ""),
+            "breadcrumb": r.get("breadcrumb", ""),
         }
 
-    def _build_auto_summary(
-        self,
-        results_a: List[Dict],
-        results_b: List[Dict],
-        jurisdiction_a: str,
-        jurisdiction_b: str,
-        topic: str,
-    ) -> str:
-        """基于检索结果生成自动对比总结"""
-        if not results_a and not results_b:
-            return f"未检索到{jurisdiction_a}与{jurisdiction_b}关于「{topic}」的相关法规条款。"
+    def _build_stats(self, blocks_a: List[Dict], blocks_b: List[Dict],
+                     name_a: str, name_b: str) -> Dict:
+        """构建对比统计：各维度条目数 + 总条目数。"""
+        by_dim: Dict[str, Dict[str, int]] = {}
+        for ba, bb in zip(blocks_a, blocks_b):
+            label = ba["dimension_label"]
+            by_dim[label] = {"a": len(ba["items"]), "b": len(bb["items"])}
 
-        law_titles_a = [f"《{r['title']}》" for r in results_a[:3] if r.get("title")]
-        law_titles_b = [f"《{r['title']}》" for r in results_b[:3] if r.get("title")]
+        total_a = sum(len(b["items"]) for b in blocks_a)
+        total_b = sum(len(b["items"]) for b in blocks_b)
+        return {
+            "dimension_item_counts": by_dim,
+            "total_items": {"a": total_a, "b": total_b},
+            "names": {"a": name_a, "b": name_b},
+        }
 
-        parts = [f"本次围绕「{topic}」对比了{jurisdiction_a}与{jurisdiction_b}的相关法规。"]
+    def _build_auto_summary(self, blocks_a: List[Dict], blocks_b: List[Dict],
+                            name_a: str, name_b: str, topic: str) -> str:
+        """基于检索结果生成自动对比总结（不调用 LLM）。"""
+        total_a = sum(len(b["items"]) for b in blocks_a)
+        total_b = sum(len(b["items"]) for b in blocks_b)
+        if total_a == 0 and total_b == 0:
+            scope = f"关于「{topic}」的" if topic else ""
+            return f"未检索到{name_a}与{name_b}{scope}相关推荐条目。"
 
-        if law_titles_a:
-            parts.append(
-                f"{jurisdiction_a}主要涉及{'、'.join(law_titles_a)}等"
-                f"{len(results_a)}部法规，命中{sum(r['chunk_count'] for r in results_a)}条相关条款。"
-            )
-        else:
-            parts.append(f"{jurisdiction_a}未检索到相关法规。")
+        scope = f"围绕「{topic}」，" if topic else ""
+        parts = [f"本次{scope}对比了{name_a}与{name_b}的循证推荐要点。"]
 
-        if law_titles_b:
-            parts.append(
-                f"{jurisdiction_b}主要涉及{'、'.join(law_titles_b)}等"
-                f"{len(results_b)}部法规，命中{sum(r['chunk_count'] for r in results_b)}条相关条款。"
-            )
-        else:
-            parts.append(f"{jurisdiction_b}未检索到相关法规。")
+        def _covered(blocks: List[Dict]) -> List[str]:
+            return [b["dimension_label"] for b in blocks if b["items"]]
 
-        if results_a and results_b:
-            parts.append(
-                "两法域在立法侧重点、监管机构和处罚机制等方面存在差异，"
-                "详见下方逐维度对比表与条款对照。"
-            )
-        elif results_a or results_b:
-            parts.append("仅一方检索到相关法规，建议扩大检索范围或调整主题词后重试。")
+        cov_a, cov_b = _covered(blocks_a), _covered(blocks_b)
+        parts.append(
+            f"{name_a}覆盖 {total_a} 条推荐"
+            + (f"，集中于{'、'.join(cov_a)}。" if cov_a else "，暂无相关内容。")
+        )
+        parts.append(
+            f"{name_b}覆盖 {total_b} 条推荐"
+            + (f"，集中于{'、'.join(cov_b)}。" if cov_b else "，暂无相关内容。")
+        )
+        if cov_a and cov_b:
+            common = [x for x in cov_a if x in cov_b]
+            if common:
+                parts.append(f"两者在「{'、'.join(common)}」等维度均有可对照的推荐，详见下方逐维度对照。")
+            else:
+                parts.append("两者覆盖维度差异较大，建议结合下方对照进一步比较。")
+        return "".join(parts)
 
-        return "\n".join(parts)
+    # ================================================================
+    #  主流程
+    # ================================================================
 
     def compare(
         self,
-        topic: str,
-        jurisdiction_a: str,
-        jurisdiction_b: str,
-        top_k_per_jurisdiction: int = 10,
+        cancer_type_a: str,
+        cancer_type_b: str,
+        topic: str = "",
+        top_k: int = MAX_ITEMS_PER_DIMENSION,
     ) -> Dict:
         """
-        执行双法域对比分析（带缓存）。
+        执行双癌种对比分析（带缓存）。
 
-        流程：检索 → 计算指纹 → 查缓存（命中直接返回）→ 未命中则构建结果并写入缓存
+        参数:
+            cancer_type_a / cancer_type_b: 癌种代码或中文名（受控词表，§5.7.3）
+            topic: 可选对比主题（如「免疫治疗」「靶向治疗」）
+            top_k: 每个维度、每个癌种返回的条目数上限
 
         Returns:
             {
-                "topic": str,
-                "jurisdictions": [str, str],
-                "results_a": [...],
-                "results_b": [...],
-                "elapsed_seconds": float,
-                "_cache_hit": bool   # 缓存状态标记
+              "cancer_type_a", "cancer_type_b", "cancer_name_a", "cancer_name_b",
+              "topic", "dimensions": [{key,label}, ...],
+              "results_a": [{dimension_key, dimension_label, items}, ...],
+              "results_b": [...],
+              "stats": {...}, "auto_summary": str,
+              "elapsed_seconds": float, "_cache_hit": bool
             }
         """
+        code_a, _ = get_cancer_type_info(cancer_type_a)
+        code_b, _ = get_cancer_type_info(cancer_type_b)
+        name_a = _CODE_TO_NAME.get(code_a, cancer_type_a)
+        name_b = _CODE_TO_NAME.get(code_b, cancer_type_b)
+
         overall_start = time.time()
+        self.MAX_ITEMS_PER_DIMENSION = max(1, top_k)
 
-        # 步骤1：计算指纹 + 检查缓存。
-        # 指纹只由 topic 与两个法域决定，不依赖检索结果（见 _compute_fingerprint 文档），
-        # 因此可以提到检索之前：命中时直接返回，省掉后续两次法域检索
-        # （实测：未命中约 1~2s，命中约 0.01s）。
-        current_fingerprint = self._compute_fingerprint(topic, jurisdiction_a, jurisdiction_b)
-        cached_result = self._try_get_cached(topic, jurisdiction_a, jurisdiction_b, current_fingerprint)
-        if cached_result is not None:
-            elapsed = time.time() - overall_start
-            logger.info(f"[Compare] 缓存命中，返回缓存结果。耗时 {elapsed:.2f}s")
-            # 兼容旧缓存：若缺少 stats/auto_summary 则补充计算
-            if "stats" not in cached_result or "auto_summary" not in cached_result:
-                cached_result["stats"] = self._build_stats(
-                    cached_result.get("results_a", []),
-                    cached_result.get("results_b", []),
-                    jurisdiction_a,
-                    jurisdiction_b,
-                )
-                cached_result["auto_summary"] = self._build_auto_summary(
-                    cached_result.get("results_a", []),
-                    cached_result.get("results_b", []),
-                    jurisdiction_a,
-                    jurisdiction_b,
-                    topic,
-                )
-            return {
-                **cached_result,
-                "_cache_hit": True,
-                "elapsed_seconds": round(elapsed, 2),
-            }
+        # 步骤1：指纹 + 缓存
+        current_fp = self._compute_fingerprint(code_a, code_b, topic)
+        cached = self._try_get_cached(code_a, code_b, topic, current_fp)
+        if cached is not None:
+            cached["_cache_hit"] = True
+            cached["elapsed_seconds"] = round(time.time() - overall_start, 2)
+            return cached
 
-        # 步骤2：缓存未命中 — 检索两个法域的法规
-        results_a = self._search_and_aggregate(topic, jurisdiction_a, top_k=top_k_per_jurisdiction)
-        results_b = self._search_and_aggregate(topic, jurisdiction_b, top_k=top_k_per_jurisdiction)
+        # 步骤2：分别检索两个癌种并按维度聚合
+        blocks_a = self._search_cancer(code_a, topic)
+        blocks_b = self._search_cancer(code_b, topic)
 
-        if not results_a and not results_b:
-            elapsed = time.time() - overall_start
-            logger.warning(f"[Compare] 双方均无结果，跳过缓存。耗时 {elapsed:.2f}s")
-            return {
-                "topic": topic,
-                "jurisdictions": [jurisdiction_a, jurisdiction_b],
-                "results_a": [], "results_b": [],
-                "elapsed_seconds": round(elapsed, 2),
-                "_cache_hit": False,
-            }
-
-        # 步骤3：构建完整结果
-        elapsed = time.time() - overall_start
-
-        stats = self._build_stats(results_a, results_b, jurisdiction_a, jurisdiction_b)
-        auto_summary = self._build_auto_summary(
-            results_a, results_b, jurisdiction_a, jurisdiction_b, topic
-        )
+        stats = self._build_stats(blocks_a, blocks_b, name_a, name_b)
+        auto_summary = self._build_auto_summary(blocks_a, blocks_b, name_a, name_b, topic)
 
         resp = {
+            "cancer_type_a": code_a,
+            "cancer_type_b": code_b,
+            "cancer_name_a": name_a,
+            "cancer_name_b": name_b,
             "topic": topic,
-            "jurisdictions": [jurisdiction_a, jurisdiction_b],
-            "results_a": results_a,
-            "results_b": results_b,
+            "dimensions": [{"key": d["key"], "label": d["label"]} for d in self.DIMENSIONS],
+            "results_a": blocks_a,
+            "results_b": blocks_b,
             "stats": stats,
             "auto_summary": auto_summary,
-            "elapsed_seconds": round(elapsed, 2),
+            "elapsed_seconds": round(time.time() - overall_start, 2),
             "_cache_hit": False,
         }
 
-        total_laws = len(results_a) + len(results_b)
-        total_articles = sum(r['chunk_count'] for r in results_a) + sum(r['chunk_count'] for r in results_b)
-        logger.info(f"[Compare] 对比完成(未命中): {jurisdiction_a}({len(results_a)}部/{sum(r['chunk_count'] for r in results_a)}条) "
-                     f"vs {jurisdiction_b}({len(results_b)}部/{sum(r['chunk_count'] for r in results_b)}条), "
-                     f"耗时 {elapsed:.2f}s")
+        # 步骤3：写缓存（失败不影响结果）
+        total = stats["total_items"]["a"] + stats["total_items"]["b"]
+        if total > 0:
+            try:
+                t_id, t_a, t_b = self._cache_key(code_a, code_b, topic)
+                self.repo.save_analysis_cache(t_id, t_a, t_b, current_fp, resp, cache_type="compare")
+            except Exception as e:
+                logger.warning(f"[Compare-Cache] 写入缓存失败（不影响结果）: {e}")
 
-        # 步骤3：写入缓存（异步失败不影响结果）
-        try:
-            self.repo.save_analysis_cache(
-                topic, jurisdiction_a, jurisdiction_b,
-                current_fingerprint, resp, cache_type="compare"
-            )
-        except Exception as e:
-            print(f"[Compare-Cache] 写入缓存失败（不影响结果）: {e}")
-
+        logger.info(
+            f"[Compare] {name_a}({stats['total_items']['a']}条) vs "
+            f"{name_b}({stats['total_items']['b']}条), 耗时 {resp['elapsed_seconds']}s"
+        )
         return resp
-
-
-# 模块级 logger（避免循环导入）
-import logging
-logger = logging.getLogger(__name__)
