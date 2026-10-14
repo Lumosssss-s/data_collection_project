@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Query
 from typing import List, Optional
-from models.schemas import APIResponse, SearchResult, DocumentMetadata, SimilarLawResponse, SimilarChunkResponse
+from models.schemas import APIResponse, SearchResult, DocumentMetadata, SimilarGuideResponse, SimilarItemResponse
 from services.retriever_service import RetrieverService
 from services.similar_law_service import SimilarLawService
 from services.summary_service import SummaryService
@@ -154,47 +154,47 @@ def get_topics_simple():
     return APIResponse(success=True, data=topics)
 
 
-@router.get("/law/{law_id}/similar")
-def get_similar_laws(
-    law_id: str,
+@router.get("/doc/{doc_id}/similar")
+def get_similar_guides(
+    doc_id: str,
     top_k: int = Query(5, ge=1, le=20, description="推荐数量（1-20）"),
-    jurisdiction: str = Query(None, description="法域过滤（如：澳门/新加坡），不填则跨法域推荐")
+    cancer_type: str = Query(None, description="癌种过滤（如 lung/breast），不填则跨癌种推荐")
 ):
     """
-    相似法规推荐接口
+    相似指南推荐接口
 
-    根据当前浏览的法规，推荐最相似的 Top-N 部法规。
+    根据当前浏览的指南，推荐最相似的 Top-N 个指南（主题感知：主题重叠 + 向量相似）。
 
     内部流程：
-    1. 获取该法规所有 chunk 的向量，计算平均向量作为"核心语义"
-    2. 用平均向量在 ES 中执行 KNN 相似搜索
-    3. 排除自身，按 law_id 聚合去重
-    4. 返回去重后的法规级推荐列表
+    1. 获取该指南所有推荐条目的向量，计算代表向量（中位数）
+    2. 用代表向量在 ES 中执行 KNN 相似搜索
+    3. 排除同指南自身条目，按 doc_id 聚合去重
+    4. 主题硬过滤 + 综合评分 + 跨癌种多样性 → 返回指南级推荐列表
     """
-    result = similar_service.get_similar_laws(
-        query_law_id=law_id,
+    result = similar_service.get_similar_guides(
+        query_doc_id=doc_id,
         top_k=top_k,
-        jurisdiction_filter=jurisdiction
+        cancer_type_filter=cancer_type,
     )
     return APIResponse(success=True, data=result)
 
 
-@router.get("/chunk/{chunk_id}/similar")
-def get_similar_chunks(
-    chunk_id: str,
-    top_k: int = Query(10, ge=1, le=30, description="推荐条款数量（1-30）"),
-    jurisdiction: str = Query(None, description="法域过滤")
+@router.get("/item/{item_id}/similar")
+def get_similar_items(
+    item_id: str,
+    top_k: int = Query(10, ge=1, le=30, description="推荐条目数量（1-30）"),
+    cancer_type: str = Query(None, description="癌种过滤")
 ):
     """
-    相似条款推荐接口
+    相似条目推荐接口
 
-    根据当前浏览的某一条具体条款，推荐最相似的条款片段。
-    直接使用该 chunk 的向量进行搜索，不做平均。
+    根据当前浏览的某一条推荐条目，推荐最相似的其它条目。
+    直接使用该条目的向量进行搜索，不做平均。
     """
-    result = similar_service.get_similar_chunks(
-        query_chunk_id=chunk_id,
+    result = similar_service.get_similar_items(
+        query_item_id=item_id,
         top_k=top_k,
-        jurisdiction_filter=jurisdiction
+        cancer_type_filter=cancer_type,
     )
     return APIResponse(success=True, data=result)
 

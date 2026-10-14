@@ -91,47 +91,57 @@ class DocumentUpdate(BaseModel):
 
 
 class MatchedChunk(BaseModel):
-    article_number: Optional[str] = None
+    """匹配到的推荐条目片段"""
+    breadcrumb: Optional[str] = None
     content_preview: str = ""
     similarity: float = 0.0
 
 
-class SimilarLawItem(BaseModel):
-    law_id: str
+class SimilarGuideItem(BaseModel):
+    """相似指南条目"""
+    doc_id: str
     title: str
-    jurisdiction: str
+    cancer_type: str
     similarity: float
-    match_chunk_count: int = 0
-    top_matched_chunks: List[MatchedChunk] = []
+    composite_score: float = 0.0
+    topic_overlap: float = 0.0
+    match_item_count: int = 0
+    shared_topics: List[str] = []
+    top_matched_items: List[MatchedChunk] = []
 
 
-class SimilarLawResponse(BaseModel):
-    query_law_id: str
-    query_law_title: Optional[str] = ""
-    query_jurisdiction: Optional[str] = ""
-    query_chunk_count: int = 0
-    similar_laws: List[SimilarLawItem] = []
+class SimilarGuideResponse(BaseModel):
+    """相似指南推荐响应"""
+    query_doc_id: str
+    query_title: Optional[str] = ""
+    query_cancer_type: Optional[str] = ""
+    query_item_count: int = 0
+    query_topics: List[str] = []
+    similar_guides: List[SimilarGuideItem] = []
     total_found: int = 0
     returned_count: int = 0
     message: str = ""
 
 
-class SimilarChunkItem(BaseModel):
-    chunk_id: str
-    law_id: str
+class SimilarItemItem(BaseModel):
+    """相似推荐条目"""
+    item_id: str
+    doc_id: str
+    rec_id: str = ""
     title: str
-    jurisdiction: str
-    article_number: Optional[str] = None
+    cancer_type: str
+    breadcrumb: Optional[str] = None
     content_preview: str = ""
     similarity: float = 0.0
 
 
-class SimilarChunkResponse(BaseModel):
-    query_chunk_id: str
+class SimilarItemResponse(BaseModel):
+    """相似条目推荐响应"""
+    query_item_id: str
     query_content: str = ""
-    query_article_number: Optional[str] = None
-    query_law_id: str = ""
-    similar_chunks: List[SimilarChunkItem] = []
+    query_breadcrumb: Optional[str] = None
+    query_doc_id: str = ""
+    similar_items: List[SimilarItemItem] = []
     total_found: int = 0
     returned_count: int = 0
     message: str = ""

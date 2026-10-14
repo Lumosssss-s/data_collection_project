@@ -64,11 +64,13 @@ class LawMappingService:
                 "match_quality": "none"
             }
 
-        # KNN搜索：目标法域 + 排除源法律自身
+        # KNN搜索：目标癌种 + 排除源条目自身
+        # 参数名随 BE-28 由 knn_search_similar 更名（jurisdiction_filter→cancer_type_filter）。
+        # 本文件整体处置随 D-03 冻结（BE-30），此处仅做机械同步。
         results = self.repo.knn_search_similar(
             query_vector=query_vec,
             top_k=1,
-            jurisdiction_filter=target_jurisdiction,
+            cancer_type_filter=target_jurisdiction,
             min_score=0.0  # 不在此处过滤，统一用阈值
         )
 

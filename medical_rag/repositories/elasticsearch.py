@@ -1533,32 +1533,34 @@ class ElasticsearchRepository:
                    .get("topics", {}).get("labels", {}).get("buckets", []))
         return [b.get("key") for b in buckets if b.get("key")]
 
-    def get_law_chunk_vectors(self, law_id: str) -> List[Dict]:
+    def get_doc_item_vectors(self, doc_id: str) -> List[Dict]:
         """
-        获取指定法规所有 chunk 的向量及元数据（仅取必要字段，不返回 content）
-        返回格式：[{"embedding": [...], "law_id": ..., "title": ..., "jurisdiction": ..., "topics_details": [...]}, ...]
+        获取指定指南下所有条目（REC）的向量及元数据（仅取必要字段，不返回 content）
+
+        返回：[{"embedding": [...], "doc_id": ..., "title": ..., "cancer_type": ...,
+                "chunk_index": ..., "topics_details": [...]}, ...]
         """
         query = {
-            "query": {"term": {"law_id": law_id}},
+            "query": {"bool": {"filter": [
+                {"term": {"doc_id": doc_id}},
+                {"term": {"data_type": "rec"}},
+            ]}},
             "size": 1000,
             "sort": [{"chunk_index": {"order": "asc"}}],
-            "_source": ["embedding", "law_id", "title", "jurisdiction", "chunk_index", "topics_details"]
+            "_source": ["embedding", "doc_id", "title", "cancer_type", "chunk_index", "topics_details"],
         }
 
         response = self.client.search(index=settings.es_index_name, body=query)
         hits = response.get("hits", {}).get("hits", [])
-
-        if not hits:
-            return []
 
         results = []
         for hit in hits:
             source = hit.get("_source", {})
             results.append({
                 "embedding": source.get("embedding", []),
-                "law_id": source.get("law_id", ""),
+                "doc_id": source.get("doc_id", ""),
                 "title": source.get("title", ""),
-                "jurisdiction": source.get("jurisdiction", ""),
+                "cancer_type": source.get("cancer_type", ""),
                 "chunk_index": source.get("chunk_index", 0),
                 "topics_details": source.get("topics_details", []),
             })
@@ -1569,37 +1571,40 @@ class ElasticsearchRepository:
         self,
         query_vector: List[float],
         top_k: int = 20,
-        exclude_law_id: Optional[str] = None,
-        jurisdiction_filter: Optional[str] = None,
-        min_score: float = 0.3
+        exclude_doc_id: Optional[str] = None,
+        cancer_type_filter: Optional[str] = None,
+        data_type_filter: Optional[str] = None,
+        min_score: float = 0.3,
     ) -> List[Dict]:
         """
-        使用给定向量执行 KNN 相似搜索，返回去重前的原始 chunk 结果。
-        排除指定 law_id，可选法域过滤和最低分数阈值。
+        使用给定向量执行 KNN 相似搜索，返回去重前的原始条目结果。
+        可选排除指定 doc_id（同指南自身条目）、癌种过滤、数据类型过滤、最低分数阈值。
 
-        注意：使用 knn.filter 做预过滤（法域），用 post_filter 做后置排除（自身），
+        注意：使用 knn.filter 做预过滤（癌种 / 数据类型），用 post_filter 做后置排除（自身指南），
         确保排除逻辑严格生效而非仅降权。
         """
         # 构建 KNN 预过滤器（在向量搜索前缩小候选集）
         knn_filters = []
-        if jurisdiction_filter:
-            knn_filters.append({"term": {"jurisdiction": jurisdiction_filter}})
+        if cancer_type_filter:
+            knn_filters.append({"term": {"cancer_type": cancer_type_filter}})
+        if data_type_filter:
+            knn_filters.append({"term": {"data_type": data_type_filter}})
 
         knn_body = {
             "field": "embedding",
             "query_vector": query_vector,
             "k": top_k * 5,
-            "num_candidates": max(top_k * 20, 100)
+            "num_candidates": max(top_k * 20, 100),
         }
         if knn_filters:
             knn_body["filter"] = knn_filters
 
         search_body = {"knn": knn_body, "size": top_k * 5}
 
-        # post_filter：在搜索结果上做硬性排除（确保自身不被返回）
+        # post_filter：在搜索结果上做硬性排除（确保同指南自身不被返回）
         post_filter_clauses = []
-        if exclude_law_id:
-            post_filter_clauses.append({"term": {"law_id": exclude_law_id}})
+        if exclude_doc_id:
+            post_filter_clauses.append({"term": {"doc_id": exclude_doc_id}})
         if post_filter_clauses:
             search_body["post_filter"] = {"bool": {"must_not": post_filter_clauses}}
 
@@ -1609,19 +1614,18 @@ class ElasticsearchRepository:
         results = []
         for hit in hits:
             source = hit.get("_source", {})
-            score = hit.get("_score", 0.0)
-            # cosine similarity: ES dense_vector with cosine similarity returns cosine value as _score
-            similarity = float(score)
-
+            similarity = float(hit.get("_score", 0.0))
             if similarity < min_score:
                 continue
 
             results.append({
                 "id": hit.get("_id"),
-                "law_id": source.get("law_id", ""),
+                "doc_id": source.get("doc_id", ""),
+                "rec_id": source.get("rec_id", ""),
+                "data_type": source.get("data_type", ""),
                 "title": source.get("title", ""),
-                "jurisdiction": source.get("jurisdiction", ""),
-                "article_number": source.get("article_number", ""),
+                "cancer_type": source.get("cancer_type", ""),
+                "breadcrumb": source.get("breadcrumb", ""),
                 "content_preview": source.get("content", "")[:150] if source.get("content") else "",
                 "similarity": similarity,
             })
