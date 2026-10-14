@@ -2161,26 +2161,9 @@ class ElasticsearchRepository:
             logger.error(f"[KG] 三元组落库失败: {type(e).__name__}: {e}")
             return -1
 
-    def get_kg_triples(self, source_id: str, size: int = 2000) -> List[Dict]:
-        """
-        读取某来源的全部三元组，还原为 kg_extraction_service 的输出格式，
-        使调用方对「读缓存」与「实时抽取」得到的结果形态完全一致。
-        """
-        try:
-            resp = self.client.search(
-                index=self.KG_TRIPLE_INDEX,
-                body={
-                    "query": {"term": {"source_id": source_id}},
-                    "size": size,
-                    "sort": [{"source_ref": "asc"}, {"confidence": "desc"}],
-                },
-            )
-        except NotFoundError:
-            return []
-        except Exception as e:
-            logger.warning(f"[KG] 读取三元组失败: {e}")
-            return []
-
+    @staticmethod
+    def _kg_triples_from_hits(resp: Dict) -> List[Dict]:
+        """把三元组索引检索结果还原为 kg_extraction_service 的输出形态。"""
         triples: List[Dict] = []
         for hit in resp.get("hits", {}).get("hits", []):
             s = hit.get("_source", {})
@@ -2203,6 +2186,93 @@ class ElasticsearchRepository:
                 "confidence": s.get("confidence", 0.8),
             })
         return triples
+
+    def _search_kg_triples(self, query: Dict, size: int) -> List[Dict]:
+        """三元组索引通用检索（query 由调用方给出），结果还原为三元组列表。"""
+        try:
+            resp = self.client.search(
+                index=self.KG_TRIPLE_INDEX,
+                body={"query": query, "size": size},
+            )
+        except NotFoundError:
+            return []
+        except Exception as e:
+            logger.warning(f"[KG] 检索三元组失败: {type(e).__name__}: {e}")
+            return []
+        return self._kg_triples_from_hits(resp)
+
+    def get_kg_triples(self, source_id: str, size: int = 2000) -> List[Dict]:
+        """读取某来源（指南）的全部三元组，形状与实时抽取结果一致。"""
+        return self._search_kg_triples({"term": {"source_id": source_id}}, size)
+
+    def get_kg_triples_by_entity(self, entity_id: str, size: int = 1000) -> List[Dict]:
+        """读取以某实体（规范 ID）为头或尾的全部三元组，用于实体邻域子图。"""
+        if not entity_id:
+            return []
+        return self._search_kg_triples(
+            {"bool": {
+                "should": [
+                    {"term": {"head_canonical_id": entity_id}},
+                    {"term": {"tail_canonical_id": entity_id}},
+                ],
+                "minimum_should_match": 1,
+            }},
+            size,
+        )
+
+    def get_kg_triples_by_cancer(self, cancer_type: str, size: int = 2000) -> List[Dict]:
+        """读取属于某癌种的全部三元组，用于癌种全景子图。"""
+        if not cancer_type:
+            return []
+        return self._search_kg_triples({"term": {"cancer_type": cancer_type}}, size)
+
+    def get_kg_entity(self, entity_id: str) -> Optional[Dict]:
+        """按 entity_id 读取单条实体词典条目（不存在返回 None）。"""
+        if not entity_id:
+            return None
+        try:
+            resp = self.client.search(
+                index=self.KG_ENTITY_INDEX,
+                body={"query": {"term": {"entity_id": entity_id}}, "size": 1},
+            )
+        except NotFoundError:
+            return None
+        except Exception as e:
+            logger.warning(f"[KG] 读取实体失败: {type(e).__name__}: {e}")
+            return None
+        hits = resp.get("hits", {}).get("hits", [])
+        return hits[0].get("_source", {}) if hits else None
+
+    def get_doc_recs(self, doc_id: str, size: int = 500) -> List[Dict]:
+        """读取某指南下的推荐条目（供知识图谱抽取），返回抽取所需字段。"""
+        if not doc_id:
+            return []
+        try:
+            resp = self.client.search(
+                index=settings.es_index_name,
+                body={
+                    "query": {"bool": {"filter": [
+                        {"term": {"doc_id": doc_id}},
+                        {"term": {"data_type": "rec"}},
+                    ]}},
+                    "size": size,
+                    "_source": ["rec_id", "content", "breadcrumb", "cancer_type", "title"],
+                },
+            )
+        except Exception as e:
+            logger.warning(f"[KG] 读取指南推荐条目失败: {type(e).__name__}: {e}")
+            return []
+        recs = []
+        for hit in resp.get("hits", {}).get("hits", []):
+            s = hit.get("_source", {})
+            if s.get("content"):
+                recs.append({
+                    "rec_id": s.get("rec_id", ""),
+                    "content": s.get("content", ""),
+                    "breadcrumb": s.get("breadcrumb", ""),
+                    "cancer_type": s.get("cancer_type", ""),
+                })
+        return recs
 
     def get_kg_cache_meta(self, source_id: str) -> Optional[Dict]:
         """
