@@ -22,7 +22,9 @@ from core.domain_enums import CANCER_TYPE_INFO, get_cancer_type_info
 from models.schemas import APIResponse
 from repositories.elasticsearch import ElasticsearchRepository
 from services.entity_disambiguation_service import get_alias_statistics
-from services.kg_extraction_service import KGExtractionService, MEDICAL_ONTOLOGY
+from services.kg_extraction_service import (
+    KGExtractionService, MEDICAL_ONTOLOGY, _ENTITY_COLORS, _ENTITY_SHAPES,
+)
 
 router = APIRouter(prefix="/kg", tags=["知识图谱"])
 repo = ElasticsearchRepository()
@@ -43,7 +45,13 @@ _CODE_TO_NAME = {code: name for name, (code, _) in CANCER_TYPE_INFO.items()}
 def get_ontology():
     """返回医疗知识图谱本体（实体类型 + 关系类型），供前端图例与筛选使用。"""
     entities = [
-        {"type": k, "label": v["label"], "description": v["description"]}
+        {
+            "type": k,
+            "label": v["label"],
+            "description": v["description"],
+            "color": _ENTITY_COLORS.get(k, "#6B7280"),
+            "shape": _ENTITY_SHAPES.get(k, "ellipse"),
+        }
         for k, v in MEDICAL_ONTOLOGY["entities"].items()
     ]
     return APIResponse(success=True, data={
