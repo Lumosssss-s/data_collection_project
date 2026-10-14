@@ -199,41 +199,34 @@ def get_similar_chunks(
     return APIResponse(success=True, data=result)
 
 
-@router.get("/law/{law_id}/summary")
-def get_law_summary(law_id: str):
+@router.get("/doc/{doc_id}/summary")
+def get_doc_summary(doc_id: str):
     """
-    法规摘要生成接口（带缓存）
-    
-    根据法规ID生成该法规的结构化摘要，帮助用户快速了解法规核心内容。
-    支持缓存机制：
-    - 第二次访问同一法规时直接从缓存读取，减少响应时间
-    - 当法规数据发生变化时自动清除缓存并重新生成
-    
+    指南结构化速览接口（带缓存）
+
+    根据指南 doc_id 生成结构化速览，帮助用户快速了解该指南的核心推荐。
+    支持缓存：第二次访问直接读缓存；文档数据变化（指纹变化）时自动失效重生成。
+
     返回格式：
     {
-      "law_name": "法规全称",
-      "purpose": "立法目的（1-2句话）",
-      "scope": "适用范围（1-2句话）",
-      "core_points": ["要点1", "要点2", "要点3", "要点4", "要点5"],
-      "chapters": [
-        {"title": "章节名", "articles": "第X-Y条", "summary": "一句话概括"}
-      ],
-      "keywords": ["关键词1", "关键词2", ...],
-      "from_cache": true/false  // 新增字段：是否来自缓存
+      "basic_info": {"guide_name": "...", "issuer": "...", "doc_type": "...",
+                     "cancer_types": [...], "publish_date": "...", "version": "...", "item_count": N},
+      "overview": "指南概要",
+      "key_recommendations": ["核心推荐要点1", ...],
+      "evidence_notes": "证据特点",
+      "keywords": {"core": [...], "cancers": [...], "scenarios": [...]},
+      "from_cache": true/false
     }
     """
     try:
-        import traceback
-        summary = summary_service.generate_summary_with_cache(law_id)
+        summary = summary_service.generate_summary_with_cache(doc_id)
         return APIResponse(success=True, data=summary)
     except ValueError as e:
-        return APIResponse(success=False, message=f"法规不存在：{str(e)}")
+        return APIResponse(success=False, message=f"指南不存在：{str(e)}")
     except Exception as e:
         error_type = type(e).__name__
         error_detail = str(e)[:200]
-        # 记录详细错误到控制台
         print(f"[摘要API错误] {error_type}: {error_detail}")
-        # 根据错误类型返回不同的提示
         if "timeout" in str(e).lower() or "timed out" in str(e).lower():
             return APIResponse(success=False, message="摘要生成超时，请稍后重试")
         elif "connection" in str(e).lower():
@@ -246,7 +239,7 @@ def get_law_summary(law_id: str):
 def get_summary_cache_info():
     """
     获取摘要缓存统计信息
-    
+
     返回缓存的总体状态，包括缓存条目数、有效条目数等。
     """
     from services.summary_cache import summary_cache
@@ -254,28 +247,28 @@ def get_summary_cache_info():
     return APIResponse(success=True, data=info)
 
 
-@router.delete("/summary/cache/{law_id}")
-def invalidate_summary_cache(law_id: str):
+@router.delete("/summary/cache/{doc_id}")
+def invalidate_summary_cache(doc_id: str):
     """
-    清除指定法规的摘要缓存
-    
-    当法规数据发生变化时调用此接口，下次访问时将重新生成摘要。
-    
+    清除指定指南的摘要缓存
+
+    当文档数据发生变化时调用此接口，下次访问时将重新生成速览。
+
     Args:
-        law_id: 法规ID
+        doc_id: 指南文档 ID（DOC）
     """
     from services.summary_cache import summary_cache
-    summary_cache.invalidate(law_id)
-    return APIResponse(success=True, message=f"已清除法规 {law_id} 的摘要缓存")
+    summary_cache.invalidate(doc_id)
+    return APIResponse(success=True, message=f"已清除指南 {doc_id} 的摘要缓存")
 
 
 @router.delete("/summary/cache")
 def invalidate_all_summary_cache():
     """
-    清除所有法规摘要缓存
-    
-    适用于批量更新法规数据后，需要重新生成所有摘要的场景。
+    清除所有指南摘要缓存
+
+    适用于批量更新文档数据后，需要重新生成所有速览的场景。
     """
     from services.summary_cache import summary_cache
     summary_cache.invalidate_all()
-    return APIResponse(success=True, message="已清除所有法规摘要缓存")
+    return APIResponse(success=True, message="已清除所有指南摘要缓存")

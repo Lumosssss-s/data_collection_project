@@ -1873,62 +1873,61 @@ class ElasticsearchRepository:
             return False
 
     # ================================================================
-    #  法规摘要缓存层（summary）
+    #  文档摘要缓存层（summary）
     # ================================================================
 
-    def _summary_cache_doc_id(self, law_id: str) -> str:
+    def _summary_cache_doc_id(self, doc_id: str) -> str:
         """生成摘要缓存文档 ID"""
-        return f"summary::{law_id}::_::_"
+        return f"summary::{doc_id}::_::_"
 
-    def compute_law_fingerprint(self, law_id: str) -> str:
-        """
-        计算法规指纹（标题 + 条款数 + 通过日期），用于检测数据变化。
+    def compute_doc_fingerprint(self, doc_id: str) -> str:
+        """计算文档指纹（doc_hash + 正文长度），用于检测数据变化。
 
-        公开方法：除缓存层内部使用外，知识层（KG）也用它判断抽取结果是否失效。
-        指纹相同的含义是「该法规的内容与结构未变」，可安全复用已抽取的三元组。
+        公开方法：除摘要缓存层内部使用外，知识层（KG）也用它判断抽取结果是否失效。
+        指纹相同的含义是「该文档的内容与结构未变」，可安全复用已生成的摘要 / 三元组。
+        医疗 DOC 的 doc_hash 由 G6 溯源约定给出（§5.7.2）；缺失时回落正文长度。
         """
         import hashlib
         try:
-            law = self.get_law_by_id(law_id)
-            if law:
-                chunk_count = len(law.get("chunks", []))
-                title = law.get("title", "")
-                passing_date = law.get("passing_date", "")
-                raw = f"{title}_{chunk_count}_{passing_date}"
-                return hashlib.md5(raw.encode("utf-8")).hexdigest()
+            src = self.get(doc_id) or {}
+            if not src:
+                return ""
+            doc_hash = src.get("doc_hash") or ""
+            content = src.get("content") or ""
+            raw = f"{doc_hash}_{len(content)}"
+            return hashlib.md5(raw.encode("utf-8")).hexdigest()
         except Exception:
-            pass
-        return ""
+            return ""
 
-    def save_summary_cache(self, law_id: str, summary_data: Dict) -> bool:
-        """
-        保存法规摘要缓存（无过期时间，仅在数据变化时失效）
-        
+    def save_summary_cache(self, doc_id: str, summary_data: Dict) -> bool:
+        """保存文档摘要缓存（无过期时间，仅在数据变化时失效）
+
         Args:
-            law_id: 法规ID
+            doc_id: 文档 ID（DOC，= 摘要对象 ES _id）
             summary_data: 摘要数据
-        
+
         Returns:
             是否保存成功
         """
         import datetime, copy
         self._ensure_cache_index()
-        doc_id = self._summary_cache_doc_id(law_id)
-        fingerprint = self.compute_law_fingerprint(law_id)
+        cache_id = self._summary_cache_doc_id(doc_id)
+        fingerprint = self.compute_doc_fingerprint(doc_id)
 
         try:
-            old_doc = self.client.get(index=self.CACHE_INDEX, id=doc_id, ignore=[404])
+            old_doc = self.client.get(index=self.CACHE_INDEX, id=cache_id, ignore=[404])
             if old_doc.get("found"):
-                self.client.delete(index=self.CACHE_INDEX, id=doc_id)
+                self.client.delete(index=self.CACHE_INDEX, id=cache_id)
 
             cache_data = copy.deepcopy(summary_data)
 
             self.client.index(
                 index=self.CACHE_INDEX,
-                id=doc_id,
+                id=cache_id,
                 body={
                     "cache_type": "summary",
-                    "topic_id": law_id,
+                    # topic_id 为缓存索引的通用「实体键」字段，此处存 doc_id
+                    "topic_id": doc_id,
                     "target_a": "_",
                     "target_b": "_",
                     "fingerprint": fingerprint,
@@ -1939,50 +1938,43 @@ class ElasticsearchRepository:
             )
             self.client.indices.refresh(index=self.CACHE_INDEX)
 
-            verify = self.client.get(index=self.CACHE_INDEX, id=doc_id)
+            verify = self.client.get(index=self.CACHE_INDEX, id=cache_id)
             if verify["found"]:
-                logger.info(f"[Cache] 已保存摘要缓存: {doc_id}, fp={fingerprint[:16]}...")
+                logger.info(f"[Cache] 已保存摘要缓存: {cache_id}, fp={fingerprint[:16] if fingerprint else '-'}...")
                 return True
             else:
-                logger.error(f"[Cache] 摘要缓存写入后验证失败！doc_id={doc_id}")
+                logger.error(f"[Cache] 摘要缓存写入后验证失败！doc_id={cache_id}")
                 return False
         except Exception as e:
             logger.error(f"[Cache] 保存摘要缓存失败: {type(e).__name__}: {e}")
             return False
 
-    def get_summary_cache(self, law_id: str) -> Optional[Dict]:
-        """
-        获取法规摘要缓存
-        
+    def get_summary_cache(self, doc_id: str) -> Optional[Dict]:
+        """获取文档摘要缓存
+
         返回：
-        - 如果缓存存在且数据未变化，返回摘要数据
+        - 如果缓存存在且文档数据未变化，返回摘要数据
         - 如果缓存不存在或数据已变化，返回 None
-        
-        Args:
-            law_id: 法规ID
-        
-        Returns:
-            摘要数据或 None
         """
         self._ensure_cache_index()
-        doc_id = self._summary_cache_doc_id(law_id)
-        
+        cache_id = self._summary_cache_doc_id(doc_id)
+
         try:
-            resp = self.client.get(index=self.CACHE_INDEX, id=doc_id)
+            resp = self.client.get(index=self.CACHE_INDEX, id=cache_id)
             src = resp.get("_source", {})
             cached_fingerprint = src.get("fingerprint", "")
             report_data = src.get("report_data")
-            
+
             if not cached_fingerprint or not report_data:
                 return None
-            
-            current_fingerprint = self.compute_law_fingerprint(law_id)
+
+            current_fingerprint = self.compute_doc_fingerprint(doc_id)
             if current_fingerprint and cached_fingerprint != current_fingerprint:
-                logger.info(f"[Cache] 摘要缓存指纹不匹配，失效。law_id={law_id}")
-                self.client.delete(index=self.CACHE_INDEX, id=doc_id)
+                logger.info(f"[Cache] 摘要缓存指纹不匹配，失效。doc_id={doc_id}")
+                self.client.delete(index=self.CACHE_INDEX, id=cache_id)
                 return None
-            
-            logger.info(f"[Cache] 命中摘要缓存: {law_id}")
+
+            logger.info(f"[Cache] 命中摘要缓存: {doc_id}")
             return report_data
         except NotFoundError:
             return None
@@ -1990,11 +1982,11 @@ class ElasticsearchRepository:
             logger.error(f"[Cache] 查询摘要缓存失败: {e}")
             return None
 
-    def delete_summary_cache(self, law_id: str) -> bool:
-        """删除指定法规的摘要缓存"""
-        doc_id = self._summary_cache_doc_id(law_id)
+    def delete_summary_cache(self, doc_id: str) -> bool:
+        """删除指定文档的摘要缓存"""
+        cache_id = self._summary_cache_doc_id(doc_id)
         try:
-            self.client.delete(index=self.CACHE_INDEX, id=doc_id)
+            self.client.delete(index=self.CACHE_INDEX, id=cache_id)
             return True
         except NotFoundError:
             return True

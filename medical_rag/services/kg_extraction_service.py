@@ -295,7 +295,8 @@ class KGExtractionService:
             {"triples": List[Dict], "cache_hit": bool, "fingerprint": str}
         """
         repo = self.repo
-        fingerprint = repo.compute_law_fingerprint(law_id)
+        # 方法名随 BE-26 由 compute_law_fingerprint 更名（本文件整体医疗化归 BE-20）
+        fingerprint = repo.compute_doc_fingerprint(law_id)
 
         # 指纹为空说明法规不存在，无法判断失效，直接走实时抽取
         if not force_refresh and fingerprint:
