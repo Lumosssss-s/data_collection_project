@@ -27,18 +27,23 @@ def _parse_history(history_str: Optional[str]) -> Optional[list]:
 async def ask_stream(
     question: str = Query(..., description="用户问题"),
     top_k: int = Query(5, description="检索结果数量"),
-    jurisdictions: str = Query(None, description="法域筛选，多个用逗号分隔"),
+    cancer_type: str = Query(None, description="癌种筛选（lung/breast/colorectal/gastric/thyroid）"),
+    scenario: str = Query(None, description="场景筛选，多个用逗号分隔"),
     history: str = Query(None, description="对话历史，JSON数组格式：[{role,content}]")
 ):
     """流式问答接口（支持追问/多轮对话）"""
-    jurisdiction_list = None
-    if jurisdictions:
-        jurisdiction_list = [j.strip() for j in jurisdictions.split(",")]
+    filters = {}
+    if cancer_type:
+        filters["cancer_type"] = cancer_type
+    if scenario:
+        scenarios = [s.strip() for s in scenario.split(",") if s.strip()]
+        if scenarios:
+            filters["scenario"] = scenarios[0] if len(scenarios) == 1 else scenarios
 
     history_list = _parse_history(history)
 
     def generate():
-        for chunk in qa_service.ask_stream(question, top_k, jurisdiction_list, history_list):
+        for chunk in qa_service.ask_stream(question, top_k, filters or None, history_list):
             yield f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
 
     return StreamingResponse(
@@ -61,7 +66,7 @@ async def ask_stream_multimodal(request: Request):
     {
         "question": "用户问题（必填）",
         "top_k": 5,
-        "jurisdictions": ["澳门", "香港"],
+        "filters": {"cancer_type": "lung", "scenario": "treatment_first_line"},
         "history": [{"role": "user", "content": "..."}],
         "images": [
             {
@@ -81,16 +86,11 @@ async def ask_stream_multimodal(request: Request):
         return APIResponse(success=False, message="问题不能为空")
 
     top_k = data.get("top_k", 5)
-    jurisdictions = data.get("jurisdictions")
+    filters = data.get("filters")  # {cancer_type / scenario / ...}，键为 ES 字段名
+    if not isinstance(filters, dict) or not filters:
+        filters = None
     history = data.get("history")
-    images = data.get("images", [])  # 新增：图片列表
-
-    jurisdiction_list = None
-    if jurisdictions:
-        if isinstance(jurisdictions, list):
-            jurisdiction_list = [j.strip() for j in jurisdictions if j]
-        elif isinstance(jurisdictions, str):
-            jurisdiction_list = [j.strip() for j in jurisdictions.split(",") if j.strip()]
+    images = data.get("images", [])  # 图片列表
 
     history_list = None
     if history and isinstance(history, list) and len(history) > 0:
@@ -100,7 +100,7 @@ async def ask_stream_multimodal(request: Request):
         for chunk in qa_service.ask_stream_with_image(
             question=question,
             top_k=top_k,
-            jurisdictions=jurisdiction_list,
+            filters=filters,
             history=history_list,
             images=images
         ):

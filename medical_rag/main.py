@@ -222,20 +222,6 @@ def _warmup_models() -> None:
             f_reranker.result()
             f_embedding.result()
         _log(f"模型加载与推理预热完成（并行），总耗时 {time.time() - t_all:.1f}s")
-
-        # ---- 法域语义向量（问答用，依赖已加载的 bge-m3）----
-        # 必须排在嵌入模型之后，且必须放在统一预热流程里：它是一次性重活（实测占满多核数
-        # 十秒）。若像原先那样放在后台线程异步跑，会在 /health/ready 变绿之后继续与用户请求
-        # 抢 CPU，把就绪后的前几个请求拖慢到 20 秒以上。QAService 已改为单例，这里只算一份。
-        t0 = time.time()
-        _log("开始预热法域语义向量...")
-        try:
-            from services.qa_service import QAService
-            QAService().warmup_jurisdiction_vectors()
-            _log(f"法域语义向量预热完成，耗时 {time.time() - t0:.1f}s")
-        except Exception as e:
-            # 不抛出：问答会降级为纯关键词法域识别，标记为已完成避免就绪探针永远 503
-            _log(f"法域语义向量预热失败（耗时 {time.time() - t0:.1f}s）：{type(e).__name__}: {e}")
     finally:
         # 无论成败都置位：否则就绪探针永远 503，前端（depends_on: service_healthy）会一直被挡在门外。
         # 模型是否可用由 /health/ready 里的 load_state 判定，本标记只表示"预热流程已跑完"。
@@ -298,8 +284,6 @@ async def readiness_check(response: Response):
       - reranker：loaded=可用；failed=已降级为不精排（仍算就绪）；disabled=配置关闭（就绪）；
         pending=仍在加载（未就绪）
       - embedding：必须 loaded。它是检索链路的必需组件，失败无法降级（未就绪）
-      - jurisdiction_vectors：法域语义向量预热是否完成。它是启动阶段最重的一次性计算，
-        若不等它跑完就放行，用户请求会与它抢 CPU（实测被拖慢到 20 秒以上）
       - warmup_done：预热线程是否跑完（含推理预热）。模型"加载完成"不等于"首次推理已预热"，
         若不等这一步，请求会赶在推理预热之前到达，仍然要付首次前向的开销
     """
@@ -314,14 +298,10 @@ async def readiness_check(response: Response):
     from core.model_loader import ModelLoader
     embedding_state = ModelLoader.load_state()
 
-    from services.qa_service import QAService
-    jvector_state = QAService().jurisdiction_warmup_state
-
     ready = (
         _warmup_done
         and embedding_state == "loaded"
         and reranker_state in ("loaded", "failed", "disabled")
-        and jvector_state == "ready"
     )
     if not ready:
         response.status_code = 503
@@ -331,7 +311,6 @@ async def readiness_check(response: Response):
         "models": {
             "reranker": reranker_state,
             "embedding": embedding_state,
-            "jurisdiction_vectors": jvector_state,
         },
         "warmup": "done" if _warmup_done else "running",
     }
