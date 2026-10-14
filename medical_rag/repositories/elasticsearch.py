@@ -1094,6 +1094,89 @@ class ElasticsearchRepository:
         except NotFoundError:
             return None
 
+    def delete_item(self, item_id: str) -> bool:
+        """按业务 ID（ES _id）删除单条条目。成功或本就不存在均返回 True。"""
+        if not item_id:
+            return False
+        try:
+            self.client.delete(index=settings.es_index_name, id=item_id, refresh=True)
+            return True
+        except NotFoundError:
+            return True
+        except Exception as e:
+            logger.warning(f"[Doc] 删除条目失败: {type(e).__name__}: {e}")
+            return False
+
+    def list_items(
+        self,
+        data_type: Optional[str] = None,
+        cancer_type: Optional[str] = None,
+        page_size: int = 100,
+    ) -> List[Dict]:
+        """按 data_type / cancer_type 列出条目（含 _id），用于管理端条目浏览。"""
+        clauses: List[Dict] = []
+        if data_type:
+            clauses.append({"term": {"data_type": data_type}})
+        if cancer_type:
+            clauses.append({"term": {"cancer_type": cancer_type}})
+        query = {"bool": {"filter": clauses}} if clauses else {"match_all": {}}
+        try:
+            resp = self.client.search(
+                index=settings.es_index_name,
+                body={"query": query, "size": max(1, min(page_size, 500))},
+            )
+        except Exception as e:
+            logger.warning(f"[Doc] 列出条目失败: {type(e).__name__}: {e}")
+            return []
+
+        items = []
+        for hit in resp.get("hits", {}).get("hits", []):
+            source = dict(hit.get("_source", {}))
+            source["_id"] = hit.get("_id")
+            items.append(source)
+        return items
+
+    def get_doc_catalog_records(self) -> List[Dict]:
+        """返回 DOC 记录 + 各文档的 REC 条目数，供 doc_catalog 重建（管理端同步）。
+
+        取代旧 `get_all_laws()` + `get_law_by_id()`（法规遗留命名）在目录重建中的使用：
+        直接按 data_type=doc 取 DOC 字段，并按 data_type=rec 聚合统计每篇指南的条目数。
+        """
+        result: Dict[str, Dict] = {}
+        for src in self.list_items(data_type="doc", page_size=500):
+            did = src.get("doc_id") or src.get("_id")
+            if not did:
+                continue
+            result[did] = {
+                "doc_id": did,
+                "title": src.get("title", ""),
+                "doc_type": src.get("doc_type", ""),
+                "issuer": src.get("issuer", ""),
+                "cancer_types": src.get("cancer_types", []) or [],
+                "version": src.get("version", ""),
+                "publish_date": src.get("publish_date", ""),
+                "item_count": 0,
+            }
+
+        # 统计每篇指南的推荐条目数（聚合 doc_id）
+        try:
+            resp = self.client.search(
+                index=settings.es_index_name,
+                body={
+                    "size": 0,
+                    "query": {"term": {"data_type": "rec"}},
+                    "aggs": {"by_doc": {"terms": {"field": "doc_id", "size": 10000}}},
+                },
+            )
+            for b in resp.get("aggregations", {}).get("by_doc", {}).get("buckets", []):
+                did = b.get("key")
+                if did in result:
+                    result[did]["item_count"] = b.get("doc_count", 0)
+        except Exception as e:
+            logger.warning(f"[Doc] 统计指南条目数失败: {e}")
+
+        return list(result.values())
+
     def get_article_full_text(self, law_id: str, article_number: str) -> Optional[str]:
         """
         通过 law_id + article_number 聚合同一 article 下的所有 chunks，按顺序拼接为完整文本。

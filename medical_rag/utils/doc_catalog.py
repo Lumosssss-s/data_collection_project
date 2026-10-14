@@ -300,31 +300,28 @@ class DocCatalog:
             重建后的统计数据
 
         说明:
-            仓库层方法名（get_all_laws / get_law_by_id）为法规遗留命名，其医疗化
-            归 BE-31 / BE-06 批次（涉及 D-03 冻结文件，本批次不改名）。此处仅按
-            C2 DOC 域字段读取，仓库层未同步前 doc_type / issuer 等字段为空。
+            改为读取 `es_repo.get_doc_catalog_records()`（医疗版：DOC 记录 + REC 条目数），
+            不再依赖法规遗留的 `get_all_laws()` / `get_law_by_id()`。
         """
         print("🔄 开始从 ES 重建 doc_catalog.json...")
 
-        all_docs = es_repo.get_all_laws()
+        records = es_repo.get_doc_catalog_records()
         catalog = {"version": "1.0", "last_updated": "", "total_docs": 0, "docs": []}
         now = datetime.now().strftime("%Y-%m-%d")
 
-        for doc_info in all_docs:
-            doc_id = doc_info.get("doc_id")
+        for rec in records:
+            doc_id = rec.get("doc_id")
             if not doc_id:
                 continue
-
-            doc_detail = es_repo.get_law_by_id(doc_id) or {}
             catalog["docs"].append({
                 "doc_id": doc_id,
-                "title": doc_detail.get("title", "") or doc_info.get("title", ""),
-                "doc_type": doc_info.get("doc_type", ""),
-                "issuer": doc_info.get("issuer", ""),
-                "cancer_types": doc_info.get("cancer_types", []) or [],
-                "item_count": doc_info.get("item_count", 0),
-                "version": doc_info.get("version", ""),
-                "publish_date": doc_info.get("publish_date", ""),
+                "title": rec.get("title", ""),
+                "doc_type": rec.get("doc_type", ""),
+                "issuer": rec.get("issuer", ""),
+                "cancer_types": rec.get("cancer_types", []) or [],
+                "item_count": rec.get("item_count", 0),
+                "version": rec.get("version", ""),
+                "publish_date": rec.get("publish_date", ""),
                 "file_path": "",
                 "ingest_date": now,
                 "last_updated": now,
