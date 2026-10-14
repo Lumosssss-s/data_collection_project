@@ -1533,28 +1533,6 @@ class ElasticsearchRepository:
                    .get("topics", {}).get("labels", {}).get("buckets", []))
         return [b.get("key") for b in buckets if b.get("key")]
 
-    def get_topic_frequencies(self) -> Dict[str, int]:
-        """
-        获取所有主题标签的出现频次（用于 IDF 加权）
-        返回: {"数据保护": 120, "网络安全": 85, ...}
-        """
-        query = {
-            "size": 0,
-            "aggs": {
-                "topics": {
-                    "terms": {
-                        "field": "topic_labels",
-                        "size": 200
-                    }
-                }
-            }
-        }
-
-        response = self.client.search(index=settings.es_index_name, body=query)
-        buckets = response.get("aggregations", {}).get("topics", {}).get("buckets", [])
-
-        return {bucket.get("key"): bucket.get("doc_count", 0) for bucket in buckets if bucket.get("key")}
-
     def get_law_chunk_vectors(self, law_id: str) -> List[Dict]:
         """
         获取指定法规所有 chunk 的向量及元数据（仅取必要字段，不返回 content）
@@ -1651,66 +1629,66 @@ class ElasticsearchRepository:
         return results
 
     def get_topic_statistics(self, limit: int = 50) -> List[Dict]:
-        """
-        获取主题统计信息，包括各法域的分布
-        
-        用于可视化看板的主题词云、热力图等
+        """主题统计（医疗）。
+
+        C2 §3.3：主题字段为 nested（topics_details），用 nested 聚合按 label_zh 统计；
+        子聚合按 data_type 给出分布（供看板主题词云 / 分布图）。
+        返回: [{"topic": "cancer_lung", "label_zh": "肺癌", "count": 42,
+                "by_data_type": {"rec": 40, "doc": 2}, "items": [...]}, ...]
         """
         query = {
             "size": 0,
             "aggs": {
                 "topics": {
-                    "terms": {
-                        "field": "topics",
-                        "size": limit
-                    },
+                    "nested": {"path": "topics_details"},
                     "aggs": {
-                        "by_jurisdiction": {
-                            "terms": {
-                                "field": "jurisdiction",
-                                "size": 10
-                            }
+                        "labels": {
+                            "terms": {"field": "topics_details.label_zh", "size": limit},
+                            "aggs": {
+                                # data_type 是父文档字段，nested 子聚合看不到它，需 reverse_nested 回退
+                                "by_type": {
+                                    "reverse_nested": {},
+                                    "aggs": {"types": {"terms": {"field": "data_type", "size": 10}}},
+                                }
+                            },
                         }
-                    }
+                    },
                 }
-            }
+            },
         }
 
         try:
             response = self.client.search(index=settings.es_index_name, body=query)
-            topic_buckets = response.get("aggregations", {}).get("topics", {}).get("buckets", [])
+            buckets = (response.get("aggregations", {})
+                       .get("topics", {}).get("labels", {}).get("buckets", []))
 
             result = []
-            for bucket in topic_buckets:
-                topic_name = bucket.get("key", "")
-                total_count = bucket.get("doc_count", 0)
+            for bucket in buckets:
+                label_zh = bucket.get("key", "")
+                if not label_zh:
+                    continue
+                by_type = {b.get("key"): b.get("doc_count", 0)
+                           for b in bucket.get("by_type", {}).get("types", {}).get("buckets", [])}
 
-                # 获取各法域的分布
-                jur_buckets = bucket.get("by_jurisdiction", {}).get("buckets", [])
-                by_jurisdiction = {b.get("key"): b.get("doc_count") for b in jur_buckets}
-
-                # 获取示例法律（取前3个）
+                # 示例条目（取前 3 条，供看板下钻展示）
                 sample_query = {
                     "size": 3,
-                    "query": {"term": {"topic_labels": topic_name}},
-                    "_source": ["law_id", "title", "jurisdiction"]
+                    "query": {"nested": {"path": "topics_details", "query": {
+                        "term": {"topics_details.label_zh": label_zh}}}},
+                    "_source": ["title", "data_type"],
                 }
                 sample_response = self.client.search(index=settings.es_index_name, body=sample_query)
-                samples = []
-                for hit in sample_response.get("hits", {}).get("hits", []):
-                    source = hit.get("_source", {})
-                    samples.append({
-                        "law_id": source.get("law_id"),
-                        "law_name_zh": source.get("title"),
-                        "jurisdiction": source.get("jurisdiction")
-                    })
+                items = [{"item_id": hit.get("_id"),
+                          "title": hit.get("_source", {}).get("title", ""),
+                          "data_type": hit.get("_source", {}).get("data_type", "")}
+                         for hit in sample_response.get("hits", {}).get("hits", [])]
 
                 result.append({
-                    "topic": topic_name,
-                    "label_zh": _to_label_zh(topic_name),
-                    "count": total_count,
-                    "by_jurisdiction": by_jurisdiction,
-                    "laws": samples[:5]
+                    "topic": _label_zh_to_topic_id(label_zh),
+                    "label_zh": label_zh,
+                    "count": bucket.get("doc_count", 0),
+                    "by_data_type": by_type,
+                    "items": items,
                 })
 
             return result
