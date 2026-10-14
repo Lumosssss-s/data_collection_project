@@ -1478,57 +1478,36 @@ class ElasticsearchRepository:
             return []
 
     def get_all_topics(self) -> List[Dict]:
-        """获取所有主题列表（含统计信息）
+        """获取所有主题标签及计数（医疗）。
 
-        返回格式:
-        [
-            {
-                "id": "cybersecurity",
-                "label_zh": "网络安全",
-                "count": 15,
-                "by_jurisdiction": {"澳门": 10, "新加坡": 5}
-            },
-            ...
-        ]
+        C2 §3.3：主题字段为 nested（topics_details），需 nested 聚合包裹。
+        返回格式: [{"id": "cancer_lung", "label_zh": "肺癌", "count": 42}, ...]
         """
         query = {
             "size": 0,
             "aggs": {
                 "topics": {
-                    "terms": {
-                        "field": "topic_labels",
-                        "size": 100
-                    },
+                    "nested": {"path": "topics_details"},
                     "aggs": {
-                        "jurisdiction_breakdown": {
-                            "terms": {"field": "jurisdiction", "size": 10}
-                        }
-                    }
+                        "labels": {"terms": {"field": "topics_details.label_zh", "size": 100}}
+                    },
                 }
-            }
+            },
         }
 
         response = self.client.search(index=settings.es_index_name, body=query)
-        buckets = response.get("aggregations", {}).get("topics", {}).get("buckets", [])
+        buckets = (response.get("aggregations", {})
+                   .get("topics", {}).get("labels", {}).get("buckets", []))
 
         result = []
         for bucket in buckets:
-            raw_label = bucket.get("key", "")
-            count = bucket.get("doc_count", 0)
-
-            # 确保返回中文标签：如果是英文ID则转换
-            label_zh = _to_label_zh(raw_label) if raw_label and raw_label[0].islower() and '_' in raw_label else raw_label
-
-            # 统计各法域分布
-            by_jur = {}
-            for jur_bucket in bucket.get("jurisdiction_breakdown", {}).get("buckets", []):
-                by_jur[jur_bucket["key"]] = jur_bucket["doc_count"]
-
+            label_zh = bucket.get("key", "")
+            if not label_zh:
+                continue
             result.append({
                 "id": _label_zh_to_topic_id(label_zh),
                 "label_zh": label_zh,
-                "count": count,
-                "by_jurisdiction": by_jur
+                "count": bucket.get("doc_count", 0),
             })
 
         # 按 count 降序排列
@@ -1536,31 +1515,23 @@ class ElasticsearchRepository:
         return result
 
     def get_topic_filter_values(self) -> List[str]:
-        """获取所有可用的主题标签值（用于下拉筛选的简单列表，返回中文）"""
+        """获取所有可用的主题标签值（医疗；nested 聚合 topics_details.label_zh）"""
         query = {
             "size": 0,
             "aggs": {
                 "topics": {
-                    "terms": {
-                        "field": "topic_labels",
-                        "size": 100
-                    }
+                    "nested": {"path": "topics_details"},
+                    "aggs": {
+                        "labels": {"terms": {"field": "topics_details.label_zh", "size": 100}}
+                    },
                 }
-            }
+            },
         }
 
         response = self.client.search(index=settings.es_index_name, body=query)
-        buckets = response.get("aggregations", {}).get("topics", {}).get("buckets", [])
-
-        result = []
-        for bucket in buckets:
-            raw_label = bucket.get("key", "")
-            if not raw_label:
-                continue
-            # 确保返回中文标签：如果是英文ID则转换
-            label_zh = _to_label_zh(raw_label) if raw_label[0].islower() and '_' in raw_label else raw_label
-            result.append(label_zh)
-        return result
+        buckets = (response.get("aggregations", {})
+                   .get("topics", {}).get("labels", {}).get("buckets", []))
+        return [b.get("key") for b in buckets if b.get("key")]
 
     def get_topic_frequencies(self) -> Dict[str, int]:
         """

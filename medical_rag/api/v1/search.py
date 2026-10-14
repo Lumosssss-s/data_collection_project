@@ -6,6 +6,7 @@ from services.similar_law_service import SimilarLawService
 from services.summary_service import SummaryService
 from repositories.elasticsearch import ElasticsearchRepository
 from utils.doc_catalog import DocCatalog
+from core.domain_enums import CANCER_TYPE_INFO
 
 router = APIRouter(prefix="/search", tags=["搜索"])
 retriever = RetrieverService()
@@ -93,95 +94,53 @@ def search(
     return APIResponse(success=True, data=search_results)
 
 
-@router.get("/laws")
-def get_laws(
-    jurisdiction: str = Query(None, description="法域筛选"),
-    topics: str = Query(None, description="主题筛选，逗号分隔")
+@router.get("/docs")
+def get_docs(
+    doc_type: str = Query(None, description="文档类型筛选（guideline/standard/consensus）"),
+    cancer_type: str = Query(None, description="癌种筛选（lung/breast/colorectal/gastric/thyroid）"),
+    status: str = Query(None, description="状态筛选（active/superseded/deleted）"),
 ):
-    """获取所有法规列表
+    """获取知识库文档列表
 
-    以 DocCatalog (data/doc_catalog.json) 为权威数据源，保证返回所有已入库的法规元信息。
-    仅当 ES 中存在对应索引数据时，附加实时 chunk_count/article_count 统计。
+    以 DocCatalog (data/doc_catalog.json) 为权威数据源，返回已入库指南/规范/共识的元信息
+    （doc_id / title / doc_type / issuer / cancer_types / item_count / version / publish_date …）。
+    默认仅返回非删除状态。
     """
-    # 1) 从 catalog 获取所有非删除状态的法规
-    cat_data = catalog.load()
-    all_laws = [l for l in cat_data.get("docs", []) if l.get("status") != "deleted"]
-
-    # 2) 法域筛选（catalog 中 jurisdiction 已为中文）
-    if jurisdiction:
-        all_laws = [l for l in all_laws if l.get("jurisdiction") == jurisdiction]
-
-    # 3) 主题筛选（多选 OR，支持中文标签）
-    topic_filter = None
-    if topics:
-        topic_filter = set(t.strip() for t in topics.split(",") if t.strip())
-        if topic_filter:
-            all_laws = [l for l in all_laws
-                        if any(t in (l.get("topics") or []) for t in topic_filter)]
-
-    # 4) 可选：从 ES 拉取实际索引统计（仅命中 ES 的法规补充 chunk_count）
-    es_stats: dict = {}
-    try:
-        es_laws = repo.get_all_laws()
-        es_stats = {law["law_id"]: law for law in es_laws if law.get("law_id")}
-    except Exception:
-        es_stats = {}
-
-    # 5) 转换为前端期望的响应字段名（保持向后兼容）
-    result = []
-    for law in all_laws:
-        law_id = law.get("doc_id", "")
-        es_info = es_stats.get(law_id, {})
-        result.append({
-            "law_id": law_id,
-            "title": law.get("title") or "",
-            "jurisdiction": law.get("jurisdiction", ""),
-            "chunk_count": es_info.get("chunk_count") or law.get("item_count", 0),
-            "article_count": es_info.get("article_count") or law.get("item_count", 0),
-            # 额外字段（前端可选使用）
-            "passing_date": law.get("passing_date", ""),
-            "effective_date": law.get("effective_date", ""),
-            "publication_date": law.get("publication_date", ""),
-            "topics": law.get("topics", []),
-            "status": law.get("status", "active"),
-            "indexed_in_es": bool(es_info),
-        })
-
-    return APIResponse(success=True, data=result)
+    docs = catalog.get_all_docs(doc_type=doc_type, cancer_type=cancer_type)
+    if status:
+        docs = [d for d in docs if d.get("status") == status]
+    else:
+        docs = [d for d in docs if d.get("status") != "deleted"]
+    return APIResponse(success=True, data=docs)
 
 
-@router.get("/law/{law_id}")
-def get_law(law_id: str):
-    """根据law_id获取法规详情"""
-    law = repo.get_law_by_id(law_id)
-    if law is None:
-        return APIResponse(success=False, message="法规不存在")
-    return APIResponse(success=True, data=law)
+@router.get("/doc/{doc_id}")
+def get_doc(doc_id: str):
+    """根据条目 ID（doc_id / rec_id / drug_id / term_id，即 ES _id）获取条目详情。"""
+    item = repo.get(doc_id)
+    if item is None:
+        return APIResponse(success=False, message="条目不存在")
+    return APIResponse(success=True, data=item)
 
 
-@router.get("/jurisdictions")
-@router.get("/jurisdictions/")
-def get_jurisdictions():
-    """获取所有法域列表"""
-    jurisdictions = repo.get_all_jurisdictions()
-    return APIResponse(success=True, data=jurisdictions)
+@router.get("/cancer_types")
+@router.get("/cancer_types/")
+def get_cancer_types():
+    """获取受控癌种列表（§5.7.3），供前端筛选下拉使用。
+
+    返回格式: [{"code": "lung", "label_zh": "肺癌"}, ...]
+    """
+    data = [{"code": code, "label_zh": zh}
+            for zh, (code, _range_code) in CANCER_TYPE_INFO.items()]
+    return APIResponse(success=True, data=data)
 
 
 @router.get("/topics")
 @router.get("/topics/")
 def get_topics():
-    """获取所有主题列表（含统计信息，用于筛选下拉框）
+    """获取所有主题标签及计数（医疗 taxonomy，用于筛选下拉框）
 
-    返回格式:
-    [
-        {
-            "id": "cybersecurity",
-            "label_zh": "网络安全",
-            "count": 15,
-            "by_jurisdiction": {"澳门": 10, "新加坡": 5}
-        },
-        ...
-    ]
+    返回格式: [{"id": "cancer_lung", "label_zh": "肺癌", "count": 42}, ...]
     """
     topics = repo.get_all_topics()
     return APIResponse(success=True, data=topics)
