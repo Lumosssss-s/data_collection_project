@@ -1,5 +1,5 @@
 /**
- * 境外法规检索平台 - 共享工具函数
+ * 肿瘤循证知识中枢 - 共享工具函数
  */
 
 // Docker 环境：使用相对路径，通过 Nginx 反向代理到后端
@@ -75,15 +75,16 @@ function navigate(page) {
 
 function getCurrentPage() {
     const hash = window.location.hash.slice(2) || 'dashboard';
-    // 提取页面名称（去掉参数部分，如 law-detail/MO_xxx -> law-detail）
+    // 提取页面名称（去掉参数部分，如 guideline/REC-LUNG-xxx -> guideline）
     const slashIndex = hash.indexOf('/');
     return slashIndex > 0 ? hash.substring(0, slashIndex) : hash;
 }
 
 // ===== 侧边栏激活状态 =====
 function updateSidebarActive(page) {
-    // law-detail 是 search 的子页面，高亮 search
-    const activePage = page === 'law-detail' ? 'search' : page;
+    // guideline 是指南详情子页，属检索链路，高亮 search
+    const subPageMap = { 'guideline': 'search' };
+    const activePage = subPageMap[page] || page;
     document.querySelectorAll('.sidebar-nav a').forEach(a => {
         a.classList.toggle('active', a.dataset.page === activePage);
     });

@@ -701,7 +701,7 @@ function restoreSearchState() {
 
 function viewLawDetail(lawId) {
     saveSearchState();
-    window.location.hash = '#/law-detail/' + lawId;
+    window.location.hash = '#/guideline/' + lawId;
 }
 
 function fetchSummary(lawId, btn) {

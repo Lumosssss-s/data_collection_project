@@ -1,36 +1,36 @@
 /**
- * 法规详情页面
- * 路由: #/law-detail/{law_id}
+ * 指南 / 条目详情页面
+ * 路由: #/guideline/{doc_id 或 item_id}
  */
-registerPage('law-detail', function(container) {
-    // 从 hash 中提取 law_id
+registerPage('guideline', function(container) {
+    // 从 hash 中提取条目 ID
     const hash = window.location.hash;
-    const lawId = hash.replace('#/law-detail/', '');
+    const lawId = hash.replace('#/guideline/', '');
 
     if (!lawId) {
-        container.innerHTML = '<div class="alert alert-warning">未选择法规，请先从检索页面选择</div>';
+        container.innerHTML = '<div class="alert alert-warning">未选择条目，请先从检索页面选择</div>';
         container.innerHTML += '<button class="btn btn-secondary" onclick="goBackToSearch()">返回检索</button>';
         return;
     }
 
     container.innerHTML = `
         <button class="btn btn-ghost btn-sm" onclick="goBackToSearch()" style="margin-bottom:1rem;">← 返回检索</button>
-        <div id="law-detail-content"></div>
+        <div id="guide-detail-content"></div>
     `;
 
-    const contentEl = document.getElementById('law-detail-content');
+    const contentEl = document.getElementById('guide-detail-content');
     showLoading(contentEl);
 
-    // 并行获取法规详情和相似法规
+    // 并行获取条目详情和相似指南
     Promise.all([
-        api.get('/search/law/' + lawId),
-        api.get('/search/law/' + lawId + '/similar', { top_k: 5 })
+        api.get('/search/doc/' + lawId),
+        api.get('/search/doc/' + lawId + '/similar', { top_k: 5 })
     ]).then(function(results) {
         const lawData = results[0];
         const similarData = results[1];
 
         if (!lawData || !lawData.success) {
-            showError(contentEl, '获取法规详情失败：' + (lawData ? lawData.message : '未知错误'));
+            showError(contentEl, '获取条目详情失败：' + (lawData ? lawData.message : '未知错误'));
             return;
         }
 
@@ -253,7 +253,7 @@ function renderLawDetail(container, lawData, similarData) {
             html += '<span class="badge badge-muted">ID: ' + escapeHtml(simLawId) + '</span>';
             html += '</div>';
             html += '</div>';
-            html += '<button class="btn btn-secondary btn-sm" onclick="navigate(\'law-detail/' + simLawId + '\')">查看</button>';
+            html += '<button class="btn btn-secondary btn-sm" onclick="navigate(\'guideline/' + simLawId + '\')">查看</button>';
             html += '</div>';
             html += '</div>';
             html += '</div>';
