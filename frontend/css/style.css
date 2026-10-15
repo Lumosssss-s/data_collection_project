@@ -895,6 +895,10 @@ tr:hover td {
 }
 
 /* ===== 响应式 ===== */
+/* 移动端顶栏与抽屉遮罩（桌面端隐藏） */
+.mobile-topbar { display: none; }
+.mobile-nav-overlay { display: none; }
+
 @media (max-width: 1024px) {
     .stat-cards { grid-template-columns: repeat(2, 1fr); }
     .grid-2 { grid-template-columns: 1fr; }
@@ -902,9 +906,72 @@ tr:hover td {
 }
 
 @media (max-width: 768px) {
-    .sidebar { display: none; }
-    .main-content { margin-left: 0; padding: 1rem; }
+    /* 顶栏 */
+    .mobile-topbar {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 52px;
+        padding: 0 0.875rem;
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-border);
+        z-index: 200;
+    }
+    .mobile-nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        background: var(--color-surface);
+        color: var(--color-text);
+        cursor: pointer;
+    }
+    .mobile-topbar-title {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--color-text);
+    }
+
+    /* 侧栏改为抽屉 */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        z-index: 300;
+        box-shadow: 2px 0 12px rgba(15, 27, 36, 0.12);
+    }
+    body.mobile-nav-open .sidebar { transform: translateX(0); }
+
+    /* 遮罩 */
+    .mobile-nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 27, 36, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease;
+        z-index: 250;
+    }
+    .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+
+    .main-content { margin-left: 0; padding: 1rem; padding-top: calc(52px + 1rem); }
     .stat-cards { grid-template-columns: 1fr 1fr; }
+
+    /* 宽表格横向滚动 */
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
+@media (max-width: 480px) {
+    .stat-cards { grid-template-columns: 1fr; }
+    .main-content { padding: 0.75rem; padding-top: calc(52px + 0.75rem); }
+    .page-title { font-size: 1.25rem; }
 }
 
 /* ===== 骨架屏样式 ===== */

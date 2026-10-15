@@ -222,6 +222,7 @@ function registerPage(name, renderFn) {
 function renderCurrentPage() {
     const page = getCurrentPage();
     updateSidebarActive(page);
+    closeMobileNav();
     const container = document.getElementById('page-content');
     if (!container) return;
 
@@ -232,6 +233,33 @@ function renderCurrentPage() {
     }
 }
 
+// ===== 移动端抽屉导航 =====
+function openMobileNav() {
+    document.body.classList.add('mobile-nav-open');
+    const overlay = document.getElementById('mobile-nav-overlay');
+    if (overlay) overlay.classList.add('active');
+}
+
+function closeMobileNav() {
+    document.body.classList.remove('mobile-nav-open');
+    const overlay = document.getElementById('mobile-nav-overlay');
+    if (overlay) overlay.classList.remove('active');
+}
+
+function setupMobileNav() {
+    const toggle = document.getElementById('mobile-nav-toggle');
+    const overlay = document.getElementById('mobile-nav-overlay');
+    if (toggle) toggle.addEventListener('click', openMobileNav);
+    if (overlay) overlay.addEventListener('click', closeMobileNav);
+    // 点击侧栏内链接后自动收起
+    document.querySelectorAll('.sidebar-nav a').forEach(function (a) {
+        a.addEventListener('click', closeMobileNav);
+    });
+}
+
 // 监听路由变化
 window.addEventListener('hashchange', renderCurrentPage);
-window.addEventListener('DOMContentLoaded', renderCurrentPage);
+window.addEventListener('DOMContentLoaded', function () {
+    setupMobileNav();
+    renderCurrentPage();
+});

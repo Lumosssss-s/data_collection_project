@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>肿瘤循证知识中枢</title>
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="app-layout">
+    <!-- 移动端顶栏（≤768px 显示） -->
+    <header class="mobile-topbar">
+        <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="打开导航">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+        </button>
+        <span class="mobile-topbar-title">肿瘤循证知识中枢</span>
+    </header>
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+
     <!-- 侧边栏 -->
     <aside class="sidebar">
         <div class="sidebar-brand">
@@ -71,7 +80,7 @@
 
 <!-- 页面脚本 -->
 <script src="js/app.js"></script>
-<script src="js/pages/dashboard.js"></script>
+<script src="js/pages/dashboard.js?v=2"></script>
 <script src="js/pages/search.js?v=6"></script>
 <script src="js/pages/qa.js"></script>
 <script src="js/pages/topic.js"></script>
