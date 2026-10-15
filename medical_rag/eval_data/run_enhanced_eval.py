@@ -1,79 +1,92 @@
-"""
-P0+P1: 增强评估脚本（独立版本，不依赖 evaluate.py）
-===================================================
-"""
-import sys, os
-import json, math, csv
-from collections import defaultdict
-from typing import List, Dict, Tuple
+"""增强评估脚本（医疗 · C1 BE-43 / C3 E-05）
+================================================
+四种检索策略（BM25 / 向量 / 混合 RRF / 混合+Re-ranker）逐策略指标 + 按癌种/变体细分；
+框架沿用，实体字段医疗化。指标口径见主方案 §9。
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-# 注意：本脚本与数据集同处 eval_data/ 目录（脚本原先在 medical_rag/ 下，后移入此处）。
-# 因此这里不能再拼一层 "eval_data"，否则会解析成 eval_data/eval_data/... 而找不到文件。
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-EVAL_DATASET_PATH = os.path.join(BASE_DIR, "eval_dataset_clause.json")
-OUTPUT_DIR = BASE_DIR
-TOP_K = 20
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+评测集口径（C3 §4.1，实体字段医疗化）：
+  [{id, query, cancer_type, relevant: [{rec_id, doc_id, breadcrumb, relevance}]}]
+
+运行方式（C3 §6.1，容器内）：
+  cd medical_rag
+  python eval_data/run_enhanced_eval.py --dataset eval_data/eval_dataset.json
+
+输出（C3 §6.3 #3）：
+  <out-dir>/<时间戳>/enhanced_{per_query.csv, viz_data.json}
+"""
+import argparse
+import csv
+import datetime
+import json
+import math
+import os
+import sys
+from collections import defaultdict
+from typing import Dict, List
+
+
+def _unit_key(d: Dict) -> str:
+    """统一「检索单元」标识：优先 rec_id / item_id，回落 doc_id / breadcrumb。"""
+    return str(d.get("rec_id") or d.get("item_id") or d.get("doc_id")
+               or d.get("breadcrumb") or "")
 
 
 # ============================================================
-# 简单的 EvalQuery 替代
+# EvalQuery（医疗）
 # ============================================================
 class EvalQuery:
-    def __init__(self, id="", query="", jurisdiction=None, relevant=None):
+    def __init__(self, id="", query="", cancer_type=None, relevant=None):
         self.id = id
         self.query = query
-        self.jurisdiction = jurisdiction
+        self.cancer_type = cancer_type
         self.relevant = relevant or []
 
-    def get_relevant_articles(self) -> set:
-        """返回 {(law_id, article)}"""
-        return {(r["law_id"], r.get("article", "")) for r in self.relevant}
+    def get_relevant_units(self) -> set:
+        """返回检索单元标识集合"""
+        return {_unit_key(r) for r in self.relevant}
 
-    def get_gain(self, law_id, article):
+    def get_gain(self, unit_key):
         for r in self.relevant:
-            if r["law_id"] == law_id and r.get("article", "") == article:
-                rel = r.get("relevance", 1)
-                return (2 ** rel) - 1
+            if _unit_key(r) == unit_key:
+                return (2 ** r.get("relevance", 1)) - 1
         return 0
 
 
 # ============================================================
 # 策略函数（独立实现）
 # ============================================================
+def _filters_of(query_q):
+    ct = getattr(query_q, "cancer_type", None)
+    return {"cancer_type": ct} if ct else None
+
+
 def strategy_bm25(retriever, query_q, top_k=20):
     """仅 BM25 全文检索"""
-    jur = None if getattr(query_q, 'jurisdiction', None) == "跨法域" else getattr(query_q, 'jurisdiction', None)
-    results = retriever.bm25_search(query=query_q.query, top_k=top_k, jurisdiction=jur)
-    return [(r["law_id"], r.get("article_number", "")) for r in results]
+    results = retriever.bm25_search(query=query_q.query, top_k=top_k, filters=_filters_of(query_q))
+    return [_unit_key(r) for r in results]
 
 
 def strategy_vector(retriever, query_q, top_k=20):
     """纯向量检索"""
     from core.config import settings
     settings.reranker_enabled = False
-    jur = None if getattr(query_q, 'jurisdiction', None) == "跨法域" else getattr(query_q, 'jurisdiction', None)
-    results = retriever.search(query=query_q.query, top_k=top_k, jurisdiction=jur)
-    return [(r["law_id"], r.get("article_number", "")) for r in results]
+    results = retriever.search(query=query_q.query, top_k=top_k, filters=_filters_of(query_q))
+    return [_unit_key(r) for r in results]
 
 
 def strategy_hybrid(retriever, query_q, top_k=20):
-    """混合检索(RRF) - 含路由检测"""
+    """混合检索(RRF)"""
     from core.config import settings
     settings.reranker_enabled = False
-    jur = None if getattr(query_q, 'jurisdiction', None) == "跨法域" else getattr(query_q, 'jurisdiction', None)
-    results = retriever.hybrid_search(query=query_q.query, top_k=top_k, jurisdiction=jur)
-    return [(r["law_id"], r.get("article_number", "")) for r in results]
+    results = retriever.hybrid_search(query=query_q.query, top_k=top_k, filters=_filters_of(query_q))
+    return [_unit_key(r) for r in results]
 
 
 def strategy_hybrid_reranker(retriever, query_q, top_k=20):
-    """混合+Re-ranker - 含路由检测 + 候选窗口扩展"""
+    """混合+Re-ranker"""
     from core.config import settings
     settings.reranker_enabled = True
-    jur = None if getattr(query_q, 'jurisdiction', None) == "跨法域" else getattr(query_q, 'jurisdiction', None)
-    results = retriever.hybrid_search(query=query_q.query, top_k=top_k, jurisdiction=jur)
-    return [(r["law_id"], r.get("article_number", "")) for r in results]
+    results = retriever.hybrid_search(query=query_q.query, top_k=top_k, filters=_filters_of(query_q))
+    return [_unit_key(r) for r in results]
 
 
 STRATEGIES = {
@@ -87,42 +100,34 @@ STRATEGIES = {
 # ============================================================
 # 指标计算
 # ============================================================
-def compute_metrics(retrieved_ids, gold_set, gold_articles, eval_query):
+def compute_metrics(retrieved_ids, gold_set, eval_query):
     """计算单条 query 的完整指标"""
-    # MRR
     mrr = 0.0
-    for i, (lid, art) in enumerate(retrieved_ids):
-        if (lid, art) in gold_set:
+    for i, uid in enumerate(retrieved_ids):
+        if uid in gold_set:
             mrr = 1.0 / (i + 1)
             break
 
-    # Top-1 Accuracy
     top1_acc = 1.0 if mrr > 0 else 0.0
 
-    # Recall & Precision
     rel_count = len(gold_set)
-    recall = {}
-    precision = {}
+    recall, precision = {}, {}
     for k in [1, 3, 5, 10, 20]:
         topk = retrieved_ids[:k]
-        hits = sum(1 for lid, art in topk if (lid, art) in gold_set)
+        hits = sum(1 for uid in topk if uid in gold_set)
         recall[k] = hits / max(rel_count, 1)
         precision[k] = hits / max(k, 1)
 
-    # R-Precision
     R = min(rel_count, 20)
-    r_hits = sum(1 for lid, art in retrieved_ids[:R] if (lid, art) in gold_set)
+    r_hits = sum(1 for uid in retrieved_ids[:R] if uid in gold_set)
     r_prec = r_hits / max(R, 1)
 
-    # NDCG
-    gains = sorted([eval_query.get_gain(lid, art) for lid, art in gold_articles], reverse=True)
+    gains = sorted([eval_query.get_gain(uid) for uid in gold_set], reverse=True)
     ideal_dcg = sum(g / math.log2(i + 2) for i, g in enumerate(gains[:20]))
     dcg = {}
     for k in [5, 10, 20]:
-        dcg_k = 0.0
-        for i, (lid, art) in enumerate(retrieved_ids[:k]):
-            gain = eval_query.get_gain(lid, art)
-            dcg_k += gain / math.log2(i + 2)
+        dcg_k = sum(eval_query.get_gain(uid) / math.log2(i + 2)
+                    for i, uid in enumerate(retrieved_ids[:k]))
         dcg[k] = dcg_k / max(ideal_dcg, 1e-10) if k <= len(gains) else 0.0
 
     return {
@@ -142,27 +147,15 @@ def compute_summary(results: List[Dict]) -> Dict:
     if not results:
         return {}
     n = len(results)
-    s = {}
-    for key in ["mrr", "top1_acc", "r_precision"]:
-        s[key.capitalize().replace("_", "-")] = round(sum(r[key] for r in results) / n, 4)
-
-    # Manually build the dict to handle nested keys
     out = {"total_queries": n}
-    
-    # Calculate averages
-    mrr_avg = sum(r["mrr"] for r in results) / n
-    top1_avg = sum(r["top1_acc"] for r in results) / n
-    rprec_avg = sum(r["r_precision"] for r in results) / n
-    out["MRR"] = round(mrr_avg, 4)
-    out["Top1_Accuracy"] = round(top1_avg, 4)
-    out["R-Precision"] = round(rprec_avg, 4)
-
+    out["MRR"] = round(sum(r["mrr"] for r in results) / n, 4)
+    out["Top1_Accuracy"] = round(sum(r["top1_acc"] for r in results) / n, 4)
+    out["R-Precision"] = round(sum(r["r_precision"] for r in results) / n, 4)
     for k in [1, 3, 5, 10, 20]:
         out[f"Recall@{k}"] = round(sum(r["recall"][k] for r in results) / n, 4)
     for k in [5, 10, 20]:
         out[f"Precision@{k}"] = round(sum(r["precision"][k] for r in results) / n, 4)
         out[f"NDCG@{k}"] = round(sum(r["ndcg"][k] for r in results) / n, 4)
-
     return out
 
 
@@ -172,8 +165,7 @@ def print_summary_block(label: str, results: List[Dict]):
         return
     s = compute_summary(results)
     print(f"\n  --- {label} (n={s['total_queries']}) ---")
-    header = f"  {'MRR':>8} {'Top1':>8} {'R-Prec':>8} {'R@5':>8} {'R@10':>8} {'R@20':>8} {'P@5':>8} {'NDCG@10':>10}"
-    print(header)
+    print(f"  {'MRR':>8} {'Top1':>8} {'R-Prec':>8} {'R@5':>8} {'R@10':>8} {'R@20':>8} {'P@5':>8} {'NDCG@10':>10}")
     print(f"  {'-'*76}")
     print(f"  {s['MRR']:>8.4f} {s['Top1_Accuracy']:>8.4f} {s['R-Precision']:>8.4f} "
           f"{s['Recall@5']:>8.4f} {s['Recall@10']:>8.4f} {s['Recall@20']:>8.4f} "
@@ -192,15 +184,12 @@ def print_comparison_table(all_summaries: Dict):
 def export_per_query_csv(strategy_names, strategy_results, output_path):
     rows = []
     for sk, name in strategy_names.items():
-        results = strategy_results[sk]
-        for r in results:
+        for r in strategy_results[sk]:
             rows.append({
                 "strategy": name,
                 "query_id": r["query_id"],
                 "query_text": r["query_text"],
-                "jurisdiction": r["jurisdiction"],
-                "variant": r["variant"],
-                "base_query": r["base_query"],
+                "cancer_type": r["cancer_type"],
                 "relevant_count": r["relevant_count"],
                 "retrieved_count": r["retrieved_count"],
                 "MRR": r["mrr"],
@@ -211,9 +200,8 @@ def export_per_query_csv(strategy_names, strategy_results, output_path):
             })
     if not rows:
         return
-    fieldnames = ["strategy", "query_id", "query_text", "jurisdiction", "variant",
-                  "base_query", "relevant_count", "retrieved_count",
-                  "MRR", "R@5", "R@10", "R@20", "P@5"]
+    fieldnames = ["strategy", "query_id", "query_text", "cancer_type",
+                  "relevant_count", "retrieved_count", "MRR", "R@5", "R@10", "R@20", "P@5"]
     with open(output_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -221,11 +209,10 @@ def export_per_query_csv(strategy_names, strategy_results, output_path):
     print(f"\n  CSV: {output_path} ({len(rows)} 行)")
 
 
-def export_viz_json(all_summaries, jur_summaries, var_summaries, output_path):
+def export_viz_json(all_summaries, ct_summaries, output_path):
     data = {
         "overall": all_summaries,
-        "by_jurisdiction": {j: s for j, s in jur_summaries.items()},
-        "by_variant": {v: s for v, s in var_summaries.items()},
+        "by_cancer_type": {c: s for c, s in ct_summaries.items()},
     }
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -236,35 +223,46 @@ def export_viz_json(all_summaries, jur_summaries, var_summaries, output_path):
 # 主流程
 # ============================================================
 def main():
+    parser = argparse.ArgumentParser(description="医疗增强检索评估")
+    parser.add_argument("--dataset",
+                        default=os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                             "eval_dataset.json"),
+                        help="评测集 JSON 路径")
+    parser.add_argument("--out-dir",
+                        default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"),
+                        help="结果输出根目录（实际写入 <out-dir>/<时间戳>/）")
+    parser.add_argument("--top-k", type=int, default=20, help="候选 Top-K")
+    args = parser.parse_args()
+    top_k = args.top_k
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.insert(0, base_dir)
+    sys.path.insert(0, os.path.dirname(base_dir))
+
     from services.retriever_service import RetrieverService
 
     print("=" * 60)
-    print("  P0+P1: 条款级评估")
+    print("  增强检索评估（医疗）")
     print("=" * 60)
 
-    # 1. 加载数据
-    if not os.path.exists(EVAL_DATASET_PATH):
-        print(f"\n  [ERROR] 未找到: {EVAL_DATASET_PATH}")
+    if not os.path.exists(args.dataset):
+        print(f"\n  [ERROR] 未找到: {args.dataset}")
         return
 
-    with open(EVAL_DATASET_PATH, "r", encoding="utf-8") as f:
+    with open(args.dataset, "r", encoding="utf-8") as f:
         items = json.load(f)
-    queries = []
-    for item in items:
-        q = EvalQuery(id=item["id"], query=item["query"],
-                       jurisdiction=item.get("jurisdiction"),
-                       relevant=item.get("relevant", []))
-        queries.append(q)
+    queries = [EvalQuery(id=item["id"], query=item["query"],
+                         cancer_type=item.get("cancer_type"),
+                         relevant=item.get("relevant", [])) for item in items]
 
     active = [q for q in queries if q.relevant]
-    print(f"\n  数据集: {len(queries)}（有 gold: {len(active)}）")
+    print(f"\n  评测集: {len(queries)}（有 gold: {len(active)}）")
     if not active:
         return
 
     retriever = RetrieverService()
     strategy_keys = ["bm25", "vector", "hybrid", "hybrid+reranker"]
 
-    # 2. 运行策略
     all_strategy_results = {}
     all_summaries = {}
     strategy_names = {k: STRATEGIES[k]["name"] for k in strategy_keys}
@@ -273,30 +271,20 @@ def main():
         print(f"\n  >>> {strategy_names[sk]}")
         results = []
         for q in active:
-            gold_set = q.get_relevant_articles()
-            gold_articles = list(gold_set)
-
-            retrieved_ids = STRATEGIES[sk]["run"](retriever, q, TOP_K)
-            metrics = compute_metrics(retrieved_ids, gold_set, gold_articles, q)
-
-            var = q.id.split("_")[-1] if "_" in q.id else ""
-            base = q.id.rsplit("_", 1)[0] if "_" in q.id else q.id
-            jur = q.jurisdiction or "跨法域"
-
+            gold_set = q.get_relevant_units()
+            retrieved_ids = STRATEGIES[sk]["run"](retriever, q, top_k)
+            metrics = compute_metrics(retrieved_ids, gold_set, q)
             results.append({
                 **metrics,
                 "query_id": q.id,
                 "query_text": q.query[:100],
-                "jurisdiction": jur,
-                "variant": var,
-                "base_query": base,
+                "cancer_type": q.cancer_type or "未指定",
                 "strategy_key": sk,
             })
         all_strategy_results[sk] = results
         all_summaries[sk] = compute_summary(results)
         print(f"    完成: MRR={all_summaries[sk]['MRR']:.4f}")
 
-    # 3. 总体对比
     print("\n  === 总体对比 ===")
     print_comparison_table(all_summaries)
 
@@ -307,35 +295,27 @@ def main():
         s = all_summaries[sk]
         print(f"  {strategy_names[sk]:<22} {s['Top1_Accuracy']:>10.4f} {s['R-Precision']:>12.4f}")
 
-    # 4. 按法域细分
-    print("\n  === 按法域细分 (混合检索) ===")
-    jur_summaries = {}
-    jur_groups = defaultdict(list)
+    print("\n  === 按癌种细分 (混合检索) ===")
+    ct_summaries = {}
+    ct_groups = defaultdict(list)
     for r in all_strategy_results["hybrid"]:
-        jur_groups[r["jurisdiction"]].append(r)
-    for jur in sorted(jur_groups.keys()):
-        s = compute_summary(jur_groups[jur])
-        jur_summaries[jur] = s
-        print_summary_block(jur, jur_groups[jur])
+        ct_groups[r["cancer_type"]].append(r)
+    for ct in sorted(ct_groups.keys()):
+        ct_summaries[ct] = compute_summary(ct_groups[ct])
+        print_summary_block(ct, ct_groups[ct])
 
-    # 5. 按查询变体细分
-    print("\n  === 按查询变体细分 (混合检索) ===")
-    var_summaries = {}
-    var_groups = defaultdict(list)
-    var_names = {"A": "Keyword(zh)", "B": "NL(zh)", "C": "Mixed(zh-en)", "D": "Pure(en)"}
-    for r in all_strategy_results["hybrid"]:
-        var_groups[r["variant"]].append(r)
-    for var in sorted(var_groups.keys()):
-        vn = var_names.get(var, var)
-        s = compute_summary(var_groups[var])
-        var_summaries[var] = s
-        print_summary_block(f"{vn}", var_groups[var])
+    # 落盘（C3 §6.3 #3）
+    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    out_dir = os.path.join(args.out_dir, stamp)
+    os.makedirs(out_dir, exist_ok=True)
 
-    # 6. 导出
+    all_summaries["_snapshot"] = {"run_at": stamp, "dataset": os.path.abspath(args.dataset),
+                                  "top_k": top_k}
     export_per_query_csv(strategy_names, all_strategy_results,
-                         os.path.join(OUTPUT_DIR, "eval_per_query.csv"))
-    export_viz_json(all_summaries, jur_summaries, var_summaries,
-                    os.path.join(OUTPUT_DIR, "eval_viz_data.json"))
+                         os.path.join(out_dir, "enhanced_per_query.csv"))
+    export_viz_json(all_summaries, ct_summaries,
+                    os.path.join(out_dir, "enhanced_viz_data.json"))
+    print(f"\n  结果目录: {out_dir}")
 
     print("\n" + "=" * 60)
     print("  完成！")

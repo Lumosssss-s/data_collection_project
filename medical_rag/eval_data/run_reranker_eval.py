@@ -1,48 +1,73 @@
-"""
-第三阶段：单独运行 Re-ranker 策略（手动加载模型绕开 mmap）
-=====================================================
-使用 torch.load 加载权重（不经过 safetensors mmap，避免页面文件不足）
-"""
-import sys, os, json, math, gc
-from collections import defaultdict
-from typing import List
+"""精排增益评估（医疗 · C1 BE-41 / C3 E-03）
+================================================
+先跑混合检索生成候选，再用 bge-reranker 重排，对比精排增益；指标口径沿用
+主方案 §9（Recall@5/10、MRR、NDCG@10 等）。
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-# 本脚本与数据集同处 eval_data/ 目录，BASE_DIR 已是该目录，不能再拼一层 "eval_data"。
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-EVAL_DATASET_PATH = os.path.join(BASE_DIR, "eval_dataset_clause.json")
-TOP_K = 20
+评测集口径（C3 §4.1，实体字段医疗化）：
+  [{id, query, cancer_type, relevant: [{rec_id, doc_id, breadcrumb, relevance}]}]
+
+运行方式（C3 §6.1，容器内）：
+  cd medical_rag
+  python eval_data/run_reranker_eval.py --dataset eval_data/eval_dataset.json
+
+输出（C3 §6.3 #3）：<out-dir>/<时间戳>/{reranker_summary.json, reranker_per_query.csv}
+"""
+import argparse
+import csv
+import datetime
+import gc
+import json
+import math
+import os
+import sys
+from typing import Dict, List
+
+
+def _unit_key(d: Dict) -> str:
+    """统一「检索单元」标识：优先 rec_id / item_id，回落 doc_id / breadcrumb。"""
+    return str(d.get("rec_id") or d.get("item_id") or d.get("doc_id")
+               or d.get("breadcrumb") or "")
 
 
 class EvalQuery:
-    def __init__(self, id="", query="", jurisdiction=None, relevant=None):
-        self.id = id; self.query = query; self.jurisdiction = jurisdiction; self.relevant = relevant or []
-    def get_relevant_articles(self): return {(r["law_id"], r.get("article", "")) for r in self.relevant}
-    def get_gain(self, law_id, article):
+    def __init__(self, id="", query="", cancer_type=None, relevant=None):
+        self.id = id
+        self.query = query
+        self.cancer_type = cancer_type
+        self.relevant = relevant or []
+
+    def get_relevant_units(self):
+        return {_unit_key(r) for r in self.relevant}
+
+    def get_gain(self, unit_key):
         for r in self.relevant:
-            if r["law_id"] == law_id and r.get("article", "") == article:
+            if _unit_key(r) == unit_key:
                 return (2 ** r.get("relevance", 1)) - 1
         return 0
 
 
-def compute_metrics(retrieved_ids, gold_set, gold_articles, eval_query):
+def compute_metrics(retrieved_ids, gold_set, eval_query):
     mrr = 0.0
-    for i, (lid, art) in enumerate(retrieved_ids):
-        if (lid, art) in gold_set: mrr = 1.0 / (i + 1); break
+    for i, uid in enumerate(retrieved_ids):
+        if uid in gold_set:
+            mrr = 1.0 / (i + 1)
+            break
     rel_count = len(gold_set)
     recall, precision = {}, {}
     for k in [1, 3, 5, 10, 20]:
         topk = retrieved_ids[:k]
-        hits = sum(1 for lid, art in topk if (lid, art) in gold_set)
-        recall[k] = hits / max(rel_count, 1); precision[k] = hits / max(k, 1)
+        hits = sum(1 for uid in topk if uid in gold_set)
+        recall[k] = hits / max(rel_count, 1)
+        precision[k] = hits / max(k, 1)
     R = min(rel_count, 20)
-    r_hits = sum(1 for lid, art in retrieved_ids[:R] if (lid, art) in gold_set)
+    r_hits = sum(1 for uid in retrieved_ids[:R] if uid in gold_set)
     r_prec = r_hits / max(R, 1)
-    gains = sorted([eval_query.get_gain(lid, art) for lid, art in gold_articles], reverse=True)
+    gains = sorted([eval_query.get_gain(uid) for uid in gold_set], reverse=True)
     ideal_dcg = sum(g / math.log2(i + 2) for i, g in enumerate(gains[:20]))
     dcg = {}
     for k in [5, 10, 20]:
-        dcg_k = sum(eval_query.get_gain(lid, art) / math.log2(i + 2) for i, (lid, art) in enumerate(retrieved_ids[:k]))
+        dcg_k = sum(eval_query.get_gain(uid) / math.log2(i + 2)
+                    for i, uid in enumerate(retrieved_ids[:k]))
         dcg[k] = dcg_k / max(ideal_dcg, 1e-10) if k <= len(gains) else 0.0
     return {"mrr": round(mrr, 4), "top1_acc": 1.0 if mrr > 0 else 0.0,
             "r_precision": round(r_prec, 4),
@@ -53,12 +78,14 @@ def compute_metrics(retrieved_ids, gold_set, gold_articles, eval_query):
 
 
 def compute_summary(results):
-    if not results: return {}
+    if not results:
+        return {}
     n = len(results)
     out = {"total_queries": n}
-    for k in ["mrr", "top1_acc", "r_precision"]:
-        out[{"mrr": "MRR", "top1_acc": "Top1_Accuracy", "r_precision": "R-Precision"}[k]] = round(sum(r[k] for r in results) / n, 4)
-    for k in [1, 3, 5, 10, 20]: out[f"Recall@{k}"] = round(sum(r["recall"][k] for r in results) / n, 4)
+    for k, label in [("mrr", "MRR"), ("top1_acc", "Top1_Accuracy"), ("r_precision", "R-Precision")]:
+        out[label] = round(sum(r[k] for r in results) / n, 4)
+    for k in [1, 3, 5, 10, 20]:
+        out[f"Recall@{k}"] = round(sum(r["recall"][k] for r in results) / n, 4)
     for k in [5, 10, 20]:
         out[f"Precision@{k}"] = round(sum(r["precision"][k] for r in results) / n, 4)
         out[f"NDCG@{k}"] = round(sum(r["ndcg"][k] for r in results) / n, 4)
@@ -90,15 +117,16 @@ def batch_rerank(query, candidates, tokenizer, model, device, top_k=20):
     """使用已加载的模型重排"""
     import torch
 
-    pairs = []
-    valid = []
+    pairs, valid = [], []
     for doc in candidates:
         content = doc.get("content", "")
-        if not content: continue
+        if not content:
+            continue
         pairs.append([query, content[:2000]])
         valid.append(doc)
 
-    if not pairs: return candidates[:top_k]
+    if not pairs:
+        return candidates[:top_k]
 
     all_scores = []
     batch_size = 8
@@ -118,22 +146,38 @@ def batch_rerank(query, candidates, tokenizer, model, device, top_k=20):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="医疗精排增益评估（Re-ranker）")
+    parser.add_argument("--dataset",
+                        default=os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                             "eval_dataset.json"),
+                        help="评测集 JSON 路径")
+    parser.add_argument("--out-dir",
+                        default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"),
+                        help="结果输出根目录（实际写入 <out-dir>/<时间戳>/）")
+    parser.add_argument("--top-k", type=int, default=20, help="候选 Top-K")
+    args = parser.parse_args()
+    top_k = args.top_k
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.insert(0, base_dir)
+    sys.path.insert(0, os.path.dirname(base_dir))
+
     import torch
 
     print("=" * 60)
-    print("  P1b: Re-ranker 策略评估（手动加载）")
+    print("  Re-ranker 策略评估（医疗）")
     print("=" * 60)
 
-    # 1. 加载数据集
-    with open(EVAL_DATASET_PATH, "r", encoding="utf-8") as f:
+    # 1. 加载评测集
+    with open(args.dataset, "r", encoding="utf-8") as f:
         items = json.load(f)
     queries = [EvalQuery(id=item["id"], query=item["query"],
-                         jurisdiction=item.get("jurisdiction"),
+                         cancer_type=item.get("cancer_type"),
                          relevant=item.get("relevant", [])) for item in items]
     active = [q for q in queries if q.relevant]
-    print(f"\n  数据集: {len(queries)}（有 gold: {len(active)}）")
+    print(f"\n  评测集: {len(queries)}（有 gold: {len(active)}）")
 
-    # Phase 1: 生成混合检索候选
+    # Phase 1: 生成混合检索候选（保留完整文档，含 content，免去二次回查）
     print("\n  Phase 1: 生成混合检索候选...")
     from services.retriever_service import RetrieverService
     from core.config import settings
@@ -142,14 +186,15 @@ def main():
     retriever = RetrieverService()
     candidates_map = {}
     for q in active:
-        jur = None if q.jurisdiction == "跨法域" else q.jurisdiction
-        results = retriever.hybrid_search(query=q.query, top_k=TOP_K, jurisdiction=jur)
-        candidates_map[q.id] = [(r["law_id"], r.get("article_number", "")) for r in results]
+        filters = {"cancer_type": q.cancer_type} if q.cancer_type else None
+        candidates_map[q.id] = retriever.hybrid_search(query=q.query, top_k=top_k, filters=filters)
 
-    # 释放 Retriever
     print("  释放 Retriever...")
-    del retriever; gc.collect(); torch.cuda.empty_cache()
-    print(f"  显存: {torch.cuda.memory_allocated()/1024**3:.1f} GB")
+    del retriever
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        print(f"  显存: {torch.cuda.memory_allocated()/1024**3:.1f} GB")
 
     # Phase 2: 加载 Reranker
     print("\n  Phase 2: 加载 Re-ranker...")
@@ -157,70 +202,58 @@ def main():
 
     # Phase 3: 重排 + 评分
     print("\n  Phase 3: 重排 + 评分...")
-    from repositories.elasticsearch import ElasticsearchRepository
-    repo = ElasticsearchRepository()
-
     all_results = []
     for idx, q in enumerate(active):
         candidates = candidates_map[q.id]
+        gold_set = q.get_relevant_units()
         if not candidates:
-            all_results.append(compute_metrics([], q.get_relevant_articles(),
-                                                list(q.get_relevant_articles()), q))
+            all_results.append(compute_metrics([], gold_set, q))
             continue
 
-        # 补齐 text
-        enriched = []
-        for lid, art in candidates:
-            text = repo.get_article_full_text(lid, art)[:2000]
-            enriched.append({"law_id": lid, "article_number": art, "content": text or ""})
+        reranked = batch_rerank(q.query, candidates, tokenizer, model, device, top_k)
+        retrieved_ids = [_unit_key(r) for r in reranked]
 
-        # 重排
-        reranked = batch_rerank(q.query, enriched, tokenizer, model, device, TOP_K)
-        retrieved_ids = [(r["law_id"], r["article_number"]) for r in reranked]
-
-        gold_set = q.get_relevant_articles()
-        gold_articles = list(gold_set)
-        metrics = compute_metrics(retrieved_ids, gold_set, gold_articles, q)
+        metrics = compute_metrics(retrieved_ids, gold_set, q)
         metrics.update({"query_id": q.id, "query_text": q.query[:100],
-                       "jurisdiction": q.jurisdiction or "跨法域",
-                       "variant": q.id.split("_")[-1] if "_" in q.id else "",
-                       "base_query": q.id.rsplit("_", 1)[0] if "_" in q.id else q.id})
+                        "cancer_type": q.cancer_type or "未指定"})
         all_results.append(metrics)
 
         if (idx + 1) % 40 == 0:
-            print(f"    [{idx+1}/{len(active)}] MRR so far: {sum(r['mrr'] for r in all_results)/len(all_results):.4f}")
+            print(f"    [{idx+1}/{len(active)}] MRR so far: "
+                  f"{sum(r['mrr'] for r in all_results)/len(all_results):.4f}")
 
     # 汇总
     summary = compute_summary(all_results)
-    print(f"\n  === 混合+Re-ranker 结果 (n={summary['total_queries']}) ===")
-    print(f"  {'MRR':>8} {'Top1':>8} {'R-Prec':>8} {'R@5':>8} {'R@10':>8} {'R@20':>8} {'P@5':>8} {'NDCG@10':>10}")
-    print(f"  {'-'*76}")
-    print(f"  {summary['MRR']:>8.4f} {summary['Top1_Accuracy']:>8.4f} {summary['R-Precision']:>8.4f} "
-          f"{summary['Recall@5']:>8.4f} {summary['Recall@10']:>8.4f} {summary['Recall@20']:>8.4f} "
-          f"{summary['Precision@5']:>8.4f} {summary['NDCG@10']:>10.4f}")
+    print(f"\n  === 混合+Re-ranker 结果 (n={summary.get('total_queries', 0)}) ===")
+    if summary:
+        print(f"  {'MRR':>8} {'Top1':>8} {'R-Prec':>8} {'R@5':>8} {'R@10':>8} {'R@20':>8} {'P@5':>8} {'NDCG@10':>10}")
+        print(f"  {'-'*76}")
+        print(f"  {summary['MRR']:>8.4f} {summary['Top1_Accuracy']:>8.4f} {summary['R-Precision']:>8.4f} "
+              f"{summary['Recall@5']:>8.4f} {summary['Recall@10']:>8.4f} {summary['Recall@20']:>8.4f} "
+              f"{summary['Precision@5']:>8.4f} {summary['NDCG@10']:>10.4f}")
 
-    # 追加到 viz JSON
-    viz_path = os.path.join(BASE_DIR, "eval_viz_data.json")
-    if os.path.exists(viz_path):
-        viz_data = json.load(open(viz_path, encoding="utf-8"))
-        viz_data["overall"]["hybrid+reranker"] = summary
-        json.dump(viz_data, open(viz_path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-        print(f"\n  已保存: {viz_path}")
+    # 落盘（C3 §6.3 #3）
+    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    out_dir = os.path.join(args.out_dir, stamp)
+    os.makedirs(out_dir, exist_ok=True)
 
-    # 追加到 CSV
-    csv_path = os.path.join(BASE_DIR, "eval_per_query.csv")
-    if os.path.exists(csv_path):
-        import csv
-        with open(csv_path, "a", newline="", encoding="utf-8") as f:
-            w = csv.writer(f)
-            for r in all_results:
-                w.writerow(["混合+Re-ranker", r["query_id"], r["query_text"],
-                           r["jurisdiction"], r["variant"], r["base_query"],
-                           r["relevant_count"], r["retrieved_count"],
-                           r["mrr"], r["recall"][5], r["recall"][10],
-                           r["recall"][20], r["precision"][5]])
-        print(f"  已保存: {csv_path}")
+    summary["_snapshot"] = {"run_at": stamp, "dataset": os.path.abspath(args.dataset),
+                            "top_k": top_k, "strategy": "hybrid+reranker"}
+    with open(os.path.join(out_dir, "reranker_summary.json"), "w", encoding="utf-8") as f:
+        json.dump(summary, f, ensure_ascii=False, indent=2)
 
+    csv_path = os.path.join(out_dir, "reranker_per_query.csv")
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["strategy", "query_id", "query_text", "cancer_type",
+                    "relevant_count", "retrieved_count", "mrr",
+                    "recall@5", "recall@10", "recall@20", "precision@5"])
+        for r in all_results:
+            w.writerow(["混合+Re-ranker", r["query_id"], r["query_text"], r["cancer_type"],
+                        r["relevant_count"], r["retrieved_count"], r["mrr"],
+                        r["recall"][5], r["recall"][10], r["recall"][20], r["precision"][5]])
+
+    print(f"\n  结果目录: {out_dir}")
     print("\n  完成！")
 
 
