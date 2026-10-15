@@ -82,8 +82,8 @@ function getCurrentPage() {
 
 // ===== 侧边栏激活状态 =====
 function updateSidebarActive(page) {
-    // guideline 是指南详情子页，属检索链路，高亮 search
-    const subPageMap = { 'guideline': 'search' };
+    // guideline 是指南详情子页，属检索链路，高亮 search；disease 属疾病知识库，高亮 diseases
+    const subPageMap = { 'guideline': 'search', 'disease': 'diseases' };
     const activePage = subPageMap[page] || page;
     document.querySelectorAll('.sidebar-nav a').forEach(a => {
         a.classList.toggle('active', a.dataset.page === activePage);

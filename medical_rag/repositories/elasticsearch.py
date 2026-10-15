@@ -528,7 +528,166 @@ class ElasticsearchRepository:
         except Exception as e:
             logger.warning(f"[Disease] 疾病档案索引创建/检查失败: {e}")
             return False
-    
+
+    # ============================================================
+    #  疾病档案（medical_disease_profiles，NM-01）
+    #  一条文档 = 一个疾病 profile；检索抽平层用于检索，存储层整存整取。
+    # ============================================================
+    _DISEASE_LIST_SOURCE = [
+        "disease_id", "name_canonical", "category", "cancer_type", "departments",
+        "overview_text", "symptoms", "pathology_subtypes", "stages", "treatment_methods",
+    ]
+
+    def add_disease_profile(self, profile: Dict) -> bool:
+        """写入/覆盖一条疾病档案（ES _id = disease_id），并补算 embedding。
+
+        向量来源：overview_text（无则回落 name_canonical + 症状），与检索走同一
+        bge-m3（1024 维，见 C2 §4.2 mapping）。
+        """
+        disease_id = str(profile.get("disease_id", "") or "").strip()
+        if not disease_id:
+            logger.warning("[Disease] 缺少 disease_id，跳过写入")
+            return False
+        if not self._ensure_disease_index():
+            return False
+
+        doc = dict(profile)
+        doc["disease_id"] = disease_id
+        embed_src = (
+            str(doc.get("overview_text") or "").strip()
+            or " ".join([str(doc.get("name_canonical", ""))] + list(doc.get("symptoms") or []))
+        )
+        try:
+            if embed_src:
+                doc["embedding"] = self._embed_texts([embed_src])[0]
+            self.client.index(index=settings.es_disease_index_name, id=disease_id, document=doc)
+            self.client.indices.refresh(index=settings.es_disease_index_name)
+            return True
+        except Exception as e:
+            logger.warning(f"[Disease] 写入失败 {disease_id}: {e}")
+            return False
+
+    def get_disease_profile(self, disease_id: str) -> Optional[Dict]:
+        """按 disease_id 取完整档案（含 sections / patient_version / links）。"""
+        if not disease_id or not self._ensure_disease_index():
+            return None
+        try:
+            resp = self.client.get(index=settings.es_disease_index_name, id=disease_id)
+            src = resp.get("_source", {})
+            src.setdefault("disease_id", resp.get("_id", disease_id))
+            return src
+        except NotFoundError:
+            return None
+        except Exception as e:
+            logger.warning(f"[Disease] 读取失败 {disease_id}: {e}")
+            return None
+
+    def search_diseases_by_name(self, query: str, size: int = 20) -> List[Dict]:
+        """按疾病名检索（name_canonical / synonyms / name_en / pinyin 多路匹配）。"""
+        if not query or not self._ensure_disease_index():
+            return []
+        body = {
+            "size": size,
+            "query": {
+                "bool": {
+                    "should": [
+                        {"match": {"name_canonical": {"query": query, "boost": 3}}},
+                        {"match": {"synonyms": {"query": query, "boost": 2}}},
+                        {"match": {"name_en": {"query": query}}},
+                        {"term": {"pinyin": str(query).lower()}},
+                        {"match": {"overview_text": query}},
+                    ],
+                    "minimum_should_match": 1,
+                }
+            },
+            "_source": self._DISEASE_LIST_SOURCE,
+        }
+        try:
+            resp = self.client.search(index=settings.es_disease_index_name, body=body)
+            return [self._disease_hit(h) for h in resp["hits"]["hits"]]
+        except Exception as e:
+            logger.warning(f"[Disease] 名称检索失败: {e}")
+            return []
+
+    def search_diseases_by_symptom(self, symptoms: List[str], size: int = 20) -> List[Dict]:
+        """症状反查：抽平字段 symptoms（早期+晚期+体征全集）按 OR 匹配，按命中数排序。"""
+        symptoms = [s for s in (symptoms or []) if s]
+        if not symptoms or not self._ensure_disease_index():
+            return []
+        body = {
+            "size": size,
+            "query": {
+                "bool": {
+                    "should": [{"term": {"symptoms": s}} for s in symptoms],
+                    "minimum_should_match": 1,
+                }
+            },
+            # 命中症状数越多越相关
+            "sort": [{"_score": {"order": "desc"}}],
+            "_source": self._DISEASE_LIST_SOURCE,
+        }
+        try:
+            resp = self.client.search(index=settings.es_disease_index_name, body=body)
+            return [self._disease_hit(h) for h in resp["hits"]["hits"]]
+        except Exception as e:
+            logger.warning(f"[Disease] 症状反查失败: {e}")
+            return []
+
+    def list_diseases(self, category: Optional[str] = None,
+                      cancer_type: Optional[str] = None, size: int = 200) -> Dict:
+        """分类浏览：返回 {total, items, facets:{category, cancer_type}}。"""
+        if not self._ensure_disease_index():
+            return {"total": 0, "items": [], "facets": {"category": {}, "cancer_type": {}}}
+        must = []
+        if category:
+            must.append({"term": {"category": category}})
+        if cancer_type:
+            must.append({"term": {"cancer_type": cancer_type}})
+        body = {
+            "size": size,
+            "query": {"bool": {"filter": must}} if must else {"match_all": {}},
+            "sort": [{"name_canonical.keyword": {"order": "asc"}}],
+            "_source": self._DISEASE_LIST_SOURCE,
+            "aggs": {
+                "by_category": {"terms": {"field": "category", "size": 20}},
+                "by_cancer_type": {"terms": {"field": "cancer_type", "size": 20}},
+            },
+        }
+        try:
+            resp = self.client.search(index=settings.es_disease_index_name, body=body)
+            facets = {
+                "category": {b["key"]: b["doc_count"]
+                             for b in resp["aggregations"]["by_category"]["buckets"]},
+                "cancer_type": {b["key"]: b["doc_count"]
+                                for b in resp["aggregations"]["by_cancer_type"]["buckets"]},
+            }
+            return {
+                "total": resp["hits"]["total"]["value"],
+                "items": [self._disease_hit(h) for h in resp["hits"]["hits"]],
+                "facets": facets,
+            }
+        except Exception as e:
+            logger.warning(f"[Disease] 分类浏览失败: {e}")
+            return {"total": 0, "items": [], "facets": {"category": {}, "cancer_type": {}}}
+
+    def count_diseases(self) -> int:
+        """疾病档案总数（无索引/无数据时为 0）。"""
+        if not self._ensure_disease_index():
+            return 0
+        try:
+            resp = self.client.count(index=settings.es_disease_index_name)
+            return int(resp.get("count", 0))
+        except Exception:
+            return 0
+
+    @staticmethod
+    def _disease_hit(hit: Dict) -> Dict:
+        """命中结构扁平化：_source + 检索分（_score）。"""
+        src = dict(hit.get("_source", {}))
+        src.setdefault("disease_id", hit.get("_id", ""))
+        src["_score"] = hit.get("_score")
+        return src
+
     def _embed_texts(self, texts: List[str]) -> List[List[float]]:
         import torch
         import os
