@@ -34,7 +34,10 @@ async def ask_stream(
     """流式问答接口（支持追问/多轮对话）"""
     filters = {}
     if cancer_type:
-        filters["cancer_type"] = cancer_type
+        # 支持多选（逗号分隔），多值按 OR 过滤（与 scenario 一致）
+        cancers = [c.strip() for c in cancer_type.split(",") if c.strip()]
+        if cancers:
+            filters["cancer_type"] = cancers[0] if len(cancers) == 1 else cancers
     if scenario:
         scenarios = [s.strip() for s in scenario.split(",") if s.strip()]
         if scenarios:

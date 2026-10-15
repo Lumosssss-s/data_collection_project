@@ -1,8 +1,13 @@
 /**
- * 指南 / 条目详情页面
+ * 指南 / 条目详情页面（医疗）
  * 路由: #/guideline/{doc_id 或 item_id}
+ *
+ * 展示：
+ *   - 指南速览卡（/search/doc/{doc_id}/summary：概要 / 核心推荐 / 证据特点 / 关键词）
+ *   - 条目基本信息（/search/doc/{doc_id}）
+ *   - 相关指南推荐（/search/doc/{doc_id}/similar → similar_guides）
  */
-registerPage('guideline', function(container) {
+registerPage('guideline', function (container) {
     // 从 hash 中提取条目 ID
     const hash = window.location.hash;
     const lawId = hash.replace('#/guideline/', '');
@@ -21,218 +26,127 @@ registerPage('guideline', function(container) {
     const contentEl = document.getElementById('guide-detail-content');
     showLoading(contentEl);
 
-    // 并行获取条目详情和相似指南
+    // 并行获取条目详情、指南速览、相似指南
     Promise.all([
         api.get('/search/doc/' + lawId),
-        api.get('/search/doc/' + lawId + '/similar', { top_k: 5 })
-    ]).then(function(results) {
-        const lawData = results[0];
-        const similarData = results[1];
+        api.get('/search/doc/' + lawId + '/summary').catch(function () { return null; }),
+        api.get('/search/doc/' + lawId + '/similar', { top_k: 5 }).catch(function () { return null; })
+    ]).then(function (results) {
+        const itemData = results[0];
+        const summaryData = results[1];
+        const similarData = results[2];
 
-        if (!lawData || !lawData.success) {
-            showError(contentEl, '获取条目详情失败：' + (lawData ? lawData.message : '未知错误'));
+        if (!itemData || !itemData.success) {
+            showError(contentEl, '获取条目详情失败：' + (itemData ? itemData.message : '未知错误'));
             return;
         }
 
-        renderLawDetail(contentEl, lawData.data, similarData && similarData.data ? similarData.data : null);
-    }).catch(function(err) {
+        renderGuideDetail(
+            contentEl,
+            itemData.data,
+            summaryData && summaryData.success ? summaryData.data : null,
+            similarData && similarData.success ? similarData.data : null
+        );
+    }).catch(function (err) {
         showError(contentEl, '请求失败：' + err.message);
     });
 });
 
-/**
- * 清理法规正文的文本排版
- * - 规范化换行符
- * - 段落内的单 \n 合并为空格
- * - 连续的 \n\n 作为段落分隔
- */
-function cleanLawText(text) {
-    if (!text) return '';
-    // 1. 规范化换行
-    var t = text.replace(/\r\n/g, '\n');
-    // 2. 行首行尾空白修剪
-    t = t.replace(/^[ \t]+/gm, '').replace(/[ \t]+$/gm, '');
-    // 3. 将连续的空白行（\n\n+）替换为段落分隔标记
-    t = t.replace(/\n{2,}/g, '\n¶\n');
-    // 4. 将段落内剩余的单 \n 替换为空格（修复文本提取造成的断行）
-    t = t.replace(/\n(?!¶)/g, ' ');
-    // 5. 恢复段落标记为 \n
-    t = t.replace(/¶/g, '');
-    // 6. 合并多余空格
-    t = t.replace(/[ \t]{2,}/g, ' ');
-    return t.trim();
-}
+// 徽标文案
+const DATA_TYPE_LABELS = { doc: '指南', rec: '推荐条目', drug: '药品说明书', term: '术语' };
+const EVIDENCE_LABELS = { high: '高', moderate: '中', low: '低', very_low: '极低' };
+const STRENGTH_LABELS = { strong: '强', weak: '弱', not_graded: '未分级' };
 
-/**
- * 检测文本开头的章节标题（如 "1.2 Declaratory rulings"、"Section 5" 等）
- * 返回 { title, rest } 或 null
- */
-function extractSectionHeading(text) {
-    // 匹配数字+小数的标题模式：1.2 xxx, 3.1.4 xxx
-    var m = text.match(/^(\d+(?:\.\d+)+)\s+(.+?)(?=[\.\n]|$)/);
-    if (m) {
-        var title = m[1] + ' ' + m[2].replace(/\s+/g, ' ').trim();
-        var rest = text.substring(m[0].length).trim();
-        return { title: title, rest: rest };
-    }
-    // 匹配 "Section X.Y" 或 "Sec. X" 模式
-    m = text.match(/^(Section|Sec\.|Article|Art\.|Part|Chapter|Title|Rule)\s+(\d+(?:\.\d+)?)\b(.+?)?(?=[\n]|$)/i);
-    if (m) {
-        var title = m[0].trim();
-        var rest = text.substring(m[0].length).trim();
-        return { title: title, rest: rest };
-    }
-    // 匹配全大写短标题（如 "PRELIMINARY"、"DEFINITIONS"）
-    m = text.match(/^([A-Z][A-Z\s]{2,30}?)(?=[\n\s]|$)/);
-    if (m && m[1].trim().length > 2) {
-        title = m[1].trim();
-        rest = text.substring(m[0].length).trim();
-        return { title: title, rest: rest };
-    }
-    return null;
-}
+function renderGuideDetail(container, item, summary, similar) {
+    const dataType = item.data_type || '';
+    const title = item.title || item.doc_id || item.rec_id || '未命名条目';
 
-/**
- * 将法规正文格式化为 HTML（段落 + 标题）
- */
-function formatLawContent(content) {
-    if (!content) return '<p style="color:var(--color-text-muted);font-size:0.875rem;">（空）</p>';
+    let html = '<h1 class="page-title">' + escapeHtml(title) + '</h1>';
 
-    var text = cleanLawText(content);
-    if (!text) return '<p style="color:var(--color-text-muted);font-size:0.875rem;">（空）</p>';
-
-    // 按段落分割
-    var paragraphs = text.split('\n').filter(function(p) { return p.trim(); });
-    if (paragraphs.length === 0) return '<p style="color:var(--color-text-muted);font-size:0.875rem;">（空）</p>';
-
-    var html = '';
-    var firstProcessed = false;
-
-    paragraphs.forEach(function(para, idx) {
-        para = para.trim();
-        if (!para) return;
-
-        // 第一段检测章节标题
-        if (idx === 0) {
-            var heading = extractSectionHeading(para);
-            if (heading) {
-                html += '<h4 style="font-size:0.9rem;font-weight:600;margin:0.75rem 0 0.375rem;color:var(--color-text);">' +
-                    escapeHtml(heading.title) + '</h4>';
-                if (heading.rest) {
-                    html += '<p style="margin:0.375rem 0;line-height:1.75;font-size:0.875rem;color:var(--color-text-secondary);text-align:justify;">' +
-                        escapeHtml(heading.rest) + '</p>';
-                }
-                firstProcessed = true;
-                return;
-            }
-        }
-
-        // 再次检测是否为标题
-        var heading2 = extractSectionHeading(para);
-        if (heading2) {
-            html += '<h4 style="font-size:0.9rem;font-weight:600;margin:0.75rem 0 0.375rem;color:var(--color-text);">' +
-                escapeHtml(heading2.title) + '</h4>';
-            if (heading2.rest) {
-                html += '<p style="margin:0.375rem 0;line-height:1.75;font-size:0.875rem;color:var(--color-text-secondary);text-align:justify;">' +
-                    escapeHtml(heading2.rest) + '</p>';
-            }
-            return;
-        }
-
-        html += '<p style="margin:0.375rem 0;line-height:1.75;font-size:0.875rem;color:var(--color-text-secondary);text-align:justify;">' +
-            escapeHtml(para) + '</p>';
-    });
-
-    return html;
-}
-
-function renderLawDetail(container, lawData, similarData) {
-    const title = lawData.title || '未知法规';
-    const jurisdiction = lawData.jurisdiction || '';
-    const passingDate = lawData.passing_date || '';
-    const lawType = lawData.law_type || '';
-    const chunks = lawData.chunks || [];
-
-    let html = '';
-
-    // 标题
-    html += '<h1 class="page-title">' + escapeHtml(title) + '</h1>';
-
-    // 元信息
+    // ===== 元信息 =====
     const metaParts = [];
-    if (jurisdiction) metaParts.push('法域: ' + jurisdiction);
-    if (lawType) metaParts.push('类型: ' + lawType);
-    if (passingDate) metaParts.push('通过日期: ' + passingDate);
-    if (metaParts.length > 0) {
-        html += '<p style="font-size:0.875rem;color:var(--color-text-secondary);margin-bottom:1rem;">' + metaParts.join(' | ') + '</p>';
+    if (dataType) metaParts.push(DATA_TYPE_LABELS[dataType] || dataType);
+    const cancers = item.cancer_types || (item.cancer_type ? [item.cancer_type] : []);
+    if (cancers.length) metaParts.push('癌种: ' + cancers.join('、'));
+    if (item.issuer) metaParts.push('发布机构: ' + item.issuer);
+    if (item.publish_date) metaParts.push('发布日期: ' + item.publish_date);
+    if (item.version) metaParts.push('版本: ' + item.version);
+    if (metaParts.length) {
+        html += '<p style="font-size:0.875rem;color:var(--color-text-secondary);margin-bottom:0.5rem;">' + escapeHtml(metaParts.join(' | ')) + '</p>';
     }
-
+    if (item.breadcrumb) {
+        html += '<p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.5rem;">位置：' + escapeHtml(item.breadcrumb) + '</p>';
+    }
     html += '<hr class="divider">';
 
-    // 法规全文：按 article_number 聚合 sub_chunk，按 chunk_index 排序拼接
-    const articleMap = {};
-    chunks.forEach(function(chunk) {
-        const key = chunk.article_number || '条款';
-        if (!articleMap[key]) {
-            articleMap[key] = [];
+    // ===== 指南速览卡（doc 类型且摘要可用）=====
+    if (summary && (summary.overview || (summary.key_recommendations || []).length)) {
+        html += '<h2 class="section-title">指南速览</h2>';
+        html += '<div class="card" style="padding:1rem;margin-bottom:1rem;">';
+
+        if (summary.overview) {
+            html += '<div style="font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary);margin-bottom:0.75rem;">' + escapeHtml(summary.overview) + '</div>';
         }
-        articleMap[key].push(chunk);
-    });
-
-    const articles = Object.keys(articleMap).map(function(articleNum) {
-        const parts = articleMap[articleNum].slice().sort(function(a, b) {
-            return (a.chunk_index || 0) - (b.chunk_index || 0);
-        });
-        // 取第一个 chunk 的 article_title 作为条款名
-        const articleTitle = parts[0] ? (parts[0].article_title || '') : '';
-        // 拼接内容后清理文本
-        const rawContent = parts.map(function(p) { return p.content || ''; }).join('\n');
-        const content = rawContent;
-        const firstIndex = parts[0] ? (parts[0].chunk_index || 0) : 0;
-        return { articleNum: articleNum, articleTitle: articleTitle, content: content, firstIndex: firstIndex };
-    }).sort(function(a, b) { return a.firstIndex - b.firstIndex; });
-
-    html += '<h2 class="section-title">法规全文</h2>';
-    html += '<p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:1rem;">共 ' + articles.length + ' 条条款</p>';
-
-    if (articles.length === 0) {
-        html += '<div class="alert alert-info">该法规暂无内容</div>';
-    } else {
-        articles.forEach(function(article) {
-            html += '<div style="margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:1px solid var(--color-border);">';
-            // 条款编号 + 标题
-            let headingText = '第 ' + article.articleNum + ' 条';
-            if (article.articleTitle) {
-                headingText += ' ' + escapeHtml(article.articleTitle);
-            }
-            html += '<div style="font-weight:600;margin-bottom:0.5rem;font-family:var(--font-serif);font-size:0.9375rem;color:var(--color-text);">' + headingText + '</div>';
-            // 格式化后的正文
-            html += formatLawContent(article.content);
-            html += '</div>';
-        });
+        const recs = summary.key_recommendations || [];
+        if (recs.length) {
+            html += '<div style="font-weight:600;font-size:0.8125rem;color:var(--color-text);margin-bottom:0.375rem;">核心推荐要点</div>';
+            html += '<ul style="margin:0 0 0.75rem 1.1rem;padding:0;font-size:0.8125rem;line-height:1.7;color:var(--color-text-secondary);">';
+            recs.forEach(function (r) { html += '<li>' + escapeHtml(r) + '</li>'; });
+            html += '</ul>';
+        }
+        if (summary.evidence_notes) {
+            html += '<div style="font-weight:600;font-size:0.8125rem;color:var(--color-text);margin-bottom:0.375rem;">证据特点</div>';
+            html += '<div style="font-size:0.8125rem;line-height:1.7;color:var(--color-text-secondary);margin-bottom:0.75rem;">' + escapeHtml(summary.evidence_notes) + '</div>';
+        }
+        const kw = summary.keywords || {};
+        const kwGroups = [];
+        if ((kw.core || []).length) kwGroups.push('核心：' + kw.core.join('、'));
+        if ((kw.cancers || []).length) kwGroups.push('癌种：' + kw.cancers.join('、'));
+        if ((kw.scenarios || []).length) kwGroups.push('场景：' + kw.scenarios.join('、'));
+        if (kwGroups.length) {
+            html += '<div style="font-size:0.75rem;color:var(--color-text-muted);">' + escapeHtml(kwGroups.join('｜')) + '</div>';
+        }
+        if (summary.basic_info && summary.basic_info.item_count) {
+            html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.375rem;">收录推荐条目 ' + summary.basic_info.item_count + ' 条</div>';
+        }
+        html += '</div>';
     }
 
-    html += '<hr class="divider">';
+    // ===== 条目正文 =====
+    if (dataType === 'rec') {
+        html += '<h2 class="section-title">推荐条目</h2>';
+        const bd = [];
+        if (item.scenario) bd.push('场景: ' + item.scenario);
+        if ((item.stage || []).length) bd.push('分期: ' + item.stage.join('、'));
+        if ((item.biomarker || []).length) bd.push('标志物: ' + item.biomarker.join('、'));
+        if (item.evidence_level) bd.push('证据等级: ' + (EVIDENCE_LABELS[item.evidence_level] || item.evidence_level));
+        if (item.rec_strength) bd.push('推荐强度: ' + (STRENGTH_LABELS[item.rec_strength] || item.rec_strength));
+        if (bd.length) {
+            html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.5rem;">' + escapeHtml(bd.join(' · ')) + '</div>';
+        }
+        html += '<div class="card" style="padding:1rem;">';
+        html += '<div style="font-size:0.875rem;line-height:1.8;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(item.content || '（无正文）') + '</div>';
+        if (item.verbatim && item.verbatim !== item.content) {
+            html += '<div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px dashed var(--color-border);font-size:0.8125rem;color:var(--color-text-muted);">原文：' + escapeHtml(item.verbatim) + '</div>';
+        }
+        html += '</div>';
+        html += '<hr class="divider">';
+    } else if (item.content) {
+        html += '<h2 class="section-title">内容</h2>';
+        html += '<div class="card" style="padding:1rem;"><div style="font-size:0.875rem;line-height:1.8;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(item.content) + '</div></div>';
+        html += '<hr class="divider">';
+    }
 
-    // 相似法规推荐
-    html += '<h2 class="section-title">相关法规推荐</h2>';
-
-    if (similarData && similarData.similar_laws && similarData.similar_laws.length > 0) {
-        const queryTitle = similarData.query_law_title || title;
-        const total = similarData.total_found || 0;
-        html += '<p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:1rem;">基于《' + escapeHtml(queryTitle) + '》的语义分析，从 ' + total + ' 部相关法规中推荐以下结果：</p>';
-
-        similarData.similar_laws.forEach(function(item) {
-            const simLawId = item.law_id || '';
-            const simTitle = item.title || '未知法规';
-            const simJurisdiction = item.jurisdiction || '';
-            const similarity = item.similarity || 0;
-            const matchCount = item.match_chunk_count || 0;
-            const simPercent = Math.round(similarity * 100);
-
-            let barColor = '#d32f2f';
-            if (simPercent >= 75) barColor = '#2e7d32';
-            else if (simPercent >= 55) barColor = '#ed6c02';
+    // ===== 相关指南推荐 =====
+    html += '<h2 class="section-title">相关指南推荐</h2>';
+    const guides = (similar && similar.similar_guides) || [];
+    if (guides.length > 0) {
+        html += '<p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:1rem;">基于主题与内容相似度，共 ' + (similar.total_found || guides.length) + ' 篇相关指南：</p>';
+        guides.forEach(function (g) {
+            const simPercent = Math.round((g.similarity || 0) * 100);
+            let barColor = '#B91C1C';
+            if (simPercent >= 75) barColor = '#15803D';
+            else if (simPercent >= 55) barColor = '#B45309';
 
             html += '<div style="margin-bottom:1rem;">';
             html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:0.375rem;">';
@@ -244,22 +158,24 @@ function renderLawDetail(container, lawData, similarData) {
             html += '</div>';
 
             html += '<div style="background:var(--color-bg);border:1px solid var(--color-border);padding:0.75rem 1rem;border-radius:6px;">';
-            html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;">';
-            html += '<div style="flex:1;">';
-            html += '<div style="font-weight:600;font-size:0.875rem;color:var(--color-text);margin-bottom:0.25rem;">' + escapeHtml(simTitle) + '</div>';
+            html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.75rem;">';
+            html += '<div style="flex:1;min-width:0;">';
+            html += '<div style="font-weight:600;font-size:0.875rem;color:var(--color-text);margin-bottom:0.25rem;">' + escapeHtml(g.title || g.doc_id || '') + '</div>';
             html += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:0.25rem;">';
-            html += '<span class="badge badge-info">' + escapeHtml(simJurisdiction) + '</span>';
-            html += '<span class="badge badge-warning">' + matchCount + '个匹配片段</span>';
-            html += '<span class="badge badge-muted">ID: ' + escapeHtml(simLawId) + '</span>';
+            if (g.cancer_type) html += '<span class="badge badge-info">' + escapeHtml(g.cancer_type) + '</span>';
+            html += '<span class="badge badge-warning">' + (g.match_item_count || 0) + ' 条相关推荐</span>';
+            if ((g.shared_topics || []).length) {
+                html += '<span class="badge badge-muted">共同主题: ' + escapeHtml(g.shared_topics.join('、')) + '</span>';
+            }
             html += '</div>';
             html += '</div>';
-            html += '<button class="btn btn-secondary btn-sm" onclick="navigate(\'guideline/' + simLawId + '\')">查看</button>';
+            html += '<button class="btn btn-secondary btn-sm" onclick="navigate(\'guideline/' + escapeHtml(g.doc_id || '') + '\')">查看</button>';
             html += '</div>';
             html += '</div>';
             html += '</div>';
         });
     } else {
-        html += '<div class="alert alert-info">暂未找到相似法规</div>';
+        html += '<div class="alert alert-info">暂未找到相关指南</div>';
     }
 
     container.innerHTML = html;

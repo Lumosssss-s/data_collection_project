@@ -1,5 +1,5 @@
 /**
- * 法规智能问答页面
+ * 循证问答页面（医疗）
  */
 const QA_STORAGE_KEY = 'medical_rag_qa_state';
 
@@ -8,6 +8,8 @@ function loadQAState() {
         const saved = localStorage.getItem(QA_STORAGE_KEY);
         if (saved) {
             const parsed = JSON.parse(saved);
+            // 向后兼容：旧字段名 jurisdictions（法规版），新字段名 cancerTypes
+            const savedCancers = parsed.cancerTypes || parsed.jurisdictions || [];
             return {
                 sessionId: parsed.sessionId || generateUUID(),
                 messages: (parsed.messages || []).map(function(m) {
@@ -15,11 +17,11 @@ function loadQAState() {
                         role: m.role,
                         content: m.content,
                         sources: m.sources,
-                        jurisdictions: m.jurisdictions
+                        cancerTypes: m.cancerTypes || m.jurisdictions
                     };
                 }),
                 pendingImages: [],
-                jurisdictions: parsed.jurisdictions || [],
+                cancerTypes: savedCancers,
                 topK: parsed.topK || 5
             };
         }
@@ -30,7 +32,7 @@ function loadQAState() {
         sessionId: generateUUID(),
         messages: [],
         pendingImages: [],
-        jurisdictions: [],
+        cancerTypes: [],
         topK: 5
     };
 }
@@ -40,9 +42,9 @@ function saveQAState() {
         const toSave = {
             sessionId: window.qaState.sessionId,
             messages: window.qaState.messages.map(function(m) {
-                return { role: m.role, content: m.content, sources: m.sources, jurisdictions: m.jurisdictions };
+                return { role: m.role, content: m.content, sources: m.sources, cancerTypes: m.cancerTypes };
             }),
-            jurisdictions: window.qaState.jurisdictions,
+            cancerTypes: window.qaState.cancerTypes,
             topK: window.qaState.topK
         };
         localStorage.setItem(QA_STORAGE_KEY, JSON.stringify(toSave));
@@ -57,24 +59,24 @@ registerPage('qa', function(container) {
     }
 
     container.innerHTML = `
-        <h1 class="page-title">法规智能问答</h1>
-        <p class="page-desc">基于境外法规知识库的AI智能问答系统，支持精准检索、深度解读、多轮对话、跨法域对比、图片理解</p>
+        <h1 class="page-title">循证问答</h1>
+        <p class="page-desc">基于肿瘤循证知识库的 AI 问答，强制标注证据出处与推荐等级，支持多轮对话与图片理解</p>
         <hr class="divider">
 
         <!-- 设置栏 -->
         <div style="display:flex;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;align-items:flex-end;">
             <div style="flex:1;min-width:200px;">
-                <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">限定法域（可选）</label>
+                <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">限定癌种（可选）</label>
                 <div class="jur-selector">
-                    <div id="qa-jur-tags" class="jur-tags">
-                        <span class="jur-placeholder">点击选择法域...</span>
+                    <div id="qa-cancer-tags" class="jur-tags">
+                        <span class="jur-placeholder">点击选择癌种...</span>
                     </div>
-                    <div id="qa-jur-trigger" class="jur-trigger">
+                    <div id="qa-cancer-trigger" class="jur-trigger">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                     </div>
-                    <div id="qa-jur-dropdown" class="jur-dropdown" style="display:none;">
+                    <div id="qa-cancer-dropdown" class="jur-dropdown" style="display:none;">
                     </div>
-                    <select id="qa-jurisdictions" class="select" multiple style="display:none;">
+                    <select id="qa-cancer-types" class="select" multiple style="display:none;">
                     </select>
                 </div>
             </div>
@@ -87,7 +89,7 @@ registerPage('qa', function(container) {
 
         <!-- 聊天区域 -->
         <div id="qa-chat" style="min-height:400px;max-height:calc(100vh - 320px);overflow-y:auto;border:1px solid var(--color-border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;background:var(--color-bg);">
-            <div class="loading" id="qa-welcome">开始对话吧，输入您的问题或上传法规图片</div>
+            <div class="loading" id="qa-welcome">开始提问吧，输入临床问题或上传图片</div>
         </div>
 
         <!-- 图片预览区 -->
@@ -115,24 +117,26 @@ registerPage('qa', function(container) {
         </div>
     `;
 
-    // 加载法域选项
-    api.get('/search/jurisdictions').then(function(data) {
+    // 加载癌种选项（受控词表，value=code / 展示=label_zh）
+    api.get('/search/cancer_types').then(function(data) {
         if (data && data.data) {
-            const allJurs = data.data;
-            const savedJurs = window.qaState.jurisdictions || [];
-            const select = document.getElementById('qa-jurisdictions');
-            const dropdown = document.getElementById('qa-jur-dropdown');
-            allJurs.forEach(function(j) {
+            const allCancers = data.data;
+            const savedCancers = window.qaState.cancerTypes || [];
+            const select = document.getElementById('qa-cancer-types');
+            const dropdown = document.getElementById('qa-cancer-dropdown');
+            allCancers.forEach(function(c) {
+                const code = c.code;
+                const label = c.label_zh || c.code;
                 const opt = document.createElement('option');
-                opt.value = j;
-                opt.textContent = j;
-                opt.selected = savedJurs.indexOf(j) !== -1;
+                opt.value = code;
+                opt.textContent = label;
+                opt.selected = savedCancers.indexOf(code) !== -1;
                 select.appendChild(opt);
 
                 const item = document.createElement('div');
                 item.className = 'jur-dropdown-item';
-                item.setAttribute('data-value', j);
-                item.innerHTML = '<span>' + j + '</span>';
+                item.setAttribute('data-value', code);
+                item.innerHTML = '<span>' + escapeHtml(label) + '</span>';
                 dropdown.appendChild(item);
             });
             setupJurSelector();
@@ -145,10 +149,10 @@ registerPage('qa', function(container) {
 });
 
 function setupJurSelector() {
-    const trigger = document.getElementById('qa-jur-trigger');
-    const dropdown = document.getElementById('qa-jur-dropdown');
-    const tags = document.getElementById('qa-jur-tags');
-    const select = document.getElementById('qa-jurisdictions');
+    const trigger = document.getElementById('qa-cancer-trigger');
+    const dropdown = document.getElementById('qa-cancer-dropdown');
+    const tags = document.getElementById('qa-cancer-tags');
+    const select = document.getElementById('qa-cancer-types');
 
     trigger.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -171,23 +175,25 @@ function setupJurSelector() {
         option.selected = !option.selected;
         renderJurTags();
         updateDropdownSelection();
-        window.qaState.jurisdictions = Array.from(select.selectedOptions).map(function(o) { return o.value; });
+        window.qaState.cancerTypes = Array.from(select.selectedOptions).map(function(o) { return o.value; });
         saveQAState();
     });
 
     function renderJurTags() {
-        const selected = Array.from(select.selectedOptions).map(function(o) { return o.value; });
+        const selected = Array.from(select.selectedOptions);
         tags.innerHTML = '';
 
         if (selected.length === 0) {
-            tags.innerHTML = '<span class="jur-placeholder">点击选择法域...</span>';
+            tags.innerHTML = '<span class="jur-placeholder">点击选择癌种...</span>';
             return;
         }
 
-        selected.forEach(function(jur) {
+        selected.forEach(function(opt) {
+            const code = opt.value;
+            const label = opt.textContent || code;
             const tag = document.createElement('span');
             tag.className = 'jur-tag';
-            tag.innerHTML = '<span>' + jur + '</span><span class="jur-tag-remove" data-value="' + jur + '">x</span>';
+            tag.innerHTML = '<span>' + escapeHtml(label) + '</span><span class="jur-tag-remove" data-value="' + escapeHtml(code) + '">x</span>';
             tags.appendChild(tag);
         });
 
@@ -199,7 +205,7 @@ function setupJurSelector() {
                 option.selected = false;
                 renderJurTags();
                 updateDropdownSelection();
-                window.qaState.jurisdictions = Array.from(select.selectedOptions).map(function(o) { return o.value; });
+                window.qaState.cancerTypes = Array.from(select.selectedOptions).map(function(o) { return o.value; });
                 saveQAState();
             });
         });
@@ -269,17 +275,17 @@ function setupQAEvents(container) {
         window.qaState.sessionId = generateUUID();
         window.qaState.messages = [];
         window.qaState.pendingImages = [];
-        window.qaState.jurisdictions = [];
+        window.qaState.cancerTypes = [];
         if (input) {
             input.value = '';
             input.style.height = 'auto';
         }
-        // 清空法域选择
-        const jurSelect = document.getElementById('qa-jurisdictions');
-        if (jurSelect) {
-            Array.from(jurSelect.options).forEach(function(o) { o.selected = false; });
-            const tagsEl = document.getElementById('qa-jur-tags');
-            if (tagsEl) tagsEl.innerHTML = '<span class="jur-placeholder">点击选择法域...</span>';
+        // 清空癌种选择
+        const cancerSelect = document.getElementById('qa-cancer-types');
+        if (cancerSelect) {
+            Array.from(cancerSelect.options).forEach(function(o) { o.selected = false; });
+            const tagsEl = document.getElementById('qa-cancer-tags');
+            if (tagsEl) tagsEl.innerHTML = '<span class="jur-placeholder">点击选择癌种...</span>';
         }
         saveQAState();
         renderQAMessages();
@@ -345,15 +351,15 @@ function sendQAMessage() {
 
     if (!question && images.length === 0) return;
 
-    const finalQuestion = question || '请分析这张图片中的法律条款内容';
+    const finalQuestion = question || '请分析这张图片中的医学内容';
 
     // 添加用户消息
-    const selectedJurs = Array.from(document.getElementById('qa-jurisdictions').selectedOptions).map(function(o) { return o.value; });
+    const selectedCancers = Array.from(document.getElementById('qa-cancer-types').selectedOptions).map(function(o) { return o.value; });
     window.qaState.messages.push({
         role: 'user',
         content: finalQuestion,
         images: images.map(function(img) { return img.data; }),
-        jurisdictions: selectedJurs
+        cancerTypes: selectedCancers
     });
 
     // 清空输入
@@ -364,7 +370,7 @@ function sendQAMessage() {
     renderQAMessages();
 
     // 添加助手占位消息
-    const assistantMsg = { role: 'assistant', content: '', streaming: true, status: '正在检索相关法规…' };
+    const assistantMsg = { role: 'assistant', content: '', streaming: true, status: '正在检索循证依据…' };
     window.qaState.messages.push(assistantMsg);
     renderQAMessages();
 
@@ -373,10 +379,13 @@ function sendQAMessage() {
         question: finalQuestion,
         top_k: window.qaState.topK
     };
-    if (selectedJurs.length > 0) payload.jurisdictions = selectedJurs;
+    // 多模态 POST 接口按 filters 传参（键为 ES 字段名）
+    if (selectedCancers.length > 0) {
+        payload.filters = { cancer_type: selectedCancers.length === 1 ? selectedCancers[0] : selectedCancers };
+    }
     if (window.qaState.messages.length > 2) {
         payload.history = window.qaState.messages.slice(0, -2).map(function(m) {
-            return { role: m.role, content: m.content, jurisdictions: m.jurisdictions };
+            return { role: m.role, content: m.content };
         });
     }
     if (images.length > 0) {
@@ -387,13 +396,10 @@ function sendQAMessage() {
     }
 
     // 流式请求
-    const chatEl = document.getElementById('qa-chat');
     const isMultimodal = images.length > 0;
-    const url = isMultimodal ? '/qa/stream' : '/qa/stream';
-    const method = isMultimodal ? 'streamPost' : 'streamGet';
 
     if (isMultimodal) {
-        api.streamPost(url, payload,
+        api.streamPost('/qa/stream', payload,
             function(chunk) { handleQAChunk(chunk, assistantMsg); },
             function(err) { handleQAError(err, assistantMsg); }
         );
@@ -402,7 +408,7 @@ function sendQAMessage() {
         const params = new URLSearchParams();
         params.set('question', finalQuestion);
         params.set('top_k', window.qaState.topK);
-        if (selectedJurs.length > 0) params.set('jurisdictions', selectedJurs.join(','));
+        if (selectedCancers.length > 0) params.set('cancer_type', selectedCancers.join(','));
         if (payload.history) params.set('history', JSON.stringify(payload.history));
 
         const streamUrl = new URL(API_BASE + '/qa/stream?' + params.toString(), window.location.origin);
@@ -455,7 +461,7 @@ function handleQAChunk(chunk, assistantMsg) {
         renderQAMessages();
     } else if (chunk.type === 'sources') {
         assistantMsg.sources = chunk.sources || [];
-        assistantMsg.jurisdictions = chunk.jurisdictions || [];
+        assistantMsg.cancerTypes = chunk.cancer_types || [];
     } else if (chunk.type === 'end') {
         assistantMsg.streaming = false;
         saveQAState();
@@ -481,7 +487,7 @@ function renderQAMessages() {
 
     const messages = window.qaState.messages;
     if (messages.length === 0) {
-        chatEl.innerHTML = '<div class="loading">开始对话吧，输入您的问题或上传法规图片</div>';
+        chatEl.innerHTML = '<div class="loading">开始提问吧，输入临床问题或上传图片</div>';
         return;
     }
 
@@ -512,11 +518,17 @@ function renderQAMessages() {
                 html += '<div class="markdown-body qa-answer-body">' + renderMarkdown(msg.content) + '</div>';
             }
             if (msg.sources && msg.sources.length > 0) {
-                html += '<details style="margin-top:0.75rem;"><summary style="cursor:pointer;font-size:0.8125rem;color:var(--color-text-muted);user-select:none;">引用法规来源 (' + msg.sources.length + ' 条)</summary>';
+                html += '<details style="margin-top:0.75rem;"><summary style="cursor:pointer;font-size:0.8125rem;color:var(--color-text-muted);user-select:none;">循证来源 (' + msg.sources.length + ' 条)</summary>';
                 html += '<div style="margin-top:0.5rem;display:grid;gap:0.5rem;">';
                 msg.sources.forEach(function(s, i) {
+                    const typeLabels = { doc: '指南', rec: '推荐条目', drug: '说明书', term: '术语' };
+                    const typeLabel = typeLabels[s.data_type] || '';
                     html += '<div style="background:var(--color-bg);border:1px solid var(--color-border);padding:0.625rem 0.75rem;border-radius:6px;">';
-                    html += '<div style="font-size:0.8125rem;font-weight:600;color:var(--color-text);margin-bottom:0.125rem;">来源 ' + (i + 1) + ' · ' + escapeHtml(s.jurisdiction || '') + '《' + escapeHtml(s.title || '') + '》' + escapeHtml(s.article_number || '') + '</div>';
+                    html += '<div style="font-size:0.8125rem;font-weight:600;color:var(--color-text);margin-bottom:0.125rem;">来源 ' + (i + 1) + ' · ' + escapeHtml(s.title || '') + '</div>';
+                    html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem;">';
+                    if (typeLabel) html += '<span class="badge" style="background:var(--color-info-bg);color:var(--color-info);margin-right:0.25rem;">' + typeLabel + '</span>';
+                    if (s.cancer_type) html += escapeHtml(s.cancer_type) + ' · ';
+                    html += escapeHtml(s.breadcrumb || '') + '</div>';
                     html += '<div style="font-size:0.75rem;color:var(--color-text-secondary);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml((s.content || '').substring(0, 200)) + '</div>';
                     html += '</div>';
                 });
