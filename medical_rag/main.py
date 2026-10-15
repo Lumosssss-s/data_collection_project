@@ -19,6 +19,8 @@ from api.v1.stats import router as stats_router
 from api.v1.kg import router as kg_router
 from api.v1.diseases import router as diseases_router
 from api.v1.preconsult import router as preconsult_router
+from api.v1.followup import router as followup_router
+from api.v1.qc import router as qc_router
 
 import torch
 
@@ -260,6 +262,8 @@ app.include_router(stats_router, prefix="/api/v1")
 app.include_router(kg_router, prefix="/api/v1")
 app.include_router(diseases_router, prefix="/api/v1")
 app.include_router(preconsult_router, prefix="/api/v1")
+app.include_router(followup_router, prefix="/api/v1")
+app.include_router(qc_router, prefix="/api/v1")
 
 
 @app.get("/health")
