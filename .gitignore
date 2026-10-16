@@ -35,6 +35,14 @@ docker.env
 *.bak
 *.bak-*
 
+# 小程序工程（miniapp/，Taro）：依赖与预览运行态不入库
+miniapp/node_modules/
+miniapp/.pai/
+miniapp/dist/
+
+# 小程序预览运行态（可能在工作目录根生成）
+.pai/
+
 # 操作系统
 Thumbs.db
 .DS_Store

@@ -1,0 +1,36 @@
+// ============================================
+// 主题配色变量（患者端 · 医疗青蓝）
+// 与 Web 端临床青蓝配色保持一致，患者端更柔和友好
+// ============================================
+
+// 品牌主题色
+$color-primary: #0e7490;
+$color-primary-light: #1d7a8c;
+$color-primary-dark: #0b5d74;
+
+// 功能色
+$color-success: #15803d;
+$color-warning: #b45309;
+$color-error: #b91c1c;
+$color-info: #0e7490;
+
+// 背景色
+$color-bg-page: #f2f7f9;
+$color-bg-card: #ffffff;
+$color-bg-hover: #eef5f7;
+
+// 文本色
+$color-text-primary: #15303a;
+$color-text-secondary: #4a6570;
+$color-text-tertiary: #7b9099;
+$color-text-disabled: #b6c6cc;
+$color-text-white: #ffffff;
+
+// 边框色
+$color-border: #e3ebef;
+$color-divider: #eef5f7;
+
+// 业务语义色（患者端）
+$color-primary-soft: #e6f2f5; // 主题浅底（标签、提示底色）
+$color-warning-soft: #fdf3e7; // 警告浅底（免责声明条）
+$color-danger-soft: #fdeceb; // 危险浅底（红旗征提示）

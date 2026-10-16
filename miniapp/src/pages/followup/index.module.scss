@@ -1,0 +1,257 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $spacing-lg $page-padding $spacing-xl;
+  box-sizing: border-box;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.cardTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  height: $button-height-md;
+  padding: 0 $spacing-lg;
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  box-sizing: border-box;
+}
+
+.queryBtn {
+  @include button-reset;
+  width: 140rpx;
+  height: $button-height-md;
+  margin-left: $spacing-sm;
+  background: $color-primary;
+  border: none;
+  border-radius: $radius-button;
+  color: $color-text-white;
+  font-size: $font-size-md;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.list {
+  margin-top: $spacing-md;
+}
+
+.mockNotice {
+  display: block;
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  background: $color-warning-soft;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  color: $color-warning;
+  line-height: $line-height-normal;
+}
+
+.summary {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.taskCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.taskHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-xs;
+}
+
+.taskTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  max-width: 440rpx;
+  @include text-ellipsis;
+}
+
+.statusDone {
+  padding: 4rpx $spacing-md;
+  background: $color-primary-soft;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+  color: $color-success;
+  white-space: nowrap;
+}
+
+.statusDue {
+  padding: 4rpx $spacing-md;
+  background: $color-danger-soft;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+  color: $color-error;
+  white-space: nowrap;
+}
+
+.statusPending {
+  padding: 4rpx $spacing-md;
+  background: $color-primary-soft;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+  color: $color-primary-dark;
+  white-space: nowrap;
+}
+
+.taskItems {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.taskDate {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  line-height: $line-height-normal;
+}
+
+.feedbackBtn {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  margin-top: $spacing-md;
+  background: $color-bg-page;
+  border: 1rpx solid $color-primary;
+  border-radius: $radius-button;
+  color: $color-primary;
+  font-size: $font-size-md;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.feedbackForm {
+  margin-top: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+}
+
+.formLabel {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+}
+
+.severityRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-md;
+}
+
+.severityChip {
+  padding: $spacing-xs $spacing-lg;
+  margin: 0 $spacing-sm $spacing-sm 0;
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.severityChipActive {
+  background: $color-primary;
+  border-color: $color-primary;
+  color: $color-text-white;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 140rpx;
+  padding: $spacing-md;
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+  box-sizing: border-box;
+}
+
+.submitBtn {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  margin-top: $spacing-md;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border: none;
+  border-radius: $radius-button;
+  color: $color-text-white;
+  font-size: $font-size-md;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.btnDisabled {
+  background: $color-text-disabled;
+}
+
+.alertCard {
+  margin-top: $spacing-md;
+  padding: $spacing-lg;
+  background: $color-danger-soft;
+  border-radius: $radius-lg;
+}
+
+.alertTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-error;
+  margin-bottom: $spacing-xs;
+}
+
+.alertText {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.alertWarn {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-error;
+  line-height: $line-height-loose;
+}

@@ -1,0 +1,121 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: $spacing-xl;
+}
+
+.hero {
+  padding: 56rpx $page-padding 48rpx;
+  background: linear-gradient(150deg, $color-primary 0%, $color-primary-light 100%);
+}
+
+.heroTitle {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+}
+
+.heroSub {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: $line-height-normal;
+}
+
+.card {
+  margin: -32rpx $page-padding 0;
+  padding: $spacing-lg;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+.cardTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  height: $button-height-md;
+  padding: 0 $spacing-lg;
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  box-sizing: border-box;
+}
+
+.saveBtn {
+  @include button-reset;
+  width: 140rpx;
+  height: $button-height-md;
+  margin-left: $spacing-sm;
+  background: $color-primary;
+  border: none;
+  border-radius: $radius-button;
+  color: $color-text-white;
+  font-size: $font-size-md;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.cardHint {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  line-height: $line-height-normal;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: $spacing-md $page-padding 0;
+  padding: $spacing-lg;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.99);
+  }
+}
+
+.entryTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.entryDesc {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.entryArrow {
+  font-size: 48rpx;
+  color: $color-text-disabled;
+  line-height: 1;
+}

@@ -1,0 +1,24 @@
+@use '@/styles/variables.scss' as *;
+
+.bar {
+  margin-top: $spacing-lg;
+  padding: $spacing-md $spacing-lg;
+  background: $color-warning-soft;
+  border-radius: $radius-md;
+}
+
+.text {
+  display: block;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+  color: $color-warning;
+}
+
+.help {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+  color: $color-warning;
+  opacity: 0.85;
+}

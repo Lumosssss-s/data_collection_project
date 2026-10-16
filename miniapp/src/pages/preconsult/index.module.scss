@@ -1,0 +1,190 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $spacing-lg $page-padding $spacing-xl;
+  box-sizing: border-box;
+}
+
+.chat {
+  height: 46vh;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+.chatInner {
+  padding: $spacing-lg;
+}
+
+.bubble {
+  max-width: 560rpx;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-lg;
+  margin-bottom: $spacing-md;
+}
+
+.bubbleText {
+  font-size: $font-size-md;
+  line-height: $line-height-loose;
+  color: $color-text-primary;
+  word-break: break-all;
+}
+
+.bubbleUser {
+  margin-left: auto;
+  background: $color-primary;
+
+  .bubbleText {
+    color: $color-text-white;
+  }
+}
+
+.bubbleBot {
+  margin-right: auto;
+  background: $color-bg-hover;
+}
+
+.bubbleWarn {
+  margin-right: auto;
+  background: $color-danger-soft;
+
+  .bubbleText {
+    color: $color-error;
+    font-size: $font-size-sm;
+  }
+}
+
+.bubbleTip {
+  margin-right: auto;
+  background: transparent;
+  border: 1rpx dashed $color-border;
+
+  .bubbleText {
+    color: $color-text-tertiary;
+    font-size: $font-size-sm;
+  }
+}
+
+.inputBar {
+  display: flex;
+  align-items: center;
+  margin-top: $spacing-md;
+}
+
+.input {
+  flex: 1;
+  height: $button-height-md;
+  padding: 0 $spacing-lg;
+  background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  box-sizing: border-box;
+}
+
+.sendBtn {
+  @include button-reset;
+  width: 160rpx;
+  height: $button-height-md;
+  margin-left: $spacing-sm;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border: none;
+  border-radius: $radius-button;
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.sendBtnDisabled {
+  background: $color-text-disabled;
+}
+
+.panel {
+  margin-top: $spacing-lg;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.cardTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.cardText {
+  display: block;
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.cardSub {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  line-height: $line-height-normal;
+}
+
+.cardItem {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.tagWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 6rpx $spacing-md;
+  margin: 0 $spacing-sm $spacing-sm 0;
+  background: $color-primary-soft;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  color: $color-primary-dark;
+}
+
+.riskTag {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-xs $spacing-lg;
+  border-radius: $radius-button;
+}
+
+.riskTagText {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+}
+
+.emergency {
+  background: $color-error;
+}
+
+.urgent {
+  background: $color-warning;
+}
+
+.routine {
+  background: $color-success;
+}
