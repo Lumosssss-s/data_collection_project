@@ -19,6 +19,11 @@ medical_rag/eval_data/charts/
 # 避免误伤 medical_rag/models/ Python 包）
 /models/
 
+# 文档：仅 README.md 入库，其余 Markdown 一律本地留存（不入库、不推送）
+# 注：本规则对「已跟踪」文件不生效，历史已入库的 .md 需 git rm --cached 取消跟踪
+*.md
+!README.md
+
 # IDE
 .idea/
 .vscode/
