@@ -352,7 +352,7 @@ class QAService:
 - 必须基于参考资料，所有论断有资料支撑，引用标注【来源X】。
 - 严禁编造资料中没有的信息。
 - 本回答仅供临床参考，不构成诊断或用药决策；涉及具体用药请以药品说明书与主管医师判断为准。
-- 如遇资料不足，明确说明："关于该问题，现有循证资料暂未提供明确规定..." """
+- 如遇资料不足，明确说明："关于该问题，现有循证资料暂未提供明确规定，建议查阅指南原文或咨询专科医师后再作判断。" """
 
         messages = [{"role": "system", "content": system_prompt}]
 
@@ -468,7 +468,7 @@ class QAService:
 
         documents = prepared["documents"]
         if not documents:
-            yield error_frame("未找到相关的循证推荐条目。")
+            yield error_frame("未找到相关的循证推荐条目，建议查阅指南原文或咨询专科医师后再作判断。")
             return
 
         generation = build_generation_stage(
@@ -530,7 +530,7 @@ class QAService:
             return
 
         if not contexts:
-            yield {"type": "error", "data": "未找到相关的循证推荐条目。"}
+            yield {"type": "error", "data": "未找到相关的循证推荐条目，建议查阅指南原文或咨询专科医师后再作判断。"}
             return
 
         sources = []
@@ -622,7 +622,7 @@ class QAService:
             return
 
         if not contexts:
-            yield {"type": "error", "data": "未找到相关的循证推荐条目。"}
+            yield {"type": "error", "data": "未找到相关的循证推荐条目，建议查阅指南原文或咨询专科医师后再作判断。"}
             return
 
         # 2. 构建多模态消息（核心改动）
