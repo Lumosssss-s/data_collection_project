@@ -57,6 +57,10 @@ class Settings(BaseSettings):
     # 默认关闭；如确需深度推理可设 MEDICAL_LLM_ENABLE_THINKING=true。
     llm_enable_thinking: bool = False
 
+    # RAG 链开关：True=走 LangChain 编排链（rag/ 包），False=回退既有手写链路。
+    # 迁移期一键回滚用；两条链路共用同一检索口径与 SSE 协议，输出结构一致。
+    rag_chain_enabled: bool = True
+
     # 多模态配置
     enable_image_support: bool = True  # 启用图片支持
     max_images_per_request: int = 4  # 每次请求最大图片数量

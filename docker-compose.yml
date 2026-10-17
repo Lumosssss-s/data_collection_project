@@ -45,6 +45,8 @@ services:
       - MEDICAL_LLM_API_BASE_URL=https://api.deepseek.com/v1
       - MEDICAL_LLM_MODEL=deepseek-flash
       - MEDICAL_LLM_DEEPSEEK_API_KEY=${MEDICAL_DEEPSEEK_API_KEY}
+      # RAG 编排链开关：true=走 LangChain 编排链，false=回退既有手写链路（迁移期一键回滚）
+      - MEDICAL_RAG_CHAIN_ENABLED=${MEDICAL_RAG_CHAIN_ENABLED:-true}
       - MEDICAL_ADMIN_TOKEN=${MEDICAL_ADMIN_TOKEN:-dev_admin_token_change_me}
       - MEDICAL_EMBEDDING_MODEL=/models/bge-m3
       - MEDICAL_RERANKER_MODEL=/models/bge-reranker-v2-m3

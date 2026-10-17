@@ -33,6 +33,12 @@ RUN pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple \
         openai>=1.0.0 \
         openpyxl>=3.1.0
 
+# RAG 编排依赖单独成层：与上方大依赖层解耦，后续增删 langchain 只重建本层，
+# 不触发 torch/sentence-transformers 等重包的重新下载。
+RUN pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple \
+        "langchain-core>=0.3.0,<0.4.0" \
+        "langchain-openai>=0.2.0,<0.4.0"
+
 
 # ===== 运行阶段 =====
 FROM python:3.10-slim

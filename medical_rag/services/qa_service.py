@@ -2,9 +2,9 @@ import logging
 import threading
 from typing import List, Dict, Optional
 import time
-from openai import OpenAI
 from repositories.elasticsearch import ElasticsearchRepository
 from core.config import settings
+from utils.llm_client import chat, stream_chat_messages
 
 logger = logging.getLogger(__name__)
 
@@ -207,14 +207,6 @@ class QAService:
         """调用远程API（使用智能问答模型）"""
         return self._call_llm_with_model(prompt, model=settings.llm_qa_model)
 
-    @staticmethod
-    def _apply_thinking_policy(kwargs: Dict) -> Dict:
-        """按配置注入 extra_body（默认关闭思考模式，见 Settings.llm_extra_body）。"""
-        extra_body = settings.llm_extra_body()
-        if extra_body:
-            kwargs["extra_body"] = extra_body
-        return kwargs
-
     def _call_llm_with_model(self, prompt: str, model: Optional[str] = None, 
                            response_format: Optional[Dict] = None) -> str:
         """调用远程API（支持指定模型）
@@ -227,35 +219,7 @@ class QAService:
         Returns:
             LLM响应内容
         """
-        import logging
-
-        logger = logging.getLogger(__name__)
-
-        if not prompt or not prompt.strip():
-            logger.error(f"[LLM] prompt 为空！调用栈已截断，请检查上游 prompt 构建")
-            raise ValueError("prompt 不能为空")
-
-        base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
-        api_key = settings.llm_api_key or ""
-        target_model = model or settings.llm_model or "deepseek-flash"
-
-        logger.info(f"[LLM] 调用 LLM，模型={target_model}，prompt 长度={len(prompt)}，前100字: {prompt[:100]!r}")
-        client = OpenAI(api_key=api_key, base_url=base_url)
-
-        kwargs = {
-            "model": target_model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": settings.temperature,
-            "max_tokens": settings.max_tokens,
-            "stream": False
-        }
-
-        if response_format:
-            kwargs["response_format"] = response_format
-
-        self._apply_thinking_policy(kwargs)
-        response = client.chat.completions.create(**kwargs)
-        return response.choices[0].message.content.strip()
+        return chat(prompt, model=model, response_format=response_format)
 
     def _call_llm_stream(self, prompt: str, model: Optional[str] = None):
         """流式调用远程API（支持指定模型）
@@ -264,29 +228,10 @@ class QAService:
             prompt: 提示词
             model: 模型名称，不传则使用 settings.llm_qa_model 默认值
         """
-        import logging
-
-        logger = logging.getLogger(__name__)
-
-        base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
-        api_key = settings.llm_api_key or ""
-        target_model = model or settings.llm_qa_model
-        logger.info(f"[LLM] _call_llm_stream: 传入 model={model!r}, 解析结果 target={target_model!r}")
-
-        client = OpenAI(api_key=api_key, base_url=base_url)
-        response = client.chat.completions.create(
-            **self._apply_thinking_policy({
-                "model": target_model,
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": settings.temperature,
-                "max_tokens": settings.max_tokens,
-                "stream": True
-            })
+        yield from stream_chat_messages(
+            [{"role": "user", "content": prompt}],
+            model=model or settings.llm_qa_model,
         )
-
-        for chunk in response:
-            if chunk.choices and chunk.choices[0].delta.content:
-                yield chunk.choices[0].delta.content
 
     def _call_llm_stream_with_messages(self, messages: List[Dict], model: Optional[str] = None):
         """流式调用远程API（使用标准 messages 数组）
@@ -295,29 +240,7 @@ class QAService:
             messages: 标准 OpenAI 格式的 messages 数组 [{"role": "system/user/assistant", "content": "..."}]
             model: 模型名称，不传则使用 settings.llm_qa_model 默认值
         """
-        import logging
-
-        logger = logging.getLogger(__name__)
-
-        base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
-        api_key = settings.llm_api_key or ""
-        target_model = model or settings.llm_qa_model
-        logger.info(f"[LLM] _call_llm_stream_with_messages: 模型={target_model}, messages数量={len(messages)}")
-
-        client = OpenAI(api_key=api_key, base_url=base_url)
-        response = client.chat.completions.create(
-            **self._apply_thinking_policy({
-                "model": target_model,
-                "messages": messages,
-                "temperature": settings.temperature,
-                "max_tokens": settings.max_tokens,
-                "stream": True
-            })
-        )
-
-        for chunk in response:
-            if chunk.choices and chunk.choices[0].delta.content:
-                yield chunk.choices[0].delta.content
+        yield from stream_chat_messages(messages, model=model or settings.llm_qa_model)
 
     def _build_messages(self, question: str, contexts: List[Dict], history: Optional[List[Dict]] = None) -> List[Dict]:
         """构建标准 messages 数组（system + history + 当前用户消息）
@@ -471,7 +394,119 @@ class QAService:
 
         filters 为检索过滤条件（键=ES 字段名，如 cancer_type / scenario / stage）；
         未显式传入时，自动从问题识别癌种作为默认过滤（识别不到则全域检索）。
+
+        settings.rag_chain_enabled 打开时走 LangChain 编排链，否则回退既有手写链路；
+        两条链路共用同一检索口径与 SSE 协议。langchain 采用懒加载，未安装不影响旧链路。
         """
+        if settings.rag_chain_enabled:
+            yield from self._ask_stream_via_chain(question, top_k, filters, history)
+        else:
+            yield from self._ask_stream_legacy(question, top_k, filters, history)
+
+    @staticmethod
+    def _to_lc_message(message: Dict):
+        """聊天历史 dict（role/content）转为 LangChain 消息对象。"""
+        from langchain_core.messages import AIMessage, HumanMessage
+        if message.get("role") == "assistant":
+            return AIMessage(content=message.get("content", ""))
+        return HumanMessage(content=message.get("content", ""))
+
+    def _ask_stream_via_chain(self, question: str, top_k: int = 5, filters: Optional[Dict] = None,
+                              history: Optional[List[Dict]] = None):
+        """LangChain 编排链流式问答（与既有链路行为等值）。
+
+        检索经 MedicalEvidenceRetriever（BaseRetriever）、消息组装复用 _build_messages、
+        生成经 ChatOpenAI；链为两段式（同步 .stream），SSE 协议帧由 rag.stream_bridge 构造。
+        """
+        from rag.chain import build_generation_stage, build_retrieval_stage
+        from rag.documents import from_documents
+        from rag.prompts import build_chat_prompt
+        from rag.retriever import MedicalEvidenceRetriever
+        from rag.stream_bridge import (
+            content_frame, end_frame, error_frame, sources_frame, status_frame,
+        )
+
+        yield status_frame("retrieve", "正在检索循证依据…")
+        total_start = time.time()
+
+        t1 = time.time()
+        if filters:
+            effective_filters = filters
+            allow_fallback = False
+        else:
+            detected = self._detect_cancer_types(question)
+            effective_filters = {"cancer_type": detected[0]} if len(detected) == 1 else None
+            allow_fallback = True
+        t_detect = time.time() - t1
+
+        retriever = MedicalEvidenceRetriever(
+            repo=self.repo, top_k=top_k, filters=effective_filters, allow_fallback=allow_fallback
+        )
+        timing_holder: Dict[str, float] = {}
+
+        def _message_builder(payload: Dict) -> Dict:
+            t = time.time()
+            messages = self._build_messages(question, from_documents(payload["documents"]), history)
+            timing_holder["build_prompt"] = time.time() - t
+            return {
+                "documents": payload["documents"],
+                "system_prompt": messages[0]["content"],
+                "history": [self._to_lc_message(m) for m in messages[1:-1]],
+                "user_message": messages[-1]["content"],
+            }
+
+        stage = build_retrieval_stage(retriever=retriever, message_builder=_message_builder)
+
+        t2 = time.time()
+        try:
+            prepared = stage.invoke({"question": question})
+        except Exception as e:
+            yield error_frame(f"检索循证知识时发生错误：{str(e)}")
+            return
+        t_prompt = timing_holder.get("build_prompt", 0.0)
+        t_retrieve = (time.time() - t2) - t_prompt
+
+        documents = prepared["documents"]
+        if not documents:
+            yield error_frame("未找到相关的循证推荐条目。")
+            return
+
+        generation = build_generation_stage(
+            prompt=build_chat_prompt(), model=settings.llm_qa_model, streaming=True
+        )
+
+        yield sources_frame(from_documents(documents))
+        yield status_frame("generate", "正在生成回答…")
+
+        try:
+            t3 = time.time()
+            for chunk in generation.stream({
+                "system_prompt": prepared["system_prompt"],
+                "history": prepared["history"],
+                "user_message": prepared["user_message"],
+            }):
+                yield content_frame(chunk)
+            t_llm = time.time() - t3
+        except Exception as e:
+            yield error_frame(f"生成回答时发生错误：{str(e)}")
+            return
+
+        total_time = time.time() - total_start
+        print(
+            f"【QA链式计时】总耗时: {total_time:.4f}s | 癌种识别: {t_detect:.4f}s | 检索: {t_retrieve:.4f}s | 构建Prompt: {t_prompt:.4f}s | LLM调用: {t_llm:.4f}s"
+        )
+
+        yield end_frame({
+            "detect_cancer_types": f"{t_detect:.4f}s",
+            "retrieve_contexts": f"{t_retrieve:.4f}s",
+            "build_prompt": f"{t_prompt:.4f}s",
+            "call_llm": f"{t_llm:.4f}s",
+            "total": f"{total_time:.4f}s",
+        })
+
+    def _ask_stream_legacy(self, question: str, top_k: int = 5, filters: Optional[Dict] = None,
+                    history: Optional[List[Dict]] = None):
+        """既有手写链路（保留作回退，settings.rag_chain_enabled=False 时启用）。"""
         # 检索阶段（含 CPU 精排）是整条链路最慢的一段，若不先推送状态，前端会白屏十几秒。
         yield {"type": "status", "stage": "retrieve", "data": "正在检索循证依据…"}
         total_start = time.time()
@@ -822,26 +857,4 @@ class QAService:
         Yields:
             流式文本片段
         """
-        import logging
-
-        logger = logging.getLogger(__name__)
-
-        base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
-        api_key = settings.llm_api_key or ""
-        target_model = settings.llm_qa_model
-
-        logger.info(f"[多模态LLM] 调用模型: {target_model}, 消息数量: {len(messages)}")
-        client = OpenAI(api_key=api_key, base_url=base_url)
-        response = client.chat.completions.create(
-            **self._apply_thinking_policy({
-                "model": target_model,
-                "messages": messages,
-                "temperature": settings.temperature,
-                "max_tokens": settings.max_tokens,
-                "stream": True
-            })
-        )
-
-        for chunk in response:
-            if chunk.choices and chunk.choices[0].delta.content:
-                yield chunk.choices[0].delta.content
+        yield from stream_chat_messages(messages, model=settings.llm_qa_model)
