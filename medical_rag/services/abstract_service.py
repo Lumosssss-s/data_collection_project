@@ -15,7 +15,7 @@ import json
 from datetime import datetime
 from typing import Dict, List, Tuple
 
-from openai import OpenAI
+from utils.llm_client import chat, get_client
 from elasticsearch import Elasticsearch
 
 from core.config import settings
@@ -59,12 +59,7 @@ class AbstractService:
         if not api_key:
             raise ValueError("DeepSeek API Key 未配置，请设置 settings.llm_deepseek_api_key")
 
-        return OpenAI(
-            api_key=api_key,
-            base_url=base_url,
-            timeout=120.0,
-            max_retries=2
-        )
+        return get_client(api_key=api_key, base_url=base_url, timeout=120.0, max_retries=2)
 
     def _build_abstract_prompt(self, title: str, issuer: str, source_text: str) -> str:
         return f"""请阅读以下肿瘤诊疗指南的推荐内容，用中文生成一段 150-300 字的简明摘要，包含该指南的适用范围、核心诊疗推荐与证据要点。
@@ -134,18 +129,13 @@ class AbstractService:
 
         for attempt in range(max_retries):
             try:
-                create_kwargs = {
-                    "model": self.model,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "temperature": 0.3,
-                    "max_tokens": 2048,
-                    "stream": False
-                }
-                extra_body = settings.llm_extra_body()
-                if extra_body:
-                    create_kwargs["extra_body"] = extra_body
-                response = self.llm_client.chat.completions.create(**create_kwargs)
-                return (response.choices[0].message.content or "").strip()
+                return chat(
+                    prompt,
+                    model=self.model,
+                    temperature=0.3,
+                    max_tokens=2048,
+                    client=self.llm_client,
+                )
             except Exception as e:
                 last_error = e
                 if attempt < max_retries - 1:

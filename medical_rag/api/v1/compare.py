@@ -12,6 +12,7 @@ from core.config import settings
 from core.domain_enums import get_cancer_type_info
 from models.schemas import APIResponse
 from services.compare_service import CompareService
+from utils.llm_client import stream_chat_messages
 
 router = APIRouter(prefix="/compare", tags=["癌种对比"])
 compare_service = CompareService()
@@ -72,7 +73,6 @@ def deep_analysis(req: DeepAnalysisRequest):
     基于两个癌种的检索结果，由 LLM 生成专业的双癌种临床维度深度对比报告，流式输出。
     """
     try:
-        from openai import OpenAI
         from fastapi.responses import StreamingResponse
         import json
 
@@ -111,33 +111,15 @@ def deep_analysis(req: DeepAnalysisRequest):
 给出 3 条面向临床实践的提示；如涉具体用药，需注明以权威指南与药品说明书为准。
 """
 
-        base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
-        api_key = settings.llm_api_key or ""
         model = settings.llm_comparison_model or "deepseek-flash"
 
-        client = OpenAI(api_key=api_key, base_url=base_url)
-        create_kwargs = {
-            "model": model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.3,
-            "max_tokens": settings.max_tokens,
-            "stream": True
-        }
-        extra_body = settings.llm_extra_body()
-        if extra_body:
-            create_kwargs["extra_body"] = extra_body
-        stream = client.chat.completions.create(**create_kwargs)
-
         def generate():
-            for chunk in stream:
-                if not chunk.choices or len(chunk.choices) == 0:
-                    continue
-                delta = chunk.choices[0].delta
-                if not delta:
-                    continue
-                content = delta.content or ""
-                if content:
-                    yield f"data: {json.dumps({'type': 'chunk', 'data': content})}\n\n"
+            for content in stream_chat_messages(
+                [{"role": "user", "content": prompt}],
+                model=model,
+                temperature=0.3,
+            ):
+                yield f"data: {json.dumps({'type': 'chunk', 'data': content})}\n\n"
             yield f"data: {json.dumps({'type': 'done'})}\n\n"
 
         return StreamingResponse(generate(), media_type="text/event-stream")

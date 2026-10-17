@@ -20,6 +20,7 @@ import re
 from typing import Dict, List
 
 from core.config import settings
+from utils.llm_client import chat, get_client
 
 logger = logging.getLogger(__name__)
 
@@ -151,7 +152,6 @@ def _llm_decompose(query: str) -> List[str]:
     api_key = settings.llm_api_key or ""
     if not api_key:
         return []
-    base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
     model = settings.llm_model or "deepseek-flash"
     prompt = (
         "你是肿瘤循证检索的查询改写助手。把下面这条可能包含多个临床问题的复合查询，"
@@ -164,17 +164,13 @@ def _llm_decompose(query: str) -> List[str]:
         f"查询：{query}"
     )
     try:
-        from openai import OpenAI
-        client = OpenAI(api_key=api_key, base_url=base_url,
-                        timeout=settings.multihop_decompose_llm_timeout)
-        resp = client.chat.completions.create(
+        text = chat(
+            prompt,
             model=model,
-            messages=[{"role": "user", "content": prompt}],
             temperature=0,
             max_tokens=200,
-            stream=False,
+            client=get_client(timeout=settings.multihop_decompose_llm_timeout),
         )
-        text = (resp.choices[0].message.content or "").strip()
         return _parse_llm_subqueries(text, query)
     except Exception as e:  # 超时/网络/解析等一律降级
         logger.warning("LLM 查询分解失败，降级单跳: %s", e)

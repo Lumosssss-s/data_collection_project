@@ -14,7 +14,7 @@ import logging
 import re
 from typing import List, Dict
 
-from openai import OpenAI
+from utils.llm_client import chat, get_client
 
 from core.config import settings
 from repositories.elasticsearch import ElasticsearchRepository
@@ -56,10 +56,8 @@ class KGExtractionService:
     """基于 LLM 的实体关系抽取服务（医疗）"""
 
     def __init__(self):
-        self.api_key = settings.llm_api_key or ""
-        self.base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
         self.model = settings.llm_extraction_model or "deepseek-flash"
-        self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
+        self.client = get_client()
         self.repo = ElasticsearchRepository()
 
     def extract_from_recs(self, recs: List[Dict], batch_size: int = 5) -> List[Dict]:
@@ -109,18 +107,14 @@ class KGExtractionService:
         """调用 LLM 抽取单个批次的三元组"""
         prompt = self._build_prompt(batch)
 
-        create_kwargs = {
-            "model": self.model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.1,
-            "max_tokens": 4096,
-            "response_format": {"type": "json_object"},
-        }
-        extra_body = settings.llm_extra_body()
-        if extra_body:
-            create_kwargs["extra_body"] = extra_body
-        response = self.client.chat.completions.create(**create_kwargs)
-        text = response.choices[0].message.content
+        text = chat(
+            prompt,
+            model=self.model,
+            temperature=0.1,
+            max_tokens=4096,
+            response_format={"type": "json_object"},
+            client=self.client,
+        )
 
         return self._parse_response(text, batch)
 

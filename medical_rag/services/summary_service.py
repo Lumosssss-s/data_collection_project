@@ -17,7 +17,7 @@ doc.content（BE-38 生成的指南摘要）。
 import json
 from typing import Dict, List, Optional, Tuple
 
-from openai import OpenAI
+from utils.llm_client import chat, get_client
 
 from core.config import settings
 from repositories.elasticsearch import ElasticsearchRepository
@@ -127,23 +127,12 @@ class SummaryService:
 
     def _call_llm(self, prompt: str) -> str:
         """调用远程 LLM API（带超时和重试）"""
-        base_url = settings.llm_api_base_url or "https://api.deepseek.com/v1"
-        api_key = settings.llm_api_key or ""
-        model = settings.llm_model or "deepseek-flash"
-
-        client = OpenAI(api_key=api_key, base_url=base_url, timeout=100.0, max_retries=2)
-        create_kwargs = {
-            "model": model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.3,
-            "max_tokens": settings.max_tokens,
-            "stream": False,
-        }
-        extra_body = settings.llm_extra_body()
-        if extra_body:
-            create_kwargs["extra_body"] = extra_body
-        response = client.chat.completions.create(**create_kwargs)
-        return (response.choices[0].message.content or "").strip()
+        return chat(
+            prompt,
+            model=settings.llm_model,
+            temperature=0.3,
+            client=get_client(timeout=100.0, max_retries=2),
+        )
 
     # ===== 生成 =====
 
