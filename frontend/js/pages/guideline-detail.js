@@ -10,9 +10,9 @@
 registerPage('guideline', function (container) {
     // 从 hash 中提取条目 ID
     const hash = window.location.hash;
-    const lawId = hash.replace('#/guideline/', '');
+    const docId = hash.replace('#/guideline/', '');
 
-    if (!lawId) {
+    if (!docId) {
         container.innerHTML = '<div class="alert alert-warning">未选择条目，请先从检索页面选择</div>';
         container.innerHTML += '<button class="btn btn-secondary" onclick="goBackToSearch()">返回检索</button>';
         return;
@@ -28,9 +28,9 @@ registerPage('guideline', function (container) {
 
     // 并行获取条目详情、指南速览、相似指南
     Promise.all([
-        api.get('/search/doc/' + lawId),
-        api.get('/search/doc/' + lawId + '/summary').catch(function () { return null; }),
-        api.get('/search/doc/' + lawId + '/similar', { top_k: 5 }).catch(function () { return null; })
+        api.get('/search/doc/' + docId),
+        api.get('/search/doc/' + docId + '/summary').catch(function () { return null; }),
+        api.get('/search/doc/' + docId + '/similar', { top_k: 5 }).catch(function () { return null; })
     ]).then(function (results) {
         const itemData = results[0];
         const summaryData = results[1];

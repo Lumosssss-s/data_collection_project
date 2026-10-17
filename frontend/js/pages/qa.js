@@ -8,8 +8,7 @@ function loadQAState() {
         const saved = localStorage.getItem(QA_STORAGE_KEY);
         if (saved) {
             const parsed = JSON.parse(saved);
-            // 向后兼容：旧字段名 jurisdictions（法规版），新字段名 cancerTypes
-            const savedCancers = parsed.cancerTypes || parsed.jurisdictions || [];
+            const savedCancers = parsed.cancerTypes || [];
             return {
                 sessionId: parsed.sessionId || generateUUID(),
                 messages: (parsed.messages || []).map(function(m) {
@@ -17,7 +16,7 @@ function loadQAState() {
                         role: m.role,
                         content: m.content,
                         sources: m.sources,
-                        cancerTypes: m.cancerTypes || m.jurisdictions
+                        cancerTypes: m.cancerTypes
                     };
                 }),
                 pendingImages: [],

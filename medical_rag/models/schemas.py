@@ -2,11 +2,11 @@
 
 检索核心 DTO（DocumentMetadata / SearchResult / SearchRequest / QARequest）已按
 医疗语义重写，字段对齐 C2《ES 索引与 Mapping 规范》§3.3 与主方案 §5.7.2 / §5.7.3。
-对比 / 专题 / 相似推荐类 DTO 属 P4 批次特征重设计范围（BE-08 / BE-10 / BE-12 /
-BE-29），暂按原状保留，随各服务重写统一处置。
+相似推荐类 DTO（SimilarGuide* / SimilarItem*）为 BE-28 医疗化产物；法规版对比 /
+专题类 DTO 已随残留清理删除（对应服务已重写为医疗 schema）。
 """
 from pydantic import BaseModel
-from typing import Generic, TypeVar, Optional, List, Dict
+from typing import Generic, TypeVar, Optional, List
 
 T = TypeVar("T")
 
@@ -146,113 +146,3 @@ class SimilarItemResponse(BaseModel):
     returned_count: int = 0
     message: str = ""
 
-
-# ========== 法规对比相关模型 ==========
-
-class CompareClauseItem(BaseModel):
-    """对比中的单条条款"""
-    law_id: str = ""
-    title: str = ""
-    article_number: Optional[str] = None
-    content: str = ""
-    similarity: float = 0.0
-    jurisdiction: str = ""
-
-
-class ComparisonRow(BaseModel):
-    """并排对比的一行（法域A vs 法域B）"""
-    index: int
-    jurisdiction_a: Optional[CompareClauseItem] = None
-    jurisdiction_b: Optional[CompareClauseItem] = None
-
-
-class ScoreDistribution(BaseModel):
-    """相似度分布数据点"""
-    jurisdiction: str
-    similarity: float
-
-
-class ComparisonTableResult(BaseModel):
-    """LLM生成的对比表格结果"""
-    table_markdown: str = ""
-    jurisdiction_a: str = ""
-    jurisdiction_b: str = ""
-    topic: str = ""
-    timing: Dict[str, str] = {}
-    error: Optional[str] = None
-
-
-class ClausesComparisonResult(BaseModel):
-    """条款检索对比结果"""
-    comparison_rows: List[ComparisonRow] = []
-    scores_distribution: List[ScoreDistribution] = []
-    jurisdiction_a: str = ""
-    jurisdiction_b: str = ""
-    topic: str = ""
-    count_a: int = 0
-    count_b: int = 0
-    timing: Dict[str, str] = {}
-
-
-class AISummaryResult(BaseModel):
-    """AI对比总结结果"""
-    summary: str = ""
-    sources: List[SearchResult] = []
-    retrieved_count: int = 0
-    timing: Dict[str, str] = {}
-    error: Optional[str] = None
-
-
-class FullCompareResponse(BaseModel):
-    """完整对比分析响应（一步到位）"""
-    jurisdiction_a: str
-    jurisdiction_b: str
-    topic: str
-    comparison_table: ComparisonTableResult
-    clauses_comparison: ClausesComparisonResult
-    ai_summary: AISummaryResult
-    timing: Dict[str, str] = {}
-
-
-# ========== 跨法域专题分析相关模型 ==========
-
-class AggregatedLaw(BaseModel):
-    """聚合后的单部法规摘要"""
-    law_id: str = ""
-    title: str = ""
-    article_numbers: List[str] = []
-    chunk_count: int = 0
-    max_similarity: float = 0.0
-
-
-class RetrievalResult(BaseModel):
-    """阶段一：原始检索结果统计"""
-    chunks_a_count: int = 0
-    chunks_b_count: int = 0
-    top_n_per_jurisdiction: int = 8
-
-
-class AggregatedResult(BaseModel):
-    """阶段二：聚合后的法规级结果"""
-    laws_a: List[AggregatedLaw] = []
-    laws_b: List[AggregatedLaw] = []
-    laws_a_count: int = 0
-    laws_b_count: int = 0
-
-
-class TopicAnalysisResponse(BaseModel):
-    """
-    跨法域专题分析完整响应
-
-    三阶段流水线：
-    阶段一：语义向量检索（分别搜索两个法域，各取 Top-N）
-    阶段二：按法规聚合去重（law_id 分组 + chunk_index 排序 + 拼接）
-    阶段三：LLM 生成结构化对比分析报告（5个固定维度）
-    """
-    query: str = ""
-    jurisdiction_a: str = ""
-    jurisdiction_b: str = ""
-    retrieval: RetrievalResult = RetrievalResult()
-    aggregated: AggregatedResult = AggregatedResult()
-    analysis_report: str = ""
-    timing: Dict[str, str] = {}

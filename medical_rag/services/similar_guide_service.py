@@ -4,11 +4,11 @@
   - 相似指南：以指南的代表向量（各条目向量中位数）+ 主题重叠度，推荐同主题的其它指南
   - 相似条目：以单条推荐条目的向量，推荐语义相近的其它条目
 
-核心思路（沿用法规版「主题优先 + 向量为辅」框架，领域替换）：
+核心思路（「主题优先 + 向量为辅」框架）：
   1. 主题硬过滤：只推荐与查询对象有主题重叠的结果（相似条目不做主题过滤）
   2. 主题加权排序：主题重叠度作为主要排序因子（加权 Jaccard）
   3. 向量相似度作为次要因子
-  4. 多样性：跨癌种优先（同法规版跨法域多样性）
+  4. 多样性：跨癌种优先
 """
 import logging
 from typing import Dict, List, Optional
@@ -20,7 +20,7 @@ from repositories.elasticsearch import ElasticsearchRepository
 logger = logging.getLogger(__name__)
 
 
-class SimilarLawService:
+class SimilarGuideService:
     """相似指南 / 相似条目推荐服务（主题感知版）"""
 
     def __init__(self):

@@ -1,5 +1,5 @@
 // ===== 肿瘤知识图谱页面 v3.0（医疗） =====
-// 本体（实体类型 / 关系类型 / 配色 / 形状）由后端 /kg/ontology 提供，前端不再硬编码法域。
+// 本体（实体类型 / 关系类型 / 配色 / 形状）由后端 /kg/ontology 提供，前端不再硬编码本体。
 var KG_ONTOLOGY = { entities: [], relations: [] };
 var KG_TYPE_MAP = {};      // entity_type -> { label, color, shape }
 var KG_REL_COLORS = {};    // relation_type -> color

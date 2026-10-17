@@ -2,7 +2,6 @@ from typing import List, Dict, Optional, Any, Tuple, Iterable
 import json
 import os
 import re
-import time
 from concurrent.futures import ThreadPoolExecutor
 from elasticsearch import Elasticsearch
 from elasticsearch.exceptions import NotFoundError, TransportError, ApiError
@@ -64,7 +63,7 @@ _ZH_T2S_MAP = {
 
 
 def zh_t2s(text: str) -> str:
-    """繁体转简体（轻量级，覆盖法规名称常用字）"""
+    """繁体转简体（轻量级，覆盖常见繁简对照字）"""
     if not text:
         return text
     return ''.join(_ZH_T2S_MAP.get(ch, ch) for ch in text)
@@ -82,15 +81,15 @@ def zh_s2t(text: str) -> str:
 #  完整繁简字符表（检索侧查询改写用）
 #  ----------------------------------------------------------------
 #  与上方 _ZH_T2S_MAP 的分工：
-#    - 轻量表（约 200 字）服务于「法规名/实体名」规范化，其口径已被实体消歧 L1~L3 与
+#    - 轻量表（约 200 字）服务于「实体名」规范化，其口径已被实体消歧 L1~L3 与
 #      KG 抽取链路的实测调优所绑定，故保持原样不动；
 #    - 本表是 OpenCC TSCharacters/STCharacters 的完整字符集（繁 4148 / 简 4012），
 #      只用于检索侧的查询改写。
 #
 #  为什么检索侧必须改写：ES 的 IK 词典不含繁体字，繁体正文会被切成一字一 token
 #  （实测 analyze("勞動關係") -> 勞/動/關/係），而简体查询经 IK 得到的是词级 token
-#  （劳动/关系）。两者 token 空间不相交，导致「澳门/香港等繁体语料上，简体查询的
-#  BM25 召回恒为 0 条」（实测 BM25("劳动关系", 法域=澳门) = 0 条）。
+#  （劳动/关系）。两者 token 空间不相交，导致「繁体字形语料上，简体查询的
+#  BM25 召回恒为 0 条」（实测繁体语料上简体查询 BM25 召回为 0）。
 #  做法是把同一查询的繁、简两种写法一并送入 multi_match，任一写法命中即可。
 # ================================================================
 _ZH_CONVERT_CACHE: Optional[Dict[str, Dict[str, str]]] = None
@@ -235,7 +234,7 @@ def _term_clause(field: str, value: Any) -> Dict[str, Any]:
 
 
 # 主索引 structured 字段白名单（C2 §3.3 mapping ∩ 主方案 §5.7.2）。
-# 落库时按此白名单从 metadata 透传，避免写入法规遗留字段或未声明字段：
+# 落库时按此白名单从 metadata 透传，避免写入未声明字段：
 #   通用层：data_type/review_status/updated_at
 #   DOC 层：doc_id/doc_type/issuer/publish_date/cancer_types/license_note/file_path/doc_hash
 #   REC 层：rec_id/cancer_type/breadcrumb/scenario/stage/stage_detail/biomarker/
@@ -269,7 +268,7 @@ def _medical_metadata(source: Dict) -> Dict[str, Any]:
     """读侧 metadata 组装：通用字段 + §5.7.2 白名单透传（C2 §3.3）。
 
     与写侧 add_documents 的 _MEDICAL_DOC_FIELDS 同源，保证「写进去什么、读出来什么」；
-    不再给 metadata 塞 law_id / jurisdiction / article_number 等法规遗留字段。
+    只透传白名单字段，不额外塞入任何未映射字段。
     """
     meta: Dict[str, Any] = {
         "title": source.get("title", ""),
@@ -286,8 +285,7 @@ class ElasticsearchRepository:
     def __init__(self):
         self._init_client()
         self._model = None  # 懒加载，避免启动时加载大模型
-        self._non_active_cache = None  # 失效法规 law_id 缓存：(mtime, ids)
-        self._law_title_index_cache = None  # 法规标题索引缓存：{简体归一标题: law_id}
+        self._non_active_doc_cache = None  # 失效文档 doc_id 缓存：(mtime, ids)
         self._init_classifier()
         self._create_index_if_not_exists()
         # C2 §8：5 索引首次启动自动建（mapping 错误在启动时暴露，而非首次使用时）
@@ -740,7 +738,7 @@ class ElasticsearchRepository:
                 "taxonomy_version": topic_fields["taxonomy_version"],
             }
             # 结构化字段按 §5.7.2 白名单透传（C2 §3.3：metadata 塞杂物模式废止，
-            # 法规遗留字段 law_id/jurisdiction/article_number/passing_date 等不再落库）
+            # 仅落白名单字段，未映射字段一律不入库）
             for field in _MEDICAL_DOC_FIELDS:
                 if metadata.get(field) is not None:
                     doc[field] = metadata[field]
@@ -934,7 +932,7 @@ class ElasticsearchRepository:
             rrf_score = item["rrf_score"]
             query_scores.append(rrf_score)
             # distances 仅保留兼容性：RRF 分动态范围极小（~0.016~0.05），由它反推的
-            # 相似度没有区分度（旧实现因此让前端所有条款都显示 50%）。展示分改用
+            # 相似度没有区分度（旧实现因此让前端所有条目都显示 50%）。展示分改用
             # 下面的 _similarities（真实余弦），不再依赖这里。
             query_distances.append(1.0 / (1.0 + abs(rrf_score)) if rrf_score != 0 else 1.0)
             query_similarities.append(item.get("vector_similarity"))
@@ -972,8 +970,8 @@ class ElasticsearchRepository:
                     actual_value = v[0] if isinstance(v, list) else v
                     filter_clauses.append(_term_clause(k, actual_value))
 
-        # 时效过滤：剔除已废止/已删除法规（组件C）
-        excluded = self._excluded_law_filter()
+        # 时效过滤：剔除已废止/已删除文档
+        excluded = self._excluded_doc_filter()
         if excluded:
             filter_clauses.append({"bool": {"must_not": [excluded]}})
 
@@ -998,16 +996,16 @@ class ElasticsearchRepository:
                      where: Optional[Dict] = None) -> List[Dict]:
         """BM25 全文搜索，返回原始 hits 列表。
 
-        查询串会同时带上繁、简两种写法：语料里澳门/香港等法域正文是繁体，而 IK 词典
-        不含繁体字（繁体被切成一字一 token），若只按用户输入的写法检索，简体查询在
-        繁体语料上会一条都召不回。具体写法由 zh_query_variants 生成。
+        查询串会同时带上简、繁两种写法（含繁体字形的语料可被简体查询召回）：
+        IK 词典不含繁体字，繁体被切成一字一 token，若只按用户输入的写法检索，
+        简体查询在繁体语料上会一条都召不回。具体写法由 zh_query_variants 生成。
         """
         variants = zh_query_variants(query_text)
         analysis_query = " ".join(variants) if len(variants) > 1 else query_text
         bm25_query = {
             "multi_match": {
                 "query": analysis_query,
-                "fields": ["content^3", "title^5", "article_number^2"],
+                "fields": ["content^3", "title^5"],
                 "type": "best_fields",
                 "analyzer": "chinese_analyzer"
             }
@@ -1027,8 +1025,8 @@ class ElasticsearchRepository:
                     actual_value = v[0] if isinstance(v, list) else v
                     filter_clauses.append(_term_clause(k, actual_value))
 
-        # 时效过滤：剔除已废止/已删除法规（组件C）
-        excluded = self._excluded_law_filter()
+        # 时效过滤：剔除已废止/已删除文档
+        excluded = self._excluded_doc_filter()
         if excluded:
             filter_clauses.append({"bool": {"must_not": [excluded]}})
 
@@ -1058,7 +1056,7 @@ class ElasticsearchRepository:
         除 RRF 分（仅用于排序）外，还附带每条命中来自 KNN 的**真实余弦相似度**：
         ES dense_vector(cosine) 的 _score 实为 (1+cos)/2（正交=0.5），故还原为
         cos = 2*_score - 1。该值供上层计算展示用「匹配度」，与排序无关。
-        仅被 BM25 召回、未进 KNN 的条款没有余弦分，记为 None。
+        仅被 BM25 召回、未进 KNN 的条目没有余弦分，记为 None。
         """
         scores: Dict[str, float] = {}
         sources: Dict[str, Dict] = {}
@@ -1095,24 +1093,23 @@ class ElasticsearchRepository:
         return merged
 
     # ================================================================
-    #  法规时效过滤（组件C）
+    #  文档时效过滤
     #  ------------------------------------------------------------
-    #  doc_catalog.json 的 status 标记法规时效。检索层默认剔除已废止/已删除的
-    #  法规，否则失效条款仍会被检索命中并被 LLM 当作现行法引用 —— 这在法律
-    #  场景下是致命错误。
+    #  doc_catalog.json 的 status 标记文档时效。检索层默认剔除已废止/已删除的
+    #  文档，否则失效内容仍会被检索命中并被 LLM 当作现行依据引用。
     #  实现上不改 ES 文档（避免重新入库）：状态只影响检索过滤条件，
-    #  按 law_id 排除即可；catalog 文件变更后依据 mtime 自动失效缓存。
+    #  按 doc_id 排除即可；catalog 文件变更后依据 mtime 自动失效缓存。
     # ================================================================
 
     # 不可检索的状态：repealed 已废止 / deleted 已删除 / missing 数据缺失
-    # 注意 amended（已修订）表示法规仍然现行有效，只是内容被修改过，不排除
+    # 注意 amended（已修订）表示文档仍然现行有效，只是内容被修改过，不排除
     _NON_RETRIEVABLE_STATUS = ("repealed", "deleted", "missing")
 
-    def _non_active_law_ids(self) -> List[str]:
+    def _non_active_doc_ids(self) -> List[str]:
         """
-        读取当前不可检索的 law_id 列表。
+        读取当前不可检索的 doc_id 列表。
 
-        按文件 mtime 缓存解析结果，避免每次检索都解析整个法规目录 JSON。
+        按文件 mtime 缓存解析结果，避免每次检索都解析整个目录 JSON。
         目录不可读时返回空列表（降级为不过滤），保证检索本身不被阻断。
         """
         import os
@@ -1125,126 +1122,35 @@ class ElasticsearchRepository:
         except OSError:
             return []
 
-        if self._non_active_cache and self._non_active_cache[0] == mtime:
-            return self._non_active_cache[1]
+        if self._non_active_doc_cache and self._non_active_doc_cache[0] == mtime:
+            return self._non_active_doc_cache[1]
 
         try:
             with open(catalog_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
         except Exception as e:
-            logger.warning(f"[时效过滤] 读取法规目录失败，本次不做时效过滤: {e}")
+            logger.warning(f"[时效过滤] 读取文档目录失败，本次不做时效过滤: {e}")
             return []
 
-        laws = data.get("docs", []) if isinstance(data, dict) else data
-        if isinstance(laws, dict):
-            laws = list(laws.values())
+        docs = data.get("docs", []) if isinstance(data, dict) else data
+        if isinstance(docs, dict):
+            docs = list(docs.values())
 
         ids = [
             x.get("doc_id")
-            for x in laws
+            for x in docs
             if isinstance(x, dict) and x.get("doc_id")
             and x.get("status") in self._NON_RETRIEVABLE_STATUS
         ]
         if ids:
-            logger.info(f"[时效过滤] 本次排除 {len(ids)} 部已废止/已删除法规")
-        self._non_active_cache = (mtime, ids)
+            logger.info(f"[时效过滤] 本次排除 {len(ids)} 篇已废止/已删除文档")
+        self._non_active_doc_cache = (mtime, ids)
         return ids
 
-    def _excluded_law_filter(self) -> Optional[Dict]:
-        """构造排除失效法规的 ES 过滤子句，无失效法规时返回 None"""
-        ids = self._non_active_law_ids()
-        return {"terms": {"law_id": ids}} if ids else None
-
-    def _law_title_index(self) -> Dict[str, str]:
-        """{法规标题的简体归一形式: law_id}，进程内缓存（法规总数仅数百，聚合一次即可）。
-
-        归一方向固定为「繁→简」：繁体转简体基本一一对应，可靠；反向（简→繁）存在多候选
-        （如「系」可能是「系/係」），无法由简体标题反推出真实存储的繁体标题。
-        """
-        if self._law_title_index_cache is None:
-            index: Dict[str, str] = {}
-            try:
-                for law in self.get_all_laws():
-                    law_id = law.get("law_id")
-                    law_title = law.get("title") or ""
-                    if law_id and law_title:
-                        index.setdefault(zh_convert(law_title, "t2s"), law_id)
-            except Exception as e:
-                # 构建失败不写入缓存，避免一次偶发失败把该能力永久关掉
-                logger.warning(f"[法规名定位] 标题索引构建失败: {e}")
-                return index
-            self._law_title_index_cache = index
-        return self._law_title_index_cache
-
-    def _resolve_law_id(self, title: str) -> Optional[str]:
-        """把法规名解析为 law_id：先简体归一后精确匹配，再退化为双向包含（取最长者，保证确定性）"""
-        normalized = zh_convert(title, "t2s")
-        if not normalized:
-            return None
-        index = self._law_title_index()
-        if normalized in index:
-            return index[normalized]
-        candidates = [
-            (len(key), law_id) for key, law_id in index.items()
-            if key and (key in normalized or normalized in key)
-        ]
-        if not candidates:
-            return None
-        candidates.sort(key=lambda item: (-item[0], item[1]))
-        return candidates[0][1]
-
-    def find_article(self, title: str, article_number: str) -> Optional[Dict]:
-        """按「法规名 + 条款号」精确定位一条条款，繁简写法均可。
-
-        先把法规名经简体归一解析成 law_id，再按 (law_id, article_number) 精确查询。
-
-        此前是拿标题字符串本身（含各家写法）去查 title.keyword，失败后退化为 match title 兜底：
-        简→繁 为一对多（「关系」拼不出「關係」），拼出的变体无法命中真实标题，于是必然走兜底；
-        而 IK 分词下的 match title 是 OR 语义，近乎「匹配任意含『法』的文档」，返回结果随
-        set 迭代顺序漂移（实测同一简体查询时而命中「勞動關係法」，时而命中「經濟房屋法」）。
-        """
-        try:
-            law_id = self._resolve_law_id(title)
-            if not law_id:
-                return None
-            query_body = {
-                "query": {
-                    "bool": {
-                        "must": [
-                            {"term": {"law_id": law_id}},
-                            {"term": {"article_number": article_number}}
-                        ]
-                    }
-                },
-                "size": 1,
-                "_source": True
-            }
-            response = self.client.search(index=settings.es_index_name, body=query_body)
-            hits = response.get("hits", {}).get("hits", [])
-            if not hits:
-                return None
-            hit = hits[0]
-            source = hit.get("_source", {})
-            metadata = source.get("metadata", {}).copy()
-            metadata["law_id"] = source.get("law_id", "")
-            metadata["title"] = source.get("title", "")
-            metadata["jurisdiction"] = source.get("jurisdiction", "")
-            metadata["article_number"] = source.get("article_number", "")
-            metadata["chunk_index"] = source.get("chunk_index", 0)
-            metadata["topics_details"] = source.get("topics_details", [])
-            return {
-                "content": source.get("content", ""),
-                "title": metadata["title"],
-                "article_number": metadata["article_number"],
-                "jurisdiction": _jurisdiction_to_zh(metadata.get("jurisdiction", "")),
-                "score": 1.0,
-                "law_id": metadata["law_id"],
-                "source_file": source.get("source_file", ""),
-                "chunk_index": metadata["chunk_index"],
-                "topics_details": metadata["topics_details"],
-            }
-        except Exception as e:
-            return None
+    def _excluded_doc_filter(self) -> Optional[Dict]:
+        """构造排除失效文档的 ES 过滤子句，无失效文档时返回 None"""
+        ids = self._non_active_doc_ids()
+        return {"terms": {"doc_id": ids}} if ids else None
 
     def get(self, doc_id: str) -> Optional[Dict]:
         try:
@@ -1298,7 +1204,7 @@ class ElasticsearchRepository:
     def get_doc_catalog_records(self) -> List[Dict]:
         """返回 DOC 记录 + 各文档的 REC 条目数，供 doc_catalog 重建（管理端同步）。
 
-        取代旧 `get_all_laws()` + `get_law_by_id()`（法规遗留命名）在目录重建中的使用：
+        取代旧「按文档聚合」的目录重建实现：
         直接按 data_type=doc 取 DOC 字段，并按 data_type=rec 聚合统计每篇指南的条目数。
         """
         result: Dict[str, Dict] = {}
@@ -1335,37 +1241,6 @@ class ElasticsearchRepository:
             logger.warning(f"[Doc] 统计指南条目数失败: {e}")
 
         return list(result.values())
-
-    def get_article_full_text(self, law_id: str, article_number: str) -> Optional[str]:
-        """
-        通过 law_id + article_number 聚合同一 article 下的所有 chunks，按顺序拼接为完整文本。
-        用于 sub_chunk 定位后回取完整 article 上下文。
-        """
-        if not law_id or not article_number:
-            return None
-        try:
-            query_body = {
-                "query": {
-                    "bool": {
-                        "must": [
-                            {"term": {"law_id": law_id}},
-                            {"term": {"article_number": article_number}}
-                        ]
-                    }
-                },
-                "sort": [{"chunk_index": "asc"}],
-                "size": 1000,
-                "_source": ["content", "chunk_index"]
-            }
-            response = self.client.search(index=settings.es_index_name, body=query_body)
-            hits = response.get("hits", {}).get("hits", [])
-            if not hits:
-                return None
-            chunks = [(hit["_source"].get("chunk_index", 0), hit["_source"].get("content", "")) for hit in hits]
-            chunks.sort(key=lambda x: x[0])
-            return "\n\n".join(content for _, content in chunks if content)
-        except Exception:
-            return None
 
     def update(self, doc_id: str, content: Optional[str] = None, metadata: Optional[Dict] = None):
         update_body = {}
@@ -1471,48 +1346,6 @@ class ElasticsearchRepository:
         
         return laws
     
-    def get_law_by_id(self, law_id: str) -> Optional[Dict]:
-        """根据law_id获取法规的所有条款"""
-        query = {
-            "query": {"term": {"law_id": law_id}},
-            "size": 1000,
-            "sort": [{"chunk_index": {"order": "asc"}}]
-        }
-        
-        response = self.client.search(index=settings.es_index_name, body=query)
-        hits = response.get("hits", {}).get("hits", [])
-        
-        if not hits:
-            return None
-        
-        chunks = []
-        for hit in hits:
-            source = hit.get("_source", {})
-            chunks.append({
-                "content": source.get("content", ""),
-                "article_number": source.get("article_number", ""),
-                "article_title": source.get("article_title", ""),
-                "chunk_index": source.get("chunk_index", 0)
-            })
-        
-        first_source = hits[0].get("_source", {})
-        return {
-            "law_id": law_id,
-            "title": first_source.get("title", ""),
-            "jurisdiction": _jurisdiction_to_zh(first_source.get("jurisdiction", "")),
-            "passing_date": first_source.get("passing_date", ""),
-            "chunks": chunks
-        }
-    
-    def delete_by_law_id(self, law_id: str) -> int:
-        """根据law_id批量删除所有相关文档"""
-        query = {
-            "query": {"term": {"law_id": law_id}}
-        }
-
-        response = self.client.delete_by_query(index=settings.es_index_name, body=query, refresh=True)
-        return response.get("deleted", 0)
-
     def exists_item(self, item_id: str) -> bool:
         """按 _id 判定条目是否已入库。
 
@@ -1526,29 +1359,6 @@ class ElasticsearchRepository:
         except Exception:
             return False
 
-    def exists_law_id(self, law_id: str) -> bool:
-        """检查数据库中是否已存在指定law_id的文档"""
-        query = {
-            "size": 1,
-            "query": {"term": {"law_id": law_id}}
-        }
-
-        try:
-            response = self.client.search(index=settings.es_index_name, body=query)
-            return response.get("hits", {}).get("total", {}).get("value", 0) > 0
-        except Exception:
-            return False
-
-    def get_law_chunk_count(self, law_id: str) -> int:
-        """获取指定law_id的文档块数量"""
-        query = {
-            "size": 0,
-            "query": {"term": {"law_id": law_id}}
-        }
-
-        response = self.client.search(index=settings.es_index_name, body=query)
-        return response.get("hits", {}).get("total", {}).get("value", 0)
-    
     def get_doc_context_recs(self, doc_id: str, exclude_ids: Optional[Iterable[str]] = None,
                              breadcrumb_prefix: str = "", max_n: int = 5) -> List[Dict]:
         """同指南上下文条目（BE-15 上下文扩展）。
@@ -1627,8 +1437,8 @@ class ElasticsearchRepository:
         
         search_body["size"] = n_results
         # 不指定 _source，获取所有字段
-        # 注：医疗模型下无需按字段排序——filter-only 检索无相关度；原 [law_id, chunk_index]
-        # 中的 law_id 在新索引 medical_knowledge 无映射，会触发 no-mapping 报错；chunk_index
+        # 注：当前模型下无需按字段排序——filter-only 检索无相关度；且历史排序键
+        # 在新索引 medical_knowledge 无映射，会触发 no-mapping 报错；chunk_index
         # 对 rec/doc/term 恒为 0，排序无实际效果。省略 sort，交由 ES 隐式 _doc 序返回；
         # 医学语义排序（如按 publish_date / evidence_level）留给 BE-15 统一设计。
 
@@ -1653,72 +1463,6 @@ class ElasticsearchRepository:
         
         return results
     
-    def get_all_jurisdictions(self) -> List[str]:
-        """获取所有法域列表（返回简体中文）"""
-        query = {
-            "size": 0,
-            "aggs": {
-                "jurisdictions": {
-                    "terms": {
-                        "field": "jurisdiction",
-                        "size": 100
-                    }
-                }
-            }
-        }
-        
-        response = self.client.search(index=settings.es_index_name, body=query)
-        buckets = response.get("aggregations", {}).get("jurisdictions", {}).get("buckets", [])
-        
-        # 转换为中文并去重
-        zh_jurisdictions = set()
-        result = []
-        for bucket in buckets:
-            jur = bucket.get("key")
-            zh_jur = _jurisdiction_to_zh(jur)
-            if zh_jur not in zh_jurisdictions:
-                zh_jurisdictions.add(zh_jur)
-                result.append(zh_jur)
-        
-        return result
-
-    def sample_documents(self, jurisdiction: str, size: int = 200,
-                         fields: Optional[List[str]] = None) -> List[Dict]:
-        """按法域随机采样文档，用于构建法域语义向量。
-
-        Args:
-            jurisdiction: 法域名称（简体中文）
-            size: 采样数量
-            fields: 返回字段，默认 ['title', 'content']
-
-        Returns:
-            [{'title': ..., 'content': ...}, ...]
-        """
-        if fields is None:
-            fields = ['title', 'content']
-
-        # 使用 random_score 函数实现随机采样
-        query = {
-            "size": size,
-            "query": {
-                "function_score": {
-                    "query": {"term": {"jurisdiction": jurisdiction}},
-                    "random_score": {"seed": int(time.time()), "field": "_seq_no"},
-                    "boost_mode": "replace"
-                }
-            },
-            "_source": fields
-        }
-
-        try:
-            response = self.client.search(index=settings.es_index_name, body=query)
-            hits = response.get("hits", {}).get("hits", [])
-            return [hit["_source"] for hit in hits]
-        except Exception as e:
-            import logging
-            logging.getLogger(__name__).error(f"采样法域 {jurisdiction} 文档失败: {e}")
-            return []
-
     def get_all_topics(self) -> List[Dict]:
         """获取所有主题标签及计数（医疗）。
 

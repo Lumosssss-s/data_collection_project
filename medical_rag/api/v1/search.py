@@ -2,7 +2,7 @@ from fastapi import APIRouter, Query
 from typing import List, Optional
 from models.schemas import APIResponse, SearchResult, DocumentMetadata, SimilarGuideResponse, SimilarItemResponse
 from services.retriever_service import RetrieverService
-from services.similar_law_service import SimilarLawService
+from services.similar_guide_service import SimilarGuideService
 from services.summary_service import SummaryService
 from repositories.elasticsearch import ElasticsearchRepository
 from utils.doc_catalog import DocCatalog
@@ -11,7 +11,7 @@ from core.domain_enums import CANCER_TYPE_INFO
 router = APIRouter(prefix="/search", tags=["搜索"])
 retriever = RetrieverService()
 repo = ElasticsearchRepository()
-similar_service = SimilarLawService()
+similar_service = SimilarGuideService()
 summary_service = SummaryService()
 catalog = DocCatalog()
 
