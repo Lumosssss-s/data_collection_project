@@ -1,0 +1,23 @@
+[
+  {
+    "doc_id": "DOC-LUNG-NHC-001",
+    "title": "原发性肺癌诊疗指南（2022年版）",
+    "doc_type": "standard",
+    "issuer": "中华人民共和国国家卫生健康委员会",
+    "publish_date": "2022-04-11",
+    "cancer_types": [
+      "lung"
+    ],
+    "license_note": "国家卫健委官网公开文件（国卫办医函〔2022〕104号，2022-04-11 公开），公开可引用，引用需标注出处；仅限非商业竞赛使用。原文：https://www.nhc.gov.cn/yzygj/c100068/202204/0c1f7d3aca0545abbeb02030ce255930.shtml",
+    "file_path": "raw/guidelines/lung/nhc2022_01_lung.pdf",
+    "doc_hash": "151ee124b37a49ef2603eb0c1c8fe2b4a116cc604eb5b718a03ec61ce77f799c",
+    "source_name": "原发性肺癌诊疗指南（2022年版）",
+    "source_version": "2022",
+    "source_section": "全文",
+    "source_file": "nhc2022_01_lung.pdf",
+    "updated_at": "2026-10-25",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null
+  }
+]

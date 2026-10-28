@@ -1,0 +1,23 @@
+[
+  {
+    "doc_id": "DOC-THY-NHC-001",
+    "title": "甲状腺癌诊疗指南（2022版）",
+    "doc_type": "standard",
+    "issuer": "中华人民共和国国家卫生健康委员会",
+    "publish_date": "2022-04-11",
+    "cancer_types": [
+      "thyroid"
+    ],
+    "license_note": "国家卫健委官网公开文件（国卫办医函〔2022〕104号，2022-04-11 公开），公开可引用，引用需标注出处；仅限非商业竞赛使用。原文：https://www.nhc.gov.cn/yzygj/c100068/202204/0c1f7d3aca0545abbeb02030ce255930.shtml",
+    "file_path": "raw/guidelines/thyroid/nhc2022_12_thyroid.pdf",
+    "doc_hash": "e60362996c50a42acdb3261cca9c7ac4ec6b33fb0cddbdf59632bbf1ef2bd644",
+    "source_name": "甲状腺癌诊疗指南（2022版）",
+    "source_version": "2022",
+    "source_section": "全文",
+    "source_file": "nhc2022_12_thyroid.pdf",
+    "updated_at": "2026-10-25",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null
+  }
+]

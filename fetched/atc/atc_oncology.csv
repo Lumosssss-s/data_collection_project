@@ -1,0 +1,592 @@
+﻿code,name_en,group,parent
+A11AA01,multivitamins and iron,A11AA,A11
+A11AA02,multivitamins and calcium,A11AA,A11
+A11AA03,"multivitamins and other minerals, incl. combinations",A11AA,A11
+A11AA04,multivitamins and trace elements,A11AA,A11
+A11CA01,retinol (vit A),A11CA,A11
+A11CA02,betacarotene,A11CA,A11
+A11CC01,ergocalciferol,A11CC,A11
+A11CC02,dihydrotachysterol,A11CC,A11
+A11CC03,alfacalcidol,A11CC,A11
+A11CC04,calcitriol,A11CC,A11
+A11CC05,colecalciferol,A11CC,A11
+A11CC06,calcifediol,A11CC,A11
+A11CC20,combinations,A11CC,A11
+A11CC55,"colecalciferol, combinations",A11CC,A11
+A11DA01,thiamine (vit B1),A11DA,A11
+A11DA02,sulbutiamine,A11DA,A11
+A11DA03,benfotiamine,A11DA,A11
+A11GA01,ascorbic acid (vit C),A11GA,A11
+A11GB01,ascorbic acid (vit C) and calcium,A11GB,A11
+A11HA01,nicotinamide,A11HA,A11
+A11HA02,pyridoxine (vit B6),A11HA,A11
+A11HA03,tocopherol (vit E),A11HA,A11
+A11HA04,riboflavin (vit B2),A11HA,A11
+A11HA05,biotin,A11HA,A11
+A11HA06,pyridoxal phosphate,A11HA,A11
+A11HA07,inositol,A11HA,A11
+A11HA08,tocofersolan,A11HA,A11
+A11HA30,dexpanthenol,A11HA,A11
+A11HA31,calcium pantothenate,A11HA,A11
+A11HA32,pantethine,A11HA,A11
+A12AA01,calcium phosphate,A12AA,A12
+A12AA02,calcium glubionate,A12AA,A12
+A12AA03,calcium gluconate,A12AA,A12
+A12AA04,calcium carbonate,A12AA,A12
+A12AA05,calcium lactate,A12AA,A12
+A12AA06,calcium lactate gluconate,A12AA,A12
+A12AA07,calcium chloride,A12AA,A12
+A12AA08,calcium glycerylphosphate,A12AA,A12
+A12AA09,calcium citrate lysine complex,A12AA,A12
+A12AA10,calcium glucoheptonate,A12AA,A12
+A12AA11,calcium pangamate,A12AA,A12
+A12AA13,calcium citrate,A12AA,A12
+A12AA20,calcium (different salts in combination),A12AA,A12
+A12AA30,calcium laevulate,A12AA,A12
+A12BA01,potassium chloride,A12BA,A12
+A12BA02,potassium citrate,A12BA,A12
+A12BA03,potassium hydrogentartrate,A12BA,A12
+A12BA04,potassium hydrogencarbonate,A12BA,A12
+A12BA05,potassium gluconate,A12BA,A12
+A12BA30,potassium (different salts in combination),A12BA,A12
+A12BA51,"potassium, combinations",A12BA,A12
+A12CA01,sodium chloride,A12CA,A12
+A12CA02,sodium sulfate,A12CA,A12
+A12CB01,zinc sulfate,A12CB,A12
+A12CB02,zinc gluconate,A12CB,A12
+A12CB03,zinc protein complex,A12CB,A12
+A12CB04,zinc orotate,A12CB,A12
+A12CC01,magnesium chloride,A12CC,A12
+A12CC02,magnesium sulfate,A12CC,A12
+A12CC03,magnesium gluconate,A12CC,A12
+A12CC04,magnesium citrate,A12CC,A12
+A12CC05,magnesium aspartate,A12CC,A12
+A12CC06,magnesium lactate,A12CC,A12
+A12CC07,magnesium levulinate,A12CC,A12
+A12CC08,magnesium pidolate,A12CC,A12
+A12CC09,magnesium orotate,A12CC,A12
+A12CC10,magnesium oxide,A12CC,A12
+A12CC30,magnesium (different salts in combination),A12CC,A12
+A12CD01,sodium fluoride,A12CD,A12
+A12CD02,sodium monofluorophosphate,A12CD,A12
+A12CD51,"fluoride, combinations",A12CD,A12
+A12CE01,sodium selenate,A12CE,A12
+A12CE02,sodium selenite,A12CE,A12
+H02AA01,aldosterone,H02AA,H02
+H02AA02,fludrocortisone,H02AA,H02
+H02AA03,desoxycortone,H02AA,H02
+H02AB01,betamethasone,H02AB,H02
+H02AB02,dexamethasone,H02AB,H02
+H02AB03,fluocortolone,H02AB,H02
+H02AB04,methylprednisolone,H02AB,H02
+H02AB05,paramethasone,H02AB,H02
+H02AB06,prednisolone,H02AB,H02
+H02AB07,prednisone,H02AB,H02
+H02AB08,triamcinolone,H02AB,H02
+H02AB09,hydrocortisone,H02AB,H02
+H02AB10,cortisone,H02AB,H02
+H02AB11,prednylidene,H02AB,H02
+H02AB12,rimexolone,H02AB,H02
+H02AB13,deflazacort,H02AB,H02
+H02AB14,cloprednol,H02AB,H02
+H02AB15,meprednisone,H02AB,H02
+H02AB17,cortivazol,H02AB,H02
+H02AB18,vamorolone,H02AB,H02
+H02BX01,"methylprednisolone, combinations",H02BX,H02
+H02CA01,trilostane,H02CA,H02
+H02CA02,osilodrostat,H02CA,H02
+H02CA03,ketoconazole,H02CA,H02
+H02CA04,levoketoconazole,H02CA,H02
+H03AA01,levothyroxine sodium,H03AA,H03
+H03AA02,liothyronine sodium,H03AA,H03
+H03AA03,combinations of levothyroxine and liothyronine,H03AA,H03
+H03AA04,tiratricol,H03AA,H03
+H03AA05,thyroid gland preparations,H03AA,H03
+H03AA51,levothyroxine sodium and iodine compounds,H03AA,H03
+H03BA01,methylthiouracil,H03BA,H03
+H03BA02,propylthiouracil,H03BA,H03
+H03BA03,benzylthiouracil,H03BA,H03
+H03BB01,carbimazole,H03BB,H03
+H03BB02,thiamazole,H03BB,H03
+H03BB52,"thiamazole, combinations",H03BB,H03
+H03BC01,potassium perchlorate,H03BC,H03
+H03BX01,diiodotyrosine,H03BX,H03
+H03BX02,dibromotyrosine,H03BX,H03
+L01AA01,cyclophosphamide,L01AA,L01
+L01AA02,chlorambucil,L01AA,L01
+L01AA03,melphalan,L01AA,L01
+L01AA05,chlormethine,L01AA,L01
+L01AA06,ifosfamide,L01AA,L01
+L01AA07,trofosfamide,L01AA,L01
+L01AA08,prednimustine,L01AA,L01
+L01AA09,bendamustine,L01AA,L01
+L01AA10,melphalan flufenamide,L01AA,L01
+L01AB01,busulfan,L01AB,L01
+L01AB02,treosulfan,L01AB,L01
+L01AB03,mannosulfan,L01AB,L01
+L01AC01,thiotepa,L01AC,L01
+L01AC02,triaziquone,L01AC,L01
+L01AC03,carboquone,L01AC,L01
+L01AD01,carmustine,L01AD,L01
+L01AD02,lomustine,L01AD,L01
+L01AD03,semustine,L01AD,L01
+L01AD04,streptozocin,L01AD,L01
+L01AD05,fotemustine,L01AD,L01
+L01AD06,nimustine,L01AD,L01
+L01AD07,ranimustine,L01AD,L01
+L01AD08,uramustine,L01AD,L01
+L01AG01,etoglucid,L01AG,L01
+L01AX01,mitobronitol,L01AX,L01
+L01AX02,pipobroman,L01AX,L01
+L01AX03,temozolomide,L01AX,L01
+L01AX04,dacarbazine,L01AX,L01
+L01BA01,methotrexate,L01BA,L01
+L01BA03,raltitrexed,L01BA,L01
+L01BA04,pemetrexed,L01BA,L01
+L01BA05,pralatrexate,L01BA,L01
+L01BB02,mercaptopurine,L01BB,L01
+L01BB03,tioguanine,L01BB,L01
+L01BB04,cladribine,L01BB,L01
+L01BB05,fludarabine,L01BB,L01
+L01BB06,clofarabine,L01BB,L01
+L01BB07,nelarabine,L01BB,L01
+L01BC01,cytarabine,L01BC,L01
+L01BC02,fluorouracil,L01BC,L01
+L01BC03,tegafur,L01BC,L01
+L01BC04,carmofur,L01BC,L01
+L01BC05,gemcitabine,L01BC,L01
+L01BC06,capecitabine,L01BC,L01
+L01BC07,azacitidine,L01BC,L01
+L01BC08,decitabine,L01BC,L01
+L01BC09,floxuridine,L01BC,L01
+L01BC52,"fluorouracil, combinations",L01BC,L01
+L01BC53,"tegafur, combinations",L01BC,L01
+L01BC58,"decitabine, combinations",L01BC,L01
+L01BC59,"trifluridine, combinations",L01BC,L01
+L01CA01,vinblastine,L01CA,L01
+L01CA02,vincristine,L01CA,L01
+L01CA03,vindesine,L01CA,L01
+L01CA04,vinorelbine,L01CA,L01
+L01CA05,vinflunine,L01CA,L01
+L01CA06,vintafolide,L01CA,L01
+L01CB01,etoposide,L01CB,L01
+L01CB02,teniposide,L01CB,L01
+L01CC01,demecolcine,L01CC,L01
+L01CD01,paclitaxel,L01CD,L01
+L01CD02,docetaxel,L01CD,L01
+L01CD03,paclitaxel poliglumex,L01CD,L01
+L01CD04,cabazitaxel,L01CD,L01
+L01CD51,paclitaxel and encequidar,L01CD,L01
+L01CE01,topotecan,L01CE,L01
+L01CE02,irinotecan,L01CE,L01
+L01CE03,etirinotecan pegol,L01CE,L01
+L01CE04,belotecan,L01CE,L01
+L01CX01,trabectedin,L01CX,L01
+L01DA01,dactinomycin,L01DA,L01
+L01DB01,doxorubicin,L01DB,L01
+L01DB02,daunorubicin,L01DB,L01
+L01DB03,epirubicin,L01DB,L01
+L01DB04,aclarubicin,L01DB,L01
+L01DB05,zorubicin,L01DB,L01
+L01DB06,idarubicin,L01DB,L01
+L01DB07,mitoxantrone,L01DB,L01
+L01DB08,pirarubicin,L01DB,L01
+L01DB09,valrubicin,L01DB,L01
+L01DB10,amrubicin,L01DB,L01
+L01DB11,pixantrone,L01DB,L01
+L01DC01,bleomycin,L01DC,L01
+L01DC02,plicamycin,L01DC,L01
+L01DC03,mitomycin,L01DC,L01
+L01DC04,ixabepilone,L01DC,L01
+L01DC05,utidelone,L01DC,L01
+L01EA01,imatinib,L01EA,L01
+L01EA02,dasatinib,L01EA,L01
+L01EA03,nilotinib,L01EA,L01
+L01EA04,bosutinib,L01EA,L01
+L01EA05,ponatinib,L01EA,L01
+L01EA06,asciminib,L01EA,L01
+L01EB01,gefitinib,L01EB,L01
+L01EB02,erlotinib,L01EB,L01
+L01EB03,afatinib,L01EB,L01
+L01EB04,osimertinib,L01EB,L01
+L01EB05,rociletinib,L01EB,L01
+L01EB06,olmutinib,L01EB,L01
+L01EB07,dacomitinib,L01EB,L01
+L01EB08,icotinib,L01EB,L01
+L01EB09,lazertinib,L01EB,L01
+L01EB10,mobocertinib,L01EB,L01
+L01EB11,aumolertinib,L01EB,L01
+L01EB12,firmonertinib,L01EB,L01
+L01EC01,vemurafenib,L01EC,L01
+L01EC02,dabrafenib,L01EC,L01
+L01EC03,encorafenib,L01EC,L01
+L01EC04,tovorafenib,L01EC,L01
+L01ED01,crizotinib,L01ED,L01
+L01ED02,ceritinib,L01ED,L01
+L01ED03,alectinib,L01ED,L01
+L01ED04,brigatinib,L01ED,L01
+L01ED05,lorlatinib,L01ED,L01
+L01EE01,trametinib,L01EE,L01
+L01EE02,cobimetinib,L01EE,L01
+L01EE03,binimetinib,L01EE,L01
+L01EE04,selumetinib,L01EE,L01
+L01EE05,mirdametinib,L01EE,L01
+L01EE06,tunlametinib,L01EE,L01
+L01EF01,palbociclib,L01EF,L01
+L01EF02,ribociclib,L01EF,L01
+L01EF03,abemaciclib,L01EF,L01
+L01EG01,temsirolimus,L01EG,L01
+L01EG02,everolimus,L01EG,L01
+L01EG03,ridaforolimus,L01EG,L01
+L01EG04,sirolimus,L01EG,L01
+L01EH01,lapatinib,L01EH,L01
+L01EH02,neratinib,L01EH,L01
+L01EH03,tucatinib,L01EH,L01
+L01EH04,zongertinib,L01EH,L01
+L01EH05,mifanertinib,L01EH,L01
+L01EH06,sevabertinib,L01EH,L01
+L01EJ01,ruxolitinib,L01EJ,L01
+L01EJ02,fedratinib,L01EJ,L01
+L01EJ03,pacritinib,L01EJ,L01
+L01EJ04,momelotinib,L01EJ,L01
+L01EK01,axitinib,L01EK,L01
+L01EK02,cediranib,L01EK,L01
+L01EK03,tivozanib,L01EK,L01
+L01EK04,fruquintinib,L01EK,L01
+L01EK05,rivoceranib,L01EK,L01
+L01EL01,ibrutinib,L01EL,L01
+L01EL02,acalabrutinib,L01EL,L01
+L01EL03,zanubrutinib,L01EL,L01
+L01EL04,orelabrutinib,L01EL,L01
+L01EL05,pirtobrutinib,L01EL,L01
+L01EL06,tirabrutinib,L01EL,L01
+L01EM01,idelalisib,L01EM,L01
+L01EM02,copanlisib,L01EM,L01
+L01EM03,alpelisib,L01EM,L01
+L01EM04,duvelisib,L01EM,L01
+L01EM05,parsaclisib,L01EM,L01
+L01EM06,inavolisib,L01EM,L01
+L01EN01,erdafitinib,L01EN,L01
+L01EN02,pemigatinib,L01EN,L01
+L01EN03,infigratinib,L01EN,L01
+L01EN04,futibatinib,L01EN,L01
+L01EP01,capmatinib,L01EP,L01
+L01EP02,tepotinib,L01EP,L01
+L01EP03,savolitinib,L01EP,L01
+L01EX01,sunitinib,L01EX,L01
+L01EX02,sorafenib,L01EX,L01
+L01EX03,pazopanib,L01EX,L01
+L01EX04,vandetanib,L01EX,L01
+L01EX05,regorafenib,L01EX,L01
+L01EX06,masitinib,L01EX,L01
+L01EX07,cabozantinib,L01EX,L01
+L01EX08,lenvatinib,L01EX,L01
+L01EX09,nintedanib,L01EX,L01
+L01EX10,midostaurin,L01EX,L01
+L01EX11,quizartinib,L01EX,L01
+L01EX12,larotrectinib,L01EX,L01
+L01EX13,gilteritinib,L01EX,L01
+L01EX14,entrectinib,L01EX,L01
+L01EX15,pexidartinib,L01EX,L01
+L01EX18,avapritinib,L01EX,L01
+L01EX19,ripretinib,L01EX,L01
+L01EX22,selpercatinib,L01EX,L01
+L01EX23,pralsetinib,L01EX,L01
+L01EX24,surufatinib,L01EX,L01
+L01EX25,umbralisib,L01EX,L01
+L01EX26,sitravatinib,L01EX,L01
+L01EX27,capivasertib,L01EX,L01
+L01EX28,repotrectinib,L01EX,L01
+L01EX29,vimseltinib,L01EX,L01
+L01FA01,rituximab,L01FA,L01
+L01FA02,ofatumumab,L01FA,L01
+L01FA03,obinutuzumab,L01FA,L01
+L01FB01,inotuzumab ozogamicin,L01FB,L01
+L01FB02,moxetumomab pasudotox,L01FB,L01
+L01FC01,daratumumab,L01FC,L01
+L01FC02,isatuximab,L01FC,L01
+L01FD01,trastuzumab,L01FD,L01
+L01FD02,pertuzumab,L01FD,L01
+L01FD03,trastuzumab emtansine,L01FD,L01
+L01FD04,trastuzumab deruxtecan,L01FD,L01
+L01FD05,trastuzumab duocarmazine,L01FD,L01
+L01FD06,margetuximab,L01FD,L01
+L01FD07,zanidatamab,L01FD,L01
+L01FE01,cetuximab,L01FE,L01
+L01FE02,panitumumab,L01FE,L01
+L01FE03,necitumumab,L01FE,L01
+L01FF01,nivolumab,L01FF,L01
+L01FF02,pembrolizumab,L01FF,L01
+L01FF03,durvalumab,L01FF,L01
+L01FF04,avelumab,L01FF,L01
+L01FF05,atezolizumab,L01FF,L01
+L01FF06,cemiplimab,L01FF,L01
+L01FF07,dostarlimab,L01FF,L01
+L01FF08,prolgolimab,L01FF,L01
+L01FF09,tislelizumab,L01FF,L01
+L01FF10,retifanlimab,L01FF,L01
+L01FF11,sugemalimab,L01FF,L01
+L01FF12,serplulimab,L01FF,L01
+L01FF13,toripalimab,L01FF,L01
+L01FF14,camrelizumab,L01FF,L01
+L01FF15,envafolimab,L01FF,L01
+L01FF16,sasanlimab,L01FF,L01
+L01FG01,bevacizumab,L01FG,L01
+L01FG02,ramucirumab,L01FG,L01
+L01FX01,edrecolomab,L01FX,L01
+L01FX02,gemtuzumab ozogamicin,L01FX,L01
+L01FX03,catumaxomab,L01FX,L01
+L01FX04,ipilimumab,L01FX,L01
+L01FX05,brentuximab vedotin,L01FX,L01
+L01FX06,dinutuximab beta,L01FX,L01
+L01FX07,blinatumomab,L01FX,L01
+L01FX08,elotuzumab,L01FX,L01
+L01FX09,mogamulizumab,L01FX,L01
+L01FX10,olaratumab,L01FX,L01
+L01FX11,bermekimab,L01FX,L01
+L01FX12,tafasitamab,L01FX,L01
+L01FX13,enfortumab vedotin,L01FX,L01
+L01FX14,polatuzumab vedotin,L01FX,L01
+L01FX15,belantamab mafodotin,L01FX,L01
+L01FX16,oportuzumab monatox,L01FX,L01
+L01FX17,sacituzumab govitecan,L01FX,L01
+L01FX18,amivantamab,L01FX,L01
+L01FX19,sabatolimab,L01FX,L01
+L01FX20,tremelimumab,L01FX,L01
+L01FX21,naxitamab,L01FX,L01
+L01FX22,loncastuximab tesirine,L01FX,L01
+L01FX23,tisotumab vedotin,L01FX,L01
+L01FX24,teclistamab,L01FX,L01
+L01FX25,mosunetuzumab,L01FX,L01
+L01FX26,mirvetuximab soravtansine,L01FX,L01
+L01FX27,epcoritamab,L01FX,L01
+L01FX28,glofitamab,L01FX,L01
+L01FX29,talquetamab,L01FX,L01
+L01FX31,zolbetuximab,L01FX,L01
+L01FX32,elranatamab,L01FX,L01
+L01FX33,tarlatamab,L01FX,L01
+L01FX34,odronextamab,L01FX,L01
+L01FX35,datopotamab deruxtecan,L01FX,L01
+L01FX36,patritumab deruxtecan,L01FX,L01
+L01FX37,linvoseltamab,L01FX,L01
+L01FX38,ifinatamab deruxtecan,L01FX,L01
+L01FX39,bemarituzumab,L01FX,L01
+L01FY01,pertuzumab and trastuzumab,L01FY,L01
+L01FY02,nivolumab and relatlimab,L01FY,L01
+L01FY03,prolgolimab and nurulimab,L01FY,L01
+L01XA01,cisplatin,L01XA,L01
+L01XA02,carboplatin,L01XA,L01
+L01XA03,oxaliplatin,L01XA,L01
+L01XA04,satraplatin,L01XA,L01
+L01XA05,polyplatillen,L01XA,L01
+L01XB01,procarbazine,L01XB,L01
+L01XD01,porfimer sodium,L01XD,L01
+L01XD03,methyl aminolevulinate,L01XD,L01
+L01XD04,aminolevulinic acid,L01XD,L01
+L01XD05,temoporfin,L01XD,L01
+L01XD06,efaproxiral,L01XD,L01
+L01XD07,padeliporfin,L01XD,L01
+L01XF01,tretinoin,L01XF,L01
+L01XF02,alitretinoin,L01XF,L01
+L01XF03,bexarotene,L01XF,L01
+L01XG01,bortezomib,L01XG,L01
+L01XG02,carfilzomib,L01XG,L01
+L01XG03,ixazomib,L01XG,L01
+L01XH01,vorinostat,L01XH,L01
+L01XH02,romidepsin,L01XH,L01
+L01XH03,panobinostat,L01XH,L01
+L01XH04,belinostat,L01XH,L01
+L01XH05,entinostat,L01XH,L01
+L01XH06,tucidinostat,L01XH,L01
+L01XH07,resminostat,L01XH,L01
+L01XJ01,vismodegib,L01XJ,L01
+L01XJ02,sonidegib,L01XJ,L01
+L01XJ03,glasdegib,L01XJ,L01
+L01XK01,olaparib,L01XK,L01
+L01XK02,niraparib,L01XK,L01
+L01XK03,rucaparib,L01XK,L01
+L01XK04,talazoparib,L01XK,L01
+L01XK05,veliparib,L01XK,L01
+L01XK06,pamiparib,L01XK,L01
+L01XK07,senaparib,L01XK,L01
+L01XK52,niraparib and abiraterone,L01XK,L01
+L01XL01,sitimagene ceradenovec,L01XL,L01
+L01XL02,talimogene laherparepvec,L01XL,L01
+L01XL03,axicabtagene ciloleucel,L01XL,L01
+L01XL04,tisagenlecleucel,L01XL,L01
+L01XL05,ciltacabtagene autoleucel,L01XL,L01
+L01XL06,brexucabtagene autoleucel,L01XL,L01
+L01XL07,idecabtagene vicleucel,L01XL,L01
+L01XL08,lisocabtagene maraleucel,L01XL,L01
+L01XL09,tabelecleucel,L01XL,L01
+L01XL10,nadofaragene firadenovec,L01XL,L01
+L01XL11,lifileucel,L01XL,L01
+L01XL12,obecabtagene autoleucel,L01XL,L01
+L01XM01,enasidenib,L01XM,L01
+L01XM02,ivosidenib,L01XM,L01
+L01XM03,olutasidenib,L01XM,L01
+L01XM04,vorasidenib,L01XM,L01
+L01XX01,amsacrine,L01XX,L01
+L01XX02,asparaginase,L01XX,L01
+L01XX03,altretamine,L01XX,L01
+L01XX05,hydroxycarbamide,L01XX,L01
+L01XX07,lonidamine,L01XX,L01
+L01XX08,pentostatin,L01XX,L01
+L01XX10,masoprocol,L01XX,L01
+L01XX11,estramustine,L01XX,L01
+L01XX16,mitoguazone,L01XX,L01
+L01XX18,tiazofurine,L01XX,L01
+L01XX23,mitotane,L01XX,L01
+L01XX24,pegaspargase,L01XX,L01
+L01XX27,arsenic trioxide,L01XX,L01
+L01XX29,denileukin diftitox,L01XX,L01
+L01XX33,celecoxib,L01XX,L01
+L01XX35,anagrelide,L01XX,L01
+L01XX36,oblimersen,L01XX,L01
+L01XX40,omacetaxine mepesuccinate,L01XX,L01
+L01XX41,eribulin,L01XX,L01
+L01XX44,aflibercept,L01XX,L01
+L01XX52,venetoclax,L01XX,L01
+L01XX53,vosaroxin,L01XX,L01
+L01XX57,plitidepsin,L01XX,L01
+L01XX58,epacadostat,L01XX,L01
+L01XX66,selinexor,L01XX,L01
+L01XX67,tagraxofusp,L01XX,L01
+L01XX69,lurbinectedin,L01XX,L01
+L01XX72,tazemetostat,L01XX,L01
+L01XX73,sotorasib,L01XX,L01
+L01XX74,belzutifan,L01XX,L01
+L01XX75,tebentafusp,L01XX,L01
+L01XX77,adagrasib,L01XX,L01
+L01XX78,navitoclax,L01XX,L01
+L01XX79,eflornithine,L01XX,L01
+L01XX80,imetelstat,L01XX,L01
+L01XX81,nirogacestat,L01XX,L01
+L01XX82,darinaparsin,L01XX,L01
+L01XX83,para-toluenesulfonamide,L01XX,L01
+L01XX84,pelabresib,L01XX,L01
+L01XX85,idroxioleic acid,L01XX,L01
+L01XX86,calaspargase pegol,L01XX,L01
+L01XX87,revumenib,L01XX,L01
+L01XY01,cytarabine and daunorubicin,L01XY,L01
+L01XY04,bifikafusp alfa and onfekafusp alfa,L01XY,L01
+L02AA01,diethylstilbestrol,L02AA,L02
+L02AA02,polyestradiol phosphate,L02AA,L02
+L02AA03,ethinylestradiol,L02AA,L02
+L02AA04,fosfestrol,L02AA,L02
+L02AB01,megestrol,L02AB,L02
+L02AB02,medroxyprogesterone,L02AB,L02
+L02AB03,gestonorone,L02AB,L02
+L02AE01,buserelin,L02AE,L02
+L02AE02,leuprorelin,L02AE,L02
+L02AE03,goserelin,L02AE,L02
+L02AE04,triptorelin,L02AE,L02
+L02AE05,histrelin,L02AE,L02
+L02AE51,leuprorelin and bicalutamide,L02AE,L02
+L02BA01,tamoxifen,L02BA,L02
+L02BA02,toremifene,L02BA,L02
+L02BA03,fulvestrant,L02BA,L02
+L02BA04,elacestrant,L02BA,L02
+L02BA05,camizestrant,L02BA,L02
+L02BB01,flutamide,L02BB,L02
+L02BB02,nilutamide,L02BB,L02
+L02BB03,bicalutamide,L02BB,L02
+L02BB04,enzalutamide,L02BB,L02
+L02BB05,apalutamide,L02BB,L02
+L02BB06,darolutamide,L02BB,L02
+L02BG01,aminoglutethimide,L02BG,L02
+L02BG02,formestane,L02BG,L02
+L02BG03,anastrozole,L02BG,L02
+L02BG04,letrozole,L02BG,L02
+L02BG05,vorozole,L02BG,L02
+L02BG06,exemestane,L02BG,L02
+L02BX01,abarelix,L02BX,L02
+L02BX02,degarelix,L02BX,L02
+L02BX03,abiraterone,L02BX,L02
+L02BX04,relugolix,L02BX,L02
+L02BX53,abiraterone and corticosteroids,L02BX,L02
+L03AA02,filgrastim,L03AA,L03
+L03AA03,molgramostim,L03AA,L03
+L03AA09,sargramostim,L03AA,L03
+L03AA10,lenograstim,L03AA,L03
+L03AA12,ancestim,L03AA,L03
+L03AA13,pegfilgrastim,L03AA,L03
+L03AA14,lipegfilgrastim,L03AA,L03
+L03AA15,balugrastim,L03AA,L03
+L03AA16,empegfilgrastim,L03AA,L03
+L03AA17,pegteograstim,L03AA,L03
+L03AA18,efbemalenograstim alfa,L03AA,L03
+L03AA19,eflapegrastim,L03AA,L03
+L03AB01,interferon alfa natural,L03AB,L03
+L03AB02,interferon beta natural,L03AB,L03
+L03AB03,interferon gamma,L03AB,L03
+L03AB04,interferon alfa-2a,L03AB,L03
+L03AB05,interferon alfa-2b,L03AB,L03
+L03AB06,interferon alfa-n1,L03AB,L03
+L03AB07,interferon beta-1a,L03AB,L03
+L03AB08,interferon beta-1b,L03AB,L03
+L03AB09,interferon alfacon-1,L03AB,L03
+L03AB10,peginterferon alfa-2b,L03AB,L03
+L03AB11,peginterferon alfa-2a,L03AB,L03
+L03AB12,albinterferon alfa-2b,L03AB,L03
+L03AB13,peginterferon beta-1a,L03AB,L03
+L03AB14,cepeginterferon alfa-2b,L03AB,L03
+L03AB15,ropeginterferon alfa-2b,L03AB,L03
+L03AB16,peginterferon alfacon-2,L03AB,L03
+L03AB17,sampeginterferon beta-1a,L03AB,L03
+L03AB60,"peginterferon alfa-2b, combinations",L03AB,L03
+L03AB61,"peginterferon alfa-2a, combinations",L03AB,L03
+L03AC01,aldesleukin,L03AC,L03
+L03AC02,oprelvekin,L03AC,L03
+L03AC03,nogapendekin alfa and inbakicept,L03AC,L03
+L03AX01,lentinan,L03AX,L03
+L03AX02,roquinimex,L03AX,L03
+L03AX03,BCG vaccine,L03AX,L03
+L03AX04,pegademase,L03AX,L03
+L03AX05,pidotimod,L03AX,L03
+L03AX07,poly I:C,L03AX,L03
+L03AX08,poly ICLC,L03AX,L03
+L03AX09,thymopentin,L03AX,L03
+L03AX10,immunocyanin,L03AX,L03
+L03AX11,tasonermin,L03AX,L03
+L03AX12,melanoma vaccine,L03AX,L03
+L03AX13,glatiramer acetate,L03AX,L03
+L03AX14,histamine dihydrochloride,L03AX,L03
+L03AX15,mifamurtide,L03AX,L03
+L03AX16,plerixafor,L03AX,L03
+L03AX17,sipuleucel-T,L03AX,L03
+L03AX18,cridanimod,L03AX,L03
+L03AX19,dasiprotimut-T,L03AX,L03
+L03AX21,elapegademase,L03AX,L03
+L03AX22,leniolisib,L03AX,L03
+L03AX23,motixafortide,L03AX,L03
+L03AX24,mavorixafor,L03AX,L03
+L03AX25,thymalfasin,L03AX,L03
+M05BA01,etidronic acid,M05BA,M05
+M05BA02,clodronic acid,M05BA,M05
+M05BA03,pamidronic acid,M05BA,M05
+M05BA04,alendronic acid,M05BA,M05
+M05BA05,tiludronic acid,M05BA,M05
+M05BA06,ibandronic acid,M05BA,M05
+M05BA07,risedronic acid,M05BA,M05
+M05BA08,zoledronic acid,M05BA,M05
+M05BB01,"etidronic acid and calcium, sequential",M05BB,M05
+M05BB02,"risedronic acid and calcium, sequential",M05BB,M05
+M05BB03,alendronic acid and colecalciferol,M05BB,M05
+M05BB04,"risedronic acid, calcium and colecalciferol, sequential",M05BB,M05
+M05BB05,"alendronic acid, calcium and colecalciferol, sequential",M05BB,M05
+M05BB06,"alendronic acid and alfacalcidol, sequential",M05BB,M05
+M05BB07,risedronic acid and colecalciferol,M05BB,M05
+M05BB08,"zoledronic acid, calcium and colecalciferol, sequential",M05BB,M05
+M05BB09,ibandronic acid and colecalciferol,M05BB,M05
+M05BC01,dibotermin alfa,M05BC,M05
+M05BC02,eptotermin alfa,M05BC,M05
+M05BX01,ipriflavone,M05BX,M05
+M05BX02,aluminium chlorohydrate,M05BX,M05
+M05BX03,strontium ranelate,M05BX,M05
+M05BX04,denosumab,M05BX,M05
+M05BX05,burosumab,M05BX,M05
+M05BX06,romosozumab,M05BX,M05
+M05BX07,vosoritide,M05BX,M05
+M05BX08,menatetrenone,M05BX,M05
+M05BX53,strontium ranelate and colecalciferol,M05BX,M05

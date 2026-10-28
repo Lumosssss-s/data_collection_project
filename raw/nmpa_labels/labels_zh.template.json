@@ -1,0 +1,1062 @@
+{
+  "_说明": "按 drug_id 填写 NMPA 中文说明书要点；adverse_reactions 每项须含 term/frequency。填完另存为 labels_zh.json（同目录），再运行 python tools/19_fetch_openfda_labels.py 合并。",
+  "_来源要求": "NMPA 公开说明书（国家药品监督管理局数据查询 / 企业官网 PDF），source_name 写说明书名称",
+  "drugs": {
+    "DRUG-LUNG-001": {
+      "canonical_zh": "阿来替尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-001": {
+      "canonical_zh": "阿那曲唑",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-SUP-001": {
+      "canonical_zh": "阿瑞匹坦",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-002": {
+      "canonical_zh": "阿替利珠单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-003": {
+      "canonical_zh": "贝伐珠单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-002": {
+      "canonical_zh": "卡培他滨",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-004": {
+      "canonical_zh": "卡铂",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-CRC-001": {
+      "canonical_zh": "西妥昔单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-005": {
+      "canonical_zh": "顺铂",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-006": {
+      "canonical_zh": "克唑替尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-003": {
+      "canonical_zh": "环磷酰胺",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-SUP-002": {
+      "canonical_zh": "地舒单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-SUP-003": {
+      "canonical_zh": "地塞米松",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-007": {
+      "canonical_zh": "多西他赛",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-004": {
+      "canonical_zh": "多柔比星",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-008": {
+      "canonical_zh": "度伐利尤单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-005": {
+      "canonical_zh": "表柔比星",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-009": {
+      "canonical_zh": "厄洛替尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-010": {
+      "canonical_zh": "依托泊苷",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-006": {
+      "canonical_zh": "依西美坦",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-SUP-004": {
+      "canonical_zh": "非格司亭",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-CRC-002": {
+      "canonical_zh": "氟尿嘧啶",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-007": {
+      "canonical_zh": "氟维司群",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-011": {
+      "canonical_zh": "吉非替尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-012": {
+      "canonical_zh": "吉西他滨",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-CRC-003": {
+      "canonical_zh": "伊立替康",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-008": {
+      "canonical_zh": "拉帕替尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-THY-001": {
+      "canonical_zh": "仑伐替尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-009": {
+      "canonical_zh": "来曲唑",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-THY-002": {
+      "canonical_zh": "左甲状腺素",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-013": {
+      "canonical_zh": "纳武利尤单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-SUP-005": {
+      "canonical_zh": "昂达司琼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-014": {
+      "canonical_zh": "奥希替尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-CRC-004": {
+      "canonical_zh": "奥沙利铂",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-015": {
+      "canonical_zh": "紫杉醇",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-CRC-005": {
+      "canonical_zh": "帕尼单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-SUP-006": {
+      "canonical_zh": "聚乙二醇非格司亭",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-016": {
+      "canonical_zh": "帕博利珠单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-017": {
+      "canonical_zh": "培美曲塞",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-010": {
+      "canonical_zh": "帕妥珠单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-LUNG-018": {
+      "canonical_zh": "雷莫西尤单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-CRC-006": {
+      "canonical_zh": "瑞戈非尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-THY-003": {
+      "canonical_zh": "索拉非尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-011": {
+      "canonical_zh": "他莫昔芬",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-012": {
+      "canonical_zh": "曲妥珠单抗",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-BREAST-013": {
+      "canonical_zh": "曲妥珠单抗-emtansine",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-THY-004": {
+      "canonical_zh": "凡德他尼",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    },
+    "DRUG-SUP-007": {
+      "canonical_zh": "唑来膦酸",
+      "approval_no": "",
+      "brand_names": [],
+      "indications": [],
+      "dosage": {
+        "standard": "",
+        "adjustment": ""
+      },
+      "contraindications": [],
+      "adverse_reactions": [
+        {
+          "term": "",
+          "frequency": "",
+          "ctcae_hint": ""
+        }
+      ],
+      "interactions": [],
+      "source_name": "",
+      "source_url": "",
+      "approved_date": ""
+    }
+  }
+}

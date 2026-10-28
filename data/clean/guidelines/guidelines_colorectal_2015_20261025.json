@@ -1,0 +1,23 @@
+[
+  {
+    "doc_id": "DOC-CRC-NHC-001",
+    "title": "结直肠癌诊疗规范（2015年版）",
+    "doc_type": "standard",
+    "issuer": "国家卫生计生委医政医管局",
+    "publish_date": "2015-10-21",
+    "cancer_types": [
+      "colorectal"
+    ],
+    "license_note": "国家卫生计生委医政医管局公开文件（国卫医医护便函〔2015〕292号，2015-10-21 公开），公开可引用，引用需标注出处；仅限非商业竞赛使用。原件为 .doc 附件，经 Word 转换为 .docx 入库，原始 .doc 与转换件同目录保留，doc_hash 对应转换件。原文：https://www.nhc.gov.cn/yzygj/c100068/201510/922e2426eb02416e8344715cab601f2e.shtml",
+    "file_path": "raw/guidelines/colorectal/nhc2015_01_colorectal.docx",
+    "doc_hash": "8df67a70955a6c3a545a6e50e75ae921f06d55e8aa741244e1a943f0251538b8",
+    "source_name": "结直肠癌诊疗规范（2015年版）",
+    "source_version": "2015",
+    "source_section": "全文",
+    "source_file": "nhc2015_01_colorectal.docx",
+    "updated_at": "2026-10-25",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null
+  }
+]

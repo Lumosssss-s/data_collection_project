@@ -1,0 +1,23 @@
+[
+  {
+    "doc_id": "DOC-CRC-NHC-002",
+    "title": "结直肠癌筛查与早诊早治方案（2024年版）",
+    "doc_type": "standard",
+    "issuer": "中华人民共和国国家卫生健康委员会办公厅",
+    "publish_date": "2024-08-27",
+    "cancer_types": [
+      "colorectal"
+    ],
+    "license_note": "国家卫生健康委办公厅公开文件（国卫办医急函〔2024〕281号，2024-08-27 公开），公开可引用，引用需标注出处；仅限非商业竞赛使用。该通知附件为网页正文、未提供附件文件，本件由官网正文逐字转录为 .docx，正文快照 nhc2024_02_colorectal_screening.txt 同目录保留，doc_hash 对应转录件。原文：https://www.nhc.gov.cn/ylyjs/gzdt/202408/42f43b5f0c4c4ebe90c78ee127959b92.shtml",
+    "file_path": "raw/guidelines/colorectal/nhc2024_02_colorectal_screening.docx",
+    "doc_hash": "9d94a5478b1187b05947b512ad61e89b45266f9b975f6ddcb175eadd99351c71",
+    "source_name": "结直肠癌筛查与早诊早治方案（2024年版）",
+    "source_version": "2024",
+    "source_section": "全文",
+    "source_file": "nhc2024_02_colorectal_screening.docx",
+    "updated_at": "2026-10-25",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null
+  }
+]

@@ -1,0 +1,47 @@
+# ==== Python ====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ==== 处理缓存：脚本可重跑再生，不入库 ====
+cache/
+
+# ==== 版权受限资料：禁止对外分发 ====
+# NCCN 指南原件（版权保留）、BIOS 术语库（CC BY-NC-ND 4.0）
+external/
+
+# ==== 收件箱：仅作中转，分类后即移走 ====
+inbox/*
+
+# ==== NCCN 相关记录：非交付物，不入公开仓库 ====
+data/clean/guidelines/*nccn*
+
+# ==== 上游原始数据集：体积大且各有独立授权，不在仓库再分发 ====
+# 仅保留各目录的上游 README / LICENSE 说明文件
+raw/cmedqa2/*
+!raw/cmedqa2/README*
+!raw/cmedqa2/LICENSE*
+raw/pubmed_cancer/*
+!raw/pubmed_cancer/README*
+raw/cblue/*
+!raw/cblue/README*
+raw/kgdrug/*
+!raw/kgdrug/README*
+raw/fda_ndc/*
+!raw/fda_ndc/README*
+raw/guidelines/*
+!raw/guidelines/README*
+raw/_deprecated/
+
+# ==== 抓取件中的大体积原件：17 号脚本可一键重抓 ====
+fetched/codetables/*.rar
+fetched/codetables/_unzipped/
+
+# ==== 系统 / 编辑器 ====
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.log
