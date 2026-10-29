@@ -13,23 +13,23 @@ registerPage('topic', function (container) {
         <hr class="divider">
 
         <!-- 选择面板 -->
-        <div style="margin-bottom:1.5rem;">
-            <div style="margin-bottom:0.75rem;">
-                <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">专题主题</label>
+        <div class="card form-panel">
+            <div class="form-field">
+                <label class="form-label">专题主题</label>
                 <input type="text" id="topic-query" class="input" placeholder="例如：${TOPIC_EXAMPLE}">
             </div>
-            <div class="grid-2" style="margin-bottom:0.75rem;">
+            <div class="grid-2 form-field">
                 <div>
-                    <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">癌种 A</label>
+                    <label class="form-label">癌种 A</label>
                     <select id="topic-cancer-a" class="select"></select>
                 </div>
                 <div>
-                    <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">癌种 B</label>
+                    <label class="form-label">癌种 B</label>
                     <select id="topic-cancer-b" class="select"></select>
                 </div>
             </div>
-            <div style="margin-bottom:0.75rem;">
-                <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">每癌种检索条目数: <span id="topic-topn-val">8</span></label>
+            <div class="form-field">
+                <label class="form-label">每癌种检索条目数: <span id="topic-topn-val">8</span></label>
                 <input type="range" id="topic-topn" min="3" max="20" value="8" style="width:260px;">
             </div>
             <button id="topic-run" class="btn btn-primary">生成专题分析</button>
@@ -154,7 +154,7 @@ function renderTopicResult(container, r) {
 
 function renderGuideGroup(cancerName, guides) {
     let html = '<div class="card" style="padding:0.875rem 1rem;">';
-    html += '<div style="font-weight:600;font-size:0.8125rem;color:var(--color-text);margin-bottom:0.5rem;">' + escapeHtml(cancerName) + '</div>';
+    html += '<div class="sub-title">' + escapeHtml(cancerName) + '</div>';
     if (!guides.length) {
         html += '<div style="font-size:0.8125rem;color:var(--color-text-muted);">未检索到相关指南</div>';
     } else {

@@ -7,8 +7,31 @@
 }
 
 .header {
-  padding: 64rpx $page-padding 48rpx;
+  position: relative;
+  overflow: hidden;
+  padding: 56rpx $page-padding 56rpx;
   background: linear-gradient(150deg, $color-primary 0%, $color-primary-light 100%);
+}
+
+/* 品牌装饰圆环：半透明白，只作层次点缀，不与文字争夺注意力 */
+.header::before {
+  content: '';
+  position: absolute;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  border: 44rpx solid rgba(255, 255, 255, 0.1);
+  right: -110rpx;
+  top: -130rpx;
+}
+
+.headerEyebrow {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .headerTitle {
@@ -27,7 +50,8 @@
   line-height: $line-height-loose;
 }
 
-.body {
+/* 类名避开 body：Taro 的 rpx 转换会跳过含 body 的选择器 */
+.content {
   padding: 0 $page-padding;
   margin-top: -32rpx;
 }
@@ -39,19 +63,76 @@
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   width: 335rpx;
   box-sizing: border-box;
   background: $color-bg-card;
+  border: 1rpx solid $color-border;
   border-radius: $radius-lg;
   padding: $spacing-lg;
   margin-bottom: $spacing-md;
   box-shadow: $shadow-card;
   transition: all $transition-base;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rpx;
+  }
+
   &:active {
     opacity: 0.9;
     transform: scale(0.98);
   }
+}
+
+/* 入口色调：顶部细条 + 序号底衬，四色均取自既有语义色板 */
+.tone-primary {
+  &::before { background: $color-primary; }
+  .cardIndex { color: $color-primary; background: $color-primary-soft; }
+}
+
+.tone-info {
+  &::before { background: $color-info-deep; }
+  .cardIndex { color: $color-info-deep; background: $color-info-soft; }
+}
+
+.tone-success {
+  &::before { background: $color-success; }
+  .cardIndex { color: $color-success; background: $color-risk-low-soft; }
+}
+
+.tone-warning {
+  &::before { background: $color-warning; }
+  .cardIndex { color: $color-warning; background: $color-warning-soft; }
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+}
+
+.cardIndex {
+  font-family: $font-family-mono;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.06em;
+  color: $color-primary;
+  background: $color-primary-soft;
+  border-radius: $radius-xs;
+  padding: 2rpx 8rpx;
+}
+
+.cardArrow {
+  font-size: 36rpx;
+  line-height: 1;
+  color: $color-text-disabled;
 }
 
 .cardTitle {
@@ -73,6 +154,7 @@
   margin-top: $spacing-sm;
   padding: $spacing-lg;
   background: $color-primary-soft;
+  border-left: 6rpx solid $color-primary;
   border-radius: $radius-lg;
 }
 

@@ -9,10 +9,10 @@
 
 .tabs {
   display: flex;
-  background: $color-bg-card;
+  background: $color-bg-hover;
+  border: 1rpx solid $color-border;
   border-radius: $radius-button;
   padding: 6rpx;
-  box-shadow: $shadow-card;
 }
 
 .tab {
@@ -26,7 +26,7 @@
 }
 
 .tabActive {
-  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  background: $color-primary;
 }
 
 .tabText {
@@ -78,6 +78,7 @@
   margin-top: $spacing-md;
   padding: $spacing-sm $spacing-md;
   background: $color-warning-soft;
+  border-left: 6rpx solid $color-warning;
   border-radius: $radius-sm;
   font-size: $font-size-xs;
   color: $color-warning;
@@ -90,6 +91,7 @@
 
 .item {
   background: $color-bg-card;
+  border: 1rpx solid $color-border;
   border-radius: $radius-lg;
   padding: $spacing-lg;
   margin-bottom: $spacing-md;
@@ -109,10 +111,11 @@
 }
 
 .itemTitle {
+  flex: 1;
+  min-width: 0;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
-  max-width: 440rpx;
   @include text-ellipsis;
 }
 
@@ -124,6 +127,15 @@
   font-size: $font-size-xs;
   color: $color-primary-dark;
   white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.itemArrow {
+  margin-left: $spacing-sm;
+  font-size: 36rpx;
+  line-height: 1;
+  color: $color-text-disabled;
+  flex-shrink: 0;
 }
 
 .itemDesc {

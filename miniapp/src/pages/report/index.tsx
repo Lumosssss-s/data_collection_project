@@ -74,76 +74,140 @@ const ReportPage: React.FC = () => {
         <View className={styles.result}>
           {fromMock ? <Text className={styles.mockNotice}>{MOCK_NOTICE}</Text> : null}
 
-          <View className={styles.card}>
-            <Text className={styles.cardTitle}>结构化要点（{result.findings.length} 处）</Text>
+          {/* 概览：仅事实计数，不作医学判断 */}
+          <View className={styles.overview}>
+            <View className={styles.overviewStat}>
+              <Text className={styles.overviewValue}>{result.findings.length}</Text>
+              <Text className={styles.overviewLabel}>处要点</Text>
+            </View>
+            <View className={styles.overviewDivider} />
+            <View className={styles.overviewStat}>
+              <Text className={styles.overviewValue}>{result.key_signs.length}</Text>
+              <Text className={styles.overviewLabel}>项需关注</Text>
+            </View>
+            <View className={styles.overviewDivider} />
+            <View className={styles.overviewStat}>
+              <Text className={styles.overviewValue}>{result.followup_suggestions.length}</Text>
+              <Text className={styles.overviewLabel}>条随访建议</Text>
+            </View>
+          </View>
+
+          <View className={styles.section}>
+            <View className={styles.sectionHead}>
+              <Text className={styles.sectionIndex}>01</Text>
+              <Text className={styles.sectionTitle}>结构化要点</Text>
+            </View>
             {result.findings.length === 0 ? (
-              <Text className={styles.emptyLine}>未整理出结构化要点。</Text>
+              <View className={styles.emptyBox}>
+                <View className={styles.emptyIcon} />
+                <Text className={styles.emptyLine}>未整理出结构化要点。</Text>
+              </View>
             ) : (
               result.findings.map((f, i) => (
                 <View key={`f-${i}`} className={styles.finding}>
-                  {FINDING_FIELDS.map((field) => {
-                    const value = f[field.key];
-                    if (!value) {
-                      return null;
-                    }
-                    return (
-                      <View key={`${i}-${String(field.key)}`} className={styles.kvRow}>
-                        <Text className={styles.kvLabel}>{field.label}</Text>
-                        <Text className={styles.kvValue}>{String(value)}</Text>
-                      </View>
-                    );
-                  })}
+                  <Text className={styles.findingTitle}>发现 {i + 1}</Text>
+                  <View className={styles.kvGrid}>
+                    {FINDING_FIELDS.map((field) => {
+                      const value = f[field.key];
+                      if (!value) {
+                        return null;
+                      }
+                      return (
+                        <View key={`${i}-${String(field.key)}`} className={styles.kvItem}>
+                          <Text className={styles.kvLabel}>{field.label}</Text>
+                          <Text className={styles.kvValue}>{String(value)}</Text>
+                        </View>
+                      );
+                    })}
+                  </View>
                 </View>
               ))
             )}
           </View>
 
           {result.key_signs.length > 0 ? (
-            <View className={styles.card}>
-              <Text className={styles.cardTitle}>提示关注的征象</Text>
-              <View className={styles.tagWrap}>
+            <View className={styles.section}>
+              <View className={styles.sectionHead}>
+                <Text className={styles.sectionIndex}>02</Text>
+                <Text className={styles.sectionTitle}>提示关注的征象</Text>
+              </View>
+              <View className={styles.attentionList}>
                 {result.key_signs.map((k, i) => (
-                  <Text key={`k-${i}`} className={styles.tag}>
-                    {k}
-                  </Text>
+                  <View key={`k-${i}`} className={styles.attentionItem}>
+                    <Text className={styles.attentionMark}>!</Text>
+                    <Text className={styles.attentionText}>{k}</Text>
+                  </View>
                 ))}
               </View>
             </View>
           ) : null}
 
           {result.followup_suggestions.length > 0 ? (
-            <View className={styles.card}>
-              <Text className={styles.cardTitle}>随访建议</Text>
-              {result.followup_suggestions.map((s, i) => (
-                <View key={`s-${i}`} className={styles.suggestion}>
-                  <Text className={styles.suggestionText}>{s.text}</Text>
-                  <Text className={styles.suggestionSource}>来源：{s.source}</Text>
-                </View>
-              ))}
+            <View className={styles.section}>
+              <View className={styles.sectionHead}>
+                <Text className={styles.sectionIndex}>03</Text>
+                <Text className={styles.sectionTitle}>下一步做什么</Text>
+              </View>
+              <View className={styles.stepList}>
+                {result.followup_suggestions.map((s, i) => (
+                  <View key={`s-${i}`} className={styles.step}>
+                    <View className={styles.stepIndexWrap}>
+                      <Text className={styles.stepIndex}>{i + 1}</Text>
+                    </View>
+                    <View className={styles.stepBody}>
+                      <Text className={styles.stepText}>{s.text}</Text>
+                      <Text className={styles.stepSource}>来源：{s.source}</Text>
+                    </View>
+                  </View>
+                ))}
+              </View>
             </View>
           ) : null}
 
           {result.diff_prev ? (
-            <View className={styles.card}>
-              <Text className={styles.cardTitle}>与上次对比</Text>
-              <Text className={styles.diffHead}>
-                上次 {result.diff_prev.previous_count} 处 → 本次 {result.diff_prev.current_count} 处
-              </Text>
+            <View className={styles.section}>
+              <View className={styles.sectionHead}>
+                <Text className={styles.sectionIndex}>04</Text>
+                <Text className={styles.sectionTitle}>与上次对比</Text>
+              </View>
+
+              <View className={styles.diffRow}>
+                <Text className={styles.diffLabel}>病灶数量</Text>
+                <Text className={styles.diffValue}>
+                  上次 {result.diff_prev.previous_count} 处 → 本次 {result.diff_prev.current_count} 处
+                </Text>
+              </View>
+
               {result.diff_prev.size_changes && result.diff_prev.size_changes.length > 0
                 ? result.diff_prev.size_changes.map((c, i) => (
-                    <Text key={`sc-${i}`} className={styles.diffChange}>
-                      大小变化：{c.site} {c.before} → {c.after}
-                    </Text>
+                    <View key={`sc-${i}`} className={styles.diffRow}>
+                      <Text className={styles.diffLabel}>{c.site}</Text>
+                      <Text className={styles.diffValue}>
+                        {c.before} → {c.after}
+                      </Text>
+                    </View>
                   ))
                 : null}
+
               {result.diff_prev.added.length > 0 ? (
-                <Text className={styles.diffAdded}>新增：{result.diff_prev.added.join('；')}</Text>
+                <View className={styles.diffItem}>
+                  <Text className={classnames(styles.diffSymbol, styles.diffSymbolWarn)}>+</Text>
+                  <Text className={styles.diffDescription}>新增：{result.diff_prev.added.join('；')}</Text>
+                </View>
               ) : null}
+
               {result.diff_prev.removed.length > 0 ? (
-                <Text className={styles.diffRemoved}>消失：{result.diff_prev.removed.join('；')}</Text>
+                <View className={styles.diffItem}>
+                  <Text className={classnames(styles.diffSymbol, styles.diffSymbolGood)}>−</Text>
+                  <Text className={styles.diffDescription}>消失：{result.diff_prev.removed.join('；')}</Text>
+                </View>
               ) : null}
+
               {result.diff_prev.unchanged.length > 0 ? (
-                <Text className={styles.diffSame}>无变化：{result.diff_prev.unchanged.join('；')}</Text>
+                <View className={styles.diffItem}>
+                  <Text className={classnames(styles.diffSymbol, styles.diffSymbolSame)}>=</Text>
+                  <Text className={styles.diffDescription}>无变化：{result.diff_prev.unchanged.join('；')}</Text>
+                </View>
               ) : null}
             </View>
           ) : null}

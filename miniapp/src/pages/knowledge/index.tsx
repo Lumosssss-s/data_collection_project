@@ -112,6 +112,7 @@ const KnowledgePage: React.FC = () => {
                   <View className={styles.itemHead}>
                     <Text className={styles.itemTitle}>{d.name_canonical}</Text>
                     {d.category_label ? <Text className={styles.itemTag}>{d.category_label}</Text> : null}
+                    <Text className={styles.itemArrow}>›</Text>
                   </View>
                   <Text className={styles.itemDesc}>{d.overview}</Text>
                 </View>
@@ -120,6 +121,7 @@ const KnowledgePage: React.FC = () => {
                 <View key={d.drug_id} className={styles.item} onClick={() => openDrug(d.drug_id)}>
                   <View className={styles.itemHead}>
                     <Text className={styles.itemTitle}>{d.generic_name}</Text>
+                    <Text className={styles.itemArrow}>›</Text>
                   </View>
                   {d.brand_names && d.brand_names.length > 0 ? (
                     <Text className={styles.itemDesc}>商品名：{d.brand_names.join('、')}</Text>

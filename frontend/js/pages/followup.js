@@ -17,12 +17,12 @@ registerPage('followup', function (container) {
 
     container.innerHTML = `
         <h1 class="page-title">智能随访</h1>
-        <p class="page-subtitle" style="color:var(--color-text-muted);margin-bottom:1rem;">
+        <p class="page-desc">
             按「癌种 × 阶段」生成随访计划，跟踪随访任务并依据 CTCAE 5.0 对反馈分级，3 级及以上自动预警。
         </p>
 
         <div class="card" style="padding:1rem;margin-bottom:1rem;">
-            <div style="font-weight:600;margin-bottom:0.75rem;">生成随访计划</div>
+            <div class="card-title">生成随访计划</div>
             <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:flex-end;">
                 <div><div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem;">病例 ID</div>
                     <input id="fu-case" class="input" style="width:160px;" placeholder="CASE-001"></div>
@@ -90,7 +90,7 @@ function renderFollowup() {
     }
 
     if (!plan.tasks || !plan.tasks.length) {
-        html += '<div class="alert alert-info">该条件下暂无随访任务（模板未匹配或数据未就绪）。</div>';
+        html += emptyState('该条件下暂无随访任务（模板未匹配或数据未就绪）。');
         body.innerHTML = html;
         return;
     }
@@ -105,8 +105,8 @@ function renderFollowup() {
     html += '</div></div>';
 
     // 任务列表
-    html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;"><div style="font-weight:600;margin-bottom:0.5rem;">随访任务</div>';
-    html += '<table style="width:100%;border-collapse:collapse;font-size:0.8125rem;">';
+    html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;"><div class="card-title">随访任务</div>';
+    html += '<div class="table-wrap"><table>';
     html += '<tr>' + ['时间点', '检查项目', '计划日期', '状态', '操作'].map(function (h) {
         return '<th style="border:1px solid var(--color-border);padding:6px 10px;text-align:left;background:var(--color-bg);">' + h + '</th>';
     }).join('') + '</tr>';
@@ -125,11 +125,11 @@ function renderFollowup() {
         html += '<tr data-fbrow="' + escapeHtml(t.task_id) + '" style="display:none;"><td colspan="5" style="border:1px solid var(--color-border);padding:0.75rem;background:var(--color-bg);">'
             + feedbackFormHtml(t) + '</td></tr>';
     });
-    html += '</table></div>';
+    html += '</table></div></div>';
 
     // CTCAE 监测项
     if (plan.ae_monitoring && plan.ae_monitoring.length) {
-        html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;"><div style="font-weight:600;margin-bottom:0.5rem;">不良反应监测（CTCAE 5.0）</div>';
+        html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;"><div class="card-title">不良反应监测（CTCAE 5.0）</div>';
         plan.ae_monitoring.forEach(function (ae) {
             const ga = ae.grade_action || {};
             html += '<div style="font-size:0.8125rem;margin-bottom:0.375rem;"><strong>' + escapeHtml(ae.ctcae_term || '') + '</strong>：';
@@ -140,7 +140,7 @@ function renderFollowup() {
 
     // 提醒消息模板
     if (plan.messages && plan.messages.length) {
-        html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;"><div style="font-weight:600;margin-bottom:0.5rem;">提醒消息模板（B5）</div>';
+        html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;"><div class="card-title">提醒消息模板（B5）</div>';
         plan.messages.forEach(function (m) {
             html += '<div style="font-size:0.8125rem;margin-bottom:0.5rem;padding:0.5rem;background:var(--color-bg);border-radius:6px;">';
             html += '<span class="badge badge-muted">' + escapeHtml(m.msg_type_label || m.msg_type) + '</span> ';
@@ -231,8 +231,8 @@ function loadFollowupAlerts() {
     api.get('/followup/alerts').then(function (resp) {
         if (!resp || !resp.success) return;
         const d = resp.data;
-        if (!d || !d.total) { box.innerHTML = '<div class="card" style="padding:1rem;"><div style="font-weight:600;">异常预警</div><div style="font-size:0.8125rem;color:var(--color-text-muted);margin-top:0.375rem;">暂无预警</div></div>'; return; }
-        let html = '<div class="card" style="padding:1rem;"><div style="font-weight:600;margin-bottom:0.5rem;">异常预警（' + d.total + '）</div>';
+        if (!d || !d.total) { box.innerHTML = '<div class="card" style="padding:1rem;"><div class="card-title">异常预警</div><div style="font-size:0.8125rem;color:var(--color-text-muted);margin-top:0.375rem;">暂无预警</div></div>'; return; }
+        let html = '<div class="card" style="padding:1rem;"><div class="card-title">异常预警（' + d.total + '）</div>';
         d.alerts.forEach(function (a) {
             const badge = a.level === 'emergency' ? 'badge-warning' : 'badge-info';
             html += '<div style="font-size:0.8125rem;margin-bottom:0.375rem;">';

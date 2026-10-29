@@ -8,10 +8,47 @@
 }
 
 .chat {
-  height: 46vh;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
   background: $color-bg-card;
+  border: 1rpx solid $color-border;
   border-radius: $radius-lg;
   box-shadow: $shadow-card;
+  overflow: hidden;
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: $spacing-md $spacing-lg;
+  border-bottom: 1rpx solid $color-divider;
+}
+
+.chatHeaderDot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: $color-primary;
+  margin-right: $spacing-sm;
+}
+
+.chatHeaderTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.chatHeaderHint {
+  margin-left: auto;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.chatScroll {
+  flex: 1;
+  height: calc(50vh - 72rpx);
 }
 
 .chatInner {
@@ -44,14 +81,16 @@
 .bubbleBot {
   margin-right: auto;
   background: $color-bg-hover;
+  border: 1rpx solid $color-border;
 }
 
 .bubbleWarn {
   margin-right: auto;
-  background: $color-danger-soft;
+  background: $color-risk-high-soft;
+  border-left: 6rpx solid $color-risk-high;
 
   .bubbleText {
-    color: $color-error;
+    color: $color-risk-high;
     font-size: $font-size-sm;
   }
 }
@@ -143,8 +182,28 @@
   line-height: $line-height-normal;
 }
 
-.cardItem {
-  display: block;
+.prepItem {
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-xs 0;
+}
+
+.prepIndex {
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  flex-shrink: 0;
+  margin-right: $spacing-sm;
+  text-align: center;
+  background: $color-primary-soft;
+  border-radius: $radius-round;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+}
+
+.prepText {
+  flex: 1;
   font-size: $font-size-sm;
   color: $color-text-secondary;
   line-height: $line-height-loose;
@@ -164,27 +223,72 @@
   color: $color-primary-dark;
 }
 
-.riskTag {
-  display: inline-flex;
-  align-items: center;
-  padding: $spacing-xs $spacing-lg;
-  border-radius: $radius-button;
+/* 风险分层：左侧强调条 + 图标 + 文字，颜色不单独承载结论 */
+.riskBanner {
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-sm $spacing-md;
+  border-left: 6rpx solid $color-border;
+  border-radius: $radius-sm;
+}
+
+.riskMark {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  flex-shrink: 0;
+  margin-right: $spacing-sm;
+  text-align: center;
+  border-radius: $radius-round;
+  background: $color-text-tertiary;
+  color: $color-text-white;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
 }
 
 .riskTagText {
-  font-size: $font-size-sm;
+  flex: 1;
+  font-size: $font-size-md;
   font-weight: $font-weight-semibold;
-  color: $color-text-white;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
 }
 
 .emergency {
-  background: $color-error;
+  background: $color-risk-high-soft;
+  border-left-color: $color-risk-high;
+
+  .riskMark {
+    background: $color-risk-high;
+  }
+
+  .riskTagText {
+    color: $color-risk-high;
+  }
 }
 
 .urgent {
-  background: $color-warning;
+  background: $color-risk-mid-soft;
+  border-left-color: $color-risk-mid;
+
+  .riskMark {
+    background: $color-risk-mid;
+  }
+
+  .riskTagText {
+    color: $color-risk-mid;
+  }
 }
 
 .routine {
-  background: $color-success;
+  background: $color-risk-low-soft;
+  border-left-color: $color-risk-low;
+
+  .riskMark {
+    background: $color-risk-low;
+  }
+
+  .riskTagText {
+    color: $color-risk-low;
+  }
 }

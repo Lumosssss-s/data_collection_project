@@ -16,14 +16,24 @@ const PT_SEEK_HELP = '如出现严重不适或症状加重，请及时联系医�
 
 // 患者端样式（移动优先，大字大按钮）
 const PT_CSS = `
-.pt-wrap { max-width: 720px; margin: 0 auto; }
+.pt-wrap { max-width: 1100px; margin: 0 auto; }
 .pt-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
 .pt-sub { color: var(--color-text-muted); font-size: 0.9375rem; margin-bottom: 1rem; line-height: 1.7; }
 .pt-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
 @media (min-width: 560px) { .pt-grid { grid-template-columns: 1fr 1fr; } }
 .pt-card { display: block; text-decoration: none; color: inherit; padding: 1.25rem; border-radius: 12px;
-  border: 1px solid var(--color-border); background: var(--color-surface); }
-.pt-card:hover { border-color: var(--color-primary); }
+  border: 1px solid var(--color-border); background: var(--color-surface);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; }
+.pt-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-raised); }
+.pt-card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .pt-card { transition: none; } .pt-card:hover { transform: none; } }
+/* 服务入口图标底衬：四色均取自既有语义色板，图标深色描边保证对比度 */
+.pt-card-icon { width: 40px; height: 40px; border-radius: 10px; margin-bottom: 0.625rem;
+  display: flex; align-items: center; justify-content: center; }
+.pt-ico-primary { background: var(--color-primary-soft); color: var(--color-primary); }
+.pt-ico-info { background: var(--color-info-bg); color: var(--color-info); }
+.pt-ico-success { background: var(--color-success-bg); color: var(--color-success); }
+.pt-ico-warning { background: var(--color-warning-bg); color: var(--color-warning); }
 .pt-card h3 { font-size: 1.125rem; margin-bottom: 0.375rem; }
 .pt-card p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; margin: 0; }
 .pt-btn { display: block; width: 100%; padding: 0.875rem 1rem; font-size: 1rem; border-radius: 10px;
@@ -89,16 +99,26 @@ function renderPatientHome(container) {
         '<h1 class="pt-title">患者服务</h1>'
         + '<p class="pt-sub">这里是为您准备的健康服务：可以了解疾病知识、自查症状、查看随访安排、了解用药信息。</p>'
         + '<div class="pt-grid">'
-        + ptCard('#/patient/preconsult', '先说症状', '描述您的不适，我们会提示是否需要尽快就医，并给出就诊方向。')
-        + ptCard('#/patient/disease', '了解疾病', '查看疾病的通俗介绍，包括表现、检查和日常注意。')
-        + ptCard('#/patient/followup', '我的随访', '查看随访安排，填写近况反馈，异常时会给出提醒。')
-        + ptCard('#/patient/drug', '用药了解', '用通俗的话了解药品是做什么的、注意事项和常见不良反应。')
+        + ptCard('#/patient/preconsult', '先说症状', '描述您的不适，我们会提示是否需要尽快就医，并给出就诊方向。',
+            'pt-ico-primary', '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>')
+        + ptCard('#/patient/disease', '了解疾病', '查看疾病的通俗介绍，包括表现、检查和日常注意。',
+            'pt-ico-info', '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>')
+        + ptCard('#/patient/followup', '我的随访', '查看随访安排，填写近况反馈，异常时会给出提醒。',
+            'pt-ico-success', '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>')
+        + ptCard('#/patient/drug', '用药了解', '用通俗的话了解药品是做什么的、注意事项和常见不良反应。',
+            'pt-ico-warning', '<path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/>')
         + '</div>'
     );
 }
 
-function ptCard(href, title, desc) {
-    return '<a class="pt-card" href="' + href + '"><h3>' + escapeHtml(title) + '</h3><p>' + escapeHtml(desc) + '</p></a>';
+function ptCard(href, title, desc, iconTone, iconPath) {
+    const iconHtml = iconPath
+        ? '<span class="pt-card-icon ' + iconTone + '"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" '
+          + 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+          + 'stroke-linejoin="round">' + iconPath + '</svg></span>'
+        : '';
+    return '<a class="pt-card" href="' + href + '">' + iconHtml
+        + '<h3>' + escapeHtml(title) + '</h3><p>' + escapeHtml(desc) + '</p></a>';
 }
 
 // ============================================================

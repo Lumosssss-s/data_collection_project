@@ -65,6 +65,7 @@
   margin-bottom: $spacing-md;
   padding: $spacing-sm $spacing-md;
   background: $color-warning-soft;
+  border-left: 6rpx solid $color-warning;
   border-radius: $radius-sm;
   font-size: $font-size-xs;
   color: $color-warning;
@@ -76,14 +77,44 @@
   margin-bottom: $spacing-sm;
   font-size: $font-size-sm;
   color: $color-text-tertiary;
+  line-height: $line-height-loose;
+}
+
+.summaryText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.summaryNum {
+  font-family: $font-family-mono;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.summaryNumWarn {
+  font-family: $font-family-mono;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-risk-high;
 }
 
 .taskCard {
   background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-left: 6rpx solid $color-primary;
   border-radius: $radius-lg;
   padding: $spacing-lg;
   margin-bottom: $spacing-md;
   box-shadow: $shadow-card;
+}
+
+.taskCardDone {
+  border-left-color: $color-risk-low;
+}
+
+.taskCardDue {
+  border-left-color: $color-risk-high;
 }
 
 .taskHead {
@@ -103,19 +134,19 @@
 
 .statusDone {
   padding: 4rpx $spacing-md;
-  background: $color-primary-soft;
+  background: $color-risk-low-soft;
   border-radius: $radius-xs;
   font-size: $font-size-xs;
-  color: $color-success;
+  color: $color-risk-low;
   white-space: nowrap;
 }
 
 .statusDue {
   padding: 4rpx $spacing-md;
-  background: $color-danger-soft;
+  background: $color-risk-high-soft;
   border-radius: $radius-xs;
   font-size: $font-size-xs;
-  color: $color-error;
+  color: $color-risk-high;
   white-space: nowrap;
 }
 
@@ -128,18 +159,24 @@
   white-space: nowrap;
 }
 
-.taskItems {
-  display: block;
+.metaRow {
+  display: flex;
+  align-items: flex-start;
+  padding: 4rpx 0;
+}
+
+.metaLabel {
+  width: 140rpx;
+  flex-shrink: 0;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.metaValue {
+  flex: 1;
   font-size: $font-size-sm;
   color: $color-text-secondary;
   line-height: $line-height-loose;
-}
-
-.taskDate {
-  display: block;
-  font-size: $font-size-xs;
-  color: $color-text-tertiary;
-  line-height: $line-height-normal;
 }
 
 .feedbackBtn {

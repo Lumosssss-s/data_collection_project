@@ -394,60 +394,11 @@ function sendQAMessage() {
         });
     }
 
-    // 流式请求
-    const isMultimodal = images.length > 0;
-
-    if (isMultimodal) {
-        api.streamPost('/qa/stream', payload,
-            function(chunk) { handleQAChunk(chunk, assistantMsg); },
-            function(err) { handleQAError(err, assistantMsg); }
-        );
-    } else {
-        // GET 流式请求
-        const params = new URLSearchParams();
-        params.set('question', finalQuestion);
-        params.set('top_k', window.qaState.topK);
-        if (selectedCancers.length > 0) params.set('cancer_type', selectedCancers.join(','));
-        if (payload.history) params.set('history', JSON.stringify(payload.history));
-
-        const streamUrl = new URL(API_BASE + '/qa/stream?' + params.toString(), window.location.origin);
-        fetch(streamUrl.toString())
-            .then(function(resp) {
-                if (!resp.ok) throw new Error('API错误: ' + resp.status);
-                const reader = resp.body.getReader();
-                const decoder = new TextDecoder();
-                let buffer = '';
-
-                function read() {
-                    reader.read().then(function(result) {
-                        if (result.done) {
-                            assistantMsg.streaming = false;
-                            renderQAMessages();
-                            return;
-                        }
-                        buffer += decoder.decode(result.value, { stream: true });
-                        const lines = buffer.split('\n');
-                        buffer = lines.pop();
-                        lines.forEach(function(line) {
-                            const trimmed = line.trim();
-                            if (trimmed.startsWith('data: ')) {
-                                try {
-                                    const data = JSON.parse(trimmed.slice(6));
-                                    handleQAChunk(data, assistantMsg);
-                                } catch (e) {}
-                            }
-                        });
-                        read();
-                    }).catch(function(err) {
-                        handleQAError(err.message, assistantMsg);
-                    });
-                }
-                read();
-            })
-            .catch(function(err) {
-                handleQAError(err.message, assistantMsg);
-            });
-    }
+    // 统一用 POST 流式：GET 会把整段对话历史放进 URL，多轮后必然触发 414 URI Too Long
+    api.streamPost('/qa/stream', payload,
+        function(chunk) { handleQAChunk(chunk, assistantMsg); },
+        function(err) { handleQAError(err, assistantMsg); }
+    );
 }
 
 function handleQAChunk(chunk, assistantMsg) {
@@ -523,7 +474,7 @@ function renderQAMessages() {
                     const typeLabels = { doc: '指南', rec: '推荐条目', drug: '说明书', term: '术语' };
                     const typeLabel = typeLabels[s.data_type] || '';
                     html += '<div style="background:var(--color-bg);border:1px solid var(--color-border);padding:0.625rem 0.75rem;border-radius:6px;">';
-                    html += '<div style="font-size:0.8125rem;font-weight:600;color:var(--color-text);margin-bottom:0.125rem;">来源 ' + (i + 1) + ' · ' + escapeHtml(s.title || '') + '</div>';
+                    html += '<div class="sub-title">来源 ' + (i + 1) + ' · ' + escapeHtml(s.title || '') + '</div>';
                     html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem;">';
                     if (typeLabel) html += '<span class="badge" style="background:var(--color-info-bg);color:var(--color-info);margin-right:0.25rem;">' + typeLabel + '</span>';
                     if (s.cancer_type) html += escapeHtml(s.cancer_type) + ' · ';

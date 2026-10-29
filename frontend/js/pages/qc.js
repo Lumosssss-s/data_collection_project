@@ -12,7 +12,7 @@ registerPage('qc', function (container) {
 
     container.innerHTML = `
         <h1 class="page-title">病历质控</h1>
-        <p class="page-subtitle" style="color:var(--color-text-muted);margin-bottom:1rem;">
+        <p class="page-desc">
             对病历文本做完整性 / 一致性 / 规范性 / 时限性四类质控，输出评分、问题清单与修改建议。
         </p>
         <div style="display:flex;gap:0.5rem;margin-bottom:1rem;">
@@ -41,7 +41,7 @@ function renderQcReview() {
     const body = document.getElementById('qc-body');
     body.innerHTML = `
         <div class="card" style="padding:1rem;margin-bottom:1rem;">
-            <div style="font-weight:600;margin-bottom:0.5rem;">病历文本</div>
+            <div class="card-title">病历文本</div>
             <textarea id="qc-text" class="textarea" rows="10" style="width:100%;font-family:var(--font-sans);"
                 placeholder="粘贴或输入病历文本。示例结构：&#10;主诉：咳嗽两周&#10;现病史：……&#10;既往史：……&#10;性别：男&#10;诊断：肺CA"></textarea>
             <div style="margin-top:0.5rem;display:flex;gap:0.5rem;">
@@ -106,7 +106,7 @@ function renderQcReport(r) {
         });
         Object.keys(byCat).forEach(function (cat) {
             html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;">';
-            html += '<div style="font-weight:600;margin-bottom:0.5rem;">' + escapeHtml(cat) + '（' + byCat[cat].length + '）</div>';
+            html += '<div class="card-title">' + escapeHtml(cat) + '（' + byCat[cat].length + '）</div>';
             byCat[cat].forEach(function (it) {
                 const sb = it.severity === 'high' ? 'badge-warning' : (it.severity === 'medium' ? 'badge-info' : 'badge-muted');
                 html += '<div style="font-size:0.8125rem;margin-bottom:0.5rem;padding:0.5rem;background:var(--color-bg);border-radius:6px;">';
@@ -144,7 +144,7 @@ function renderQcRules() {
         }
 
         if (!d.items || !d.items.length) {
-            if (!d.degraded) html += '<div class="alert alert-info">暂无规则</div>';
+            if (!d.degraded) html += emptyState('暂无规则');
         } else {
             d.items.forEach(function (r) {
                 const sb = r.severity === 'high' ? 'badge-warning' : (r.severity === 'medium' ? 'badge-info' : 'badge-muted');

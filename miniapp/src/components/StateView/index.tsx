@@ -21,6 +21,7 @@ const StateView: React.FC<StateViewProps> = ({ type, text }) => {
   return (
     <View className={classnames(styles.box, type === 'error' && styles.errorBox)}>
       {type === 'loading' && <View className={styles.spinner} />}
+      {type === 'empty' && <View className={styles.emptyIcon} />}
       <Text className={styles.text}>{text || DEFAULT_TEXT[type]}</Text>
     </View>
   );

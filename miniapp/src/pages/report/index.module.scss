@@ -9,6 +9,7 @@
 
 .card {
   background: $color-bg-card;
+  border: 1rpx solid $color-border;
   border-radius: $radius-lg;
   padding: $spacing-lg;
   margin-bottom: $spacing-md;
@@ -76,18 +77,121 @@
   margin-bottom: $spacing-md;
   padding: $spacing-sm $spacing-md;
   background: $color-warning-soft;
+  border-left: 6rpx solid $color-warning;
   border-radius: $radius-sm;
   font-size: $font-size-xs;
   color: $color-warning;
   line-height: $line-height-normal;
 }
 
-.emptyLine {
-  display: block;
+/* ===== 结果概览（仅事实计数） ===== */
+.overview {
+  display: flex;
+  align-items: stretch;
+  background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-left: 6rpx solid $color-primary;
+  border-radius: $radius-lg;
+  padding: $spacing-lg $spacing-sm;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.overviewStat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overviewValue {
+  font-size: 40rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+  line-height: 1.2;
+}
+
+.overviewLabel {
+  margin-top: 4rpx;
   font-size: $font-size-sm;
   color: $color-text-tertiary;
 }
 
+.overviewDivider {
+  width: 1rpx;
+  background: $color-divider;
+  margin: $spacing-xs 0;
+}
+
+/* ===== 分节卡片 ===== */
+.section {
+  background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: $spacing-md;
+}
+
+.sectionIndex {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  letter-spacing: 0.08em;
+  margin-right: $spacing-sm;
+}
+
+.sectionTitle {
+  flex: 1;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+/* 空状态：虚线圆占位插图 + 居中文字 */
+.emptyBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-xl 0 $spacing-md;
+}
+
+.emptyIcon {
+  position: relative;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  border: 2rpx dashed $color-border;
+  background: $color-primary-soft;
+  margin-bottom: $spacing-md;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32rpx;
+    height: 4rpx;
+    transform: translate(-50%, -50%);
+    background: $color-text-disabled;
+    border-radius: 2rpx;
+  }
+}
+
+.emptyLine {
+  display: block;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+/* ===== 结构化要点：标签在上、值在下 ===== */
 .finding {
   padding: $spacing-md 0;
   border-bottom: 1rpx solid $color-divider;
@@ -98,43 +202,85 @@
   }
 }
 
-.kvRow {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: $spacing-xs;
-}
-
-.kvLabel {
-  width: 140rpx;
-  flex-shrink: 0;
+.findingTitle {
+  display: block;
   font-size: $font-size-sm;
-  color: $color-text-tertiary;
-}
-
-.kvValue {
-  flex: 1;
-  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
   color: $color-text-primary;
-  line-height: $line-height-normal;
+  margin-bottom: $spacing-sm;
 }
 
-.tagWrap {
+.kvGrid {
   display: flex;
   flex-wrap: wrap;
 }
 
-.tag {
-  padding: 6rpx $spacing-md;
-  margin: 0 $spacing-sm $spacing-sm 0;
-  background: $color-warning-soft;
-  border-radius: $radius-sm;
-  font-size: $font-size-xs;
-  color: $color-warning;
+.kvItem {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 $spacing-md $spacing-sm 0;
 }
 
-.suggestion {
+.kvLabel {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: 4rpx;
+}
+
+.kvValue {
+  display: block;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+}
+
+/* ===== 需关注征象：警示条 + 图标 + 文字 ===== */
+.attentionItem {
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-sm $spacing-md;
+  margin-bottom: $spacing-sm;
+  background: $color-warning-soft;
+  border-left: 6rpx solid $color-warning;
+  border-radius: $radius-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.attentionMark {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  flex-shrink: 0;
+  margin-right: $spacing-sm;
+  text-align: center;
+  background: $color-warning;
+  border-radius: $radius-round;
+  color: $color-text-white;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+}
+
+.attentionText {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-warning;
+  line-height: $line-height-normal;
+}
+
+/* ===== 随访建议：编号步骤 ===== */
+.step {
+  display: flex;
+  align-items: flex-start;
   padding: $spacing-md 0;
   border-bottom: 1rpx solid $color-divider;
+
+  &:first-child {
+    padding-top: 0;
+  }
 
   &:last-child {
     border-bottom: none;
@@ -142,51 +288,97 @@
   }
 }
 
-.suggestionText {
-  display: block;
-  font-size: $font-size-sm;
-  color: $color-text-secondary;
-  line-height: $line-height-loose;
+.stepIndexWrap {
+  width: 44rpx;
+  height: 44rpx;
+  flex-shrink: 0;
+  margin-right: $spacing-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-primary-soft;
+  border-radius: $radius-round;
 }
 
-.suggestionSource {
-  display: block;
-  margin-top: $spacing-xs;
+.stepIndex {
   font-size: $font-size-xs;
-  color: $color-text-tertiary;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
 }
 
-.diffHead {
-  display: block;
-  font-size: $font-size-sm;
-  color: $color-text-secondary;
-  margin-bottom: $spacing-xs;
+.stepBody {
+  flex: 1;
 }
 
-.diffChange {
-  display: block;
-  font-size: $font-size-sm;
-  color: $color-warning;
-  line-height: $line-height-loose;
-}
-
-.diffAdded {
-  display: block;
-  font-size: $font-size-sm;
-  color: $color-warning;
-  line-height: $line-height-loose;
-}
-
-.diffRemoved {
-  display: block;
-  font-size: $font-size-sm;
-  color: $color-text-tertiary;
-  line-height: $line-height-loose;
-}
-
-.diffSame {
+.stepText {
   display: block;
   font-size: $font-size-sm;
   color: $color-text-secondary;
   line-height: $line-height-loose;
+}
+
+.stepSource {
+  display: block;
+  margin-top: 4rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+/* ===== 历次对比：符号 + 文字双编码 ===== */
+.diffRow {
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-sm 0;
+  border-bottom: 1rpx solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.diffLabel {
+  width: 180rpx;
+  flex-shrink: 0;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.diffValue {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+}
+
+.diffItem {
+  display: flex;
+  align-items: flex-start;
+  margin-top: $spacing-sm;
+}
+
+.diffSymbol {
+  width: 36rpx;
+  flex-shrink: 0;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-normal;
+}
+
+.diffSymbolWarn {
+  color: $color-warning;
+}
+
+.diffSymbolGood {
+  color: $color-success;
+}
+
+.diffSymbolSame {
+  color: $color-text-tertiary;
+}
+
+.diffDescription {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
 }

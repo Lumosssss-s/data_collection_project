@@ -4,14 +4,22 @@ import type { ApiEnvelope } from '@/types/api';
 /**
  * 后端 API 基地址。
  *
- * - H5 预览 / 本机调试：留 localhost（宿主机 docker 映射 8002 → 容器 8001）
- * - 微信真机调试：改为局域网 IP（如 http://192.168.1.10:8002/api/v1）
- *   并在小程序后台配置 request 合法域名（正式发布需 HTTPS + 已备案域名）
+ * H5：跟随访问者所在主机 —— PC 打开走 localhost，手机用局域网 IP 打开则自动走该 IP，
+ * 无需硬编码 IP（宿主机 docker 映射 8002 → 容器 8001）。
+ * 小程序：真机需改为局域网 IP 或已备案 HTTPS 域名，并在小程序后台配置 request 合法域名。
  */
-export const API_BASE = 'http://localhost:8002/api/v1';
+export const API_BASE = (() => {
+  if (process.env.TARO_ENV === 'h5' && typeof location !== 'undefined' && location.hostname) {
+    return 'http://' + location.hostname + ':8002/api/v1';
+  }
+  return 'http://localhost:8002/api/v1';
+})();
 
 /** 单次请求超时（毫秒） */
 const TIMEOUT = 15000;
+
+/** 长耗时接口超时（报告解析走 LLM 真实抽取，实测约 40s） */
+export const LONG_TIMEOUT = 60000;
 
 /** 拼接 query 参数（过滤空值） */
 function buildUrl(path: string, params?: Record<string, unknown>): string {
@@ -26,11 +34,17 @@ function buildUrl(path: string, params?: Record<string, unknown>): string {
   return qs ? `${url}?${qs}` : url;
 }
 
+/** 请求选项：可覆盖单次超时（毫秒） */
+export interface RequestOptions {
+  timeout?: number;
+}
+
 async function request<T>(
   method: 'GET' | 'POST',
   path: string,
   data?: Record<string, unknown>,
-  params?: Record<string, unknown>
+  params?: Record<string, unknown>,
+  options?: RequestOptions
 ): Promise<T> {
   const url = buildUrl(path, params);
   console.info(`[API] ${method} ${url}`);
@@ -39,7 +53,7 @@ async function request<T>(
     url,
     method,
     data,
-    timeout: TIMEOUT,
+    timeout: options && options.timeout ? options.timeout : TIMEOUT,
     header: { 'Content-Type': 'application/json' }
   });
 
@@ -53,7 +67,8 @@ async function request<T>(
 }
 
 export const api = {
-  get: <T>(path: string, params?: Record<string, unknown>) =>
-    request<T>('GET', path, undefined, params),
-  post: <T>(path: string, data?: Record<string, unknown>) => request<T>('POST', path, data)
+  get: <T>(path: string, params?: Record<string, unknown>, options?: RequestOptions) =>
+    request<T>('GET', path, undefined, params, options),
+  post: <T>(path: string, data?: Record<string, unknown>, options?: RequestOptions) =>
+    request<T>('POST', path, data, undefined, options)
 };

@@ -7,8 +7,17 @@
 }
 
 .hero {
-  padding: 56rpx $page-padding 48rpx;
+  padding: 48rpx $page-padding 48rpx;
   background: linear-gradient(150deg, $color-primary 0%, $color-primary-light 100%);
+}
+
+.heroEyebrow {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .heroTitle {
@@ -30,6 +39,7 @@
   margin: -32rpx $page-padding 0;
   padding: $spacing-lg;
   background: $color-bg-card;
+  border: 1rpx solid $color-border;
   border-radius: $radius-lg;
   box-shadow: $shadow-card;
 }
@@ -86,10 +96,10 @@
 .entry {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin: $spacing-md $page-padding 0;
   padding: $spacing-lg;
   background: $color-bg-card;
+  border: 1rpx solid $color-border;
   border-radius: $radius-lg;
   box-shadow: $shadow-card;
   transition: all $transition-base;
@@ -98,6 +108,20 @@
     opacity: 0.9;
     transform: scale(0.99);
   }
+}
+
+.entryDot {
+  width: 12rpx;
+  height: 12rpx;
+  flex-shrink: 0;
+  margin-right: $spacing-md;
+  border-radius: 50%;
+  background: $color-primary;
+}
+
+.entryBody {
+  flex: 1;
+  min-width: 0;
 }
 
 .entryTitle {

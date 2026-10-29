@@ -5,50 +5,66 @@
  *   - 无关键词：浏览指南文档列表（/search/docs，DocCatalog 驱动）
  *   - 有关键词：循证语义检索（/search），返回推荐条目及证据等级 / 推荐强度 / 溯源
  */
+// 受控词表代码 → 中文标签（供结果卡片展示，避免出现原始代码）
+const CANCER_LABELS = {};
+const SCENARIO_LABELS = {};
+
 registerPage('search', function (container) {
     container.innerHTML = `
         <h1 class="page-title">循证检索</h1>
         <p class="page-desc">输入临床问题或关键词，返回肿瘤循证推荐条目（含证据等级、推荐强度与出处溯源）</p>
-        <div class="alert alert-info">提示：不输入关键词时，可直接按癌种 / 文档类型 / 主题浏览指南文档</div>
 
-        <!-- 搜索栏 -->
-        <div class="search-filter-bar">
-            <input type="text" id="search-query" class="input search-filter-input" placeholder="例如：EGFR 突变 一线 靶向治疗">
-            <div class="search-filter-item">
-                <label>癌种</label>
-                <select id="search-cancer-type" class="select search-filter-select">
-                    <option value="">全部癌种</option>
-                </select>
+        <!-- 搜索主导航区 -->
+        <section class="search-hero">
+            <div class="search-hero-row">
+                <input type="text" id="search-query" class="input search-hero-input" placeholder="输入临床问题，例如：EGFR 突变 一线 靶向治疗">
+                <button id="search-btn" class="btn btn-primary search-hero-btn">检索</button>
             </div>
-            <div class="search-filter-item">
-                <label>文档类型</label>
-                <select id="search-doc-type" class="select search-filter-select">
-                    <option value="">全部类型</option>
-                    <option value="guideline">指南</option>
-                    <option value="standard">规范</option>
-                    <option value="consensus">共识</option>
-                </select>
-            </div>
-            <div class="search-filter-item">
-                <label>场景</label>
-                <select id="search-scenario" class="select search-filter-select">
-                    <option value="">全部场景</option>
-                </select>
-            </div>
-            <div class="search-filter-item search-topic-wrapper">
-                <label>主题</label>
-                <div id="search-topic-trigger" class="search-topic-trigger">
-                    <span id="search-topic-label">全部主题</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <p class="search-hero-hint">不输入关键词时，按癌种 / 文档类型 / 主题浏览指南文档</p>
+        </section>
+
+        <!-- 左筛选栏 + 右结果流 -->
+        <div class="search-layout">
+            <aside class="filter-rail">
+                <div class="filter-rail-head">
+                    <span class="filter-rail-title">筛选条件</span>
                 </div>
-                <div id="search-topic-dropdown" class="search-topic-dropdown" style="display:none;"></div>
-                <select id="search-topic" class="select search-filter-select" multiple style="display:none;"></select>
-            </div>
-            <button id="search-btn" class="btn btn-primary search-filter-btn">检索</button>
-        </div>
+                <div class="filter-field">
+                    <label>癌种</label>
+                    <select id="search-cancer-type" class="select">
+                        <option value="">全部癌种</option>
+                    </select>
+                </div>
+                <div class="filter-field">
+                    <label>文档类型</label>
+                    <select id="search-doc-type" class="select">
+                        <option value="">全部类型</option>
+                        <option value="guideline">指南</option>
+                        <option value="standard">规范</option>
+                        <option value="consensus">共识</option>
+                    </select>
+                </div>
+                <div class="filter-field">
+                    <label>场景</label>
+                    <select id="search-scenario" class="select">
+                        <option value="">全部场景</option>
+                    </select>
+                </div>
+                <div class="filter-field search-topic-wrapper">
+                    <label>主题</label>
+                    <div id="search-topic-trigger" class="search-topic-trigger">
+                        <span id="search-topic-label">全部主题</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </div>
+                    <div id="search-topic-dropdown" class="search-topic-dropdown" style="display:none;"></div>
+                    <select id="search-topic" multiple style="display:none;"></select>
+                </div>
+            </aside>
 
-        <!-- 结果区 -->
-        <div id="search-results"></div>
+            <section class="results-panel">
+                <div id="search-results"></div>
+            </section>
+        </div>
     `;
 
     // 场景受控词表（§5.7.3，value = scenario 代码）
@@ -75,6 +91,7 @@ registerPage('search', function (container) {
         opt.value = s.code;
         opt.textContent = s.label;
         scenarioSel.appendChild(opt);
+        SCENARIO_LABELS[s.code] = s.label;
     });
 
     // 加载癌种与主题选项
@@ -93,6 +110,7 @@ registerPage('search', function (container) {
                 opt.value = c.code;
                 opt.textContent = c.label_zh || c.code;
                 cancerSel.appendChild(opt);
+                CANCER_LABELS[c.code] = c.label_zh || c.code;
             });
         }
 
@@ -181,7 +199,7 @@ function doSearch() {
 
         api.get('/search/docs', params).then(function (data) {
             const docs = (data && data.data) || [];
-            renderDocList(resultsEl, docs);
+            renderDocList(resultsEl, docs, data && data.message);
         }).catch(function (err) {
             showError(resultsEl, '加载指南列表失败: ' + err.message);
         });
@@ -195,7 +213,7 @@ function doSearch() {
 
         api.get('/search', params).then(function (data) {
             const results = (data && data.data) || [];
-            renderSearchResults(resultsEl, results, f.query);
+            renderSearchResults(resultsEl, results, f.query, data && data.message);
         }).catch(function (err) {
             showError(resultsEl, '检索失败: ' + err.message);
         });
@@ -203,78 +221,129 @@ function doSearch() {
 }
 
 // ===== 指南文档列表 =====
-function renderDocList(container, docs) {
+function renderDocList(container, docs, message) {
     if (!docs.length) {
-        container.innerHTML = '<div class="alert alert-warning">未找到相关指南文档</div>';
+        container.innerHTML = emptyState(message || '未找到相关指南文档');
         return;
     }
-    let html = '<div class="alert alert-success">共 ' + docs.length + ' 篇指南文档</div>';
-    html += '<div class="grid-2">';
+    let html = '<div class="results-toolbar">'
+        + '<div class="results-count"><strong>' + docs.length + '</strong>篇指南文档</div>'
+        + '<div class="results-note">按癌种与文档类型浏览</div>'
+        + '</div>';
+    html += '<div class="doc-grid">';
     docs.forEach(function (d) {
         const cancerTags = (d.cancer_types || []).map(function (c) {
             return '<span class="badge" style="background:var(--color-info-bg);color:var(--color-info);margin-right:0.25rem;">' + escapeHtml(c) + '</span>';
         }).join('');
-        html += '<div class="card" style="padding:0.875rem 1rem;cursor:pointer;" onclick="viewGuideDetail(\'' + escapeHtml(d.doc_id || '') + '\')">';
-        html += '<div style="font-weight:600;color:var(--color-text);margin-bottom:0.375rem;">' + escapeHtml(d.title || d.doc_id || '') + '</div>';
-        html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.5rem;">'
+        html += '<div class="doc-card" onclick="viewGuideDetail(\'' + escapeHtml(d.doc_id || '') + '\')">';
+        html += '<div class="doc-card-title">' + escapeHtml(d.title || d.doc_id || '') + '</div>';
+        html += '<div class="doc-card-meta">'
               + escapeHtml(d.issuer || '') + (d.doc_type ? ' · ' + escapeHtml(docTypeLabel(d.doc_type)) : '')
               + (d.publish_date ? ' · ' + escapeHtml(d.publish_date) : '') + '</div>';
-        html += '<div style="font-size:0.75rem;">' + cancerTags
-              + '<span style="color:var(--color-text-muted);">' + (d.item_count || 0) + ' 条推荐</span></div>';
+        html += '<div class="doc-card-foot"><div>' + cancerTags + '</div>'
+              + '<span class="doc-card-count">' + (d.item_count || 0) + ' 条推荐</span></div>';
         html += '</div>';
     });
     html += '</div>';
     container.innerHTML = html;
 }
 
+// 证据等级只接受 A–D 首字母，其余值原样展示，不做推测
+function normalizeEvidenceGrade(value) {
+    const m = String(value || '').trim().match(/^[A-Da-d]/);
+    return m ? m[0].toUpperCase() : '';
+}
+
+// HTML 属性值转义（escapeHtml 不处理引号）
+function escapeAttr(value) {
+    return escapeHtml(String(value == null ? '' : value))
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// 推荐强度仅区分强/弱，其余归为中性
+function recommendationClass(value) {
+    const s = String(value || '');
+    if (/强|strong/i.test(s)) return 'rec-strong';
+    if (/弱|weak/i.test(s)) return 'rec-weak';
+    return 'rec-neutral';
+}
+
 // ===== 推荐条目检索结果 =====
-function renderSearchResults(container, results, query) {
+function renderSearchResults(container, results, query, message) {
     if (!results.length) {
-        container.innerHTML = '<div class="alert alert-warning">未找到相关推荐条目</div>';
+        container.innerHTML = emptyState(message || '未找到相关推荐条目');
         return;
     }
-    let html = '<div class="alert alert-success">找到 ' + results.length + ' 条相关推荐条目</div>';
-    html += '<div style="display:flex;flex-direction:column;gap:0.625rem;">';
+    let html = '<div class="results-toolbar">'
+        + '<div class="results-count"><strong>' + results.length + '</strong>条相关推荐条目</div>'
+        + '<div class="results-note">按语义相关度排序</div>'
+        + '</div>';
+    html += '<div class="result-list">';
     results.forEach(function (r) {
         const meta = r.metadata || {};
-        html += '<div class="card" style="padding:0.875rem 1rem;">';
+        html += '<article class="result-item">';
 
-        // 标题行：来源标签 + 证据/强度徽标 + 匹配度
-        html += '<div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;align-items:center;margin-bottom:0.375rem;">';
-        html += '<div style="font-weight:600;color:var(--color-text);font-size:0.875rem;">'
-              + escapeHtml(meta.title || meta.item_id || '') + '</div>';
-        html += '<div style="display:flex;gap:0.375rem;flex-wrap:wrap;">';
+        // 标题行：标题 + 证据等级 / 推荐强度
+        html += '<div class="result-item-head">';
+        html += '<h3 class="result-title">' + escapeHtml(meta.title || meta.item_id || '') + '</h3>';
+        html += '<div class="result-badges">';
         if (meta.evidence_level) {
-            html += '<span class="badge badge-info" title="证据等级">证据 ' + escapeHtml(String(meta.evidence_level)) + '</span>';
+            const grade = normalizeEvidenceGrade(meta.evidence_level);
+            const rawLevel = escapeHtml(String(meta.evidence_level));
+            if (grade) {
+                html += '<span class="evidence-grade" data-grade="' + grade + '" title="证据等级：' + escapeAttr(meta.evidence_level) + '">'
+                      + '<span class="grade-letter">' + grade + '</span><span class="grade-label">级证据</span></span>';
+            } else {
+                html += '<span class="badge badge-muted" title="证据等级">证据 ' + rawLevel + '</span>';
+            }
         }
         if (meta.rec_strength) {
-            html += '<span class="badge badge-warning" title="推荐强度">推荐 ' + escapeHtml(String(meta.rec_strength)) + '</span>';
-        }
-        if (r.match_score !== null && r.match_score !== undefined) {
-            html += '<span class="badge" style="background:var(--color-bg);color:var(--color-text-secondary);">匹配 ' + (r.match_score * 100).toFixed(0) + '%</span>';
+            html += '<span class="rec-strength ' + recommendationClass(meta.rec_strength) + '" title="推荐强度">'
+                  + escapeHtml(String(meta.rec_strength)) + '</span>';
         }
         html += '</div></div>';
 
-        // 溯源
-        const srcParts = [];
-        if (meta.breadcrumb) srcParts.push(escapeHtml(meta.breadcrumb));
-        if (meta.cancer_type) srcParts.push('癌种 ' + escapeHtml(meta.cancer_type));
-        if (meta.scenario) srcParts.push('场景 ' + escapeHtml(meta.scenario));
-        if (srcParts.length) {
-            html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.375rem;">' + srcParts.join(' · ') + '</div>';
+        // 溯源行：来源 chip + 癌种 + 场景
+        const metaParts = [];
+        if (meta.breadcrumb) {
+            metaParts.push('<span class="source-chip" title="' + escapeAttr(meta.breadcrumb) + '">'
+                + '<span class="chip-doc">' + escapeHtml(meta.breadcrumb) + '</span></span>');
+        }
+        if (meta.cancer_type) {
+            metaParts.push('<span>癌种 ' + escapeHtml(CANCER_LABELS[meta.cancer_type] || meta.cancer_type) + '</span>');
+        }
+        if (meta.scenario) {
+            metaParts.push('<span>场景 ' + escapeHtml(SCENARIO_LABELS[meta.scenario] || meta.scenario) + '</span>');
+        }
+        if (metaParts.length) {
+            html += '<div class="result-meta">' + metaParts.join('<span class="meta-divider">·</span>') + '</div>';
         }
 
-        // 引用扩展标记
+        // 引用链扩展标记
         if (r.retrieval_hop === 2) {
             const ref = r.referenced_doc_name
                 ? ('引用自《' + escapeHtml(r.referenced_doc_name) + '》')
                 : ('由 ' + escapeHtml(r.referenced_by || '') + ' 引用补入');
-            html += '<div style="font-size:0.7rem;color:var(--color-warning);margin-bottom:0.25rem;">↳ ' + ref + '</div>';
+            html += '<div class="result-ref">↳ ' + ref + '</div>';
         }
 
-        // 正文
-        html += '<div style="font-size:0.8125rem;color:var(--color-text-secondary);line-height:1.6;white-space:pre-wrap;">' + escapeHtml(r.content || '') + '</div>';
-        html += '</div>';
+        // 正文（超长内容折叠为 6 行，可展开，避免单条结果撑满屏幕）
+        const contentText = r.content || '';
+        const needClamp = contentText.length > 320;
+        html += '<div class="result-content' + (needClamp ? ' is-clamped' : '') + '">' + escapeHtml(contentText) + '</div>';
+        if (needClamp) {
+            html += '<button type="button" class="result-toggle" aria-expanded="false" onclick="toggleResultContent(this)">展开全文</button>';
+        }
+
+        // 底栏：匹配度
+        if (r.match_score !== null && r.match_score !== undefined) {
+            html += '<div class="result-foot">'
+                  + '<span class="match-score">匹配度 ' + (r.match_score * 100).toFixed(0) + '%</span>'
+                  + '</div>';
+        }
+
+        html += '</article>';
     });
     html += '</div>';
     container.innerHTML = html;
@@ -284,6 +353,15 @@ function docTypeLabel(t) {
     const map = { guideline: '指南', standard: '规范', consensus: '共识' };
     return map[t] || t;
 }
+
+// 结果正文展开 / 收起
+window.toggleResultContent = function (btn) {
+    const content = btn.previousElementSibling;
+    if (!content) return;
+    const clamped = content.classList.toggle('is-clamped');
+    btn.textContent = clamped ? '展开全文' : '收起';
+    btn.setAttribute('aria-expanded', String(!clamped));
+};
 
 // ===== 指南详情跳转 =====
 window.viewGuideDetail = function (docId) {

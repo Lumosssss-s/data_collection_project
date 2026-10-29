@@ -4,14 +4,44 @@ var KG_ONTOLOGY = { entities: [], relations: [] };
 var KG_TYPE_MAP = {};      // entity_type -> { label, color, shape }
 var KG_REL_COLORS = {};    // relation_type -> color
 
-// 关系配色（循环取用，保证相邻关系视觉可分辨）
-var _REL_PALETTE = ['#8B5CF6', '#0EA5E9', '#F59E0B', '#10B981', '#EF4444',
-                    '#EC4899', '#14B8A6', '#6366F1', '#84CC16'];
+// 关系配色：医疗蓝灰系，按关系类型循环取用，保证相邻关系可分辨
+var _REL_PALETTE = ['#4A7FA5', '#3F8C8C', '#5B8FB9', '#6E8FA8', '#2F7F76',
+                    '#7A9CB8', '#4E7C9B', '#8AA3B8', '#5D7A94'];
+
+// 实体配色：医疗蓝灰明度阶梯（7 档蓝 + 1 个警示橙）。
+// 选色依据：CIE L*a*b* + CIEDE2000，并对 Machado 2009 三种色觉缺陷做模拟；
+// 因 8 类实体在蓝灰区间内无法仅靠色相区分，类别主要由形状承担（见 KG_SYMBOL_PATHS）。
+var KG_COOL_COLORS = {
+    Cancer: '#0B2545',           // 癌种：最深藏青，承担视觉重心（对比度 14.7:1）
+    Gene: '#1B4A73',             // 基因/标志物（8.8:1）
+    Drug: '#2A6590',             // 药物（6.0:1）
+    Treatment: '#1F6F7A',        // 治疗方式（5.6:1）
+    Stage: '#3D7FA8',            // 分期（4.2:1）
+    Symptom: '#2E8FA8',          // 症状（3.6:1）
+    Examination: '#5B98BE',      // 检查（3.0:1，WCAG 非文本下限）
+    AdverseReaction: '#C2410C'   // 不良反应：唯一警示橙，红绿色盲下仍可与蓝系区分（4.9:1）
+};
+
+// 8 类实体各自的形状（ECharts symbol path，viewBox 24×24），保证色觉缺陷下仍可分辨
+var KG_SYMBOL_PATHS = {
+    Cancer: 'path://M12,2A10,10,0,1,0,12,22A10,10,0,1,0,12,2Z',                 // 圆
+    Gene: 'path://M12,1L23,12L12,23L1,12Z',                                     // 菱形
+    Drug: 'path://M6,4H18A3,3,0,0,1,21,7V17A3,3,0,0,1,18,20H6A3,3,0,0,1,3,17V7A3,3,0,0,1,6,4Z',  // 圆角矩形
+    Treatment: 'path://M12,2L21,7V17L12,22L3,17V7Z',                            // 六边形（与药物圆角矩形拉开差异）
+    Stage: 'path://M12,2L22,21L2,21Z',                                          // 三角
+    Symptom: 'path://M12,5A11,7,0,1,0,12,19A11,7,0,1,0,12,5Z',                  // 椭圆
+    Examination: 'path://M12,2C7.6,2,4,5.6,4,10c0,6,8,12,8,12s8-6,8-12C20,5.6,16.4,2,12,2Z',    // 水滴
+    AdverseReaction: 'path://M12,2L22,14H15V22H9V14H2Z'                         // 上箭头
+};
 
 function buildOntologyMaps() {
     KG_TYPE_MAP = {};
     (KG_ONTOLOGY.entities || []).forEach(function (e) {
-        KG_TYPE_MAP[e.type] = { label: e.label, color: e.color || '#6B7280', shape: e.shape || 'ellipse' };
+        KG_TYPE_MAP[e.type] = {
+            label: e.label,
+            color: KG_COOL_COLORS[e.type] || e.color || '#6B7280',
+            shape: e.shape || 'ellipse'
+        };
     });
     KG_REL_COLORS = {};
     (KG_ONTOLOGY.relations || []).forEach(function (r, i) {
@@ -20,9 +50,10 @@ function buildOntologyMaps() {
 }
 
 function nodeColor(n) {
-    if (n.entity_color) return n.entity_color;
+    // 优先用前端冷色板，其次退回后端返回的实体色
     var t = KG_TYPE_MAP[n.entity_type];
-    return (t && t.color) || '#6B7280';
+    if (t && t.color) return t.color;
+    return n.entity_color || '#6B7280';
 }
 function nodeShape(n) {
     var t = KG_TYPE_MAP[n.entity_type];
@@ -107,7 +138,7 @@ registerPage('kg', function (container) {
         <!-- 图谱容器 -->
         <div class="card" style="margin-top:0.75rem;padding:0;">
             <div style="display:flex;justify-content:space-between;align-items:center;padding:0.625rem 1rem;border-bottom:1px solid var(--color-border);">
-                <div id="kg-graph-title" class="kg-graph-title" style="font-weight:600;font-size:0.8125rem;color:var(--color-text);"></div>
+                <div id="kg-graph-title" class="sub-title"></div>
                 <div style="display:flex;gap:0.375rem;">
                     <button class="btn btn-sm" onclick="toggleKGLayout()" id="kg-layout-btn" style="font-size:0.75rem;">布局：力导向</button>
                     <button class="btn btn-sm" onclick="resetKGView()" style="font-size:0.75rem;">重置视图</button>
@@ -115,17 +146,17 @@ registerPage('kg', function (container) {
                 </div>
             </div>
             <div id="kg-canvas-container" style="position:relative;height:500px;background:var(--color-bg);overflow:hidden;cursor:grab;">
-                <canvas id="kg-canvas" style="width:100%;height:100%;"></canvas>
+                <div id="kg-graph" style="width:100%;height:100%;"></div>
                 <div id="kg-tooltip" style="position:absolute;display:none;background:rgba(255,255,255,0.96);border:1px solid var(--color-border);border-radius:6px;padding:0.5rem 0.75rem;font-size:0.75rem;max-width:280px;box-shadow:0 4px 12px rgba(0,0,0,0.08);pointer-events:none;z-index:10;"></div>
-                <!-- 图例 -->
-                <div id="kg-legend" style="position:absolute;bottom:6px;left:6px;background:rgba(255,255,255,0.94);border:1px solid var(--color-border);border-radius:6px;padding:5px 9px;font-size:0.65rem;color:var(--color-text-secondary);z-index:5;line-height:1.7;pointer-events:none;max-width:calc(100% - 12px);">
-                    <div id="kg-legend-types" style="display:flex;flex-wrap:wrap;gap:0.2rem 0.6rem;"></div>
-                    <div style="display:flex;flex-wrap:wrap;gap:0.2rem 0.6rem;margin-top:1px;">
-                        <span style="font-weight:600;min-width:3em;">节点大小：</span>
-                        <span><span style="display:inline-block;width:13px;height:13px;background:#6B7280;border-radius:50%;vertical-align:middle;"></span> 高连接</span>
-                        <span><span style="display:inline-block;width:9px;height:9px;background:#6B7280;border-radius:50%;vertical-align:middle;"></span> 中连接</span>
-                        <span><span style="display:inline-block;width:6px;height:6px;background:#6B7280;border-radius:50%;vertical-align:middle;"></span> 低连接</span>
-                    </div>
+            </div>
+            <!-- 图例放在画布外，避免遮挡底部节点 -->
+            <div id="kg-legend" style="padding:6px 12px;border-top:1px solid var(--color-border);background:var(--color-card-bg);font-size:0.65rem;color:var(--color-text-secondary);line-height:1.7;">
+                <div id="kg-legend-types" style="display:flex;flex-wrap:wrap;gap:0.2rem 0.6rem;"></div>
+                <div style="display:flex;flex-wrap:wrap;gap:0.2rem 0.6rem;margin-top:1px;">
+                    <span style="font-weight:600;min-width:3em;">节点大小：</span>
+                    <span><span style="display:inline-block;width:13px;height:13px;background:#6B7280;border-radius:50%;vertical-align:middle;"></span> 高连接</span>
+                    <span><span style="display:inline-block;width:9px;height:9px;background:#6B7280;border-radius:50%;vertical-align:middle;"></span> 中连接</span>
+                    <span><span style="display:inline-block;width:6px;height:6px;background:#6B7280;border-radius:50%;vertical-align:middle;"></span> 低连接</span>
                 </div>
             </div>
         </div>
@@ -157,8 +188,9 @@ registerPage('kg', function (container) {
 
         <!-- 智能洞察 -->
         <div id="kg-insight-panel" class="card" style="margin-top:0.5rem;padding:0.625rem 1rem;display:none;">
-            <div style="font-weight:600;font-size:0.8125rem;color:var(--color-text);margin-bottom:0.25rem;">图谱洞察</div>
+            <div class="sub-title">图谱洞察</div>
             <div id="kg-insight-text" style="font-size:0.8125rem;color:var(--color-text-secondary);line-height:1.7;"></div>
+            <div id="kg-type-chart" style="height:110px;margin-top:0.25rem;"></div>
         </div>
     `;
 
@@ -208,12 +240,24 @@ function initBrowseTypeSelect() {
     });
 }
 
+// 图例图标：与图中节点形状一致，色觉缺陷用户可据此把颜色映射到类型
+function kgShapeIcon(type, color) {
+    var path = KG_SYMBOL_PATHS[type];
+    if (!path) {
+        return '<span style="display:inline-block;width:8px;height:8px;background:' + color + ';border-radius:50%;"></span>';
+    }
+    return '<svg width="11" height="11" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:1px;">' +
+        '<path d="' + path.replace('path://', '') + '" fill="' + color + '"></path></svg>';
+}
+
 function renderLegend() {
     var box = document.getElementById('kg-legend-types');
     if (!box) return;
     var html = '<span style="font-weight:600;min-width:3em;">类型：</span>';
     html += (KG_ONTOLOGY.entities || []).map(function (e) {
-        return '<span><span class="kg-legend-icon" style="display:inline-block;width:8px;height:8px;background:' + e.color + ';border-radius:50%;"></span> ' + escapeHtml(e.label) + '</span>';
+        var t = KG_TYPE_MAP[e.type];
+        var color = (t && t.color) || e.color;
+        return '<span>' + kgShapeIcon(e.type, color) + ' ' + escapeHtml(e.label) + '</span>';
     }).join('');
     box.innerHTML = html;
 }
@@ -229,494 +273,321 @@ window.switchKGMode = function (mode) {
 };
 
 function clearGraph() {
-    if (window._kgState) window._kgState.running = false;
+    destroyKGGraph();
+    destroyKGTypeChart();
     window._kgState = null;
     var ip = document.getElementById('kg-insight-panel');
     if (ip) ip.style.display = 'none';
-    var canvas = document.getElementById('kg-canvas');
-    if (canvas) {
-        var ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var detail = document.getElementById('kg-detail-panel');
+    if (detail) { detail.style.display = 'none'; detail.innerHTML = ''; }
+    var titleEl = document.getElementById('kg-graph-title');
+    if (titleEl) titleEl.textContent = '';
+    var badgeEl = document.getElementById('kg-stats-badge');
+    if (badgeEl) badgeEl.textContent = '';
+    hideKGTooltip();
+}
+
+// ===== ECharts 渲染层 =====
+// ECharts 产物约 1MB，进入图谱页时才加载，避免拖慢其他页面首屏。
+var _kgEchartsPromise = null;
+
+function ensureKGECharts() {
+    if (window.echarts && window.echarts.init) return Promise.resolve(window.echarts);
+    if (!_kgEchartsPromise) {
+        _kgEchartsPromise = new Promise(function (resolve, reject) {
+            var s = document.createElement('script');
+            s.src = 'vendor/echarts.min.js';
+            s.onload = function () {
+                (window.echarts && window.echarts.init)
+                    ? resolve(window.echarts)
+                    : reject(new Error('ECharts 未导出全局变量'));
+            };
+            s.onerror = function () { reject(new Error('ECharts 资源加载失败')); };
+            document.head.appendChild(s);
+        });
     }
-    document.getElementById('kg-graph-title').textContent = '';
-    document.getElementById('kg-detail-panel').style.display = 'none';
-    document.getElementById('kg-stats-badge').textContent = '';
+    return _kgEchartsPromise;
+}
+
+function destroyKGGraph() {
+    if (window._kgResizeObserver) {
+        window._kgResizeObserver.disconnect();
+        window._kgResizeObserver = null;
+    }
+    if (window._kgChart) {
+        try { window._kgChart.dispose(); } catch (e) { /* 容器可能已随路由销毁 */ }
+        window._kgChart = null;
+    }
+}
+
+// 前端形状优先（8 类各不相同）；未知实体类型回退到后端本体的 4 种形状
+var _KG_SYMBOL_MAP = {
+    diamond: 'diamond',
+    triangle: 'triangle',
+    roundRect: 'roundRect',
+    ellipse: 'circle',
+    circle: 'circle'
+};
+
+function kgNodeSymbol(n) {
+    return KG_SYMBOL_PATHS[n.entity_type] || _KG_SYMBOL_MAP[nodeShape(n)] || 'circle';
+}
+
+function kgNodeSize(n) {
+    var deg = n.degree || 0;
+    var base = deg >= 8 ? 26 : (deg >= 3 ? 20 : (deg >= 1 ? 15 : 12));
+    return n.is_core ? Math.max(base, 26) : base;
+}
+
+function kgShortLabel(n) {
+    var label = n.label || n.title || n.id || '';
+    return label.length > 12 ? label.substring(0, 12) + '…' : label;
 }
 
 // ===== 渲染图谱 =====
 function renderKG(data, title, layoutMode) {
-    clearGraph();
+    destroyKGGraph();
+    destroyKGTypeChart();
+    window._kgState = null;
+
     var nodes = (data.nodes || []).slice();
     var edges = (data.edges || []).slice();
-    if (nodes.length === 0) { document.getElementById('kg-graph-title').textContent = '暂无数据'; return; }
+    var ip = document.getElementById('kg-insight-panel');
+    if (ip) ip.style.display = 'none';
+    var detail = document.getElementById('kg-detail-panel');
+    if (detail) { detail.style.display = 'none'; detail.innerHTML = ''; }
+    var titleEl = document.getElementById('kg-graph-title');
+    var badgeEl = document.getElementById('kg-stats-badge');
+    if (badgeEl) badgeEl.textContent = '';
+    if (!nodes.length) { if (titleEl) titleEl.textContent = '暂无数据'; return; }
 
-    document.getElementById('kg-graph-title').textContent = title || '知识图谱';
-    var badgeText = nodes.length + ' 实体 | ' + edges.length + ' 关系';
-    document.getElementById('kg-stats-badge').innerHTML = badgeText;
+    if (titleEl) titleEl.textContent = title || '知识图谱';
+    if (badgeEl) badgeEl.textContent = nodes.length + ' 实体 | ' + edges.length + ' 关系';
 
-    var canvas = document.getElementById('kg-canvas');
-    var container = document.getElementById('kg-canvas-container');
-    if (!canvas || !container) return;
+    if (!document.getElementById('kg-graph')) return;
 
-    var dpr = window.devicePixelRatio || 1;
-    var width = container.clientWidth;
-    var height = container.clientHeight;
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    var ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
+    var threshold = parseFloat(document.getElementById('kg-edge-threshold').value) || 0;
+    var labelMode = document.getElementById('kg-label-mode').value;
 
-    var isCircular = layoutMode === 'circular';
-    var positions = {}, velocities = {};
-    var cx = width / 2, cy = height / 2;
+    // 置信度阈值：与旧版一致，仅隐藏低于阈值的边，节点全部保留
+    var visibleEdges = edges.filter(function (e) {
+        return e.similarity == null || e.similarity >= threshold;
+    });
 
-    if (isCircular && nodes.length > 0) {
-        var baseRadius = Math.min(width, height) * 0.38;
-        var maxDeg = 0;
-        nodes.forEach(function (n) { maxDeg = Math.max(maxDeg, n.degree || 0); });
-        var sorted = nodes.slice().sort(function (a, b) { return (b.degree || 0) - (a.degree || 0); });
-        sorted.forEach(function (n, i) {
-            var angle = (i / nodes.length) * Math.PI * 2 + (Math.random() - 0.5) * 0.3;
-            var degRatio = maxDeg > 0 ? ((n.degree || 0) / maxDeg) : 0.5;
-            var r = baseRadius * (0.35 + (1 - degRatio * 0.6) * 0.65);
-            r += (Math.random() - 0.5) * baseRadius * 0.2;
-            positions[n.id] = { x: cx + Math.cos(angle) * r, y: cy + Math.sin(angle) * r };
-            velocities[n.id] = { x: 0, y: 0 };
-        });
-    } else {
-        // 按实体类型聚簇
-        var groups = {};
+    // 标签策略：smart = 核心实体 + 每类连接度最高的 3 个；其余节点悬停时显示
+    var smartKeep = null;
+    if (labelMode === 'smart') {
+        smartKeep = {};
+        var byType = {};
         nodes.forEach(function (n) {
             var t = n.entity_type || '';
-            if (!groups[t]) groups[t] = [];
-            groups[t].push(n);
+            if (!byType[t]) byType[t] = [];
+            byType[t].push(n);
         });
-        var typeList = Object.keys(groups);
-        typeList.forEach(function (t, idx) {
-            var group = groups[t];
-            var clusterCx, clusterCy;
-            if (typeList.length === 1) {
-                clusterCx = cx; clusterCy = cy;
-            } else {
-                var angle = (idx / typeList.length) * Math.PI * 2;
-                clusterCx = cx + Math.cos(angle) * Math.min(width, height) * 0.30;
-                clusterCy = cy + Math.sin(angle) * Math.min(height, width) * 0.26;
-            }
-            group.forEach(function (node, i) {
-                var ga = Math.PI * (3 - Math.sqrt(5));
-                var a = i * ga + idx * 2.0;
-                var r = 24 + Math.sqrt(i) * 20;
-                positions[node.id] = { x: clusterCx + Math.cos(a) * r, y: clusterCy + Math.sin(a) * r };
-                velocities[node.id] = { x: 0, y: 0 };
-            });
+        Object.keys(byType).forEach(function (t) {
+            byType[t].slice()
+                .sort(function (a, b) { return (b.degree || 0) - (a.degree || 0); })
+                .slice(0, 3)
+                .forEach(function (n) { smartKeep[String(n.id)] = true; });
         });
     }
-
-    var state = {
-        nodes: nodes, edges: edges, positions: positions, velocities: velocities,
-        zoom: 1, panX: 0, panY: 0,
-        hoveredNode: null, selectedNode: null, draggedNode: null,
-        hoveredEdge: null, selectedEdge: null,
-        edgeThreshold: parseFloat(document.getElementById('kg-edge-threshold').value),
-        labelMode: document.getElementById('kg-label-mode').value,
-        layoutTick: 0, maxLayoutTicks: isCircular ? 3 : 300, running: true,
-        isCircular: isCircular, _time: 0
-    };
-    window._kgState = state;
-    bindKGControls(state);
-    generateKGInsight(data);
-
-    function tick() {
-        if (!state.running) return;
-        if (state.layoutTick < state.maxLayoutTicks) {
-            applyKGForces(state, width, height);
-            state.layoutTick++;
-        }
-        state._time += 0.02;
-        drawKG(ctx, state, width, height);
-        requestAnimationFrame(tick);
-    }
-    tick();
-    bindKGCanvas(canvas, container, state);
-}
-
-// ===== 力导向布局 =====
-function applyKGForces(state, w, h) {
-    var nodes = state.nodes, pos = state.positions, vel = state.velocities;
-    var n = nodes.length, tick = state.layoutTick;
-    var progress = tick / state.maxLayoutTicks;
-    var temp = Math.max(0.05, 1 - progress * 0.96);
-    var k = Math.sqrt(w * h / n) * 0.7;
-    var rep = k * k * 1.2, spr = 0.018 * temp;
-
-    var groups = {};
-    nodes.forEach(function (node) { var t = node.entity_type || ''; if (!groups[t]) groups[t] = []; groups[t].push(node); });
-
-    for (var i = 0; i < n; i++) {
-        for (var j = i + 1; j < n; j++) {
-            var ni = nodes[i], nj = nodes[j];
-            var pi = pos[ni.id], pj = pos[nj.id];
-            var dx = pi.x - pj.x, dy = pi.y - pj.y;
-            var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-            var sameType = (ni.entity_type || '') === (nj.entity_type || '');
-            var force = rep * (sameType ? 1.0 : 1.8) / (dist * dist);
-            vel[ni.id].x += (dx / dist) * force;
-            vel[ni.id].y += (dy / dist) * force;
-            vel[nj.id].x -= (dx / dist) * force;
-            vel[nj.id].y -= (dy / dist) * force;
-        }
+    function showLabel(n) {
+        if (labelMode === 'none') return false;
+        if (labelMode === 'all') return true;
+        if (labelMode === 'core') return !!n.is_core;
+        return !!n.is_core || !!(smartKeep && smartKeep[String(n.id)]);
     }
 
-    state.edges.forEach(function (e) {
-        var u = pos[e.from], v = pos[e.to];
-        if (!u || !v) return;
-        var dx = v.x - u.x, dy = v.y - u.y;
-        var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-        var ideal = k * 1.4;
-        var force = (dist - ideal) * spr;
-        u.x += (dx / dist) * force; u.y += (dy / dist) * force;
-        v.x -= (dx / dist) * force; v.y -= (dy / dist) * force;
-    });
-
-    Object.keys(groups).forEach(function (t) {
-        var group = groups[t];
-        if (group.length < 2) return;
-        var gx = 0, gy = 0;
-        group.forEach(function (node) { gx += pos[node.id].x; gy += pos[node.id].y; });
-        gx /= group.length; gy /= group.length;
-        group.forEach(function (node) {
-            var p = pos[node.id];
-            p.x += (gx - p.x) * 0.03 * temp;
-            p.y += (gy - p.y) * 0.03 * temp;
+    var nodeMap = {};
+    var edgeMap = {};
+    var catIndex = {};
+    var categories = [];
+    (KG_ONTOLOGY.entities || []).forEach(function (e) {
+        catIndex[e.type] = categories.length;
+        var t = KG_TYPE_MAP[e.type];
+        categories.push({
+            name: e.label || e.type,
+            itemStyle: { color: (t && t.color) || e.color || '#6B7280' }
         });
     });
 
-    nodes.forEach(function (node) {
-        var p = pos[node.id], v = vel[node.id];
-        p.x += v.x * temp; p.y += v.y * temp;
-        v.x *= 0.85; v.y *= 0.85;
-        p.x = Math.max(20, Math.min(w - 20, p.x));
-        p.y = Math.max(20, Math.min(h - 20, p.y));
-    });
-}
-
-// ===== 绘制 =====
-function drawKG(ctx, state, w, h) {
-    ctx.clearRect(0, 0, w, h);
-    ctx.save();
-    ctx.strokeStyle = 'rgba(0,0,0,0.035)';
-    ctx.lineWidth = 0.5;
-    for (var gx = 0; gx <= w; gx += 40) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, h); ctx.stroke(); }
-    for (var gy = 0; gy <= h; gy += 40) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke(); }
-    ctx.restore();
-
-    ctx.save();
-    ctx.translate(state.panX + w / 2, state.panY + h / 2);
-    ctx.scale(state.zoom, state.zoom);
-    ctx.translate(-w / 2, -h / 2);
-
-    var si = 1 / Math.max(state.zoom, 0.1);
-
-    var adj = {};
-    state.nodes.forEach(function (n) { adj[n.id] = []; });
-    state.edges.forEach(function (e) {
-        if (adj[e.from]) adj[e.from].push(e.to);
-        if (adj[e.to]) adj[e.to].push(e.from);
-    });
-    state._adj = adj;
-
-    var neighborSet = {};
-    if (state.hoveredNode && state._adj) {
-        (state._adj[state.hoveredNode.id] || []).forEach(function (item) { neighborSet[item] = true; });
-    }
-    if (state.hoveredEdge && !state.hoveredNode) {
-        neighborSet[state.hoveredEdge.from] = true;
-        neighborSet[state.hoveredEdge.to] = true;
-    }
-
-    // 边
-    state.edges.forEach(function (e) {
-        var u = state.positions[e.from], v = state.positions[e.to];
-        if (!u || !v) return;
-        if (e.similarity != null && e.similarity < state.edgeThreshold) return;
-
-        var midX = (u.x + v.x) / 2, midY = (u.y + v.y) / 2;
-        var dx = v.x - u.x, dy = v.y - u.y;
-        var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-        var curv = 0.08;
-        var ctrlX = midX - (dy / dist) * dist * curv;
-        var ctrlY = midY + (dx / dist) * dist * curv;
-
-        var isNodeHovered = state.hoveredNode && (state.hoveredNode.id === e.from || state.hoveredNode.id === e.to);
-        var isEdgeHovered = state.hoveredEdge && state.hoveredEdge.from === e.from && state.hoveredEdge.to === e.to;
-        var isHovered = isNodeHovered || isEdgeHovered;
-
-        ctx.beginPath();
-        ctx.moveTo(u.x, u.y);
-        ctx.quadraticCurveTo(ctrlX, ctrlY, v.x, v.y);
-
-        var base = edgeColor(e);
-        if (isHovered) {
-            ctx.strokeStyle = base; ctx.lineWidth = 2.6 * si; ctx.globalAlpha = 0.95;
-        } else if (state.hoveredNode || state.hoveredEdge) {
-            ctx.strokeStyle = '#CBD5E1'; ctx.lineWidth = 0.7 * si; ctx.globalAlpha = 0.08;
-        } else {
-            ctx.strokeStyle = base; ctx.lineWidth = 1.5 * si; ctx.globalAlpha = 0.55;
-        }
-        ctx.stroke();
-        ctx.globalAlpha = 1;
-
-        // 端点圆点
-        ctx.save();
-        ctx.fillStyle = isHovered ? base : '#94A3B8';
-        ctx.globalAlpha = isHovered ? 0.7 : 0.28;
-        ctx.beginPath(); ctx.arc(u.x, u.y, 2.4 * si, 0, Math.PI * 2); ctx.fill();
-        ctx.beginPath(); ctx.arc(v.x, v.y, 2.4 * si, 0, Math.PI * 2); ctx.fill();
-        ctx.restore();
-    });
-
-    var degThreshold = 0;
-    if (state.nodes.length > 12) {
-        var degs = state.nodes.map(function (n) { return n.degree || 0; }).sort(function (a, b) { return a - b; });
-        degThreshold = degs[Math.floor(degs.length * 0.7)] || 1;
-    }
-
-    ctx.shadowColor = 'rgba(0,0,0,0.10)';
-    ctx.shadowBlur = 6 * si;
-    ctx.shadowOffsetY = 3 * si;
-
-    // 节点
-    state.nodes.forEach(function (n) {
-        var p = state.positions[n.id];
-        if (!p) return;
-        var shape = nodeShape(n);
-        var deg = n.degree || 0;
-        var baseR = deg >= 8 ? 13 : (deg >= 3 ? 9 : (deg >= 1 ? 6 : 4));
-        var radius = (n.is_core ? Math.max(baseR, 12) : baseR) * si;
-        var isHovered = state.hoveredNode && state.hoveredNode.id === n.id;
-        var isSelected = state.selectedNode && state.selectedNode.id === n.id;
-        var isDimmed = (state.hoveredNode && !isHovered && !neighborSet[n.id]) ||
-                       (state.hoveredEdge && !state.hoveredNode && !neighborSet[n.id]);
-
-        if (isDimmed) ctx.globalAlpha = 0.18;
-
-        if (isHovered || isSelected) {
-            ctx.save();
-            ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, radius + 10 * si, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(245,158,11,0.15)';
-            ctx.fill();
-            ctx.restore();
-        }
-
-        ctx.save();
-        var color = nodeColor(n);
-        var grad = ctx.createRadialGradient(p.x - radius * 0.3, p.y - radius * 0.3, radius * 0.1, p.x, p.y, radius);
-        grad.addColorStop(0, lightenColor(color, 40));
-        grad.addColorStop(1, color);
-
-        ctx.beginPath();
-        if (shape === 'diamond') {
-            ctx.moveTo(p.x, p.y - radius);
-            ctx.lineTo(p.x + radius * 1.15, p.y);
-            ctx.lineTo(p.x, p.y + radius);
-            ctx.lineTo(p.x - radius * 1.15, p.y);
-        } else if (shape === 'triangle') {
-            var triH = radius * 1.15;
-            ctx.moveTo(p.x, p.y - triH);
-            ctx.lineTo(p.x + triH * 0.866, p.y + triH * 0.5);
-            ctx.lineTo(p.x - triH * 0.866, p.y + triH * 0.5);
-        } else if (shape === 'roundRect') {
-            var rw = radius * 1.6, rh = radius * 1.1, rr = radius * 0.35;
-            var hw = rw / 2, hh = rh / 2;
-            ctx.moveTo(p.x + hw - rr, p.y - hh);
-            ctx.lineTo(p.x - hw + rr, p.y - hh);
-            ctx.arcTo(p.x - hw, p.y - hh, p.x - hw, p.y - hh + rr, rr);
-            ctx.lineTo(p.x - hw, p.y + hh - rr);
-            ctx.arcTo(p.x - hw, p.y + hh, p.x - hw + rr, p.y + hh, rr);
-            ctx.lineTo(p.x + hw - rr, p.y + hh);
-            ctx.arcTo(p.x + hw, p.y + hh, p.x + hw, p.y + hh - rr, rr);
-            ctx.lineTo(p.x + hw, p.y - hh + rr);
-            ctx.arcTo(p.x + hw, p.y - hh, p.x + hw - rr, p.y - hh, rr);
-        } else {
-            ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-        }
-        ctx.closePath();
-        ctx.fillStyle = grad;
-        ctx.fill();
-
-        ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0;
-        ctx.lineWidth = (isSelected ? 3 : 1.8) * si;
-        ctx.strokeStyle = isSelected ? '#F59E0B' : (isHovered ? '#FFFFFF' : 'rgba(255,255,255,0.85)');
-        ctx.stroke();
-        ctx.restore();
-
-        if (isDimmed) ctx.globalAlpha = 1;
-
-        var showLabel = (state.labelMode === 'all') ||
-            (state.labelMode === 'core' && (isHovered || isSelected || n.is_core)) ||
-            (state.labelMode === 'smart' && (isHovered || isSelected || n.is_core || (n.degree || 0) >= degThreshold));
-        if (state.labelMode === 'none') showLabel = isHovered || isSelected;
-
-        if (showLabel) {
-            ctx.save();
-            ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0;
-            ctx.font = Math.max(8, 11 * si) + 'px "Inter", "Noto Sans SC", sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'top';
-            var label = n.label || n.title || n.id || '';
-            var maxLen = state.zoom >= 1.5 ? 24 : 12;
-            var text = label.length > maxLen ? label.substring(0, maxLen) + '…' : label;
-            var labelY = p.y + radius + 4 * si;
-            ctx.fillStyle = 'rgba(255,255,255,0.7)';
-            ctx.fillText(text, p.x + 0.8 * si, labelY + 0.8 * si);
-            ctx.fillStyle = '#1F2937';
-            ctx.fillText(text, p.x, labelY);
-            ctx.restore();
-        }
-    });
-
-    ctx.restore();
-}
-
-function lightenColor(color, amount) {
-    if (!color) return '#9CA3AF';
-    if (color.charAt(0) !== '#') return color;
-    color = color.replace('#', '');
-    var r = parseInt(color.substring(0, 2), 16);
-    var g = parseInt(color.substring(2, 4), 16);
-    var b = parseInt(color.substring(4, 6), 16);
-    r = Math.min(255, r + amount);
-    g = Math.min(255, g + amount);
-    b = Math.min(255, b + amount);
-    return '#' + [r, g, b].map(function (c) { return c.toString(16).padStart(2, '0'); }).join('');
-}
-
-// ===== Canvas 交互 =====
-function bindKGCanvas(canvas, container, state) {
-    function getPos(evt) {
-        var rect = canvas.getBoundingClientRect();
+    var graphNodes = nodes.map(function (n) {
+        var id = String(n.id);
+        nodeMap[id] = n;
         return {
-            x: (evt.clientX - rect.left - state.panX - rect.width / 2) / state.zoom + rect.width / 2,
-            y: (evt.clientY - rect.top - state.panY - rect.height / 2) / state.zoom + rect.height / 2,
-            clientX: evt.clientX, clientY: evt.clientY
+            id: id,
+            // ECharts 用 name 关联边，必须唯一，故用 id；显示文字由 label.formatter 提供
+            name: id,
+            category: catIndex[n.entity_type] != null ? catIndex[n.entity_type] : undefined,
+            symbol: kgNodeSymbol(n),
+            symbolSize: kgNodeSize(n),
+            label: { show: showLabel(n) },
+            itemStyle: n.is_core
+                ? { borderColor: '#2B6CB0', borderWidth: 2.5, shadowBlur: 12, shadowColor: 'rgba(43,108,176,0.38)' }
+                : { borderColor: 'rgba(226,232,240,0.95)', borderWidth: 1.4, shadowBlur: 6, shadowColor: 'rgba(15,23,42,0.12)' }
         };
-    }
-    function findNode(pos) {
-        for (var i = state.nodes.length - 1; i >= 0; i--) {
-            var n = state.nodes[i], p = state.positions[n.id];
-            if (!p) continue;
-            var r = (8 + Math.min(6, (n.degree || 0) * 0.5)) / Math.max(state.zoom, 0.1);
-            var dx = pos.x - p.x, dy = pos.y - p.y;
-            if (dx * dx + dy * dy <= r * r) return n;
-        }
-        return null;
-    }
-    function findEdge(pos) {
-        var hitThreshold = 8 / Math.max(state.zoom, 0.1);
-        var bestEdge = null, bestDist = hitThreshold;
-        state.edges.forEach(function (e) {
-            var u = state.positions[e.from], v = state.positions[e.to];
-            if (!u || !v) return;
-            if (e.similarity != null && e.similarity < state.edgeThreshold) return;
-            var midX = (u.x + v.x) / 2, midY = (u.y + v.y) / 2;
-            var dx = v.x - u.x, dy = v.y - u.y;
-            var dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-            var ctrlX = midX - (dy / dist) * dist * 0.08;
-            var ctrlY = midY + (dx / dist) * dist * 0.08;
-            for (var t = 0; t <= 1; t += 0.083) {
-                var mt = 1 - t;
-                var px = mt * mt * u.x + 2 * mt * t * ctrlX + t * t * v.x;
-                var py = mt * mt * u.y + 2 * mt * t * ctrlY + t * t * v.y;
-                var ddx = pos.x - px, ddy = pos.y - py;
-                var d = Math.sqrt(ddx * ddx + ddy * ddy);
-                if (d < bestDist) { bestDist = d; bestEdge = e; }
+    });
+
+    var graphLinks = visibleEdges.map(function (e, i) {
+        var id = 'e' + i;
+        edgeMap[id] = e;
+        return {
+            id: id,
+            source: String(e.from),
+            target: String(e.to),
+            lineStyle: { color: edgeColor(e), curveness: 0.12, width: 1.2, opacity: 0.45 }
+        };
+    });
+
+    var option = {
+        backgroundColor: 'transparent',
+        animationDuration: 500,
+        animationDurationUpdate: 300,
+        tooltip: {
+            trigger: 'item',
+            confine: true,
+            backgroundColor: 'rgba(255,255,255,0.97)',
+            borderColor: '#E5E7EB',
+            borderWidth: 1,
+            padding: [8, 10],
+            textStyle: { color: '#1E293B', fontSize: 12 },
+            extraCssText: 'box-shadow:0 6px 18px rgba(15,23,42,0.10);border-radius:8px;',
+            formatter: function (p) {
+                if (p.dataType === 'edge') {
+                    var e = edgeMap[p.data.id] || {};
+                    var from = nodeMap[String(e.from)];
+                    var to = nodeMap[String(e.to)];
+                    return '<div style="font-weight:600;margin-bottom:2px;">' +
+                        escapeHtml(e.relation_label || e.label || e.relation_type || '关联') + '</div>' +
+                        '<div style="font-size:12px;color:#374151;">' +
+                        escapeHtml(from ? (from.label || e.from) : e.from) + ' → ' +
+                        escapeHtml(to ? (to.label || e.to) : e.to) + '</div>' +
+                        '<div style="font-size:11px;color:#9CA3AF;">置信度 ' +
+                        (e.similarity != null ? e.similarity.toFixed(2) : '-') +
+                        (e.source_ref ? ' · ' + escapeHtml(e.source_ref) : '') + '</div>';
+                }
+                var n = nodeMap[String(p.data.id)] || {};
+                return '<div style="font-weight:600;margin-bottom:2px;">' + escapeHtml(n.label || n.id) + '</div>' +
+                    '<div style="font-size:12px;color:#374151;">' + escapeHtml(typeLabel(n)) + ' · 连接 ' + (n.degree || 0) + '</div>' +
+                    '<div style="font-size:11px;color:#9CA3AF;">点击查看邻域</div>';
+            }
+        },
+        series: [{
+            type: 'graph',
+            layout: layoutMode === 'circular' ? 'circular' : 'force',
+            data: graphNodes,
+            links: graphLinks,
+            categories: categories,
+            roam: true,
+            draggable: true,
+            nodeScaleRatio: 0.35,
+            top: 30,
+            left: 20,
+            right: 20,
+            bottom: 30,
+            force: {
+                repulsion: nodes.length > 60 ? 620 : 330,
+                edgeLength: [55, 110],
+                gravity: 0.18,
+                friction: 0.2,
+                layoutAnimation: true
+            },
+            circular: { rotateLabel: false },
+            label: {
+                show: true,
+                position: 'bottom',
+                distance: 4,
+                fontSize: 11,
+                color: '#1E293B',
+                backgroundColor: 'rgba(248,250,252,0.86)',
+                padding: [2, 4],
+                borderRadius: 3,
+                formatter: function (p) {
+                    var n = nodeMap[String(p.data.id)];
+                    return n ? kgShortLabel(n) : '';
+                }
+            },
+            labelLayout: { hideOverlap: true },
+            edgeSymbol: ['none', 'arrow'],
+            edgeSymbolSize: 5,
+            emphasis: {
+                focus: 'adjacency',
+                scale: 1.15,
+                label: { show: true, fontWeight: 600 },
+                itemStyle: { borderColor: '#2B6CB0', borderWidth: 2 },
+                lineStyle: { width: 2.4, opacity: 0.95 }
+            },
+            blur: {
+                itemStyle: { opacity: 0.18 },
+                label: { opacity: 0.12 },
+                lineStyle: { opacity: 0.05 }
+            }
+        }]
+    };
+
+    ensureKGECharts().then(function (echarts) {
+        var host = document.getElementById('kg-graph');
+        if (!host) return null;   // 已切走页面
+        var chart = echarts.init(host, null, { renderer: 'canvas' });
+        window._kgChart = chart;
+        window._kgState = { nodes: nodes, edges: visibleEdges, raw: data };
+        chart.setOption(option);
+
+        chart.on('click', function (p) {
+            if (p.dataType === 'node') {
+                var node = nodeMap[String(p.data.id)];
+                if (node) showKGDetail(node);
+            } else if (p.dataType === 'edge') {
+                var edge = edgeMap[p.data.id];
+                if (edge) showKGEdgeDetail(edge, window._kgState);
             }
         });
-        return bestEdge;
-    }
+        // 点击空白处收起详情面板
+        chart.getZr().on('click', function (evt) {
+            if (evt.target) return;
+            var panel = document.getElementById('kg-detail-panel');
+            if (panel) panel.style.display = 'none';
+        });
 
-    canvas.addEventListener('mousemove', function (e) {
-        var pos = getPos(e);
-        var node = findNode(pos);
-        var edge = node ? null : findEdge(pos);
-        state.hoveredNode = node;
-        state.hoveredEdge = edge;
-        canvas.style.cursor = (node || edge) ? 'pointer' : 'grab';
+        bindKGGraphControls();
+        generateKGInsight(data);
 
-        var tooltip = document.getElementById('kg-tooltip');
-        if (node && tooltip) {
-            tooltip.style.display = 'block';
-            tooltip.style.left = (pos.clientX - container.getBoundingClientRect().left + 12) + 'px';
-            tooltip.style.top = (pos.clientY - container.getBoundingClientRect().top + 12) + 'px';
-            tooltip.innerHTML = '<div style="font-weight:600;color:var(--color-text);margin-bottom:0.25rem;">' + escapeHtml(node.label || node.id) + '</div>' +
-                '<div style="color:var(--color-text-muted);margin-bottom:0.25rem;">' + escapeHtml(typeLabel(node)) + ' | 连接 ' + (node.degree || 0) + '</div>' +
-                '<div style="color:var(--color-text-secondary);font-size:0.7rem;">点击查看邻域</div>';
-        } else if (edge && tooltip) {
-            tooltip.style.display = 'block';
-            tooltip.style.left = (pos.clientX - container.getBoundingClientRect().left + 12) + 'px';
-            tooltip.style.top = (pos.clientY - container.getBoundingClientRect().top + 12) + 'px';
-            tooltip.innerHTML = '<div style="font-weight:600;color:var(--color-text);margin-bottom:0.25rem;">' + escapeHtml(edge.relation_label || edge.label || edge.relation_type || '关联') + '</div>' +
-                '<div style="color:var(--color-text-secondary);font-size:0.8125rem;">' +
-                escapeHtml(edge.from) + ' <span style="color:var(--color-text-muted);">→</span> ' + escapeHtml(edge.to) + '</div>' +
-                '<div style="color:var(--color-text-muted);font-size:0.75rem;">置信度 ' + (edge.similarity != null ? edge.similarity.toFixed(2) : '-') + '</div>';
-        } else if (tooltip) {
-            tooltip.style.display = 'none';
+        if (window.ResizeObserver) {
+            if (window._kgResizeObserver) window._kgResizeObserver.disconnect();
+            window._kgResizeObserver = new ResizeObserver(function () {
+                if (window._kgChart) window._kgChart.resize();
+            });
+            window._kgResizeObserver.observe(host);
         }
+        return chart;
+    }).catch(function (e) {
+        if (titleEl) titleEl.textContent = '图谱渲染失败：' + ((e && e.message) || '未知错误');
     });
+}
 
-    canvas.addEventListener('mouseleave', function () {
-        state.hoveredNode = null;
-        state.hoveredEdge = null;
-        var tooltip = document.getElementById('kg-tooltip');
-        if (tooltip) tooltip.style.display = 'none';
-    });
+// 阈值/标签变化的绑定（每次重建图表实例时重新注册）
+function bindKGGraphControls() {
+    var threshold = document.getElementById('kg-edge-threshold');
+    var labelSel = document.getElementById('kg-label-mode');
+    var rerender = function () {
+        var last = window._kgLastData;
+        if (!last) return;
+        var titleEl = document.getElementById('kg-graph-title');
+        renderKG(last, titleEl ? titleEl.textContent : '', window._kgLayoutMode);
+    };
+    var timer = null;
+    var debounced = function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(rerender, 250);
+    };
 
-    canvas.addEventListener('mousedown', function (e) {
-        var pos = getPos(e);
-        var node = findNode(pos);
-        if (node) {
-            state.selectedNode = node;
-            state.selectedEdge = null;
-            state.draggedNode = node;
-            var p = state.positions[node.id];
-            state._dragOffX = p.x - pos.x;
-            state._dragOffY = p.y - pos.y;
-            showKGDetail(node);
-            return;
-        }
-        var edge = findEdge(pos);
-        if (edge) {
-            state.selectedEdge = edge;
-            state.selectedNode = null;
-            state.draggedNode = null;
-            showKGEdgeDetail(edge, state);
-            return;
-        }
-        state.selectedNode = null;
-        state.selectedEdge = null;
-        document.getElementById('kg-detail-panel').style.display = 'none';
-    });
-
-    window.addEventListener('mousemove', function (e) {
-        if (!state.draggedNode) return;
-        var rect = canvas.getBoundingClientRect();
-        var pos = {
-            x: (e.clientX - rect.left - state.panX - rect.width / 2) / state.zoom + rect.width / 2,
-            y: (e.clientY - rect.top - state.panY - rect.height / 2) / state.zoom + rect.height / 2
+    if (threshold) {
+        threshold.oninput = function () {
+            document.getElementById('kg-threshold-val').textContent = parseFloat(threshold.value).toFixed(2);
+            debounced();
         };
-        state.positions[state.draggedNode.id].x = pos.x + state._dragOffX || 0;
-        state.positions[state.draggedNode.id].y = pos.y + state._dragOffY || 0;
-    });
-    window.addEventListener('mouseup', function () { state.draggedNode = null; });
-
-    canvas.addEventListener('wheel', function (e) {
-        e.preventDefault();
-        state.zoom = Math.max(0.3, Math.min(3, state.zoom * (e.deltaY > 0 ? 0.9 : 1.1)));
-    }, { passive: false });
+    }
+    if (labelSel) labelSel.onchange = rerender;
 }
 
 // ===== 详情面板 =====
@@ -727,7 +598,7 @@ function showKGDetail(node) {
     html += '<span class="badge" style="background:' + nodeColor(node) + ';color:#fff;">' + escapeHtml(typeLabel(node)) + '</span>';
     if (node.is_core) html += '<span class="badge badge-warning" style="margin-left:0.375rem;">核心</span>';
     html += '</div>';
-    html += '<h3 style="font-size:1rem;font-weight:600;margin:0 0 0.5rem;color:var(--color-text);">' + escapeHtml(node.label || node.id) + '</h3>';
+    html += '<h3 class="item-title">' + escapeHtml(node.label || node.id) + '</h3>';
     html += '<div style="margin-bottom:0.25rem;font-size:0.8125rem;"><strong>连接度：</strong>' + (node.degree || 0) + '</div>';
     html += '<div style="margin-top:0.5rem;"><button class="btn btn-sm btn-primary" onclick="loadEntityNeighborhood(\'' + escapeHtml(String(node.id).replace(/'/g, "\\'")) + '\')">查看邻域图谱</button></div>';
     html += '</div>';
@@ -740,7 +611,7 @@ function showKGEdgeDetail(edge, state) {
     var fromNode = state.nodes.find(function (n) { return n.id === edge.from; });
     var toNode = state.nodes.find(function (n) { return n.id === edge.to; });
     var html = '<div class="card" style="padding:0.75rem 1rem;">';
-    html += '<h3 style="font-size:1rem;font-weight:600;margin:0 0 0.75rem;color:var(--color-text);">' + escapeHtml(edge.relation_label || edge.label || '关联') + '</h3>';
+    html += '<h3 class="item-title" style="margin-bottom:0.75rem;">' + escapeHtml(edge.relation_label || edge.label || '关联') + '</h3>';
     html += '<div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;">';
     html += '<span style="padding:0.25rem 0.5rem;background:var(--color-bg);border-radius:6px;">' + escapeHtml(fromNode ? (fromNode.label || edge.from) : edge.from) + '</span>';
     html += '<span style="color:var(--color-text-muted);">→</span>';
@@ -754,38 +625,22 @@ function showKGEdgeDetail(edge, state) {
     panel.style.display = 'block';
 }
 
-function bindKGControls(state) {
-    function sync() {
-        state.edgeThreshold = parseFloat(document.getElementById('kg-edge-threshold').value);
-        state.labelMode = document.getElementById('kg-label-mode').value;
-        document.getElementById('kg-threshold-val').textContent = state.edgeThreshold.toFixed(2);
-    }
-    document.getElementById('kg-edge-threshold').addEventListener('input', sync);
-    document.getElementById('kg-label-mode').addEventListener('change', sync);
-    sync();
-}
-
+// ===== 视图控制 =====
+// ECharts 的 graph 系列没有 fitView API：布局只在 setOption 时按容器自适应一次，
+// 用户漫游/拖拽后无法单独重置视口，因此统一用“重建图表”恢复初始布局与缩放。
 window.resetKGView = function () {
-    var state = window._kgState;
-    if (!state) return;
-    state.zoom = 1; state.panX = 0; state.panY = 0;
+    var last = window._kgLastData;
+    if (!last || !window._kgChart) return;
+    var titleEl = document.getElementById('kg-graph-title');
+    renderKG(last, titleEl ? titleEl.textContent : '', window._kgLayoutMode);
 };
 
 window.fitKGView = function () {
-    var state = window._kgState;
-    if (!state || state.nodes.length === 0) return;
-    var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-    state.nodes.forEach(function (n) {
-        var p = state.positions[n.id];
-        if (p) { minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x); minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y); }
-    });
-    if (!isFinite(minX)) return;
-    var w = document.getElementById('kg-canvas-container').clientWidth;
-    var h = document.getElementById('kg-canvas-container').clientHeight;
-    var gw = maxX - minX + 60, gh = maxY - minY + 60;
-    state.zoom = Math.min(w / gw, h / gh, 2);
-    state.panX = (w / 2 - (minX + maxX) / 2) * state.zoom;
-    state.panY = (h / 2 - (minY + maxY) / 2) * state.zoom;
+    var last = window._kgLastData;
+    if (!last || !window._kgChart) return;
+    window._kgChart.resize();   // 容器尺寸变化时先同步画布，再重排
+    var titleEl = document.getElementById('kg-graph-title');
+    renderKG(last, titleEl ? titleEl.textContent : '', window._kgLayoutMode);
 };
 
 // ===== 图谱洞察 =====
@@ -814,6 +669,72 @@ function generateKGInsight(data) {
     }
     document.getElementById('kg-insight-text').textContent = parts.join('；') + '。';
     ip.style.display = 'block';
+    renderKGTypeChart(nodes);
+}
+
+// ===== 实体类型分布图（G2） =====
+var _kgG2Promise = null;
+var _kgTypeChart = null;
+
+function ensureKGG2() {
+    if (window.G2) return Promise.resolve(window.G2);
+    if (!_kgG2Promise) {
+        _kgG2Promise = new Promise(function (resolve, reject) {
+            var s = document.createElement('script');
+            s.src = 'vendor/g2.min.js';
+            s.onload = function () {
+                window.G2 ? resolve(window.G2) : reject(new Error('G2 未导出全局变量'));
+            };
+            s.onerror = function () { reject(new Error('G2 资源加载失败')); };
+            document.head.appendChild(s);
+        });
+    }
+    return _kgG2Promise;
+}
+
+function destroyKGTypeChart() {
+    if (_kgTypeChart) {
+        try { _kgTypeChart.destroy(); } catch (e) { /* 容器可能已销毁 */ }
+        _kgTypeChart = null;
+    }
+}
+
+function renderKGTypeChart(nodes) {
+    if (!nodes || !nodes.length) return;
+    var counts = {};
+    nodes.forEach(function (n) {
+        var t = typeLabel(n);
+        counts[t] = (counts[t] || 0) + 1;
+    });
+    var rows = Object.keys(counts)
+        .map(function (t) { return { type: t, count: counts[t] }; })
+        .sort(function (a, b) { return b.count - a.count; });
+    var colors = rows.map(function (r) {
+        var hit = null;
+        Object.keys(KG_TYPE_MAP).forEach(function (k) {
+            if (KG_TYPE_MAP[k].label === r.type) hit = KG_TYPE_MAP[k].color;
+        });
+        return hit || '#6B7280';
+    });
+
+    ensureKGG2().then(function (G2) {
+        if (!document.getElementById('kg-type-chart')) return;
+        destroyKGTypeChart();
+        _kgTypeChart = new G2.Chart({ container: 'kg-type-chart', autoFit: true, padding: [4, 8, 22, 26] });
+        _kgTypeChart.options({
+            type: 'interval',
+            data: rows,
+            encode: { x: 'type', y: 'count', color: 'type' },
+            scale: { color: { range: colors } },
+            legend: false,
+            style: { radiusTopLeft: 2, radiusTopRight: 2, maxWidth: 28 },
+            axis: {
+                x: { title: false, labelFontSize: 9, tick: false, line: false, labelAutoHide: true },
+                y: { title: false, labelFontSize: 9, tick: false, grid: false }
+            }
+        });
+        _kgTypeChart.render();
+    }).catch(function () { /* 图表失败不影响图谱本体 */ });
 }
 
 // ===== 数据加载 =====
@@ -842,7 +763,7 @@ window.searchKGEntities = function () {
     api.get('/kg/entity/search', { q: q, limit: 30 }).then(function (resp) {
         var list = (resp && resp.data && resp.data.entities) || [];
         if (!list.length) {
-            box.innerHTML = '<div class="alert alert-info">未找到相关实体，请尝试其他关键词</div>';
+            box.innerHTML = emptyState('未找到相关实体，请尝试其他关键词');
             return;
         }
         box.innerHTML = '';
@@ -860,7 +781,7 @@ window.browseEntities = function () {
     api.get('/kg/entities', { entity_type: type, page_size: 200 }).then(function (resp) {
         var list = (resp && resp.data) || [];
         if (!list.length) {
-            box.innerHTML = '<div class="alert alert-info">该类型暂无实体</div>';
+            box.innerHTML = emptyState('该类型暂无实体');
             return;
         }
         box.innerHTML = '';
@@ -907,15 +828,23 @@ window.toggleKGLayout = function () {
     window._kgLayoutMode = window._kgLayoutMode === 'circular' ? undefined : 'circular';
     var btn = document.getElementById('kg-layout-btn');
     if (btn) btn.textContent = window._kgLayoutMode === 'circular' ? '布局：圆形' : '布局：力导向';
-    var data = window._kgLastData;
-    if (data && window._kgState) {
-        var title = document.getElementById('kg-graph-title').textContent;
-        renderKG(data, title, window._kgLayoutMode);
-    }
+
+    var last = window._kgLastData;
+    if (!last) return;
+    var titleEl = document.getElementById('kg-graph-title');
+    renderKG(last, titleEl ? titleEl.textContent : '', window._kgLayoutMode);
 };
 
-var _origRenderKG = renderKG;
+// 缓存最近一次渲染数据，供阈值/标签/布局切换复用
+var _kgRenderKGBase = renderKG;
 renderKG = function (data, title, layoutMode) {
     window._kgLastData = data;
-    _origRenderKG(data, title, layoutMode);
+    return _kgRenderKGBase(data, title, layoutMode);
 };
+
+// 路由切走时释放图表实例，避免 canvas 与力导向计算常驻
+window.addEventListener('hashchange', function () {
+    setTimeout(function () {
+        if (!document.getElementById('kg-graph')) destroyKGGraph();
+    }, 0);
+});

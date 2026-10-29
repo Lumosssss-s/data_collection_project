@@ -125,11 +125,11 @@ window.adminLoadItems = function () {
     adminGet('/admin/items', { data_type: dataType, page_size: 100 }).then(function (resp) {
         if (!resp || !resp.success) { showError(box, (resp && resp.message) || '加载失败'); return; }
         const items = (resp.data && resp.data.items) || [];
-        let html = '<div class="card" style="padding:1rem;"><div style="font-weight:600;margin-bottom:0.5rem;">条目（' + items.length + ' 条）</div>';
+        let html = '<div class="card" style="padding:1rem;"><div class="card-title">条目（' + items.length + ' 条）</div>';
         if (!items.length) {
-            html += '<div class="alert alert-info">暂无条目</div>';
+            html += emptyState('暂无条目');
         } else {
-            html += '<table style="width:100%;border-collapse:collapse;font-size:0.8125rem;">';
+            html += '<div class="table-wrap"><table>';
             html += '<tr>' + ['ID', '类型', '标题', '癌种', '操作'].map(function (h) {
                 return '<th style="border:1px solid var(--color-border);padding:6px 10px;text-align:left;background:var(--color-bg);">' + h + '</th>';
             }).join('') + '</tr>';
@@ -148,7 +148,7 @@ window.adminLoadItems = function () {
                       + '</td>';
                 html += '</tr>';
             });
-            html += '</table>';
+            html += '</table></div>';
         }
         html += '</div>';
         box.innerHTML = html;
@@ -176,7 +176,7 @@ window.adminEditItem = function (id) {
         // 以 JSON 编辑（覆盖所有字段，兼容各 data_type 的异构字段）
         box.innerHTML = `
             <div class="card" style="padding:1rem;">
-                <div style="font-weight:600;margin-bottom:0.5rem;">编辑条目：${escapeHtml(id)}（JSON）</div>
+                <div class="card-title">编辑条目：${escapeHtml(id)}（JSON）</div>
                 <textarea id="admin-edit-json" class="textarea" style="width:100%;height:320px;font-family:var(--font-mono);font-size:0.75rem;">${escapeHtml(JSON.stringify(item, null, 2))}</textarea>
                 <div style="margin-top:0.5rem;display:flex;gap:0.5rem;">
                     <button class="btn btn-primary btn-sm" onclick="adminSaveEdit('${escapeHtml(id)}')">保存</button>
@@ -350,7 +350,7 @@ function renderAdminBatchPanel() {
     const el = document.getElementById('admin-panel-batch');
     el.innerHTML = `
         <div class="card" style="padding:1rem;">
-            <div style="font-weight:600;margin-bottom:0.5rem;">批量导入（JSON）</div>
+            <div class="card-title">批量导入（JSON）</div>
             <div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.5rem;">格式：[{"data_type":"rec","data":{...}}, ...]</div>
             <textarea id="admin-batch-json" class="textarea" style="width:100%;height:260px;font-family:var(--font-mono);font-size:0.75rem;" placeholder='[{"data_type":"rec","data":{"rec_id":"R1","doc_id":"D1","cancer_type":"lung","content":"..."}}]'></textarea>
             <button class="btn btn-primary btn-sm" style="margin-top:0.5rem;" onclick="adminBatchImport()">导入</button>
@@ -403,11 +403,11 @@ window.adminLoadCatalog = function () {
     adminGet('/admin/catalog').then(function (resp) {
         if (!resp || !resp.success) { showError(box, (resp && resp.message) || '加载失败'); return; }
         const docs = (resp.data && resp.data.docs) || [];
-        let html = '<div class="card" style="padding:1rem;"><div style="font-weight:600;margin-bottom:0.5rem;">文档目录（' + docs.length + ' 篇）</div>';
+        let html = '<div class="card" style="padding:1rem;"><div class="card-title">文档目录（' + docs.length + ' 篇）</div>';
         if (!docs.length) {
             html += '<div class="alert alert-info">目录为空（可先运行 ingest.py 入库）</div>';
         } else {
-            html += '<table style="width:100%;border-collapse:collapse;font-size:0.8125rem;">';
+            html += '<div class="table-wrap"><table>';
             html += '<tr>' + ['文档 ID', '标题', '类型', '癌种', '条目数', '状态'].map(function (h) {
                 return '<th style="border:1px solid var(--color-border);padding:6px 10px;text-align:left;background:var(--color-bg);">' + h + '</th>';
             }).join('') + '</tr>';
@@ -421,7 +421,7 @@ window.adminLoadCatalog = function () {
                 html += '<td style="border:1px solid var(--color-border);padding:6px 10px;">' + escapeHtml(d.status || '') + '</td>';
                 html += '</tr>';
             });
-            html += '</table>';
+            html += '</table></div>';
         }
         html += '</div>';
         box.innerHTML = html;

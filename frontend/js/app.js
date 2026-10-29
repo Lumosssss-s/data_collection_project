@@ -74,20 +74,75 @@ function navigate(page) {
 }
 
 function getCurrentPage() {
-    const hash = window.location.hash.slice(2) || 'dashboard';
+    const hash = window.location.hash.slice(2) || 'patient';
     // 提取页面名称（去掉参数部分，如 guideline/REC-LUNG-xxx -> guideline）
     const slashIndex = hash.indexOf('/');
     return slashIndex > 0 ? hash.substring(0, slashIndex) : hash;
 }
 
+// ===== 一级导航分组（侧栏只保留一级入口，组内页面以二级 Tab 切换）=====
+const PAGE_GROUPS = {
+    patient: {
+        label: '患者服务',
+        items: [
+            { page: 'patient', label: '服务首页', href: '#/patient' },
+            { page: 'preconsult', label: '智能预问诊', href: '#/preconsult' },
+            { page: 'report', label: '报告解析', href: '#/report' },
+            { page: 'followup', label: '智能随访', href: '#/followup' }
+        ]
+    },
+    diseases: {
+        label: '疾病知识',
+        items: [
+            { page: 'diseases', label: '疾病知识库', href: '#/diseases' },
+            { page: 'kg', label: '肿瘤图谱', href: '#/kg' }
+        ]
+    },
+    search: {
+        label: '循证查询',
+        items: [
+            { page: 'search', label: '循证检索', href: '#/search' },
+            { page: 'qa', label: '循证问答', href: '#/qa' },
+            { page: 'topic', label: '跨癌种专题', href: '#/topic' },
+            { page: 'compare', label: '癌种对比', href: '#/compare' }
+        ]
+    }
+};
+
+// 页面 → 所属一级分组
+const PAGE_GROUP_MAP = {};
+Object.keys(PAGE_GROUPS).forEach(function (groupKey) {
+    PAGE_GROUPS[groupKey].items.forEach(function (item) {
+        PAGE_GROUP_MAP[item.page] = groupKey;
+    });
+});
+
+// 详情子页 → 所属一级分组
+const SUB_PAGE_GROUP = { guideline: 'search', disease: 'diseases' };
+
 // ===== 侧边栏激活状态 =====
 function updateSidebarActive(page) {
-    // guideline 是指南详情子页，属检索链路，高亮 search；disease 属疾病知识库，高亮 diseases
-    const subPageMap = { 'guideline': 'search', 'disease': 'diseases' };
-    const activePage = subPageMap[page] || page;
-    document.querySelectorAll('.sidebar-nav a').forEach(a => {
-        a.classList.toggle('active', a.dataset.page === activePage);
+    const groupKey = PAGE_GROUP_MAP[page] || SUB_PAGE_GROUP[page] || page;
+    document.querySelectorAll('.sidebar-nav a').forEach(function (a) {
+        a.classList.toggle('active', a.dataset.page === groupKey);
     });
+}
+
+// ===== 二级 Tab =====
+function createGroupTabs(groupKey, activePage) {
+    const group = PAGE_GROUPS[groupKey];
+    const nav = document.createElement('nav');
+    nav.className = 'group-tabs';
+    nav.setAttribute('aria-label', group.label + '栏目');
+    group.items.forEach(function (item) {
+        const a = document.createElement('a');
+        a.className = 'group-tab' + (item.page === activePage ? ' active' : '');
+        a.href = item.href;
+        a.textContent = item.label;
+        if (item.page === activePage) a.setAttribute('aria-current', 'page');
+        nav.appendChild(a);
+    });
+    return nav;
 }
 
 // ===== 工具函数 =====
@@ -109,6 +164,14 @@ function showLoading(container) {
 
 function showError(container, msg) {
     container.innerHTML = `<div class="alert alert-error">${escapeHtml(msg)}</div>`;
+}
+
+// 无数据空状态：仅表达「此处为空」；数据未就绪/降级仍用 .alert，两者语义不同
+function emptyState(message) {
+    return '<div class="empty-state">'
+        + '<div class="empty-state-icon"></div>'
+        + '<p>' + escapeHtml(message) + '</p>'
+        + '</div>';
 }
 
 // ===== 简单的 Markdown 渲染 =====
@@ -160,7 +223,10 @@ function renderMarkdown(text) {
         html = html.replace(placeholderPrefix + idx + '##', tableHtml);
     });
 
-    return '<p>' + html + '</p>';
+    var out = '<p>' + html + '</p>';
+    // 纵深防御：正文已先经 escapeHtml 转义，此处再做一层 DOM 消毒；
+    // DOMPurify 未加载（CDN 不可达）时降级为原始结果，行为与改造前一致。
+    return (typeof DOMPurify !== 'undefined') ? DOMPurify.sanitize(out) : out;
 }
 
 // 将 Markdown 表格行数组渲染为 HTML 表格
@@ -226,10 +292,21 @@ function renderCurrentPage() {
     const container = document.getElementById('page-content');
     if (!container) return;
 
+    container.innerHTML = '';
+    const groupKey = PAGE_GROUP_MAP[page] || SUB_PAGE_GROUP[page];
+    if (groupKey) {
+        const activePage = PAGE_GROUP_MAP[page] ? page : SUB_PAGE_GROUP[page];
+        container.appendChild(createGroupTabs(groupKey, activePage));
+    }
+
+    const body = document.createElement('div');
+    body.className = 'page-body';
+    container.appendChild(body);
+
     if (pages[page]) {
-        pages[page](container);
+        pages[page](body);
     } else {
-        container.innerHTML = '<div class="alert alert-warning">页面未找到</div>';
+        body.innerHTML = '<div class="alert alert-warning">页面未找到</div>';
     }
 }
 

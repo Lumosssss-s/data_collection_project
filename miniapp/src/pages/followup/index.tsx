@@ -86,6 +86,8 @@ const FollowupPage: React.FC = () => {
     }
   };
 
+  const dueCount = tasks.filter((t) => t.due && t.status !== 'done').length;
+
   return (
     <View className={styles.page}>
       <View className={styles.card}>
@@ -113,12 +115,23 @@ const FollowupPage: React.FC = () => {
         <View className={styles.list}>
           {fromMock ? <Text className={styles.mockNotice}>{MOCK_NOTICE}</Text> : null}
 
-          <Text className={styles.summary}>
-            共 {tasks.length} 项随访安排，其中 {tasks.filter((t) => t.due && t.status !== 'done').length} 项已到期
-          </Text>
+          <View className={styles.summary}>
+            <Text className={styles.summaryText}>共 </Text>
+            <Text className={styles.summaryNum}>{tasks.length}</Text>
+            <Text className={styles.summaryText}> 项随访安排，其中 </Text>
+            <Text className={dueCount > 0 ? styles.summaryNumWarn : styles.summaryNum}>{dueCount}</Text>
+            <Text className={styles.summaryText}> 项已到期</Text>
+          </View>
 
           {tasks.map((task) => (
-            <View key={task.task_id} className={styles.taskCard}>
+            <View
+              key={task.task_id}
+              className={classnames(
+                styles.taskCard,
+                task.status === 'done' && styles.taskCardDone,
+                task.status !== 'done' && task.due && styles.taskCardDue
+              )}
+            >
               <View className={styles.taskHead}>
                 <Text className={styles.taskTitle}>{task.timepoint}</Text>
                 {task.status === 'done' ? (
@@ -129,8 +142,14 @@ const FollowupPage: React.FC = () => {
                   <Text className={styles.statusPending}>待反馈</Text>
                 )}
               </View>
-              <Text className={styles.taskItems}>检查项目：{task.items.join('、')}</Text>
-              <Text className={styles.taskDate}>计划日期：{task.due_date}</Text>
+              <View className={styles.metaRow}>
+                <Text className={styles.metaLabel}>检查项目</Text>
+                <Text className={styles.metaValue}>{task.items.join('、')}</Text>
+              </View>
+              <View className={styles.metaRow}>
+                <Text className={styles.metaLabel}>计划日期</Text>
+                <Text className={styles.metaValue}>{task.due_date}</Text>
+              </View>
 
               {task.status !== 'done' ? (
                 <Button className={styles.feedbackBtn} onClick={() => toggleTask(task.task_id)}>

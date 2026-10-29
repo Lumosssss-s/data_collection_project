@@ -72,16 +72,16 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
     html += '</div>';
 
     if (!d.sections || !d.sections.length) {
-        html += '<div class="alert alert-info">该疾病暂无可用内容（章节待入库）。</div>';
+        html += emptyState('该疾病暂无可用内容（章节待入库）。');
     } else {
         let lastGroup = '';
         d.sections.forEach(function (s) {
             if (s.group && s.group !== lastGroup) {
-                html += '<h2 style="font-size:1rem;margin:1rem 0 0.5rem;color:var(--color-text-secondary);">' + escapeHtml(s.group) + '</h2>';
+                html += '<h2 class="section-title">' + escapeHtml(s.group) + '</h2>';
                 lastGroup = s.group;
             }
             html += '<div class="card" style="padding:0.875rem 1rem;margin-bottom:0.5rem;">';
-            html += '<div style="font-weight:600;margin-bottom:0.375rem;">' + escapeHtml(s.label) + '</div>';
+            html += '<div class="card-title">' + escapeHtml(s.label) + '</div>';
             html += '<div style="font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(s.text) + '</div>';
             html += '</div>';
         });
@@ -91,7 +91,7 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
     const links = d.links || {};
     const linkKeys = Object.keys(links).filter(function (k) { return links[k] && (!Array.isArray(links[k]) || links[k].length); });
     if (linkKeys.length) {
-        html += '<h2 style="font-size:1rem;margin:1rem 0 0.5rem;color:var(--color-text-secondary);">图谱关联</h2>';
+        html += '<h2 class="section-title">图谱关联</h2>';
         html += '<div class="card" style="padding:0.875rem 1rem;margin-bottom:0.5rem;">';
         linkKeys.forEach(function (k) {
             const v = Array.isArray(links[k]) ? links[k].join('、') : String(links[k]);

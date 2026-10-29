@@ -42,6 +42,7 @@ const MinePage: React.FC = () => {
   return (
     <View className={styles.page}>
       <View className={styles.hero}>
+        <Text className={styles.heroEyebrow}>患者端</Text>
         <Text className={styles.heroTitle}>我的健康服务</Text>
         <Text className={styles.heroSub}>填写随访编号后，可查看属于您的随访安排</Text>
       </View>
@@ -63,7 +64,8 @@ const MinePage: React.FC = () => {
       </View>
 
       <View className={styles.entry} onClick={goFollowup}>
-        <View>
+        <View className={styles.entryDot} />
+        <View className={styles.entryBody}>
           <Text className={styles.entryTitle}>我的随访</Text>
           <Text className={styles.entryDesc}>查看随访安排、填写近况反馈</Text>
         </View>
@@ -71,7 +73,8 @@ const MinePage: React.FC = () => {
       </View>
 
       <View className={styles.entry} onClick={goReport}>
-        <View>
+        <View className={styles.entryDot} />
+        <View className={styles.entryBody}>
           <Text className={styles.entryTitle}>报告解读</Text>
           <Text className={styles.entryDesc}>把报告文字整理成清晰要点</Text>
         </View>

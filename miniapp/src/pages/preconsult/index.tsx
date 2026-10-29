@@ -94,24 +94,36 @@ const PreconsultPage: React.FC = () => {
 
   return (
     <View className={styles.page}>
-      <ScrollView className={styles.chat} scrollY scrollIntoView={scrollRef.current} scrollWithAnimation>
-        <View className={styles.chatInner}>
-          {messages.map((m) => (
-            <View
-              key={m.id}
-              className={classnames(
-                styles.bubble,
-                m.role === 'user' && styles.bubbleUser,
-                m.role === 'bot' && styles.bubbleBot,
-                m.role === 'warn' && styles.bubbleWarn,
-                m.role === 'tip' && styles.bubbleTip
-              )}
-            >
-              <Text className={styles.bubbleText}>{m.text}</Text>
-            </View>
-          ))}
+      <View className={styles.chat}>
+        <View className={styles.chatHeader}>
+          <View className={styles.chatHeaderDot} />
+          <Text className={styles.chatHeaderTitle}>AI 预问诊</Text>
+          <Text className={styles.chatHeaderHint}>仅作就医方向参考</Text>
         </View>
-      </ScrollView>
+        <ScrollView
+          className={styles.chatScroll}
+          scrollY
+          scrollIntoView={scrollRef.current}
+          scrollWithAnimation
+        >
+          <View className={styles.chatInner}>
+            {messages.map((m) => (
+              <View
+                key={m.id}
+                className={classnames(
+                  styles.bubble,
+                  m.role === 'user' && styles.bubbleUser,
+                  m.role === 'bot' && styles.bubbleBot,
+                  m.role === 'warn' && styles.bubbleWarn,
+                  m.role === 'tip' && styles.bubbleTip
+                )}
+              >
+                <Text className={styles.bubbleText}>{m.text}</Text>
+              </View>
+            ))}
+          </View>
+        </ScrollView>
+      </View>
 
       <View className={styles.inputBar}>
         <Input
@@ -132,7 +144,8 @@ const PreconsultPage: React.FC = () => {
         <View className={styles.panel}>
           <View className={styles.card}>
             <Text className={styles.cardTitle}>目前判断</Text>
-            <View className={classnames(styles.riskTag, styles[riskKey] || styles.routine)}>
+            <View className={classnames(styles.riskBanner, styles[riskKey] || styles.routine)}>
+              <Text className={styles.riskMark}>!</Text>
               <Text className={styles.riskTagText}>{result.risk_label || RISK_LABELS[riskKey] || riskKey}</Text>
             </View>
           </View>
@@ -151,9 +164,10 @@ const PreconsultPage: React.FC = () => {
             <View className={styles.card}>
               <Text className={styles.cardTitle}>就诊前请准备</Text>
               {result.visit_prep.map((t, i) => (
-                <Text key={`prep-${i}`} className={styles.cardItem}>
-                  · {t}
-                </Text>
+                <View key={`prep-${i}`} className={styles.prepItem}>
+                  <Text className={styles.prepIndex}>{i + 1}</Text>
+                  <Text className={styles.prepText}>{t}</Text>
+                </View>
               ))}
             </View>
           )}

@@ -13,6 +13,8 @@ $color-success: #15803d;
 $color-warning: #b45309;
 $color-error: #b91c1c;
 $color-info: #0e7490;
+$color-info-deep: #1e5e7a; // 蓝灰（与 Web 端一致，用于入口图标底衬区分）
+$color-info-soft: #f1f6f9;
 
 // 背景色
 $color-bg-page: #f2f7f9;
@@ -34,3 +36,17 @@ $color-divider: #eef5f7;
 $color-primary-soft: #e6f2f5; // 主题浅底（标签、提示底色）
 $color-warning-soft: #fdf3e7; // 警告浅底（免责声明条）
 $color-danger-soft: #fdeceb; // 危险浅底（红旗征提示）
+
+// 风险分层（与风险等级一一对应，禁止仅用颜色表达结论）
+$color-risk-high: #b3261e;
+$color-risk-high-soft: #fdecea;
+$color-risk-mid: #b45309;
+$color-risk-mid-soft: #fdf3e7;
+$color-risk-low: #0f7b4f;
+$color-risk-low-soft: #e8f5ee;
+
+// 证据等级（患者端科普引用时使用）
+$color-evidence-a: #0f7b4f;
+$color-evidence-b: #0e7490;
+$color-evidence-c: #b45309;
+$color-evidence-d: #5b6b76;

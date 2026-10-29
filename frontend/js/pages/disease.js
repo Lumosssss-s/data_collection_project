@@ -6,7 +6,7 @@
 registerPage('diseases', function (container) {
     container.innerHTML = `
         <h1 class="page-title">疾病知识库</h1>
-        <p class="page-subtitle" style="color:var(--color-text-muted);margin-bottom:1rem;">
+        <p class="page-desc">
             以疾病为中心的结构化百科：支持按疾病名检索、按症状反查、按类别/癌种浏览。
         </p>
 
@@ -92,7 +92,7 @@ function renderDiseaseBrowse(box, data) {
     html += '<div style="font-size:0.875rem;color:var(--color-text-muted);margin-bottom:0.5rem;">共 ' + (data.total || 0) + ' 个疾病档案</div>';
 
     if (!data.items || !data.items.length) {
-        if (!data.degraded) html += '<div class="alert alert-info">暂无疾病档案</div>';
+        if (!data.degraded) html += emptyState('暂无疾病档案');
     } else {
         html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0.75rem;">';
         data.items.forEach(function (it) { html += diseaseCard(it); });
@@ -132,7 +132,7 @@ function renderDiseaseResult(box, data, q, mode) {
     if (data.degraded) {
         html += '<div class="alert alert-warning">' + escapeHtml(data.note || '数据未就绪') + '</div>';
     } else if (!data.total) {
-        html += '<div class="alert alert-info">' + escapeHtml(data.note || '未找到匹配的疾病') + '</div>';
+        html += emptyState(data.note || '未找到匹配的疾病');
     }
 
     if (data.normalized && mode === 'name' && data.normalized !== q) {
@@ -153,7 +153,7 @@ function renderDiseaseResult(box, data, q, mode) {
 function diseaseCard(it) {
     const name = it.name_canonical || it.disease_id || '未命名';
     let html = '<a class="card" href="#/disease/' + encodeURIComponent(it.disease_id) + '" style="text-decoration:none;color:inherit;padding:1rem;display:block;">';
-    html += '<div style="font-weight:600;font-size:1rem;margin-bottom:0.25rem;">' + escapeHtml(name) + '</div>';
+    html += '<div class="item-title">' + escapeHtml(name) + '</div>';
     if (it.name_en) html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.375rem;">' + escapeHtml(it.name_en) + '</div>';
     html += '<div style="margin-bottom:0.5rem;">';
     if (it.category_label) html += '<span class="badge badge-info">' + escapeHtml(it.category_label) + '</span> ';

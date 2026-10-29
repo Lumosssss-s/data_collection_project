@@ -6,13 +6,13 @@
 registerPage('report', function (container) {
     container.innerHTML = `
         <h1 class="page-title">报告智能解析</h1>
-        <p class="page-subtitle" style="color:var(--color-text-muted);margin-bottom:1rem;">
+        <p class="page-desc">
             对报告<b>文本</b>做结构化整理：抽取部位 / 大小 / 密度 / 边界 / 淋巴结，提取关键征象，
             给出循证随访建议，并与同一患者上次解析对比。仅文本解析，不做影像判读与 OCR。
         </p>
 
         <div class="card" style="padding:1rem;margin-bottom:1rem;">
-            <div style="font-weight:600;margin-bottom:0.5rem;">报告文本</div>
+            <div class="card-title">报告文本</div>
             <textarea id="rp-text" class="textarea" rows="8" style="width:100%;"
                 placeholder="粘贴报告文本。示例：&#10;右肺上叶见磨玻璃结节，大小约 12mm×10mm，边界欠清，可见分叶；纵隔未见肿大淋巴结。"></textarea>
             <div style="margin-top:0.5rem;display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
@@ -50,11 +50,11 @@ function renderReportResult(box, r) {
 
     // 结构化字段
     html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;">';
-    html += '<div style="font-weight:600;margin-bottom:0.5rem;">结构化字段（' + ((r.findings || []).length) + ' 处病灶）</div>';
+    html += '<div class="card-title">结构化字段（' + ((r.findings || []).length) + ' 处病灶）</div>';
     if (!r.findings || !r.findings.length) {
         html += '<div style="font-size:0.8125rem;color:var(--color-text-muted);">未抽取到结构化病灶描述。</div>';
     } else {
-        html += '<table style="width:100%;border-collapse:collapse;font-size:0.8125rem;">';
+        html += '<div class="table-wrap"><table>';
         html += '<tr>' + ['部位', '大小', '密度', '边界', '淋巴结'].map(function (h) {
             return '<th style="border:1px solid var(--color-border);padding:6px 10px;text-align:left;background:var(--color-bg);">' + h + '</th>';
         }).join('') + '</tr>';
@@ -65,14 +65,14 @@ function renderReportResult(box, r) {
             });
             html += '</tr>';
         });
-        html += '</table>';
+        html += '</table></div>';
     }
     html += '</div>';
 
     // 关键征象
     if (r.key_signs && r.key_signs.length) {
         html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;">';
-        html += '<div style="font-weight:600;margin-bottom:0.5rem;">关键征象</div>';
+        html += '<div class="card-title">关键征象</div>';
         r.key_signs.forEach(function (s) {
             html += '<span class="badge badge-warning" style="margin:0 0.25rem 0.25rem 0;">' + escapeHtml(s) + '</span>';
         });
@@ -82,14 +82,14 @@ function renderReportResult(box, r) {
     // 报告印象
     if (r.impression) {
         html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;">';
-        html += '<div style="font-weight:600;margin-bottom:0.5rem;">报告印象（原报告复述）</div>';
+        html += '<div class="card-title">报告印象（原报告复述）</div>';
         html += '<div style="font-size:0.875rem;line-height:1.7;">' + escapeHtml(r.impression) + '</div>';
         html += '</div>';
     }
 
     // 随访建议（循证）
     html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;">';
-    html += '<div style="font-weight:600;margin-bottom:0.5rem;">循证随访建议</div>';
+    html += '<div class="card-title">循证随访建议</div>';
     if (r.followup_suggestions && r.followup_suggestions.length) {
         r.followup_suggestions.forEach(function (s) {
             html += '<div style="font-size:0.8125rem;margin-bottom:0.625rem;padding:0.5rem;background:var(--color-bg);border-radius:6px;">';
@@ -103,7 +103,7 @@ function renderReportResult(box, r) {
             html += '</div></div>';
         });
     } else {
-        html += '<div style="font-size:0.8125rem;color:var(--color-text-muted);">暂无匹配的循证随访条目。</div>';
+        html += emptyState('暂无匹配的循证随访条目。');
     }
     html += '</div>';
 
@@ -111,7 +111,7 @@ function renderReportResult(box, r) {
     if (r.diff_prev) {
         const d = r.diff_prev;
         html += '<div class="card" style="padding:1rem;margin-bottom:0.75rem;">';
-        html += '<div style="font-weight:600;margin-bottom:0.5rem;">历次对比</div>';
+        html += '<div class="card-title">历次对比</div>';
         html += '<div style="font-size:0.8125rem;margin-bottom:0.5rem;">上次 ' + d.previous_count + ' 处 → 本次 ' + d.current_count + ' 处（按部位对比）</div>';
         if (d.size_changes && d.size_changes.length) {
             d.size_changes.forEach(function (c) {

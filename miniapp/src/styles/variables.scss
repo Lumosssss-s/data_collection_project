@@ -34,10 +34,13 @@ $button-height-md: 80rpx; // 常规按钮（主流标准）
 $button-height-lg: 96rpx; // 大按钮（主要操作、底部固定）
 
 // 阴影（语义化）
-$shadow-card: 0 2rpx 12rpx rgba(0, 0, 0, 0.08); // 卡片阴影
-$shadow-card-hover: 0 4rpx 20rpx rgba(0, 0, 0, 0.12); // 卡片悬浮
-$shadow-float: 0 4rpx 16rpx rgba(0, 0, 0, 0.1); // 浮层阴影（如筛选栏、底部操作栏）
-$shadow-popup: 0 8rpx 32rpx rgba(0, 0, 0, 0.15); // 弹窗阴影
+$shadow-card: 0 2rpx 8rpx rgba(15, 48, 58, 0.05); // 卡片阴影（收敛，避免漂浮感）
+$shadow-card-hover: 0 4rpx 16rpx rgba(15, 48, 58, 0.08); // 卡片悬浮
+$shadow-float: 0 4rpx 16rpx rgba(15, 48, 58, 0.1); // 浮层阴影（如筛选栏、底部操作栏）
+$shadow-popup: 0 8rpx 32rpx rgba(15, 48, 58, 0.15); // 弹窗阴影
+
+// 字族（数值/编号用等宽，便于纵向比对）
+$font-family-mono: 'DIN Alternate', 'SF Mono', Consolas, monospace;
 
 // 字体大小
 $font-size-xs: 22rpx;

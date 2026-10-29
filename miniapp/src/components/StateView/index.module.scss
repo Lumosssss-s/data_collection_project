@@ -31,6 +31,29 @@
   text-align: center;
 }
 
+/* 空态插图：虚线圆 + 短横，与 Web 端 .empty-state 同构 */
+.emptyIcon {
+  position: relative;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  border: 2rpx dashed $color-border;
+  background: $color-primary-soft;
+  margin-bottom: $spacing-md;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32rpx;
+    height: 4rpx;
+    transform: translate(-50%, -50%);
+    background: $color-text-disabled;
+    border-radius: 2rpx;
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
