@@ -43,7 +43,11 @@ class SummaryService:
         return self.repo.get(doc_id) or {}
 
     def _get_doc_recs(self, doc_id: str) -> List[Dict]:
-        """读取该指南下的推荐条目（用于汇总速览来源文本）。"""
+        """读取该指南下的推荐条目（用于汇总速览来源文本）。
+
+        size 取 2000：当前最大的指南有 681 条 REC，原 500 会漏读尾部章节；
+        按 rec_id 排序，保证每次采样顺序一致，缓存指纹可比对。
+        """
         try:
             resp = self.repo.client.search(
                 index=settings.es_index_name,
@@ -52,7 +56,8 @@ class SummaryService:
                         {"term": {"doc_id": doc_id}},
                         {"term": {"data_type": "rec"}},
                     ]}},
-                    "size": 500,
+                    "size": 2000,
+                    "sort": ["rec_id"],
                     "_source": ["content", "breadcrumb", "scenario", "evidence_level", "rec_strength"],
                 },
             )
@@ -70,15 +75,7 @@ class SummaryService:
         recs = self._get_doc_recs(doc_id)
 
         if recs:
-            parts = []
-            for r in recs:
-                text = (r.get("content") or "").strip()
-                if not text:
-                    continue
-                breadcrumb = r.get("breadcrumb") or ""
-                prefix = f"[{breadcrumb}] " if breadcrumb else ""
-                parts.append(f"{prefix}{text}")
-            source_text = "\n".join(parts)
+            source_text = self._sample_by_section(recs, self.COMPRESSED_LENGTH)
         else:
             source_text = (doc.get("content") or "").strip()
 
@@ -93,6 +90,66 @@ class SummaryService:
             "item_count": cat_record.get("item_count", len(recs)),
         }
         return source_text, meta
+
+    # ===== 分层采样 =====
+
+    @staticmethod
+    def _sample_by_section(recs: List[Dict], budget: int) -> str:
+        """按一级章节分层采样，保证每个章节都有代表内容进入 prompt。
+
+        原实现把所有 REC 顺序拼接后再硬截断（`source_text[:10000]`），长指南只能
+        覆盖开头一小段：实测 DOC-COLORECTAL-EPMC-003 有 177,609 字符，实际只送
+        10,000 字符（5.6%），其余章节完全没被 LLM 看到。
+        这里改为「按 breadcrumb 一级章节分组 → 均分字符预算 → 组内等距抽样」，
+        在同样的字符预算下把覆盖从「开头若干条」提升到「每个章节都有」。
+        """
+        groups: Dict[str, List[str]] = {}
+        order: List[str] = []
+        for r in recs:
+            text = (r.get("content") or "").strip()
+            if not text:
+                continue
+            bd = (r.get("breadcrumb") or "").strip()
+            key = bd.split("/")[0] if bd else ""
+            if key not in groups:
+                groups[key] = []
+                order.append(key)
+            groups[key].append(f"[{bd}] {text}" if bd else text)
+
+        if not order:
+            return ""
+
+        total = sum(len(t) for g in groups.values() for t in g)
+        if total <= budget:
+            return "\n".join(t for k in order for t in groups[k])
+
+        per = max(budget // len(order), 200)
+        parts = [SummaryService._sample_group(groups[k], per) for k in order]
+        return "\n".join(p for p in parts if p)[:budget]
+
+    @staticmethod
+    def _sample_group(texts: List[str], quota: int) -> str:
+        """组内等距抽样：在 quota 内尽量分散地取条目，而不是只取前几条。"""
+        if not texts or quota <= 0:
+            return ""
+        if sum(len(t) for t in texts) <= quota:
+            return "\n".join(texts)
+        # 每条至少保留约 400 字符，据此确定抽样条数（至少 1 条）
+        n = max(1, min(len(texts), quota // 400))
+        stride = max(1, len(texts) // n)
+        picks = texts[::stride][:n]
+        out, used = [], 0
+        for t in picks:
+            room = quota - used
+            if room <= 0:
+                break
+            if len(t) > room:
+                if room >= 100:
+                    out.append(t[:room])
+                break
+            out.append(t)
+            used += len(t)
+        return "\n".join(out)
 
     # ===== Prompt =====
 

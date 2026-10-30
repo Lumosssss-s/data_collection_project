@@ -118,17 +118,36 @@ class Settings(BaseSettings):
     # 单条推荐条目 / 关联条目可能较长，多条全量拼接会显著挤占上下文预算，故截断保留开头。
     reference_expand_max_chars: int = 1000
 
-    # 多跳 B：查询分解。把「肺癌术后辅助治疗和随访复查有哪些要求」这类复合查询拆成
-    # 单一意图子查询，各子查询并行检索（跳过精排）后 RRF 合并，再对合并结果精排一次。
-    # 规则前置（字面切分）→ LLM 兜底（明显复合但规则切不干净）→ 失败降级单跳。
-    # 让路：多癌种查询（对比 / 专题意图）与已带多项临床条件（分期 / 分子 / 线数）的
-    # 精准意图均不分解。
-    multihop_decompose_enabled: bool = True
-    # 单次最多使用的子查询数（含锚定的原查询）。锚定原查询保证「只加候选、不丢召回」。
-    multihop_decompose_max_subqueries: int = 3
-    # LLM 兜底开关与超时（秒）。关闭后仅用规则，不产生任何额外延迟。
-    multihop_decompose_llm_enabled: bool = True
-    multihop_decompose_llm_timeout: float = 3.0
+    # ==================================================================
+    # 多跳推理：**已整体弃用**（2026-10-30 与指导老师讨论后决定）
+    #
+    # 弃用依据（`docs/多跳推理评测报告.md`）：
+    #   1. 两跳扩展（多跳 C）在 30 题多跳评测集上实测 MRR +0.0028、R@5/R@10 零变化，
+    #      纯噪声量级；瓶颈诊断显示 R@10→R@20 仅涨 1.7 点，第二处证据点根本不在召回池里
+    #      （召回失败而非排序失败），任何"重排/扩展类"多跳方案都无从发力。
+    #   2. 法规项目的两条主力多跳链（引用链 + 实体导航链）在医疗语料上无结构基础：
+    #      1513 条 REC 的 refs 字段全部为空；医疗 KG 无 Drug 出边，实体导航链最长 1 跳。
+    #      照搬法规架构预期增益接近零。
+    #   3. 查询分解（多跳 B）虽默认开启，但实测触发场景少（需并列词 + 非精准意图 +
+    #      非多癌种），且分解引入的子查询候选经统一精排后实际增益也在噪声范围内。
+    #
+    # 以下 6 个配置项全部保留为 False，代码路径已在 retriever_service / query_decomposer
+    # 中清除，仅作文档参考与未来重开时的开关预留。
+    # ==================================================================
+    multihop_decompose_enabled: bool = False          # 多跳 B：查询分解 → 关闭
+    multihop_decompose_max_subqueries: int = 3        # 保留原值，不影响
+    multihop_decompose_llm_enabled: bool = False      # LLM 兜底 → 一并关闭，零额外延迟
+    multihop_decompose_llm_timeout: float = 3.0       # 保留原值，不影响
+    multihop_twostep_enabled: bool = False             # 多跳 C：两跳扩展 → 本就默认关闭
+    multihop_twostep_terms: int = 2                    # 保留原值，不影响
+
+    # 文献证据层兜底：主库（指南/推荐/药品）结果之后追加英文文献摘要作为二级证据。
+    # 追加而非混排，保证指南类权威证据不被英文摘要挤占位次；跨语言相似度门槛取高值滤噪。
+    literature_fallback_enabled: bool = True
+    literature_top_k: int = 2
+    literature_min_similarity: float = 0.75
+    # 单条文献写入 prompt 的最大字符数：英文摘要长度参差，截断以控制 prompt 开销
+    literature_max_chars: int = 1200
 
     # 检索结果缓存：精排是单次检索的耗时主体（约 93%），而前端刷新页面/切换标签后会
     # 按设计重新发起同一查询，缓存命中后整条链路（含精排）直接跳过。
@@ -137,6 +156,32 @@ class Settings(BaseSettings):
     search_cache_enabled: bool = True
     # 条数上限。单条结果约 50 项、每项正文千字量级，500 条在百 MB 以内
     search_cache_max_entries: int = 500
+
+    # 语义缓存（Redis 后端，utils/semantic_cache.py）
+    # 定位：热问（人工预热 + 运行时累积）的跨进程/跨重启缓存。命中时问答跳过
+    # 「检索 + 精排 + LLM 生成」整条链路，检索页跳过「混合检索 + 精排」。
+    # 命中判定不是单一余弦阈值：L1 余弦只做初筛，L2 必须通过实体槽位守卫
+    #（癌种 / 分期 / 线数 / 拉丁术语 / 数字 / 否定词），任一槽位冲突即判未命中。
+    # 依据：utils/search_cache.py 记录过「良性改写 0.9397 vs 危险近似 0.9257」的
+    # 区间重叠，纯阈值方案会把语义不同的问题判成同一问题。
+    semantic_cache_enabled: bool = True
+    # 问答侧开关（带 history 的多轮追问、带图请求一律不参与缓存）
+    semantic_cache_qa_enabled: bool = True
+    # 检索侧开关（子查询检索本就绕过缓存，不受此项影响）
+    semantic_cache_search_enabled: bool = True
+    redis_url: str = "redis://localhost:6379/0"
+    # 连接/读写超时（秒）。Redis 慢或挂掉时必须快速失败并降级到内存精确缓存，
+    # 不能让缓存层把问答链路拖慢。
+    redis_timeout: float = 0.8
+    # L1 余弦初筛阈值。由 scripts/cache/calibrate_threshold.py 在本域样本上标定（0 token）：
+    # 守卫补齐「标志物状态」槽位后，tau=0.88 在本域 20 正 / 33 负样本上零错命中、召回 0.55。
+    # 不取更低的 0.83（样本内召回 0.80）：意图类负样本余弦上限 0.82，余量只有 0.01，
+    # 且样本量小，线上不安全。语料或样本变化后必须重跑校准脚本再改此值。
+    semantic_cache_threshold: float = 0.88
+    # 条目上限。问答条目约 3~8KB，检索条目约 50~100KB，300 条在百 MB 以内
+    semantic_cache_max_entries: int = 300
+    # 兜底过期（秒）。主失效手段是 doc_catalog.json 的 mtime 版本比对，TTL 只防泄漏
+    semantic_cache_ttl: int = 7 * 24 * 3600
 
     # 实体消歧 L3（向量对齐）：兜住 L1 繁简字表未覆盖的异体与措辞差异。
     # 实测结论（378 个真实实体、17323 个同类型候选对）：

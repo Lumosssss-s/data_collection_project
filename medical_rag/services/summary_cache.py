@@ -11,17 +11,26 @@
 from typing import Dict, Optional
 from repositories.elasticsearch import ElasticsearchRepository
 
+# 摘要采样器版本：v2 改为「按章节分层采样」。
+# 版本不一致时旧缓存（基于残缺正文生成）失效，避免继续返回覆盖不完整的速览。
+SAMPLER_VERSION = 2
+
 
 class SummaryCache:
     def __init__(self):
         self._repo = ElasticsearchRepository()
 
     def get(self, doc_id: str) -> Optional[Dict]:
-        """从缓存获取摘要；不存在或文档已变化时返回 None。"""
-        return self._repo.get_summary_cache(doc_id)
+        """从缓存获取摘要；不存在、文档已变化或采样器版本不符时返回 None。"""
+        cached = self._repo.get_summary_cache(doc_id)
+        if cached and cached.get("sampler_version") != SAMPLER_VERSION:
+            return None
+        return cached
 
     def set(self, doc_id: str, summary: Dict):
-        """将摘要存入缓存。"""
+        """将摘要存入缓存（写入当前采样器版本）。"""
+        summary = dict(summary)
+        summary["sampler_version"] = SAMPLER_VERSION
         self._repo.save_summary_cache(doc_id, summary)
 
     def invalidate(self, doc_id: str):

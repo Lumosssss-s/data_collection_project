@@ -1,10 +1,13 @@
 import logging
+import re
 import threading
 from typing import List, Dict, Optional
 import time
 from repositories.elasticsearch import ElasticsearchRepository
 from core.config import settings
+from services.safety_guard import check_answer
 from utils.llm_client import chat, stream_chat_messages
+from utils.semantic_cache import get_semantic_cache
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +21,14 @@ class QAService:
 
     _instance: Optional['QAService'] = None
     _instance_lock = threading.Lock()
+
+    # 主证据库类型：文献层（literature）只作兜底，不参与主检索，避免英文摘要稀释中文检索；
+    # 术语层（term）只用于实体归一，不进检索结果
+    PRIMARY_DATA_TYPES: List[str] = ["doc", "rec", "drug"]
+
+    # 知识库当前覆盖的癌种：未覆盖癌种在问答入口直接给边界说明，
+    # 避免经全域回退把其他癌种条目挂到越界问题上（误挂）。
+    SUPPORTED_CANCERS: Dict[str, str] = {"lung": "肺癌", "colorectal": "结直肠癌"}
 
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
@@ -44,12 +55,13 @@ class QAService:
         return detect_cancer_types(question)
 
     def _enhance_query(self, query: str) -> str:
-        """查询增强（医疗）。
+        """查询增强（医疗）：口语化表述补全标准术语。
 
-        返回原查询：癌种别名 / 临床条件的扩展由 BE-16（query_decomposer）与检索层负责。
-        此处保留为唯一扩展点，便于后续接入（如把识别到的癌种别名追加规范英文名）。
+        仅追加标准术语（磨玻璃结节 / 手术指征等），不替换原词，常规临床表述原样返回。
+        癌种别名 / 临床条件的识别由 query_decomposer 负责，不在这一层处理。
         """
-        return query
+        from services.query_decomposer import expand_colloquial
+        return expand_colloquial(query)
 
     def _is_retrieval_poor(self, contexts: List[Dict], min_results: int = 2, min_similarity: float = 0.6) -> bool:
         """
@@ -75,12 +87,18 @@ class QAService:
         return merged
 
     def _retrieve_contexts(self, query: str, top_k: int,
-                           filters: Optional[Dict] = None) -> List[Dict]:
+                           filters: Optional[Dict] = None,
+                           expand: bool = True,
+                           data_types: Optional[List[str]] = None) -> List[Dict]:
         enhanced_query = self._enhance_query(query)
         candidate_k = max(top_k * 3, 20)
         contexts = []
 
-        results = self.repo.query([enhanced_query], n_results=candidate_k, where=filters or None)
+        # data_type 显式约束：主库检索排除 literature，文献兜底只查 literature
+        where = dict(filters) if filters else {}
+        if data_types:
+            where["data_type"] = list(data_types)
+        results = self.repo.query([enhanced_query], n_results=candidate_k, where=where or None)
         if results.get('ids') and results['ids'][0]:
             for i in range(len(results['ids'][0])):
                 distance = results['distances'][0][i]
@@ -109,7 +127,7 @@ class QAService:
 
         # 同指南上下文扩展（BE-15 语义）：主结果之外补入同指南相邻条目。
         # 扩展项追加在尾部，不挤占主结果排序；prompt 中单独成段引用。
-        if settings.reference_expand_enabled:
+        if settings.reference_expand_enabled and expand:
             top_contexts = top_contexts + self._expand_contexts(top_contexts)
 
         return top_contexts
@@ -180,6 +198,37 @@ class QAService:
             "相邻推荐条目，供补充参考：\n" + "\n\n".join(parts)
         )
 
+    @staticmethod
+    def _format_literature_entries(lit_contexts: List[Dict]) -> str:
+        """渲染补充文献段落（data_type=literature），返回可拼到参考资料后的段落。
+
+        文献是英文摘要、不是指南推荐，因此与【来源X】分开编号为【文献X】，并在段首
+        声明其证据地位：模型可以引用，但必须标注【文献X】并说明是文献证据，
+        避免把单项研究结论当成指南推荐或标准治疗。内容过长时截断，控制 prompt 开销。
+        """
+        if not lit_contexts:
+            return ""
+        limit = settings.literature_max_chars
+        parts = []
+        for i, ctx in enumerate(lit_contexts, 1):
+            meta = ctx.get('metadata') or {}
+            title = meta.get('title', '')
+            doc_id = meta.get('doc_id', '')
+            content = ctx.get('content') or ''
+            if limit and len(content) > limit:
+                content = content[:limit] + "……（摘要较长，此处截断）"
+            # 文献正文本身是「标题 + 摘要」，正文已含标题时不再重复标题，只保留编号
+            head = f"【文献{i}】" + (f"（文献编号: {doc_id}）" if doc_id else "")
+            if title and not content.lower().startswith(title.lower()):
+                head += f"\n{title}"
+            parts.append(f"{head}\n{content}")
+        return (
+            "\n\n【补充文献（英文摘要，非指南推荐）】以下为检索命中的英文文献摘要，"
+            "仅作补充证据线索，不能替代指南推荐。如需引用请标注【文献X】，并在句中明确"
+            "说明其为文献证据（如「一项II期研究显示…」），不得表述为指南推荐或标准治疗。\n"
+            + "\n\n".join(parts)
+        )
+
     def _retrieve_contexts_with_fallback(
         self,
         query: str,
@@ -191,17 +240,28 @@ class QAService:
 
         先按指定过滤条件（如癌种）检索；若质量不达标且允许回退，则追加全域检索并合并去重。
         """
-        contexts = self._retrieve_contexts(query, top_k, filters)
+        contexts = self._retrieve_contexts(query, top_k, filters,
+                                           data_types=self.PRIMARY_DATA_TYPES)
 
-        if not allow_fallback or not filters:
-            return contexts
+        if allow_fallback and filters and self._is_retrieval_poor(contexts):
+            # 限定过滤条件检索结果过差，回退到全域检索
+            fallback_contexts = self._retrieve_contexts(
+                query, top_k, None, data_types=self.PRIMARY_DATA_TYPES)
+            contexts = self._merge_deduplicate_contexts([contexts, fallback_contexts])
 
-        if not self._is_retrieval_poor(contexts):
-            return contexts
+        # 文献证据层补充：追加在指南证据之后，不参与主库排序，避免英文摘要挤占权威证据位次
+        if settings.literature_fallback_enabled:
+            lit = self._retrieve_contexts(
+                query, settings.literature_top_k, filters,
+                expand=False, data_types=["literature"]
+            )
+            lit = [c for c in lit
+                   if (c.get("similarity") or 0) >= settings.literature_min_similarity]
+            lit = lit[: settings.literature_top_k]
+            if lit:
+                contexts = contexts + lit
 
-        # 限定过滤条件检索结果过差，回退到全域检索
-        fallback_contexts = self._retrieve_contexts(query, top_k, None)
-        return self._merge_deduplicate_contexts([contexts, fallback_contexts])
+        return contexts
 
     def _call_llm(self, prompt: str) -> str:
         """调用远程API（使用智能问答模型）"""
@@ -255,7 +315,17 @@ class QAService:
         """
         # 同指南上下文条目（retrieval_hop=2）与直接命中来源分开呈现
         hop_contexts = [c for c in contexts if c.get('retrieval_hop') == 2]
-        top_contexts = [c for c in contexts if c.get('retrieval_hop') != 2][:5]
+        # 文献层（data_type=literature）单独成段：不占指南来源的 5 个名额，
+        # 也不参与【来源X】编号，避免英文摘要被当作指南推荐引用。
+        literature_contexts = [
+            c for c in contexts
+            if (c.get('metadata') or {}).get('data_type') == 'literature'
+        ][: settings.literature_top_k]
+        top_contexts = [
+            c for c in contexts
+            if c.get('retrieval_hop') != 2
+            and (c.get('metadata') or {}).get('data_type') != 'literature'
+        ][:5]
         references = []
 
         for i, ctx in enumerate(top_contexts, 1):
@@ -273,6 +343,9 @@ class QAService:
 
         # 同指南关联条目：单独成段并标注来源，避免与直接命中的来源混淆
         references_text += self._format_context_entries(hop_contexts)
+
+        # 补充文献：与指南来源分开编号（【文献X】），并显式声明其非指南推荐地位
+        references_text += self._format_literature_entries(literature_contexts)
 
         # 检测是否涉及多个癌种（用于决定是否生成跨癌种对比）
         cancer_types_in_contexts = set()
@@ -388,9 +461,65 @@ class QAService:
         messages.append({"role": "user", "content": user_content})
         return messages
 
+    # 领域守卫：写作类请求 + 明确非肿瘤问题的关键词（仅在整句不含任何肿瘤线索时生效）
+    _WRITING_RE = re.compile(r"(?:写|撰写|起草|生成|润色|代写).{0,10}(?:综述|论文|标书|摘要|文献回顾)")
+    _NON_TUMOR_TERMS = (
+        "高血压", "降压药", "低血压", "感冒", "发烧", "退烧", "糖尿病", "血糖高",
+        "腰椎间盘", "颈椎病", "关节炎", "痛风", "胃炎", "胃溃疡", "胃病", "冠心病",
+        "心律失常", "脑梗", "中风", "乙肝", "肝炎", "哮喘", "鼻炎", "湿疹",
+        "肾结石", "骨折", "牙痛", "前列腺增生", "白内障", "痔疮",
+    )
+    # 只要出现任一肿瘤线索，就交回循证检索，不做领域拦截（避免误伤
+    # 「肺癌患者合并高血压怎么用药」「化疗后发烧怎么办」这类正当问题）
+    _ONCOLOGY_MARKERS = ("癌", "肿瘤", "化疗", "放疗", "靶向", "免疫治疗",
+                         "转移", "活检", "病理", "结节", "放化疗")
+
+    @classmethod
+    def _domain_boundary(cls, question: str, filters: Optional[Dict] = None) -> Optional[str]:
+        """领域守卫：非肿瘤问题与学术写作请求在生成前直接给边界说明。
+
+        与癌种守卫互补——癌种守卫管「问题提到癌种但本库没收录」，本守卫管
+        「问题压根不是肿瘤临床问题」，避免模型拿肿瘤指南硬套（如用 ACEI 1B 推荐
+        回答高血压）或直接代写综述。
+        """
+        if filters:
+            return None
+        q = question or ""
+        if cls._WRITING_RE.search(q):
+            return ("本系统定位于肿瘤循证决策支持，可以基于指南回答临床问题，"
+                    "但不提供论文、综述等学术写作代写服务。如需临床问题解答，请直接提问。")
+        if any(m in q for m in cls._ONCOLOGY_MARKERS):
+            return None
+        hit = next((t for t in cls._NON_TUMOR_TERMS if t in q), None)
+        if hit:
+            return (f"本知识库聚焦肺癌与结直肠癌的循证诊疗，暂不覆盖「{hit}」等非肿瘤问题，"
+                    "无法给出基于指南的建议。建议咨询相应专科医师。")
+        return None
+
+    @classmethod
+    def _scope_boundary(cls, question: str, filters: Optional[Dict] = None) -> Optional[str]:
+        """癌种边界守卫：问题明确指向知识库未覆盖的癌种时返回边界说明，否则 None。
+
+        仅在未显式传 filters 时生效（对比 / 专题等调用方自行指定了检索范围）。
+        多癌种问题只要有一个癌种被覆盖就不拦截，交由多癌种对比逻辑处理。
+        """
+        if filters:
+            return None
+        detected = cls._detect_cancer_types(question)
+        if detected and not (set(detected) & set(cls.SUPPORTED_CANCERS)):
+            covered = "、".join(cls.SUPPORTED_CANCERS.values())
+            return (
+                f"本知识库当前仅覆盖{covered}两类癌种，暂未收录该问题涉及的癌种，"
+                "无法基于本库给出循证依据。建议查阅相应癌种的最新指南或咨询专科医师后再作判断。"
+            )
+        return None
+
     def ask_stream(self, question: str, top_k: int = 5, filters: Optional[Dict] = None,
                     history: Optional[List[Dict]] = None):
-        """流式问答（医疗循证）。
+        """流式问答（医疗循证），外层套语义缓存。
+
+        命中（Redis 有该问题或其同义改写）：直接重放已缓存答案，跳过检索 + 精排 + 生成；
+        未命中：透传底层帧，并在答案完整时把「问题 + 答案 + 依据」写回 Redis。
 
         filters 为检索过滤条件（键=ES 字段名，如 cancer_type / scenario / stage）；
         未显式传入时，自动从问题识别癌种作为默认过滤（识别不到则全域检索）。
@@ -398,10 +527,83 @@ class QAService:
         settings.rag_chain_enabled 打开时走 LangChain 编排链，否则回退既有手写链路；
         两条链路共用同一检索口径与 SSE 协议。langchain 采用懒加载，未安装不影响旧链路。
         """
+        eligible = (settings.semantic_cache_enabled and settings.semantic_cache_qa_enabled
+                    and bool(question and question.strip()) and not history)
+
+        if eligible:
+            cache_scope = dict(filters or {})
+            cache_scope["top_k"] = top_k
+            payload, similarity = get_semantic_cache().lookup("qa", question, cache_scope)
+            if payload:
+                yield from self._replay_cached_answer(payload, similarity)
+                return
+
+        collected: Dict[str, object] = {"sources": [], "retrieved_count": 0,
+                                        "cancer_types": [], "answer": "", "failed": False}
+        for frame in self._ask_stream_uncached(question, top_k, filters, history):
+            ftype = frame.get("type")
+            if ftype == "sources":
+                collected["sources"] = frame.get("sources") or []
+                collected["retrieved_count"] = frame.get("retrieved_count") or 0
+                collected["cancer_types"] = frame.get("cancer_types") or []
+            elif ftype == "content":
+                collected["answer"] = str(collected["answer"]) + str(frame.get("data") or "")
+            elif ftype == "error":
+                collected["failed"] = True
+            elif ftype == "end":
+                # 越界拦截、无依据、报错三类结果都不入缓存：
+                # 它们要么极廉价，要么依赖上下文，复用价值低且会污染命中率统计
+                if (eligible and not collected["failed"]
+                        and collected["answer"] and collected["retrieved_count"]):
+                    get_semantic_cache().store(
+                        "qa", question,
+                        {"answer": collected["answer"],
+                         "sources": collected["sources"],
+                         "retrieved_count": collected["retrieved_count"],
+                         "cancer_types": collected["cancer_types"]},
+                        cache_scope,
+                        meta={"top_k": top_k},
+                    )
+            yield frame
+
+    def _ask_stream_uncached(self, question: str, top_k: int = 5,
+                             filters: Optional[Dict] = None,
+                             history: Optional[List[Dict]] = None):
+        """不含缓存的原始流式问答（原 ask_stream 主体）。"""
+        boundary = (self._scope_boundary(question, filters)
+                    or self._domain_boundary(question, filters))
+        if boundary:
+            yield {"type": "sources", "sources": [], "retrieved_count": 0, "cancer_types": []}
+            yield {"type": "content", "data": boundary}
+            yield {"type": "end", "timing": {
+                "detect_cancer_types": "0.0000s", "retrieve_contexts": "0.0000s",
+                "build_prompt": "0.0000s", "call_llm": "0.0000s", "total": "0.0000s"}}
+            return
+
         if settings.rag_chain_enabled:
             yield from self._ask_stream_via_chain(question, top_k, filters, history)
         else:
             yield from self._ask_stream_legacy(question, top_k, filters, history)
+
+    @staticmethod
+    def _replay_cached_answer(payload: Dict, similarity: float):
+        """把缓存条目按原 SSE 协议重放，契约与实时链路一致。
+
+        timing 全 0 是刻意的：命中时确实没有检索与生成耗时，不能复用上一次的耗时数字。
+        """
+        logger.info("[语义缓存] 问答命中：相似度 %.4f", similarity)
+        yield {"type": "status", "stage": "cache", "data": "命中热点问题缓存…"}
+        yield {"type": "sources", "sources": payload.get("sources") or [],
+               "retrieved_count": payload.get("retrieved_count") or 0,
+               "cancer_types": payload.get("cancer_types") or [],
+               "cache_hit": True, "similarity": round(float(similarity), 4)}
+        answer = str(payload.get("answer") or "")
+        for i in range(0, len(answer), 240):
+            yield {"type": "content", "data": answer[i:i + 240]}
+        yield {"type": "end", "cache_hit": True, "similarity": round(float(similarity), 4),
+               "timing": {"detect_cancer_types": "0.0000s", "retrieve_contexts": "0.0000s",
+                          "build_prompt": "0.0000s", "call_llm": "0.0000s",
+                          "total": "0.0000s"}}
 
     @staticmethod
     def _to_lc_message(message: Dict):
@@ -478,6 +680,7 @@ class QAService:
         yield sources_frame(from_documents(documents))
         yield status_frame("generate", "正在生成回答…")
 
+        collected: List[str] = []
         try:
             t3 = time.time()
             for chunk in generation.stream({
@@ -485,11 +688,18 @@ class QAService:
                 "history": prepared["history"],
                 "user_message": prepared["user_message"],
             }):
+                collected.append(chunk)
                 yield content_frame(chunk)
             t_llm = time.time() - t3
         except Exception as e:
             yield error_frame(f"生成回答时发生错误：{str(e)}")
             return
+
+        # 生成后安全校验：剂量 / 预后 / 缺来源，命中则追加提示（不打断已输出的正文）
+        warning = check_answer(question, "".join(collected))
+        if warning:
+            logger.warning("生成后安全校验命中：%s", question[:40])
+            yield content_frame(warning)
 
         total_time = time.time() - total_start
         print(
@@ -558,17 +768,25 @@ class QAService:
                "cancer_types": list(source_cancer_types)}
         yield {"type": "status", "stage": "generate", "data": "正在生成回答…"}
 
+        collected: List[str] = []
         try:
             t4 = time.time()
             llm_start_time = t4
 
             for chunk in self._call_llm_stream_with_messages(messages):
+                collected.append(chunk)
                 yield {"type": "content", "data": chunk}
 
             t_llm = time.time() - t4
         except Exception as e:
             yield {"type": "error", "data": f"生成回答时发生错误：{str(e)}"}
             return
+
+        # 生成后安全校验：剂量 / 预后 / 缺来源，命中则追加提示
+        warning = check_answer(question, "".join(collected))
+        if warning:
+            logger.warning("生成后安全校验命中：%s", question[:40])
+            yield {"type": "content", "data": warning}
 
         total_time = time.time() - total_start
         print(
@@ -594,6 +812,17 @@ class QAService:
             history: 对话历史
             images: 图片列表，每项包含 {data: base64字符串, mime_type: 图片类型}
         """
+        # 与 ask_stream 同口径：越界癌种 / 非肿瘤问题 / 写作请求在检索前拦截
+        boundary = (self._scope_boundary(question, filters)
+                    or self._domain_boundary(question, filters))
+        if boundary:
+            yield {"type": "sources", "sources": [], "retrieved_count": 0, "cancer_types": []}
+            yield {"type": "content", "data": boundary}
+            yield {"type": "end", "timing": {
+                "detect_cancer_types": "0.0000s", "retrieve_contexts": "0.0000s",
+                "call_llm": "0.0000s", "total": "0.0000s"}}
+            return
+
         # 与 ask_stream 同理：先推送状态，避免检索期间前端长时间无反馈
         yield {"type": "status", "stage": "retrieve", "data": "正在检索循证依据…"}
 
@@ -656,9 +885,11 @@ class QAService:
         yield {"type": "status", "stage": "generate", "data": "正在生成回答…"}
 
         # 4. 流式调用智能问答模型
+        collected: List[str] = []
         try:
             t3 = time.time()
             for chunk in self._call_multimodal_stream(messages):
+                collected.append(chunk)
                 yield {"type": "content", "data": chunk}
 
             t_llm = time.time() - t3
@@ -666,6 +897,12 @@ class QAService:
             logger.error(f"[多模态QA] LLM调用失败: {str(e)}")
             yield {"type": "error", "data": f"生成回答时发生错误：{str(e)}"}
             return
+
+        # 生成后安全校验：剂量 / 预后 / 缺来源，命中则追加提示
+        warning = check_answer(question, "".join(collected))
+        if warning:
+            logger.warning("[多模态QA] 生成后安全校验命中：%s", question[:40])
+            yield {"type": "content", "data": warning}
 
         total_time = time.time() - total_start
         print(

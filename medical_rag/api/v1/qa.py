@@ -100,13 +100,19 @@ async def ask_stream_multimodal(request: Request):
         history_list = history
 
     def generate():
-        for chunk in qa_service.ask_stream_with_image(
-            question=question,
-            top_k=top_k,
-            filters=filters,
-            history=history_list,
-            images=images
-        ):
+        # 无图片时走文本链路（含 LangChain 分支），与 GET /stream 行为一致；
+        # 前端统一用 POST 传输，避免把整段对话历史塞进 URL 触发 414。
+        if images:
+            gen = qa_service.ask_stream_with_image(
+                question=question, top_k=top_k, filters=filters,
+                history=history_list, images=images
+            )
+        else:
+            gen = qa_service.ask_stream(
+                question=question, top_k=top_k, filters=filters,
+                history=history_list
+            )
+        for chunk in gen:
             yield f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
 
     return StreamingResponse(

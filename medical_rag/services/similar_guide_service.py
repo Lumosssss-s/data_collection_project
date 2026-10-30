@@ -29,17 +29,6 @@ class SimilarGuideService:
     # ===== 主题分析 =====
 
     @staticmethod
-    def _analyze_topics(items: List[Dict]) -> Dict[str, int]:
-        """统计对象各主题的出现频次：{"肺癌": 12, "靶向治疗": 8, ...}"""
-        topic_counts: Dict[str, int] = {}
-        for item in items:
-            for detail in item.get("topics_details", []):
-                topic = detail.get("label_zh") if isinstance(detail, dict) else detail
-                if topic:
-                    topic_counts[topic] = topic_counts.get(topic, 0) + 1
-        return topic_counts
-
-    @staticmethod
     def _compute_topic_overlap(query_topics: Dict[str, int], candidate_topics: Dict[str, int]) -> float:
         """加权 Jaccard 主题重叠度（高频主题的重叠更有意义），返回 0~1。"""
         if not query_topics or not candidate_topics:
@@ -81,16 +70,6 @@ class SimilarGuideService:
             sampled = [items[i] for i in indices]
         return self._compute_median_vector(sampled)
 
-    def _batch_get_doc_topics(self, doc_ids: List[str]) -> Dict[str, Dict[str, int]]:
-        """批量获取多个指南的主题分布：{doc_id: {主题: 频次}, ...}"""
-        result = {}
-        for doc_id in doc_ids:
-            try:
-                result[doc_id] = self._analyze_topics(self.repo.get_doc_item_vectors(doc_id))
-            except Exception:
-                result[doc_id] = {}
-        return result
-
     # ===== 核心方法：相似指南 =====
 
     def get_similar_guides(
@@ -105,21 +84,26 @@ class SimilarGuideService:
         算法：取查询指南各条目向量计算代表向量 → KNN 召回候选条目 → 按 doc_id 聚合
         → 主题硬过滤 → 主题重叠(60%) + 向量相似(40%) 综合排序 → 跨癌种多样性选择。
         """
-        items = self.repo.get_doc_item_vectors(query_doc_id)
-        if not items:
+        # 只取轻量元信息 + 主题计数 + 少量采样向量：
+        # 全量向量与明细在 Python 侧解析要数秒，而代表向量最多只需 20 个样本、
+        # 主题频次可由 ES nested 聚合直接算出。
+        head = self.repo.get_doc_head(query_doc_id)
+        if not head.get("found"):
             return {
                 "query_doc_id": query_doc_id, "similar_guides": [],
                 "total_found": 0, "message": "未找到该指南的条目向量数据",
             }
 
-        query_title = items[0].get("title", "")
-        query_cancer = items[0].get("cancer_type", "")
-        item_count = len(items)
+        query_title = head.get("title", "")
+        query_cancer = head.get("cancer_type", "")
+        item_count = head.get("item_count", 0)
 
-        query_topic_dist = self._analyze_topics(items)
+        query_topic_dist = self.repo.get_docs_topic_counts([query_doc_id]).get(query_doc_id, {})
         query_topics_set = set(query_topic_dist.keys())
 
-        rep_vector = self._compute_representative_vector(items)
+        sample_vecs = self.repo.get_doc_sample_vectors(query_doc_id, 20)
+        rep_vector = (self._compute_representative_vector(
+            [{"embedding": v} for v in sample_vecs]) if sample_vecs else None)
         if rep_vector is None:
             return {
                 "query_doc_id": query_doc_id, "similar_guides": [],
@@ -160,7 +144,7 @@ class SimilarGuideService:
                 "similarity": sim,
             })
 
-        cand_topics = self._batch_get_doc_topics(list(doc_max_sim.keys()))
+        cand_topics = self.repo.get_docs_topic_counts(list(doc_max_sim.keys()))
 
         scored = []
         for did, max_sim in doc_max_sim.items():

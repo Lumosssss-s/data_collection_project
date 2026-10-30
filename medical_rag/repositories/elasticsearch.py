@@ -1532,7 +1532,7 @@ class ElasticsearchRepository:
                 {"term": {"data_type": "rec"}},
             ]}},
             "size": 1000,
-            "sort": [{"chunk_index": {"order": "asc"}}],
+            "sort": [{"chunk_index": {"order": "asc"}}, {"rec_id": {"order": "asc"}}],
             "_source": ["embedding", "doc_id", "title", "cancer_type", "chunk_index", "topics_details"],
         }
 
@@ -1552,6 +1552,105 @@ class ElasticsearchRepository:
             })
 
         return results
+
+    def get_doc_head(self, doc_id: str) -> Dict:
+        """取该指南首条 REC 的 title/cancer_type 与条目总数（轻量，不含正文与向量）。"""
+        filter_q = {"bool": {"filter": [
+            {"term": {"doc_id": doc_id}},
+            {"term": {"data_type": "rec"}},
+        ]}}
+        total = self.client.count(index=settings.es_index_name,
+                                  body={"query": filter_q}).get("count", 0)
+        if not total:
+            return {"found": False, "item_count": 0, "title": "", "cancer_type": ""}
+        resp = self.client.search(index=settings.es_index_name, body={
+            "query": filter_q,
+            "size": 1,
+            "sort": [{"chunk_index": {"order": "asc"}}, {"rec_id": {"order": "asc"}}],
+            "_source": ["title", "cancer_type"],
+        })
+        hits = resp.get("hits", {}).get("hits", [])
+        src = hits[0].get("_source", {}) if hits else {}
+        return {
+            "found": True,
+            "item_count": total,
+            "title": src.get("title", ""),
+            "cancer_type": src.get("cancer_type", ""),
+        }
+
+    def get_doc_sample_vectors(self, doc_id: str, sample_size: int = 20) -> List[List[float]]:
+        """等距抽取少量条目向量，供「代表向量」计算。
+
+        原实现把该指南全部条目（最多 681 条）× 1024 维向量拉回 Python：
+        实测 387 条时 ES 端 0.9s、Python 解析 3.5s，而中位数最多只需 20 个样本。
+        这里按 chunk_index 顺序等距取 sample_size 条、逐条返回，避免整包解析。
+        """
+        filter_q = {"bool": {"filter": [
+            {"term": {"doc_id": doc_id}},
+            {"term": {"data_type": "rec"}},
+        ]}}
+        total = self.client.count(index=settings.es_index_name,
+                                  body={"query": filter_q}).get("count", 0)
+        if not total:
+            return []
+        n = min(sample_size, total)
+        if n <= 1:
+            offsets = [0]
+        else:
+            # 与 numpy.linspace(0, total-1, n, dtype=int) 同一取整方式（截断），
+            # 保证与「全量向量 + linspace 采样」得到同一批条目，代表向量不漂移。
+            offsets = sorted({int(i * (total - 1) / (n - 1)) for i in range(n)})
+        vectors: List[List[float]] = []
+        for off in offsets:
+            try:
+                resp = self.client.search(index=settings.es_index_name, body={
+                    "query": filter_q,
+                    "from": off,
+                    "size": 1,
+                    # chunk_index 存在重复值，必须加 rec_id 二级排序，
+                    # 否则每次分页取到的条目不确定，代表向量会漂移。
+                    "sort": [{"chunk_index": {"order": "asc"}},
+                             {"rec_id": {"order": "asc"}}],
+                    "_source": ["embedding"],
+                })
+                hits = resp.get("hits", {}).get("hits", [])
+                if hits:
+                    vec = hits[0].get("_source", {}).get("embedding")
+                    if vec:
+                        vectors.append(vec)
+            except Exception:
+                continue
+        return vectors
+
+    def get_docs_topic_counts(self, doc_ids: List[str]) -> Dict[str, Dict[str, int]]:
+        """一次 nested 聚合取多份指南的主题频次：{doc_id: {主题: 频次}}。
+
+        topics_details 是 nested 类型，聚合只回传桶计数（实测约 150ms）；
+        原实现把每份指南全部条目明细拉回 Python 再计数（候选 3 个时约 2.8s）。
+        """
+        if not doc_ids:
+            return {}
+        resp = self.client.search(index=settings.es_index_name, body={
+            "size": 0,
+            "query": {"bool": {"filter": [
+                {"terms": {"doc_id": doc_ids}},
+                {"term": {"data_type": "rec"}},
+            ]}},
+            "aggs": {"by_doc": {
+                "terms": {"field": "doc_id", "size": max(len(doc_ids) + 10, 20)},
+                "aggs": {"topics": {
+                    "nested": {"path": "topics_details"},
+                    "aggs": {"labels": {"terms": {"field": "topics_details.label_zh",
+                                                  "size": 50}}},
+                }},
+            }},
+        })
+        out: Dict[str, Dict[str, int]] = {d: {} for d in doc_ids}
+        buckets = resp.get("aggregations", {}).get("by_doc", {}).get("buckets", [])
+        for b in buckets:
+            labels = b.get("topics", {}).get("labels", {}).get("buckets", [])
+            out[b["key"]] = {x["key"]: x["doc_count"] for x in labels}
+        return out
 
     def knn_search_similar(
         self,

@@ -58,7 +58,10 @@ def main():
                         choices=list(ree.STRATEGIES.keys()),
                         help="评估策略（默认主链路 hybrid+reranker）")
     parser.add_argument("--top-k", type=int, default=20, help="候选 Top-K")
+    parser.add_argument("--unit", default="rec", choices=["rec", "doc"],
+                        help="评测单元粒度：rec=推荐条目级；doc=文档级（gold 仅有 doc_id 时用）")
     args = parser.parse_args()
+    ree.UNIT_MODE = args.unit
 
     print("=" * 60)
     print(f"  检索评估管道（医疗 · 策略={ree.STRATEGIES[args.strategy]['name']}）")
@@ -81,6 +84,8 @@ def main():
     for q in active:
         gold_set = q.get_relevant_units()
         retrieved_ids = run(retriever, q, args.top_k)
+        # 单元去重（文档级下同一 doc 的多个片段只计首次命中的位次）
+        retrieved_ids = list(dict.fromkeys(retrieved_ids))
         metrics = ree.compute_metrics(retrieved_ids, gold_set, q)
         metrics.update({"query_id": q.id, "query_text": q.query[:100],
                         "cancer_type": q.cancer_type or "未指定"})

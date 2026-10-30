@@ -19,7 +19,6 @@ RUN pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple \
         "elasticsearch>=8.0.0,<9.0.0" \
         fastapi>=0.104.0 \
         uvicorn>=0.24.0 \
-        streamlit>=1.28.0 \
         requests>=2.31.0 \
         pandas>=2.0.0 \
         plotly>=5.17.0 \
@@ -31,7 +30,8 @@ RUN pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple \
         transformers==4.36.2 \
         accelerate>=0.20.0 \
         openai>=1.0.0 \
-        openpyxl>=3.1.0
+        openpyxl>=3.1.0 \
+        redis>=5.0.0
 
 # RAG 编排依赖单独成层：与上方大依赖层解耦，后续增删 langchain 只重建本层，
 # 不触发 torch/sentence-transformers 等重包的重新下载。

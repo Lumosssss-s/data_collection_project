@@ -17,6 +17,7 @@
 """
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Dict, Iterator, List, Tuple
 
@@ -32,14 +33,17 @@ _ES_ROUTED_DIRS: Dict[str, str] = {
     "recommendations": "rec",
     "drug_labels": "drug",
     "terminology": "term",
+    "literature": "literature",
 }
 
 # 各类型业务 ID 字段（= ES _id）与 G5 前缀（用于前缀一致性校验）
 _ID_FIELD: Dict[str, str] = {
     "doc": "doc_id", "rec": "rec_id", "drug": "drug_id", "term": "term_id",
+    "literature": "doc_id",
 }
 _ID_PREFIX: Dict[str, str] = {
     "doc": "DOC-", "rec": "REC-", "drug": "DRUG-", "term": "TERM-",
+    "literature": "DOC-",
 }
 
 # 已登记但本轮延后（有 ES 归宿，尚缺写入方法 / 链路）
@@ -77,12 +81,20 @@ def _extract_content(data_type: str, record: Dict) -> str:
         # 术语：规范名 + 同义词，支撑「简称/别名」检索与实体归一
         return _join_nonempty([record.get("canonical"), record.get("synonyms")])
     if data_type == "drug":
-        # 说明书：通用名 + 适应证 + 禁忌（说明书内部分块待后续，本轮 1 条 = 1 单元）
+        # 说明书：通用名 + 适应证 + 禁忌 + 用法用量（截断）+ 相互作用（前 2 条）
+        # 用法用量是「剂量/给药」类问题的直接命中依据，不截断会挤占向量篇幅，取前 800 字。
+        dosage = record.get("dosage") or {}
+        standard = dosage.get("standard") if isinstance(dosage, dict) else None
         return _join_nonempty([
             record.get("generic_name"),
             record.get("indications"),
             record.get("contraindications"),
+            (standard or "")[:800],
+            (record.get("interactions") or [])[:2],
         ])
+    if data_type == "literature":
+        # 文献证据层：题名 + 英文摘要（跨语言向量检索命中，作为二级证据）
+        return _join_nonempty([record.get("title"), record.get("abstract")])
     # doc：文档级元数据记录，正文取指南名（若数据含摘要字段则优先）
     return _join_nonempty([
         record.get("summary"), record.get("abstract"), record.get("title"),
@@ -394,6 +406,18 @@ if __name__ == "__main__":
                         help="清空主索引后重建（删索引 → 自动重建 → 全量灌入）")
     parser.add_argument("--force", action="store_true", help="强制覆盖已有数据（不跳过重复）")
     parser.add_argument("--batch-size", type=int, default=32, help="批量写入大小")
+    parser.add_argument("--precheck", action="store_true",
+                        help="入库前强制执行 V-01 校验（scripts/data_pipeline/validate_data.py），不通过拒绝灌入")
 
     args = parser.parse_args()
+
+    if args.precheck:
+        import subprocess
+        validator = Path(__file__).resolve().parent / "scripts" / "data_pipeline" / "validate_data.py"
+        print("🚧 V-01 入库前置校验（--precheck）...")
+        ret = subprocess.call([sys.executable, str(validator)])
+        if ret != 0:
+            print("❌ V-01 校验未通过，拒绝灌入（详见 data/reports/validation_*.json）")
+            raise SystemExit(1)
+
     ingest_data(batch_size=args.batch_size, clear_index=args.rebuild, force=args.force)

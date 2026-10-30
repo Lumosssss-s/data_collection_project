@@ -24,8 +24,14 @@ from collections import defaultdict
 from typing import Dict, List
 
 
+# 评测单元粒度：rec=推荐条目级（默认）；doc=文档级（gold 仅有 doc_id 时使用）
+UNIT_MODE = "rec"
+
+
 def _unit_key(d: Dict) -> str:
     """统一「检索单元」标识：优先 rec_id / item_id，回落 doc_id / breadcrumb。"""
+    if UNIT_MODE == "doc":
+        return str(d.get("doc_id") or "")
     return str(d.get("rec_id") or d.get("item_id") or d.get("doc_id")
                or d.get("breadcrumb") or "")
 
@@ -54,9 +60,17 @@ class EvalQuery:
 # ============================================================
 # 策略函数（独立实现）
 # ============================================================
+# 主证据库类型：文献层只作问答兜底，评测检索链路按主库口径对齐
+PRIMARY_DATA_TYPES = ["doc", "rec", "drug"]
+
+
 def _filters_of(query_q):
+    """评测过滤条件：癌种（可选）+ 主库 data_type（排除文献层，保持与基线同口径）。"""
+    f = {"data_type": PRIMARY_DATA_TYPES}
     ct = getattr(query_q, "cancer_type", None)
-    return {"cancer_type": ct} if ct else None
+    if ct:
+        f["cancer_type"] = ct
+    return f
 
 
 def strategy_bm25(retriever, query_q, top_k=20):
@@ -128,7 +142,8 @@ def compute_metrics(retrieved_ids, gold_set, eval_query):
     for k in [5, 10, 20]:
         dcg_k = sum(eval_query.get_gain(uid) / math.log2(i + 2)
                     for i, uid in enumerate(retrieved_ids[:k]))
-        dcg[k] = dcg_k / max(ideal_dcg, 1e-10) if k <= len(gains) else 0.0
+        # 分母为理想 DCG；gold 数少于 k 时仍按同一分母归一（未命中位置增益为 0）
+        dcg[k] = dcg_k / ideal_dcg if ideal_dcg > 0 else 0.0
 
     return {
         "mrr": round(mrr, 4),

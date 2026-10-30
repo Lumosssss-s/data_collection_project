@@ -23,10 +23,27 @@ import sys
 from typing import Dict, List
 
 
+UNIT_MODE = "doc"  # doc=按指南文档计分（本评测集 gold 为 doc 级）；rec=按推荐条目计分
+PRIMARY_DATA_TYPES = ["doc", "rec", "drug"]  # 与问答主检索一致：排除文献层与术语层
+
+
 def _unit_key(d: Dict) -> str:
-    """统一「检索单元」标识：优先 rec_id / item_id，回落 doc_id / breadcrumb。"""
+    """统一「检索单元」标识：doc 模式优先 doc_id，rec 模式优先 rec_id / item_id。"""
+    if UNIT_MODE == "doc":
+        return str(d.get("doc_id") or d.get("item_id") or d.get("breadcrumb") or "")
     return str(d.get("rec_id") or d.get("item_id") or d.get("doc_id")
                or d.get("breadcrumb") or "")
+
+
+def _filters(q) -> Dict:
+    f = {"data_type": list(PRIMARY_DATA_TYPES)}
+    if q.cancer_type:
+        f["cancer_type"] = q.cancer_type
+    return f
+
+
+def _ids(results) -> List[str]:
+    return list(dict.fromkeys(_unit_key(r) for r in results))
 
 
 class EvalQuery:
@@ -68,7 +85,8 @@ def compute_metrics(retrieved_ids, gold_set, eval_query):
     for k in [5, 10, 20]:
         dcg_k = sum(eval_query.get_gain(uid) / math.log2(i + 2)
                     for i, uid in enumerate(retrieved_ids[:k]))
-        dcg[k] = dcg_k / max(ideal_dcg, 1e-10) if k <= len(gains) else 0.0
+        # gold 数量通常少于 k（本评测集每题为 1~3 份指南），不能因 k > 金标数就判 0
+        dcg[k] = dcg_k / max(ideal_dcg, 1e-10)
     return {"mrr": round(mrr, 4), "top1_acc": 1.0 if mrr > 0 else 0.0,
             "r_precision": round(r_prec, 4),
             "recall": {k: round(v, 4) for k, v in recall.items()},
@@ -155,8 +173,12 @@ def main():
                         default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"),
                         help="结果输出根目录（实际写入 <out-dir>/<时间戳>/）")
     parser.add_argument("--top-k", type=int, default=20, help="候选 Top-K")
+    parser.add_argument("--unit", default="doc", choices=["doc", "rec"],
+                        help="计分粒度：doc=指南文档级（gold 为 doc_id 时用）")
     args = parser.parse_args()
     top_k = args.top_k
+    global UNIT_MODE
+    UNIT_MODE = args.unit
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path.insert(0, base_dir)
@@ -186,8 +208,8 @@ def main():
     retriever = RetrieverService()
     candidates_map = {}
     for q in active:
-        filters = {"cancer_type": q.cancer_type} if q.cancer_type else None
-        candidates_map[q.id] = retriever.hybrid_search(query=q.query, top_k=top_k, filters=filters)
+        candidates_map[q.id] = retriever.hybrid_search(
+            query=q.query, top_k=top_k, filters=_filters(q))
 
     print("  释放 Retriever...")
     del retriever
@@ -211,7 +233,7 @@ def main():
             continue
 
         reranked = batch_rerank(q.query, candidates, tokenizer, model, device, top_k)
-        retrieved_ids = [_unit_key(r) for r in reranked]
+        retrieved_ids = _ids(reranked)
 
         metrics = compute_metrics(retrieved_ids, gold_set, q)
         metrics.update({"query_id": q.id, "query_text": q.query[:100],

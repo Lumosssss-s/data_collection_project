@@ -1,6 +1,103 @@
 {
   "version": "1.0",
-  "last_updated": "",
-  "total_docs": 0,
-  "docs": []
+  "last_updated": "2026-10-25T13:58:30",
+  "total_docs": 6,
+  "docs": [
+    {
+      "doc_id": "DOC-COLORECTAL-EPMC-001",
+      "title": "ESMO Clinical Practice Guideline Express Update on the adoption of physical exercise in patients with localised colon cancer",
+      "doc_type": "guideline",
+      "issuer": "ESMO Open",
+      "cancer_types": [
+        "colorectal"
+      ],
+      "item_count": 44,
+      "version": "",
+      "publish_date": "2026-02-27",
+      "file_path": "raw/guidelines/DOC-COLORECTAL-EPMC-001.xml",
+      "ingest_date": "2026-10-25",
+      "last_updated": "2026-10-25",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-COLORECTAL-EPMC-002",
+      "title": "Japanese Society for Cancer of the Colon and Rectum (JSCCR) guidelines 2024 for the treatment of colorectal cancer",
+      "doc_type": "guideline",
+      "issuer": "International Journal of Clinical Oncology",
+      "cancer_types": [
+        "colorectal"
+      ],
+      "item_count": 387,
+      "version": "",
+      "publish_date": "2025-11-04",
+      "file_path": "raw/guidelines/DOC-COLORECTAL-EPMC-002.xml",
+      "ingest_date": "2026-10-25",
+      "last_updated": "2026-10-25",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-COLORECTAL-EPMC-003",
+      "title": "Japanese society for cancer of the colon and rectum (JSCCR) guidelines 2024 for the clinical practice of hereditary colorectal cancer",
+      "doc_type": "guideline",
+      "issuer": "International Journal of Clinical Oncology",
+      "cancer_types": [
+        "colorectal"
+      ],
+      "item_count": 681,
+      "version": "",
+      "publish_date": "2025-11-10",
+      "file_path": "raw/guidelines/DOC-COLORECTAL-EPMC-003.xml",
+      "ingest_date": "2026-10-25",
+      "last_updated": "2026-10-25",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-LUNG-EPMC-001",
+      "title": "Program Guidelines for the National Lung Cancer Screening Program: Targeted Lung Cancer Screening in High‐Risk Individuals in Australia",
+      "doc_type": "guideline",
+      "issuer": "The Medical Journal of Australia",
+      "cancer_types": [
+        "lung"
+      ],
+      "item_count": 74,
+      "version": "",
+      "publish_date": "2026-07-13",
+      "file_path": "raw/guidelines/DOC-LUNG-EPMC-001.xml",
+      "ingest_date": "2026-10-25",
+      "last_updated": "2026-10-25",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-LUNG-EPMC-002",
+      "title": "Guideline for the Comprehensive Perioperative Management of Older Patients With Lung Cancer (2025)",
+      "doc_type": "guideline",
+      "issuer": "Journal of Evidence-Based Medicine",
+      "cancer_types": [
+        "lung"
+      ],
+      "item_count": 255,
+      "version": "",
+      "publish_date": "2026-08-11",
+      "file_path": "raw/guidelines/DOC-LUNG-EPMC-002.xml",
+      "ingest_date": "2026-10-25",
+      "last_updated": "2026-10-25",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-LUNG-EPMC-003",
+      "title": "ESR Essentials: lung cancer screening with low-dose CT—practice recommendations by the European Society of Thoracic Imaging",
+      "doc_type": "guideline",
+      "issuer": "European Radiology",
+      "cancer_types": [
+        "lung"
+      ],
+      "item_count": 72,
+      "version": "",
+      "publish_date": "2025-08-23",
+      "file_path": "raw/guidelines/DOC-LUNG-EPMC-003.xml",
+      "ingest_date": "2026-10-25",
+      "last_updated": "2026-10-25",
+      "status": "active"
+    }
+  ]
 }

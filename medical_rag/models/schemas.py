@@ -47,11 +47,10 @@ class SearchResult(BaseModel):
     content: str
     metadata: DocumentMetadata
     similarity: float
-    # 引用链多跳扩展标记（对应主方案「指南推荐条目交叉引用 / 参考文献追溯」）：
-    # retrieval_hop=2 表示该条由引用链补入，不是语义命中，此时 similarity 无意义，
-    # 前端应据此标注「由 <referenced_by> 引用」。跨文档引用额外携带 cross_doc /
-    # referenced_doc_*，使前端能区分「同指南引用」与「引用自另一份指南」，
-    # 避免把来源条号误读成本条号。
+    # 同指南上下文扩展标记：retrieval_hop=2 表示该条由「同指南相邻条目补入」
+    # （不是语义直接命中），此时 similarity 无意义；前端应据此标注「关联条目」。
+    # 注：字段名保留历史命名，实际对应 services.retriever_service._expand_context /
+    # services.qa_service._expand_contexts 的上下文扩展逻辑，与已弃用的多跳推理无关。
     retrieval_hop: Optional[int] = None
     referenced_by: Optional[str] = None
     cross_doc: Optional[bool] = None

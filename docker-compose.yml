@@ -28,6 +28,39 @@ services:
       retries: 10
       start_period: 30s
 
+  redis:
+    image: redis:7-alpine
+    container_name: medical-redis
+    restart: always
+    # 语义缓存专用：只放热问条目（百条级），达到上限按 LRU 淘汰。
+    # 持久化：问答条目的生成成本是真实 LLM 调用（30 条热问约 15~28 万 tokens），
+    # 容器重建/机器重启后不能丢，故开 AOF（everysec）并挂 named volume。
+    # 关闭 RDB 快照（--save ""）：语义缓存价值在条目本身，AOF 已足够，不必再刷快照。
+    # 语料失效仍由后端按 doc_catalog 版本比对整库清空，持久化不会引入过期数据。
+    command:
+      - redis-server
+      - --maxmemory
+      - 128mb
+      - --maxmemory-policy
+      - allkeys-lru
+      - --save
+      - ""
+      - --appendonly
+      - "yes"
+      - --appendfsync
+      - everysec
+    volumes:
+      - medical_redis_data:/data
+    ports:
+      # 宿主端口用 6380，避免与本机已有 Redis（6379）冲突
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
   backend:
     image: medical-rag-backend:latest
     build: .
@@ -41,6 +74,12 @@ services:
       - MEDICAL_ES_HOSTS=["http://elasticsearch:9200"]
       - MEDICAL_ES_USER=elastic
       - MEDICAL_ES_PASSWORD=${MEDICAL_ES_PASSWORD}
+      # 语义缓存（Redis）：连不上时后端自动降级到进程内精确缓存，不影响问答/检索
+      - MEDICAL_REDIS_URL=${MEDICAL_REDIS_URL:-redis://redis:6379/0}
+      - MEDICAL_SEMANTIC_CACHE_ENABLED=${MEDICAL_SEMANTIC_CACHE_ENABLED:-true}
+      # 注：MEDICAL_SEMANTIC_CACHE_THRESHOLD 刻意不在此注入 —— 该阈值由
+      # scripts/cache/calibrate_threshold.py 标定，只允许在 core/config.py 一处维护；
+      # 在此注入环境变量会覆盖代码默认值，导致「改了 config.py 却不生效」的静默漂移。
       - MEDICAL_LLM_API_KEY=${MEDICAL_LLM_API_KEY}
       - MEDICAL_LLM_API_BASE_URL=https://api.deepseek.com/v1
       - MEDICAL_LLM_MODEL=deepseek-flash
@@ -106,6 +145,8 @@ services:
     depends_on:
       elasticsearch:
         condition: service_healthy
+      redis:
+        condition: service_healthy
 
   frontend:
     image: nginx:alpine
@@ -127,3 +168,6 @@ services:
 volumes:
   medical_es_data:
     name: medical_es_data
+  # 语义缓存 AOF 落盘位置：固定 name，避免 `docker compose down` 清掉预热成果
+  medical_redis_data:
+    name: medical_redis_data

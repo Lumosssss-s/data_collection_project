@@ -4,16 +4,11 @@ import type { ApiEnvelope } from '@/types/api';
 /**
  * 后端 API 基地址。
  *
- * H5：跟随访问者所在主机 —— PC 打开走 localhost，手机用局域网 IP 打开则自动走该 IP，
- * 无需硬编码 IP（宿主机 docker 映射 8002 → 容器 8001）。
- * 小程序：真机需改为局域网 IP 或已备案 HTTPS 域名，并在小程序后台配置 request 合法域名。
+ * H5：走同源相对路径 /api/v1 —— 由 3100 预览服务器统一代为反代到 localhost:8002。
+ * 这样本机 / 局域网 IP / cloudflared 隧道域名三种访问方式共用一套地址，无需写死 IP。
+ * （小程序端无同源概念，保留绝对地址；正式发布需换成已备案 HTTPS 域名。）
  */
-export const API_BASE = (() => {
-  if (process.env.TARO_ENV === 'h5' && typeof location !== 'undefined' && location.hostname) {
-    return 'http://' + location.hostname + ':8002/api/v1';
-  }
-  return 'http://localhost:8002/api/v1';
-})();
+export const API_BASE = process.env.TARO_ENV === 'h5' ? '/api/v1' : 'http://localhost:8002/api/v1';
 
 /** 单次请求超时（毫秒） */
 const TIMEOUT = 15000;

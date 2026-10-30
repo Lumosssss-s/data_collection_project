@@ -4,6 +4,7 @@ from models.schemas import APIResponse, SearchResult, DocumentMetadata, SimilarG
 from services.retriever_service import RetrieverService
 from services.similar_guide_service import SimilarGuideService
 from services.summary_service import SummaryService
+from services import fulltext_service
 from repositories.elasticsearch import ElasticsearchRepository
 from utils.doc_catalog import DocCatalog
 from core.domain_enums import CANCER_TYPE_INFO
@@ -24,6 +25,28 @@ def _csv_multi(value: Optional[str]):
     if not items:
         return None
     return items[0] if len(items) == 1 else items
+
+
+# 受控癌种代码 → 中文标准名（边界提示文案用）
+_CANCER_CODE_LABELS = {code: zh for zh, (code, _range) in CANCER_TYPE_INFO.items()}
+
+
+def _scope_hint(cancer_types: Optional[List[str]]) -> str:
+    """癌种边界提示：目标癌种全部未被知识库收录时返回说明，否则空串。
+
+    与问答链路 QAService._scope_boundary 同一口径——知识库当前只覆盖肺癌与
+    结直肠癌。仅在检索结果为空时使用：把「这个癌种本库没收录」和「有数据但
+    没匹配上」区分开，避免用户把 0 条误读为系统故障。
+    """
+    from services.qa_service import QAService
+    targets = [c for c in (cancer_types or []) if c]
+    # 多癌种里只要有一个被覆盖就不算越界（与问答链路一致）
+    if not targets or set(targets) & set(QAService.SUPPORTED_CANCERS):
+        return ""
+    names = "、".join(_CANCER_CODE_LABELS.get(c, c) for c in targets)
+    covered = "、".join(QAService.SUPPORTED_CANCERS.values())
+    return (f"本知识库当前仅覆盖{covered}两类癌种，暂未收录{names}相关资料，"
+            "因此没有可展示的循证内容。建议查阅相应癌种的最新指南或咨询专科医师。")
 
 
 @router.get("")
@@ -58,6 +81,20 @@ def search(
     if topic_parsed:
         filters["topics_details.label_zh"] = topic_parsed
 
+    # 文献层（literature）默认不进主结果：英文摘要与指南条目混排会挤占权威位次；
+    # 术语层（term）仅用于实体归一，短实体名在向量检索中会挤占正文章节位次，同样不进主结果。
+    # 需要只看文献时显式传 data_type=literature，调整词表时显式传 data_type=term。
+    if "data_type" not in filters:
+        filters["data_type"] = ["doc", "rec", "drug"]
+
+    # 未显式选择癌种时按查询自动识别（仅唯一癌种生效）：否则「肺上有结节要不要开刀」
+    # 这类不含癌种字面的查询会全域检索，把结直肠条目混进结果。
+    if "cancer_type" not in filters:
+        from services.query_decomposer import detect_cancer_types
+        detected = detect_cancer_types(query)
+        if len(detected) == 1:
+            filters["cancer_type"] = detected[0]
+
     results = retriever.hybrid_search(query, top_k, filters or None)
 
     search_results = []
@@ -91,7 +128,9 @@ def search(
             match_score=result.get('match_score'),
         ))
 
-    return APIResponse(success=True, data=search_results)
+    return APIResponse(success=True, data=search_results,
+                       message=_scope_hint([filters["cancer_type"]])
+                       if not search_results and filters.get("cancer_type") else "")
 
 
 @router.get("/docs")
@@ -111,7 +150,8 @@ def get_docs(
         docs = [d for d in docs if d.get("status") == status]
     else:
         docs = [d for d in docs if d.get("status") != "deleted"]
-    return APIResponse(success=True, data=docs)
+    return APIResponse(success=True, data=docs,
+                       message=_scope_hint([cancer_type]) if not docs else "")
 
 
 @router.get("/doc/{doc_id}")
@@ -196,6 +236,23 @@ def get_similar_items(
         top_k=top_k,
         cancer_type_filter=cancer_type,
     )
+    return APIResponse(success=True, data=result)
+
+
+@router.get("/doc/{doc_id}/fulltext")
+def get_doc_fulltext(doc_id: str):
+    """指南全文（只读解析原始 JATS XML，不入检索索引）。
+
+    ES 的 doc 记录只存摘要，正文以 REG 条目承载；整篇通读按需读
+    `data/raw/guidelines/<doc_id>.xml`，返回按 <sec> 递归的章节树。
+    排除参考文献、致谢、脚注等后置部分。
+    """
+    try:
+        result = fulltext_service.get_fulltext(doc_id)
+    except ValueError as e:
+        return APIResponse(success=False, message=str(e))
+    if not result.get("found"):
+        return APIResponse(success=False, message=result.get("message", "未找到全文"))
     return APIResponse(success=True, data=result)
 
 

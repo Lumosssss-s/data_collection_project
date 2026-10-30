@@ -11,24 +11,24 @@ registerPage('compare', function (container) {
         <hr class="divider">
 
         <!-- 选择面板 -->
-        <div style="margin-bottom:1.5rem;">
-            <div class="grid-2" style="margin-bottom:0.75rem;">
+        <div class="card form-panel">
+            <div class="grid-2 form-field">
                 <div>
-                    <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">癌种 A</label>
+                    <label class="form-label">癌种 A</label>
                     <select id="cmp-cancer-a" class="select"></select>
                 </div>
                 <div>
-                    <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">癌种 B</label>
+                    <label class="form-label">癌种 B</label>
                     <select id="cmp-cancer-b" class="select"></select>
                 </div>
             </div>
-            <div class="grid-2" style="margin-bottom:0.75rem;">
+            <div class="grid-2 form-field">
                 <div>
-                    <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">对比主题（可选）</label>
+                    <label class="form-label">对比主题（可选）</label>
                     <input type="text" id="cmp-topic" class="input" placeholder="例如：免疫治疗、靶向治疗">
                 </div>
                 <div>
-                    <label style="font-size:0.8125rem;font-weight:600;color:var(--color-text-secondary);display:block;margin-bottom:0.25rem;">每维度每癌种条目数: <span id="cmp-topk-val">5</span></label>
+                    <label class="form-label">每维度每癌种条目数: <span id="cmp-topk-val">5</span></label>
                     <input type="range" id="cmp-topk" min="1" max="20" value="5" style="width:100%;">
                 </div>
             </div>
@@ -117,8 +117,8 @@ function renderCompareResult(container, r) {
 
     // 逐维度对照表
     html += '<h2 class="section-title">逐维度对照</h2>';
-    html += '<div style="overflow-x:auto;">';
-    html += '<table style="width:100%;border-collapse:collapse;font-size:0.8125rem;">';
+    html += '<div class="table-wrap">';
+    html += '<table>';
     html += '<thead><tr>';
     html += '<th style="border:1px solid var(--color-border);padding:8px 10px;text-align:left;background:var(--color-bg);width:15%;">维度</th>';
     html += '<th style="border:1px solid var(--color-border);padding:8px 10px;text-align:left;background:var(--color-bg);width:42.5%;">' + escapeHtml(nameA) + '</th>';

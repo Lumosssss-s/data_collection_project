@@ -113,9 +113,9 @@ class PatientService:
         for a in raw.get("adverse_reactions") or []:
             if isinstance(a, dict):
                 ars.append({
-                    "term": a.get("term", ""),
-                    "frequency": FREQ_LABELS.get(a.get("frequency", ""), a.get("frequency", "")),
-                    "ctcae_hint": a.get("ctcae_hint", ""),
+                    "term": a.get("term") or "",
+                    "frequency": FREQ_LABELS.get(a.get("frequency") or "", a.get("frequency") or ""),
+                    "ctcae_hint": a.get("ctcae_hint") or "",
                 })
         return {
             "generic_name": raw.get("generic_name") or raw.get("title") or "",

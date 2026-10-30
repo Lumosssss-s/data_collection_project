@@ -4,7 +4,7 @@
     查询增强 → 向量检索（ElasticsearchRepository.query）→ 按 item_id 去重
     → 同指南上下文扩展（settings.reference_expand_*）→ 质量门 + 全域回退。
 """
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, ClassVar, Dict, List, Optional, Set
 
 from langchain_core.callbacks import CallbackManagerForRetrieverRun
 from langchain_core.documents import Document
@@ -28,6 +28,10 @@ class MedicalEvidenceRetriever(BaseRetriever):
 
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
+    # 主证据库类型：文献层只作兜底；术语层（term）仅用于实体归一与词表对齐，
+    # 不作检索结果返回——短实体名在向量检索中会挤占指南/推荐条目位次。
+    PRIMARY_DATA_TYPES: ClassVar[List[str]] = ["doc", "rec", "drug"]
+
     repo: ElasticsearchRepository = Field(default_factory=ElasticsearchRepository)
     top_k: int = 5
     filters: Optional[Dict[str, Any]] = None
@@ -42,24 +46,43 @@ class MedicalEvidenceRetriever(BaseRetriever):
     # ------------------------------------------------------------------ 公开口径
     def retrieve_contexts_with_fallback(self, query: str) -> List[Dict]:
         """检索-反馈自适应：先按过滤条件检索，质量不达标且允许回退时追加全域检索。"""
-        contexts = self._retrieve_contexts(query, self.filters)
+        contexts = self._retrieve_contexts(query, self.filters, data_types=self.PRIMARY_DATA_TYPES)
 
-        if not self.allow_fallback or not self.filters:
-            return contexts
-        if not self._is_retrieval_poor(contexts):
-            return contexts
+        if self.allow_fallback and self.filters and self._is_retrieval_poor(contexts):
+            fallback_contexts = self._retrieve_contexts(
+                query, None, data_types=self.PRIMARY_DATA_TYPES)
+            contexts = self._merge_deduplicate_contexts([contexts, fallback_contexts])
 
-        fallback_contexts = self._retrieve_contexts(query, None)
-        return self._merge_deduplicate_contexts([contexts, fallback_contexts])
+        # 文献证据层补充：追加在指南证据之后，不参与主库排序
+        if settings.literature_fallback_enabled:
+            lit = self._retrieve_contexts(
+                query, self.filters, expand=False, data_types=["literature"]
+            )
+            lit = [c for c in lit
+                   if (c.get("similarity") or 0) >= settings.literature_min_similarity]
+            lit = lit[: settings.literature_top_k]
+            if lit:
+                contexts = contexts + lit
+
+        return contexts
 
     # ------------------------------------------------------------------ 内部实现
     def _retrieve_contexts(
-        self, query: str, filters: Optional[Dict[str, Any]]
+        self, query: str, filters: Optional[Dict[str, Any]], expand: bool = True,
+        data_types: Optional[List[str]] = None
     ) -> List[Dict]:
         candidate_k = max(self.top_k * _CANDIDATE_MULTIPLIER, _CANDIDATE_FLOOR)
         contexts: List[Dict] = []
 
-        results = self.repo.query([query], n_results=candidate_k, where=filters or None)
+        # 查询增强：口语化表述补全标准术语（与 QAService._enhance_query 同口径）
+        from services.query_decomposer import expand_colloquial
+        enhanced_query = expand_colloquial(query)
+
+        # data_type 显式约束：主库检索排除 literature，文献兜底只查 literature
+        where = dict(filters) if filters else {}
+        if data_types:
+            where["data_type"] = list(data_types)
+        results = self.repo.query([enhanced_query], n_results=candidate_k, where=where or None)
         if results.get("ids") and results["ids"][0]:
             for i in range(len(results["ids"][0])):
                 distance = results["distances"][0][i]
@@ -86,7 +109,7 @@ class MedicalEvidenceRetriever(BaseRetriever):
 
         top_contexts = deduped[: self.top_k]
 
-        if settings.reference_expand_enabled:
+        if settings.reference_expand_enabled and expand:
             top_contexts = top_contexts + self._expand_contexts(top_contexts)
 
         return top_contexts

@@ -1,0 +1,563 @@
+{
+  "generated_at": "2026-10-30T11:53:50",
+  "samples": {
+    "positive": 20,
+    "negative": 33,
+    "probe": 10
+  },
+  "baseline": {
+    "tau": 0.92,
+    "recall": 0.45,
+    "false_merges": 0,
+    "false_merge_pairs": []
+  },
+  "kind_stats": {
+    "biomarker": {
+      "n": 4,
+      "min": 0.7562462091445923,
+      "max": 0.9266599416732788,
+      "median": 0.8932006359100342,
+      "guarded": 4
+    },
+    "cancer": {
+      "n": 4,
+      "min": 0.8395349383354187,
+      "max": 0.8881838321685791,
+      "median": 0.8590641021728516,
+      "guarded": 4
+    },
+    "drug": {
+      "n": 6,
+      "min": 0.7252764701843262,
+      "max": 0.9142225980758667,
+      "median": 0.8058366775512695,
+      "guarded": 6
+    },
+    "intent_negative": {
+      "n": 8,
+      "min": 0.7020784616470337,
+      "max": 0.8200298547744751,
+      "median": 0.767315000295639,
+      "guarded": 2
+    },
+    "line": {
+      "n": 5,
+      "min": 0.8339550495147705,
+      "max": 0.9017989039421082,
+      "median": 0.8753969669342041,
+      "guarded": 5
+    },
+    "stage": {
+      "n": 6,
+      "min": 0.8203312754631042,
+      "max": 0.9692907333374023,
+      "median": 0.8877443075180054,
+      "guarded": 6
+    }
+  },
+  "distribution": {
+    "positive": {
+      "min": 0.7140756845474243,
+      "p10": 0.823991346359253,
+      "median": 0.9250965714454651,
+      "max": 0.9824066162109375
+    },
+    "negative": {
+      "min": 0.7020784616470337,
+      "median": 0.8395349383354187,
+      "max": 0.9692907333374023
+    },
+    "intent_negative": {
+      "min": 0.7020784616470337,
+      "max": 0.8200298547744751
+    },
+    "probe_pairs": {
+      "median": 0.5304116606712341,
+      "max": 0.7241140604019165
+    }
+  },
+  "sweep": [
+    {
+      "tau": 0.8,
+      "recall": 0.8,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
+    },
+    {
+      "tau": 0.81,
+      "recall": 0.8,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
+    },
+    {
+      "tau": 0.82,
+      "recall": 0.8,
+      "false_merges": 1,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
+    },
+    {
+      "tau": 0.83,
+      "recall": 0.8,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.84,
+      "recall": 0.7,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.85,
+      "recall": 0.65,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.86,
+      "recall": 0.6,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.87,
+      "recall": 0.6,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.88,
+      "recall": 0.55,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.89,
+      "recall": 0.55,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.9,
+      "recall": 0.55,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.91,
+      "recall": 0.5,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.92,
+      "recall": 0.45,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.93,
+      "recall": 0.4,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.94,
+      "recall": 0.35,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.95,
+      "recall": 0.25,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.96,
+      "recall": 0.25,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.97,
+      "recall": 0.15,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    },
+    {
+      "tau": 0.98,
+      "recall": 0.1,
+      "false_merges": 0,
+      "false_merge_kinds": []
+    }
+  ],
+  "recommended": {
+    "tau": 0.83,
+    "recall": 0.8,
+    "basis": "现状守卫（含标志物状态槽位），零误命中下的最低阈值"
+  },
+  "pairs": {
+    "positive": [
+      {
+        "a": "肺癌一线治疗方案有哪些",
+        "b": "肺癌一线治疗推荐有哪些",
+        "cos": 0.9469735622406006,
+        "conflict": null
+      },
+      {
+        "a": "肺癌低剂量CT筛查适合哪些人",
+        "b": "肺癌筛查用低剂量螺旋CT的适应人群",
+        "cos": 0.9034951329231262,
+        "conflict": null
+      },
+      {
+        "a": "结肠癌III期辅助化疗方案有哪些",
+        "b": "三期结肠癌术后辅助化疗用什么方案",
+        "cos": 0.925216794013977,
+        "conflict": "术语未覆盖 ['III'] vs []"
+      },
+      {
+        "a": "结直肠癌一线化疗方案有哪些",
+        "b": "大肠癌一线化疗方案有哪些",
+        "cos": 0.9163343906402588,
+        "conflict": null
+      },
+      {
+        "a": "肺癌EGFR突变一线用什么靶向药",
+        "b": "EGFR突变阳性的肺癌一线靶向治疗选择",
+        "cos": 0.8539823293685913,
+        "conflict": null
+      },
+      {
+        "a": "结肠癌术后随访频率",
+        "b": "结肠癌手术后复查间隔多久",
+        "cos": 0.8314930200576782,
+        "conflict": null
+      },
+      {
+        "a": "肺癌免疫治疗适应症",
+        "b": "哪些肺癌患者适合免疫治疗",
+        "cos": 0.8473224639892578,
+        "conflict": null
+      },
+      {
+        "a": "奥沙利铂的不良反应有哪些",
+        "b": "奥沙利铂副作用有哪些",
+        "cos": 0.9538630843162537,
+        "conflict": "否定语义不一致"
+      },
+      {
+        "a": "结肠癌肝转移能手术吗",
+        "b": "结肠癌肝转移是否可以手术切除",
+        "cos": 0.9688286185264587,
+        "conflict": null
+      },
+      {
+        "a": "肺癌分期怎么做",
+        "b": "肺癌如何分期",
+        "cos": 0.9805392026901245,
+        "conflict": null
+      },
+      {
+        "a": "直肠癌新辅助放化疗指征",
+        "b": "哪些直肠癌需要术前放化疗",
+        "cos": 0.7140756845474243,
+        "conflict": null
+      },
+      {
+        "a": "结肠癌筛查从多少岁开始",
+        "b": "肠癌筛查起始年龄是多少",
+        "cos": 0.9319179058074951,
+        "conflict": null
+      },
+      {
+        "a": "肺癌靶向药耐药后怎么办",
+        "b": "肺癌靶向治疗耐药后如何处理",
+        "cos": 0.9426948428153992,
+        "conflict": null
+      },
+      {
+        "a": "结直肠癌MSI-H能免疫治疗吗",
+        "b": "MSI-H型结直肠癌是否可用免疫检查点抑制剂",
+        "cos": 0.8378384113311768,
+        "conflict": null
+      },
+      {
+        "a": "肺癌术后辅助化疗指征",
+        "b": "肺癌手术后要不要做化疗",
+        "cos": 0.7564762830734253,
+        "conflict": "否定语义不一致"
+      },
+      {
+        "a": "结肠癌辅助化疗要几个周期",
+        "b": "结肠癌术后辅助化疗需要打几个周期",
+        "cos": 0.965546727180481,
+        "conflict": null
+      },
+      {
+        "a": "肺癌骨转移怎么处理",
+        "b": "肺癌骨转移的治疗方法",
+        "cos": 0.9249763488769531,
+        "conflict": null
+      },
+      {
+        "a": "肺癌咯血怎么处理",
+        "b": "肺癌患者咯血如何处理",
+        "cos": 0.9824066162109375,
+        "conflict": null
+      },
+      {
+        "a": "肺癌PD-L1表达检测",
+        "b": "肺癌需要检测PD-L1吗",
+        "cos": 0.8740739822387695,
+        "conflict": null
+      },
+      {
+        "a": "结肠癌术后饮食注意什么",
+        "b": "结肠癌手术后饮食注意事项",
+        "cos": 0.9734755754470825,
+        "conflict": null
+      }
+    ],
+    "negative": [
+      {
+        "kind": "stage",
+        "a": "结肠癌III期辅助化疗方案有哪些",
+        "b": "结肠癌II期辅助化疗方案有哪些",
+        "cos": 0.9692907333374023,
+        "conflict": "分期未覆盖 ['III'] vs ['II']"
+      },
+      {
+        "kind": "stage",
+        "a": "肺癌III期能手术吗",
+        "b": "肺癌IV期能手术吗",
+        "cos": 0.867201566696167,
+        "conflict": "分期未覆盖 ['III'] vs ['IV']"
+      },
+      {
+        "kind": "stage",
+        "a": "结肠癌II期需要化疗吗",
+        "b": "结肠癌III期需要化疗吗",
+        "cos": 0.949798047542572,
+        "conflict": "分期未覆盖 ['II'] vs ['III']"
+      },
+      {
+        "kind": "stage",
+        "a": "肺癌早期怎么治疗",
+        "b": "肺癌晚期怎么治疗",
+        "cos": 0.8363099098205566,
+        "conflict": "术语未覆盖 ['TERM-STAGING-0003'] vs ['TERM-STAGING-0004']"
+      },
+      {
+        "kind": "stage",
+        "a": "肺癌一期需要治疗吗",
+        "b": "肺癌三期需要治疗吗",
+        "cos": 0.8203312754631042,
+        "conflict": "分期未覆盖 ['I'] vs ['III']"
+      },
+      {
+        "kind": "stage",
+        "a": "结肠癌T3期处理原则",
+        "b": "结肠癌T4期处理原则",
+        "cos": 0.9082870483398438,
+        "conflict": "术语未覆盖 ['T3'] vs ['T4']"
+      },
+      {
+        "kind": "line",
+        "a": "肺癌一线治疗方案有哪些",
+        "b": "肺癌二线治疗方案有哪些",
+        "cos": 0.8753969669342041,
+        "conflict": "线数未覆盖 ['一线'] vs ['二线']"
+      },
+      {
+        "kind": "line",
+        "a": "结肠癌一线化疗方案有哪些",
+        "b": "结肠癌二线化疗方案有哪些",
+        "cos": 0.9017989039421082,
+        "conflict": "线数未覆盖 ['一线'] vs ['二线']"
+      },
+      {
+        "kind": "line",
+        "a": "肺癌三线治疗如何选择",
+        "b": "肺癌一线治疗如何选择",
+        "cos": 0.8664259910583496,
+        "conflict": "线数未覆盖 ['三线'] vs ['一线']"
+      },
+      {
+        "kind": "line",
+        "a": "肺癌维持治疗用什么药",
+        "b": "肺癌一线治疗用什么药",
+        "cos": 0.8339550495147705,
+        "conflict": "线数未覆盖 ['维持治疗'] vs ['一线']"
+      },
+      {
+        "kind": "line",
+        "a": "直肠癌新辅助放化疗方案",
+        "b": "直肠癌术后辅助放化疗方案",
+        "cos": 0.8984998464584351,
+        "conflict": "线数未覆盖 ['新辅助'] vs ['术后辅助']"
+      },
+      {
+        "kind": "drug",
+        "a": "结肠癌奥沙利铂方案",
+        "b": "结肠癌紫杉醇方案",
+        "cos": 0.7596235275268555,
+        "conflict": "术语未覆盖 ['CHEMO-OXALIPLATIN'] vs ['CHEMO-PACLITAXEL']"
+      },
+      {
+        "kind": "drug",
+        "a": "肺癌培美曲塞适应人群",
+        "b": "肺癌吉西他滨适应人群",
+        "cos": 0.7252764701843262,
+        "conflict": "术语未覆盖 ['CHEMO-PEMETREXED'] vs ['CHEMO-GEMCITABINE']"
+      },
+      {
+        "kind": "drug",
+        "a": "结肠癌贝伐珠单抗联合方案",
+        "b": "结肠癌西妥昔单抗联合方案",
+        "cos": 0.8191201686859131,
+        "conflict": "术语未覆盖 ['DRUG-BEVACIZUMAB'] vs ['DRUG-CETUXIMAB']"
+      },
+      {
+        "kind": "drug",
+        "a": "肺癌帕博利珠单抗适应症",
+        "b": "肺癌纳武利尤单抗适应症",
+        "cos": 0.792553186416626,
+        "conflict": "术语未覆盖 ['ICI-PEMBROLIZUMAB'] vs ['ICI-NIVOLUMAB']"
+      },
+      {
+        "kind": "drug",
+        "a": "结肠癌FOLFOX方案组成",
+        "b": "结肠癌FOLFIRI方案组成",
+        "cos": 0.8809810280799866,
+        "conflict": "术语未覆盖 ['FOLFOX'] vs ['FOLFIRI']"
+      },
+      {
+        "kind": "drug",
+        "a": "肺癌顺铂联合方案",
+        "b": "肺癌卡铂联合方案",
+        "cos": 0.9142225980758667,
+        "conflict": "术语未覆盖 ['CHEMO-CISPLATIN'] vs ['CHEMO-CARBOPLATIN']"
+      },
+      {
+        "kind": "cancer",
+        "a": "肺癌筛查建议",
+        "b": "结肠癌筛查建议",
+        "cos": 0.8395349383354187,
+        "conflict": "癌种未覆盖 ['lung'] vs []"
+      },
+      {
+        "kind": "cancer",
+        "a": "肺癌一线治疗方案有哪些",
+        "b": "结肠癌一线治疗方案有哪些",
+        "cos": 0.8566097021102905,
+        "conflict": "癌种未覆盖 ['lung'] vs []"
+      },
+      {
+        "kind": "cancer",
+        "a": "肺癌术后随访计划",
+        "b": "结肠癌术后随访计划",
+        "cos": 0.8881838321685791,
+        "conflict": "癌种未覆盖 ['lung'] vs []"
+      },
+      {
+        "kind": "cancer",
+        "a": "肺癌靶向治疗原则",
+        "b": "结肠癌靶向治疗原则",
+        "cos": 0.8615185022354126,
+        "conflict": "癌种未覆盖 ['lung'] vs []"
+      },
+      {
+        "kind": "biomarker",
+        "a": "肺癌EGFR突变靶向治疗",
+        "b": "肺癌ALK融合靶向治疗",
+        "cos": 0.7562462091445923,
+        "conflict": "术语未覆盖 ['EGFR'] vs ['ALK']"
+      },
+      {
+        "kind": "biomarker",
+        "a": "结肠癌KRAS野生型用西妥昔单抗",
+        "b": "结肠癌KRAS突变型用西妥昔单抗",
+        "cos": 0.9266599416732788,
+        "conflict": "标志物状态未覆盖 ['野生型'] vs ['突变型']"
+      },
+      {
+        "kind": "biomarker",
+        "a": "肺癌PD-L1高表达免疫治疗",
+        "b": "肺癌PD-L1低表达免疫治疗",
+        "cos": 0.9221091270446777,
+        "conflict": "标志物状态未覆盖 ['高表达'] vs ['低表达']"
+      },
+      {
+        "kind": "biomarker",
+        "a": "结直肠癌MSI-H免疫治疗",
+        "b": "结直肠癌MSS免疫治疗",
+        "cos": 0.8642921447753906,
+        "conflict": "术语未覆盖 ['MSI-H'] vs ['MSS']"
+      },
+      {
+        "kind": "intent_negative",
+        "a": "肺癌一线治疗方案有哪些",
+        "b": "肺癌一线治疗的不良反应有哪些",
+        "cos": 0.7607787251472473,
+        "conflict": "否定语义不一致"
+      },
+      {
+        "kind": "intent_negative",
+        "a": "肺癌一线治疗疗效如何",
+        "b": "肺癌一线治疗费用大概多少",
+        "cos": 0.8200298547744751,
+        "conflict": null
+      },
+      {
+        "kind": "intent_negative",
+        "a": "结肠癌辅助化疗方案有哪些",
+        "b": "结肠癌辅助化疗的副作用有哪些",
+        "cos": 0.8134667873382568,
+        "conflict": null
+      },
+      {
+        "kind": "intent_negative",
+        "a": "肺癌免疫治疗适应症",
+        "b": "肺癌免疫治疗的不良反应",
+        "cos": 0.782416820526123,
+        "conflict": "否定语义不一致"
+      },
+      {
+        "kind": "intent_negative",
+        "a": "结肠癌术后随访频率",
+        "b": "结肠癌术后饮食注意事项",
+        "cos": 0.7020784616470337,
+        "conflict": null
+      },
+      {
+        "kind": "intent_negative",
+        "a": "肺癌筛查适合人群",
+        "b": "肺癌筛查费用多少",
+        "cos": 0.7446467876434326,
+        "conflict": null
+      },
+      {
+        "kind": "intent_negative",
+        "a": "肺癌手术方式有哪些",
+        "b": "肺癌手术的并发症有哪些",
+        "cos": 0.7067579030990601,
+        "conflict": null
+      },
+      {
+        "kind": "intent_negative",
+        "a": "结肠癌化疗周期安排",
+        "b": "结肠癌化疗期间饮食怎么吃",
+        "cos": 0.7738512754440308,
+        "conflict": null
+      }
+    ]
+  }
+}

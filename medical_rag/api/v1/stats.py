@@ -307,7 +307,8 @@ async def get_by_topic(
 
 @router.get("/by_time", summary="按发布时间统计")
 async def get_by_time(
-    group_by: str = Query("year", enum=["year", "month"], description="分组方式")
+    group_by: str = Query("year", pattern="^(year|month)$",
+                          description="分组方式（year 或 month）")
 ):
     """指南发布时间的分布趋势。"""
     try:

@@ -1,4 +1,4 @@
-import { api } from '@/services/api';
+import { api, LONG_TIMEOUT } from '@/services/api';
 import { mockDiseaseDetail, mockDiseaseList, mockDiseaseSearch } from '@/data/diseases';
 import { mockDrugDetail, mockDrugList, mockDrugSearch } from '@/data/drugs';
 import { mockPreconsultMessage, mockPreconsultSession } from '@/data/preconsult';
@@ -177,7 +177,11 @@ export async function parseReport(
   patientId: string
 ): Promise<ServiceResult<ReportParseData>> {
   try {
-    const data = await api.post<ReportParseData>('/report/parse', { text, patient_id: patientId });
+    const data = await api.post<ReportParseData>(
+      '/report/parse',
+      { text, patient_id: patientId },
+      { timeout: LONG_TIMEOUT }
+    );
     if (!data.degraded) {
       return { data, fromMock: false };
     }

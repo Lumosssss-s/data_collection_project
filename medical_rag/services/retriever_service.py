@@ -5,8 +5,8 @@ from typing import Any, Dict, List, Optional
 
 from repositories.elasticsearch import ElasticsearchRepository, _medical_metadata, zh_convert
 from core.config import settings
-from services.query_decomposer import decompose_query
 from utils.search_cache import get_search_cache
+from utils.semantic_cache import get_semantic_cache
 
 
 logger = logging.getLogger(__name__)
@@ -177,12 +177,13 @@ class RetrieverService:
         return formatted
 
     def _enhance_query(self, query: str) -> str:
-        """查询增强（医疗）。
+        """查询增强（医疗）：口语化表述补全标准术语。
 
-        当前直接返回原查询：癌种别名 / 临床条件（分期 / 分子 / 治疗线数）的扩展归
-        BE-16（query_decomposer）；此处保留方法作为唯一扩展点，避免调用方改动。
+        与 QAService 同口径（共用 query_decomposer.expand_colloquial），保证
+        「搜索页」与「问答页」对同一口语化查询命中同一批条目。
         """
-        return query
+        from services.query_decomposer import expand_colloquial
+        return expand_colloquial(query)
 
     def _rrf_merge_results(self, results_list: List[List[Dict]], rrf_k: int = 60) -> List[Dict]:
         """RRF 合并多组结果（按 item_id 归一，缺失时回落 content）。"""
@@ -305,60 +306,8 @@ class RetrieverService:
             formatted_results.append(item)
         return formatted_results
 
-    def _decompose_query(self, query: str) -> List[str]:
-        """多跳 B：把复合查询拆成子查询列表（含锚定的原查询）。无需分解返回 []。
-
-        锚定原查询是「不退化」的关键：分解只往候选池里加条目，原有召回的文档仍在
-        池中，最终排序由统一的精排决定，不会因为某条子查询拆得不好而丢失主召回。
-        """
-        parts = decompose_query(query)
-        if len(parts) < 2:
-            return []
-        uniq: List[str] = []
-        for p in [query.strip()] + parts:
-            if p and p not in uniq:
-                uniq.append(p)
-        return uniq if len(uniq) > 1 else []
-
-    def _decomposed_search(self, sub_queries: List[str], top_k: int,
-                           filters: Optional[Dict[str, Any]]) -> Optional[List[Dict]]:
-        """并行执行各子查询检索（跳过精排）→ RRF 合并 → 合并后精排一次。
-
-        子查询跳过精排是为了不把 cross-encoder 成本乘上子查询数：子查询只负责
-        「多召回」，排序质量交给合并后的这一次精排。任一步失败返回 None，调用方降级单跳。
-        """
-        lists: List[List[Dict]] = []
-        max_workers = max(1, min(len(sub_queries), settings.multihop_decompose_max_subqueries))
-        try:
-            with ThreadPoolExecutor(max_workers=max_workers) as ex:
-                futures = [
-                    ex.submit(self.hybrid_search, sq, top_k, filters, False, False)
-                    for sq in sub_queries
-                ]
-                for f in futures:
-                    try:
-                        res = f.result()
-                        if res:
-                            lists.append(res)
-                    except Exception as e:
-                        logger.warning("子查询检索失败，忽略该子查询: %s", e)
-        except Exception as e:
-            logger.warning("查询分解并行检索失败，降级单跳: %s", e)
-            return None
-
-        if not lists:
-            return None
-        merged = self._rrf_merge_results(lists, rrf_k=60)
-        # 统一用「原查询」做精排，保证与单跳路径同一打分基准（sub_queries[0] 即锚点）
-        merged = self._rerank_two_stage(query=sub_queries[0], candidates=merged)
-        merged = merged[:top_k]
-        # 合并后补同指南上下文条目（不占 top_k 名额），再统一补齐展示分
-        merged = self._expand_context(merged)
-        return self._attach_match_scores(merged)
-
     def hybrid_search(self, query: str, top_k: int = 5,
                       filters: Optional[Dict[str, Any]] = None,
-                      _decompose: bool = True,
                       _rerank: bool = True) -> List[Dict]:
         """
         混合检索（向量 + BM25 + RRF 融合），返回格式与 search() 完全一致。
@@ -368,8 +317,8 @@ class RetrieverService:
             top_k: 返回数量
             filters: 过滤条件字典（键为 ES 字段名；多值列表按 OR）
 
-        _decompose / _rerank 为内部参数：子查询检索时置 False，用于关闭「再分解」
-        与「精排」，避免递归与成本放大；外部调用方无需传。
+        _rerank 为内部参数：关闭时跳过 cross-encoder 精排（用于子查询等不需要完整排序的场景）；
+        外部调用方无需传。
         """
         # 子查询检索跳过缓存：其缓存键用的是全局精排开关，与子查询实际关闭精排的
         # 口径不一致，读写都可能污染主查询结果，故直接绕过。
@@ -380,20 +329,11 @@ class RetrieverService:
             cache_key, cached = self._cache_lookup(query, top_k, filters)
             if cached is not None:
                 return cached
-
-        # 多跳 B：复合查询分解（仅顶层调用、且未关闭精排时触发；子查询不再分解）
-        if _decompose and _rerank and settings.multihop_decompose_enabled:
-            try:
-                sub_queries = self._decompose_query(query)
-            except Exception as e:
-                logger.warning("查询分解失败，降级单跳: %s", e)
-                sub_queries = []
-            if len(sub_queries) > 1:
-                merged = self._decomposed_search(sub_queries, top_k, filters)
-                if merged:
-                    if cache is not None and cache_key is not None:
-                        cache.set(cache_key, merged)
-                    return merged
+            # 精确未命中后查语义层（Redis）：同义改写命中即返回，省掉混合检索 + 精排
+            payload, similarity = self._semantic_lookup(query, top_k, filters)
+            if payload:
+                logger.info("[语义缓存] 检索命中（cos=%.4f）：%s", similarity, query[:40])
+                return self._replay_semantic_results(payload)
 
         search_query = self._enhance_query(query) or query
         where_filter = dict(filters) if filters else {}
@@ -421,7 +361,7 @@ class RetrieverService:
         formatted_results = formatted_results[:top_k]
 
         # 上下文扩展在其后追加：扩展项是「同指南相邻条目」而非排名结果，不计入 top_k 名额。
-        # 若先追加再截断，因主结果始终填满 top_k，扩展项会被永久截掉（多跳在检索页失效）。
+        # 若先追加再截断，因主结果始终填满 top_k，扩展项会被永久截掉。
         if _rerank:
             formatted_results = self._expand_context(formatted_results)
 
@@ -430,8 +370,57 @@ class RetrieverService:
 
         if cache is not None:
             cache.set(cache_key, formatted_results)
+            self._store_semantic(query, top_k, filters, formatted_results)
 
         return formatted_results
+
+    def _semantic_scope(self, top_k: int, filters: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+        """语义缓存的过滤域：与精确缓存键同口径。
+
+        同一问题在不同开关（精排）或不同过滤条件下结果不同，必须分开存，
+        否则「无精排」跑出的顺序会被「有精排」的查询直接复用。
+        """
+        return {
+            "top_k": top_k,
+            "filters": _canonical_filters(filters),
+            "rerank": f"{int(settings.reranker_enabled)}:{settings.reranker_window}",
+        }
+
+    def _semantic_lookup(self, query: str, top_k: int,
+                         filters: Optional[Dict[str, Any]]):
+        """语义层查询，返回 (载荷, 相似度)；Redis 不可用时返回 (None, 0.0)。"""
+        if not settings.semantic_cache_search_enabled or not query or not query.strip():
+            return None, 0.0
+        cache = get_semantic_cache()
+        if not cache.available():
+            return None, 0.0
+        return cache.lookup("search", query, self._semantic_scope(top_k, filters))
+
+    def _store_semantic(self, query: str, top_k: int,
+                        filters: Optional[Dict[str, Any]],
+                        results: List[Dict]) -> None:
+        """把检索结果写入语义层。
+
+        match_score / _cosine 是「相对本次查询」算出来的，写进缓存后如果原样返回给
+        另一个查询，等于把错的相似度展示给用户；因此入库前剥离，命中时统一置 None。
+        """
+        if not results or not settings.semantic_cache_search_enabled:
+            return
+        rows = [{k: v for k, v in r.items() if k not in ("match_score", "_cosine")}
+                for r in results]
+        get_semantic_cache().store("search", query, {"results": rows},
+                                   self._semantic_scope(top_k, filters),
+                                   meta={"top_k": top_k})
+
+    @staticmethod
+    def _replay_semantic_results(payload: Dict) -> List[Dict]:
+        """语义命中的结果：match_score 置 None（余弦不属于本次查询），其余字段原样。"""
+        rows = []
+        for item in payload.get("results") or []:
+            row = dict(item)
+            row["match_score"] = None
+            rows.append(row)
+        return rows
 
     def _cache_lookup(self, query: str, top_k: int,
                       filters: Optional[Dict[str, Any]]):
@@ -449,7 +438,6 @@ class RetrieverService:
             f"top_k={top_k}",
             f"filters={_canonical_filters(filters)}",
             f"rerank={int(settings.reranker_enabled)}:{settings.reranker_window}",
-            f"mhdec={int(settings.multihop_decompose_enabled)}",
         ])
         key = (filter_key, _normalize_query_for_cache(query))
         return key, get_search_cache().get(key)
