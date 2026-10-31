@@ -11,7 +11,8 @@ const SERVICES = [
     title: '先说症状',
     desc: '描述不适，提示是否需要尽快就医',
     tone: 'primary',
-    tab: true,
+    // 已从 tabBar 移除，改为普通页面用 navigateTo 打开
+    tab: false,
     url: '/pages/preconsult/index'
   },
   {

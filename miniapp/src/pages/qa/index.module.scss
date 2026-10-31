@@ -1,0 +1,397 @@
+@use '@/styles/variables.scss' as *;
+
+/* ============================================
+   问答页布局：顶栏固定 / 聊天区自适应 / 输入区固定底部
+   Taro H5 的 .taro_page 为 absolute + top:0/bottom:0，高度已扣除 tabBar，
+   故根容器用 100% 继承（实测 100vh 会溢出 13px 被底栏压住）
+   ============================================ */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $color-bg-page;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ===== 顶栏 ===== */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $page-padding $spacing-sm;
+  flex-shrink: 0;
+}
+
+.topTitle {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-sm;
+  min-width: 0;
+}
+
+.topTitleText {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  letter-spacing: 0.5rpx;
+}
+
+.topSub {
+  font-size: $font-size-xs;
+  color: $color-text-disabled;
+}
+
+.topAction {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  padding: 4rpx $spacing-sm;
+  flex-shrink: 0;
+}
+
+.topActionOff {
+  color: $color-text-disabled;
+}
+
+/* ===== 聊天区 ===== */
+.chat {
+  flex: 1;
+  min-height: 0;
+  padding: 0 $page-padding;
+  box-sizing: border-box;
+}
+
+/* 欢迎态：示例问题卡，替代原先的居中虚线空态 */
+.welcome {
+  padding-top: $spacing-xl;
+}
+
+.welcomeTitle {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-md;
+}
+
+.sample {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-sm;
+  background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-left: 6rpx solid $color-primary;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+
+  &:active {
+    background: $color-bg-hover;
+  }
+}
+
+.sampleText {
+  flex: 1;
+  min-width: 0;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+}
+
+.sampleArrow {
+  font-size: 36rpx;
+  line-height: 1;
+  color: $color-text-disabled;
+  flex-shrink: 0;
+}
+
+/* 用户气泡 */
+.rowUser {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $spacing-lg;
+}
+
+.bubbleUser {
+  max-width: 78%;
+  background: $color-primary;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-lg $radius-lg $radius-xs $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+.bubbleUserText {
+  font-size: $font-size-md;
+  color: $color-text-white;
+  line-height: $line-height-normal;
+  word-break: break-word;
+}
+
+/* AI 气泡：去掉头像圆片，改用左侧主色细条作为身份标识，减少视觉噪点 */
+.rowAi {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: $spacing-lg;
+}
+
+.bubbleAi {
+  max-width: 100%;
+  width: 100%;
+  background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-left: 6rpx solid $color-primary;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  box-shadow: $shadow-card;
+  box-sizing: border-box;
+}
+
+.aiStatus {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.aiStatusText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.spinner {
+  width: 26rpx;
+  height: 26rpx;
+  border: 4rpx solid $color-border;
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ===== AI 正文富文本 ===== */
+.aiContent {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.mdPara {
+  line-height: $line-height-loose;
+  margin-bottom: 6rpx;
+  word-break: break-word;
+}
+
+.mdGap {
+  height: $spacing-sm;
+}
+
+.mdHead {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: $line-height-loose;
+  margin: $spacing-sm 0 6rpx;
+}
+
+.mdRow {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  margin-bottom: 6rpx;
+}
+
+.mdMarker {
+  flex-shrink: 0;
+  min-width: 32rpx;
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  color: $color-primary;
+  line-height: $line-height-loose;
+}
+
+.mdBody {
+  flex: 1;
+  min-width: 0;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: $line-height-loose;
+  word-break: break-word;
+}
+
+.mdBold {
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.cursor {
+  color: $color-primary;
+  animation: blink 1s step-start infinite;
+}
+
+/* ===== 循证来源 ===== */
+.sources {
+  margin-top: $spacing-md;
+  padding-top: $spacing-sm;
+  border-top: 1rpx dashed $color-border;
+}
+
+.sourcesToggle {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  padding: 4rpx 0;
+}
+
+.sourceItem {
+  margin-top: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background: $color-bg-page;
+  border-radius: $radius-sm;
+}
+
+.sourceTitle {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+  margin-bottom: 4rpx;
+}
+
+.sourceMeta {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-disabled;
+  line-height: $line-height-normal;
+  margin-bottom: 4rpx;
+}
+
+.sourceExcerpt {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+}
+
+/* ===== 输入区：胶囊壳 + 悬浮发送钮 ===== */
+.composer {
+  flex-shrink: 0;
+  padding: $spacing-sm $page-padding $spacing-md;
+  background: linear-gradient(180deg, rgba($color-primary, 0) 0%, rgba($color-primary, 0.03) 100%),
+    $color-bg-card;
+  border-top: 1rpx solid $color-border;
+}
+
+/* 胶囊壳：聚焦时主色描边 + 柔光。
+   用块级布局而非 flex —— flex 里的 Taro Textarea 实测会被压成 0 宽度 */
+.inputShell {
+  position: relative;
+  display: block;
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-button;
+  padding: 10rpx 8rpx 10rpx 10rpx;
+  box-sizing: border-box;
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &:focus-within {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 6rpx rgba($color-primary, 0.12);
+  }
+}
+
+/* 高度固定为两行：autoHeight 会把内层 textarea 锁死在 1 行（实测 19.98px）；
+   右侧留出发送钮位置，避免文字压在按钮下 */
+.input {
+  display: block;
+  width: 100%;
+  height: 88rpx;
+  padding: 0 180rpx 0 32rpx;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: 88rpx;
+  box-sizing: border-box;
+
+  /* Taro H5 内层原生 textarea 默认 height:auto，需显式拉满，否则只有一行高 */
+  :global(textarea) {
+    height: 100%;
+    min-height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+    color: inherit;
+    line-height: inherit;
+  }
+
+  &::placeholder {
+    color: $color-text-disabled;
+  }
+}
+
+/* 发送钮：绝对定位在胶囊右端，不参与 flex 分流（规避 Taro Button 默认 width:100%） */
+.sendWrap {
+  position: absolute;
+  right: 8rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Taro H5 的 Button 默认 width:100%，必须显式 auto 否则会被挤出视口 */
+.sendBtn {
+  @include button-reset;
+  width: auto;
+  min-width: 132rpx;
+  height: 64rpx;
+  padding: 0 32rpx;
+  background: $color-primary;
+  border-radius: $radius-button;
+  color: $color-text-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  box-shadow: 0 6rpx 16rpx rgba($color-primary, 0.32);
+  transition: transform $transition-base, opacity $transition-base;
+
+  &:active {
+    transform: scale(0.96);
+    opacity: 0.92;
+  }
+}
+
+.sendBtnOff {
+  background: $color-bg-hover;
+  color: $color-text-disabled;
+  box-shadow: none;
+}
+
+.disclaimer {
+  flex-shrink: 0;
+  padding: 0 $page-padding $spacing-sm;
+  padding-bottom: calc(#{$spacing-sm} + env(safe-area-inset-bottom));
+  background: $color-bg-card;
+}
+
+.disclaimerText {
+  display: block;
+  font-size: 20rpx;
+  color: $color-text-disabled;
+  line-height: 1.5;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}

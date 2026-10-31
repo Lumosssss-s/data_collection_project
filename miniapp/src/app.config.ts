@@ -2,6 +2,7 @@ export default defineAppConfig({
   pages: [
     'pages/index/index',
     'pages/preconsult/index',
+    'pages/qa/index',
     'pages/knowledge/index',
     'pages/mine/index',
     'pages/disease-detail/index',
@@ -29,10 +30,10 @@ export default defineAppConfig({
         selectedIconPath: 'assets/tabbar/home-selected.svg'
       },
       {
-        pagePath: 'pages/preconsult/index',
-        text: '问症状',
-        iconPath: 'assets/tabbar/preconsult.svg',
-        selectedIconPath: 'assets/tabbar/preconsult-selected.svg'
+        pagePath: 'pages/qa/index',
+        text: '问答',
+        iconPath: 'assets/tabbar/qa.svg',
+        selectedIconPath: 'assets/tabbar/qa-selected.svg'
       },
       {
         pagePath: 'pages/knowledge/index',
