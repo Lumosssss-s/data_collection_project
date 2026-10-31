@@ -146,6 +146,8 @@ docker compose up -d
 # 首次启动会自动构建 medical-rag-es（内置 IK）与 medical-rag-backend 镜像
 ```
 
+> **中文路径下重建镜像**：项目目录含中文时 BuildKit 会报非 ASCII 路径错误，构建前需先执行 `$env:DOCKER_BUILDKIT=0`（仅 `docker compose up` 命中缺失镜像需重建时才用得到；镜像已存在时直接 `up -d` 不触发构建）。
+
 ### 3.4 就绪判定
 
 模型冷加载约 60s，期间 `/health/ready` 返回 503：
@@ -193,6 +195,45 @@ npm run build:h5      # H5 预览
 ```
 
 后端地址配置在 `miniapp/src/services/api.ts` 的 `API_BASE`：本机调试用 `localhost:8002`，真机调试改为局域网 IP，并在小程序后台配置 request 合法域名。未启用微信云开发，直连自建后端（真实后端优先，数据未就绪时以示例数据兜底并显式提示）。
+
+### 3.8 模型与外部依赖准备
+
+后端依赖两个本地推理模型，均不入库（`models/` 已被 `.gitignore` 忽略，体积约 6.41GB）：
+
+| 模型 | 用途 | 约占体积 | 目录 |
+|---|---|---:|---|
+| `bge-m3` | 向量检索 embedding（CPU 推理） | 约 4.27GB | `models/bge-m3/` |
+| `bge-reranker-v2-m3` | cross-encoder 精排 | 约 2.14GB | `models/bge-reranker-v2-m3/` |
+
+模型放置目录为仓库根的 `models/`，`.env` 中 `MEDICAL_MODELS_DIR` 默认即 `./models`（该目录通过只读卷挂载到容器内 `/models`）。**若 `models/` 缺失，backend 启动会失败**（容器内 embedding / reranker 路径不存在，健康检查 `/health/ready` 无法返回 200）。
+
+其余外部依赖：
+
+- Elasticsearch：由 `docker compose up -d` 一起构建并启动（`Dockerfile.es`，内置 IK 分词插件），无需手工安装。
+- Redis：由 compose 启动（`redis:7-alpine`，用于语义缓存；连不上时后端自动降级到进程内精确缓存）。
+- LLM：使用 DeepSeek 在线接口，无需本地模型。
+
+环境变量从模板复制并填写：
+
+```powershell
+cp .env.example .env   # 然后填入 MEDICAL_LLM_API_KEY / MEDICAL_DEEPSEEK_API_KEY / MEDICAL_ES_PASSWORD / MEDICAL_ADMIN_TOKEN
+```
+
+`.env.example` 只含键名与安全默认值，不含任何真实密钥；`.env` 含真实密钥，已被 `.gitignore` 忽略，禁止提交。
+
+### 3.9 H5 预览服务（Basic Auth）
+
+移动端 H5 预览由仓库内脚本 `scripts/h5_preview.py` 提供，启动器为 `scripts/h5_preview.ps1`：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\h5_preview.ps1
+```
+
+- 端口 **3100**：静态托管 `miniapp/dist`，`/api/*` 反代到 `127.0.0.1:8002`（后端），SSE 逐块透传。
+- 凭据来自仓库根 `.env` 的 `MEDICAL_H5_AUTH_USER` / `MEDICAL_H5_AUTH_PASS`；**缺失任一项即拒绝启动**（fail-closed，不回退为无鉴权服务）。浏览器访问时按 `<user>:<pass>` 输入 Basic Auth。
+- 端口 3100 已被占用时启动器直接退出并提示占用进程 PID，不会抢占端口。
+- 日志：`%TEMP%\h5_preview.out.log`（访问日志：方法/路径/状态码/耗时）与 `%TEMP%\h5_preview.err.log`。
+- 限制：服务以当前用户会话运行，**注销或重启后需手动重启**，未注册开机自启。
 
 ---
 
