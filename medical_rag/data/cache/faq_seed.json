@@ -1,0 +1,216 @@
+{
+  "source": "redis sc:v1:idx:qa",
+  "count": 30,
+  "items": [
+    {
+      "id": "08e6f4dd4d8110c7",
+      "question": "msi-h结直肠癌能用免疫治疗吗",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "0b56a7e183803d9f",
+      "question": "结直肠癌二线治疗用什么药",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "0e52bec13e758212",
+      "question": "结直肠癌术后康复锻炼怎么做",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "12c625bd0ad4e5aa",
+      "question": "肺癌新辅助治疗适合哪些患者",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "210870c74de8a32a",
+      "question": "结直肠癌肝转移还能手术切除吗",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "2120956b674bf176",
+      "question": "肺癌术后随访频率是多少",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "26e40bb28b8f9a7b",
+      "question": "肺癌术后康复训练有哪些",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "384959fded46b9c7",
+      "question": "结肠癌分期是怎么划分的，ii期和iii期有什么不同",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "3b0be9fa067a3caf",
+      "question": "结直肠癌术后随访多久一次，查哪些项目",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "3f977b2fbbdd350b",
+      "question": "kras突变型结直肠癌能用西妥昔单抗吗",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "441349d96b5a2b62",
+      "question": "结肠癌iii期术后辅助化疗方案怎么选",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "4a698c82218b53f4",
+      "question": "肺癌筛查多久做一次",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "511896663e830c06",
+      "question": "肺癌围手术期呼吸功能训练怎么做",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "514a469859111d12",
+      "question": "结直肠癌术后肠梗阻怎么处理",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "6d9a0b91bb9eb9aa",
+      "question": "结直肠癌筛查从多少岁开始，多久做一次肠镜",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "708b32b7761e098c",
+      "question": "结直肠癌化疗期间饮食要注意什么",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "7929812f6fd6ef55",
+      "question": "肺癌术后需要辅助化疗吗",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "7f88246d14380abf",
+      "question": "肺癌术后常见并发症有哪些，怎么处理",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "8d2780f84af26ea8",
+      "question": "肺结节多大需要进一步检查",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "99c40d9ee31fb665",
+      "question": "结肠癌和直肠癌有什么区别",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "9f6d5a5b36ac68ed",
+      "question": "结直肠癌早期有哪些症状，怎么确诊",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "aae2d1b9f9b673e6",
+      "question": "转移性结直肠癌一线治疗方案有哪些",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "abd9420fa17508ab",
+      "question": "肺癌手术前需要做哪些评估",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "adf55160ee25fcfb",
+      "question": "直肠癌手术后还需要放疗吗",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "bf0328441d0f5f26",
+      "question": "结肠癌ii期需要辅助化疗吗",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "c366b208f8f14f30",
+      "question": "肺癌低剂量ct筛查适合哪些人",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "d96778048f709326",
+      "question": "结直肠癌术后造口怎么护理",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "e525b7820d333920",
+      "question": "肺癌筛查发现结节后怎么随访",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "eaedf3e79b83b4dc",
+      "question": "直肠癌新辅助放化疗适合哪些人",
+      "cancer_type": "colorectal",
+      "top_k": 5,
+      "fk": "top_k=5"
+    },
+    {
+      "id": "f8c08559358b9270",
+      "question": "肺癌患者营养支持怎么做",
+      "cancer_type": "lung",
+      "top_k": 5,
+      "fk": "top_k=5"
+    }
+  ]
+}

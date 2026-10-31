@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T11:53:50",
+  "generated_at": "2026-10-30T13:57:30",
   "samples": {
     "positive": 20,
     "negative": 33,
@@ -7,7 +7,7 @@
   },
   "baseline": {
     "tau": 0.92,
-    "recall": 0.45,
+    "recall": 0.55,
     "false_merges": 0,
     "false_merge_pairs": []
   },
@@ -38,7 +38,7 @@
       "min": 0.7020784616470337,
       "max": 0.8200298547744751,
       "median": 0.767315000295639,
-      "guarded": 2
+      "guarded": 0
     },
     "line": {
       "n": 5,
@@ -79,7 +79,7 @@
   "sweep": [
     {
       "tau": 0.8,
-      "recall": 0.8,
+      "recall": 0.9,
       "false_merges": 2,
       "false_merge_kinds": [
         "intent_negative"
@@ -87,7 +87,7 @@
     },
     {
       "tau": 0.81,
-      "recall": 0.8,
+      "recall": 0.9,
       "false_merges": 2,
       "false_merge_kinds": [
         "intent_negative"
@@ -95,7 +95,7 @@
     },
     {
       "tau": 0.82,
-      "recall": 0.8,
+      "recall": 0.9,
       "false_merges": 1,
       "false_merge_kinds": [
         "intent_negative"
@@ -103,79 +103,79 @@
     },
     {
       "tau": 0.83,
-      "recall": 0.8,
+      "recall": 0.9,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.84,
-      "recall": 0.7,
+      "recall": 0.8,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.85,
-      "recall": 0.65,
+      "recall": 0.75,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.86,
-      "recall": 0.6,
+      "recall": 0.7,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.87,
-      "recall": 0.6,
+      "recall": 0.7,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.88,
-      "recall": 0.55,
+      "recall": 0.65,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.89,
-      "recall": 0.55,
+      "recall": 0.65,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.9,
-      "recall": 0.55,
+      "recall": 0.65,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.91,
-      "recall": 0.5,
+      "recall": 0.6,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.92,
-      "recall": 0.45,
+      "recall": 0.55,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.93,
-      "recall": 0.4,
+      "recall": 0.45,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.94,
-      "recall": 0.35,
+      "recall": 0.4,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.95,
-      "recall": 0.25,
+      "recall": 0.3,
       "false_merges": 0,
       "false_merge_kinds": []
     },
@@ -200,7 +200,7 @@
   ],
   "recommended": {
     "tau": 0.83,
-    "recall": 0.8,
+    "recall": 0.9,
     "basis": "现状守卫（含标志物状态槽位），零误命中下的最低阈值"
   },
   "pairs": {
@@ -221,7 +221,7 @@
         "a": "结肠癌III期辅助化疗方案有哪些",
         "b": "三期结肠癌术后辅助化疗用什么方案",
         "cos": 0.925216794013977,
-        "conflict": "术语未覆盖 ['III'] vs []"
+        "conflict": null
       },
       {
         "a": "结直肠癌一线化疗方案有哪些",
@@ -251,7 +251,7 @@
         "a": "奥沙利铂的不良反应有哪些",
         "b": "奥沙利铂副作用有哪些",
         "cos": 0.9538630843162537,
-        "conflict": "否定语义不一致"
+        "conflict": null
       },
       {
         "a": "结肠癌肝转移能手术吗",
@@ -293,7 +293,7 @@
         "a": "肺癌术后辅助化疗指征",
         "b": "肺癌手术后要不要做化疗",
         "cos": 0.7564762830734253,
-        "conflict": "否定语义不一致"
+        "conflict": null
       },
       {
         "a": "结肠癌辅助化疗要几个周期",
@@ -367,7 +367,7 @@
         "a": "结肠癌T3期处理原则",
         "b": "结肠癌T4期处理原则",
         "cos": 0.9082870483398438,
-        "conflict": "术语未覆盖 ['T3'] vs ['T4']"
+        "conflict": "分期未覆盖 ['III'] vs ['IV']"
       },
       {
         "kind": "line",
@@ -507,7 +507,7 @@
         "a": "肺癌一线治疗方案有哪些",
         "b": "肺癌一线治疗的不良反应有哪些",
         "cos": 0.7607787251472473,
-        "conflict": "否定语义不一致"
+        "conflict": null
       },
       {
         "kind": "intent_negative",
@@ -528,7 +528,7 @@
         "a": "肺癌免疫治疗适应症",
         "b": "肺癌免疫治疗的不良反应",
         "cos": 0.782416820526123,
-        "conflict": "否定语义不一致"
+        "conflict": null
       },
       {
         "kind": "intent_negative",

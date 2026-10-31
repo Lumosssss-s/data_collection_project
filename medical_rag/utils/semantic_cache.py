@@ -45,12 +45,21 @@ _HOT_KEY = f"{KEY_PREFIX}:hot"
 _MISS_KEY = f"{KEY_PREFIX}:miss"
 
 # 槽位提取用的正则（全部按「冲突即未命中」的保守口径使用）
-_STAGE_ROMAN_RE = re.compile(r"(?<![A-Za-z0-9])(IV|III|II|I)(?![A-Za-z0-9])")
+_STAGE_ROMAN_RE = re.compile(r"(?<![A-Za-z0-9])(IV|III|II|I)(?![A-Za-z0-9])", re.IGNORECASE)
 _STAGE_FULLWIDTH = {
     "\u2160": "I", "\u2161": "II", "\u2162": "III", "\u2163": "IV",  # Ⅰ Ⅱ Ⅲ Ⅳ
 }
 _STAGE_CN_RE = re.compile(r"[一二三四]期")
 _STAGE_CN_MAP = {"一": "I", "二": "II", "三": "III", "四": "IV"}
+# 阿拉伯数字分期（「3期」）：与「III期」「三期」等价。不归一的话，
+# 「结肠癌III期辅助化疗方案」与「三期结肠癌术后辅助化疗方案」会因分期写法不同被误拒。
+_STAGE_ARABIC_RE = re.compile(r"(?<![0-9])([1-4])\s*期")
+_STAGE_ARABIC_MAP = {"1": "I", "2": "II", "3": "III", "4": "IV"}
+# 全角数字归一（「３期」→「3期」）：中文输入法下很常见，不归一会漏抽分期
+_FW_DIGITS = str.maketrans("０１２３４５６７８９", "0123456789")
+# 纯罗马数字的词元不再进 latin 槽位：分期已由 stage 槽位统一归一，
+# 若同时留在 latin 里，会出现「查询侧 III 有、条目侧三期没有」的假冲突。
+_ROMAN_ONLY_RE = re.compile(r"^(?:I|II|III|IV|V|VI|VII|VIII|IX|X)$")
 _STAGE_WORD_RE = re.compile(r"(早期|中期|晚期|局部晚期|转移性|不可切除)")
 _LINE_RE = re.compile(r"(一线|二线|三线|四线|新辅助|术后辅助|辅助治疗|维持治疗|姑息治疗)")
 # 线数的同义写法归一：用户说「术前放化疗 / 手术后化疗」，指南里写「新辅助 / 术后辅助」。
@@ -64,7 +73,22 @@ _LINE_SYNONYMS = (
 _STATUS_RE = re.compile(r"(野生型|突变型|高表达|低表达|过表达|扩增|缺失|阳性|阴性)")
 _LATIN_RE = re.compile(r"[A-Za-z][A-Za-z0-9\-]{1,15}")
 _NUM_RE = re.compile(r"\d+(?:\.\d+)?")
-_NEGATION_WORDS = ("不", "无", "未", "禁忌", "避免", "禁用", "不能", "禁", "除外")
+# 中性疑问结构：先剥离再判否定。「能不能用奥沙利铂」「要不要做化疗」「是否推荐靶向治疗」
+# 表达的是询证意图，不是否定语义；不剥离就会把它们与「不能用奥沙利铂」判成同一类，
+# 从而与肯定句误判冲突（这是此前实测到的误拒来源之一）。
+# 长词在前，避免「有没有必要」被「有没有」先截断。
+_QUESTION_FORM_RE = re.compile(
+    r"(有没有必要|应不应该|可不可以|能不能|需不需要|要不要|用不用|该不该|"
+    r"会不会|可不可能|能否|有没有|是不是|是否)"
+)
+# 否定判定只认明确的否定结构，不再用裸「不」「无」做子串匹配：
+# 「不良反应」「无进展生存期」这类术语里的「不/无」会把正常问题误判成否定句
+# （「奥沙利铂的不良反应」与「奥沙利铂副作用」曾因裸「不」被判冲突而误拒）。
+_NEG_RE = re.compile(
+    r"(?:不能|不可以|不可|不应(?:该)?|不宜|不适宜|不合适|不需要|不必|不用|无需|无须|没必要|没有|"
+    r"未(?:能|曾|行|做|接受|进行|治疗)?|不行|不适合|不建议|不推荐|不适用|"
+    r"禁忌|禁用|禁止|避免|除外)"
+)
 
 # 中文术语补丁：terminology_cancer.json 只收录 15 个药品，结直肠/肺癌高频化疗与靶向药
 # 缺失（奥沙利铂、紫杉醇、伊立替康…）。这些药名互换后语义完全不同（方案差异巨大），
@@ -223,9 +247,11 @@ def extract_slots(text: str) -> Dict[str, Any]:
             cancers.add(code)
 
     normalized = "".join(_STAGE_FULLWIDTH.get(ch, ch) for ch in text)
-    stages: Set[str] = set(_STAGE_ROMAN_RE.findall(normalized))
+    stages: Set[str] = set(m.upper() for m in _STAGE_ROMAN_RE.findall(normalized))
     for m in _STAGE_CN_RE.findall(text):
         stages.add(_STAGE_CN_MAP.get(m[0], m[0]))
+    for m in _STAGE_ARABIC_RE.findall(text.translate(_FW_DIGITS)):
+        stages.add(_STAGE_ARABIC_MAP.get(m, m))
     stages.update(_STAGE_WORD_RE.findall(text))
 
     lines: Set[str] = set(_LINE_RE.findall(text))
@@ -244,10 +270,15 @@ def extract_slots(text: str) -> Dict[str, Any]:
         if surface in lowered:
             terms.add(canonical)
 
-    # 拉丁术语：基因 / 药物 / 检查项（EGFR、ALK、PD-L1、DPYD…）统一大写比对
-    latin = {t.upper() for t in _LATIN_RE.findall(text) if len(t) >= 2}
-    numbers = set(_NUM_RE.findall(lowered))
-    negative = any(w in text for w in _NEGATION_WORDS)
+    # 拉丁术语：基因 / 药物 / 检查项（EGFR、ALK、PD-L1、DPYD…）统一大写比对。
+    # 纯罗马数字（I/II/III/IV…）已由 stage 槽位归一，必须剔除：否则「III期」的 III
+    # 会留在 latin 里，与写成「三期」的同义问题产生假冲突。
+    latin = {t.upper() for t in _LATIN_RE.findall(text)
+             if len(t) >= 2 and not _ROMAN_ONLY_RE.match(t.upper())}
+    # 分期数字不进 num 槽位：「3期」与「III期」归一后若还留下数字 3，会再次判冲突
+    numbers = set(_NUM_RE.findall(_STAGE_ARABIC_RE.sub(" ", lowered.translate(_FW_DIGITS))))
+    # 先剥离中性疑问结构，再判否定：「能不能用X」不是否定，「不能用X」才是
+    negative = bool(_NEG_RE.search(_QUESTION_FORM_RE.sub(" ", text)))
 
     return {
         "cancer": sorted(cancers),
@@ -378,6 +409,11 @@ class SemanticCache:
     @staticmethod
     def _born_key(kind: str) -> str:
         return f"{KEY_PREFIX}:born:{kind}"
+
+    @staticmethod
+    def _pinned_key(kind: str) -> str:
+        """人工预热条目的集合：_trim 只在非 pinned 里淘汰，pinned 一律保留。"""
+        return f"{KEY_PREFIX}:pinned:{kind}"
 
     def _flush(self, client) -> None:
         try:
@@ -665,6 +701,10 @@ class SemanticCache:
         entry_id = hashlib.sha1(f"{kind}\x00{fk}\x00{norm}".encode("utf-8")).hexdigest()[:16]
         slots = extract_slots(text)
         key = self._entry_key(kind, entry_id)
+        meta_map = dict(meta or {})
+        # 人工预热条目用更长的 TTL：它们是真实 LLM 调用的产物，不能和运行时长尾共用 7 天
+        ttl = int(settings.semantic_cache_seeded_ttl if meta_map.get("seeded")
+                  else settings.semantic_cache_ttl)
 
         try:
             pipe = client.pipeline()
@@ -675,11 +715,13 @@ class SemanticCache:
                 "emb": vector.astype(np.float32).tobytes(),
                 "payload": payload_json,
                 "ts": str(int(time.time())).encode("utf-8"),
-                "meta": json.dumps(meta or {}, ensure_ascii=False).encode("utf-8"),
+                "meta": json.dumps(meta_map, ensure_ascii=False).encode("utf-8"),
             })
-            pipe.expire(key, int(settings.semantic_cache_ttl))
+            pipe.expire(key, ttl)
             pipe.sadd(self._index_key(kind), entry_id)
             pipe.zadd(self._born_key(kind), {entry_id: time.time()})
+            if meta_map.get("pinned"):
+                pipe.sadd(self._pinned_key(kind), entry_id)
             pipe.incr(self._idxver_key(kind))
             pipe.execute()
         except Exception as e:
@@ -690,22 +732,53 @@ class SemanticCache:
         return True
 
     def _trim(self, kind: str, client) -> None:
-        """超出容量时淘汰最早写入的条目（FIFO，heat 统计保留）。"""
+        """超出容量时按「命中次数」淘汰：热度最低的先走，同热度按写入时间早的先走。
+
+        pinned 条目（人工预热）永不参与淘汰，只在非 pinned 里挑；可淘汰条目不足时
+        直接跳过并打 WARNING —— 宁可超容量，也不能为了凑数删掉预热成果。
+
+        热度取自 sc:v1:hot（lookup 命中时 zincrby，从未命中过的条目不在表里，按 0 计）。
+        不再用纯 FIFO：首批人工预热的 30 条热问写入最早，纯 FIFO 会让它们成为第一批
+        被淘汰的对象，恰好把最该保留的条目优先清掉。pinned 只解决「从未被命中过的
+        预热条目」这一半问题，另一半靠这里的热度排序。
+
+        成本：用一次 ZRANGE WITHSCORES 全量读取热度后在内存排序，而不是逐条 ZSCORE。
+        300 条规模下前者 1 次往返 + O(N log N) 内存排序（微秒级），后者是 N 次往返。
+        且 trim 只在写入后超过上限时触发，不在每次 lookup 的热路径上。
+        """
         try:
             born_key = self._born_key(kind)
             total = int(client.zcard(born_key))
             limit = int(settings.semantic_cache_max_entries)
             if total <= limit:
                 return
-            stale = client.zrange(born_key, 0, total - limit - 1)
-            if not stale:
+            pinned = {m.decode() if isinstance(m, bytes) else str(m)
+                      for m in client.smembers(self._pinned_key(kind))}
+            born = [(m.decode() if isinstance(m, bytes) else str(m), float(s))
+                    for m, s in client.zrange(born_key, 0, -1, withscores=True)]
+            try:
+                hot = {m.decode() if isinstance(m, bytes) else str(m): float(s)
+                       for m, s in client.zrange(_HOT_KEY, 0, -1, withscores=True)}
+            except Exception:
+                # 热度表读失败不影响淘汰：全部按 0 计，退化为 FIFO（兜底）
+                hot = {}
+            candidates = [(eid, born_ts) for eid, born_ts in born if eid not in pinned]
+            need = total - limit
+            if len(candidates) < need:
+                logger.warning(
+                    "[语义缓存] %s 可淘汰条目不足（需 %d，非 pinned 仅 %d，pinned %d），"
+                    "跳过淘汰，允许暂时超出上限", kind, need, len(candidates), len(pinned))
                 return
+            candidates.sort(key=lambda row: (hot.get(row[0], 0.0), row[1]))
+            stale = candidates[:need]
             pipe = client.pipeline()
-            for raw in stale:
-                entry_id = raw.decode() if isinstance(raw, bytes) else str(raw)
+            for entry_id, _born_ts in stale:
                 pipe.delete(self._entry_key(kind, entry_id))
                 pipe.srem(self._index_key(kind), entry_id)
                 pipe.zrem(born_key, entry_id)
+                # 热度表必须同步清理：条目已删但 id 留在 hot 里会让热度表只增不减，
+                # 也会让同名 id 复活时带着旧热度（id 由 kind+问题哈希决定，会复用）
+                pipe.zrem(_HOT_KEY, entry_id)
             pipe.incr(self._idxver_key(kind))
             pipe.execute()
         except Exception as e:
@@ -720,10 +793,19 @@ class SemanticCache:
             return False
         try:
             if kind:
-                keys = [self._index_key(kind), self._idxver_key(kind), self._born_key(kind)]
-                keys += list(client.scan_iter(match=f"{KEY_PREFIX}:entry:{kind}:*", count=200))
+                prefix = f"{KEY_PREFIX}:entry:{kind}:"
+                entry_keys = [k.decode() if isinstance(k, bytes) else str(k)
+                              for k in client.scan_iter(match=f"{KEY_PREFIX}:entry:{kind}:*", count=200)]
+                keys = [self._index_key(kind), self._idxver_key(kind),
+                        self._born_key(kind), self._pinned_key(kind)] + entry_keys
+                # 一并清掉这些 id 的热度分数：id 由 sha1 确定性生成，只删条目不清 hot 的话，
+                # 同一问题重新入库会继承旧热度，把淘汰顺序带偏。只删本 kind 的 id，不动其他 kind。
+                pipe = client.pipeline()
                 if keys:
-                    client.delete(*keys)
+                    pipe.delete(*keys)
+                for entry_key in entry_keys:
+                    pipe.zrem(_HOT_KEY, entry_key[len(prefix):])
+                pipe.execute()
                 self._invalidate_index(kind)
             else:
                 self._flush(client)
@@ -733,14 +815,51 @@ class SemanticCache:
             return False
 
     def stats(self) -> Dict[str, Any]:
+        # 先取连接再算 connected：kinds_stats() 内部也会惰性建连，
+        # 若把它放在 connected 之后求值，首次请求必然报 connected=false 再自查出 30 条条目。
+        client = self._get_client()
         return {
             "enabled": settings.semantic_cache_enabled,
-            "connected": self._client is not None and time.monotonic() >= self._degraded_until,
+            "connected": client is not None,
             "hits": self._hits,
             "misses": self._misses,
             "guard_rejects": self._rejects,
             "threshold": settings.semantic_cache_threshold,
+            "kinds": self.kinds_stats(),
         }
+
+    def kinds_stats(self) -> Dict[str, Dict[str, int]]:
+        """按 kind 的存活条目数 / pinned 数。
+
+        口径一律用 EXISTS 判定 sc:v1:entry:{kind}:<id> 是否存在。idx / born / pinned
+        三个集合都不会随条目 TTL 过期级联清理（Redis 不提供这种联动），所以集合基数、
+        甚至「pinned ∩ born」都会把已过期条目算成存量，必须逐条 EXISTS。
+        规模百条级，一次 pipeline 批量判定，百来次 EXISTS 在 1 次往返内完成。
+        """
+        client = self._get_client()
+        empty = {kind: {"entries": 0, "pinned": 0} for kind in ("qa", "search")}
+        if client is None:
+            return empty
+        try:
+            out: Dict[str, Dict[str, int]] = {}
+            for kind in ("qa", "search"):
+                index_ids = {m.decode() if isinstance(m, bytes) else str(m)
+                             for m in client.smembers(self._index_key(kind))}
+                pinned_ids = {m.decode() if isinstance(m, bytes) else str(m)
+                              for m in client.smembers(self._pinned_key(kind))}
+                candidates = sorted(index_ids | pinned_ids)
+                if not candidates:
+                    out[kind] = {"entries": 0, "pinned": 0}
+                    continue
+                pipe = client.pipeline()
+                for entry_id in candidates:
+                    pipe.exists(self._entry_key(kind, entry_id))
+                live = {eid for eid, ok in zip(candidates, pipe.execute()) if int(ok or 0)}
+                out[kind] = {"entries": len(live & index_ids), "pinned": len(live & pinned_ids)}
+            return out
+        except Exception as e:
+            self._degrade(e, "统计")
+            return empty
 
 
 def _corpus_version() -> str:

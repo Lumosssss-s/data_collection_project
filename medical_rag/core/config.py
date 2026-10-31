@@ -182,6 +182,9 @@ class Settings(BaseSettings):
     semantic_cache_max_entries: int = 300
     # 兜底过期（秒）。主失效手段是 doc_catalog.json 的 mtime 版本比对，TTL 只防泄漏
     semantic_cache_ttl: int = 7 * 24 * 3600
+    # 人工预热（seeded）条目的过期时间（秒），默认 30 天。预热的问答条目由真实 LLM
+    # 生成（30 条约 30 万 tokens），是沉没成本，不应与运行时累积的长尾条目共用 7 天 TTL。
+    semantic_cache_seeded_ttl: int = 30 * 24 * 3600
 
     # 实体消歧 L3（向量对齐）：兜住 L1 繁简字表未覆盖的异体与措辞差异。
     # 实测结论（378 个真实实体、17323 个同类型候选对）：

@@ -32,7 +32,10 @@ services:
     image: redis:7-alpine
     container_name: medical-redis
     restart: always
-    # 语义缓存专用：只放热问条目（百条级），达到上限按 LRU 淘汰。
+    # 语义缓存专用：只放热问条目（百条级）。达到上限后的淘汰由后端 SemanticCache._trim 决定：
+    # 候选=非 pinned 条目，按 hot 命中次数升序淘汰、同分按写入时间升序；pinned（预热）条目永不淘汰。
+    # 这里的 maxmemory-policy=allkeys-lru 是 Redis 内存上限策略，只在 128MB 这种极端情况下才生效，
+    # 与上述容量淘汰不是同一回事，不要按 LRU 理解条目淘汰顺序。
     # 持久化：问答条目的生成成本是真实 LLM 调用（30 条热问约 15~28 万 tokens），
     # 容器重建/机器重启后不能丢，故开 AOF（everysec）并挂 named volume。
     # 关闭 RDB 快照（--save ""）：语义缓存价值在条目本身，AOF 已足够，不必再刷快照。

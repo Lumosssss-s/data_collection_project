@@ -23,6 +23,7 @@ from api.v1.followup import router as followup_router
 from api.v1.qc import router as qc_router
 from api.v1.report import router as report_router
 from api.v1.patient import router as patient_router
+from api.v1.cache import router as cache_router
 
 import torch
 
@@ -268,6 +269,7 @@ app.include_router(followup_router, prefix="/api/v1")
 app.include_router(qc_router, prefix="/api/v1")
 app.include_router(report_router, prefix="/api/v1")
 app.include_router(patient_router, prefix="/api/v1")
+app.include_router(cache_router, prefix="/api/v1")
 
 
 @app.get("/health")
