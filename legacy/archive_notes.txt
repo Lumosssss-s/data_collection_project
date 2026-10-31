@@ -1,0 +1,22 @@
+# legacy/ 归档说明
+
+本目录存放**已判定无人使用、但保留以便将来查证**的历史文件。归档日期：**2026-10-31**。
+归档方式为文件系统移动（未使用 `git mv`），文件内容逐字节未改（MD5 校验一致）。
+本目录内所有文件**未入库**，仅本地留存。
+
+## 一、死代码归档（批 3）
+
+| 原路径 | 归档日期 | 归档理由（判定依据 + 证据类型） | 如何恢复 |
+|---|---|---|---|
+| `medical_rag/rag/rerank.py` | 2026-10-31 | 全仓 0 处 `from rag.rerank` / `import rag.rerank`（证据：全仓 import 语句扫描 + 文件名字面量扫描，均 0 命中）；`rag/__init__.py` 只导出 `chain` / `llm` / `retriever`，不含本模块（证据：源码直读）；实际精排由 `medical_rag/services/reranker_service.py` 承担，`services/retriever_service.py:78` 调用其 `rerank()`（证据：调用点 grep） | `Copy-Item legacy\rerank.py medical_rag\rag\rerank.py`；该模块为纯函数封装（依赖 `core.config` 与 `rag.documents`），拷回即可 import |
+| `medical_rag/utils/chunker.py` | 2026-10-31 | 全仓 0 处 import（证据：import 语句扫描 0 命中）；唯一提及处为 `services/doc_management_service.py:5` 注释"切分/条目化归 chunker BE-34 与入库脚本"，即职责已拆走（证据：注释 grep）；`docs/代码改造清单.md:132` 记录 BE-34 改造为"条目化切分…已实施（P2）整体重写"（证据：文档直读） | `Copy-Item legacy\chunker.py medical_rag\utils\chunker.py`；注意其 800 字滑动窗口逻辑已被条目化切分取代，直接恢复可能与现役切分口径不一致 |
+| `medical_rag/eval_data/generate_eval_charts.py` | 2026-10-31 | 仅自述用法（脚本第 10 行 docstring），README / docs / 其他脚本 0 处引用（证据：文件名字面量全仓扫描）；与 `eval_data/generate_4charts.py` 功能重叠，后者被 README 与两份 docs 明确列为图表生成入口（证据：README.md 与 docs 引用计数对比） | `Copy-Item legacy\generate_eval_charts.py medical_rag\eval_data\generate_eval_charts.py`；它读取 `eval_data/results/<时间戳>/` 产出图表，恢复后可直接运行 |
+| `scripts/collect_medical_data.py` | 2026-10-31 | 根级旧采集脚本，全仓 0 处引用（README / docs / compose / 其他脚本均无，证据：文件名字面量全仓扫描 0 命中）；现役采集入口在 `medical_rag/scripts/data_pipeline/`（如 `fetch_dailymed_labels.py`、`pdf_extract.py`），由 `docs/数据处理校验评测脚本交付清单.md` 登记（证据：目录比对 + 文档清单） | `Copy-Item legacy\collect_medical_data.py scripts\collect_medical_data.py`；脚本走 Europe PMC / DailyMed 公开 REST API，自成一体，无包内依赖 |
+
+## 二、历史配置归档（批 2）
+
+| 原路径 | 归档日期 | 归档理由 | 如何恢复 |
+|---|---|---|---|
+| `docker.env`（原位于仓库根） | 2026-10-31 | `docker-compose.yml` 全文无 `env_file` / `--env-file docker.env` 引用（证据：compose 逐行直读 + 全仓 `docker.env` 字面量扫描，命中仅为 `.gitignore` 规则、`README.md:304` 一句说明、`docs/代码改造清单.md` 的改造登记）；实际生效的环境变量来自仓库根 `.env`（证据：compose 变量插值 + `.env` 逐键核对） | `Copy-Item legacy\docker.env docker.env`（回到根目录）。**该文件含真实 DeepSeek API Key，恢复后仍被 `.gitignore` 的 `docker.env` 规则忽略（该规则不带路径前缀，任意层级均生效），严禁入库** |
+
+> 说明：`docker.env` 的内容本次**未做任何修改**（MD5 前后一致），此处也不复述其中任何密钥。
