@@ -9,6 +9,12 @@ build/
 # 生成的缓存数据（可重新生成）
 medical_rag/data/kg_cache/
 
+# 运行产物与原始数据（可重建/体积大，不入库）
+medical_rag/data/raw/
+medical_rag/data/intermediate/
+medical_rag/data/reports/
+medical_rag/eval_data/results/
+
 # 清洗后数据（G3 14 目录，数据交付件，体积大，不入库；由 ingest.py 只读消费）
 medical_rag/data/clean/
 
@@ -22,7 +28,7 @@ medical_rag/eval_data/charts/
 # 文档：仅 README.md 入库，其余 Markdown 一律本地留存（不入库、不推送）
 # 注：本规则对「已跟踪」文件不生效，历史已入库的 .md 需 git rm --cached 取消跟踪
 *.md
-!README.md
+!/README.md
 
 # IDE
 .idea/
@@ -44,6 +50,8 @@ docker.env
 miniapp/node_modules/
 miniapp/.pai/
 miniapp/dist/
+# SWC 编译缓存（可再生，体积约 2.7MB）
+miniapp/.swc/
 
 # 小程序预览运行态（可能在工作目录根生成）
 .pai/
