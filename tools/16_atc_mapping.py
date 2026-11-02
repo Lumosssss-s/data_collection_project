@@ -4,11 +4,11 @@
 输入：
   fetched/atc/atc_oncology.csv         # 15 号脚本抓取（WHO L01/L02/L03/H02/H03/M05/A11/A12 591 条，未经加工）
   data/clean/terminology/terminology_cancer.json   # 需回补的术语表
-  data/clean/drug_labels/drug_catalog.json          # 48 种药（canonical_zh + generic_name_en）
+  data/clean/drug_labels/drug_catalog_v2.json          # 48 种药（generic_name + generic_name_en）
 
 输出：
   data/clean/terminology/terminology_cancer.json  （原地更新 drug 条目的 atc / en_name / mapping_status）
-  data/clean/drug_labels/drug_catalog.json        （追加 atc / atc_parent 字段）
+  data/clean/drug_labels/drug_catalog_v2.json        （追加 atc_code / atc_parent 字段）
   fetched/atc/zh_en_inn.json                     （中文 → INN 人工对照表，随抓取结果留痕）
 
 运行：python tools/16_atc_mapping.py
@@ -21,7 +21,7 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ATC_CSV = os.path.join(BASE, "fetched", "atc", "atc_oncology.csv")
 ZH_EN = os.path.join(BASE, "fetched", "atc", "zh_en_inn.json")
 TERM = os.path.join(BASE, "data", "clean", "terminology", "terminology_cancer.json")
-CAT = os.path.join(BASE, "data", "clean", "drug_labels", "drug_catalog.json")
+CAT = os.path.join(BASE, "data", "clean", "drug_labels", "drug_catalog_v2.json")
 
 # ---------------------------------------------------- 手工中文 → INN 对照表
 # 只覆盖 5 癌种术语表 drug 里 catalog 未收录的药 + 拼写差异项。
@@ -65,7 +65,7 @@ def main():
         terms = json.load(f)
     with open(CAT, encoding="utf-8") as f:
         catalog = json.load(f)
-    catalog_zh_to_en = {r["canonical_zh"]: r["generic_name_en"].strip() for r in catalog}
+    catalog_zh_to_en = {r["generic_name"]: r["generic_name_en"].strip() for r in catalog}
 
     atc_exact, atc_rows = load_atc()
 
@@ -102,12 +102,12 @@ def main():
         hits += 1
         print("  HIT  %-14s → %s %s (%s)" % (zh, row["code"], row["name_en"], row["parent"]))
 
-    # catalog 也顺手补 atc 字段
+    # catalog 也顺手补 atc_code 字段
     for r in catalog:
-        zh = r["canonical_zh"]
+        zh = r["generic_name"]
         inn = r["generic_name_en"].strip().lower()
         row = lookup(atc_exact, inn)
-        r["atc"] = row["code"] if row else None
+        r["atc_code"] = row["code"] if row else None
         r["atc_parent"] = row["parent"] if row else None
 
     with open(TERM, "w", encoding="utf-8") as f:

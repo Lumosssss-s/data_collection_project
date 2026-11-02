@@ -6,11 +6,30 @@
 
 | 文件 | 记录数 | 内容 | 来源（记录内 `source` 字段） |
 |---|---|---|---|
-| `drug_catalog.json` | 48 种药 / 2,235 条制剂 | 药品基础信息 + 美国上市制剂清单 + ATC 编码 + 中文适应证/用法用量 + openFDA 说明书四段英文 interim | FDA NDC Directory（公有领域）+ WHO ATC/DDD Index（16 号映射）+ 《新型抗肿瘤药物临床应用指导原则（2025年版）》（20 号抽取）+ openFDA drug/label（公有领域） |
+| `drug_catalog_v2.json` | 48 种药 / 2,235 条制剂 | **当前版本**：字段名对齐需求清单 §A4 ⑥ + 药品基础信息 + 美国上市制剂清单 + ATC 编码 + 中文适应证/用法用量 + openFDA 说明书四段英文 interim | FDA NDC Directory（公有领域）+ WHO ATC/DDD Index（16 号映射）+ 《新型抗肿瘤药物临床应用指导原则（2025年版）》（20 号抽取）+ openFDA drug/label（公有领域） |
+| `drug_catalog_v1_20261025.json` | 48 种药 / 2,235 条制剂 | v1（旧字段名 `canonical_zh` / `atc`，按 G4 保留以便比对，下游已不再读取）；该快照保留原始错字「昂达司琼」，未回改 | 同上 |
+
+## 字段名对齐（v1 → v2，2026-10-28）
+
+由 `tools/25_align_drug_catalog.py` 纯改名迁移，**未新增任何采集内容**：
+
+| v1 | v2（需求清单 §A4 ⑥） | 说明 |
+|---|---|---|
+| `canonical_zh` | `generic_name` | 中文通用名 canonical；`generic_name_en` 作为附加字段保留 |
+| `atc` | `atc_code` | ATC 5 级码；`atc_parent` 保留 |
+| — | `brand_names` | 由 `products[].proprietary_name` 去重生成（英文商品名，中文商品名待补），48/48 有值 |
+| — | `approval_no` | 国药准字，当前 0/48（NMPA 无公开接口，待授权渠道） |
+| — | `indications` | 原字段已存在，统一为数组（17/48） |
+| — | `dosage` | 原字段已存在，统一为 `{"standard","adjustment"}` 对象（17/48） |
+| — | `contraindications` | 禁忌，当前 0/48 |
+| — | `adverse_reactions` | 不良反应（`[{term,frequency,ctcae_hint}]`），当前 0/48 |
+| — | `interactions` | 原字段已存在（11/48） |
+
+空值一律写 `null`（G8），缺口同步登记在 `missing_fields`。
 
 ## 定位说明（重要）
 
-1. **基础字段已齐**：通用名/剂型/途径/规格/厂牌/申请号/药理分类取自 FDA NDC；`atc` + `atc_parent` 46/48 由 16 号脚本映射。
+1. **基础字段已齐**：通用名/剂型/途径/规格/厂牌/申请号/药理分类取自 FDA NDC；`atc_code` + `atc_parent` 48/48 由 16 号脚本映射。
 2. **NMPA 查询页只有注册信息**：`www.nmpa.gov.cn` / `datasearch.nmpa.gov.cn` 对脚本与自动化浏览器均返回 HTTP 412（WAF），人工查询页（样例见 `raw/nmpa_registry/`）只提供批准文号/产品名称/商品名/剂型/规格/持有人/生产厂商/药品本位码，**不含说明书正文**。
 3. **中文适应证/用法用量改由官方指导原则抽取**：20 号脚本从《新型抗肿瘤药物临床应用指导原则（2025年版）》PDF 抽取，覆盖 **17/48**（呼吸/消化/乳腺三个章节，适应证按癌种关键词过滤，剔除「※」境外获批、国内未获批条目），写入 `indications` / `dosage` / `interactions`，来源记入 `label_zh_source`。
 4. **未覆盖的 31 种**：化疗药（铂类、蒽环、紫杉类、吉西他滨、伊立替康、培美曲塞、卡培他滨、氟尿嘧啶）、内分泌药（他莫昔芬、来曲唑、阿那曲唑、依西美坦、氟维司群）、支持治疗（G-CSF、止吐、骨转移、地塞米松、左甲状腺素）不在该指导原则内；甲状腺癌无独立章节（仑伐替尼、索拉非尼、凡德他尼未覆盖）。
@@ -22,7 +41,8 @@
 | 字段 | 类型 | 说明 |
 |---|---|---|
 | `drug_id` | string | `DRUG-<癌种码>-<3位序号>`（LUNG/BREAST/CRC/GAS/THY/SUP） |
-| `generic_name_en` / `canonical_zh` | string | 英文通用名 / 中文通用名（按 A4 药单人工映射） |
+| `generic_name` | string | 中文通用名（canonical，需求清单 A4 字段） |
+| `generic_name_en` | string | 英文通用名（附加字段，按 A4 药单人工映射） |
 | `drug_class` | enum | 化疗 / 靶向 / 免疫 / 抗血管生成 / 内分泌 / 内分泌抑制 / 支持治疗 |
 | `cancer_type` | array | `lung`/`breast`/`colorectal`/`gastric`/`thyroid`/`general`，可多值 |
 | `pharm_classes` | array | FDA 药理分类原文（EPC/MoA 标签） |
@@ -30,14 +50,18 @@
 | `product_count` / `labeler_count` | int | 在美制剂数 / 生产企业数 |
 | `application_numbers` | array | FDA 申请号（NDA/ANDA/BLA） |
 | `products` | array | 制剂明细（NDC、商品名、规格、厂牌、上市状态等） |
-| `atc` / `atc_parent` | string\|null | ATC 5 级码 / 顶级组（WHO ATC/DDD Index，16 号脚本；48 条中 46 条有值） |
+| `brand_names` | array\|null | 商品名（取自 `products[].proprietary_name`，48/48 有值） |
+| `atc_code` / `atc_parent` | string\|null | ATC 5 级码 / 顶级组（WHO ATC/DDD Index，16 号脚本；48 条中 46 条有值） |
+| `approval_no` | string\|null | 国药准字编号，当前全 null（NMPA 无公开接口） |
 | `indications` | array\|null | 中文适应证（20 号从指导原则抽取，仅 5 癌种子集），17/48 有值 |
 | `dosage` | object\|null | `{"standard":"…","adjustment":"…"}`，标准用法用量与调整（20 号），17/48 有值 |
+| `contraindications` | array\|null | 禁忌，当前全 null |
+| `adverse_reactions` | array\|null | `[{"term","frequency","ctcae_hint"}]`，当前全 null |
 | `interactions` | array\|null | 药物相互作用要点（20 号，可选） |
 | `label_zh_source` | object\|null | 中文正文来源（G6 五字段）：`source_name` / `source_version` / `source_section` / `source_file` / `updated_at`；与英文 interim 区分 |
 | `label_en_interim` | object\|null | openFDA 英文 interim，**非 A4 正式字段**：`{lang:"en", status:"interim_pending_zh", source, set_id, effective_time, generic_name, brand_name, sections{indications, dosage_and_administration, contraindications, adverse_reactions}}`；45/48 有值 |
 | `label` | object\|null | 中文说明书（A4 正式字段），当前全为 null；由 `raw/nmpa_labels/labels_zh.json` 经 19 号脚本合并后写入：`{lang:"zh", status:"zh_from_nmpa", source_name, source_url, updated_at}` |
-| `missing_fields` | array | 当前仍缺的 A4 必填项，19 号脚本按实际缺口动态生成（`atc_code` 仅在无 `atc` 时出现） |
+| `missing_fields` | array | 当前仍缺的 A4 必填项，19 号脚本按实际缺口动态生成（`atc_code` 仅在无值时出现） |
 | `source` / `origin` | string / enum | 来源说明 / 固定 `fda_ndc` |
 | `annotation` | object | `{"annotator","date","status"}`，当前 `status=draft` |
 
@@ -49,7 +73,7 @@
 | **命中（FDA NDC）** | **48 种** |
 | 未命中 | 3 种：埃克替尼、信迪利单抗、安罗替尼（中国本土药，未在美国上市） |
 | 制剂记录 | 2,235 条（在售 2,200 / 已停售 35） |
-| ATC 覆盖 | 46 / 48（缺 阿瑞匹坦、昂达司琼：均在 A04 止吐类，15 号脚本未抓该组） |
+| ATC 覆盖 | **48 / 48**（阿瑞匹坦 A04AD12、昂丹司琼 A04AA01；2026-10-30 由 15 号脚本扩展 A04 组 + 16 号回补） |
 | 中文适应证 + 用法用量 | 17 / 48（指导原则抽取） |
 | openFDA 英文 interim | 45 / 48 |
 | 未命中 openFDA | 3 种：阿替利珠单抗（TECENTRIQ）、仑伐替尼（LENVIMA）、奥希替尼（TAGRISSO） |
@@ -65,7 +89,7 @@
 4. **美国市场口径**：商品名（如 TAGRISSO）、规格单位、生产企业与国内可能不同，不能直接展示给国内患者。
 5. **3 个中国原研药缺口**：埃克替尼、信迪利单抗、安罗替尼既无 FDA NDC 也无 openFDA 标签，需从 NMPA 单独补。
 6. **3 个 openFDA 缺项**：阿替利珠单抗、仑伐替尼、奥希替尼在 openFDA label 数据集中查无记录；其中阿替利珠单抗的中文适应证/用法已由指导原则补上。
-7. **ATC 缺口**：阿瑞匹坦、昂达司琼属 A04 止吐类，15 号脚本只抓了 L01/L02/L03/H02/H03/M05/A11/A12 八组，需扩展抓取组或人工补码。
+7. **ATC 缺口已闭环（2026-10-30）**：阿瑞匹坦（A04AD12）、昂丹司琼（A04AA01）属 A04 止吐类，15 号脚本已扩展 A04 + G03 组（750 条码表）并重跑 16 号，`atc_code` 现为 48/48。
 8. **药理分类不全**：原表 36.2% 记录为空；本批「环磷酰胺」「曲妥珠单抗-emtansine」为空，需人工补。
 9. **支持治疗类**（G-CSF、止吐、骨转移、激素）标为 `general`，无特定癌种归属。
 10. **`annotation.status=draft`**：全自动映射/抽取，需医学顾问复核。
@@ -88,13 +112,16 @@
 
 ```bash
 # 过滤步骤（原 tools/7_clean_fda_ndc.py 已移除），产物已固化在 cache/fda_ndc/oncology_products.csv
-python tools/8_fda_to_json.py              # cache/fda_ndc/ → 本目录 drug_catalog.json（atc 先置 null）
-python tools/15_fetch_atc.py               # WHO ATC/DDD Index → fetched/atc/atc_oncology.csv（591 条）
-python tools/16_atc_mapping.py             # 中文药名 ↔ INN ↔ ATC → 回补 atc / atc_parent
+python tools/8_fda_to_json.py              # cache/fda_ndc/ → 本目录 drug_catalog_v2.json（atc_code 先置 null）
+python tools/15_fetch_atc.py               # WHO ATC/DDD Index → fetched/atc/atc_oncology.csv（750 条，十组）
+python tools/16_atc_mapping.py             # 中文药名 ↔ INN ↔ ATC → 回补 atc_code / atc_parent
 python tools/19_fetch_openfda_labels.py    # openFDA 四段英文 → label_en_interim
 python tools/20_guideline_drug_extract.py  # 指导原则 PDF → 中文 indications / dosage / interactions（依赖 PyMuPDF）
+python tools/25_align_drug_catalog.py      # 字段名对齐 §A4 ⑥（canonical_zh→generic_name、atc→atc_code，补 brand_names 等）
 python tools/19_fetch_openfda_labels.py --offline   # 刷新 missing_fields（20 号之后必须再跑一次）
 ```
+
+- 25 号脚本纯改名迁移，审计写入 `cache/drug_labels/align_v2_audit.json`；v1 原件保留为 `drug_catalog_v1_20261025.json` 供比对（G4）。
 
 - 19 号脚本幂等：已抓且文件存在时不联网（`--force` 强制重抓，`--offline` 只用已抓结果合并）。
 - 20 号脚本审计：`cache/drug_labels/guideline_extract.json`（逐药命中章节、页码、抽取条数、跳过原因）；支持 `--dry-run` 只出审计不回写。

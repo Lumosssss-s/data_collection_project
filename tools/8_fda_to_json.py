@@ -15,7 +15,7 @@ from collections import Counter
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(BASE, "cache", "fda_ndc", "oncology_products.csv")
 OUT_DIR = os.path.join(BASE, "data", "clean", "drug_labels")
-OUT = os.path.join(OUT_DIR, "drug_catalog.json")
+OUT = os.path.join(OUT_DIR, "drug_catalog_v2.json")
 
 SOURCE_TEXT = "FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231）"
 
@@ -85,8 +85,12 @@ def main():
         seq[scope_code] += 1
         records.append({
             "drug_id": "DRUG-%s-%03d" % (scope_code, seq[scope_code]),
+            "generic_name": g["name_zh"],
             "generic_name_en": key.upper(),
-            "canonical_zh": g["name_zh"],
+            "brand_names": sorted({p["proprietary_name"] for p in g["products"]
+                                   if p.get("proprietary_name")}) or None,
+            "atc_code": None,
+            "approval_no": None,
             "drug_class": g["drug_class"],
             "cancer_type": g["cancer_types"],
             "pharm_classes": sorted(g["pharm_classes"]),
@@ -96,10 +100,16 @@ def main():
             "labeler_count": len(g["labelers"]),
             "application_numbers": sorted(g["applications"]),
             "products": g["products"],
+            "indications": None,
+            "dosage": None,
+            "contraindications": None,
+            "adverse_reactions": None,
+            "interactions": None,
             "missing_fields": MISSING,
             "source": SOURCE_TEXT,
             "origin": "fda_ndc",
-            "annotation": {"annotator": "自动转换", "date": TODAY, "status": "draft"},
+            "annotation": {"annotator": "自动转换", "date": TODAY, "status": "draft",
+                           "schema_version": "v2"},
         })
 
     os.makedirs(OUT_DIR, exist_ok=True)
@@ -109,7 +119,7 @@ def main():
     print("药品条目 %d 个，制剂记录 %d 条" % (len(records), sum(r["product_count"] for r in records)))
     print("药品条目按癌种:", dict(Counter(c for r in records for c in r["cancer_type"])))
     print("按类别:", dict(Counter(r["drug_class"] for r in records)))
-    zero = [r["canonical_zh"] for r in records if not r["pharm_classes"]]
+    zero = [r["generic_name"] for r in records if not r["pharm_classes"]]
     print("PHARM_CLASSES 为空的药: %d 个 -> %s" % (len(zero), ", ".join(zero)))
     print("DONE ->", OUT)
     return 0

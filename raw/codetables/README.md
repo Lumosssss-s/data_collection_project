@@ -7,7 +7,7 @@
 > `cache/` 只放脚本中间件（`cache/codetables/icdo3_source_check.json` 抓取校验报告、`icdo3_mapping.json` 映射审计、`_unzipped/` 解压临时目录）。
 > 码表本身**不产出独立成品 JSON**，它只在 16/18 号脚本里被读入、回补到已有成品：
 > `data/clean/terminology/terminology_cancer.json`（`atc` / `icd_o3` 字段）、
-> `data/clean/drug_labels/drug_catalog.json`（`atc` / `atc_parent` 字段）。
+> `data/clean/drug_labels/drug_catalog_v2.json`（`atc_code` / `atc_parent` 字段）。
 
 ## 1. NHC 国家临床版码表
 
@@ -29,9 +29,9 @@
 | 项 | 内容 |
 |---|---|
 | 来源 | WHO Collaborating Centre for Drug Statistics Methodology，ATC/DDD Index <https://atcddd.fhi.no/atc_ddd_index/>，索引页标注 Last updated **2026-01-20** |
-| 抓取方式 | `tools/15_fetch_atc.py`：从 8 个顶级组（`L01` `L02` `L03` `H02` `H03` `M05` `A11` `A12`）向下钻取 3 级 → 4 级 → 5 级码表页解析 |
+| 抓取方式 | `tools/15_fetch_atc.py`：从 10 个顶级组（`L01` `L02` `L03` `H02` `H03` `M05` `A11` `A12` `A04` `G03`）向下钻取 3 级 → 4 级 → 5 级码表页解析（A04 止吐、G03 性激素为 2026-10-30 补充） |
 | 存放位置 | `fetched/atc/`（抓取结果、未经加工，故不进 `raw/`；`cache/` 只放脚本中间件） |
-| 规模 | **591 条** 5 级码 |
+| 规模 | **750 条** 5 级码 |
 | 结构 | `code` / `name_en` / `group`（4 级父组）/ `parent`（顶级组） |
 | 用途 | A5 drug 的 `atc` 字段；`name_en` 可回填 `en_name` |
 | 授权 | WHO ATC 索引为 WHO 版权，此处仅作编码对照引用，不整体再分发；对外交付只出现单条编码与药名 |
@@ -44,14 +44,14 @@
 |---|---|---|
 | `icd10`（confirmed） | 已有 | CBLUE 北京临床版 v601 已入库 200 条；如需切到国家临床版 2.0，需按 `疾病名称` 重新匹配 |
 | `icd_o3` | **已映射 189/240** | `tools/18_icdo3_mapping.py` 三级匹配：精确名 11 + 形态学关键词 35 + 部位性兜底 143；剩下 51 条为甲状腺肿/息肉/囊肿/积液等非形态学诊断，不适用 |
-| `atc` | **已映射 14/15** | `tools/16_atc_mapping.py` 中文名 → INN → ATC 三层匹配；唯一 null 为 `雷洛昔芬`（2026 索引缺项）。6 条药物类别名/短语已由 13 号脚本 `DRUG_CLASS_DROP` 剔除，不再进入 A5 |
+| `atc` | **已映射 15/15** | `tools/16_atc_mapping.py` 中文名 → INN → ATC 三层匹配；`雷洛昔芬` → `G03XC01`（G03 组，2026-10-30 补抓）。6 条药物类别名/短语已由 13 号脚本 `DRUG_CLASS_DROP` 剔除，不再进入 A5 |
 | `loinc` | 不阻塞 | 需求清单 A5⑥ 字段表只要求 `icd10 / icd_o3 / atc`，**无 loinc 字段**；LOINC 仅在 ③ 作为可选官方码表来源提及。现有 51 条 examination 以影像/内镜/操作类为主，本身不适用 LOINC（LOINC 覆盖实验室检验/观察项，如 CEA、CA125、甲胎蛋白）；若要补化验类检查项，再从 Regenstrief 注册下载 |
 
 ## 复现
 
 ```bash
-python tools/15_fetch_atc.py        # → fetched/atc/atc_oncology.csv（591 条）
-python tools/16_atc_mapping.py      # → 回补 terminology drug 的 atc/en_name + drug_catalog 的 atc
+python tools/15_fetch_atc.py        # → fetched/atc/atc_oncology.csv（750 条）
+python tools/16_atc_mapping.py      # → 回补 terminology drug 的 atc/en_name + drug_catalog_v2 的 atc_code
 python tools/17_fetch_icdo3.py      # 下载 + 校验 NHC 资料包 → fetched/codetables/nhc/（1,427 条；本地有效则跳过下载，--force 重下）
 python tools/18_icdo3_mapping.py    # → 回补 terminology disease 的 icd_o3；审计明细写 cache/codetables/icdo3_mapping.json
 ```

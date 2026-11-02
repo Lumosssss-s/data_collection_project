@@ -1,0 +1,52 @@
+[
+  {
+    "doc_id": "DOC-LUNG-CACA-001",
+    "title": "CACA Guidelines for Holistic Integrative Management of Lung Cancer（中国肺癌整合诊治指南 官方英译版）",
+    "doc_type": "guideline",
+    "issuer": "中国抗癌协会肺癌专业委员会（Society of Lung Cancer of China Anti-Cancer Association）",
+    "publish_date": "2024-03-08",
+    "cancer_types": [
+      "lung"
+    ],
+    "license_note": "Open Access（CC BY 4.0）：© The Author(s) 2024，发表于 Holistic Integrative Oncology 2024;3:10（DOI 10.1007/s44178-024-00069-w），可复制、分发与改编，须署名原作者并标明来源。本件为《中国肺癌整合诊治指南》的**官方英译版**，非中文原版；中文全文见 cacaguidelines.cacakp.com（需会员登录），本项目未获取。原文 URL：https://link.springer.com/article/10.1007/s44178-024-00069-w",
+    "file_path": "raw/guidelines/lung/caca2024_lung_en.pdf",
+    "doc_hash": "c7295751f0afe86d645a753742be2346a95ee1801491dd6fad77535c918c188a",
+    "source_name": "CACA Guidelines for Holistic Integrative Management of Lung Cancer",
+    "source_version": "2024",
+    "source_section": "全文",
+    "source_file": "caca2024_lung_en.pdf",
+    "updated_at": "2026-10-28",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "lang": "en",
+      "note": "官方英译版；44 页 / 223493 字符；用于补足中文指南不可得时的权威来源，抽取条目须在 source_section 标注英文版"
+    }
+  },
+  {
+    "doc_id": "DOC-LUNG-CACA-002",
+    "title": "HIO肺癌专题：中国肺癌整合诊治指南（官方中文摘要）",
+    "doc_type": "consensus",
+    "issuer": "中国抗癌协会",
+    "publish_date": "2024-03-08",
+    "cancer_types": [
+      "lung"
+    ],
+    "license_note": "中国抗癌协会官网（www.caca.org.cn）公开发布的中文摘要页，原文 URL：http://www.caca.org.cn/system/2024/03/12/030083281.shtml。本件为官方摘要（约 500 字，含本位指南的定位、覆盖范围与更新说明），**非指南全文**，不可当作 A1 原文使用；`doc_type` 在 §A1 三值枚举（guideline/standard/consensus）中权宜归入 consensus，待需求方确认。",
+    "file_path": "raw/guidelines/lung/caca2024_lung_zh_abstract.docx",
+    "doc_hash": "4cbb8d328c03c889c7906e4ea649f155ffcf062fa3ec7aa1be596a73581071dd",
+    "source_name": "HIO肺癌专题：中国肺癌整合诊治指南（官方中文摘要）",
+    "source_version": "2024",
+    "source_section": "中文摘要",
+    "source_file": "caca2024_lung_zh_abstract.docx",
+    "updated_at": "2026-10-28",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "lang": "zh",
+      "note": "官网正文逐字转录为 .docx（5 段 / 382 字符），仅作中文补充语料，不参与 A2 条目抽取"
+    }
+  }
+]

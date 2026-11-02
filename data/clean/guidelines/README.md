@@ -16,6 +16,8 @@ NCCN 指南原件因版权限制**不属于交付物**，存放于 `external/ncc
 | `guidelines_colorectal_2024_20261025.json` | 1 | 结直肠癌筛查与早诊早治方案（2024 年版），网页正文转录 | 国家卫健委办公厅 国卫办医急函〔2024〕281号 |
 | `guidelines_all_2025_20261025.json` | 1 | 新型抗肿瘤药物临床应用指导原则（2025 年版），605 页 | 国家卫健委，公开可引用 |
 | `guidelines_lung_nccn2026_20261025.json` | 3 | NCCN 非小细胞肺癌（9.2026）/ 小细胞肺癌（1.2027）/ 肺癌筛查（1.2027），**非交付物** | NCCN，版权保留、禁止再分发 |
+| `guidelines_lung_caca2024_20261028.json` | 2 | CACA 肺癌指南**官方英译版**全文（44 页）+ 官方**中文摘要**（非全文），详见下节 | 中国抗癌协会；英译版 CC BY 4.0 开放获取 |
+| `guidelines_lung_csco2025_20261028.json` | 1 | CSCO 非小细胞肺癌诊疗指南 2025，**仅书目元数据，正文未采集** | 人民卫生出版社付费电子书 |
 | `guidelines_breast_nccn2026_20261025.json` | 1 | NCCN 乳腺癌（9.2026），278 页，**非交付物** | 同上 |
 | `guidelines_colorectal_nccn2026_20261025.json` | 2 | NCCN 结肠癌（2.2026）/ 直肠癌（2.2026），**非交付物** | 同上 |
 | `guidelines_gastric_nccn2026_20261025.json` | 1 | NCCN 胃癌（4.2026），140 页，**非交付物** | 同上 |
@@ -58,6 +60,9 @@ NCCN 指南原件因版权限制**不属于交付物**，存放于 `external/ncc
 | `DOC-CRC-NCCN-002` | 166 | 641,072 | 通过 |
 | `DOC-GAS-NCCN-001` | 140 | 540,925 | 通过 |
 | `DOC-THY-NCCN-001` | 159 | 586,684 | 通过 |
+| `DOC-LUNG-CACA-001` | 44 | 223,493 | 通过（官方英译版，CC BY 4.0） |
+| `DOC-LUNG-CACA-002` | .docx | 382 | 通过（官网正文转录，5 段） |
+| `DOC-LUNG-CSCO-001` | — | — | 不适用（无原件，仅书目元数据） |
 
 2022 批次全部 21 份附件均通过自检（最低 5,463 字符，无扫描件）。
 两份结直肠癌文档非 PDF：2015 版为官网提供的 `.doc`，经 Word COM 转为 `.docx` 后入库（页数位不适用，记 `.docx`）；2024 版通知页**未提供附件文件**，正文即附件全文，按官网正文逐字转录为 `.docx`（`license_note` 已注明）。
@@ -69,10 +74,28 @@ NCCN 批次 8 份均为原生 PDF（含文本层），覆盖肺部 3 份（NSCLC
 2. **`DOC-ALL-NHC-001` 范围码**：覆盖各系统肿瘤用药、非单一癌种，故 `cancer_types` 填全部 5 个癌种、范围码用 `ALL`；属对 §0.5 编号体系的扩展，需入库前确认。
 3. **章节覆盖**：`DOC-ALL-NHC-001` 属用药指导类，天然缺 流行病学 / 病理分型 / 诊断分期 / 随访，下游 A2 抽取须在抽取说明中登记 section_gaps。
 4. **肺癌指南已换成官网原生 PDF**：原 CNKI 版式转载件（`doc_hash` 94c369de…）已删除，现为官网附件（74 页，`doc_hash` 见 JSON），`doc_hash` 与官方文件一致。
-5. **数量与来源结构**：元数据现共 **15 条**（NHC 7 + NCCN 8），但 NCCN 为非交付物，**可交付原件仅 NHC 7 份，未达 A1「10~20 份」要求**；且中文指南只有 NHC 一家，**尚缺 CACA / CSCO 等中文权威版本**，下游中文 RAG 与 A2 条目抽取不能依赖 NCCN。
+5. **数量与来源结构**：元数据现共 **18 条**（NHC 7 + NCCN 8 + CACA 2 + CSCO 1）；其中 NCCN 8 条为非交付物、CSCO 1 条无正文，**可交付原件 9 份**（NHC 7 + CACA 英译版 + CACA 中文摘要），仍低于 A1「10~20 份」要求。**中文完整指南仍只有 NHC 一家**：CACA 中文原版与 CSCO 正文均未获取（限制见下节），下游中文 RAG 与 A2 条目抽取不能依赖 NCCN 或 CSCO。
 6. **结直肠癌版本待确认**：2015 版诊疗规范（国家卫计委医政医管局）距今已逾 10 年，需确认是否已被新版诊疗规范取代；2024 版为筛查与早诊早治方案，不覆盖全流程诊疗，两份合起来仍不等于一份完整诊疗指南。
 7. **NCCN 版权处理（已定案）**：8 份原件已移出 `raw/` 至 `external/nccn/`，不随竞赛交付，仅保留元数据用于著录与引用；报告中提及 NCCN 推荐意见必须使用官方引用格式，并禁止复制核心内容——详见下节「NCCN 资料使用规则」。
 8. **`review_status`**：全部 `draft`，医学审核员核对版本年份与机构后改 `approved`。
+
+## CACA / CSCO 中文指南获取限制（2026-10-28 实测）
+
+CACA 与 CSCO 是国内两大权威指南来源，但**中文全文均无法通过公开自动化渠道获取**。本目录按「可核查的替代路径」落库，不伪造、不拼接替代全文：
+
+| 来源 | 中文全文渠道 | 实测结果 | 本目录处理 |
+|---|---|---|---|
+| CACA 整合诊治指南 · 肺癌 | `cacaguidelines.cacakp.com`（会员） | HTTP 200，页面提示「下载指南请先完成登录」；`pdflist?guide_id=1008` 仅列书目，无公开 PDF 直链 | 采**官方英译版**全文（`DOC-LUNG-CACA-001`）+ 官网**中文摘要**（`DOC-LUNG-CACA-002`） |
+| CSCO 非小细胞肺癌诊疗指南 2025 | 人卫助手 / 微信扫码付费电子书（￥298） | 付费墙；官网仅「购书渠道」说明 | **仅著录书目元数据**（`DOC-LUNG-CSCO-001`），`file_path=null` |
+| 中华医学会肺癌临床诊疗指南 2024 | 中华医学杂志（`rs.yiigle.com`） | 全文页 1.19 MB HTML，正文仅 **721 个中文字符**（摘要页），全文需订阅 | 未入库，待合法获取 |
+
+**降级使用的口径**：
+
+1. `DOC-LUNG-CACA-001` 为**英文**。A2 抽取若引用该件，条目说明须显式标注「英文官方译本」，不得与 NHC 中文条目混同统计。
+2. `DOC-LUNG-CACA-002` 仅 382 字符的官方摘要（覆盖范围与更新说明），**不是指南正文**，不可作为 A2 / A3 抽取素材；`doc_type` 在 §A1 三值枚举（`guideline` / `standard` / `consensus`）中权宜归入 `consensus`，待需求方确认。
+3. `DOC-LUNG-CSCO-001` 无正文、无 `doc_hash`，不得计入「可抽取原文」统计；如后续取得合法 PDF，按 `tools/12_ingest_inbox_guidelines.py` 归档流程补录并升 `version`。
+4. 如需 CACA / CSCO 的中文完整指南，唯一合规路径是**由有会员或购买权限的人员下载后放入 `inbox/`**，再用 `tools/23_fetch_caca_csco_guidelines.py --force` 或 12 号脚本重新录入。
+
 
 ## NCCN 资料使用规则（必读）
 
@@ -105,6 +128,7 @@ python tools/10_fetch_nhc_guidelines.py --no-download   # 已下载时只重新�
 python tools/11_fetch_colorectal_guidelines.py   # 结直肠癌 2015 诊疗规范（.doc→.docx）+ 2024 筛查方案（正文转录）→ 本目录
 python tools/12_ingest_inbox_guidelines.py   # inbox/ 新文件按癌种归档到 external/nccn/（非交付物）并录入（本批为 NCCN 8 份）
 python tools/9_guidelines_to_json.py      # 人工指定元数据的文档（如 2025 药物指导原则）
+python tools/23_fetch_caca_csco_guidelines.py   # CACA 英译版 PDF 下载 + 官网中文摘要转录 + CSCO 书目元数据
 ```
 
 说明：通知页 HTML 有 WAF 脚本防护（直接 GET 返回 412），附件 PDF/DOC 可直连下载；脚本内置与原页逐条核对的附件清单，页面可解析时以页内结果为准。附件清单与哈希记录在 `cache/guidelines/nhc_2022_attachments.json`。

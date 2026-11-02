@@ -2,7 +2,7 @@
 """tools/20_guideline_drug_extract.py
 
 从《新型抗肿瘤药物临床应用指导原则（2025年版）》PDF 抽取中文适应证、用法用量
-（标准剂量 + 调整）与药物相互作用，回补 data/clean/drug_labels/drug_catalog.json。
+（标准剂量 + 调整）与药物相互作用，回补 data/clean/drug_labels/drug_catalog_v2.json。
 
 背景：NMPA 数据查询页（如 inbox 的「国家药品监督管理局数据查询.pdf」）只提供注册信息
 （注册证号/批准文号、产品名称、商品名、剂型、规格、持有人、生产厂商、药品本位码），
@@ -15,7 +15,7 @@
 
 依赖：PyMuPDF（fitz）
 输入：raw/guidelines/all/new_antitumor_drug_principles_nhc_2025.pdf
-输出：data/clean/drug_labels/drug_catalog.json（indications / dosage / interactions / label_zh_source）
+输出：data/clean/drug_labels/drug_catalog_v2.json（indications / dosage / interactions / label_zh_source）
 审计：cache/drug_labels/guideline_extract.json
 
 用法：
@@ -32,7 +32,7 @@ import fitz
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PDF = os.path.join(BASE, "raw", "guidelines", "all", "new_antitumor_drug_principles_nhc_2025.pdf")
-CAT = os.path.join(BASE, "data", "clean", "drug_labels", "drug_catalog.json")
+CAT = os.path.join(BASE, "data", "clean", "drug_labels", "drug_catalog_v2.json")
 AUDIT = os.path.join(BASE, "cache", "drug_labels", "guideline_extract.json")
 
 SOURCE = {
@@ -258,8 +258,8 @@ def extract_interactions(sec, pts):
 
 def pick_sections(sections, rec):
     wanted = set(rec.get("cancer_type") or [])
-    names = {norm(rec["canonical_zh"])}
-    alias = ALIAS.get(rec["canonical_zh"])
+    names = {norm(rec["generic_name"])}
+    alias = ALIAS.get(rec["generic_name"])
     if alias:
         names.add(norm(alias))
     picked = []
@@ -298,7 +298,7 @@ def save_json(path, obj):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true", help="只输出审计，不回写 drug_catalog.json")
+    ap.add_argument("--dry-run", action="store_true", help="只输出审计，不回写 drug_catalog_v2.json")
     args = ap.parse_args()
 
     pages = load_pages()
@@ -311,7 +311,7 @@ def main():
 
     for rec in catalog:
         picked = pick_sections(sections, rec)
-        item = {"drug_id": rec["drug_id"], "canonical_zh": rec["canonical_zh"],
+        item = {"drug_id": rec["drug_id"], "generic_name": rec["generic_name"],
                 "cancer_type": rec.get("cancer_type"), "status": "", "sections": []}
         if not picked:
             item["status"] = "skip_no_section"
@@ -373,7 +373,7 @@ def main():
     print("指导原则章节 %d 个；回补 %d 条，跳过 %d 条" % (len(sections), applied, skipped))
     for r in audit["records"]:
         if r["status"] != "applied":
-            print("  [%s] %s" % (r["status"], r["canonical_zh"]))
+            print("  [%s] %s" % (r["status"], r["generic_name"]))
     print("审计：%s" % AUDIT)
     print("提示：回写后请重跑 python tools/19_fetch_openfda_labels.py --offline 刷新 missing_fields")
 

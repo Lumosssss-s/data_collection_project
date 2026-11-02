@@ -1,0 +1,27 @@
+[
+  {
+    "doc_id": "DOC-LUNG-CSCO-001",
+    "title": "中国临床肿瘤学会（CSCO）非小细胞肺癌诊疗指南 2025",
+    "doc_type": "guideline",
+    "issuer": "中国临床肿瘤学会指南工作委员会",
+    "publish_date": "2025-04-11",
+    "cancer_types": [
+      "lung"
+    ],
+    "license_note": "人民卫生出版社 2025-04-11 出版，ISBN 9787117377959，第 1 版，中文。电子版经人卫助手 / 微信扫码付费获取（《CSCO 常见恶性肿瘤诊疗指南 2025》电子书 ￥298.00），**本仓库未采集正文**，仅著录书目元数据。小细胞肺癌分册（同系列 2025 版）尚未著录，待补。",
+    "file_path": null,
+    "doc_hash": null,
+    "source_name": "中国临床肿瘤学会（CSCO）非小细胞肺癌诊疗指南 2025",
+    "source_version": "2025",
+    "source_section": "未采集",
+    "source_file": null,
+    "updated_at": "2026-10-28",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "lang": "zh",
+      "note": "付费电子书，正文不可得；不伪造内容。A2 若需 CSCO 分级（1A/2A 等），须待合法获取正文或由人工录入指定章节。"
+    }
+  }
+]

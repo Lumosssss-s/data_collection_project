@@ -606,7 +606,7 @@
     },
     "DRUG-SUP-005": {
       "drug_id": "DRUG-SUP-005",
-      "canonical_zh": "昂达司琼",
+      "canonical_zh": "昂丹司琼",
       "query": "ONDANSETRON",
       "status": "ok",
       "candidates": 50,

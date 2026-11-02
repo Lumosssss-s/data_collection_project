@@ -14,7 +14,7 @@
   fetched/openfda_labels/labels.json       抓取结果（未经加工）
   cache/drug_labels/openfda_match.json     匹配审计（候选打分、命中段落、未命中原因）
   cache/drug_labels/zh_override_audit.json 中文覆盖校验审计
-  data/clean/drug_labels/drug_catalog.json 回写 label_en_interim / label / missing_fields
+  data/clean/drug_labels/drug_catalog_v2.json 回写 label_en_interim / label / missing_fields
   raw/nmpa_labels/labels_zh.template.json  人工中文覆盖模板（--template 生成，不覆盖已有文件）
 
 用法：
@@ -36,7 +36,7 @@ import urllib.parse
 import urllib.request
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CAT = os.path.join(BASE, "data", "clean", "drug_labels", "drug_catalog.json")
+CAT = os.path.join(BASE, "data", "clean", "drug_labels", "drug_catalog_v2.json")
 FETCH_DIR = os.path.join(BASE, "fetched", "openfda_labels")
 FETCH_JSON = os.path.join(FETCH_DIR, "labels.json")
 AUDIT = os.path.join(BASE, "cache", "drug_labels", "openfda_match.json")
@@ -163,7 +163,7 @@ def fetch_one(rec, force):
     best = pick(items, name)
     if not best:
         return {
-            "drug_id": rec["drug_id"], "canonical_zh": rec["canonical_zh"],
+            "drug_id": rec["drug_id"], "generic_name": rec["generic_name"],
             "query": name, "status": "miss", "candidates": len(items),
             "reason": "无候选或候选段落不全（候选 %d 条）" % len(items),
         }
@@ -175,7 +175,7 @@ def fetch_one(rec, force):
             sections[key] = clean_text(best[token])
     return {
         "drug_id": rec["drug_id"],
-        "canonical_zh": rec["canonical_zh"],
+        "generic_name": rec["generic_name"],
         "query": name,
         "status": "ok",
         "candidates": len(items),
@@ -206,7 +206,7 @@ def save_json(path, obj):
 
 def refresh_missing(rec):
     miss = []
-    if not rec.get("atc"):
+    if not rec.get("atc_code"):
         miss.append("atc_code")
     for f in A4_FIELDS:
         if not rec.get(f):
@@ -298,7 +298,7 @@ def build_template(catalog):
     drugs = {}
     for rec in catalog:
         drugs[rec["drug_id"]] = {
-            "canonical_zh": rec["canonical_zh"],
+            "generic_name": rec["generic_name"],
             "approval_no": "",
             "brand_names": [],
             "indications": [],
@@ -346,18 +346,18 @@ def main():
         if args.offline or (key in fetched["drugs"] and not args.force):
             item = fetched["drugs"].get(key)
             if item is None:
-                audit.append({"drug_id": key, "canonical_zh": rec["canonical_zh"],
+                audit.append({"drug_id": key, "generic_name": rec["generic_name"],
                               "status": "missing_offline"})
                 continue
         else:
             item = fetch_one(rec, args.force)
             fetched["drugs"][key] = item
             save_json(FETCH_JSON, fetched)  # 逐条落盘，断点可续跑
-            print("[%02d/%d] %s %s → %s" % (i, len(catalog), key, rec["canonical_zh"], item["status"]))
+            print("[%02d/%d] %s %s → %s" % (i, len(catalog), key, rec["generic_name"], item["status"]))
 
         apply_interim(rec, item)
         audit.append({k: item.get(k) for k in
-                      ("drug_id", "canonical_zh", "query", "status", "candidates", "score",
+                      ("drug_id", "generic_name", "query", "status", "candidates", "score",
                        "set_id", "effective_time", "generic_name", "brand_name")})
         if item.get("status") == "ok":
             audit[-1]["sections"] = sorted(item["sections"].keys())
@@ -400,7 +400,7 @@ def main():
     save_json(CAT, catalog)
 
     ok = sum(1 for v in fetched["drugs"].values() if v.get("status") == "ok")
-    miss = [v["canonical_zh"] for v in fetched["drugs"].values() if v.get("status") != "ok"]
+    miss = [v["generic_name"] for v in fetched["drugs"].values() if v.get("status") != "ok"]
     print("\n=== openFDA interim：命中 %d / %d，未命中 %s ===" % (
         ok, len(catalog), "、".join(miss) if miss else "无"))
     if override:

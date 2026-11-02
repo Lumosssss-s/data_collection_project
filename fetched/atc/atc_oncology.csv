@@ -1,4 +1,21 @@
 ﻿code,name_en,group,parent
+A04AA01,ondansetron,A04AA,A04
+A04AA02,granisetron,A04AA,A04
+A04AA03,tropisetron,A04AA,A04
+A04AA04,dolasetron,A04AA,A04
+A04AA05,palonosetron,A04AA,A04
+A04AA55,"palonosetron, combinations",A04AA,A04
+A04AD01,scopolamine,A04AD,A04
+A04AD02,cerium oxalate,A04AD,A04
+A04AD04,chlorobutanol,A04AD,A04
+A04AD05,metopimazine,A04AD,A04
+A04AD10,dronabinol,A04AD,A04
+A04AD11,nabilone,A04AD,A04
+A04AD12,aprepitant,A04AD,A04
+A04AD13,casopitant,A04AD,A04
+A04AD14,rolapitant,A04AD,A04
+A04AD51,"scopolamine, combinations",A04AD,A04
+A04AD54,"chlorobutanol, combinations",A04AD,A04
 A11AA01,multivitamins and iron,A11AA,A11
 A11AA02,multivitamins and calcium,A11AA,A11
 A11AA03,"multivitamins and other minerals, incl. combinations",A11AA,A11
@@ -72,6 +89,148 @@ A12CD02,sodium monofluorophosphate,A12CD,A12
 A12CD51,"fluoride, combinations",A12CD,A12
 A12CE01,sodium selenate,A12CE,A12
 A12CE02,sodium selenite,A12CE,A12
+G03AA01,etynodiol and ethinylestradiol,G03AA,G03
+G03AA02,quingestanol and ethinylestradiol,G03AA,G03
+G03AA03,lynestrenol and ethinylestradiol,G03AA,G03
+G03AA04,megestrol and ethinylestradiol,G03AA,G03
+G03AA05,norethisterone and ethinylestradiol,G03AA,G03
+G03AA06,norgestrel and ethinylestradiol,G03AA,G03
+G03AA07,levonorgestrel and ethinylestradiol,G03AA,G03
+G03AA08,medroxyprogesterone and ethinylestradiol,G03AA,G03
+G03AA09,desogestrel and ethinylestradiol,G03AA,G03
+G03AA10,gestodene and ethinylestradiol,G03AA,G03
+G03AA11,norgestimate and ethinylestradiol,G03AA,G03
+G03AA12,drospirenone and ethinylestradiol,G03AA,G03
+G03AA13,norelgestromin and ethinylestradiol,G03AA,G03
+G03AA14,nomegestrol and estradiol,G03AA,G03
+G03AA15,chlormadinone and ethinylestradiol,G03AA,G03
+G03AA16,dienogest and ethinylestradiol,G03AA,G03
+G03AA17,medroxyprogesterone and estradiol,G03AA,G03
+G03AA18,drospirenone and estetrol,G03AA,G03
+G03AB01,megestrol and ethinylestradiol,G03AB,G03
+G03AB02,lynestrenol and ethinylestradiol,G03AB,G03
+G03AB03,levonorgestrel and ethinylestradiol,G03AB,G03
+G03AB04,norethisterone and ethinylestradiol,G03AB,G03
+G03AB05,desogestrel and ethinylestradiol,G03AB,G03
+G03AB06,gestodene and ethinylestradiol,G03AB,G03
+G03AB07,chlormadinone and ethinylestradiol,G03AB,G03
+G03AB08,dienogest and estradiol,G03AB,G03
+G03AB09,norgestimate and ethinylestradiol,G03AB,G03
+G03AC01,norethisterone,G03AC,G03
+G03AC02,lynestrenol,G03AC,G03
+G03AC03,levonorgestrel,G03AC,G03
+G03AC04,quingestanol,G03AC,G03
+G03AC05,megestrol,G03AC,G03
+G03AC06,medroxyprogesterone,G03AC,G03
+G03AC07,norgestrienone,G03AC,G03
+G03AC08,etonogestrel,G03AC,G03
+G03AC09,desogestrel,G03AC,G03
+G03AC10,drospirenone,G03AC,G03
+G03AD01,levonorgestrel,G03AD,G03
+G03AD02,ulipristal,G03AD,G03
+G03BA01,fluoxymesterone,G03BA,G03
+G03BA02,methyltestosterone,G03BA,G03
+G03BA03,testosterone,G03BA,G03
+G03BB01,mesterolone,G03BB,G03
+G03BB02,androstanolone,G03BB,G03
+G03CA01,ethinylestradiol,G03CA,G03
+G03CA03,estradiol,G03CA,G03
+G03CA04,estriol,G03CA,G03
+G03CA06,chlorotrianisene,G03CA,G03
+G03CA07,estrone,G03CA,G03
+G03CA09,promestriene,G03CA,G03
+G03CA10,estetrol,G03CA,G03
+G03CA53,"estradiol, combinations",G03CA,G03
+G03CA57,conjugated estrogens,G03CA,G03
+G03CB01,dienestrol,G03CB,G03
+G03CB02,diethylstilbestrol,G03CB,G03
+G03CB03,methallenestril,G03CB,G03
+G03CB04,moxestrol,G03CB,G03
+G03CC02,dienestrol,G03CC,G03
+G03CC03,methallenestril,G03CC,G03
+G03CC04,estrone,G03CC,G03
+G03CC05,diethylstilbestrol,G03CC,G03
+G03CC06,estriol,G03CC,G03
+G03CC07,conjugated estrogens and bazedoxifene,G03CC,G03
+G03CX01,tibolone,G03CX,G03
+G03DA01,gestonorone,G03DA,G03
+G03DA02,medroxyprogesterone,G03DA,G03
+G03DA03,hydroxyprogesterone,G03DA,G03
+G03DA04,progesterone,G03DA,G03
+G03DB01,dydrogesterone,G03DB,G03
+G03DB02,megestrol,G03DB,G03
+G03DB03,medrogestone,G03DB,G03
+G03DB04,nomegestrol,G03DB,G03
+G03DB05,demegestone,G03DB,G03
+G03DB06,chlormadinone,G03DB,G03
+G03DB07,promegestone,G03DB,G03
+G03DB08,dienogest,G03DB,G03
+G03DC01,allylestrenol,G03DC,G03
+G03DC02,norethisterone,G03DC,G03
+G03DC03,lynestrenol,G03DC,G03
+G03DC04,ethisterone,G03DC,G03
+G03DC06,etynodiol,G03DC,G03
+G03DC31,methylestrenolone,G03DC,G03
+G03EA01,methyltestosterone and estrogen,G03EA,G03
+G03EA02,testosterone and estrogen,G03EA,G03
+G03EA03,prasterone and estrogen,G03EA,G03
+G03EK01,methyltestosterone,G03EK,G03
+G03FA01,norethisterone and estrogen,G03FA,G03
+G03FA02,hydroxyprogesterone and estrogen,G03FA,G03
+G03FA03,ethisterone and estrogen,G03FA,G03
+G03FA04,progesterone and estrogen,G03FA,G03
+G03FA05,methylnortestosterone and estrogen,G03FA,G03
+G03FA06,etynodiol and estrogen,G03FA,G03
+G03FA07,lynestrenol and estrogen,G03FA,G03
+G03FA08,megestrol and estrogen,G03FA,G03
+G03FA09,noretynodrel and estrogen,G03FA,G03
+G03FA10,norgestrel and estrogen,G03FA,G03
+G03FA11,levonorgestrel and estrogen,G03FA,G03
+G03FA12,medroxyprogesterone and estrogen,G03FA,G03
+G03FA13,norgestimate and estrogen,G03FA,G03
+G03FA14,dydrogesterone and estrogen,G03FA,G03
+G03FA15,dienogest and estrogen,G03FA,G03
+G03FA16,trimegestone and estrogen,G03FA,G03
+G03FA17,drospirenone and estrogen,G03FA,G03
+G03FB01,norgestrel and estrogen,G03FB,G03
+G03FB02,lynestrenol and estrogen,G03FB,G03
+G03FB03,chlormadinone and estrogen,G03FB,G03
+G03FB04,megestrol and estrogen,G03FB,G03
+G03FB05,norethisterone and estrogen,G03FB,G03
+G03FB06,medroxyprogesterone and estrogen,G03FB,G03
+G03FB07,medrogestone and estrogen,G03FB,G03
+G03FB08,dydrogesterone and estrogen,G03FB,G03
+G03FB09,levonorgestrel and estrogen,G03FB,G03
+G03FB10,desogestrel and estrogen,G03FB,G03
+G03FB11,trimegestone and estrogen,G03FB,G03
+G03FB12,nomegestrol and estrogen,G03FB,G03
+G03GA01,chorionic gonadotrophin,G03GA,G03
+G03GA02,human menopausal gonadotrophin,G03GA,G03
+G03GA03,serum gonadotrophin,G03GA,G03
+G03GA04,urofollitropin,G03GA,G03
+G03GA05,follitropin alfa,G03GA,G03
+G03GA06,follitropin beta,G03GA,G03
+G03GA07,lutropin alfa,G03GA,G03
+G03GA08,choriogonadotropin alfa,G03GA,G03
+G03GA09,corifollitropin alfa,G03GA,G03
+G03GA10,follitropin delta,G03GA,G03
+G03GA30,combinations,G03GA,G03
+G03GB01,cyclofenil,G03GB,G03
+G03GB02,clomifene,G03GB,G03
+G03GB03,epimestrol,G03GB,G03
+G03HA01,cyproterone,G03HA,G03
+G03HB01,cyproterone and estrogen,G03HB,G03
+G03XA01,danazol,G03XA,G03
+G03XA02,gestrinone,G03XA,G03
+G03XB01,mifepristone,G03XB,G03
+G03XB02,ulipristal,G03XB,G03
+G03XB51,"mifepristone, combinations",G03XB,G03
+G03XC01,raloxifene,G03XC,G03
+G03XC02,bazedoxifene,G03XC,G03
+G03XC03,lasofoxifene,G03XC,G03
+G03XC04,ormeloxifene,G03XC,G03
+G03XC05,ospemifene,G03XC,G03
+G03XX01,prasterone,G03XX,G03
 H02AA01,aldosterone,H02AA,H02
 H02AA02,fludrocortisone,H02AA,H02
 H02AA03,desoxycortone,H02AA,H02

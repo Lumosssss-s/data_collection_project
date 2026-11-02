@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
 
 # ==== 处理缓存：脚本可重跑再生，不入库 ====
 cache/
@@ -34,9 +37,35 @@ raw/guidelines/*
 !raw/guidelines/README*
 raw/_deprecated/
 
-# ==== 抓取件中的大体积原件：17 号脚本可一键重抓 ====
+# ==== 抓取件中的大体积原件：对应抓取脚本可一键重抓 ====
 fetched/codetables/*.rar
 fetched/codetables/_unzipped/
+# CMKB 药物库：站点版权保留、无开放许可，仅作本地内部参考，不入库（26 号脚本可重抓）
+fetched/cmkb_drugs/
+
+# ==== 凭据 / 密钥：任何情况下不得入库 ====
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+.secret*
+credentials*
+*_token.txt
+
+# ==== 压缩包 / 临时文件 ====
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tmp
+*.bak
+*.swp
+~$*
 
 # ==== 系统 / 编辑器 ====
 Thumbs.db
@@ -44,4 +73,6 @@ desktop.ini
 .DS_Store
 .vscode/
 .idea/
+.trae/
+.claude/
 *.log
