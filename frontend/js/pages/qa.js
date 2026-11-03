@@ -1,7 +1,82 @@
 /**
  * 循证问答页面（医疗）
+ *
+ * 流式渲染性能约定（2026-11-03）：
+ *  - content/status chunk 走 100ms 时间窗节流 + 增量更新（只刷最后一条 assistant 的
+ *    正文容器），不重建整个消息列表；新消息 / 形态转换 / 流结束才完整渲染。
+ *  - 选「时间窗」而非「字符阈值」：SSE chunk 速率受网络影响不均，时间窗保证最坏
+ *    10 次/秒渲染且打字动效视觉连续；字符阈值在慢流下会出现长空窗。
+ *  - base64 图片经 QA_IMAGE_URL_CACHE 转 blobURL 复用，重复渲染不重复解码。
+ *  - 流可中止：切页 / 新建会话 / 重新提问时 abort，半截内容不进历史。
  */
 const QA_STORAGE_KEY = 'medical_rag_qa_state';
+
+// 流式渲染节流窗口（毫秒）
+const QA_STREAM_FLUSH_MS = 100;
+let qaFlushTimer = null;
+
+// base64 图片 URL 缓存：dataURL → blobURL（页面生命周期内复用；会话图片量小，不 revoke）
+const QA_IMAGE_URL_CACHE = new Map();
+function qaImageUrl(dataUrl) {
+    let u = QA_IMAGE_URL_CACHE.get(dataUrl);
+    if (!u) {
+        const parts = String(dataUrl).split(',');
+        const mime = (parts[0].match(/:(.*?);/) || [])[1] || 'image/png';
+        const bin = atob(parts[1] || '');
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        u = URL.createObjectURL(new Blob([bytes], { type: mime }));
+        QA_IMAGE_URL_CACHE.set(dataUrl, u);
+    }
+    return u;
+}
+
+// 中止当前流：移除半截 assistant 消息（不进历史），复位按钮依赖的 streaming 状态
+function abortQAStream() {
+    const st = window.qaState && window.qaState.activeStream;
+    if (!st) return;
+    window.qaState.activeStream = null;
+    try { st.controller.abort(); } catch (e) { /* ignore */ }
+    if (qaFlushTimer) { clearTimeout(qaFlushTimer); qaFlushTimer = null; }
+    const msgs = window.qaState.messages;
+    if (msgs.length && msgs[msgs.length - 1].role === 'assistant' && msgs[msgs.length - 1].streaming) {
+        msgs.pop();
+    }
+    saveQAState();
+    renderQAMessages();
+}
+
+// 离开问答页即中止悬挂流（模块级只注册一次；qa.js 整页只加载一次）
+window.addEventListener('hashchange', function () {
+    if (getCurrentPage() !== 'qa') abortQAStream();
+});
+
+// 流式期间增量刷新：只更新最后一条 assistant 消息的正文容器；
+// 形态转换（状态行 → 正文）属结构变化，回退为一次完整渲染。
+function scheduleQAStreamFlush(msg) {
+    if (qaFlushTimer) return;
+    qaFlushTimer = setTimeout(function () {
+        qaFlushTimer = null;
+        flushQAStream(msg);
+    }, QA_STREAM_FLUSH_MS);
+}
+
+function flushQAStream(msg) {
+    const chatEl = document.getElementById('qa-chat');
+    if (!chatEl) return;
+    const bodyEl = chatEl.querySelector('[data-qa-streaming="1"]');
+    const needForm = (msg.streaming && !msg.content && msg.status) ? 'status' : 'body';
+    if (!bodyEl || bodyEl.getAttribute('data-qa-form') !== needForm) {
+        renderQAMessages();
+        return;
+    }
+    if (needForm === 'status') {
+        bodyEl.innerHTML = '<span class="qa-status-spinner"></span>' + escapeHtml(msg.status);
+    } else {
+        bodyEl.innerHTML = renderMarkdown(msg.content) + '<span class="qa-cursor">▌</span>';
+    }
+    chatEl.scrollTop = chatEl.scrollHeight;
+}
 
 function loadQAState() {
     try {
@@ -145,7 +220,33 @@ registerPage('qa', function(container) {
     // 绑定事件
     setupQAEvents(container);
     renderQAMessages();
+    maybeRestoreSession(container);
 });
+
+// 历史会话二选一：localStorage 有非空消息时先询问，不直接渲染他人旧对话
+function maybeRestoreSession(container) {
+    if (!window.qaState || !window.qaState.messages || !window.qaState.messages.length) return;
+    const chatEl = document.getElementById('qa-chat');
+    if (!chatEl) return;
+    const n = window.qaState.messages.length;
+    chatEl.innerHTML = ''
+        + '<div class="card" style="margin:0;">'
+        + '<div class="card-title">检测到上次会话（' + n + ' 条消息）</div>'
+        + '<p class="d2-sub" style="margin:0.5rem 0 0.75rem;">演示机共用同一浏览器时，这里会显示上一位用户的对话记录。请选择是否继续。</p>'
+        + '<div style="display:flex;gap:0.5rem;flex-wrap:wrap;">'
+        + '<button class="btn btn-primary btn-sm" id="qa-resume">继续上次对话</button>'
+        + '<button class="btn btn-secondary btn-sm" id="qa-fresh">开始新对话</button>'
+        + '</div></div>';
+    document.getElementById('qa-resume').addEventListener('click', function () { renderQAMessages(); });
+    document.getElementById('qa-fresh').addEventListener('click', function () {
+        abortQAStream();
+        window.qaState.sessionId = generateUUID();
+        window.qaState.messages = [];
+        window.qaState.pendingImages = [];
+        saveQAState();
+        renderQAMessages();
+    });
+}
 
 function setupJurSelector() {
     const trigger = document.getElementById('qa-cancer-trigger');
@@ -271,6 +372,7 @@ function setupQAEvents(container) {
         if (!target) return;
 
         e.preventDefault();
+        abortQAStream();
         window.qaState.sessionId = generateUUID();
         window.qaState.messages = [];
         window.qaState.pendingImages = [];
@@ -332,7 +434,7 @@ function updateImagePreview() {
     window.qaState.pendingImages.forEach(function(img, idx) {
         const div = document.createElement('div');
         div.style.cssText = 'position:relative;display:inline-block;';
-        div.innerHTML = '<img src="' + img.data + '" style="width:80px;height:80px;object-fit:cover;border-radius:6px;border:1px solid var(--color-border);">' +
+        div.innerHTML = '<img src="' + qaImageUrl(img.data) + '" style="width:80px;height:80px;object-fit:cover;border-radius:6px;border:1px solid var(--color-border);">' +
             '<button onclick="removeQAImage(' + idx + ')" style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:var(--color-error);color:white;border:none;cursor:pointer;font-size:12px;line-height:1;display:flex;align-items:center;justify-content:center;">x</button>';
         listEl.appendChild(div);
     });
@@ -349,6 +451,9 @@ function sendQAMessage() {
     const images = window.qaState.pendingImages;
 
     if (!question && images.length === 0) return;
+
+    // 重新提问：中止上一个悬挂流（半截内容会被移除，不进历史）
+    abortQAStream();
 
     const finalQuestion = question || '请分析这张图片中的医学内容';
 
@@ -395,9 +500,12 @@ function sendQAMessage() {
     }
 
     // 统一用 POST 流式：GET 会把整段对话历史放进 URL，多轮后必然触发 414 URI Too Long
+    const controller = new AbortController();
+    window.qaState.activeStream = { controller: controller };
     api.streamPost('/qa/stream', payload,
         function(chunk) { handleQAChunk(chunk, assistantMsg); },
-        function(err) { handleQAError(err, assistantMsg); }
+        function(err) { handleQAError(err, assistantMsg); },
+        { signal: controller.signal }  // 超时用默认 STREAM_DEFAULT_TIMEOUT_MS（90s）
     );
 }
 
@@ -405,28 +513,35 @@ function handleQAChunk(chunk, assistantMsg) {
     if (chunk.type === 'content') {
         assistantMsg.content += chunk.data || '';
         assistantMsg.status = '';
-        renderQAMessages();
+        scheduleQAStreamFlush(assistantMsg);
     } else if (chunk.type === 'status') {
         assistantMsg.status = chunk.data || '';
-        renderQAMessages();
+        scheduleQAStreamFlush(assistantMsg);
     } else if (chunk.type === 'sources') {
         assistantMsg.sources = chunk.sources || [];
         assistantMsg.cancerTypes = chunk.cancer_types || [];
     } else if (chunk.type === 'end') {
         assistantMsg.streaming = false;
+        window.qaState.activeStream = null;
+        if (qaFlushTimer) { clearTimeout(qaFlushTimer); qaFlushTimer = null; }
         saveQAState();
         renderQAMessages();
     } else if (chunk.type === 'error') {
         assistantMsg.content = '问答失败：' + (chunk.data || '');
         assistantMsg.streaming = false;
+        window.qaState.activeStream = null;
+        if (qaFlushTimer) { clearTimeout(qaFlushTimer); qaFlushTimer = null; }
         saveQAState();
         renderQAMessages();
     }
 }
 
 function handleQAError(err, assistantMsg) {
+    // 调用方主动 abort 时 streamPost 静默收尾，不会走到这里；这里只有真错误/超时
     assistantMsg.content = '请求失败：' + err;
     assistantMsg.streaming = false;
+    window.qaState.activeStream = null;
+    if (qaFlushTimer) { clearTimeout(qaFlushTimer); qaFlushTimer = null; }
     saveQAState();
     renderQAMessages();
 }
@@ -450,7 +565,7 @@ function renderQAMessages() {
             if (msg.images && msg.images.length > 0) {
                 html += '<div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:flex-end;">';
                 msg.images.forEach(function(imgData) {
-                    html += '<img src="' + imgData + '" style="width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--color-border);">';
+                    html += '<img src="' + qaImageUrl(imgData) + '" style="width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--color-border);">';
                 });
                 html += '</div>';
             }
@@ -461,9 +576,9 @@ function renderQAMessages() {
             html += '<div style="flex:1;min-width:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:8px 8px 8px 4px;padding:1rem;box-shadow:0 1px 2px rgba(0,0,0,0.03);">';
             if (msg.streaming && !msg.content && msg.status) {
                 // 检索/生成阶段尚无正文，先展示阶段提示，避免十几秒空窗
-                html += '<div class="qa-status"><span class="qa-status-spinner"></span>' + escapeHtml(msg.status) + '</div>';
+                html += '<div class="qa-status" data-qa-streaming="1" data-qa-form="status"><span class="qa-status-spinner"></span>' + escapeHtml(msg.status) + '</div>';
             } else if (msg.streaming) {
-                html += '<div class="markdown-body qa-answer-body">' + renderMarkdown(msg.content) + '<span class="qa-cursor">▌</span></div>';
+                html += '<div class="markdown-body qa-answer-body" data-qa-streaming="1" data-qa-form="body">' + renderMarkdown(msg.content) + '<span class="qa-cursor">▌</span></div>';
             } else {
                 html += '<div class="markdown-body qa-answer-body">' + renderMarkdown(msg.content) + '</div>';
             }

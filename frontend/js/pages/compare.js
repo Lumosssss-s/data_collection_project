@@ -6,8 +6,9 @@
  */
 registerPage('compare', function (container) {
     container.innerHTML = `
-        <h1 class="page-title">癌种对比</h1>
+        <h1 class="page-title">癌种对照</h1>
         <p class="page-desc">选择两个癌种，按临床维度对照其循证推荐要点；可进一步生成 AI 深度对比报告。</p>
+        <div class="alert alert-info" style="margin-bottom:1rem;">默认五维对照为即时返回（零 LLM 缓存）；自由主题报告为慢路径，生成约需 20–60 秒。</div>
         <hr class="divider">
 
         <!-- 选择面板 -->
@@ -40,6 +41,13 @@ registerPage('compare', function (container) {
 
         <!-- 结果区 -->
         <div id="cmp-result"></div>
+
+        <!-- 自由主题报告（慢路径，默认不展开） -->
+        <details style="margin-top:1rem;">
+            <summary style="cursor:pointer;font-weight:600;">自由主题报告（生成约需 20–60 秒）</summary>
+            <p class="page-desc" style="margin:0.5rem 0 0.75rem;">基于任意临床专题生成跨癌种分析报告，调用 LLM，耗时较长。</p>
+            <a class="btn btn-secondary" href="#/topic">进入自由主题报告</a>
+        </details>
     `;
 
     // 加载癌种（受控词表，value=code）
@@ -218,7 +226,9 @@ function runDeepAnalysis(r) {
         function (err) {
             if (btn) btn.disabled = false;
             aiResult.innerHTML = '<div class="alert alert-error">AI 分析失败：' + escapeHtml(err) + '</div>';
-        }
+        },
+        // 慢路径深分析（可能超过 90s 默认超时）：保持原有无超时行为
+        { timeoutMs: 0 }
     );
 }
 
