@@ -500,16 +500,24 @@ function sendQAMessage() {
     }
 
     // 统一用 POST 流式：GET 会把整段对话历史放进 URL，多轮后必然触发 414 URI Too Long
+    // 首帧双计时：tFirstEvent=首个 SSE 事件（多为状态帧），tFirstContent=首个正文字符。
+    // 两者可能相差十几秒（后端为完整生成后切片重放），申报口径必须区分。
+    window.__qaTiming = { tSend: performance.now(), tFirstEvent: null, tFirstContent: null };
     const controller = new AbortController();
     window.qaState.activeStream = { controller: controller };
     api.streamPost('/qa/stream', payload,
         function(chunk) { handleQAChunk(chunk, assistantMsg); },
+        null,  // onDone：无需求（end chunk 已覆盖收尾）
         function(err) { handleQAError(err, assistantMsg); },
         { signal: controller.signal }  // 超时用默认 STREAM_DEFAULT_TIMEOUT_MS（90s）
     );
 }
 
 function handleQAChunk(chunk, assistantMsg) {
+    if (window.__qaTiming) {
+        if (window.__qaTiming.tFirstEvent === null) window.__qaTiming.tFirstEvent = performance.now();
+        if (chunk.type === 'content' && window.__qaTiming.tFirstContent === null) window.__qaTiming.tFirstContent = performance.now();
+    }
     if (chunk.type === 'content') {
         assistantMsg.content += chunk.data || '';
         assistantMsg.status = '';
