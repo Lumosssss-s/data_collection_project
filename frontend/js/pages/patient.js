@@ -646,10 +646,46 @@ function renderPatientDrug(container, drugId) {
     container.innerHTML = ptShell(ptBack('drug') + '<div id="pt-drug-detail"></div>');
     const box = document.getElementById('pt-drug-detail');
     showLoading(box);
+    // 两段式：结构化接口零 LLM 立即渲染；白话块占位后异步取 /plain 填充
     api.get('/patient/drug/' + encodeURIComponent(drugId)).then(function (resp) {
         if (!resp || !resp.success) { showError(box, (resp && resp.message) || '未找到该药品'); return; }
         renderPtDrugDetail(box, resp.data);
     }).catch(function (err) { showError(box, err.message); });
+}
+
+// 白话块异步填充；失败降级为提示（结构化要点已在下方，不丢内容）
+function loadPtDrugPlain(box, drugId) {
+    api.get('/patient/drug/' + encodeURIComponent(drugId) + '/plain').then(function (resp) {
+        const el = box.querySelector('#pt-plain-box');
+        if (!el) return;
+        if (resp && resp.success && resp.data && resp.data.plain) {
+            el.innerHTML = renderPlainSections(resp.data.plain);
+        } else {
+            el.innerHTML = '<div class="pt-section"><p>白话暂不可用，以下为说明书要点。</p></div>';
+        }
+    }).catch(function () {
+        const el = box.querySelector('#pt-plain-box');
+        if (el) el.innerHTML = '<div class="pt-section"><p>白话暂不可用，以下为说明书要点。</p></div>';
+    });
+}
+
+function renderPlainSections(p) {
+    let html = '';
+    if (p.what_is_it) html += '<div class="pt-section"><h4>这个药是做什么的</h4><p>' + escapeHtml(p.what_is_it) + '</p></div>';
+    if (p.how_to_use) html += '<div class="pt-section"><h4>说明书中的用法</h4><p>' + escapeHtml(p.how_to_use) + '</p></div>';
+    if (p.cautions && p.cautions.length) {
+        html += '<div class="pt-section"><h4>注意事项</h4><p>' + p.cautions.map(escapeHtml).join('<br>') + '</p></div>';
+    }
+    if (p.side_effects && p.side_effects.length) {
+        html += '<div class="pt-section"><h4>可能出现的不良反应</h4>';
+        p.side_effects.forEach(function (s) {
+            html += '<p style="margin-bottom:0.5rem;"><strong>' + escapeHtml(s.term) + '</strong>：'
+                + escapeHtml(s.plain || '') + (s.when_to_seek_help ? '<br><span style="color:var(--color-warning);">' + escapeHtml(s.when_to_seek_help) + '</span>' : '') + '</p>';
+        });
+        html += '</div>';
+    }
+    if (p.seek_help) html += '<div class="pt-section"><h4>出现这些情况请及时就医</h4><p>' + escapeHtml(p.seek_help) + '</p></div>';
+    return html;
 }
 
 function ptDrugSearch() {
@@ -673,30 +709,45 @@ function ptDrugSearch() {
 }
 
 function renderPtDrugDetail(box, d) {
-    const p = d.plain || {};
+    // 结构化渲染（零 LLM 接口数据）：先出要点；白话块占位，由 loadPtDrugPlain 异步填充
     let html = '<h1 class="pt-title">' + escapeHtml(d.generic_name || '') + '</h1>';
     if (d.brand_names && d.brand_names.length) {
         html += '<p class="pt-sub">商品名：' + escapeHtml(d.brand_names.join('、')) + '</p>';
     }
+
+    // 黑框警示：置顶的醒目警示块（结构化字段，非 LLM 生成）
+    if (d.has_boxed_warning && d.boxed_warning && d.boxed_warning.length) {
+        html += '<div class="pt-section" style="border:1px solid rgba(140,59,46,0.45);background:rgba(140,59,46,0.06);">'
+            + '<h4 style="color:#8C3B2E;">黑框警示</h4>'
+            + d.boxed_warning.map(function (w) {
+                return '<p>' + escapeHtml(((w && w.title) ? w.title + '：' : '') + String((w && w.text) || '').slice(0, 600)) + (String((w && w.text) || '').length > 600 ? '…' : '') + '</p>';
+            }).join('')
+            + '</div>';
+    }
+
     if (d.indication_note) {
         html += '<div class="pt-section"><h4>适应证限定</h4><p>' + escapeHtml(d.indication_note) + '</p></div>';
     }
-    if (d.degraded && d.note) html += '<div class="pt-section"><p>' + escapeHtml(d.note) + '</p></div>';
 
-    if (p.what_is_it) html += '<div class="pt-section"><h4>这个药是做什么的</h4><p>' + escapeHtml(p.what_is_it) + '</p></div>';
-    if (p.how_to_use) html += '<div class="pt-section"><h4>说明书中的用法</h4><p>' + escapeHtml(p.how_to_use) + '</p></div>';
-    if (p.cautions && p.cautions.length) {
-        html += '<div class="pt-section"><h4>注意事项</h4><p>' + p.cautions.map(escapeHtml).join('<br>') + '</p></div>';
+    // 白话占位块（异步填充）
+    html += '<div id="pt-plain-box"><div class="pt-section"><p>正在生成白话解读…</p></div></div>';
+
+    // 说明书要点（结构化，截断长文本防页面失控）
+    if (d.dosage_standard) {
+        const ds = String(d.dosage_standard);
+        html += '<div class="pt-section"><h4>常规用法（说明书）</h4><p>' + escapeHtml(ds.slice(0, 400)) + (ds.length > 400 ? '…' : '') + '</p></div>';
     }
-    if (p.side_effects && p.side_effects.length) {
-        html += '<div class="pt-section"><h4>可能出现的不良反应</h4>';
-        p.side_effects.forEach(function (s) {
-            html += '<p style="margin-bottom:0.5rem;"><strong>' + escapeHtml(s.term) + '</strong>：'
-                + escapeHtml(s.plain || '') + (s.when_to_seek_help ? '<br><span style="color:var(--color-warning);">' + escapeHtml(s.when_to_seek_help) + '</span>' : '') + '</p>';
-        });
-        html += '</div>';
+    if (d.contraindications && d.contraindications.length) {
+        html += '<div class="pt-section"><h4>禁忌</h4><p>'
+            + d.contraindications.map(function (c) { return escapeHtml(String(c).slice(0, 300)); }).join('<br>') + '</p></div>';
     }
-    if (p.seek_help) html += '<div class="pt-section"><h4>出现这些情况请及时就医</h4><p>' + escapeHtml(p.seek_help) + '</p></div>';
+    if (d.adverse_reactions && d.adverse_reactions.length) {
+        html += '<div class="pt-section"><h4>不良反应（说明书摘录）</h4>'
+            + d.adverse_reactions.slice(0, 5).map(function (a) {
+                return '<p style="margin-bottom:0.5rem;"><strong>' + escapeHtml(String(a.term || '').slice(0, 150)) + '</strong>'
+                    + (a.frequency ? '（' + escapeHtml(a.frequency) + '）' : '') + '</p>';
+            }).join('') + '</div>';
+    }
 
     // 说明书原文相互作用：默认收起的折叠层，逐条英文原文，仅供专业核对
     if (d.raw_interactions && d.raw_interactions.length) {
@@ -712,4 +763,7 @@ function renderPtDrugDetail(box, d) {
     }
 
     box.innerHTML = html;
+
+    // 白话块异步填充（渲染末尾统一触发，#/patient/drug 与 #/drugs/{id} 两条路径共享）
+    if (d.drug_id) loadPtDrugPlain(box, d.drug_id);
 }
