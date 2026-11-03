@@ -126,7 +126,7 @@ function sendPreconsultMsg() {
         // 红旗征优先播报（安全第一）
         if (d.red_flags && d.red_flags.length) {
             d.red_flags.forEach(function (f) {
-                appendPreMessage('system', '⚠️ ' + (f.action || '检测到需要及时处理的情况'));
+                appendPreMessage('system', '注意：' + (f.action || '检测到需要及时处理的情况'));
             });
         }
         if (d.next_question) {

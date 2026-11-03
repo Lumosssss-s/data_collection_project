@@ -75,6 +75,7 @@ registerPage('kg', function (container) {
             padding:0.375rem 0.875rem;border:1px solid var(--color-border);
             background:var(--color-card-bg);color:var(--color-text-secondary);
             border-radius:6px;cursor:pointer;font-size:0.8125rem;transition:all 0.15s;
+            text-align:center;
         }
         .kg-mode-btn:hover { background:var(--color-bg); }
         .kg-mode-btn.active { background:var(--color-primary);color:#fff;border-color:var(--color-primary); }

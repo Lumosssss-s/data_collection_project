@@ -1,28 +1,63 @@
 /**
- * 疾病详情页（NM-01 / FE-08）
+ * 我的病 · 疾病档案页（NM-01 / NM-06）
  * 路由：#/disease/{disease_id}
- * 功能：14 section 展示 + 专业版/患者版双版本切换 + 图谱关联 + 免责声明
+ * 数据：GET /diseases/{id}?version=patient｜GET /diseases/{id}?version=pro
+ *       GET /patient/drugs?cancer_type=lung（相关药品，零 token）
+ * 说明：无账号体系，本页展示的是「该疾病」的档案，不绑定任何个人分期/基因结果。
  */
-registerPage('disease', function (container) {
-    const hash = window.location.hash;
-    const diseaseId = decodeURIComponent(hash.replace('#/disease/', ''));
 
+// 疾病档案默认选择：localStorage → 肺癌
+// 注：breast / gastric 当前疾病库无档案（实测 total=0），切换后显示「暂无档案」而非报错
+const D2_DISEASE_KEY = 'd2_current_disease';
+const D2_CANCER_LABELS = { lung: '肺癌', colorectal: '结直肠癌', breast: '乳腺癌', gastric: '胃癌' };
+const D2_CANCER_DEFAULTS = { lung: 'DIS-LUNG-001', colorectal: 'DIS-COLORECTAL-001' };
+
+function getCurrentDiseaseId() {
+    let saved = '';
+    try { saved = localStorage.getItem(D2_DISEASE_KEY) || ''; } catch (e) { saved = ''; }
+    return saved || D2_CANCER_DEFAULTS.lung;
+}
+function setCurrentDiseaseId(id) {
+    try { localStorage.setItem(D2_DISEASE_KEY, id); } catch (e) { /* ignore */ }
+}
+
+// 共用视图：疾病详情（#/disease/{id}）与疾病档案（#/archive）复用同一渲染器，
+// 不复制第二套页面；区别仅在 id 来源（hash vs localStorage）。
+function renderDiseaseViewById(container, diseaseId) {
     if (!diseaseId) {
-        container.innerHTML = '<div class="alert alert-warning">未选择疾病，请先从疾病知识库选择</div>'
-            + '<button class="btn btn-secondary" onclick="goBackToDiseases()">返回疾病知识库</button>';
+        container.innerHTML = '<div class="alert alert-warning">未选择疾病，请先从疾病库选择</div>'
+            + '<button class="btn btn-secondary" onclick="goBackToDiseases()">← 返回疾病库</button>';
         return;
     }
 
-    let version = 'pro';
+    // 患者端入口默认「患者版」；专业版仍可切换
+    let version = 'patient';
     container.innerHTML = '<div id="disease-detail-body"></div>';
     const body = document.getElementById('disease-detail-body');
+    // 双版本缓存：进入时预取 pro/patient 两版（接口为纯数据装配，零 LLM），
+    // 切换视角时直接读缓存重渲染，不再触发任何后端请求。
+    const cache = {};
+
+    function fetchVersion(v) {
+        return api.get('/diseases/' + encodeURIComponent(diseaseId), { version: v }).then(function (resp) {
+            if (resp && resp.success) cache[v] = resp.data;
+            return resp;
+        });
+    }
 
     function load() {
+        if (cache[version]) {
+            renderDiseaseDetail(body, cache[version], version, function (v) {
+                version = v;
+                load();
+            });
+            return;
+        }
         showLoading(body);
-        api.get('/diseases/' + encodeURIComponent(diseaseId), { version: version }).then(function (resp) {
+        fetchVersion(version).then(function (resp) {
             if (!resp || !resp.success) {
                 showError(body, (resp && resp.message) || '加载失败（疾病档案可能尚未入库）');
-                body.innerHTML += '<button class="btn btn-secondary" onclick="goBackToDiseases()">返回疾病知识库</button>';
+                body.innerHTML += '<button class="btn btn-secondary" onclick="goBackToDiseases()">← 返回疾病库</button>';
                 return;
             }
             renderDiseaseDetail(body, resp.data, version, function (v) {
@@ -32,6 +67,18 @@ registerPage('disease', function (container) {
         }).catch(function (err) { showError(body, err.message); });
     }
     load();
+    // 预取另一版本；失败不阻断（切换时回退为在线拉取）
+    fetchVersion(version === 'patient' ? 'pro' : 'patient').catch(function () { /* noop */ });
+}
+
+registerPage('disease', function (container) {
+    const hash = window.location.hash;
+    renderDiseaseViewById(container, decodeURIComponent(hash.replace('#/disease/', '')));
+});
+
+// 疾病档案：独立 page key，复用同一视图；档案 id 取 localStorage（切换器行为不变）
+registerPage('archive', function (container) {
+    renderDiseaseViewById(container, getCurrentDiseaseId());
 });
 
 function goBackToDiseases() {
@@ -42,71 +89,83 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
     const name = d.name_canonical || d.disease_id || '未命名疾病';
     let html = '';
 
-    html += '<button class="btn btn-ghost btn-sm" id="disease-back-btn" style="margin-bottom:0.5rem;">← 返回疾病知识库</button>';
-    html += '<h1 class="page-title">' + escapeHtml(name) + '</h1>';
+    // 单列文档流容器：hero 到免责全部纳入，保证左边缘对齐
+    html += '<div class="d2-archive">';
 
-    if (d.name_en) html += '<p style="color:var(--color-text-muted);margin:-0.5rem 0 0.75rem;">' + escapeHtml(d.name_en) + '</p>';
-
-    // 元信息
-    html += '<div class="card" style="padding:0.75rem 1rem;margin-bottom:1rem;">';
-    html += '<div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">';
+    // ── 档案头 ──
+    html += '<section class="d2-hero"><div class="d2-hero-inner">';
+    html += '<button class="btn btn-ghost btn-sm" id="disease-back-btn" style="margin-bottom:0.75rem;">← 返回疾病库</button>';
+    html += '<p class="d2-kicker">疾病档案 · 当前档案：' + escapeHtml(name) + '</p>';
+    html += '<h1 class="d2-h1">' + escapeHtml(name) + '</h1>';
+    // 视角切换器：桌面端绝对定位于 hero 右上角（见 d2.css .d2-view-switch-wrap），
+    // 窄屏下沉为标题下方独立一行；高度 ≤28px，选中态用浅底+描边，不用实心大色块。
+    html += '<div class="d2-view-switch-wrap">'
+        + '<div class="d2-view-switch" role="group" aria-label="版本切换">'
+        + '<button type="button" data-ver="patient"' + (version === 'patient' ? ' class="is-on" aria-pressed="true"' : ' aria-pressed="false"') + '>患者版</button>'
+        + '<button type="button" data-ver="pro"' + (version === 'pro' ? ' class="is-on" aria-pressed="true"' : ' aria-pressed="false"') + '>专业版</button>'
+        + '</div>'
+        + '<p class="d2-view-note">' + (version === 'patient' ? '患者版：通俗表述' : '专业版：面向临床的结构化描述') + '</p>'
+        + '</div>';
+    if (d.name_en) html += '<p class="d2-sub">' + escapeHtml(d.name_en) + '</p>';
+    html += '<div class="d2-profile-meta">';
     if (d.category_label) html += '<span class="badge badge-info">' + escapeHtml(d.category_label) + '</span>';
     if (d.cancer_type) html += '<span class="badge badge-muted">' + escapeHtml(d.cancer_type) + '</span>';
-    if (d.icd10) html += '<span class="badge badge-muted">ICD-10: ' + escapeHtml(d.icd10) + '</span>';
-    if (d.icd_o3) html += '<span class="badge badge-muted">ICD-O-3: ' + escapeHtml(d.icd_o3) + '</span>';
+    if (d.icd10) html += '<span class="badge badge-muted">ICD-10 ' + escapeHtml(d.icd10) + '</span>';
+    html += '<span class="badge badge-primary">' + (version === 'patient' ? '患者版' : '专业版') + '</span>';
     html += '</div>';
     if (d.departments && d.departments.length) {
-        html += '<div style="font-size:0.8125rem;color:var(--color-text-secondary);margin-top:0.5rem;">就诊科室：' + escapeHtml(d.departments.join('、')) + '</div>';
+        html += '<p class="d2-sub" style="margin-top:0.75rem;">就诊科室：' + escapeHtml(d.departments.join('、')) + '</p>';
     }
-    if (d.synonyms && d.synonyms.length) {
-        html += '<div style="font-size:0.8125rem;color:var(--color-text-muted);margin-top:0.25rem;">别名：' + escapeHtml(d.synonyms.join('、')) + '</div>';
-    }
-    html += '</div>';
+    html += '</div></section>';
 
-    // 版本切换
-    html += '<div style="display:flex;gap:0.5rem;margin-bottom:1rem;">';
-    html += '<button class="btn ' + (version === 'pro' ? 'btn-primary' : 'btn-secondary') + ' btn-sm" data-ver="pro">专业版</button>';
-    html += '<button class="btn ' + (version === 'patient' ? 'btn-primary' : 'btn-secondary') + ' btn-sm" data-ver="patient">患者版</button>';
-    html += '<span style="align-self:center;font-size:0.75rem;color:var(--color-text-muted);">'
-        + (version === 'patient' ? '患者版：通俗表述，句均 ≤40 字' : '专业版：面向临床的结构化描述') + '</span>';
-    html += '</div>';
+    // ── 癌种切换器 ──
+    html += '<div class="card" style="padding:0.75rem 1rem;">';
+    html += '<div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">';
+    html += '<span style="font-size:0.8125rem;color:var(--color-text-secondary);margin-right:0.25rem;">切换档案：</span>';
+    Object.keys(D2_CANCER_LABELS).forEach(function (code) {
+        const label = D2_CANCER_LABELS[code];
+        const active = d.cancer_type === code;
+        html += '<button class="btn btn-sm ' + (active ? 'btn-primary' : 'btn-secondary') + '" data-cancer="' + code + '">' + label + '</button>';
+    });
+    html += '</div></div>';
 
+    // ── 章节 ──
+    html += '<div class="card"><div class="card-title">疾病档案</div>';
     if (!d.sections || !d.sections.length) {
-        html += emptyState('该疾病暂无可用内容（章节待入库）。');
+        html += '<div style="margin-top:0.5rem;">' + emptyState('该疾病暂无可用内容（章节待入库）') + '</div>';
     } else {
         let lastGroup = '';
-        d.sections.forEach(function (s) {
+        d.sections.forEach(function (s, i) {
             if (s.group && s.group !== lastGroup) {
-                html += '<h2 class="section-title">' + escapeHtml(s.group) + '</h2>';
+                html += '<p class="d2-kicker" style="margin-top:1rem;">' + escapeHtml(s.group) + '</p>';
                 lastGroup = s.group;
             }
-            html += '<div class="card" style="padding:0.875rem 1rem;margin-bottom:0.5rem;">';
-            html += '<div class="card-title">' + escapeHtml(s.label) + '</div>';
-            html += '<div style="font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(s.text) + '</div>';
-            html += '</div>';
+            const n = i + 1;
+            html += '<div class="d2-sec">'
+                + '<div class="d2-sec-head"><span class="d2-sec-no">' + (n < 10 ? '0' : '') + n + '</span>'
+                + '<span class="d2-sec-name">' + escapeHtml(s.label || '（未命名章节）') + '</span></div>'
+                + '<p class="d2-sec-text">' + escapeHtml(s.text || '') + '</p>'
+                + '</div>';
         });
     }
+    html += '</div>';
 
-    // 图谱关联
-    const links = d.links || {};
-    const linkKeys = Object.keys(links).filter(function (k) { return links[k] && (!Array.isArray(links[k]) || links[k].length); });
-    if (linkKeys.length) {
-        html += '<h2 class="section-title">图谱关联</h2>';
-        html += '<div class="card" style="padding:0.875rem 1rem;margin-bottom:0.5rem;">';
-        linkKeys.forEach(function (k) {
-            const v = Array.isArray(links[k]) ? links[k].join('、') : String(links[k]);
-            html += '<div style="font-size:0.8125rem;margin-bottom:0.25rem;"><strong>' + escapeHtml(k) + '</strong>：' + escapeHtml(v) + '</div>';
-        });
-        html += '</div>';
-    }
+    // ── 相关药品 ──
+    html += '<div class="card"><div class="card-title">相关药品</div>'
+        + '<p class="d2-sub" style="margin-top:0.25rem;">按当前癌种从药品说明书库匹配，点击查看患者版说明。</p>'
+        + '<div id="d2-drug-box" class="d2-drug-list" style="margin-top:0.75rem;"><p class="d2-sub">读取中…</p></div></div>';
 
-    // 来源
+    // ── 来源 ──
     if (d.sources && d.sources.length) {
-        html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.75rem;">来源：' + escapeHtml(d.sources.join('；')) + '</div>';
+        html += '<div class="card"><div class="card-title">来源</div>'
+            + '<div class="d2-src" style="margin-top:0.5rem;">' + escapeHtml(d.sources.join('；')) + '</div></div>';
     }
 
-    // 免责声明
-    html += '<div class="alert alert-warning" style="margin-top:1rem;">' + escapeHtml(d.disclaimer || '') + '</div>';
+    // ── 免责声明 ──
+    html += '<div class="card"><div class="alert alert-warning" style="margin:0;">'
+        + escapeHtml(d.disclaimer || '本页信息仅供参考，不构成诊断，具体请遵医嘱。') + '</div></div>';
+
+    html += '</div>';
 
     container.innerHTML = html;
 
@@ -115,5 +174,51 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
         btn.addEventListener('click', function () {
             if (btn.dataset.ver !== version) onSwitch(btn.dataset.ver);
         });
+    });
+    container.querySelectorAll('button[data-cancer]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const code = btn.dataset.cancer;
+            const nextId = D2_CANCER_DEFAULTS[code];
+            if (!nextId) return;
+            setCurrentDiseaseId(nextId);
+            if (getCurrentPage() === 'archive') {
+                renderCurrentPage();  // 档案页内原地换档案，高亮保持患者服务组
+            } else {
+                window.location.hash = '#/disease/' + nextId;
+            }
+        });
+    });
+
+    loadDiseaseDrugs(container, d.cancer_type || '');
+}
+
+// 相关药品：GET /patient/drugs?cancer_type=xxx（零 token）
+function loadDiseaseDrugs(container, cancerType) {
+    const box = container.querySelector('#d2-drug-box');
+    if (!box) return;
+    api.get('/patient/drugs', cancerType ? { cancer_type: cancerType } : {}).then(function (resp) {
+        if (!resp || !resp.success) { box.innerHTML = '<p class="d2-sub">药品列表暂时读不到。</p>'; return; }
+        const d = resp.data || {};
+        const items = (d.items || []).slice(0, 6);
+        if (!items.length) {
+            box.innerHTML = (d.degraded && d.note)
+                ? '<p class="d2-sub">' + escapeHtml(d.note) + '</p>'
+                : '<p class="d2-sub">暂无匹配药品。</p>';
+            return;
+        }
+        let html = '';
+        items.forEach(function (it) {
+            const brands = (it.brand_names || []).filter(Boolean);
+            html += '<a class="d2-drug" href="#/drugs/' + encodeURIComponent(it.drug_id) + '">'
+                + '<div><div class="d2-drug-name">' + escapeHtml(it.generic_name || it.drug_id || '') + '</div>'
+                + '<div class="d2-drug-meta">' + (brands.length ? escapeHtml(brands.join('、')) : '无商品名记录')
+                + (it.cancer_type ? ' · ' + escapeHtml(it.cancer_type) : '') + '</div></div></a>';
+        });
+        if ((d.total || 0) > items.length) {
+            html += '<p class="d2-sub" style="margin-top:0.5rem;">共 ' + d.total + ' 条，此处显示前 ' + items.length + ' 条。</p>';
+        }
+        box.innerHTML = html;
+    }).catch(function (err) {
+        box.innerHTML = '<p class="d2-sub">药品列表错误：' + escapeHtml(err.message) + '</p>';
     });
 }

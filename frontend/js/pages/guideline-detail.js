@@ -241,8 +241,10 @@ function fulltextPendingHtml() {
         + '</div>';
 }
 
-function fulltextSectionHtml(sec) {
-    let html = '<details style="margin:0.35rem 0;">';
+// 一级章节传 idx 时写入锚点 id，供章节数字卡点击跳转
+function fulltextSectionHtml(sec, idx) {
+    let html = '<details style="margin:0.35rem 0;"'
+        + (idx ? ' id="gd-sec-' + idx + '"' : '') + '>';
     html += '<summary class="sub-title" style="cursor:pointer;">'
         + escapeHtml(sec.heading || '（未命名章节）') + '</summary>';
     (sec.paragraphs || []).forEach(function (p) {
@@ -256,6 +258,47 @@ function fulltextSectionHtml(sec) {
     return html;
 }
 
+// ===== 章节数字卡导航（数据全部来自 fulltext 接口的 sections，无新增接口/假数据）=====
+
+// escapeHtml 不转义引号，章节名进 title 属性前需补转义双引号
+function attrEscape(text) {
+    return escapeHtml(String(text == null ? '' : text)).replace(/"/g, '&quot;');
+}
+
+function chapterCardsHtml(sections) {
+    if (!sections || !sections.length) return '';
+    let html = '<div class="chapter-nav" aria-label="章节导航">';
+    sections.forEach(function (s, i) {
+        const n = i + 1;
+        const name = s.heading || '（未命名章节）';
+        const subs = (s.children || []).length;
+        const paras = (s.paragraphs || []).length;
+        // 「N 节 / N 段」：为 0 的部分不显示，两者皆 0 时不显示该小字
+        const metaParts = [];
+        if (subs) metaParts.push(subs + ' 节');
+        if (paras) metaParts.push(paras + ' 段');
+        html += '<button type="button" class="chapter-nav-card" data-sec-target="gd-sec-' + n + '"'
+            + ' title="' + attrEscape(name) + '">';
+        html += '<span class="chapter-nav-num">' + (n < 10 ? '0' : '') + n + '</span>';
+        html += '<span class="chapter-nav-name">' + escapeHtml(name) + '</span>';
+        if (metaParts.length) html += '<span class="chapter-nav-meta">' + metaParts.join(' / ') + '</span>';
+        html += '</button>';
+    });
+    html += '</div>';
+    return html;
+}
+
+function bindChapterNav(root) {
+    root.querySelectorAll('.chapter-nav-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+            const target = document.getElementById(card.getAttribute('data-sec-target'));
+            if (!target) return;
+            target.open = true;
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+}
+
 function fulltextHtml(data) {
     let html = '<h2 class="section-title">指南全文</h2>';
     if (data.abstract) {
@@ -265,8 +308,9 @@ function fulltextHtml(data) {
             + escapeHtml(data.abstract) + '</div>';
         html += '</div>';
     }
+    html += chapterCardsHtml(data.sections);
     html += '<div class="card" style="padding:1rem;">';
-    (data.sections || []).forEach(function (s) { html += fulltextSectionHtml(s); });
+    (data.sections || []).forEach(function (s, i) { html += fulltextSectionHtml(s, i + 1); });
     html += '</div>';
     const st = data.stats || {};
     html += '<p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem;">'
@@ -275,16 +319,33 @@ function fulltextHtml(data) {
     return html;
 }
 
+// 维持懒加载：全文接口返回整棵章节树（现库最长一篇 188,704 字符），
+// 仅为一个目录在每次进入详情页时自动拉取全文不划算，随「展开全文」按需出现；
+// 同一会话内已拉取过的 doc_id 直接复用缓存，不重复请求。
+let _fulltextCache = { docId: '', data: null };
+
+function renderFulltext(data) {
+    const slot = document.getElementById('gd-fulltext-slot');
+    if (!slot) return;
+    slot.innerHTML = fulltextHtml(data);
+    bindChapterNav(slot);
+}
+
 window.loadGuideFulltext = function () {
     const slot = document.getElementById('gd-fulltext-slot');
     const docId = window.gdDocId;
     if (!slot || !docId) return;
+    if (_fulltextCache.docId === docId && _fulltextCache.data) {
+        renderFulltext(_fulltextCache.data);
+        return;
+    }
     slot.innerHTML = '<h2 class="section-title">指南全文</h2>'
         + '<div class="alert alert-info">正在解析全文…</div>';
     api.get('/search/doc/' + docId + '/fulltext')
         .then(function (d) {
             if (d && d.success) {
-                slot.innerHTML = fulltextHtml(d.data);
+                _fulltextCache = { docId: docId, data: d.data };
+                renderFulltext(d.data);
             } else {
                 slot.innerHTML = '<h2 class="section-title">指南全文</h2>'
                     + emptyState('该指南暂无可用全文。');
