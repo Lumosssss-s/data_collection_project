@@ -10,20 +10,11 @@
 
 | 模块 | 前端入口 | 接口前缀 | 说明 |
 |---|---|---|---|
-| 循证检索 | `#/search` | `/api/v1/search` | 混合检索（BM25 + 向量）+ RRF + 精排，按癌种 / 文档类型 / 来源 / 场景 / 分期 / 生物标志物筛选 |
-| 循证问答 | `#/qa` | `/api/v1/qa` | SSE 流式生成，答案逐句携带 `[来源: 指南 版本 章节]` 与证据等级；无依据时明确拒答 |
-| 跨癌种专题分析 | `#/topic` | `/api/v1/topic-analysis` | 同一主题（如「PD-1 抑制剂」）在各癌种的适应证与证据差异 |
-| 方案 / 疾病对比 | `#/compare` | `/api/v1/compare` | 双癌种五维对照（症状 / 病理分子 / 诊断 / 治疗 / 预后）+ LLM 深度分析 |
-| 知识图谱 | `#/kg` | `/api/v1/kg` | 8 类医学实体 + 9 类关系；癌种全景子图、实体搜索与邻域子图 |
-| 指南速览 | `#/guideline/{id}` | `/api/v1/search/doc/*` | 概要 / 核心推荐 / 证据特点 / 关键词 + 相关指南推荐 |
-| 疾病知识库 | `#/diseases` | `/api/v1/diseases` | 疾病名归一（肺CA / NSCLC → 肺癌）、症状反查、双版本（专业版 / 患者版） |
-| 智能预问诊 | `#/preconsult` | `/api/v1/preconsult` | 症状结构化采集 + 风险分层（高风险 / 中风险 / 常规）+ 就医方向建议 |
-| 智能随访 | `#/followup` | `/api/v1/followup` | 随访计划、任务提醒、依从性统计、异常预警 |
-| 病历质控 | `#/qc` | `/api/v1/qc` | 规则化质控要点核查（完整性 / 规范性） |
-| 报告智能解析 | `#/report` | `/api/v1/report` | 检验检查报告结构化提取（仅整理文本，不做判读） |
-| 患者端 H5 | `#/patient` | `/api/v1/patient` | 用药了解、患者版疾病科普（通俗改写 + 专业词括注） |
-| 知识库管理 | `#/admin` | `/api/v1/admin` | 条目 CRUD、文档目录、目录重建（Token 鉴权） |
-| 运营看板 | `#/dashboard` | `/api/v1/stats` | 指南数 / 条目数 / 疾病档案数 / 术语数 / 覆盖癌种 / 主题与年份分布 |
+| 患者端（患者概览 / 随访 / 看报告 / 疾病档案） | `#/patient`、`#/followup`、`#/report`、`#/archive` | `/api/v1/followup`、`/api/v1/report`、`/api/v1/diseases` | 患者服务：随访任务与预警、报告文本解析、带癌种切换的疾病档案 |
+| 疾病知识库（疾病库 / 指南 / 图谱） | `#/diseases`、`#/guides`、`#/kg` | `/api/v1/diseases`、`/api/v1/search/docs`、`/api/v1/kg` | 疾病归档、指南文档浏览（复用检索文档网格）、肿瘤图谱 |
+| 循证检索（证据检索 / 癌种对照） | `#/search`、`#/compare` | `/api/v1/search`、`/api/v1/compare` | 混合检索 + 五维癌种对照；专题分析改为对照页内的慢路径入口 |
+| 问答 | `#/qa` | `/api/v1/qa` | SSE 流式问答（进入时若有历史会话，先询问「继续 / 新建」） |
+| 病历质控 / 知识库管理 | `#/qc`、`#/admin` | `/api/v1/qc`、`/api/v1/admin` | 底部工具区，弱化为工具入口 |
 
 另有独立跨端小程序工程 `miniapp/`（Taro + React + TS，4 tabBar + 4 二级页，直连同一后端）。
 
@@ -245,12 +236,13 @@ powershell -ExecutionPolicy Bypass -File scripts\h5_preview.ps1
 |---|---|
 | 检索 | `GET /search`、`GET /search/docs`、`GET /search/doc/{doc_id}`、`GET /search/doc/{doc_id}/summary`、`GET /search/doc/{doc_id}/similar`、`GET /search/item/{item_id}/similar`、`GET /search/cancer_types`、`GET /search/topics` |
 | 问答 | `GET /qa`、`POST /qa`、`GET /qa/stream`（SSE） |
-| 专题 / 对比 | `GET /topic-analysis`、`POST /compare`、`POST /compare/deep-analysis` |
+| 专题 / 对比 | `GET /topic-analysis`、`POST /compare`、`POST /compare/deep-analysis`（前端：专题为对照页内慢路径入口） |
 | 图谱 | `GET /kg/ontology`、`GET /kg/statistics`、`GET /kg/cancer/{cancer_type}`、`GET /kg/entity/{entity_id}`、`POST /kg/extract/{doc_id}` |
 | 疾病库 | `GET /diseases`、`GET /diseases/search`、`GET /diseases/{disease_id}` |
 | 患者端 | `GET /patient/drugs`、`GET /patient/drug/{drug_id}`、`GET /patient/diseases/{disease_id}`、`GET /patient/disclaimer` |
-| P5 新增 | `/preconsult/*`、`/followup/*`、`/qc/*`、`/report/parse` |
+| P5 新增 | `/preconsult/*`、`/followup/*`、`/qc/*`、`/report/parse`（预问诊独立页入口已撤，保留患者端内嵌） |
 | 统计 / 管理 | `/stats/*`、`/admin/*`（Token 鉴权） |
+| 历史遗留（当前无消费者） | `/mapping/*`、`/structured/*`（`main.py` 已挂载，前端与小程序均未调用，待清理） |
 
 其余路由以 `http://localhost:8002/docs` 为准。
 
