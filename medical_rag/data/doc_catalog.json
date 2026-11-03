@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "last_updated": "2026-10-25T13:58:30",
-  "total_docs": 6,
+  "last_updated": "2026-11-02T12:31:28",
+  "total_docs": 10,
   "docs": [
     {
       "doc_id": "DOC-COLORECTAL-EPMC-001",
@@ -97,6 +97,70 @@
       "file_path": "raw/guidelines/DOC-LUNG-EPMC-003.xml",
       "ingest_date": "2026-10-25",
       "last_updated": "2026-10-25",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-LUNG-NHC-001",
+      "title": "原发性肺癌诊疗指南（2022年版）",
+      "doc_type": "standard",
+      "issuer": "中华人民共和国国家卫生健康委员会",
+      "cancer_types": [
+        "lung"
+      ],
+      "item_count": 145,
+      "version": "",
+      "publish_date": "2022-04-11",
+      "file_path": "raw/guidelines/lung/nhc2022_01_lung.pdf",
+      "ingest_date": "2026-10-31",
+      "last_updated": "2026-10-31",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-BREAST-EPMC-001",
+      "title": "The Japanese Breast Cancer Society Clinical Practice Guidelines for systemic treatment of breast cancer, 2022 edition",
+      "doc_type": "guideline",
+      "issuer": "Breast Cancer (Tokyo, Japan)",
+      "cancer_types": [
+        "breast"
+      ],
+      "item_count": 158,
+      "version": "",
+      "publish_date": "2023-10-07",
+      "file_path": "raw/guidelines/breast/DOC-BREAST-EPMC-001.xml",
+      "ingest_date": "2026-11-01",
+      "last_updated": "2026-11-01",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-GASTRIC-EPMC-001",
+      "title": "Japanese gastric cancer treatment guidelines 2025 (7th edition)",
+      "doc_type": "guideline",
+      "issuer": "Gastric Cancer (JGCA)",
+      "cancer_types": [
+        "gastric"
+      ],
+      "item_count": 32,
+      "version": "",
+      "publish_date": "2026-01-22",
+      "file_path": "raw/guidelines/gastric/DOC-GASTRIC-EPMC-001.xml",
+      "ingest_date": "2026-11-02",
+      "last_updated": "2026-11-02",
+      "status": "active"
+    },
+    {
+      "doc_id": "DOC-BREAST-EPMC-003",
+      "title": "The Japanese breast cancer society clinical practice guidelines for radiation treatment of breast cancer, 2022 edition",
+      "doc_type": "guideline",
+      "issuer": "Breast Cancer (JBCS)",
+      "cancer_types": [
+        "breast"
+      ],
+      "item_count": 15,
+      "version": "",
+      "publish_date": "2024-04-05",
+      "file_path": "raw/guidelines/breast/DOC-BREAST-EPMC-003.xml",
+      "ingest_date": "2026-11-02",
+      "last_updated": "2026-11-02",
       "status": "active"
     }
   ]
