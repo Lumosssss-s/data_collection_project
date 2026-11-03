@@ -269,6 +269,13 @@ _MEDICAL_DOC_FIELDS: Tuple[str, ...] = (
 )
 
 
+# 非检索用途的透传字段：仅写侧落 _source（mapping 为 index:false / date），
+# 不进 _MEDICAL_DOC_FIELDS（读侧搜索响应不携带、不参与任何查询与排序）。
+_NONINDEX_PASSTHROUGH_FIELDS: Tuple[str, ...] = (
+    "patient_plain", "patient_plain_at",
+)
+
+
 def _medical_metadata(source: Dict) -> Dict[str, Any]:
     """读侧 metadata 组装：通用字段 + §5.7.2 白名单透传（C2 §3.3）。
 
@@ -456,6 +463,12 @@ class ElasticsearchRepository:
                                 "code": {"type": "keyword"},
                             }
                         },
+                        # 患者版白话缓存（2026-11-03）：index:false → 只存 _source，
+                        # 不进倒排（BM25 不可见）；向量正文由 content 单独构建，不含此字段；
+                        # 写回走 update_fields（partial update），不经 add_documents 白名单。
+                        # 值为 JSON 字符串（plain 为结构化 dict，text 类型不分析只原样存储）。
+                        "patient_plain": {"type": "text", "index": False},
+                        "patient_plain_at": {"type": "date"},
                         "warnings": {
                             "dynamic": False,
                             "properties": {
@@ -779,6 +792,10 @@ class ElasticsearchRepository:
             # 结构化字段按 §5.7.2 白名单透传（C2 §3.3：metadata 塞杂物模式废止，
             # 仅落白名单字段，未映射字段一律不入库）
             for field in _MEDICAL_DOC_FIELDS:
+                if metadata.get(field) is not None:
+                    doc[field] = metadata[field]
+            # 非检索透传（如 patient_plain 白话缓存）：随整文档写入保留，重灌不丢
+            for field in _NONINDEX_PASSTHROUGH_FIELDS:
                 if metadata.get(field) is not None:
                     doc[field] = metadata[field]
             operations.append(doc)
@@ -1304,6 +1321,19 @@ class ElasticsearchRepository:
     
     def delete(self, doc_id: str):
         self.client.delete(index=settings.es_index_name, id=doc_id)
+
+    def update_fields(self, doc_id: str, fields: Dict) -> bool:
+        """部分字段更新（ES update doc 合并）：
+        只写入 fields 里的键，不触碰其他字段、不重算 embedding、不走白名单。
+        用于患者版白话缓存（patient_plain）写回这类「展示用附加字段」。
+        """
+        if not doc_id or not fields:
+            return False
+        self.client.update(
+            index=settings.es_index_name, id=doc_id,
+            body={"doc": fields}, refresh=True,
+        )
+        return True
     
     def count(self) -> int:
         response = self.client.count(index=settings.es_index_name)

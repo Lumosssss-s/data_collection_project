@@ -13,7 +13,9 @@
 """
 import json
 import logging
+import os
 import re
+from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 from repositories.elasticsearch import ElasticsearchRepository
@@ -91,36 +93,137 @@ class PatientService:
     #  说明书患者版
     # ============================================================
     def get_drug_patient(self, drug_id: str) -> Optional[Dict]:
-        """取说明书患者版；药品不存在返回 None。"""
+        """结构化说明书详情（零 LLM）：通用名/商品名/适应证/限定/黑框/警示/
+        剂量/禁忌/不良反应/相互作用原文/免责。药品不存在返回 None。
+
+        白话解读拆到 get_drug_plain（/patient/drug/{id}/plain），本接口不触发 LLM。
+        """
         raw = self.repo.get(drug_id)
         if not raw:
             return None
 
         base = self._base_fields(raw)
-        plain = self._llm_plainify(base)
-
-        # LLM 失败时降级为「结构化直出 + 频率中文」，仍可用
-        degraded = plain is None
-        if plain is None:
-            plain = self._fallback_plain(base)
-
-        # 说明书相互作用原文透传：逐字来自 ES _source，不截断/改写/翻译，
-        # 仅供前端折叠层溯源展示，不参与上方白话生成逻辑。
-        raw_interactions = list(raw.get("interactions") or [])
-
+        boxed = raw.get("boxed_warning") or None
         return {
             "drug_id": drug_id,
             "generic_name": base["generic_name"],
             "brand_names": base["brand_names"],
             "indication_note": raw.get("indication_note") or "",
-            "plain": plain,
-            "raw_interactions": raw_interactions,
-            "interaction_count": len(raw_interactions),
+            "indications": base["indications"],
+            "dosage_standard": base["dosage_standard"],
+            "dosage_adjustment": base["dosage_adjustment"],
+            "contraindications": base["contraindications"],
+            "adverse_reactions": base["adverse_reactions"],
+            # 相互作用原文透传：逐字来自 ES _source，不截断/改写/翻译
+            "raw_interactions": base["interactions"],
+            "interaction_count": len(base["interactions"]),
+            "boxed_warning": boxed,
+            "has_boxed_warning": bool(boxed),
+            "warnings_count": len(raw.get("warnings") or []),
             "disclaimer": DISCLAIMER,
             "seek_help": SEEK_HELP,
-            "degraded": degraded,
-            "note": "" if not degraded else "患者版话术生成失败，已按说明书结构化展示。",
         }
+
+    def get_drug_plain(self, drug_id: str) -> Optional[Dict]:
+        """白话解读（LLM 生成，带 ES 缓存）。
+
+        先读 patient_plain 缓存：命中直接返回（cached=true）；
+        未命中则基于说明书生成（严守「仅基于说明书」），写前备份 _source，
+        经 repo.update_fields 部分更新写回（不整文档覆盖、不重算 embedding）。
+        药品不存在返回 None；生成失败返回 {"plain": None, "cached": False}。
+        """
+        raw = self.repo.get(drug_id)
+        if not raw:
+            return None
+
+        cached = raw.get("patient_plain")
+        if cached:
+            # 缓存为 JSON 字符串（mapping 为 text/index:false，原样存储）
+            if isinstance(cached, str):
+                try:
+                    cached = json.loads(cached)
+                except Exception:
+                    cached = None
+            if cached:
+                return {
+                    "drug_id": drug_id,
+                    "plain": cached,
+                    "cached": True,
+                    "patient_plain_at": raw.get("patient_plain_at") or "",
+                }
+
+        # 第二级缓存：clean JSON（重灌后 ES 缓存被覆盖时从这里回填，零 LLM）
+        disk = self._load_plain_from_clean(drug_id)
+        if disk:
+            plain, plain_at = disk
+            try:
+                self.repo.update_fields(drug_id, {
+                    "patient_plain": json.dumps(plain, ensure_ascii=False),
+                    "patient_plain_at": plain_at,
+                })
+            except Exception as e:
+                logger.warning(f"[Patient] clean JSON 缓存回填 ES 失败（不影响本次返回）: {e}")
+            return {
+                "drug_id": drug_id,
+                "plain": plain,
+                "cached": True,
+                "patient_plain_at": plain_at,
+            }
+
+        base = self._base_fields(raw)
+        plain = self._llm_plainify(base)
+        if plain is None:
+            return {"drug_id": drug_id, "plain": None, "cached": False}
+
+        # 写前备份：把写回前的 _source 落地一份，防止 partial update 意外丢字段
+        try:
+            backup_dir = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                "data", "backups", "patient_plain",
+            )
+            os.makedirs(backup_dir, exist_ok=True)
+            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+            with open(os.path.join(backup_dir, f"{drug_id}_{ts}.json"), "w", encoding="utf-8") as f:
+                json.dump(raw, f, ensure_ascii=False, indent=1)
+        except Exception as e:
+            logger.warning(f"[Patient] 白话写回前备份失败（继续写回）: {e}")
+
+        try:
+            self.repo.update_fields(drug_id, {
+                "patient_plain": json.dumps(plain, ensure_ascii=False),
+                "patient_plain_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+            })
+        except Exception as e:
+            logger.warning(f"[Patient] 白话缓存写回失败（不影响本次返回）: {e}")
+
+        return {"drug_id": drug_id, "plain": plain, "cached": False}
+
+    @staticmethod
+    def _load_plain_from_clean(drug_id: str) -> Optional[tuple]:
+        """从 clean JSON 读白话缓存（data/clean/drug_labels/{drug_id}.json）。
+
+        命中返回 (plain_dict, patient_plain_at)；未命中/解析失败返回 None。
+        clean 文件为只读数据源，本函数不写任何内容。
+        """
+        try:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            path = os.path.join(base_dir, "data", "clean", "drug_labels", f"{drug_id}.json")
+            if not os.path.exists(path):
+                return None
+            with open(path, "r", encoding="utf-8") as f:
+                records = json.load(f)
+            rec = records[0] if isinstance(records, list) and records else (records if isinstance(records, dict) else None)
+            if not rec:
+                return None
+            cached = rec.get("patient_plain")
+            if isinstance(cached, str):
+                cached = json.loads(cached)
+            if not cached:
+                return None
+            return cached, str(rec.get("patient_plain_at") or "")
+        except Exception as e:
+            logger.warning(f"[Patient] 读 clean JSON 白话缓存失败（{drug_id}）: {e}")
+            return None
 
     @staticmethod
     def _base_fields(raw: Dict) -> Dict:

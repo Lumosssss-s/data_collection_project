@@ -37,8 +37,22 @@ def list_drugs(
 
 @router.get("/drug/{drug_id}")
 def get_drug(drug_id: str):
-    """药品说明书患者版（通俗话术 + 就医指引 + 免责声明）。"""
+    """药品说明书结构化详情（零 LLM）：通用名/适应证/限定/黑框/警示/剂量/禁忌/
+    不良反应/相互作用原文/免责。白话解读请用 /drug/{drug_id}/plain。"""
     data = service.get_drug_patient(drug_id)
+    if data is None:
+        return APIResponse(success=False, data=None, code=404,
+                           message="未找到该药品（或说明书尚未入库）")
+    return APIResponse(success=True, data=data)
+
+
+@router.get("/drug/{drug_id}/plain")
+def get_drug_plain(drug_id: str):
+    """药品说明书白话解读（LLM 生成，ES 缓存：命中即返 cached=true）。
+
+    生成失败返回 plain=null（前端降级为结构化要点展示），不 5xx。
+    """
+    data = service.get_drug_plain(drug_id)
     if data is None:
         return APIResponse(success=False, data=None, code=404,
                            message="未找到该药品（或说明书尚未入库）")
