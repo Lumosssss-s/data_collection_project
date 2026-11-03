@@ -355,6 +355,19 @@ body {
    落在中文舒适行宽 40–46 字区间（CLReq 长文建议每行不超过约 40–50 字）；
    只约束文字段，卡片容器仍满宽，左缘与章节标题天然对齐。 */
 .d2-sec-text { font-size: 0.875rem; line-height: 1.8; color: var(--color-text-secondary); margin: 0; white-space: pre-wrap; max-width: 42em; }
+
+/* 患者版溯源角标与对照表（2026-11-03）：弱化不打断阅读，对照表默认收起 */
+.d2-ref {
+    font-size: 0.6875rem;
+    color: var(--color-text-muted);
+    vertical-align: super;
+    line-height: 0;
+    margin-left: 1px;
+}
+.d2-refs { margin-top: 0.375rem; font-size: 0.75rem; color: var(--color-text-muted); }
+.d2-refs summary { cursor: pointer; user-select: none; }
+.d2-refs ol { margin: 0.375rem 0 0; padding-left: 1.25rem; }
+.d2-refs li { line-height: 1.7; word-break: break-all; }
 /* 移动端正文字号 ≥14px（root 14px，1rem=14px）；行高继承 1.8。
    必须放在上方定义之后——同特异性下媒体查询块若写在前会被覆盖（2026-11-03 实测）。 */
 @media (max-width: 767px) {

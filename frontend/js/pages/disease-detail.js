@@ -85,6 +85,32 @@ function goBackToDiseases() {
     window.location.hash = '#/diseases';
 }
 
+// 患者版溯源标注改写：【来源 …】→ 上标角标 [n]，本节末尾折叠对照表逐字保留原文。
+// 同一章节内相同标注文本复用同一序号；跨章节重新计数。只用于患者版；
+// 专业版保持就地标注（读者需要就地看到出处）。
+// 输入为已 escapeHtml 的文本（【】为中文括号不经转义；标注内部若有 &<>" 已转义，
+// 对照表直接使用转义后文本输出，展示上逐字一致且 XSS 安全）。
+function renderPatientSectionWithRefs(escapedText) {
+    const refMap = new Map();
+    const refs = [];
+    const body = escapedText.replace(/【来源 ([^】]+)】/g, function (m, inner) {
+        let n = refMap.get(inner);
+        if (n === undefined) { n = refs.length; refMap.set(inner, n); refs.push(inner); }
+        return '<sup class="d2-ref">[' + (n + 1) + ']</sup>';
+    });
+    return { body, refs };
+}
+
+function renderRefsTable(refs) {
+    if (!refs.length) return '';
+    let html = '<details class="d2-refs"><summary>本节来源对照（' + refs.length + ' 条）</summary><ol>';
+    refs.forEach(function (inner) {
+        html += '<li>【来源 ' + inner + '】</li>';
+    });
+    html += '</ol></details>';
+    return html;
+}
+
 function renderDiseaseDetail(container, d, version, onSwitch) {
     const name = d.name_canonical || d.disease_id || '未命名疾病';
     let html = '';
@@ -141,10 +167,17 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
                 lastGroup = s.group;
             }
             const n = i + 1;
+            let secBody;
+            if (version === 'patient') {
+                const r = renderPatientSectionWithRefs(escapeHtml(s.text || ''));
+                secBody = '<p class="d2-sec-text">' + r.body + '</p>' + renderRefsTable(r.refs);
+            } else {
+                secBody = '<p class="d2-sec-text">' + escapeHtml(s.text || '') + '</p>';
+            }
             html += '<div class="d2-sec">'
                 + '<div class="d2-sec-head"><span class="d2-sec-no">' + (n < 10 ? '0' : '') + n + '</span>'
                 + '<span class="d2-sec-name">' + escapeHtml(s.label || '（未命名章节）') + '</span></div>'
-                + '<p class="d2-sec-text">' + escapeHtml(s.text || '') + '</p>'
+                + secBody
                 + '</div>';
         });
     }
