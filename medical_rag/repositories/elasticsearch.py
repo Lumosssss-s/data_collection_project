@@ -239,8 +239,8 @@ def _term_clause(field: str, value: Any) -> Dict[str, Any]:
 #   DOC 层：doc_id/doc_type/issuer/publish_date/cancer_types/license_note/file_path/doc_hash
 #   REC 层：rec_id/cancer_type/breadcrumb/scenario/stage/stage_detail/biomarker/
 #           population/verbatim/evidence_level/evidence_level_original/rec_strength/refs/page
-#   DRUG 层：drug_id/generic_name/brand_names/atc_code/approval_no/indications/dosage/
-#           contraindications/adverse_reactions/adverse_reaction_terms/interactions
+#   DRUG 层：drug_id/generic_name/brand_names/aliases_zh/atc_code/approval_no/indications/dosage/
+#           contraindications/adverse_reactions/adverse_reaction_terms/interactions/indication_note
 #   TERM 层：term_id/canonical/category/synonyms/icd10/icd_o3/atc/pinyin/en_name/mapping_status
 # 通用字段（content/embedding/title/chunk_index/topics_details/taxonomy_version）
 # 由 add_documents 单独处理，不在此列。
@@ -254,10 +254,15 @@ _MEDICAL_DOC_FIELDS: Tuple[str, ...] = (
     "rec_id", "cancer_type", "breadcrumb", "scenario", "stage", "stage_detail",
     "biomarker", "population", "verbatim", "evidence_level",
     "evidence_level_original", "rec_strength", "refs", "page",
+    "sor", "soe", "consensus_rate",
     # DRUG
-    "drug_id", "generic_name", "brand_names", "atc_code", "approval_no",
-    "indications", "dosage", "contraindications", "adverse_reactions",
-    "adverse_reaction_terms", "interactions",
+    "drug_id", "generic_name", "brand_names", "aliases_zh", "atc_code",
+    "approval_no", "indications", "dosage", "contraindications",
+    "adverse_reactions", "adverse_reaction_terms", "interactions",
+    # DRUG 用药安全 v2
+    "cancer_types", "guideline_use_cancers", "duplicate_of",
+    "indication_note",
+    "boxed_warning", "warnings", "dosage_adjustment",
     # TERM
     "term_id", "canonical", "category", "synonyms", "icd10", "icd_o3",
     "atc", "pinyin", "en_name", "mapping_status",
@@ -408,10 +413,22 @@ class ElasticsearchRepository:
                         "rec_strength": {"type": "keyword"},
                         "refs": {"type": "keyword"},
                         "page": {"type": "integer"},
+                        # 原文分级原样字段（SoR / SoE / 共识率），与 evidence_level 分开存放，不合并
+                        "sor": {"type": "keyword"},
+                        "soe": {"type": "keyword"},
+                        "consensus_rate": {"type": "keyword"},
                         # ---- DRUG 专属层（药品说明书）----
                         "drug_id": {"type": "keyword"},       # 亦作 ES _id
                         "generic_name": {"type": "keyword"},
                         "brand_names": {"type": "keyword"},
+                        # 中文通用名别名（2026-11-02）：检索分词 + 精确匹配两用
+                        "aliases_zh": {
+                            "type": "text",
+                            "analyzer": "chinese_analyzer",
+                            "fields": {
+                                "keyword": {"type": "keyword", "ignore_above": 256}
+                            }
+                        },
                         "atc_code": {"type": "keyword"},
                         "approval_no": {"type": "keyword"},
                         "indications": {
@@ -426,6 +443,28 @@ class ElasticsearchRepository:
                         "adverse_reactions": {"type": "object", "enabled": False},  # 原始 JSON 整存整取
                         "adverse_reaction_terms": {"type": "keyword"},  # 抽平：不良反应术语
                         "interactions": {"type": "text", "analyzer": "chinese_analyzer"},
+                        # 用药安全 v2（2026-11-02）：多癌种 + 黑框/警示/剂量调整 + 克隆标记
+                        "cancer_types": {"type": "keyword"},          # 说明书适应证依据的癌种
+                        "guideline_use_cancers": {"type": "keyword"},  # 指南推荐但说明书未覆盖
+                        "duplicate_of": {"type": "keyword"},          # 克隆视图→主记录；ingest 跳过
+                        "indication_note": {"type": "text", "analyzer": "chinese_analyzer"},  # 适应证限定说明（如仅联合方案）
+                        "boxed_warning": {
+                            "dynamic": False,
+                            "properties": {
+                                "title": {"type": "text", "analyzer": "chinese_analyzer"},
+                                "text": {"type": "text", "analyzer": "chinese_analyzer"},
+                                "code": {"type": "keyword"},
+                            }
+                        },
+                        "warnings": {
+                            "dynamic": False,
+                            "properties": {
+                                "title": {"type": "text", "analyzer": "chinese_analyzer"},
+                                "text": {"type": "text", "analyzer": "chinese_analyzer"},
+                                "code": {"type": "keyword"},
+                            }
+                        },
+                        "dosage_adjustment": {"type": "object", "enabled": False},  # 整存整取，仅展示
                         # ---- TERM 专属层（术语字典）----
                         "term_id": {"type": "keyword"},        # 亦作 ES _id
                         "canonical": {"type": "keyword"},
@@ -1177,13 +1216,19 @@ class ElasticsearchRepository:
         data_type: Optional[str] = None,
         cancer_type: Optional[str] = None,
         page_size: int = 100,
+        cancer_scope: str = "label",
     ) -> List[Dict]:
-        """按 data_type / cancer_type 列出条目（含 _id），用于管理端条目浏览。"""
+        """按 data_type / 癌种列出条目（含 _id），用于管理端条目浏览。
+
+        cancer_scope: "label"（默认）按 cancer_types（说明书适应证依据）过滤；
+                      "guideline" 按 guideline_use_cancers（指南推荐但说明书未覆盖）过滤。
+        """
         clauses: List[Dict] = []
         if data_type:
             clauses.append({"term": {"data_type": data_type}})
         if cancer_type:
-            clauses.append({"term": {"cancer_type": cancer_type}})
+            field = "guideline_use_cancers" if cancer_scope == "guideline" else "cancer_types"
+            clauses.append({"term": {field: cancer_type}})
         query = {"bool": {"filter": clauses}} if clauses else {"match_all": {}}
         try:
             resp = self.client.search(

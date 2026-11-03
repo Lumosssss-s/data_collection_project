@@ -43,6 +43,9 @@ CANCER_TYPE_INFO: Dict[str, Tuple[str, str]] = {
 CANCER_TYPE_ALIASES: Dict[str, str] = {
     "肺恶性肿瘤": "lung",
     "乳腺恶性肿瘤": "breast",
+    "乳腺": "breast",
+    "乳癌": "breast",
+    "breast cancer": "breast",
     "大肠癌": "colorectal",
     "结直肠": "colorectal",
     "胃恶性肿瘤": "gastric",

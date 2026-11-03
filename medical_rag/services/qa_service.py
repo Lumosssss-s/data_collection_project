@@ -28,7 +28,8 @@ class QAService:
 
     # 知识库当前覆盖的癌种：未覆盖癌种在问答入口直接给边界说明，
     # 避免经全域回退把其他癌种条目挂到越界问题上（误挂）。
-    SUPPORTED_CANCERS: Dict[str, str] = {"lung": "肺癌", "colorectal": "结直肠癌"}
+    SUPPORTED_CANCERS: Dict[str, str] = {"lung": "肺癌", "colorectal": "结直肠癌",
+                                        "breast": "乳腺癌", "gastric": "胃癌"}
 
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
@@ -492,7 +493,8 @@ class QAService:
             return None
         hit = next((t for t in cls._NON_TUMOR_TERMS if t in q), None)
         if hit:
-            return (f"本知识库聚焦肺癌与结直肠癌的循证诊疗，暂不覆盖「{hit}」等非肿瘤问题，"
+            covered = "、".join(cls.SUPPORTED_CANCERS.values())
+            return (f"本知识库聚焦{covered}的循证诊疗，暂不覆盖「{hit}」等非肿瘤问题，"
                     "无法给出基于指南的建议。建议咨询相应专科医师。")
         return None
 
@@ -509,7 +511,7 @@ class QAService:
         if detected and not (set(detected) & set(cls.SUPPORTED_CANCERS)):
             covered = "、".join(cls.SUPPORTED_CANCERS.values())
             return (
-                f"本知识库当前仅覆盖{covered}两类癌种，暂未收录该问题涉及的癌种，"
+                f"本知识库当前仅覆盖{covered}，暂未收录该问题涉及的癌种，"
                 "无法基于本库给出循证依据。建议查阅相应癌种的最新指南或咨询专科医师后再作判断。"
             )
         return None

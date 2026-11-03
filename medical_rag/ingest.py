@@ -81,16 +81,20 @@ def _extract_content(data_type: str, record: Dict) -> str:
         # 术语：规范名 + 同义词，支撑「简称/别名」检索与实体归一
         return _join_nonempty([record.get("canonical"), record.get("synonyms")])
     if data_type == "drug":
-        # 说明书：通用名 + 适应证 + 禁忌 + 用法用量（截断）+ 相互作用（前 2 条）
+        # 说明书：通用名 + 适应证 + 禁忌 + 黑框警告 + 用法用量（截断）+ 相互作用（全量）
         # 用法用量是「剂量/给药」类问题的直接命中依据，不截断会挤占向量篇幅，取前 800 字。
+        # 相互作用 2026-11-02 起全量入库（原 [:2] 截断导致检索漏召回）。
         dosage = record.get("dosage") or {}
         standard = dosage.get("standard") if isinstance(dosage, dict) else None
+        boxed = record.get("boxed_warning") or []
+        boxed_texts = [b.get("text", "") if isinstance(b, dict) else str(b) for b in boxed]
         return _join_nonempty([
             record.get("generic_name"),
             record.get("indications"),
             record.get("contraindications"),
+            boxed_texts,
             (standard or "")[:800],
-            (record.get("interactions") or [])[:2],
+            record.get("interactions") or [],
         ])
     if data_type == "literature":
         # 文献证据层：题名 + 英文摘要（跨语言向量检索命中，作为二级证据）
@@ -176,6 +180,10 @@ def process_json_file(
         if not item_id:
             print(f"⚠️  {json_file.name} 记录缺少 {id_field}，跳过")
             continue
+        # 克隆视图记录不入库（duplicate_of 指向的主记录为准；旧库中已存在的由运维删除）
+        if record.get("duplicate_of"):
+            print(f"⏭️  跳过克隆记录: {item_id}（duplicate_of={record['duplicate_of']}）")
+            continue
         if not item_id.startswith(expected_prefix):
             print(f"⚠️  {item_id} 前缀与目录类型 {data_type}（期望 {expected_prefix}）不一致，仍入库")
 
@@ -188,9 +196,13 @@ def process_json_file(
 
 
 def load_json_files(
-    clean_dir: Path, repo, skip_existing: bool = True
+    clean_dir: Path, repo, skip_existing: bool = True, only_prefix: str = ""
 ) -> Iterator[Tuple[str, Dict, str]]:
-    """遍历 data/clean/ 的 G3 固定目录，按路由表分流。"""
+    """遍历 data/clean/ 的 G3 固定目录，按路由表分流。
+
+    only_prefix 非空时只处理文件名为该前缀的数据文件（单文档增量入库用），
+    避免误碰其他癌种数据。
+    """
     if not clean_dir.exists():
         print(f"⚠️  清洗数据目录不存在: {clean_dir}")
         return
@@ -213,6 +225,8 @@ def load_json_files(
             continue
 
         for json_file in sorted(sub.glob("*.json")) + sorted(sub.glob("*.jsonl")):
+            if only_prefix and not json_file.name.startswith(only_prefix):
+                continue
             yield from process_json_file(json_file, data_type, repo, skip_existing)
 
 
@@ -232,7 +246,8 @@ def _print_type_counts(repo: ElasticsearchRepository):
         print(f"⚠️  统计失败: {e}")
 
 
-def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = False):
+def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = False,
+                only_prefix: str = "", only_ids: str = ""):
     """入库 data/clean/ 到 ES。
 
     参数:
@@ -260,7 +275,7 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
     ids_batch: List[str] = []
 
     for content, meta, item_id in load_json_files(
-        Path(settings.clean_data_dir), repo, skip_existing=not force
+        Path(settings.clean_data_dir), repo, skip_existing=not force, only_prefix=only_prefix
     ):
         documents_batch.append(content)
         metadatas_batch.append(meta)
@@ -313,13 +328,18 @@ def ingest_data(batch_size: int = 32, clear_index: bool = False, force: bool = F
 
     # 重新标注主题（topics_details）
     print("\n🔄 开始重新标注主题...")
-    reannotate_all_data(repo)
+    reannotate_all_data(repo, only_prefix=only_prefix, only_ids=only_ids)
 
     print("\n🧾 指南摘要请单独运行 run_abstracts.py（BE-38）")
 
 
-def reannotate_all_data(repo: ElasticsearchRepository):
-    """重新标注所有数据的主题字段"""
+def reannotate_all_data(repo: ElasticsearchRepository, only_prefix: str = "",
+                        only_ids: str = ""):
+    """重新标注所有数据的主题字段。
+
+    only_prefix / only_ids（后者为逗号分隔的业务 ID 前缀，如 REC-BREAST-EPMC）非空时
+    只写回命中的条目，其余癌种条目只读不写，保证单文档增量入库不改动既有数据。
+    """
     print("初始化主题分类器...")
     classifier = TopicClassifier()
     print(f"加载词表版本: {classifier.taxonomy_version}, 主题数: {len(classifier.topics)}")
@@ -349,6 +369,10 @@ def reannotate_all_data(repo: ElasticsearchRepository):
             for hit in hits:
                 doc_id = hit["_id"]
                 source = hit["_source"]
+                if (only_prefix or only_ids):
+                    id_prefixes = [only_prefix] + [p.strip() for p in only_ids.split(",") if p.strip()]
+                    if not any(str(doc_id).startswith(p) for p in id_prefixes):
+                        continue
 
                 text = source.get("content", "")
                 topics_info = classifier.classify_document(text)
@@ -408,6 +432,10 @@ if __name__ == "__main__":
     parser.add_argument("--batch-size", type=int, default=32, help="批量写入大小")
     parser.add_argument("--precheck", action="store_true",
                         help="入库前强制执行 V-01 校验（scripts/data_pipeline/validate_data.py），不通过拒绝灌入")
+    parser.add_argument("--only-prefix", default="",
+                        help="只处理文件名以该前缀开头的数据文件（单文档增量入库，如 DOC-BREAST-EPMC-001）")
+    parser.add_argument("--only-ids", default="",
+                        help="主题重标注只写回这些业务 ID 前缀（逗号分隔，如 DOC-BREAST-EPMC-001,REC-BREAST-EPMC）")
 
     args = parser.parse_args()
 
@@ -420,4 +448,5 @@ if __name__ == "__main__":
             print("❌ V-01 校验未通过，拒绝灌入（详见 data/reports/validation_*.json）")
             raise SystemExit(1)
 
-    ingest_data(batch_size=args.batch_size, clear_index=args.rebuild, force=args.force)
+    ingest_data(batch_size=args.batch_size, clear_index=args.rebuild, force=args.force,
+                only_prefix=args.only_prefix, only_ids=args.only_ids)

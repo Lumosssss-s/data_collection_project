@@ -59,13 +59,24 @@ class PatientService:
         for it in items or []:
             name = str(it.get("generic_name") or it.get("title") or "").strip()
             brand = "、".join(it.get("brand_names") or [])
-            if query and query not in name.lower() and query not in brand.lower():
+            aliases_zh = [str(a) for a in (it.get("aliases_zh") or []) if a]
+            alias_joined = "、".join(aliases_zh)
+            if (query and query not in name.lower()
+                    and query not in brand.lower()
+                    and query not in alias_joined.lower()):
                 continue
             out.append({
                 "drug_id": it.get("drug_id") or it.get("item_id") or "",
                 "generic_name": name,
                 "brand_names": it.get("brand_names") or [],
                 "cancer_type": it.get("cancer_type", ""),
+                # 用药安全 v2 字段透传（2026-11-02，零 LLM）：
+                # has_boxed_warning 由 boxed_warning 非空推导；列表不返回整段
+                # 警示文本，避免 payload 膨胀。
+                "cancer_types": it.get("cancer_types") or [],
+                "guideline_use_cancers": it.get("guideline_use_cancers") or [],
+                "has_boxed_warning": bool(it.get("boxed_warning")),
+                "aliases_zh": aliases_zh,
             })
 
         degraded = len(items or []) == 0
@@ -93,11 +104,18 @@ class PatientService:
         if plain is None:
             plain = self._fallback_plain(base)
 
+        # 说明书相互作用原文透传：逐字来自 ES _source，不截断/改写/翻译，
+        # 仅供前端折叠层溯源展示，不参与上方白话生成逻辑。
+        raw_interactions = list(raw.get("interactions") or [])
+
         return {
             "drug_id": drug_id,
             "generic_name": base["generic_name"],
             "brand_names": base["brand_names"],
+            "indication_note": raw.get("indication_note") or "",
             "plain": plain,
+            "raw_interactions": raw_interactions,
+            "interaction_count": len(raw_interactions),
             "disclaimer": DISCLAIMER,
             "seek_help": SEEK_HELP,
             "degraded": degraded,

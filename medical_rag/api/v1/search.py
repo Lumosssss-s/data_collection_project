@@ -45,7 +45,7 @@ def _scope_hint(cancer_types: Optional[List[str]]) -> str:
         return ""
     names = "、".join(_CANCER_CODE_LABELS.get(c, c) for c in targets)
     covered = "、".join(QAService.SUPPORTED_CANCERS.values())
-    return (f"本知识库当前仅覆盖{covered}两类癌种，暂未收录{names}相关资料，"
+    return (f"本知识库当前仅覆盖{covered}，暂未收录{names}相关资料，"
             "因此没有可展示的循证内容。建议查阅相应癌种的最新指南或咨询专科医师。")
 
 
@@ -115,6 +115,10 @@ def search(
                 biomarker=result.get('biomarker') or [],
                 evidence_level=result.get('evidence_level'),
                 rec_strength=result.get('rec_strength'),
+                sor=result.get('sor'),
+                soe=result.get('soe'),
+                consensus_rate=result.get('consensus_rate'),
+                evidence_level_original=result.get('evidence_level_original'),
                 chunk_index=result.get('chunk_index', 0),
                 publish_date=result.get('publish_date'),
                 source_file=result.get('file_path'),

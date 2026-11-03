@@ -18,6 +18,8 @@ from core.config import settings
 logger = logging.getLogger(__name__)
 
 GUIDELINE_DIR = os.path.join(settings.data_dir, "guidelines")
+# data/ 根目录：catalog 的 file_path 是相对 data/ 记录的（如 raw/guidelines/breast/x.xml）
+DATA_ROOT = os.path.dirname(os.path.realpath(settings.data_dir))
 
 # 单文件上限：当前最大 946 KB，留足余量同时防异常大文件拖垮解析
 MAX_XML_BYTES = 4 * 1024 * 1024
@@ -111,10 +113,38 @@ def _count(node: Dict) -> int:
             + sum(_count(c) for c in node["children"]))
 
 
+def _catalog_xml_path(doc_id: str) -> Optional[str]:
+    """按 doc_catalog.json 的 file_path 解析源文件（仅接受 .xml）。
+
+    只认 XML：PDF 等非 XML 源若走 catalog 路径会把「没有可用的全文 XML」变成
+    「XML 解析失败」，改变既有接口行为，因此非 .xml 一律回落旧逻辑。
+    """
+    try:
+        from utils.doc_catalog import DocCatalog
+        rec = DocCatalog().find_by_doc_id(doc_id) or {}
+        rel = (rec.get("file_path") or "").strip()
+        if not rel.lower().endswith(".xml"):
+            return None
+        path = os.path.realpath(os.path.join(DATA_ROOT, rel))
+        if os.path.dirname(os.path.dirname(path)) == DATA_ROOT or path.startswith(DATA_ROOT + os.sep):
+            return path if os.path.isfile(path) else None
+    except Exception as e:                      # catalog 不可读时不影响旧路径
+        logger.warning("[fulltext] catalog 解析失败 doc_id=%s: %s", doc_id, e)
+        return None
+    return None
+
+
 def _resolve_path(doc_id: str) -> str:
-    """校验 doc_id 并返回解析后的绝对路径（防路径穿越）。"""
+    """校验 doc_id 并返回解析后的绝对路径（防路径穿越）。
+
+    解析优先级：① doc_catalog.json 中该文档的 file_path（相对 data/，仅 .xml 且文件存在）
+    ② 回退到历史口径 data/raw/guidelines/<doc_id>.xml（6 份既有指南仍走 ②，结果不变）。
+    """
     if not _DOC_ID_RE.match(doc_id or ""):
         raise ValueError("doc_id 格式非法")
+    catalog_path = _catalog_xml_path(doc_id)
+    if catalog_path:
+        return catalog_path
     base = os.path.realpath(GUIDELINE_DIR)
     path = os.path.realpath(os.path.join(base, doc_id + ".xml"))
     if os.path.dirname(path) != base:

@@ -38,6 +38,11 @@ class DocumentMetadata(BaseModel):
     biomarker: List[str] = []               # 生物标志物枚举（rec）
     evidence_level: Optional[str] = None    # 证据等级（rec）
     rec_strength: Optional[str] = None      # 推荐强度（rec）
+    # 原文分级原样透传（不加映射、不合并）：SoR / SoE / 共识率可能为空 → None
+    sor: Optional[str] = None               # 原文推荐强度（如 1 / 2 / 1–2）
+    soe: Optional[str] = None               # 原文证据强度（Strong / Moderate / Weak）
+    consensus_rate: Optional[str] = None    # 原文共识率（如 89%）
+    evidence_level_original: Optional[str] = None  # 原文分级描述（如 SoR 1; SoE Strong; consensus 89%）
     chunk_index: int = 0                    # 分块序号（仅 drug 说明书分块生效，其余 = 0）
     publish_date: Optional[str] = None      # YYYY-MM-DD（G7）
     source_file: Optional[str] = None       # 原始文件名（溯源）
