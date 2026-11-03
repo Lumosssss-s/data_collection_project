@@ -24,7 +24,7 @@ RAW_DIR = os.path.join(BASE_DIR, "data", "raw", "drug_labels")
 CLEAN_DIR = os.path.join(BASE_DIR, "data", "clean", "drug_labels")
 
 INTERACTION_CODE = "34073-7"
-MAX_ITEMS = 30
+MAX_ITEMS = 200  # 2026-11-02 由 30 调高：TAMOXIFEN 等老药相互作用条目多，30 会截断
 MIN_LEN = 15
 
 

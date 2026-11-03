@@ -1,0 +1,31 @@
+{
+  "type": "rec",
+  "dir": "recommendations",
+  "id_field": "rec_id",
+  "id_pattern": "^REC-[A-Z]+-[A-Z]+-\\d{4}$",
+  "g6_required": true,
+  "required": ["rec_id", "doc_id", "cancer_type", "breadcrumb", "scenario", "recommendation_text", "verbatim", "evidence_level", "rec_strength"],
+  "nullable_required": ["scenario", "evidence_level"],
+  "nullable_required_note": "规则化章节抽取（P-02-lite）无法判定临床场景与证据等级，置 null 属合规缺值；LLM 版 P-02 覆盖时应回填",
+  "properties": {
+    "rec_id": {"type": "string"},
+    "doc_id": {"type": "string"},
+    "cancer_type": {"type": "string", "enum": ["lung", "breast", "colorectal", "gastric", "thyroid", "liver"]},
+    "breadcrumb": {"type": "string"},
+    "scenario": {"type": "string", "enum": ["screening", "diagnosis", "staging", "treatment_neoadjuvant", "treatment_adjuvant", "treatment_first_line", "treatment_second_line", "treatment_later", "surgery", "radiotherapy", "targeted", "immunotherapy", "followup", "supportive_care", "rehab"]},
+    "stage": {"type": "array", "items": {"type": "string", "enum": ["0", "I", "II", "III", "IV", "unknown"]}, "nullable": true},
+    "biomarker": {"type": "array", "items": {"type": "string", "enum": ["EGFR", "ALK", "ROS1", "KRAS", "NRAS", "HRAS", "BRAF", "HER2", "ER", "PR", "BRCA", "MSI-H", "dMMR", "PD-L1", "TMB", "HRD", "NTRK", "RET", "MET", "EBV"]}, "nullable": true},
+    "population": {"type": "string", "nullable": true},
+    "recommendation_text": {"type": "string", "maxLength": 500},
+    "verbatim": {"type": "boolean"},
+    "evidence_level": {"type": "string", "enum": ["high", "moderate", "low", "very_low"]},
+    "evidence_level_original": {"type": "string", "nullable": true},
+    "rec_strength": {"type": "string", "enum": ["strong", "weak", "not_graded"]},
+    "refs": {"type": "array", "nullable": true},
+    "page": {"type": "integer", "nullable": true},
+    "review_status": {"type": "string", "enum": ["draft", "reviewed", "approved"], "nullable": true}
+  },
+  "g6_fields": ["source_name", "source_version", "source_section", "source_file", "updated_at"],
+  "g6_date_fields": ["updated_at"],
+  "ref_checks": [{"field": "doc_id", "target_type": "doc", "target_field": "doc_id"}]
+}

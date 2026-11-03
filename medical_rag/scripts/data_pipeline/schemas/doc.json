@@ -1,0 +1,24 @@
+{
+  "type": "doc",
+  "dir": "guidelines",
+  "id_field": "doc_id",
+  "id_pattern": "^DOC-[A-Z]+-[A-Z]+-\\d{3,4}$",
+  "g6_required": true,
+  "required": ["doc_id", "title", "doc_type", "issuer", "publish_date", "cancer_types", "license_note", "file_path", "doc_hash"],
+  "properties": {
+    "doc_id": {"type": "string"},
+    "title": {"type": "string"},
+    "doc_type": {"type": "string", "enum": ["guideline", "standard", "consensus"]},
+    "issuer": {"type": "string"},
+    "publish_date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "cancer_types": {"type": "array", "items": {"type": "string", "enum": ["lung", "breast", "colorectal", "gastric", "thyroid", "liver"]}},
+    "license_note": {"type": "string"},
+    "file_path": {"type": "string"},
+    "doc_hash": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"},
+    "summary": {"type": "string", "nullable": true},
+    "abstract": {"type": "string", "nullable": true},
+    "review_status": {"type": "string", "enum": ["draft", "reviewed", "approved"], "nullable": true}
+  },
+  "g6_fields": ["source_name", "source_version", "source_section", "source_file", "updated_at"],
+  "g6_date_fields": ["updated_at"]
+}

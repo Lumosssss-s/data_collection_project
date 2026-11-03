@@ -92,25 +92,33 @@ def main() -> None:
     ap.add_argument("--batch-size", type=int, default=15)
     ap.add_argument("--limit", type=int, default=0, help="只处理前 N 条（试跑）")
     ap.add_argument("--retries", type=int, default=2)
+    ap.add_argument("--rec-dir", default=REC_DIR,
+                    help="REC 目录（默认 data/clean/recommendations；新批次可用独立目录）")
+    ap.add_argument("--progress", default=PROGRESS,
+                    help="进度文件路径（默认 data/intermediate/rec_annotation_progress.json）")
+    ap.add_argument("--only-method", default="",
+                    help="只处理 extraction_method 等于该值的条目（如 table_statement）")
     ap.add_argument("--write-clean", action="store_true",
                     help="直接回写 data/clean（仅在可写环境中使用；容器内该目录为只读）")
     args = ap.parse_args()
 
     from utils.llm_client import chat
 
-    os.makedirs(os.path.dirname(PROGRESS), exist_ok=True)
+    os.makedirs(os.path.dirname(args.progress), exist_ok=True)
     progress: Dict[str, Dict] = {}
-    if os.path.exists(PROGRESS):
-        progress = json.load(open(PROGRESS, encoding="utf-8"))
+    if os.path.exists(args.progress):
+        progress = json.load(open(args.progress, encoding="utf-8"))
 
-    files = sorted(f for f in os.listdir(REC_DIR) if f.endswith("_recs.json"))
-    loaded = {f: _load(os.path.join(REC_DIR, f)) for f in files}
+    files = sorted(f for f in os.listdir(args.rec_dir) if f.endswith("_recs.json"))
+    loaded = {f: _load(os.path.join(args.rec_dir, f)) for f in files}
 
     pending: List[tuple] = []
     for f, recs in loaded.items():
         for rec in recs:
             rid = rec.get("rec_id", "")
             if rid in progress or rec.get("scenario"):
+                continue
+            if args.only_method and rec.get("extraction_method") != args.only_method:
                 continue
             pending.append((f, rec))
     if args.limit:
@@ -166,10 +174,10 @@ def main() -> None:
                     rec["evidence_level_original"] = hit.get("evidence_level_original")
                     changed += 1
             if changed:
-                _save(os.path.join(REC_DIR, f), recs)
+                _save(os.path.join(args.rec_dir, f), recs)
                 print(f"  写回 {f}: {changed} 条")
 
-    with open(PROGRESS, "w", encoding="utf-8") as fh:
+    with open(args.progress, "w", encoding="utf-8") as fh:
         json.dump(progress, fh, ensure_ascii=False, indent=1)
 
     print(f"\n完成：标注 {filled} 条，累计进度 {len(progress)} 条；"

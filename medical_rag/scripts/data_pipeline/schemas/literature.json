@@ -1,0 +1,29 @@
+{
+  "type": "literature",
+  "dir": "literature",
+  "id_field": "doc_id",
+  "id_pattern": "^DOC-[A-Z]+-PUB-\\d{4,5}$",
+  "g6_required": false,
+  "g6_note": "文献层豁免 G6 五要素：第三批语料不含 raw 层，溯源以 pmid + source_url 回查 PubMed 作为等效锚点（详见 source_url）",
+  "required": ["doc_id", "pmid", "title", "abstract", "cancer_type", "source_name", "source_url"],
+  "nullable_required": ["source_url"],
+  "properties": {
+    "doc_id": {"type": "string"},
+    "pmid": {"type": "string"},
+    "title": {"type": "string"},
+    "abstract": {"type": "string"},
+    "cancer_type": {"type": "string", "enum": ["lung", "breast", "colorectal", "gastric", "thyroid", "liver"]},
+    "lang": {"type": "string", "enum": ["en", "zh"]},
+    "origin": {"type": "string"},
+    "doc_hash": {"type": "string"},
+    "source_name": {"type": "string"},
+    "source_version": {"type": "string", "nullable": true},
+    "source_section": {"type": "string", "nullable": true},
+    "source_file": {"type": "string", "nullable": true},
+    "source_url": {"type": "string", "nullable": true},
+    "updated_at": {"type": "string", "nullable": true},
+    "review_status": {"type": "string", "enum": ["draft", "reviewed", "approved"], "nullable": true}
+  },
+  "g6_fields": [],
+  "ref_checks": []
+}

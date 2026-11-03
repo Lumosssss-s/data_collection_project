@@ -1,0 +1,274 @@
+[
+  {
+    "term": "乙状结肠癌",
+    "category": "disease",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "大肠癌",
+    "category": "disease",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "直肠癌",
+    "category": "disease",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "结肠癌",
+    "category": "disease",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "肛管癌",
+    "category": "disease",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "老年人肺癌",
+    "category": "disease",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "肺癌",
+    "category": "disease",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "非小细胞肺癌",
+    "category": "disease",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "低热",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "便秘",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "便血",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "便血且血与粪便混合",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "水肿",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "消化不良",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "消瘦",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "粪便脓血",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "腹泻",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "腹痛",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "腹部肿块",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "贫血",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "阴道内出现粪质和血性分泌",
+    "category": "symptom",
+    "cancer_type": "colorectal",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "发热",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "咯血",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "咳嗽",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "咳痰",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "啰音",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "恶心与呕吐",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "淋巴结肿大",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "痰有恶臭味",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "肌性肌无力",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "肩痛",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "肩背痛",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "肺内空洞",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  },
+  {
+    "term": "高钙血症",
+    "category": "symptom",
+    "cancer_type": "lung",
+    "synonyms": [],
+    "source": "kgdrug(2018, gStore)",
+    "review_status": "draft"
+  }
+]

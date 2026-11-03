@@ -19,6 +19,7 @@
 from __future__ import annotations
 
 import argparse
+import datetime
 import hashlib
 import json
 import os
@@ -30,7 +31,10 @@ import xml.etree.ElementTree as ET
 from typing import Dict, List, Optional
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CATALOG = r"e:/兴智杯/第四批/data/clean/drug_labels/drug_catalog.json"
+# CATALOG 默认指向本项目；可用环境变量 DRUG_CATALOG 或 --catalog 覆盖（原为外部项目硬编码路径）
+CATALOG = os.environ.get(
+    "DRUG_CATALOG",
+    os.path.join(BASE_DIR, "data", "clean", "drug_labels", "drug_catalog.json"))
 RAW_DIR = os.path.join(BASE_DIR, "data", "raw", "drug_labels")
 CLEAN_DIR = os.path.join(BASE_DIR, "data", "clean", "drug_labels")
 UA = {"User-Agent": "medical-rag-research/1.0 (academic use)"}
@@ -51,7 +55,25 @@ ATC = {
     "CETUXIMAB": "L01FE01", "FLUOROURACIL": "L01BC02", "IRINOTECAN": "L01XX19",
     "OXALIPLATIN": "L01XA03", "PANITUMUMAB": "L01FE02", "REGORAFENIB": "L01EX05",
     "CAPECITABINE": "L01BC06",
+    # 第二批（乳腺/胃）：ATC 经 WHO ATC/DDD Index 在线核验（2026-11-02，HTTP 200）
+    "TRASTUZUMAB": "L01FD01", "PERTUZUMAB": "L01FD02",
+    "PALBOCICLIB": "L01EF01", "RIBOCICLIB": "L01EF02", "ABEMACICLIB": "L01EF03",
+    "TAMOXIFEN": "L02BA01", "FULVESTRANT": "L02BA03",
+    "ANASTROZOLE": "L02BG03", "LETROZOLE": "L02BG04", "EXEMESTANE": "L02BG06",
+    "TISLELIZUMAB": "L01FF09", "TORIPALIMAB": "L01FF13",
 }
+
+# 原研品牌偏好（质量优先：原研标签通常结构完整、章节齐全；命中则优先于 ANDA 仿制药标签）
+BRAND_HINTS = {
+    "TRASTUZUMAB": "HERCEPTIN", "PERTUZUMAB": "PERJETA", "TAMOXIFEN": "TAMOXIFEN",
+    "ANASTROZOLE": "ARIMIDEX", "LETROZOLE": "FEMARA", "EXEMESTANE": "AROMASIN",
+    "PALBOCICLIB": "IBRANCE", "RIBOCICLIB": "KISQALI", "ABEMACICLIB": "VERZENIO",
+    "FULVESTRANT": "FASLODEX", "TISLELIZUMAB": "TEVIMBRA", "TORIPALIMAB": "LOQTORZI",
+}
+
+# NLM 版权页（2026-11-02 HTTP 200，DC.Rights=Public Domain）
+LICENSE = "Public Domain (NLM)"
+LICENSE_EVIDENCE = "https://www.nlm.nih.gov/copyright.html"
 
 # 章节 LOINC 码
 SEC = {"indications": "34067-9", "dosage": "34068-7", "contraindications": "34070-3",
@@ -122,6 +144,11 @@ def _search_spls(generic: str, limit: int = 6) -> List[Dict]:
         print(f"    检索失败: {type(e).__name__} {str(e)[:80]}")
         return []
     items = data.get("data", [])
+    hint = BRAND_HINTS.get(generic.upper())
+    if hint:
+        branded = [i for i in items if hint in (i.get("title") or "").upper()]
+        if branded:
+            return branded[:limit]
     matched = [i for i in items if (i.get("title") or "").upper().startswith(generic.upper())]
     return (matched or items)[:limit]
 
@@ -148,7 +175,8 @@ def _download_xml(setid: str) -> Optional[bytes]:
 
 
 def build_record(generic: str, cancer: str, drug_id: str, setid: str, xml_bytes: bytes,
-                 published: str) -> Dict:
+                 published: str, cancer_types: Optional[List[str]] = None,
+                 indication_note: Optional[str] = None) -> Dict:
     root = ET.fromstring(xml_bytes)
     ind = _section_paragraphs(root, SEC["indications"], title_kw="INDICATIONS")
     dose = _section_paragraphs(root, SEC["dosage"], title_kw="DOSAGE")
@@ -170,7 +198,9 @@ def build_record(generic: str, cancer: str, drug_id: str, setid: str, xml_bytes:
 
     iso = _iso_date(published)
     year = (iso or "2024")[:4]
+    today = str(datetime.date.today())
     title = f"{generic} 说明书（FDA DailyMed）"
+    ctypes = cancer_types or [cancer]
     return {
         "drug_id": drug_id,
         "generic_name": generic,
@@ -180,11 +210,15 @@ def build_record(generic: str, cancer: str, drug_id: str, setid: str, xml_bytes:
         "dosage": {"standard": standard, "adjustment": adjustment},
         "contraindications": contra,
         "adverse_reactions": adv_items,
-        "cancer_type": cancer,
+        "cancer_types": ctypes,
+        "cancer_type": ctypes[0],
         "doc_type": "drug_label",
         "issuer": "FDA / DailyMed",
         "publish_date": iso,
+        "license": LICENSE,
+        "license_evidence": LICENSE_EVIDENCE,
         "license_note": "FDA DailyMed public label（公有领域，可引用）",
+        "fetched_at": today,
         "file_path": f"raw/drug_labels/{drug_id}.xml",
         "doc_hash": hashlib.sha256(xml_bytes).hexdigest(),
         "review_status": "draft",
@@ -197,8 +231,9 @@ def build_record(generic: str, cancer: str, drug_id: str, setid: str, xml_bytes:
         "source_version": year,
         "source_section": "全文",
         "source_file": f"{drug_id}.xml",
-        "updated_at": "2026-10-26",
+        "updated_at": today,
         "interactions": inter[:30] or None,
+        "indication_note": indication_note,
     }
 
 
@@ -247,6 +282,18 @@ def main() -> None:
     plan: List[Dict] = []
     seen = set(EXISTING)
     for item in catalog:
+        # 显式指定 drug_id + cancer_types 的条目直接进入计划（新结构：一药多癌种单记录）
+        if item.get("drug_id") and item.get("cancer_types"):
+            generic = (item.get("generic_name_en") or item.get("generic_name") or "").strip().upper()
+            if not generic:
+                continue
+            if generic not in ATC:
+                print(f"  [跳过] {generic} 缺 ATC 编码")
+                continue
+            seen.add(generic)
+            plan.append({"generic": generic, "cancer": item["cancer_types"][0],
+                         "cancer_types": item["cancer_types"], "drug_id": item["drug_id"]})
+            continue
         cancers = item.get("cancer_type") or []
         if not (set(cancers) & set(TARGET_CANCERS)):
             continue
@@ -266,6 +313,8 @@ def main() -> None:
     # 肺侧已存在 DRUG-LUNG-FDA-001~005，新记录从 006 起编号，避免主键冲突
     counters = {"lung": 5, "colorectal": 0}
     for item in plan:
+        if item.get("drug_id"):
+            continue
         counters[item["cancer"]] += 1
         item["drug_id"] = f"DRUG-{item['cancer'].upper()}-FDA-{counters[item['cancer']]:03d}"
 
@@ -294,7 +343,8 @@ def main() -> None:
                 continue
             try:
                 trial = build_record(p["generic"], p["cancer"], p["drug_id"], cand["setid"],
-                                     xml_bytes, cand.get("published_date", "") or "")
+                                     xml_bytes, cand.get("published_date", "") or "",
+                                     cancer_types=p.get("cancer_types"))
             except ET.ParseError as e:
                 last_reason = f"XML 解析失败 {e}"
                 continue

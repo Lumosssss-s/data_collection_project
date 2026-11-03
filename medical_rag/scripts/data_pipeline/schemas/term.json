@@ -1,0 +1,23 @@
+{
+  "type": "term",
+  "dir": "terminology",
+  "id_field": "term_id",
+  "id_pattern": "^TERM-[A-Z]+-\\d{4}$",
+  "g6_required": false,
+  "required": ["term_id", "canonical", "category", "mapping_status"],
+  "properties": {
+    "term_id": {"type": "string"},
+    "canonical": {"type": "string"},
+    "category": {"type": "string", "enum": ["disease", "drug", "examination", "symptom", "gene", "staging"]},
+    "synonyms": {"type": "array", "items": {"type": "string"}, "nullable": true},
+    "icd10": {"type": "string", "nullable": true},
+    "icd_o3": {"type": "string", "pattern": "^M\\d{4}/\\d$", "nullable": true},
+    "atc": {"type": "string", "nullable": true},
+    "pinyin": {"type": "string", "nullable": true},
+    "en_name": {"type": "string", "nullable": true},
+    "mapping_status": {"type": "string", "enum": ["confirmed", "pending"]},
+    "review_status": {"type": "string", "enum": ["draft", "reviewed", "approved"], "nullable": true}
+  },
+  "g6_fields": [],
+  "g6_date_fields": []
+}
