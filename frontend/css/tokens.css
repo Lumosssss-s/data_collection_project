@@ -1,0 +1,149 @@
+/* ==========================================================================
+   tokens.css —— 设计令牌（L2 配色：石青主色 + 青绿强调）
+   必须在本目录下 style.css 之前加载，否则 --color-* 会全部失效。
+   强调色规则：#0ABAB5 仅用于图标底衬、选中态、渐变端点，
+   不得用于文字或白字底色，也不得作为大面积背景（≤5% 屏幕面积）。
+   ========================================================================== */
+:root {
+    /* ── 品牌色：石青主色（L2）──
+       强调色规则：#0ABAB5 只允许用于图标底衬、选中态、渐变端点，
+       不得用于文字或白字底色，也不得作为大面积背景（≤5% 屏幕面积）。 */
+    --brand-50:  #E1E8EA;   /* 石青最浅底（下沉半档，与页面底亮度差 15.42%） */
+    --brand-100: #C9D7DB;   /* 石青次级浅底 */
+    --brand-300: #7D9AA2;   /* 石青中间档（禁用作文字） */
+    --brand-600: #0ABAB5;   /* 强调色（青绿）：仅图标底衬/选中态/渐变端点，≤5% 面积，禁文字 */
+    --brand-900: #2F4650;   /* 石青深档：白底 9.94:1 */
+
+    /* ── 品牌派生半透明（石青 rgba，避免出现旧靛蓝/青绿光晕）── */
+    --brand-tint-05: rgba(63, 90, 99, 0.05);
+    --brand-tint-07: rgba(63, 90, 99, 0.07);
+    --brand-tint-12: rgba(63, 90, 99, 0.12);
+    --brand-tint-15: rgba(63, 90, 99, 0.15);
+    --brand-tint-30: rgba(63, 90, 99, 0.30);
+
+    /* ── 品牌语义别名（石青体系 · L2）── */
+    --color-primary:       #3F5A63;  /* 主按钮底，白字 7.36:1 */
+    --color-primary-hover: #2F4650;  /* 悬停/按下，白字 9.94:1 */
+    --color-primary-dark:  #2F4650;
+    --color-primary-text:  #3F5A63;  /* 白底 7.36:1 */
+    --color-primary-soft:  #E1E8EA;  /* 深档压其上 8.01:1；与页面底亮度差 15.42% */
+    --color-on-primary:    #FFFFFF;
+    --color-secondary:     #2F4650;
+    --color-card-bg:       #FFFFFF;  /* 兼容 js 侧偶发引用（原先未定义） */
+
+    /* ── 中性色阶 ── */
+    --color-bg:             #F6F9F9;
+    --color-surface:        #FFFFFF;
+    --color-surface-alt:    #FAFCFD;  /* 斑马纹行底 */
+    --color-text:           #0F1B24;  /* 17.46:1 */
+    --color-text-secondary: #44555F;  /* 7.75:1 */
+    --color-text-muted:     #5F7079;  /* 5.15:1（原 #7C8B95 仅 3.51:1） */
+    --color-border:         #DDE6E8;
+    --color-border-deep:    #C3D0D4;
+
+    /* ── 通用语义色 ── */
+    --color-success:    #15803D;
+    --color-success-bg: #F0F9F2;
+    --color-error:      #B91C1C;
+    --color-error-bg:   #FDF3F3;
+    --color-warning:    #B45309;
+    --color-warning-bg: #FDF8F0;
+    --color-info:       #1E5E7A;
+    --color-info-bg:    #F1F6F9;
+
+    /* ── 证据等级（A 改回深绿：品牌已占靛蓝，A 不能再是靛蓝）──
+       双编码强制规则：证据 C（#B45309）与下方 risk-mid、state-warn 共用同一色值，
+       属有意为之（可用色相数量有限），三者必须依赖「字母徽章 + 文字标签」区分；
+       任何新增界面不得只用颜色表达证据 C / 风险中 / 状态警示。 */
+    --color-evidence-a:    #0F7B4F;  /* 4.72:1 on #E8F5EE */
+    --color-evidence-a-bg: #E8F5EE;
+    --color-evidence-b:    #04514E;  /* 8.57:1 on #E9FBFA */
+    --color-evidence-b-bg: #E9FBFA;
+    --color-evidence-c:    #B45309;  /* 4.58:1 */
+    --color-evidence-c-bg: #FDF3E7;
+    --color-evidence-d:    #5B6B76;  /* 4.99:1 */
+    --color-evidence-d-bg: #F1F4F6;
+
+    /* ── 风险分层（low 改中性石板蓝）──
+       双编码强制规则：证据 D（#5B6B76）、risk-low（#475569）、state-normal（#334155）
+       同属石板蓝族，仅靠明度区分不足以无障碍辨识，必须同时给出文字标签/符号；
+       任何新增界面不得只用颜色表达「未分级 / 常规 / 正常」三者。 */
+    --color-risk-high:    #B3261E;  /* 5.72:1 */
+    --color-risk-high-bg: #FDECEA;
+    --color-risk-mid:     #B45309;  /* 4.58:1 */
+    --color-risk-mid-bg:  #FDF3E7;
+    --color-risk-low:     #475569;  /* 6.92:1 */
+    --color-risk-low-bg:  #F1F5F9;
+
+    /* ── 状态三档（正常不用绿/不用蓝：与品牌青绿色相仅差 25°，区分度不足）── */
+    --state-normal:    #334155;  /* 9.45:1 on #F1F5F9 */
+    --state-normal-bg: #F1F5F9;
+    --state-warn:      #B45309;
+    --state-warn-bg:   #FDF3E7;
+    --state-risk:      #B3261E;
+    --state-risk-bg:   #FDECEA;
+
+    /* ── 字体 ── */
+    --font-serif: 'Noto Serif SC', 'Source Han Serif SC', Georgia, 'Songti SC', SimSun, serif;
+    --font-sans: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    --font-mono: Consolas, 'SFMono-Regular', monospace;
+
+    /* ── 字号阶（7 档）── */
+    --text-xs:   0.75rem;   /* 12px */
+    --text-sm:   0.8125rem; /* 13px */
+    --text-base: 0.875rem;  /* 14px */
+    --text-md:   1rem;      /* 16px */
+    --text-lg:   1.125rem;  /* 18px */
+    --text-xl:   1.5rem;    /* 24px */
+    --text-2xl:  1.75rem;   /* 28px */
+    --leading-tight: 1.35;
+    --leading-base: 1.5;
+    --leading-relaxed: 1.7;
+
+    /* ── 间距阶（8pt 栅格）── */
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 0.75rem;  /* 12px */
+    --space-4: 1rem;     /* 16px */
+    --space-5: 1.5rem;   /* 24px */
+    --space-6: 2rem;     /* 32px */
+    --space-card: 1.25rem; /* 20px，仅卡片内边距（规范允许 16–20） */
+    --space-list: 0.625rem; /* 10px，仅列表条目间距（规范 S21） */
+
+    /* ── 圆角阶 ── */
+    --radius-xs: 3px;
+    --radius-sm: 4px;   /* 徽章 */
+    --radius-md: 8px;   /* 卡片与控件统一 */
+    --radius-pill: 9999px;
+
+    /* ── 阴影阶（统一 ink 底色 15,27,36；仅悬浮/浮层加重）── */
+    --shadow-card: 0 1px 2px rgba(15, 27, 36, 0.04), 0 1px 3px rgba(15, 27, 36, 0.06);
+    --shadow-raised: 0 4px 12px rgba(15, 27, 36, 0.08);
+    --shadow-focus: 0 0 0 2px rgba(63, 90, 99, 0.28);
+    --shadow-primary: 0 1px 2px rgba(63, 90, 99, 0.18);
+    --shadow-drawer: 2px 0 12px rgba(15, 27, 36, 0.12);
+
+    /* ── 骨架屏 ── */
+    --skeleton-start: #F0F0F0;
+    --skeleton-mid:   #E0E0E0;
+    --skeleton-soft-start: #F5F5F5;
+    --skeleton-soft-mid:   #EEEEEE;
+
+    /* ── 品牌渐变（石青为主，青绿仅在末 9% 作端点点缀）── */
+    --gradient-brand: linear-gradient(135deg, #2F4650 0%, #3F5A63 91%, #0ABAB5 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(63, 90, 99, 0.10) 0%, rgba(63, 90, 99, 0) 100%);
+
+    /* ── 动效 ── */
+    --dur-fast: 150ms;
+    --dur-base: 250ms;
+    --ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
+
+    /* ── 尺寸 ── */
+    --content-max: 1200px;  /* 主内容最大宽度：1920 屏下可用宽 1120px（1200-左右各40） */
+    --gap-section: 32px;    /* 页面段间距：页面标题区→主功能区间 */
+    --gap-block: 24px;      /* 区块间距：卡片组/筛选区/结果区之间 */
+    --gap-item: 16px;       /* 元素间距：卡内分组、字段之间、列表条目之间 */
+    --sidebar-width: 240px;
+    --rail-width: 232px;
+    --control-h: 52px;
+}

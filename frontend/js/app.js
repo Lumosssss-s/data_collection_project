@@ -7,6 +7,9 @@
 const API_BASE = '/api/v1';
 
 // ===== API 请求封装 =====
+// 流式接口默认超时（毫秒）。可单次调用用 options.timeoutMs 覆盖（0=不超时）。
+const STREAM_DEFAULT_TIMEOUT_MS = 90000;
+
 const api = {
     async get(path, params = {}) {
         const url = new URL(API_BASE + path, window.location.origin);
@@ -28,15 +31,37 @@ const api = {
         return resp.json();
     },
 
-    async streamPost(path, body, onChunk, onDoneOrError, onError) {
+    // options: { signal, timeoutMs }。调用方 signal 触发 abort 时静默收尾（不调 onErr），
+    // 由调用方自己处理界面状态；超时中止才走 onErr。
+    async streamPost(path, body, onChunk, onDoneOrError, onError, options) {
         const onDone = onError ? onDoneOrError : null;
         const onErr = onError || onDoneOrError;
+        const opts = options || {};
+        const timeoutMs = (opts.timeoutMs === undefined) ? STREAM_DEFAULT_TIMEOUT_MS : opts.timeoutMs;
+
+        const controller = new AbortController();
+        let abortedByCaller = false;
+        let timedOut = false;
+        if (opts.signal) {
+            if (opts.signal.aborted) { abortedByCaller = true; controller.abort(); }
+            else {
+                opts.signal.addEventListener('abort', function () {
+                    abortedByCaller = true;
+                    controller.abort();
+                }, { once: true });
+            }
+        }
+        let timeoutId = null;
+        if (timeoutMs > 0) {
+            timeoutId = setTimeout(function () { timedOut = true; controller.abort(); }, timeoutMs);
+        }
 
         try {
             const resp = await fetch(API_BASE + path, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(body)
+                body: JSON.stringify(body),
+                signal: controller.signal
             });
             if (!resp.ok) throw new Error(`API错误: ${resp.status}`);
 
@@ -63,7 +88,11 @@ const api = {
 
             if (onDone) onDone();
         } catch (e) {
-            if (onErr) onErr(e.message);
+            if (abortedByCaller) { /* 调用方主动取消：静默，不写错误 */ }
+            else if (timedOut) { if (onErr) onErr('请求超时（' + Math.round(timeoutMs / 1000) + 's），请重试'); }
+            else if (onErr) onErr(e.message);
+        } finally {
+            if (timeoutId) clearTimeout(timeoutId);
         }
     }
 };
@@ -85,26 +114,26 @@ const PAGE_GROUPS = {
     patient: {
         label: '患者服务',
         items: [
-            { page: 'patient', label: '服务首页', href: '#/patient' },
-            { page: 'preconsult', label: '智能预问诊', href: '#/preconsult' },
-            { page: 'report', label: '报告解析', href: '#/report' },
-            { page: 'followup', label: '智能随访', href: '#/followup' }
+            { page: 'patient', label: '患者概览', href: '#/patient' },
+            { page: 'followup', label: '随访', href: '#/followup' },
+            { page: 'report', label: '看报告', href: '#/report' },
+            { page: 'archive', label: '疾病档案', href: '#/archive' }
         ]
     },
     diseases: {
-        label: '疾病知识',
+        label: '疾病知识库',
         items: [
-            { page: 'diseases', label: '疾病知识库', href: '#/diseases' },
-            { page: 'kg', label: '肿瘤图谱', href: '#/kg' }
+            { page: 'diseases', label: '疾病库', href: '#/diseases' },
+            { page: 'guides', label: '指南', href: '#/guides' },
+            { page: 'drugs', label: '药品库', href: '#/drugs' },
+            { page: 'kg', label: '图谱', href: '#/kg' }
         ]
     },
     search: {
-        label: '循证查询',
+        label: '循证检索',
         items: [
-            { page: 'search', label: '循证检索', href: '#/search' },
-            { page: 'qa', label: '循证问答', href: '#/qa' },
-            { page: 'topic', label: '跨癌种专题', href: '#/topic' },
-            { page: 'compare', label: '癌种对比', href: '#/compare' }
+            { page: 'search', label: '证据检索', href: '#/search' },
+            { page: 'compare', label: '癌种对照', href: '#/compare' }
         ]
     }
 };
@@ -118,7 +147,10 @@ Object.keys(PAGE_GROUPS).forEach(function (groupKey) {
 });
 
 // 详情子页 → 所属一级分组
-const SUB_PAGE_GROUP = { guideline: 'search', disease: 'diseases' };
+// disease：从疾病库卡片进入详情 → 高亮「疾病知识库」
+// archive：疾病档案独立页（复用疾病详情视图）→ 高亮「患者服务」
+// guideline：归入循证检索
+const SUB_PAGE_GROUP = { guideline: 'search', disease: 'diseases', archive: 'patient' };
 
 // ===== 侧边栏激活状态 =====
 function updateSidebarActive(page) {
@@ -303,6 +335,12 @@ function renderCurrentPage() {
     body.className = 'page-body';
     container.appendChild(body);
 
+    if (page === 'guides') {
+        // 指南：复用检索页文档网格，不新开页面
+        if (typeof renderGuidesPage === 'function') { renderGuidesPage(body); }
+        else { body.innerHTML = '<div class="alert alert-warning">页面未找到</div>'; }
+        return;
+    }
     if (pages[page]) {
         pages[page](body);
     } else {

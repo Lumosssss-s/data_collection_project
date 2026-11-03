@@ -1,0 +1,161 @@
+/* ==========================================================================
+   palette.css —— 8 角色配色体系（三套候选 S1 / S2 / S3）
+   加载顺序：tokens.css → palette.css → style.css → design.css
+   开关：URL 加 ?palette=s1|s2|s3（缺省 s1），由 index.html 内联脚本写入
+        <html data-palette="s1|s2|s3">，本文件按该属性切换整块令牌。
+   回退：删掉本文件 + index.html 里 ?palette 解析脚本 → 自动回落 tokens.css 的
+        L2 石青基线（#3F5A63）。只改颜色，不动任何布局/字号/结构。
+
+   角色分配（每个角色只出现在规定位置，不做装饰性撒色）：
+     1 主色            —— 按钮、链接、选中态、侧栏强调条、服务入口左侧 6px 条
+     2 癌种分类色 ×3    —— 仅结果卡/文档卡上的癌种 chip（肺 / 结直肠 / 乳腺；其余癌种用中性 chip）
+     3 数据类型色 ×4    —— 仅"指南 / 推荐 / 药品 / 文献"标签与索引比例条（同色相 14% 饱和度明度阶）
+     4 语义色           —— 证据等级 / 风险分层 / 状态，沿用 tokens.css，本文件不改
+   ========================================================================== */
+
+/* ───────────── S1 临床多彩 ───────────── */
+html[data-palette="s1"] {
+    --brand-50:  #F1F5F7;
+    --brand-100: #DAE6EA;
+    --brand-300: #97B7C3;
+    --brand-600: #64ACC4;   /* 强调端点：仅图标底衬/渐变端点，禁文字 */
+    --brand-900: #0E3C4C;
+
+    --brand-tint-05: rgba(23, 96, 122, 0.05);
+    --brand-tint-07: rgba(23, 96, 122, 0.07);
+    --brand-tint-12: rgba(23, 96, 122, 0.12);
+    --brand-tint-15: rgba(23, 96, 122, 0.15);
+    --brand-tint-30: rgba(23, 96, 122, 0.30);
+
+    --color-primary:       #17607A;  /* 白字 7.02:1 */
+    --color-primary-hover: #0E3C4C;  /* 白字 11.87:1 */
+    --color-primary-dark:  #0E3C4C;
+    --color-primary-text:  #17607A;  /* 白底 7.02:1 */
+    --color-primary-soft:  #E5EEF0;  /* 深档压其上 10.07:1 */
+    --color-secondary:     #0E3C4C;
+
+    --shadow-focus:   0 0 0 2px rgba(23, 96, 122, 0.28);
+    --shadow-primary: 0 1px 2px rgba(23, 96, 122, 0.18);
+    --gradient-brand: linear-gradient(135deg, #0E3C4C 0%, #17607A 100%);
+    --gradient-hero:  linear-gradient(180deg, rgba(23, 96, 122, 0.10) 0%, rgba(23, 96, 122, 0) 100%);
+
+    /* 角色 2：癌种分类色（chip 文字 = 降档色，chip 底 = 10% 浅底） */
+    --cancer-lung:            #2F6F8F;
+    --cancer-lung-bg:         #EAF1F4;
+    --cancer-lung-text:       #2F6F8F;  /* on 浅底 4.85:1 */
+    --cancer-colorectal:      #2E7D6B;
+    --cancer-colorectal-bg:   #EAF2F0;
+    --cancer-colorectal-text: #2C7867;  /* 降一档：on 浅底 4.63:1 */
+    --cancer-breast:          #A0456B;
+    --cancer-breast-bg:       #F6ECF0;
+    --cancer-breast-text:     #A0456B;  /* on 浅底 5.11:1 */
+    --cancer-other:           #44555F;
+    --cancer-other-bg:        #F2F5F6;
+    --cancer-other-text:      #44555F;  /* 胃癌/甲状腺癌等未分配色 */
+
+    /* 角色 3：数据类型色（同色相 14% 饱和度的 4 档明度阶） */
+    --dtype-guideline:      #2C373A;  --dtype-guideline-bg: #EEEFEF;  /* 10.63:1 */
+    --dtype-rec:            #3B4A4E;  --dtype-rec-bg:      #EFF1F1;  /* 8.14:1 */
+    --dtype-drug:           #4B5D63;  --dtype-drug-bg:     #F1F2F3;  /* 6.15:1 */
+    --dtype-literature:     #5A7077;  --dtype-literature-bg:#F2F4F4; /* 4.73:1 */
+    --dtype-term:           #5A7077;  --dtype-term-bg:     #F2F4F4;  /* 术语：斜纹填充，非第四色 */
+}
+
+/* ───────────── S2 蓝青暖点 ───────────── */
+html[data-palette="s2"] {
+    --brand-50:  #F1F6F7;
+    --brand-100: #DBE7EA;
+    --brand-300: #98BCC3;
+    --brand-600: #64B4C4;
+    --brand-900: #11424C;
+
+    --brand-tint-05: rgba(27, 107, 122, 0.05);
+    --brand-tint-07: rgba(27, 107, 122, 0.07);
+    --brand-tint-12: rgba(27, 107, 122, 0.12);
+    --brand-tint-15: rgba(27, 107, 122, 0.15);
+    --brand-tint-30: rgba(27, 107, 122, 0.30);
+
+    --color-primary:       #1B6B7A;  /* 白字 6.12:1 */
+    --color-primary-hover: #11424C;  /* 白字 11.01:1 */
+    --color-primary-dark:  #11424C;
+    --color-primary-text:  #1B6B7A;  /* 白底 6.12:1 */
+    --color-primary-soft:  #E6EFF0;  /* 深档压其上 9.42:1 */
+    --color-secondary:     #11424C;
+
+    --shadow-focus:   0 0 0 2px rgba(27, 107, 122, 0.28);
+    --shadow-primary: 0 1px 2px rgba(27, 107, 122, 0.18);
+    --gradient-brand: linear-gradient(135deg, #11424C 0%, #1B6B7A 100%);
+    --gradient-hero:  linear-gradient(180deg, rgba(27, 107, 122, 0.10) 0%, rgba(27, 107, 122, 0) 100%);
+
+    --cancer-lung:            #30618C;
+    --cancer-lung-bg:         #EAEFF4;
+    --cancer-lung-text:       #30618C;  /* 5.65:1 */
+    --cancer-colorectal:      #0E8C82;
+    --cancer-colorectal-bg:   #E7F4F3;
+    --cancer-colorectal-text: #0C7A71;  /* 降一档：4.61:1 */
+    --cancer-breast:          #B35A3E;
+    --cancer-breast-bg:       #F7EFEC;
+    --cancer-breast-text:     #A7543A;  /* 降一档：4.66:1 */
+    --cancer-other:           #44555F;
+    --cancer-other-bg:        #F2F5F6;
+    --cancer-other-text:      #44555F;
+
+    --dtype-guideline:      #2C383A;  --dtype-guideline-bg: #EEEFEF;  /* 10.51:1 */
+    --dtype-rec:            #3B4B4E;  --dtype-rec-bg:      #EFF1F1;  /* 8.04:1 */
+    --dtype-drug:           #4B5F63;  --dtype-drug-bg:     #F1F2F3;  /* 6.01:1 */
+    --dtype-literature:     #5A7277;  --dtype-literature-bg:#F2F4F4; /* 4.63:1 */
+    --dtype-term:           #5A7277;  --dtype-term-bg:     #F2F4F4;
+}
+
+/* ───────────── S3 科技医疗 ───────────── */
+html[data-palette="s3"] {
+    --brand-50:  #F2F4F8;
+    --brand-100: #DDE2EC;
+    --brand-300: #9FAECB;
+    --brand-600: #6481C4;
+    --brand-900: #1A2F56;
+
+    --brand-tint-05: rgba(42, 76, 139, 0.05);
+    --brand-tint-07: rgba(42, 76, 139, 0.07);
+    --brand-tint-12: rgba(42, 76, 139, 0.12);
+    --brand-tint-15: rgba(42, 76, 139, 0.15);
+    --brand-tint-30: rgba(42, 76, 139, 0.30);
+
+    --color-primary:       #2A4C8B;  /* 白字 8.38:1 */
+    --color-primary-hover: #1A2F56;  /* 白字 13.25:1 */
+    --color-primary-dark:  #1A2F56;
+    --color-primary-text:  #2A4C8B;  /* 白底 8.38:1 */
+    --color-primary-soft:  #E8EBF2;  /* 深档压其上 11.10:1 */
+    --color-secondary:     #1A2F56;
+
+    --shadow-focus:   0 0 0 2px rgba(42, 76, 139, 0.28);
+    --shadow-primary: 0 1px 2px rgba(42, 76, 139, 0.18);
+    --gradient-brand: linear-gradient(135deg, #1A2F56 0%, #2A4C8B 100%);
+    --gradient-hero:  linear-gradient(180deg, rgba(42, 76, 139, 0.10) 0%, rgba(42, 76, 139, 0) 100%);
+
+    --cancer-lung:            #16707E;
+    --cancer-lung-bg:         #E8F1F2;
+    --cancer-lung-text:       #16707E;  /* 5.01:1 */
+    --cancer-colorectal:      #2F8F6E;
+    --cancer-colorectal-bg:   #EAF4F1;
+    --cancer-colorectal-text: #287A5E;  /* 降一档：4.64:1 */
+    --cancer-breast:          #8C4A8C;
+    --cancer-breast-bg:       #F4EDF4;
+    --cancer-breast-text:     #8C4A8C;  /* 5.26:1 */
+    --cancer-other:           #44555F;
+    --cancer-other-bg:        #F2F5F6;
+    --cancer-other-text:      #44555F;
+
+    --dtype-guideline:      #2C303A;  --dtype-guideline-bg: #EEEEEF;  /* 11.38:1 */
+    --dtype-rec:            #3B414E;  --dtype-rec-bg:      #EFF0F1;  /* 8.97:1 */
+    --dtype-drug:           #4B5263;  --dtype-drug-bg:     #F1F1F3;  /* 6.93:1 */
+    --dtype-literature:     #5A6377;  --dtype-literature-bg:#F2F3F4; /* 5.42:1 */
+    --dtype-term:           #5A6377;  --dtype-term-bg:     #F2F3F4;
+}
+
+/* 未指定 palette 时的兜底：等同 S1（避免有人直接打开 index.html 时角色令牌缺失） */
+html:not([data-palette]) {
+    --cancer-other: #44555F;
+    --cancer-other-bg: #F2F5F6;
+    --cancer-other-text: #44555F;
+}

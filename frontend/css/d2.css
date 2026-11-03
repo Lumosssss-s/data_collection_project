@@ -1,0 +1,426 @@
+/* ==========================================================================
+   d2.css —— 方向 D2「晨间病房」落地层
+   加载顺序：tokens.css → palette.css → surface.css → style.css → design.css → d2.css
+   作用：① 覆盖色彩/圆角/阴影令牌（暖灰绿底 + 深青主色 + 杏色点缀）
+        ② 重排侧栏、Tab、卡片、按钮等容器形态（大圆角 + 软投影）
+        ③ 提供「患者概览 / 我的病」两页的 D2 专属组件（.d2-*）
+   约束：不新增纯白大面积；语义色一律配文字/图形，不单靠颜色；点击区 ≥44px。
+   ========================================================================== */
+
+/* ── 1. 令牌覆盖（选择器与 palette.css 同级，靠加载顺序生效）── */
+html[data-palette="s1"],
+html[data-palette="s2"],
+html[data-palette="s3"],
+html:not([data-palette]) {
+    /* 底色：暖灰绿，替代原 #F6F9F9 冷白 */
+    --color-bg:             #EDF0E9;
+    --color-surface:        #F7F9F3;   /* 卡片底，非纯白 */
+    --color-surface-alt:    #E7ECE2;
+    --color-card-bg:        #F7F9F3;
+    --color-border:         #CFD8C9;
+    --color-border-deep:    #B4C1AC;
+
+    /* 文字：正文 12.87:1（对 #EDF0E9） */
+    --color-text:           #1F2A26;
+    --color-text-secondary: #4E5C54;
+    --color-text-muted:     #5A6654;   /* 对 #E7ECE2 5.05:1 / 对 #F7F9F3 5.72:1 */
+
+    /* 主色：深青 */
+    --color-primary:        #245C63;
+    --color-primary-hover:  #1C4A50;
+    --color-primary-dark:   #1C4A50;
+    --color-primary-text:   #245C63;
+    --color-primary-soft:   #DCE8E5;
+    --color-on-primary:     #F4F8F2;   /* 对 #245C63 7.02:1 */
+    --color-secondary:      #1C4A50;
+
+    /* 品牌阶梯：杏色只做图形/色条，不作文字 */
+    --brand-50:  #E8EDE4;
+    --brand-100: #D5DFCF;
+    --brand-300: #8FA394;
+    --brand-600: #C48B5A;
+    --brand-900: #1C4A50;
+
+    --brand-tint-05: rgba(36, 92, 99, 0.05);
+    --brand-tint-07: rgba(36, 92, 99, 0.07);
+    --brand-tint-12: rgba(36, 92, 99, 0.12);
+    --brand-tint-15: rgba(36, 92, 99, 0.15);
+    --brand-tint-30: rgba(36, 92, 99, 0.30);
+
+    /* 语义底色统一压成暖灰绿系，避免大面积近白 */
+    --color-success-bg: #DEEBE2;
+    --color-error-bg:   #F1E0DD;
+    --color-warning-bg: #EFE6D2;
+    --color-info-bg:    #E0E9F0;
+
+    /* 圆角与阴影 */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --shadow-card:   0 8px 24px -18px rgba(31, 42, 38, 0.55), 0 2px 6px -4px rgba(31, 42, 38, 0.18);
+    --shadow-raised: 0 12px 28px -16px rgba(31, 42, 38, 0.45), 0 3px 8px -4px rgba(31, 42, 38, 0.20);
+    --shadow-focus:  0 0 0 2px rgba(36, 92, 99, 0.32);
+    --shadow-primary: 0 2px 6px -2px rgba(36, 92, 99, 0.35);
+
+    --gradient-brand: linear-gradient(135deg, #1C4A50 0%, #245C63 100%);
+    --gradient-hero:  linear-gradient(180deg, rgba(36, 92, 99, 0.08) 0%, rgba(36, 92, 99, 0) 100%);
+
+    --sidebar-width: 232px;
+}
+
+/* ── 2. 页面底：双极淡径向过渡，打破大面积单色 ── */
+body {
+    background-color: var(--color-bg);
+    background-image:
+        radial-gradient(900px 420px at 12% -8%, #F4EFE4 0%, transparent 62%),
+        radial-gradient(760px 380px at 100% 0%, #DDE8E4 0%, transparent 58%);
+    background-attachment: fixed;
+}
+
+/* 顶部渐变带在 D2 下过艳，收掉，改为页面自身层次 */
+.main-content::before { display: none; }
+
+/* 侧栏分区标签与底部工具区（弱化） */
+.nav-group-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+    padding: 0.875rem 0.75rem 0.25rem;
+    user-select: none;
+}
+.nav-group-label:first-child { padding-top: 0; }
+.nav-tools { margin-top: 0.25rem; }
+.nav-tools a {
+    color: var(--color-text-muted) !important;
+    font-size: 0.8125rem;
+    min-height: 40px;
+    opacity: 0.85;
+}
+.nav-tools a.active { color: var(--color-primary) !important; opacity: 1; }
+
+/* 侧栏分区标签与底部工具区结束 */
+
+/* ── 3. 侧栏 ── */
+.sidebar { border-right: 0; box-shadow: 1px 0 0 var(--color-border); }
+.sidebar-brand h1 { font-size: 1.125rem; font-weight: 600; line-height: 1.35; letter-spacing: 0; }
+.sidebar-nav a { border-radius: var(--radius-sm); min-height: 44px; }
+.sidebar-nav a.active {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: none;
+}
+.sidebar-nav a.active svg { color: var(--color-on-primary); opacity: 0.9; }
+
+/* ── 4. 二级 Tab：胶囊 ── */
+.group-tab {
+    border-radius: 999px;
+    min-height: 44px;
+    padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
+}
+.group-tab.active {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-color: var(--color-primary);
+}
+
+/* ── 5. 标题与正文 ── */
+.page-title { font-size: 1.875rem; letter-spacing: -0.01em; line-height: 1.3; }
+.page-desc { color: var(--color-text-secondary); line-height: 1.75; }
+.section-title { font-size: 1.125rem; }
+
+/* ── 6. 容器形态 ── */
+.card {
+    border-color: var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+.card-title { font-size: 1rem; }
+.btn { min-height: 44px; border-radius: var(--radius-sm); }
+.btn-sm { min-height: 44px; }
+.input, .select, textarea.input { min-height: 44px; border-radius: var(--radius-sm); }
+.badge { border-radius: 999px; min-height: 24px; display: inline-flex; align-items: center; }
+
+.result-item { border-radius: var(--radius-md); }
+.result-item:hover { border-color: var(--color-primary); }
+
+.table-wrap table { border-radius: var(--radius-sm); }
+
+/* ── 7. 患者概览：主卡 + 阶段步进 + 待办 ── */
+.d2-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: var(--gap-block);
+}
+.d2-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 6px;
+    background: linear-gradient(180deg, var(--color-primary) 0%, #C48B5A 100%);
+}
+.d2-hero-inner { padding-left: 1rem; }
+
+/* 视角切换器（患者版/专业版）：桌面端 hero 右上角，窄屏下沉为标题下方一行。
+   高度 ≤28px；未选中弱化色、选中浅底+主色描边，避免实心大色块抢 hero 焦点。 */
+.d2-view-switch-wrap {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    text-align: right;
+    z-index: 2;
+}
+.d2-view-switch {
+    display: inline-flex;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+}
+.d2-view-switch button {
+    height: 22px;
+    padding: 0 0.625rem;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.d2-view-switch button:hover { color: var(--color-text); }
+.d2-view-switch button.is-on {
+    background: var(--color-primary-soft);
+    color: var(--color-primary-text);
+    font-weight: 600;
+    box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+.d2-view-note {
+    margin: 0.25rem 0 0;
+    font-size: 0.6875rem;
+    color: var(--color-text-muted);
+}
+@media (max-width: 767px) {
+    .d2-view-switch-wrap { position: static; text-align: left; margin: 0.625rem 0 0.25rem; }
+    .d2-view-note { text-align: left; }
+    /* 触控热区扩展到 ≥40px 高（视觉高度仍 28px，不违反桌面 28px 约束）：
+       伪元素外扩 9px 上下，button 的 bounding box 不变。 */
+    .d2-view-switch button { position: relative; }
+    .d2-view-switch button::after { content: ""; position: absolute; inset: -9px -6px; }
+}
+.d2-kicker {
+    margin: 0 0 0.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+}
+.d2-h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.75rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--color-text);
+}
+.d2-h1 em { font-style: normal; color: var(--color-primary); }
+.d2-sub { margin: 0; color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.7; }
+
+.d2-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; margin-top: 1rem; }
+.d2-step {
+    padding: 0.625rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-alt);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    text-align: center;
+}
+.d2-step.is-on { background: var(--color-primary); color: var(--color-on-primary); font-weight: 600; }
+
+.d2-task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+.d2-task + .d2-task { margin-top: 0.5rem; }
+.d2-task-main { min-width: 0; }
+.d2-task-title { font-size: 0.9375rem; font-weight: 600; color: var(--color-text); }
+.d2-task-meta { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; }
+
+/* 进度条（患者概览 / 我的病共用） */
+.meter { height: 8px; border-radius: 999px; background: var(--color-surface-alt); overflow: hidden; }
+.meter > i { display: block; height: 100%; background: var(--color-primary); border-radius: 999px; }
+
+/* 指标块 */
+.d2-metric {
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-sm);
+    padding: 0.875rem;
+}
+.d2-metric .v { font-size: 1.375rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.d2-metric .k { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; }
+
+/* 快捷入口：左侧 4px 色条，图标 + 文字双编码 */
+.d2-quick {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+.d2-quick-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.875rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    color: inherit;
+    text-decoration: none;
+    min-height: 44px;
+}
+.d2-quick-item:hover { border-color: var(--color-primary); }
+.d2-quick-item[data-tone="accent"] { border-left-color: #C48B5A; }
+.d2-quick-item[data-tone="info"] { border-left-color: var(--color-info); }
+.d2-quick-item[data-tone="warn"] { border-left-color: var(--color-warning); }
+.d2-quick-title { font-size: 0.9375rem; font-weight: 600; }
+.d2-quick-desc { font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.55; margin-top: 2px; }
+
+/* ── 8. 患者概览：两栏骨架 ── */
+.d2-today-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+.d2-today-grid > aside { display: flex; flex-direction: column; gap: 1rem; }
+.d2-today-grid > div > .card + .card { margin-top: 1rem; }
+
+/* 随访节点行：日期列固定宽，年份必现 */
+.d2-node {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.625rem 0;
+    border-bottom: 1px dashed var(--color-border);
+}
+.d2-node:last-child { border-bottom: 0; }
+.d2-node-date {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-muted);
+    padding-top: 2px;
+}
+.d2-node-main { min-width: 0; }
+.d2-node-title { font-size: 0.875rem; color: var(--color-text); }
+.d2-node-meta { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; }
+.d2-node.is-next .d2-node-title { font-weight: 600; }
+.d2-node-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 22px;
+    padding: 0 8px;
+    margin-left: 6px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    vertical-align: 2px;
+}
+
+/* ── 9. 我的病：档案头 + 分节 + 缺口 + 药品 ── */
+.d2-profile-meta { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: 0.75rem; }
+.d2-sec {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+.d2-sec:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+.d2-sec-head { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem; }
+.d2-sec-no { font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-primary-text); }
+.d2-sec-name { font-size: 0.9375rem; font-weight: 600; }
+/* 正文行宽上限 42em：0.875rem 字号下 ≈588px ≈ 42 个全角汉字，
+   落在中文舒适行宽 40–46 字区间（CLReq 长文建议每行不超过约 40–50 字）；
+   只约束文字段，卡片容器仍满宽，左缘与章节标题天然对齐。 */
+.d2-sec-text { font-size: 0.875rem; line-height: 1.8; color: var(--color-text-secondary); margin: 0; white-space: pre-wrap; max-width: 42em; }
+/* 移动端正文字号 ≥14px（root 14px，1rem=14px）；行高继承 1.8。
+   必须放在上方定义之后——同特异性下媒体查询块若写在前会被覆盖（2026-11-03 实测）。 */
+@media (max-width: 767px) {
+    .d2-sec-text { font-size: 1rem; }
+}
+
+.d2-drug {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.875rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid #C48B5A;
+    color: inherit;
+    text-decoration: none;
+}
+.d2-drug + .d2-drug { margin-top: 0.5rem; }
+.d2-drug-name { font-size: 0.9375rem; font-weight: 600; }
+.d2-drug-meta { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; }
+
+/* 数据来源标注 */
+.d2-src {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    border-left: 2px solid var(--color-border-deep);
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+.d2-src b { color: var(--color-text-secondary); font-weight: 600; }
+
+/* ── 8b. 疾病档案：单列文档流（删除「档案缺口」块后重排）──
+   旧 .d2-today-grid 双列在右列变矮后产生右下大片空白；改为单列文档流，
+   宽度与内容区满宽一致（hero/切换卡/视角行/正文卡左右边缘对齐）；
+   间距统一由 > * + * 控制，卡片自身不再带 margin-bottom；
+   长文行宽由 .d2-sec-text 的 max-width 约束，不靠缩窄卡片。 */
+.d2-archive { width: 100%; }
+.d2-archive > * + * { margin-top: 1rem; }
+.d2-archive > .d2-hero { margin-bottom: 0; }
+/* 药品卡内部双列，压矮卡片高度，避免单列过长的药品列表 */
+.d2-drug-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.d2-drug-list > .d2-drug { margin-top: 0; }
+.d2-drug-list > p { grid-column: 1 / -1; }
+@media (max-width: 768px) {
+    .d2-drug-list { grid-template-columns: 1fr; }
+}
+
+/* ── 9. 响应式 ── */
+@media (max-width: 768px) {
+    /* 窄屏：主列必须能收缩，表格与 Tab 条各自横向滚动，避免整页被撑宽 */
+    .main-content { min-width: 0; }
+    .page-body, .card, .d2-today-grid, .d2-today-grid > div, .d2-today-grid > aside { min-width: 0; }
+    .table-wrap { max-width: 100%; overflow-x: auto; }
+    .group-tabs { max-width: 100%; overflow-x: auto; }
+    .group-tab { flex: 0 0 auto; white-space: nowrap; }
+    .d2-node { grid-template-columns: 84px minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+    .d2-today-grid { grid-template-columns: 1fr; }
+    .d2-quick { grid-template-columns: 1fr; }
+    .d2-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+    .d2-hero { padding: 1.125rem; }
+    .d2-h1 { font-size: 1.375rem; }
+    .d2-hero-inner { padding-left: 0.75rem; }
+}

@@ -1,0 +1,92 @@
+/* ==========================================================================
+   design.css —— 与配色无关的结构设计（三套配色共用，不随 palette 变化）
+   1) 卡片两级阴影（--shadow-card 贴地 / --shadow-raised 悬浮）+ hover 上浮 1px
+   2) 癌种 chip（角色 2：一色一癌种，全站统一）
+   3) 数据类型标签（角色 3：弱着色墨阶，只用明度差）
+   注：索引比例条、区段编号的基础样式在 js/pages/patient.js 的 PT_CSS 内。
+   ========================================================================== */
+
+/* ── 1. 两级阴影 ── */
+.pt-row,
+.pt-card,
+.doc-card,
+.search-hero {
+    box-shadow: var(--shadow-card);
+}
+
+.pt-row,
+.pt-card,
+.doc-card {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.pt-row:hover,
+.pt-card:hover,
+.doc-card:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-raised);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pt-row,
+    .pt-card,
+    .doc-card { transition: none; }
+    .pt-row:hover,
+    .pt-card:hover,
+    .doc-card:hover { transform: none; }
+}
+
+/* ── 2. 癌种 chip（一色一癌种；未分配色的癌种回落中性 chip）──
+   颜色只是辅助：chip 内始终带癌种中文名，不靠颜色辨义。 */
+.cancer-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 20px;
+    padding: 0 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    background: var(--cancer-other-bg);
+    color: var(--cancer-other-text);
+}
+.cancer-chip::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+.cancer-chip[data-cancer="lung"] { background: var(--cancer-lung-bg); color: var(--cancer-lung-text); }
+.cancer-chip[data-cancer="colorectal"] { background: var(--cancer-colorectal-bg); color: var(--cancer-colorectal-text); }
+.cancer-chip[data-cancer="breast"] { background: var(--cancer-breast-bg); color: var(--cancer-breast-text); }
+
+/* ── 3. 数据类型标签（指南 / 推荐 / 药品 / 文献）──
+   同一色相的 4 档明度，底色几乎相同，靠文字颜色深浅 + 文字本身区分。 */
+.dtype-tag {
+    display: inline-flex;
+    align-items: center;
+    height: 20px;
+    padding: 0 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    background: var(--dtype-guideline-bg);
+    color: var(--dtype-guideline);
+}
+.dtype-tag[data-dtype="rec"] { background: var(--dtype-rec-bg); color: var(--dtype-rec); }
+.dtype-tag[data-dtype="drug"] { background: var(--dtype-drug-bg); color: var(--dtype-drug); }
+.dtype-tag[data-dtype="literature"] { background: var(--dtype-literature-bg); color: var(--dtype-literature); }
+
+/* 文档卡底栏：类型标签 + 癌种 chip 同排 */
+.doc-card-foot > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}

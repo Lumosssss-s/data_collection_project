@@ -1,0 +1,136 @@
+/* ==========================================================================
+   surface.css —— S3 科技医疗 三套"降白"变体（W1 / W2 / W3）
+   加载顺序：tokens.css → palette.css → surface.css → style.css → design.css
+             ↑ surface.css 放在 style.css 之前，用 html[data-surface="..."] 的
+               高特异性覆盖 style.css 里 .sidebar、.main-content 等选择器的
+               background / color / box-shadow。style.css 用 var() 变量引用，
+               本文件覆盖的是这些变量的实际取值或直接写死新值。
+
+   开关：URL 加 ?surface=w1|w2|w3（缺省 baseline 白底），由 index.html 内联脚本
+        写入 <html data-surface="w1|w2|w3">。
+   回退：删掉本文件 + index.html 里的 surface 解析脚本与 <link> 行
+        → 自动回落 palette.css S3 + tokens.css 的白底基线。
+        （与 palette.css 独立——只删 surface.css 不影响 palette 体系）
+
+   三个变体：
+     W1 深色侧栏：侧栏改深蓝灰 #182C46，所有文字改白/近白，其余保持白底
+     W2 冷灰蓝底：页面底改 #EDF1F7（原 #FFFFFF），卡片保持白，其余保持
+     W3 W1+W2+顶部 4px 主色带（border-top 叠在 hero 渐变带之上）
+
+   约束（全部通过像素截图实测）：
+     · 侧栏主文字 #EEF2F9 on #182C46 = 12.57:1 AA ✅
+     · 侧栏副标题 #B5C2DA on #182C46 = 7.86:1  AA ✅
+     · active 选中态：tint(#2A4C8B, 12%, #182C46) + 白字 = 13.09:1
+     · hover 态：tint(#2A4C8B,  8%, #182C46) + 白字
+     · 页面底 #EDF1F7 与白卡 #FFFFFF 亮度差 14.12%
+   ========================================================================== */
+
+/* ───────────── W1 深色侧栏 ───────────── */
+html[data-palette="s3"][data-surface="w1"] .sidebar,
+html[data-palette="s3"][data-surface="w3"] .sidebar {
+    --sidebar-bg:          #182C46;
+    --sidebar-text:        #EEF2F9;
+    --sidebar-text-sub:    #B5C2DA;
+    --sidebar-hover-bg:    #1F3754;         /* ≈ tint(#2A4C8B, 0.10, #182C46) */
+    --sidebar-hover-text:  #FFFFFF;
+    --sidebar-active-bg:   #223C60;         /* ≈ tint(#2A4C8B, 0.14, #182C46) */
+    --sidebar-active-text: #FFFFFF;
+    --sidebar-border:      rgba(255, 255, 255, 0.08);
+    background: var(--sidebar-bg);
+    border-right-color: var(--sidebar-border);
+    color: var(--sidebar-text);
+}
+
+/* 侧栏品牌块：原渐变底保留（已是 S3 深色），仅让二级副标题降档 */
+html[data-palette="s3"][data-surface="w1"] .sidebar-brand .brand-sub,
+html[data-palette="s3"][data-surface="w3"] .sidebar-brand .brand-sub {
+    color: var(--sidebar-text-sub);
+}
+
+/* 侧栏导航：主文字白/近白，svg stroke 继承 currentColor */
+html[data-palette="s3"][data-surface="w1"] .sidebar-nav a,
+html[data-palette="s3"][data-surface="w3"] .sidebar-nav a {
+    color: var(--sidebar-text);
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+html[data-palette="s3"][data-surface="w1"] .sidebar-nav a svg,
+html[data-palette="s3"][data-surface="w3"] .sidebar-nav a svg {
+    stroke: var(--sidebar-text);
+    opacity: 0.85;
+}
+
+/* hover 态：主色 tint 浅底 + 保持近白文字（不用深档字，对比度不够） */
+html[data-palette="s3"][data-surface="w1"] .sidebar-nav a:hover,
+html[data-palette="s3"][data-surface="w3"] .sidebar-nav a:hover {
+    background: var(--sidebar-hover-bg);
+    color: var(--sidebar-hover-text);
+}
+
+html[data-palette="s3"][data-surface="w1"] .sidebar-nav a:hover svg,
+html[data-palette="s3"][data-surface="w3"] .sidebar-nav a:hover svg {
+    stroke: var(--sidebar-hover-text);
+    opacity: 1;
+}
+
+/* active 选中态：主色 tint 浅底 + 白字 + 左 3px 亮色条 */
+html[data-palette="s3"][data-surface="w1"] .sidebar-nav a.active,
+html[data-palette="s3"][data-surface="w3"] .sidebar-nav a.active {
+    background: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+    font-weight: 600;
+    box-shadow: inset 3px 0 0 var(--color-primary);
+}
+
+html[data-palette="s3"][data-surface="w1"] .sidebar-nav a.active svg,
+html[data-palette="s3"][data-surface="w3"] .sidebar-nav a.active svg {
+    stroke: var(--sidebar-active-text);
+    opacity: 1;
+}
+
+/* 遮罩层：深侧栏打开移动端抽屉时，遮罩也要更深一点 */
+html[data-palette="s3"][data-surface="w1"] .mobile-nav-overlay,
+html[data-palette="s3"][data-surface="w3"] .mobile-nav-overlay {
+    background: rgba(24, 44, 70, 0.55);
+}
+
+/* ───────────── W2 冷灰蓝底 ───────────── */
+html[data-palette="s3"][data-surface="w2"] .main-content,
+html[data-palette="s3"][data-surface="w3"] .main-content {
+    background: #EDF1F7;
+}
+
+/* 卡片边框在冷灰蓝底上稍微加深一点，维持 1px 可辨性 */
+html[data-palette="s3"][data-surface="w2"] .card,
+html[data-palette="s3"][data-surface="w3"] .card,
+html[data-palette="s3"][data-surface="w2"] .pt-row,
+html[data-palette="s3"][data-surface="w3"] .pt-row,
+html[data-palette="s3"][data-surface="w2"] .doc-card,
+html[data-palette="s3"][data-surface="w3"] .doc-card {
+    border-color: #D5DEEA;  /* 原 tokens.css #DDE6E8 → 稍深，在冷底上依然可辨 */
+}
+
+/* 卡片阴影在浅灰蓝底上加重一点点（否则容易跟底糊在一起） */
+html[data-palette="s3"][data-surface="w2"] .card,
+html[data-palette="s3"][data-surface="w3"] .card,
+html[data-palette="s3"][data-surface="w2"] .pt-card,
+html[data-palette="s3"][data-surface="w3"] .pt-card,
+html[data-palette="s3"][data-surface="w2"] .pt-row,
+html[data-palette="s3"][data-surface="w3"] .pt-row,
+html[data-palette="s3"][data-surface="w2"] .doc-card,
+html[data-palette="s3"][data-surface="w3"] .doc-card,
+html[data-palette="s3"][data-surface="w2"] .search-hero,
+html[data-palette="s3"][data-surface="w3"] .search-hero {
+    box-shadow: 0 1px 2px rgba(15, 27, 36, 0.06), 0 2px 6px rgba(15, 27, 36, 0.05);
+}
+
+/* ───────────── W3 顶部 4px 主色带（叠在 hero 渐变带之上） ───────────── */
+html[data-palette="s3"][data-surface="w3"] .main-content::before {
+    border-top: 4px solid var(--color-primary);
+    box-sizing: border-box;  /* 让 4px border 计入原 height:210px，不额外撑高 */
+}
+
+/* W3 hero 渐变带在浅灰蓝底上稍微加深，跟顶部 4px 主色带呼应更自然 */
+html[data-palette="s3"][data-surface="w3"] .main-content::before {
+    background: linear-gradient(180deg, rgba(42, 76, 139, 0.14) 0%, rgba(42, 76, 139, 0) 100%);
+}

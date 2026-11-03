@@ -1,57 +1,9 @@
-/* ===== CSS变量（肿瘤循证知识中枢 · 临床青蓝主题） ===== */
+/* ===== 全局样式（令牌见 tokens.css · 蒂芙尼绿品牌体系） ===== */
 /* 字体使用系统字体栈，不依赖外部 CDN，保证医疗内网/断网环境下排版可用 */
 :root {
-    --color-bg: #F5F8FA;
-    --color-surface: #FFFFFF;
-    --color-text: #0F1B24;
-    --color-text-secondary: #4A5A66;
-    --color-text-muted: #7C8B95;
-    --color-border: #DCE5EA;
-    --color-border-deep: #C2CFD6;
-    --color-primary: #0E7490;
-    --color-primary-hover: #0B5D74;
-    --color-primary-dark: #0B5D74;
-    --color-primary-soft: #E6F2F5;
-    --color-secondary: #1D7A8C;
-    --color-success: #15803D;
-    --color-success-bg: #F0F9F2;
-    --color-error: #B91C1C;
-    --color-error-bg: #FDF3F3;
-    --color-warning: #B45309;
-    --color-warning-bg: #FDF8F0;
-    --color-info: #1E5E7A;
-    --color-info-bg: #F1F6F9;
-
-    /* 临床语义色：证据等级 */
-    --color-evidence-a: #0F7B4F;
-    --color-evidence-a-bg: #E8F5EE;
-    --color-evidence-b: #0E7490;
-    --color-evidence-b-bg: #E6F2F5;
-    --color-evidence-c: #B45309;
-    --color-evidence-c-bg: #FDF3E7;
-    --color-evidence-d: #5B6B76;
-    --color-evidence-d-bg: #F1F4F6;
-
-    /* 临床语义色：风险分层 */
-    --color-risk-high: #B3261E;
-    --color-risk-high-bg: #FDECEA;
-    --color-risk-mid: #B45309;
-    --color-risk-mid-bg: #FDF3E7;
-    --color-risk-low: #0F7B4F;
-    --color-risk-low-bg: #E8F5EE;
-
-    --font-serif: 'Noto Serif SC', 'Source Han Serif SC', Georgia, 'Songti SC', SimSun, serif;
-    --font-sans: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
-    --font-mono: Consolas, 'SFMono-Regular', monospace;
-
-    --shadow-card: 0 1px 2px rgba(15, 27, 36, 0.04), 0 1px 3px rgba(15, 27, 36, 0.06);
-    --shadow-raised: 0 4px 12px rgba(15, 27, 36, 0.08);
-
-    /* 品牌渐变：仅用主色青蓝的同色系深浅过渡，不引入第二强调色 */
-    --gradient-brand: linear-gradient(135deg, #0B5D74 0%, #0E7490 55%, #14919E 100%);
-    --gradient-hero: linear-gradient(180deg, rgba(14, 116, 144, 0.07) 0%, rgba(14, 116, 144, 0) 100%);
-
+    /* 设计令牌见 css/tokens.css（须先于本文件加载）；此处仅保留布局尺寸 */
     --sidebar-width: 240px;
+    --rail-width: 232px;
 }
 
 /* ===== 全局重置 ===== */
@@ -64,7 +16,7 @@
 html, body {
     height: 100%;
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: var(--text-base);
     color: var(--color-text);
     background: var(--color-bg);
     line-height: 1.6;
@@ -81,6 +33,7 @@ a:hover {
 /* ===== 布局 ===== */
 .app-layout {
     display: flex;
+    justify-content: center;
     min-height: 100vh;
 }
 
@@ -102,12 +55,12 @@ a:hover {
 .sidebar-brand {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
-    padding: 0.875rem 0.75rem;
+    gap: 0.5rem;
+    padding: 1rem 0.75rem;
     margin-bottom: 1.25rem;
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     background: var(--gradient-brand);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
     box-shadow: var(--shadow-card);
 }
 
@@ -117,15 +70,15 @@ a:hover {
 
 .sidebar-brand h1 {
     font-family: var(--font-serif);
-    font-size: 1.0625rem;
+    font-size: var(--text-md);
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--color-on-primary);
     line-height: 1.3;
 }
 
 .sidebar-brand .brand-sub {
     font-family: var(--font-sans);
-    font-size: 0.6875rem;
+    font-size: var(--text-xs);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.75);
     display: block;
@@ -136,17 +89,18 @@ a:hover {
 }
 
 .sidebar-nav li {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .sidebar-nav a {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
-    padding: 0.625rem 0.75rem;
-    border-radius: 6px;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.625rem 0.875rem;
+    border-radius: var(--radius-md);
     color: var(--color-text-secondary);
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     font-weight: 500;
     transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -179,7 +133,7 @@ a:hover {
     flex: 1;
     margin-left: var(--sidebar-width);
     padding: 2rem 2.5rem;
-    max-width: 1400px;
+    max-width: var(--content-max);
     background: var(--color-surface);
     min-height: 100vh;
     border-left: 1px solid var(--color-border);
@@ -216,8 +170,8 @@ a:hover {
 
 .group-tab {
     flex-shrink: 0;
-    padding: 0.5rem 0.875rem;
-    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    font-size: var(--text-base);
     font-weight: 500;
     color: var(--color-text-secondary);
     border-bottom: 2px solid transparent;
@@ -228,43 +182,43 @@ a:hover {
 
 .group-tab:hover {
     color: var(--color-text);
-    background: rgba(14, 116, 144, 0.05);
+    background: var(--brand-tint-05);
 }
 
 .group-tab.active {
     color: var(--color-primary);
     border-bottom-color: var(--color-primary);
     font-weight: 600;
-    background: rgba(14, 116, 144, 0.07);
+    background: var(--brand-tint-07);
     border-radius: 6px 6px 0 0;
 }
 
 /* ===== 页面标题 ===== */
 .page-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
     font-weight: 700;
     letter-spacing: -0.01em;
     color: var(--color-text);
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--space-2);
 }
 
 .page-desc {
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--gap-section);
     line-height: 1.6;
-    max-width: 72ch;
+    max-width: 60ch;
 }
 
 .section-title {
     font-family: var(--font-serif);
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     font-weight: 600;
     letter-spacing: -0.005em;
     color: var(--color-text);
     margin: 1.5rem 0 0.75rem;
-    padding-left: 0.625rem;
+    padding-left: 0.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-border);
     border-left: 3px solid var(--color-primary);
@@ -282,7 +236,7 @@ a:hover {
 .card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     padding: 1.25rem;
     box-shadow: var(--shadow-card);
 }
@@ -293,28 +247,28 @@ a:hover {
 
 .card-title {
     font-family: var(--font-serif);
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     font-weight: 600;
     letter-spacing: -0.005em;
     color: var(--color-text);
     margin-bottom: 0.75rem;
-    padding-left: 0.625rem;
+    padding-left: 0.5rem;
     border-left: 3px solid var(--color-primary);
     line-height: 1.35;
 }
 
 /* 内容小标题：卡片内的分组名，比 .card-title 弱一级，不加强调条 */
 .sub-title {
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
     line-height: 1.4;
 }
 
 /* 条目名称：列表项 / 详情弹窗内的主名称 */
 .item-title {
-    font-size: 1rem;
+    font-size: var(--text-md);
     font-weight: 600;
     color: var(--color-text);
     margin: 0 0 0.25rem;
@@ -340,7 +294,7 @@ a:hover {
 
 .chart-scroll-wrap::-webkit-scrollbar-thumb {
     background: var(--color-border-deep);
-    border-radius: 3px;
+    border-radius: var(--radius-xs);
 }
 
 .chart-scroll-wrap::-webkit-scrollbar-thumb:hover {
@@ -358,7 +312,7 @@ a:hover {
 .stat-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     padding: 1rem 1.25rem;
     text-align: left;
     box-shadow: var(--shadow-card);
@@ -366,7 +320,7 @@ a:hover {
 
 .stat-card .stat-value {
     font-family: var(--font-mono);
-    font-size: 1.75rem;
+    font-size: var(--text-2xl);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
@@ -375,7 +329,7 @@ a:hover {
 }
 
 .stat-card .stat-label {
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     color: var(--color-text-muted);
     margin-top: 0.25rem;
 }
@@ -384,10 +338,12 @@ a:hover {
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
+    justify-content: center;   /* 主轴居中：被 min-width / width 撑开时文字才不会靠左 */
+    gap: 0.5rem;
+    min-height: 44px;
     padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
     font-weight: 500;
     font-family: var(--font-sans);
     cursor: pointer;
@@ -402,14 +358,14 @@ a:hover {
 
 .btn-primary {
     background: var(--color-primary);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
     border-color: var(--color-primary);
-    box-shadow: 0 1px 2px rgba(14, 116, 144, 0.18);
+    box-shadow: var(--shadow-primary);
 }
 .btn-primary:hover {
     background: var(--color-primary-hover);
     border-color: var(--color-primary-hover);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
 }
 
 .btn-secondary {
@@ -438,12 +394,12 @@ a:hover {
 }
 .btn-danger:hover {
     background: var(--color-error);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
 }
 
 .btn-sm {
-    padding: 0.375rem 0.75rem;
-    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--text-sm);
 }
 
 .btn-block {
@@ -456,8 +412,8 @@ a:hover {
     width: 100%;
     padding: 0.5rem 0.75rem;
     border: 1px solid var(--color-border-deep);
-    border-radius: 6px;
-    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
     font-family: var(--font-sans);
     color: var(--color-text);
     background: var(--color-surface);
@@ -467,7 +423,7 @@ a:hover {
 
 .input:focus, .textarea:focus, .select:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(14, 116, 144, 0.12);
+    box-shadow: var(--shadow-focus);
 }
 
 .textarea {
@@ -489,7 +445,7 @@ a:hover {
     min-width: 200px;
     height: 38px;
     padding: 0 0.75rem;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
 }
 
 .search-filter-item {
@@ -501,23 +457,23 @@ a:hover {
 }
 
 .search-filter-item label {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     color: var(--color-text-secondary);
-    padding-left: 0.125rem;
+    padding-left: 0.25rem;
 }
 
 .search-filter-select {
     height: 38px;
-    padding: 0 0.625rem;
-    border-radius: 6px;
-    font-size: 0.8125rem;
+    padding: 0 0.5rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
 }
 
 .search-filter-btn {
     height: 38px;
     padding: 0 1.25rem;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
 }
 
 .search-topic-wrapper {
@@ -526,15 +482,15 @@ a:hover {
 
 .search-topic-trigger {
     height: 38px;
-    padding: 0 0.625rem;
+    padding: 0 0.5rem;
     border: 1px solid var(--color-border-deep);
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     background: var(--color-surface);
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     color: var(--color-text);
     transition: border-color 0.15s ease;
 }
@@ -560,17 +516,17 @@ a:hover {
     right: 0;
     background: var(--color-surface);
     border: 1px solid var(--color-border-deep);
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    z-index: 100;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-raised);
+    z-index: 120;
     max-height: 240px;
     overflow-y: auto;
-    padding: 0.375rem 0;
+    padding: 0.5rem 0;
 }
 
 .search-topic-item {
     padding: 0.5rem 0.75rem;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -584,19 +540,19 @@ a:hover {
 
 .search-topic-item.selected {
     background: var(--color-primary);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
 }
 
 .search-topic-item.selected .search-topic-check {
-    background: #FFFFFF;
-    border-color: #FFFFFF;
+    background: var(--color-surface);
+    border-color: var(--color-surface);
 }
 
 .search-topic-check {
     width: 14px;
     height: 14px;
     border: 1px solid var(--color-border-deep);
-    border-radius: 3px;
+    border-radius: var(--radius-xs);
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
@@ -617,14 +573,14 @@ a:hover {
     align-items: center;
     height: 20px;
     padding: 0 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
     font-weight: 600;
     line-height: 1;
     white-space: nowrap;
 }
 
-.badge-primary { background: var(--color-primary); color: #FFFFFF; }
+.badge-primary { background: var(--color-primary); color: var(--color-on-primary); }
 .badge-success { background: var(--color-success-bg); color: var(--color-success); }
 .badge-warning { background: var(--color-warning-bg); color: var(--color-warning); }
 .badge-info { background: var(--color-info-bg); color: var(--color-info); }
@@ -645,14 +601,14 @@ a:hover {
 .table-wrap {
     overflow-x: auto;
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-card);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     font-variant-numeric: tabular-nums;
 }
 
@@ -660,10 +616,10 @@ th {
     background: var(--color-bg);
     font-weight: 600;
     text-align: left;
-    padding: 0.625rem 1rem;
+    padding: 0.5rem 1rem;
     border-bottom: 1px solid var(--color-border);
     color: var(--color-text-secondary);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     letter-spacing: 0.03em;
     white-space: nowrap;
     position: sticky;
@@ -672,7 +628,7 @@ th {
 }
 
 td {
-    padding: 0.625rem 1rem;
+    padding: 0.5rem 1rem;
     border-bottom: 1px solid var(--color-border);
     vertical-align: top;
 }
@@ -683,7 +639,7 @@ tr:last-child td {
 
 /* 斑马纹仅作用于常规数据表，图谱节点表有独立交互样式 */
 table:not(.network-node-table) tbody tr:nth-child(even) td {
-    background: #FAFCFD;
+    background: var(--color-surface-alt);
 }
 
 table:not(.network-node-table) tbody tr:hover td {
@@ -726,7 +682,7 @@ table:not(.network-node-table) tbody tr:hover td {
 
 .empty-state p {
     margin: 0;
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     line-height: 1.6;
     color: var(--color-text-secondary);
 }
@@ -751,7 +707,7 @@ table:not(.network-node-table) tbody tr:hover td {
     justify-content: center;
     padding: 3rem;
     color: var(--color-text-muted);
-    font-size: 0.875rem;
+    font-size: var(--text-base);
 }
 
 .spinner {
@@ -779,7 +735,7 @@ table:not(.network-node-table) tbody tr:hover td {
 
 .form-label {
     display: block;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-text-secondary);
     margin-bottom: 0.25rem;
@@ -792,11 +748,11 @@ table:not(.network-node-table) tbody tr:hover td {
 /* ===== 提示/警告 ===== */
 /* 统一左侧语义强调条：颜色之外同时保留文案，符合无障碍要求 */
 .alert {
-    padding: 0.625rem 0.875rem;
+    padding: 0.5rem 1rem;
     border: 1px solid var(--color-border);
     border-left: 3px solid var(--color-border-deep);
-    border-radius: 6px;
-    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
     margin-bottom: 1rem;
     display: flex;
     align-items: flex-start;
@@ -815,7 +771,7 @@ table:not(.network-node-table) tbody tr:hover td {
     align-items: center;
     gap: 1rem;
     margin: 1.5rem 0 1rem;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-primary);
     text-transform: uppercase;
@@ -834,7 +790,7 @@ table:not(.network-node-table) tbody tr:hover td {
 
 /* ===== Markdown 内容渲染 ===== */
 .markdown-body {
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     line-height: 1.7;
     color: var(--color-text);
 }
@@ -846,9 +802,9 @@ table:not(.network-node-table) tbody tr:hover td {
     color: var(--color-text);
 }
 
-.markdown-body h1 { font-size: 1.375rem; }
-.markdown-body h2 { font-size: 1.125rem; }
-.markdown-body h3 { font-size: 1rem; }
+.markdown-body h1 { font-size: var(--text-xl); }
+.markdown-body h2 { font-size: var(--text-lg); }
+.markdown-body h3 { font-size: var(--text-md); }
 
 .markdown-body p { margin-bottom: 0.75rem; }
 
@@ -861,16 +817,16 @@ table:not(.network-node-table) tbody tr:hover td {
 
 .markdown-body code {
     font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     background: var(--color-bg);
-    padding: 0.125rem 0.375rem;
-    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-xs);
 }
 
 .markdown-body pre {
     background: var(--color-bg);
     padding: 1rem;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     overflow-x: auto;
     margin: 0.75rem 0;
 }
@@ -885,7 +841,7 @@ table:not(.network-node-table) tbody tr:hover td {
     padding: 0.25rem 0 0.25rem 0.75rem;
     margin: 0.5rem 0;
     color: var(--color-text-secondary);
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     font-style: italic;
     background: transparent;
 }
@@ -906,24 +862,24 @@ table:not(.network-node-table) tbody tr:hover td {
 
 /* ===== QA 问答界面优化 ===== */
 .qa-answer-body {
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     line-height: 1.75;
 }
 
 .qa-answer-body h2 {
-    font-size: 1.0625rem;
-    margin: 1.25rem 0 0.625rem;
-    padding-bottom: 0.375rem;
+    font-size: var(--text-md);
+    margin: 1.25rem 0 0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-border);
 }
 
 .qa-answer-body h3 {
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     margin: 1rem 0 0.5rem;
 }
 
 .qa-answer-body p {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.5rem;
 }
 
 .qa-answer-body ol,
@@ -933,7 +889,7 @@ table:not(.network-node-table) tbody tr:hover td {
 }
 
 .qa-answer-body li {
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
 }
 
 @keyframes blink {
@@ -944,7 +900,7 @@ table:not(.network-node-table) tbody tr:hover td {
 .qa-cursor {
     animation: blink 1s infinite;
     color: var(--color-primary);
-    margin-left: 0.125rem;
+    margin-left: 0.25rem;
 }
 
 /* 检索/生成阶段的状态提示：检索含 CPU 精排，耗时较长，需即时反馈 */
@@ -953,7 +909,7 @@ table:not(.network-node-table) tbody tr:hover td {
     align-items: center;
     gap: 0.5rem;
     color: var(--color-text-muted);
-    font-size: 0.875rem;
+    font-size: var(--text-base);
 }
 
 .qa-status-spinner {
@@ -970,12 +926,12 @@ table:not(.network-node-table) tbody tr:hover td {
 .network-node-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
 }
 
 .network-node-table th,
 .network-node-table td {
-    padding: 0.625rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     border-bottom: 1px solid var(--color-border);
     vertical-align: top;
 }
@@ -984,7 +940,7 @@ table:not(.network-node-table) tbody tr:hover td {
     background: var(--color-bg);
     font-weight: 600;
     color: var(--color-text-secondary);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     white-space: nowrap;
     text-align: left;
 }
@@ -1008,20 +964,20 @@ table:not(.network-node-table) tbody tr:hover td {
 }
 
 .network-controls .network-control-label {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     color: var(--color-text-secondary);
     display: block;
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
     white-space: nowrap;
 }
 
 .network-controls .network-control-checkbox {
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     color: var(--color-text);
     display: flex;
     align-items: center;
-    gap: 0.375rem;
+    gap: 0.5rem;
     margin-bottom: 0.25rem;
     cursor: pointer;
 }
@@ -1042,8 +998,8 @@ table:not(.network-node-table) tbody tr:hover td {
     flex: 1;
     min-width: 0;
     height: 2rem;
-    padding: 0.375rem 0.75rem;
-    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--text-sm);
 }
 
 .network-controls .network-control-group > .select {
@@ -1053,8 +1009,8 @@ table:not(.network-node-table) tbody tr:hover td {
 
 .network-controls .network-control-row .btn {
     height: 2rem;
-    padding: 0.375rem 0.75rem;
-    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--text-sm);
     white-space: nowrap;
 }
 
@@ -1062,9 +1018,9 @@ table:not(.network-node-table) tbody tr:hover td {
     background: transparent;
     color: var(--color-text-secondary);
     border: none;
-    border-radius: 4px;
-    padding: 0.375rem 0.75rem;
-    font-size: 0.8125rem;
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.75rem;
+    font-size: var(--text-sm);
     cursor: pointer;
     transition: all 0.15s ease;
 }
@@ -1074,18 +1030,18 @@ table:not(.network-node-table) tbody tr:hover td {
 }
 
 .network-view-tab.active {
-    background: #ffffff;
+    background: var(--color-surface);
     color: var(--color-primary);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-card);
 }
 
 #network-detail-content pre {
     background: var(--color-bg);
     padding: 0.75rem;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     overflow: auto;
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     line-height: 1.6;
     max-height: 320px;
     flex-shrink: 0;
@@ -1104,7 +1060,7 @@ table:not(.network-node-table) tbody tr:hover td {
 .search-hero {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     padding: 1.25rem 1.25rem 1rem;
     margin-bottom: 1.25rem;
     box-shadow: var(--shadow-card);
@@ -1118,40 +1074,168 @@ table:not(.network-node-table) tbody tr:hover td {
 
 .search-hero-input {
     flex: 1;
-    height: 46px;
-    font-size: 0.9375rem;
+    height: 52px;
+    font-size: var(--text-md);
     border-radius: 8px;
     min-width: 0;
 }
 
 .search-hero-btn {
-    height: 46px;
+    height: 52px;
     padding: 0 1.75rem;
     border-radius: 8px;
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     flex-shrink: 0;
+
+    /* 显式写死高度后不再依赖 line-height 撑；两个轴都显式居中 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.search-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+}
+
+/* 快捷问题：点击目标 44px（无障碍硬约束），文字色 7.75:1 */
+.search-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;   /* 主轴居中，防止被内容宽度外的 min-width 撑偏 */
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    border: 1px solid var(--color-border-deep);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+
+.search-chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.search-chip:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .search-hero-hint {
     margin-top: 0.5rem;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
     line-height: 1.6;
 }
 
+/* 结果流改为单列：筛选已移到输入框下方的横向条，不再有左侧竖栏 */
 .search-layout {
-    display: grid;
-    grid-template-columns: 232px minmax(0, 1fr);
-    gap: 1.25rem;
-    align-items: start;
+    display: block;
 }
 
+/* ===== 横向筛选条 =====
+   与结果工具条共同构成"一条连续结构"：本组件只画一条底部细线，不做独立卡片边框。 */
+.search-filterbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sf-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+.sf-item label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.sf-select {
+    width: auto;
+    min-width: 104px;
+    height: 40px;
+    padding: 0 0.5rem;
+    font-size: var(--text-sm);
+}
+
+.sf-item-topic { position: relative; }
+
+/* 浮层：向下弹出 + 限高 240px 内部滚动；宽度固定 260px（避免贴着窄控件被截断），
+   z-index 120 高于吸顶结果工具条的 5，滚动时不会被工具条压住 */
+.sf-item-topic .search-topic-dropdown {
+    left: 0;
+    right: auto;
+    width: 260px;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.sf-item-topic .search-topic-trigger {
+    height: 40px;
+    min-width: 132px;
+    padding: 0 0.5rem;
+    font-size: var(--text-sm);
+}
+
+.sf-reset {
+    flex: 0 0 auto;
+    margin-left: auto;
+    height: 40px;
+    padding: 0 0.875rem;
+    border: 1px solid var(--color-border-deep);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sf-reset:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.sf-reset:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* 窄屏折行：768–1023 两行（3+1：前三项一行，主题+重置一行，重置靠右）；<768 一行一个 */
+@media (max-width: 1023px) {
+    .sf-item { flex: 1 1 calc(33.33% - 7px); }
+    .sf-reset { flex: 0 0 auto; margin-left: auto; }
+}
+
+@media (max-width: 767px) {
+    .sf-item { flex: 1 1 100%; }
+    .sf-reset { flex: 1 1 100%; margin-left: 0; }
+    .sf-select, .sf-item-topic .search-topic-trigger { width: 100%; }
+}
+
+/* 旧左栏（已不被引用，保留待确认后再删） */
 .filter-rail {
-    position: sticky;
-    top: 1.25rem;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     padding: 1rem;
     box-shadow: var(--shadow-card);
 }
@@ -1161,12 +1245,12 @@ table:not(.network-node-table) tbody tr:hover td {
     align-items: center;
     justify-content: space-between;
     padding-bottom: 0.75rem;
-    margin-bottom: 0.875rem;
+    margin-bottom: 1rem;
     border-bottom: 1px solid var(--color-border);
 }
 
 .filter-rail-title {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--color-text-secondary);
@@ -1174,7 +1258,7 @@ table:not(.network-node-table) tbody tr:hover td {
 }
 
 .filter-field {
-    margin-bottom: 0.875rem;
+    margin-bottom: 1rem;
 }
 
 .filter-field:last-child {
@@ -1183,10 +1267,10 @@ table:not(.network-node-table) tbody tr:hover td {
 
 .filter-field label {
     display: block;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     color: var(--color-text-secondary);
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
     padding-left: 0;
 }
 
@@ -1194,12 +1278,14 @@ table:not(.network-node-table) tbody tr:hover td {
 .filter-field .select,
 .filter-field .search-topic-trigger {
     height: 36px;
-    font-size: 0.8125rem;
-    border-radius: 6px;
+    font-size: var(--text-sm);
+    border-radius: var(--radius-md);
 }
 
 .results-panel {
     min-width: 0;
+    /* 不设 max-width：结果流为单列无左栏布局，须吃满容器，
+       旧值 952px 是筛选侧栏时代的遗留，会造成右侧空白。 */
 }
 
 .results-toolbar {
@@ -1207,24 +1293,53 @@ table:not(.network-node-table) tbody tr:hover td {
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--gap-item);
+
+    position: sticky;
+    top: 1.25rem;
+    z-index: 5;
+    background: var(--color-surface);
+    padding: var(--space-2) 0;
 }
 
 .results-count {
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     color: var(--color-text-secondary);
 }
 
 .results-count strong {
     font-family: var(--font-mono);
-    font-size: 1rem;
+    font-size: var(--text-md);
     font-weight: 600;
     color: var(--color-primary);
     margin-right: 0.25rem;
+
+    font-variant-numeric: tabular-nums;
 }
 
+
+.results-filter {
+    font-size: var(--text-xs);
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-left: var(--space-2);
+    white-space: nowrap;
+}
+
+/* 低相关提示：中性色，不是错误态，禁止使用警示/风险色 */
+.results-lowrel {
+    padding: var(--space-2) var(--space-3);
+    margin-bottom: var(--gap-item);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-border-deep);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
 .results-note {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
     white-space: nowrap;
 }
@@ -1240,7 +1355,7 @@ table:not(.network-node-table) tbody tr:hover td {
     border: 1px solid var(--color-border);
     border-left: 3px solid transparent;
     border-radius: 8px;
-    padding: 1rem 1.125rem;
+    padding: 1rem 1rem;
     box-shadow: var(--shadow-card);
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -1256,12 +1371,12 @@ table:not(.network-node-table) tbody tr:hover td {
     justify-content: space-between;
     align-items: flex-start;
     gap: 0.75rem;
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
 }
 
 .result-title {
     font-family: var(--font-serif);
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     font-weight: 600;
     color: var(--color-text);
     line-height: 1.45;
@@ -1272,7 +1387,7 @@ table:not(.network-node-table) tbody tr:hover td {
 .result-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.375rem;
+    gap: 0.5rem;
     flex-shrink: 0;
 }
 
@@ -1280,10 +1395,10 @@ table:not(.network-node-table) tbody tr:hover td {
 .evidence-grade {
     display: inline-flex;
     align-items: stretch;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     overflow: hidden;
     border: 1px solid var(--color-border);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     line-height: 1;
 }
@@ -1295,9 +1410,9 @@ table:not(.network-node-table) tbody tr:hover td {
     min-width: 20px;
     padding: 0 0.25rem;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--color-on-primary);
     background: var(--color-evidence-d);
 }
 
@@ -1305,7 +1420,7 @@ table:not(.network-node-table) tbody tr:hover td {
     display: inline-flex;
     align-items: center;
     height: 20px;
-    padding: 0 0.375rem;
+    padding: 0 0.5rem;
     background: var(--color-evidence-d-bg);
     color: var(--color-evidence-d);
 }
@@ -1324,9 +1439,9 @@ table:not(.network-node-table) tbody tr:hover td {
     display: inline-flex;
     align-items: center;
     height: 20px;
-    padding: 0 0.4375rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
+    padding: 0 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
     font-weight: 600;
     line-height: 1;
     white-space: nowrap;
@@ -1334,7 +1449,7 @@ table:not(.network-node-table) tbody tr:hover td {
 
 .rec-strong {
     background: var(--color-primary);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
 }
 
 .rec-weak {
@@ -1354,9 +1469,9 @@ table:not(.network-node-table) tbody tr:hover td {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.375rem 0.5rem;
+    gap: 0.5rem 0.5rem;
     margin-bottom: 0.5rem;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
 }
 
@@ -1364,11 +1479,11 @@ table:not(.network-node-table) tbody tr:hover td {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    padding: 0.125rem 0.4375rem;
-    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
     background: var(--color-primary-soft);
     color: var(--color-primary-hover);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     max-width: 100%;
 }
 
@@ -1393,13 +1508,13 @@ table:not(.network-node-table) tbody tr:hover td {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-warning);
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
 }
 
 .result-content {
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     color: var(--color-text-secondary);
     line-height: 1.7;
     white-space: pre-wrap;
@@ -1419,7 +1534,7 @@ table:not(.network-node-table) tbody tr:hover td {
     background: none;
     color: var(--color-primary);
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     cursor: pointer;
 }
@@ -1434,30 +1549,34 @@ table:not(.network-node-table) tbody tr:hover td {
     justify-content: space-between;
     align-items: center;
     gap: 0.75rem;
-    margin-top: 0.625rem;
+    margin-top: 0.5rem;
     padding-top: 0.5rem;
     border-top: 1px dashed var(--color-border);
 }
 
 .match-score {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
     flex-shrink: 0;
+
+    font-variant-numeric: tabular-nums;
 }
 
 /* 指南浏览卡片 */
 .doc-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap-item);
 }
+
+@media (max-width: 1199px) { .doc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .doc-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 0.875rem 1rem;
+    padding: 1rem 1rem;
     cursor: pointer;
     box-shadow: var(--shadow-card);
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -1471,14 +1590,14 @@ table:not(.network-node-table) tbody tr:hover td {
 .doc-card-title {
     font-family: var(--font-serif);
     font-weight: 600;
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     color: var(--color-text);
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.5rem;
     line-height: 1.45;
 }
 
 .doc-card-meta {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
     margin-bottom: 0.5rem;
 }
@@ -1488,12 +1607,14 @@ table:not(.network-node-table) tbody tr:hover td {
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
 }
 
 .doc-card-count {
     font-family: var(--font-mono);
     color: var(--color-text-muted);
+
+    font-variant-numeric: tabular-nums;
 }
 
 /* 键盘焦点可见性（NHS 高对比焦点态思路） */
@@ -1520,8 +1641,8 @@ textarea:focus-visible,
 .pre-step {
     display: flex;
     align-items: center;
-    gap: 0.375rem;
-    font-size: 0.8125rem;
+    gap: 0.5rem;
+    font-size: var(--text-sm);
     color: var(--color-text-muted);
     white-space: nowrap;
 }
@@ -1541,7 +1662,7 @@ textarea:focus-visible,
     border-radius: 50%;
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    font-size: 0.6875rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     color: var(--color-text-muted);
 }
@@ -1554,7 +1675,7 @@ textarea:focus-visible,
 .pre-step.active .pre-step-index {
     background: var(--color-primary);
     border-color: var(--color-primary);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
 }
 
 .pre-step.done .pre-step-index {
@@ -1597,14 +1718,14 @@ textarea:focus-visible,
 }
 
 .pre-chat-title {
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     font-weight: 600;
     color: var(--color-text);
 }
 
 .pre-chat-hint {
     margin-left: auto;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
 }
 
@@ -1616,17 +1737,17 @@ textarea:focus-visible,
 
 .pre-msg {
     max-width: 80%;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.5rem;
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     line-height: 1.65;
     word-break: break-word;
 }
 
 .pre-msg-label {
     display: block;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
     margin-bottom: 0.25rem;
 }
@@ -1634,7 +1755,7 @@ textarea:focus-visible,
 .pre-msg-user {
     margin-left: auto;
     background: var(--color-primary);
-    color: #FFFFFF;
+    color: var(--color-on-primary);
 }
 
 .pre-msg-assistant {
@@ -1647,7 +1768,7 @@ textarea:focus-visible,
     margin-right: auto;
     background: var(--color-warning-bg);
     color: var(--color-warning);
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     border-left: 3px solid var(--color-warning);
 }
 
@@ -1655,7 +1776,7 @@ textarea:focus-visible,
     margin-right: auto;
     background: transparent;
     color: var(--color-text-muted);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     border: 1px dashed var(--color-border);
 }
 
@@ -1678,6 +1799,7 @@ textarea:focus-visible,
 .pre-send {
     align-self: stretch;
     min-width: 84px;
+    justify-content: center;   /* 有 min-width，必须显式主轴居中 */
 }
 
 .pre-panel {
@@ -1691,28 +1813,28 @@ textarea:focus-visible,
 .pre-empty {
     background: var(--color-surface);
     border: 1px dashed var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     padding: 1.5rem 1.25rem;
 }
 
 .pre-empty-title {
     font-family: var(--font-serif);
-    font-size: 0.9375rem;
+    font-size: var(--text-md);
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: 0.5rem;
 }
 
 .pre-empty-text {
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     color: var(--color-text-muted);
     line-height: 1.7;
 }
 
 .pre-empty-list {
     margin: 0.5rem 0 0;
-    padding-left: 1.1rem;
-    font-size: 0.8125rem;
+    padding-left: 1rem;
+    font-size: var(--text-sm);
     color: var(--color-text-secondary);
     line-height: 1.8;
 }
@@ -1721,10 +1843,10 @@ textarea:focus-visible,
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
-    padding: 0.625rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     border-left: 3px solid var(--color-border-deep);
-    border-radius: 6px;
-    font-size: 0.9375rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-md);
     font-weight: 600;
     line-height: 1.5;
 }
@@ -1738,8 +1860,8 @@ textarea:focus-visible,
     flex-shrink: 0;
     border-radius: 50%;
     background: var(--color-text-muted);
-    color: #FFFFFF;
-    font-size: 0.75rem;
+    color: var(--color-on-primary);
+    font-size: var(--text-xs);
     font-weight: 700;
 }
 
@@ -1768,14 +1890,14 @@ textarea:focus-visible,
 .pre-risk-low .pre-risk-mark { background: var(--color-risk-low); }
 
 .pre-dept-primary {
-    font-size: 1rem;
+    font-size: var(--text-md);
     font-weight: 600;
     color: var(--color-text);
 }
 
 .pre-dept-alt {
     margin-top: 0.25rem;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
 }
 
@@ -1790,7 +1912,7 @@ textarea:focus-visible,
     align-items: flex-start;
     gap: 0.5rem;
     padding: 0.25rem 0;
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
     color: var(--color-text-secondary);
     line-height: 1.7;
 }
@@ -1802,19 +1924,19 @@ textarea:focus-visible,
     justify-content: center;
     width: 18px;
     height: 18px;
-    margin-top: 0.125rem;
+    margin-top: 0.25rem;
     border-radius: 50%;
     background: var(--color-primary-soft);
     color: var(--color-primary);
-    font-size: 0.6875rem;
+    font-size: var(--text-xs);
     font-weight: 700;
 }
 
 .pre-kv {
     display: flex;
     gap: 0.5rem;
-    padding: 0.125rem 0;
-    font-size: 0.8125rem;
+    padding: 0.25rem 0;
+    font-size: var(--text-sm);
     line-height: 1.7;
 }
 
@@ -1831,7 +1953,7 @@ textarea:focus-visible,
 
 .pre-disclaimer {
     margin-bottom: 0;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
 }
 
 @media (max-width: 900px) {
@@ -1882,19 +2004,19 @@ textarea:focus-visible,
     /* 移动端统计卡收敛留白与字号，保证两列可读 */
     .stat-cards { gap: 0.75rem; }
     .stat-card { padding: 0.75rem 1rem; }
-    .stat-card .stat-value { font-size: 1.5rem; }
+    .stat-card .stat-value { font-size: var(--text-xl); }
 
     /* 顶栏 */
     .mobile-topbar {
         display: flex;
         align-items: center;
-        gap: 0.625rem;
+        gap: 0.5rem;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         height: 52px;
-        padding: 0 0.875rem;
+        padding: 0 1rem;
         background: var(--color-surface);
         border-bottom: 1px solid var(--color-border);
         z-index: 200;
@@ -1903,8 +2025,8 @@ textarea:focus-visible,
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         border: 1px solid var(--color-border);
         border-radius: 8px;
         background: var(--color-surface);
@@ -1912,7 +2034,7 @@ textarea:focus-visible,
         cursor: pointer;
     }
     .mobile-topbar-title {
-        font-size: 0.9375rem;
+        font-size: var(--text-md);
         font-weight: 600;
         color: var(--color-text);
     }
@@ -1922,7 +2044,7 @@ textarea:focus-visible,
         transform: translateX(-100%);
         transition: transform 0.25s ease;
         z-index: 300;
-        box-shadow: 2px 0 12px rgba(15, 27, 36, 0.12);
+        box-shadow: var(--shadow-drawer);
     }
     body.mobile-nav-open .sidebar { transform: translateX(0); }
 
@@ -1949,51 +2071,51 @@ textarea:focus-visible,
 @media (max-width: 480px) {
     .stat-cards { grid-template-columns: 1fr; }
     .main-content { padding: 0.75rem; padding-top: calc(52px + 0.75rem); }
-    .page-title { font-size: 1.25rem; }
+    .page-title { font-size: var(--text-lg); }
 }
 
 /* ===== 骨架屏样式 ===== */
 .skeleton-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     padding: 1rem;
 }
 
 .skeleton-title {
     width: 60%;
     height: 1.25rem;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--skeleton-start) 25%, var(--skeleton-mid) 50%, var(--skeleton-start) 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s ease-in-out infinite;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     margin-bottom: 0.75rem;
 }
 
 .skeleton-bar {
     width: 80%;
     height: 0.875rem;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--skeleton-start) 25%, var(--skeleton-mid) 50%, var(--skeleton-start) 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s ease-in-out infinite;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     margin-bottom: 0.5rem;
 }
 
 .skeleton-text {
     width: 100%;
     height: 0.75rem;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--skeleton-start) 25%, var(--skeleton-mid) 50%, var(--skeleton-start) 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s ease-in-out infinite;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     margin-bottom: 0.5rem;
 }
 
 .skeleton-circle {
     width: 3rem;
     height: 3rem;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--skeleton-start) 25%, var(--skeleton-mid) 50%, var(--skeleton-start) 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s ease-in-out infinite;
     border-radius: 50%;
@@ -2003,18 +2125,18 @@ textarea:focus-visible,
 .skeleton-chart {
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #f5f5f5 25%, #eeeeee 50%, #f5f5f5 75%);
+    background: linear-gradient(90deg, var(--skeleton-soft-start) 25%, var(--skeleton-soft-mid) 50%, var(--skeleton-soft-start) 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s ease-in-out infinite;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
 }
 
 .stat-card.skeleton .stat-value,
 .stat-card.skeleton .stat-label {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--skeleton-start) 25%, var(--skeleton-mid) 50%, var(--skeleton-start) 75%);
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s ease-in-out infinite;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 .stat-card.skeleton .stat-value {
@@ -2053,11 +2175,11 @@ textarea:focus-visible,
     width: 100%;
     min-height: 40px;
     border: 1px solid var(--color-border-deep);
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     background: var(--color-surface);
     display: flex;
     align-items: center;
-    padding: 0.375rem 0.5rem 0.375rem 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
     cursor: pointer;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -2068,7 +2190,7 @@ textarea:focus-visible,
 
 .jur-selector:focus-within {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(14, 116, 144, 0.12);
+    box-shadow: var(--shadow-focus);
     outline: none;
 }
 
@@ -2076,25 +2198,25 @@ textarea:focus-visible,
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.375rem;
+    gap: 0.5rem;
     align-items: center;
     min-height: 24px;
 }
 
 .jur-placeholder {
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     color: var(--color-text-muted);
 }
 
 .jur-tag {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
+    gap: 0.5rem;
     padding: 0.25rem 0.5rem;
-    background: rgba(14, 116, 144, 0.12);
+    background: var(--brand-tint-12);
     color: var(--color-primary);
-    border-radius: 4px;
-    font-size: 0.8125rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
     font-weight: 500;
 }
 
@@ -2106,14 +2228,14 @@ textarea:focus-visible,
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(14, 116, 144, 0.15);
-    font-size: 10px;
+    background: var(--brand-tint-15);
+    font-size: var(--text-xs);
     line-height: 1;
     transition: background 0.15s ease;
 }
 
 .jur-tag-remove:hover {
-    background: rgba(14, 116, 144, 0.3);
+    background: var(--brand-tint-30);
 }
 
 .jur-trigger {
@@ -2138,16 +2260,16 @@ textarea:focus-visible,
     right: 0;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-raised);
+    z-index: 120;
     max-height: 200px;
     overflow-y: auto;
 }
 
 .jur-dropdown-item {
     padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
+    font-size: var(--text-base);
     color: var(--color-text);
     cursor: pointer;
     transition: background 0.15s ease;
@@ -2165,11 +2287,11 @@ textarea:focus-visible,
     width: 16px;
     height: 16px;
     border: 1px solid var(--color-border-deep);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 10px;
+    font-size: var(--text-xs);
     flex-shrink: 0;
 }
 
@@ -2177,5 +2299,241 @@ textarea:focus-visible,
     content: '✓';
     background: var(--color-primary);
     border-color: var(--color-primary);
-    color: white;
+    color: var(--color-on-primary);
 }
+
+/* ===== 指南全文：章节数字卡导航 ===== */
+.chapter-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--gap-item);
+    overflow-x: auto;
+    /* 行内尺寸包含：阻止卡片行参与祖先 .main-content（flex 项 min-width:auto）
+       的最小内容宽度计算，避免横向滚动行把页面撑出横向溢出 */
+    contain: inline-size;
+    /* 降级兜底（不支持 contain 的浏览器）：定宽 0 + min-width:100%，
+       固有宽度贡献为 0，同样不会撑宽 flex 祖先 */
+    width: 0;
+    min-width: 100%;
+    padding: 2px;
+    margin-bottom: var(--gap-item);
+}
+
+.chapter-nav-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    min-height: 44px;
+    min-width: 120px;
+    max-width: 220px;
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-align: left;
+    flex-shrink: 0;
+    font: inherit;
+    margin: 0;
+}
+
+.chapter-nav-card:hover {
+    border-color: var(--color-border-deep);
+    background: var(--color-primary-soft);
+}
+
+.chapter-nav-num {
+    font-family: var(--font-serif);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary-text);
+    line-height: 1.2;
+}
+
+.chapter-nav-name {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: var(--text-xs);
+    color: var(--color-text);
+    line-height: 1.35;
+}
+
+.chapter-nav-meta {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    line-height: 1.2;
+}
+
+/* ===== 随访：行式竖向时间轴（比例通过行间空白表达，gap=min(8+月×4,56)px）===== */
+.fu-tl-note {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+}
+
+.fu-tl-vcard {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: var(--gap-item);
+    /* 行内尺寸包含 + 定宽兜底，避免撑宽祖先 */
+    contain: inline-size;
+    width: 0;
+    min-width: 100%;
+}
+
+.fu-tl-head {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+}
+
+.fu-tl-vlist {
+    display: flex;
+    flex-direction: column;
+}
+
+.fu-tl-vrow {
+    display: flex;
+    align-items: stretch;
+    min-height: 44px;
+}
+
+/* 左列：竖线 + 节点按钮（44×44px 点击区，形状编码） */
+.fu-tl-vline {
+    position: relative;
+    flex: 0 0 44px;
+    width: 44px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.fu-tl-vlist::before {
+    /* 贯穿全表的浅灰竖线，位于左列按钮中心 */
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-border-deep);
+}
+
+.fu-tl-vlist { position: relative; }
+
+.fu-tl-vdot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary-text);
+    background: var(--color-surface);
+    position: relative;
+    z-index: 1;
+}
+
+/* 下一项：实心节点（形状）+ 下一项标签（文字），双编码不单靠颜色 */
+.fu-tl-vline.is-next .fu-tl-vdot { background: var(--color-primary-text); }
+
+/* 右列：两行布局，目标行高 ≤52px（padding 6+6 + row1 + row2）。
+   日期补年份 YYYY-MM-DD（跨 2027–2032 六年），列宽固定 96px；
+   items 永远可见、不截断、允许换行；下一项标签与第一行同行不单占行。 */
+.fu-tl-vcontent {
+    flex: 1;
+    min-width: 0;
+    padding: 6px var(--space-3);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.4;
+}
+
+.fu-tl-vrow.is-next .fu-tl-vcontent {
+    border-color: var(--color-primary-text);
+    background: var(--color-primary-soft);
+}
+
+/* 第一行：日期(mono+tabular-nums, 固定96px) + timepoint + 下一项标签（同行） */
+.fu-tl-row1 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-width: 0;
+}
+
+.fu-tl-date {
+    flex: 0 0 96px;
+    width: 96px;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary-text);
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.fu-tl-time {
+    flex: 1;
+    min-width: 0;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 下一项标签：与第一行同行，右侧，紧凑 */
+.fu-tl-next-tag {
+    flex: 0 0 auto;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-on-primary);
+    background: var(--color-primary-text);
+    border-radius: var(--radius-pill);
+    padding: 1px 6px;
+    white-space: nowrap;
+}
+
+/* 第二行：检查项目（永远可见，不截断，允许换行） */
+.fu-tl-row2 {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.fu-tl-legend {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.fu-tl-legend-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary-text);
+}
+
+.fu-tl-legend-solid { background: var(--color-primary-text); }
