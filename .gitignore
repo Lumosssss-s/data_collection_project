@@ -43,6 +43,12 @@ fetched/codetables/_unzipped/
 # CMKB 药物库：站点版权保留、无开放许可，仅作本地内部参考，不入库（26 号脚本可重抓）
 fetched/cmkb_drugs/
 
+# ==== 采集脚本：站点无开放许可 / 产出不可交付，不随仓库分发 ====
+# CMKB（cmkb.cn）需 SinoMed 登录授权，详情正文不可获取，产出仅供内部参考，不得交付
+tools/26_fetch_cmkb_drugs.py
+tools/27_match_cmkb_to_catalog.py
+tools/29_cmkb_a4_interim.py
+
 # ==== 凭据 / 密钥：任何情况下不得入库 ====
 .env
 .env.*

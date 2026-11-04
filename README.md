@@ -96,8 +96,8 @@ data_collection_project/
 │   ├── 23_fetch_caca_csco_guidelines.py   # A1 补源：CACA 英译版 PDF + 官网中文摘要转录 + CSCO 书目元数据
 │   ├── 24_a2_caca_recommendation_extract.py  # CACA 英译版 → A2 英文条目（69 条，lang=en，独立文件）
 │   ├── 25_align_drug_catalog.py           # A4 字段名对齐（canonical_zh→generic_name、atc→atc_code，补 brand_names 等）→ drug_catalog_v2.json
-│   ├── 26_fetch_cmkb_drugs.py             # CMKB 药物库目录级字段抓取（2,724 条）→ fetched/cmkb_drugs/；详情正文需登录，未采集
-│   ├── 27_match_cmkb_to_catalog.py         # CMKB ↔ A4 药单匹配（21/48 命中）+ 缺失字段可补评估 → cache/drug_labels/cmkb_match_audit.json
+│   ├── 26_fetch_cmkb_drugs.py             # 【不随仓库分发】CMKB 目录级字段抓取（2,724 条）→ fetched/cmkb_drugs/；详情正文需登录，未采集
+│   ├── 27_match_cmkb_to_catalog.py         # 【不随仓库分发】CMKB ↔ A4 药单匹配 + 缺口评估 → cache/，不写 data/clean/
 │   └── word_to_docx.ps1            # 辅助：PowerShell + Word COM 把 .doc 转 .docx（供 11 号脚本调用）
 ├── cache/                          # 【处理缓存】脚本中间产物，可整目录删除后重跑再生；不放源数据/成品
 │   ├── cmedqa2/                    # cmedqa2 中间产物（含 _unzipped/ 解压临时目录）
@@ -222,3 +222,11 @@ data_collection_project/
 - **可复现**：`data/clean/` 下的交付 JSON 均已入库，直接可用；要重建只需按 `tools/` 编号顺序执行（各功能目录 README 的「复现」节有命令）。
 - **凭据**：仓库不包含任何 token、密钥或账号信息（`.env`、`*.pem`、`*.key` 等已被忽略）。
 - **注意**：`data/clean/corpus/cancer_literature_corpus.json` 约 44.6 MB，是已入库的交付成品；GitHub 单文件上限 100 MB，后续如需继续扩充语料请改用 Git LFS 或拆分文件。
+
+**采集脚本收录规则（2026-11-04）**：**拿不到数据、或取到的数据不能用于交付的采集脚本，一律不进仓库**。以下脚本仅保留在本地，不随仓库分发（`tools/` 下同名文件已由 `.gitignore` 排除）：
+
+| 脚本 | 不收录原因 |
+|---|---|
+| `tools/26_fetch_cmkb_drugs.py` | CMKB 无开放许可、详情正文需 SinoMed 登录授权；只能取到目录级字段，产出仅供内部评估 |
+| `tools/27_match_cmkb_to_catalog.py` | 依赖 26 号产物，输出仅落 `cache/` 做缺口评估，不进入 `data/clean/` |
+| `tools/29_cmkb_a4_interim.py` | 产出 `fetched/cmkb_drugs/a4_interim.json`，为受限 interim（`license_status=restricted_internal_only`），不可交付 |
