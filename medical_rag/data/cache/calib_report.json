@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-30T13:57:30",
+  "generated_at": "2026-11-04T07:29:56",
   "samples": {
-    "positive": 20,
-    "negative": 33,
-    "probe": 10
+    "positive": 26,
+    "negative": 43,
+    "probe": 16
   },
   "baseline": {
     "tau": 0.92,
-    "recall": 0.55,
+    "recall": 0.5769,
     "false_merges": 0,
     "false_merge_pairs": []
   },
@@ -20,24 +20,24 @@
       "guarded": 4
     },
     "cancer": {
-      "n": 4,
-      "min": 0.8395349383354187,
-      "max": 0.8881838321685791,
-      "median": 0.8590641021728516,
-      "guarded": 4
+      "n": 5,
+      "min": 0.8395349979400635,
+      "max": 0.889404296875,
+      "median": 0.8615185022354126,
+      "guarded": 5
     },
     "drug": {
-      "n": 6,
-      "min": 0.7252764701843262,
-      "max": 0.9142225980758667,
-      "median": 0.8058366775512695,
+      "n": 8,
+      "min": 0.6719522476196289,
+      "max": 0.9142225384712219,
+      "median": 0.802916407585144,
       "guarded": 6
     },
     "intent_negative": {
-      "n": 8,
+      "n": 11,
       "min": 0.7020784616470337,
-      "max": 0.8200298547744751,
-      "median": 0.767315000295639,
+      "max": 0.918663740158081,
+      "median": 0.773851215839386,
       "guarded": 0
     },
     "line": {
@@ -47,160 +47,189 @@
       "median": 0.8753969669342041,
       "guarded": 5
     },
+    "patient_expect": {
+      "n": 3,
+      "min": 0.7004421949386597,
+      "max": 0.8120829463005066,
+      "median": 0.7699824571609497,
+      "guarded": 0
+    },
     "stage": {
-      "n": 6,
-      "min": 0.8203312754631042,
+      "n": 7,
+      "min": 0.8203314542770386,
       "max": 0.9692907333374023,
-      "median": 0.8877443075180054,
-      "guarded": 6
+      "median": 0.9082870483398438,
+      "guarded": 7
     }
   },
   "distribution": {
     "positive": {
       "min": 0.7140756845474243,
-      "p10": 0.823991346359253,
-      "median": 0.9250965714454651,
-      "max": 0.9824066162109375
+      "p10": 0.8346657752990723,
+      "median": 0.926051139831543,
+      "max": 0.9915840029716492
     },
     "negative": {
-      "min": 0.7020784616470337,
-      "median": 0.8395349383354187,
+      "min": 0.6719522476196289,
+      "median": 0.8363099694252014,
       "max": 0.9692907333374023
     },
     "intent_negative": {
       "min": 0.7020784616470337,
-      "max": 0.8200298547744751
+      "max": 0.918663740158081
     },
     "probe_pairs": {
-      "median": 0.5304116606712341,
+      "median": 0.4726545214653015,
       "max": 0.7241140604019165
     }
   },
   "sweep": [
     {
       "tau": 0.8,
-      "recall": 0.9,
-      "false_merges": 2,
+      "recall": 0.9231,
+      "false_merges": 6,
       "false_merge_kinds": [
-        "intent_negative"
+        "drug",
+        "intent_negative",
+        "patient_expect"
       ]
     },
     {
       "tau": 0.81,
-      "recall": 0.9,
-      "false_merges": 2,
+      "recall": 0.9231,
+      "false_merges": 6,
       "false_merge_kinds": [
-        "intent_negative"
+        "drug",
+        "intent_negative",
+        "patient_expect"
       ]
     },
     {
       "tau": 0.82,
-      "recall": 0.9,
-      "false_merges": 1,
+      "recall": 0.9231,
+      "false_merges": 3,
       "false_merge_kinds": [
         "intent_negative"
       ]
     },
     {
       "tau": 0.83,
-      "recall": 0.9,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.9231,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.84,
-      "recall": 0.8,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.8462,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.85,
-      "recall": 0.75,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.8077,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.86,
-      "recall": 0.7,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.7692,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.87,
-      "recall": 0.7,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.7692,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.88,
-      "recall": 0.65,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.6923,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.89,
-      "recall": 0.65,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.6923,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.9,
-      "recall": 0.65,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.6923,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.91,
-      "recall": 0.6,
-      "false_merges": 0,
-      "false_merge_kinds": []
+      "recall": 0.6154,
+      "false_merges": 2,
+      "false_merge_kinds": [
+        "intent_negative"
+      ]
     },
     {
       "tau": 0.92,
-      "recall": 0.55,
+      "recall": 0.5769,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.93,
-      "recall": 0.45,
+      "recall": 0.4615,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.94,
-      "recall": 0.4,
+      "recall": 0.4231,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.95,
-      "recall": 0.3,
+      "recall": 0.3462,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.96,
-      "recall": 0.25,
+      "recall": 0.2308,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.97,
-      "recall": 0.15,
+      "recall": 0.1538,
       "false_merges": 0,
       "false_merge_kinds": []
     },
     {
       "tau": 0.98,
-      "recall": 0.1,
+      "recall": 0.1154,
       "false_merges": 0,
       "false_merge_kinds": []
     }
   ],
   "recommended": {
-    "tau": 0.83,
-    "recall": 0.9,
+    "tau": 0.92,
+    "recall": 0.5769,
     "basis": "现状守卫（含标志物状态槽位），零误命中下的最低阈值"
   },
   "pairs": {
@@ -238,7 +267,7 @@
       {
         "a": "结肠癌术后随访频率",
         "b": "结肠癌手术后复查间隔多久",
-        "cos": 0.8314930200576782,
+        "cos": 0.8314931392669678,
         "conflict": null
       },
       {
@@ -262,7 +291,7 @@
       {
         "a": "肺癌分期怎么做",
         "b": "肺癌如何分期",
-        "cos": 0.9805392026901245,
+        "cos": 0.980539083480835,
         "conflict": null
       },
       {
@@ -324,6 +353,42 @@
         "b": "结肠癌手术后饮食注意事项",
         "cos": 0.9734755754470825,
         "conflict": null
+      },
+      {
+        "a": "来曲唑的常见副作用有哪些",
+        "b": "来曲唑吃了会有什么不良反应",
+        "cos": 0.9084667563438416,
+        "conflict": null
+      },
+      {
+        "a": "奥希替尼需要空腹吃吗",
+        "b": "奥希替尼服药要不要空腹",
+        "cos": 0.9578955173492432,
+        "conflict": null
+      },
+      {
+        "a": "肺癌靶向药耐药了怎么办",
+        "b": "肺癌靶向治疗出现耐药后如何处理",
+        "cos": 0.9555760622024536,
+        "conflict": null
+      },
+      {
+        "a": "乳腺癌内分泌治疗要吃多久",
+        "b": "乳腺癌内分泌治疗疗程多长",
+        "cos": 0.9268854856491089,
+        "conflict": null
+      },
+      {
+        "a": "免疫治疗后发烧要紧吗",
+        "b": "用了免疫治疗后出现发热严重吗",
+        "cos": 0.8735085129737854,
+        "conflict": null
+      },
+      {
+        "a": "这个药对儿童有影响吗",
+        "b": "该药对儿童有没有影响",
+        "cos": 0.9915840029716492,
+        "conflict": null
       }
     ],
     "negative": [
@@ -352,14 +417,14 @@
         "kind": "stage",
         "a": "肺癌早期怎么治疗",
         "b": "肺癌晚期怎么治疗",
-        "cos": 0.8363099098205566,
+        "cos": 0.8363099694252014,
         "conflict": "术语未覆盖 ['TERM-STAGING-0003'] vs ['TERM-STAGING-0004']"
       },
       {
         "kind": "stage",
         "a": "肺癌一期需要治疗吗",
         "b": "肺癌三期需要治疗吗",
-        "cos": 0.8203312754631042,
+        "cos": 0.8203314542770386,
         "conflict": "分期未覆盖 ['I'] vs ['III']"
       },
       {
@@ -443,14 +508,14 @@
         "kind": "drug",
         "a": "肺癌顺铂联合方案",
         "b": "肺癌卡铂联合方案",
-        "cos": 0.9142225980758667,
+        "cos": 0.9142225384712219,
         "conflict": "术语未覆盖 ['CHEMO-CISPLATIN'] vs ['CHEMO-CARBOPLATIN']"
       },
       {
         "kind": "cancer",
         "a": "肺癌筛查建议",
         "b": "结肠癌筛查建议",
-        "cos": 0.8395349383354187,
+        "cos": 0.8395349979400635,
         "conflict": "癌种未覆盖 ['lung'] vs []"
       },
       {
@@ -464,7 +529,7 @@
         "kind": "cancer",
         "a": "肺癌术后随访计划",
         "b": "结肠癌术后随访计划",
-        "cos": 0.8881838321685791,
+        "cos": 0.8881837129592896,
         "conflict": "癌种未覆盖 ['lung'] vs []"
       },
       {
@@ -541,7 +606,7 @@
         "kind": "intent_negative",
         "a": "肺癌筛查适合人群",
         "b": "肺癌筛查费用多少",
-        "cos": 0.7446467876434326,
+        "cos": 0.7446466684341431,
         "conflict": null
       },
       {
@@ -555,7 +620,77 @@
         "kind": "intent_negative",
         "a": "结肠癌化疗周期安排",
         "b": "结肠癌化疗期间饮食怎么吃",
-        "cos": 0.7738512754440308,
+        "cos": 0.773851215839386,
+        "conflict": null
+      },
+      {
+        "kind": "drug",
+        "a": "来曲唑的常见副作用有哪些",
+        "b": "阿那曲唑的常见副作用有哪些",
+        "cos": 0.8132796287536621,
+        "conflict": null
+      },
+      {
+        "kind": "drug",
+        "a": "奥希替尼需要空腹吃吗",
+        "b": "奥希替尼漏服一次怎么办",
+        "cos": 0.6719522476196289,
+        "conflict": null
+      },
+      {
+        "kind": "cancer",
+        "a": "肺癌III期能手术吗",
+        "b": "乳腺癌III期能手术吗",
+        "cos": 0.889404296875,
+        "conflict": "癌种未覆盖 ['lung'] vs ['breast']"
+      },
+      {
+        "kind": "intent_negative",
+        "a": "肺癌免疫治疗前需要做哪些检查",
+        "b": "肺癌免疫治疗期间出现皮疹怎么处理",
+        "cos": 0.7162243127822876,
+        "conflict": null
+      },
+      {
+        "kind": "stage",
+        "a": "结肠癌II期需要化疗吗",
+        "b": "结肠癌III期需要化疗吗",
+        "cos": 0.949798047542572,
+        "conflict": "分期未覆盖 ['II'] vs ['III']"
+      },
+      {
+        "kind": "patient_expect",
+        "a": "肺癌晚期还能活多久",
+        "b": "肺癌晚期怎么治疗",
+        "cos": 0.8120829463005066,
+        "conflict": null
+      },
+      {
+        "kind": "patient_expect",
+        "a": "这个药能报销吗",
+        "b": "这个药能吃多久",
+        "cos": 0.7004421949386597,
+        "conflict": null
+      },
+      {
+        "kind": "patient_expect",
+        "a": "吃靶向药期间能喝酒吗",
+        "b": "吃靶向药期间能吃中药吗",
+        "cos": 0.7699824571609497,
+        "conflict": null
+      },
+      {
+        "kind": "intent_negative",
+        "a": "PD-1 的不良反应有哪些",
+        "b": "PD-1 的不良反应怎么处理",
+        "cos": 0.918663740158081,
+        "conflict": null
+      },
+      {
+        "kind": "intent_negative",
+        "a": "靶向药需要做基因检测吗",
+        "b": "靶向药耐药后还需要做基因检测吗",
+        "cos": 0.9140982627868652,
         "conflict": null
       }
     ]
