@@ -56,6 +56,16 @@ miniapp/.swc/
 # 小程序预览运行态（可能在工作目录根生成）
 .pai/
 
+# 运行日志与调试截图（本地产物，不入库）
+logs/
+*.log
+
+# 数据备份（写回前的带时间戳快照，可再生，不入库）
+medical_rag/data/backups/
+
+# 设计过程稿截图（评审中间产物，不入库）
+legacy/design-review/
+
 # 操作系统
 Thumbs.db
 .DS_Store
