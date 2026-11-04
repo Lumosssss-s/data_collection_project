@@ -29,11 +29,12 @@ MANIFEST = [
         "title": "新型抗肿瘤药物临床应用指导原则（2025年版）",
         "doc_type": "guideline",
         "issuer": "中华人民共和国国家卫生健康委员会",
-        "publish_date": "2025-01-01",
+        "publish_date": "2026-01-26",
         "cancer_types": ["lung", "breast", "colorectal", "gastric", "thyroid"],
         "source_version": "2025",
-        "license_note": "国家卫健委官网公开文件，公开可引用，引用需标注出处；仅限非商业竞赛使用。"
-                        "PDF 仅标注 2025 年版、未标注具体发布日，publish_date 暂以年份起始日记，待医学审核员复核。",
+        "license_note": "国家卫健委官网公开文件（通知页 https://www.nhc.gov.cn/yzygj/c100067/202601/460c2377aa294b55baacd339b8b19eb8.shtml），"
+                        "公开可引用，引用需标注出处；仅限非商业竞赛使用。由医政司 2026-01-26 发布，"
+                        "文号 国卫办医政函〔2026〕21 号，成文日期 2026-01-19（publish_date 取官网发布日期）。",
     },
 ]
 
