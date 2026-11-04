@@ -174,10 +174,9 @@ class Settings(BaseSettings):
     # 不能让缓存层把问答链路拖慢。
     redis_timeout: float = 0.8
     # L1 余弦初筛阈值。由 scripts/cache/calibrate_threshold.py 在本域样本上标定（0 token）：
-    # 守卫补齐「标志物状态」槽位后，tau=0.88 在本域 20 正 / 33 负样本上零错命中、召回 0.55。
-    # 不取更低的 0.83（样本内召回 0.80）：意图类负样本余弦上限 0.82，余量只有 0.01，
-    # 且样本量小，线上不安全。语料或样本变化后必须重跑校准脚本再改此值。
-    semantic_cache_threshold: float = 0.88
+    # 2026-11-04 依 26正/43负 标定：0.919 intent 负样本上限，0.95 余量 +0.031；0.88 在本样本已 2 例误合并
+    # 旧结论（20 正 / 33 负时 tau=0.88 零错命中）已不成立，语料或样本变化后必须重跑校准脚本再改此值。
+    semantic_cache_threshold: float = 0.95
     # 条目上限。问答条目约 3~8KB，检索条目约 50~100KB，300 条在百 MB 以内
     semantic_cache_max_entries: int = 300
     # 兜底过期（秒）。主失效手段是 doc_catalog.json 的 mtime 版本比对，TTL 只防泄漏
