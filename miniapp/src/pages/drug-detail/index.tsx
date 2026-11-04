@@ -5,7 +5,7 @@ import StateView from '@/components/StateView';
 import DisclaimerBar from '@/components/DisclaimerBar';
 import { fetchDrugDetail } from '@/services/patientService';
 import { MOCK_NOTICE } from '@/utils/constants';
-import type { DrugPatientData } from '@/types/api';
+import type { DrugPatientData, DrugPlain } from '@/types/api';
 import styles from './index.module.scss';
 
 const DrugDetailPage: React.FC = () => {
@@ -48,7 +48,8 @@ const DrugDetailPage: React.FC = () => {
     );
   }
 
-  const { plain } = detail;
+  // plain 可能缺失（后端拆分后 /plain 生成失败返回 null）：兜底空对象，章节按字段条件渲染，不崩页
+  const plain: Partial<DrugPlain> = detail.plain || {};
 
   return (
     <View className={styles.page}>
@@ -57,7 +58,26 @@ const DrugDetailPage: React.FC = () => {
         {detail.brand_names && detail.brand_names.length > 0 ? (
           <Text className={styles.brand}>商品名：{detail.brand_names.join('、')}</Text>
         ) : null}
+        {detail.aliases_zh && detail.aliases_zh.length > 0 ? (
+          <Text className={styles.alias}>{detail.aliases_zh.join('、')}</Text>
+        ) : null}
       </View>
+
+      {/* 黑框警示：置顶安全提示（药名之后、白话之前，先于任何其他信息）。字段与措辞沿用
+          PC 端 patient.js：title + text 逐字呈现，超 600 字截断加省略号；正文缺失时整块不渲染 */}
+      {detail.has_boxed_warning && detail.boxed_warning && detail.boxed_warning.length > 0 ? (
+        <View className={styles.boxed}>
+          <Text className={styles.boxedLabel}>FDA 黑框警示</Text>
+          {detail.boxed_warning.map((w, i) => {
+            const text = String((w && w.text) || '');
+            return (
+              <Text key={`bw-${i}`} className={styles.boxedText}>
+                {(w && w.title ? `${w.title}：` : '') + text.slice(0, 600) + (text.length > 600 ? '…' : '')}
+              </Text>
+            );
+          })}
+        </View>
+      ) : null}
 
       {fromMock ? <Text className={styles.mockNotice}>{MOCK_NOTICE}</Text> : null}
 

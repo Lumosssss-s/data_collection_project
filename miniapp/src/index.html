@@ -8,6 +8,9 @@
     <meta name="format-detection" content="telephone=no,address=no" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 标题衬线：非阻塞引入 Noto Serif SC；加载失败/超时自动落到 Georgia/Songti SC/SimSun 系统衬线，不阻塞首屏 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap" media="print" onload="this.media='all'" />
     <title>taro_template</title>
     <script>
       // 固定 html fontSize，防止 flexible 脚本动态修改

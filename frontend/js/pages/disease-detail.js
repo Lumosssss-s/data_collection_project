@@ -7,10 +7,12 @@
  */
 
 // 疾病档案默认选择：localStorage → 肺癌
-// 注：breast / gastric 当前疾病库无档案（实测 total=0），切换后显示「暂无档案」而非报错
+// 癌种 → 档案 id 映射必须与 D2_CANCER_LABELS 的键一一对应：
+// 缺键会让切换按钮静默 return（2026-11-04 实测：乳腺癌/胃癌点击无响应即此因）。
+// 四个档案均已在库（DIS-LUNG/COLORECTAL/BREAST/GASTRIC-001，pro 与 patient 版本均 200）。
 const D2_DISEASE_KEY = 'd2_current_disease';
 const D2_CANCER_LABELS = { lung: '肺癌', colorectal: '结直肠癌', breast: '乳腺癌', gastric: '胃癌' };
-const D2_CANCER_DEFAULTS = { lung: 'DIS-LUNG-001', colorectal: 'DIS-COLORECTAL-001' };
+const D2_CANCER_DEFAULTS = { lung: 'DIS-LUNG-001', colorectal: 'DIS-COLORECTAL-001', breast: 'DIS-BREAST-001', gastric: 'DIS-GASTRIC-001' };
 
 function getCurrentDiseaseId() {
     let saved = '';

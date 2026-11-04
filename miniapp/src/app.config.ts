@@ -12,15 +12,15 @@ export default defineAppConfig({
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#0e7490',
+    navigationBarBackgroundColor: '#245C63',
     navigationBarTitleText: '肿瘤健康助手',
     navigationBarTextStyle: 'white',
-    backgroundColor: '#f2f7f9'
+    backgroundColor: '#EDF0E9'
   },
   tabBar: {
-    color: '#7b9099',
-    selectedColor: '#0e7490',
-    backgroundColor: '#ffffff',
+    color: '#5A6654',
+    selectedColor: '#245C63',
+    backgroundColor: '#F7F9F3',
     borderStyle: 'white',
     list: [
       {

@@ -10,6 +10,7 @@ import type {
   DiseaseSearchData,
   DrugListData,
   DrugPatientData,
+  DrugPlain,
   FollowupRecordData,
   FollowupTasksData,
   PreconsultMessageData,
@@ -96,7 +97,23 @@ export function fetchDrugs(q: string): Promise<ServiceResult<DrugListData>> {
 
 export function fetchDrugDetail(drugId: string): Promise<ServiceResult<DrugPatientData>> {
   return withFallback(
-    () => api.get<DrugPatientData>(`/patient/drug/${encodeURIComponent(drugId)}`),
+    async () => {
+      // 2026-11-03 后端拆分：结构化字段（零 LLM）与白话解读（/plain，LLM 缓存）两个接口，
+      // 此处合并回旧契约；plain 缺失时降级为仅结构化展示，不让页面崩溃
+      const id = encodeURIComponent(drugId);
+      const base = await api.get<DrugPatientData>(`/patient/drug/${id}`);
+      try {
+        const p = await api.get<{ plain?: DrugPlain | null }>(`/patient/drug/${id}/plain`, undefined, {
+          timeout: LONG_TIMEOUT
+        });
+        if (p && p.plain) {
+          return { ...base, plain: p.plain };
+        }
+      } catch {
+        // plain 生成失败/超时：忽略，仅返回结构化字段
+      }
+      return base;
+    },
     () => mockDrugDetail(drugId),
     () => true
   );

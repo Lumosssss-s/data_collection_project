@@ -1,43 +1,44 @@
 // ============================================
-// 主题配色变量（患者端 · 医疗青蓝）
-// 与 Web 端临床青蓝配色保持一致，患者端更柔和友好
+// 主题配色变量（患者端 · D2 晨间病房）
+// 与 PC 端 frontend/css/d2.css 生效令牌逐项对齐（2026-11-03）：
+//   暖灰绿底 + 非纯白卡片 + 深青主色 + 杏色仅作图形点缀
 // ============================================
 
-// 品牌主题色
-$color-primary: #0e7490;
-$color-primary-light: #1d7a8c;
-$color-primary-dark: #0b5d74;
+// 品牌主题色（D2: --color-primary / gradient-brand 深端 / --color-primary-dark）
+$color-primary: #245C63;
+$color-primary-light: #1C4A50; // D2 gradient-brand 深端，用于 hero 渐变第二 stop
+$color-primary-dark: #1C4A50;
 
-// 功能色
+// 功能色（success/warning/error D2 未覆盖，沿用 tokens.css 同名令牌）
 $color-success: #15803d;
 $color-warning: #b45309;
 $color-error: #b91c1c;
-$color-info: #0e7490;
+$color-info: #1e5e7a; // tokens.css --color-info（D2 未覆盖）
 $color-info-deep: #1e5e7a; // 蓝灰（与 Web 端一致，用于入口图标底衬区分）
-$color-info-soft: #f1f6f9;
+$color-info-soft: #e0e9f0; // D2 --color-info-bg
 
-// 背景色
-$color-bg-page: #f2f7f9;
-$color-bg-card: #ffffff;
-$color-bg-hover: #eef5f7;
+// 背景色（D2: --color-bg / --color-surface / --color-surface-alt）
+$color-bg-page: #edf0e9;
+$color-bg-card: #f7f9f3; // D2 卡片底，刻意非纯白
+$color-bg-hover: #e7ece2;
 
-// 文本色
-$color-text-primary: #15303a;
-$color-text-secondary: #4a6570;
-$color-text-tertiary: #7b9099;
-$color-text-disabled: #b6c6cc;
-$color-text-white: #ffffff;
+// 文本色（D2: --color-text / secondary / muted）
+$color-text-primary: #1f2a26;
+$color-text-secondary: #4e5c54;
+$color-text-tertiary: #5a6654;
+$color-text-disabled: #b6c6cc; // D2 无对应令牌，暂保留原值
+$color-text-white: #f4f8f2; // D2 --color-on-primary（对 #245C63 7.02:1）
 
-// 边框色
-$color-border: #e3ebef;
-$color-divider: #eef5f7;
+// 边框色（D2: --color-border；divider 取 surface-alt 档）
+$color-border: #cfd8c9;
+$color-divider: #e7ece2;
 
-// 业务语义色（患者端）
-$color-primary-soft: #e6f2f5; // 主题浅底（标签、提示底色）
-$color-warning-soft: #fdf3e7; // 警告浅底（免责声明条）
-$color-danger-soft: #fdeceb; // 危险浅底（红旗征提示）
+// 业务语义色（患者端，D2 生效值）
+$color-primary-soft: #dce8e5; // D2 --color-primary-soft
+$color-warning-soft: #efe6d2; // D2 --color-warning-bg（免责声明条）
+$color-danger-soft: #f1e0dd; // D2 --color-error-bg（红旗征提示）
 
-// 风险分层（与风险等级一一对应，禁止仅用颜色表达结论）
+// 风险分层（D2 未覆盖，沿用 tokens.css，与风险等级一一对应，禁止仅用颜色表达结论）
 $color-risk-high: #b3261e;
 $color-risk-high-soft: #fdecea;
 $color-risk-mid: #b45309;
@@ -45,8 +46,8 @@ $color-risk-mid-soft: #fdf3e7;
 $color-risk-low: #0f7b4f;
 $color-risk-low-soft: #e8f5ee;
 
-// 证据等级（患者端科普引用时使用）
+// 证据等级（tokens.css 生效值；B 由 #0e7490 对齐为 #04514E）
 $color-evidence-a: #0f7b4f;
-$color-evidence-b: #0e7490;
+$color-evidence-b: #04514e;
 $color-evidence-c: #b45309;
 $color-evidence-d: #5b6b76;

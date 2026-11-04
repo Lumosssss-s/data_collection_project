@@ -11,17 +11,18 @@
   display: flex;
   background: $color-bg-hover;
   border: 1rpx solid $color-border;
-  border-radius: $radius-button;
+  border-radius: $radius-round;
   padding: 6rpx;
 }
 
 .tab {
   flex: 1;
-  height: 72rpx;
+  /* 92rpx≈44.2px（实测换算 1rpx≈0.48px），达 44px 触控目标 */
+  height: 92rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: $radius-button;
+  border-radius: $radius-round;
   transition: all $transition-base;
 }
 
@@ -144,4 +145,15 @@
   color: $color-text-tertiary;
   line-height: $line-height-loose;
   @include text-ellipsis-multi(2);
+}
+
+// 中文别名：药名下一行小字，次要色，单行不换行（超宽省略），不撑高卡片
+// 字号取 $font-size-md（14px），对齐 PC 药品卡别名 0.8125rem≈13px
+.itemAlias {
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+  @include text-ellipsis;
 }

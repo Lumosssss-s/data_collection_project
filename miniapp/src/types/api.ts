@@ -90,6 +90,8 @@ export interface DrugItem {
   generic_name: string;
   brand_names?: string[];
   cancer_type?: string;
+  /** 中文别名（零 LLM，逐字来自 A4 说明书；空/缺失时前端整行不渲染） */
+  aliases_zh?: string[];
 }
 
 export interface DrugListData extends Degradable {
@@ -104,18 +106,34 @@ export interface DrugSideEffect {
   when_to_seek_help: string;
 }
 
-/** 药品说明书患者版（/patient/drug/{id}） */
+/** 药品说明书白话解读（/patient/drug/{id}/plain 返回；生成失败时为 null） */
+export interface DrugPlain {
+  what_is_it: string;
+  how_to_use: string;
+  cautions: string[];
+  side_effects: DrugSideEffect[];
+  seek_help: string;
+}
+
+/** 黑框警示条目（与 PC 端 frontend/js/pages/patient.js 同一份字段：title + text） */
+export interface DrugBoxedWarning {
+  title?: string;
+  text?: string;
+}
+
+/** 药品说明书患者版（/patient/drug/{id} 结构化 + /plain 合并） */
 export interface DrugPatientData extends Degradable {
   drug_id: string;
   generic_name: string;
   brand_names?: string[];
-  plain: {
-    what_is_it: string;
-    how_to_use: string;
-    cautions: string[];
-    side_effects: DrugSideEffect[];
-    seek_help: string;
-  };
+  /** 中文别名（/patient/drug/{id} 已透传，与列表同一字段源） */
+  aliases_zh?: string[];
+  /** 黑框警示正文（零 LLM 结构化字段，逐字来自说明书） */
+  boxed_warning?: DrugBoxedWarning[];
+  /** 是否有黑框警示：后端由 boxed_warning 非空推导，非存储字段 */
+  has_boxed_warning?: boolean;
+  /** 白话解读：后端 2026-11-03 起拆分为独立接口，缺失时页面降级为仅结构化展示 */
+  plain?: DrugPlain;
   disclaimer?: string;
   seek_help?: string;
 }

@@ -351,10 +351,9 @@ body {
 .d2-sec-head { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem; }
 .d2-sec-no { font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-primary-text); }
 .d2-sec-name { font-size: 0.9375rem; font-weight: 600; }
-/* 正文行宽上限 42em：0.875rem 字号下 ≈588px ≈ 42 个全角汉字，
-   落在中文舒适行宽 40–46 字区间（CLReq 长文建议每行不超过约 40–50 字）；
+/* 正文行宽上限 58em（≈710px，中文约 50–55 字/行）：再窄会留白、再宽串行；
    只约束文字段，卡片容器仍满宽，左缘与章节标题天然对齐。 */
-.d2-sec-text { font-size: 0.875rem; line-height: 1.8; color: var(--color-text-secondary); margin: 0; white-space: pre-wrap; max-width: 42em; }
+.d2-sec-text { font-size: 0.875rem; line-height: 1.8; color: var(--color-text-secondary); margin: 0; white-space: pre-wrap; max-width: 58em; }
 
 /* 患者版溯源角标与对照表（2026-11-03）：弱化不打断阅读，对照表默认收起 */
 .d2-ref {

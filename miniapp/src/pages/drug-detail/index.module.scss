@@ -15,6 +15,7 @@
 
 .name {
   display: block;
+  font-family: $font-family-serif;
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
   color: $color-text-white;
@@ -25,6 +26,54 @@
   margin-top: $spacing-xs;
   font-size: $font-size-sm;
   color: rgba(255, 255, 255, 0.85);
+}
+
+// 中文别名：药名/商品名之下，字号比药名小一档（28rpx），单行省略，不撑高头部
+.alias {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-md;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: $line-height-normal;
+  @include text-ellipsis;
+}
+
+// 黑框警示：软底 + 左侧竖线 + 小号标签（D2 警示语义色，非鲜红大色块）
+.boxed {
+  position: relative;
+  margin-bottom: $spacing-md;
+  padding: $spacing-md $spacing-md $spacing-md $spacing-lg;
+  background: $color-warning-soft;
+  border-radius: $radius-sm;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 6rpx;
+    background: #8c3b2e;
+  }
+}
+
+.boxedLabel {
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.5rpx;
+  color: #8c3b2e;
+}
+
+.boxedText {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+  word-break: break-word;
 }
 
 .mockNotice {

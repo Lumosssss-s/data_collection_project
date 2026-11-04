@@ -123,6 +123,9 @@ const KnowledgePage: React.FC = () => {
                     <Text className={styles.itemTitle}>{d.generic_name}</Text>
                     <Text className={styles.itemArrow}>›</Text>
                   </View>
+                  {d.aliases_zh && d.aliases_zh.length > 0 ? (
+                    <Text className={styles.itemAlias}>{d.aliases_zh.join('、')}</Text>
+                  ) : null}
                   {d.brand_names && d.brand_names.length > 0 ? (
                     <Text className={styles.itemDesc}>商品名：{d.brand_names.join('、')}</Text>
                   ) : null}
