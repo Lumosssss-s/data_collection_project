@@ -6,7 +6,7 @@
 
 | 文件 | 记录数 | 内容 | 来源（记录内 `source` 字段） |
 |---|---|---|---|
-| `drug_catalog_v2.json` | 48 种药 / 2,235 条制剂 | **当前版本**：字段名对齐需求清单 §A4 ⑥ + 药品基础信息 + 美国上市制剂清单 + ATC 编码 + 中文适应证/用法用量 + openFDA 说明书四段英文 interim | FDA NDC Directory（公有领域）+ WHO ATC/DDD Index（16 号映射）+ 《新型抗肿瘤药物临床应用指导原则（2025年版）》（20 号抽取）+ openFDA drug/label（公有领域） |
+| `drug_catalog_v2.json` | 49 种药（48 条 FDA 记录 + 1 条国产原研新增） | **当前版本**：字段名对齐需求清单 §A4 ⑥ + 药品基础信息 + 美国上市制剂清单 + ATC 编码 + 中文适应证/用法用量（指导原则 20 条 / 官网说明书 6 条）+ 中文禁忌 38 / 不良反应 32 + 13 条的 `cn_registration` 与 `label` 元数据 | FDA NDC Directory（公有领域）+ WHO ATC/DDD Index（16 号映射）+ 《新型抗肿瘤药物临床应用指导原则（2025年版）》（20 号抽取）+ openFDA drug/label（公有领域，19 号派生）+ **上市许可持有人/生产企业官网中文说明书（30 号采集、31 号合并）** |
 | `drug_catalog_v1_20261025.json` | 48 种药 / 2,235 条制剂 | v1（旧字段名 `canonical_zh` / `atc`，按 G4 保留以便比对，下游已不再读取）；该快照保留原始错字「昂达司琼」，未回改 | 同上 |
 
 ## 字段名对齐（v1 → v2，2026-10-28）
@@ -18,12 +18,14 @@
 | `canonical_zh` | `generic_name` | 中文通用名 canonical；`generic_name_en` 作为附加字段保留 |
 | `atc` | `atc_code` | ATC 5 级码；`atc_parent` 保留 |
 | — | `brand_names` | 由 `products[].proprietary_name` 去重生成（英文商品名，中文商品名待补），48/48 有值 |
-| — | `approval_no` | 国药准字，当前 0/48（NMPA 无公开接口，待授权渠道） |
+| — | `approval_no` | 国药准字，当前 0/48（NMPA 无公开接口，待授权渠道/人工补录） |
 | — | `indications` | 原字段已存在，统一为数组（17/48） |
 | — | `dosage` | 原字段已存在，统一为 `{"standard","adjustment"}` 对象（17/48） |
-| — | `contraindications` | 禁忌，当前 0/48 |
-| — | `adverse_reactions` | 不良反应（`[{term,frequency,ctcae_hint}]`），当前 0/48 |
+| — | `contraindications` | 禁忌，31/48（openFDA 英文 interim，附 `contraindications_source`） |
+| — | `adverse_reactions` | 不良反应（`[{term,frequency,ctcae_hint}]`），32/49（中文说明书原文 13 条 + openFDA 英文 interim 19 条，各带 `*_source`） |
 | — | `interactions` | 原字段已存在（11/48） |
+| — | `label` | 中文说明书元数据（`lang/status/source_*/fetched_at/text_path/text_sha256/char_count/sections`），13/49；全文不入目录，按 `text_path` 读取 |
+| — | `cn_registration` | 注册类字段（`approval_no/brand_name/specification/dosage_form/mah/manufacturer` + 来源），13/49；**仅取自说明书原文**，不混用注册库 |
 
 空值一律写 `null`（G8），缺口同步登记在 `missing_fields`。
 
@@ -31,10 +33,12 @@
 
 1. **基础字段已齐**：通用名/剂型/途径/规格/厂牌/申请号/药理分类取自 FDA NDC；`atc_code` + `atc_parent` 48/48 由 16 号脚本映射。
 2. **NMPA 查询页只有注册信息**：`www.nmpa.gov.cn` / `datasearch.nmpa.gov.cn` 对脚本与自动化浏览器均返回 HTTP 412（WAF），人工查询页（样例见 `raw/nmpa_registry/`）只提供批准文号/产品名称/商品名/剂型/规格/持有人/生产厂商/药品本位码，**不含说明书正文**。
-3. **中文适应证/用法用量改由官方指导原则抽取**：20 号脚本从《新型抗肿瘤药物临床应用指导原则（2025年版）》PDF 抽取，覆盖 **17/48**（呼吸/消化/乳腺三个章节，适应证按癌种关键词过滤，剔除「※」境外获批、国内未获批条目），写入 `indications` / `dosage` / `interactions`，来源记入 `label_zh_source`。
-4. **未覆盖的 31 种**：化疗药（铂类、蒽环、紫杉类、吉西他滨、伊立替康、培美曲塞、卡培他滨、氟尿嘧啶）、内分泌药（他莫昔芬、来曲唑、阿那曲唑、依西美坦、氟维司群）、支持治疗（G-CSF、止吐、骨转移、地塞米松、左甲状腺素）不在该指导原则内；甲状腺癌无独立章节（仑伐替尼、索拉非尼、凡德他尼未覆盖）。
-5. **禁忌与不良反应仍未完成**：暂用 openFDA 英文 interim（45/48，`label_en_interim`），并与人工补充的说明书要点合并；不得直接当作中文说明书交付。
-6. `missing_fields` 由 19 号脚本按实际缺口动态生成：17 条剩 4 项（禁忌/不良反应/批准文号/中文说明书）、29 条剩 6 项、2 条无 ATC 的剩 7 项。
+3. **中文适应证/用法用量双来源**：20 号脚本从《新型抗肿瘤药物临床应用指导原则（2025年版）》PDF 抽取（呼吸/消化/乳腺/甲状腺/头颈/骨与软组织 6 章），30 号脚本从企业官网说明书采原文；两者互补，20 号已填的中文不覆盖。
+4. **企业官网说明书采集（2026-11-04）**：`tools/30_fetch_cn_labels.py` 采得 13 个唯一药品的中文说明书原文（罗氏 6、礼来 1、辉瑞 2、豪森 3 + 交叉核对 1、信达 1），全部走公开页面、无登录/验证码/付费墙，先读 robots.txt；每份都记录 `source_url`、`fetched_at`、`usage_note`。原文存 `fetched/labels_cn/downloads/`，抽取文本存 `fetched/labels_cn/text/`。
+5. **未覆盖的 23 种适应证/用法用量**：经典化疗药（铂类、蒽环、紫杉类、吉西他滨以外的大多）、内分泌药与支持治疗药，指导原则无独立章节（仅作联合方案提及），企业官网未挂全文或仅扫描件/图片。保持 null，不用相近药或翻译填充。
+6. **禁忌与不良反应**：中文说明书覆盖 13 种（企业官网原文，`lang=zh`），其余仍为 openFDA 英文 interim（`lang=en`、`status=interim_pending_zh`）。13 种中有 6 种禁忌、9 种不良反应原本是英文 interim，31 号合并时整块替换为中文原文，被替换的英文层摘要保留在 `*_source.replaced_interim`。
+7. **注册类字段只来自说明书**：`approval_no` / `brand_name` / `specification` / `mah` 等取自说明书原文的 `【药品名称】【规格】【上市许可持有人】` 段，不使用注册库字段；说明书中未出现的项为 null（如氟维司群商品名未在正文列出，保持 null）。
+8. `missing_fields` 由 19 号脚本按实际缺口动态生成。
 
 ## 字段结构
 
@@ -50,17 +54,20 @@
 | `product_count` / `labeler_count` | int | 在美制剂数 / 生产企业数 |
 | `application_numbers` | array | FDA 申请号（NDA/ANDA/BLA） |
 | `products` | array | 制剂明细（NDC、商品名、规格、厂牌、上市状态等） |
-| `brand_names` | array\|null | 商品名（取自 `products[].proprietary_name`，48/48 有值） |
-| `atc_code` / `atc_parent` | string\|null | ATC 5 级码 / 顶级组（WHO ATC/DDD Index，16 号脚本；48 条中 46 条有值） |
-| `approval_no` | string\|null | 国药准字编号，当前全 null（NMPA 无公开接口） |
-| `indications` | array\|null | 中文适应证（20 号从指导原则抽取，仅 5 癌种子集），17/48 有值 |
-| `dosage` | object\|null | `{"standard":"…","adjustment":"…"}`，标准用法用量与调整（20 号），17/48 有值 |
-| `contraindications` | array\|null | 禁忌，当前全 null |
-| `adverse_reactions` | array\|null | `[{"term","frequency","ctcae_hint"}]`，当前全 null |
+| `brand_names` | array\|null | 商品名（FDA `products[].proprietary_name` 去重 + 中文说明书【药品名称】补充），48/49 有值 |
+| `atc_code` / `atc_parent` | string\|null | ATC 5 级码 / 顶级组（WHO ATC/DDD Index，16 号脚本；48/49 有值，信迪利单抗说明书中无 ATC 保持 null） |
+| `approval_no` | string\|null | 国药准字编号，13/49（均摘自已采集的中文说明书【药品批准文号】；其余 null） |
+| `indications` | array\|null | 中文适应证（20 号指导原则抽取 + 中文说明书补充），26/49 有值（指导原则 20、说明书补 6） |
+| `dosage` | object\|null | `{"standard":"…","adjustment":"…"}`，标准用法用量与调整（20 号），26/49 有值 |
+| `contraindications` | array\|null | 禁忌，38/49 有值：中文说明书原文 13（`lang=zh`）+ openFDA 英文 interim 25（`lang=en`），按 `contraindications_source.lang` 区分 |
+| `contraindications_source` | object\|null | `{lang,status,source,set_id,effective_time,fetched_at,note}`；`lang=zh` 为中文说明书原文，`lang=en` 为英文 interim |
+| `adverse_reactions` | array\|null | `[{"term","frequency","ctcae_hint","lang","status"}]`，32/49 有值（中文 13 + 英文 19）；`frequency` 仅取标签明示值（如 `≥20%`、`2.5%`），无明示频率的不推测 |
+| `adverse_reactions_source` | object\|null | 同上，字段级来源与取数时间；`lang` 区分中/英文层 |
 | `interactions` | array\|null | 药物相互作用要点（20 号，可选） |
 | `label_zh_source` | object\|null | 中文正文来源（G6 五字段）：`source_name` / `source_version` / `source_section` / `source_file` / `updated_at`；与英文 interim 区分 |
-| `label_en_interim` | object\|null | openFDA 英文 interim，**非 A4 正式字段**：`{lang:"en", status:"interim_pending_zh", source, set_id, effective_time, generic_name, brand_name, sections{indications, dosage_and_administration, contraindications, adverse_reactions}}`；45/48 有值 |
-| `label` | object\|null | 中文说明书（A4 正式字段），当前全为 null；由 `raw/nmpa_labels/labels_zh.json` 经 19 号脚本合并后写入：`{lang:"zh", status:"zh_from_nmpa", source_name, source_url, updated_at}` |
+| `label_en_interim` | object\|null | openFDA 英文 interim，**非 A4 正式字段**：`{lang:"en", status:"interim_pending_zh", source, set_id, effective_time, fetched_at, source_url, generic_name, brand_name, sections{indications, dosage_and_administration, contraindications, adverse_reactions}}`；45/49 有值 |
+| `label` | object\|null | 中文说明书元数据（A4 正式字段），13/49：`{lang:"zh", status:"zh_from_official_label", source_type, source_name, source_holder, source_url, fetched_at, usage_note, content_type, pages, char_count, raw_path, text_path, text_sha256, sections, text_stored_in_catalog:false, note}`；**全文不写入目录**，按 `text_path` 读取；`raw_path` 指向的原件不入 Git（版权归持有人） |
+| `cn_registration` | object\|null | 中文注册块，13/49：`{brand_name, specification, mah, approval_no}`，全部摘自已采集的说明书原文 |
 | `missing_fields` | array | 当前仍缺的 A4 必填项，19 号脚本按实际缺口动态生成（`atc_code` 仅在无值时出现） |
 | `source` / `origin` | string / enum | 来源说明 / 固定 `fda_ndc` |
 | `annotation` | object | `{"annotator","date","status"}`，当前 `status=draft` |
@@ -70,26 +77,28 @@
 | 指标 | 数量 |
 |---|---|
 | A4 药单品种 | 51 种 |
-| **命中（FDA NDC）** | **48 种** |
-| 未命中 | 3 种：埃克替尼、信迪利单抗、安罗替尼（中国本土药，未在美国上市） |
+| **目录记录** | **49 条**（FDA NDC 命中 48 + 信迪利单抗官网说明书建档 1） |
+| 未命中 FDA NDC | 3 种：埃克替尼、信迪利单抗、安罗替尼（中国本土药，未在美国上市）；其中信迪利单抗已由官网说明书建档 |
 | 制剂记录 | 2,235 条（在售 2,200 / 已停售 35） |
-| ATC 覆盖 | **48 / 48**（阿瑞匹坦 A04AD12、昂丹司琼 A04AA01；2026-10-30 由 15 号脚本扩展 A04 组 + 16 号回补） |
-| 中文适应证 + 用法用量 | 17 / 48（指导原则抽取） |
-| openFDA 英文 interim | 45 / 48 |
-| 未命中 openFDA | 3 种：阿替利珠单抗（TECENTRIQ）、仑伐替尼（LENVIMA）、奥希替尼（TAGRISSO） |
-| 中文正式 `label` | 0 / 48（待人工按说明书要点覆盖） |
+| ATC 覆盖 | **48 / 49**（信迪利单抗 ATC 未在说明书中出现，保持 null 并登记缺失） |
+| 中文适应证 + 用法用量 | **26 / 49**（指导原则 20 + 官网说明书 6，互不覆盖） |
+| 禁忌 | **38 / 49**（中文说明书原文 13 + openFDA 英文 interim 25） |
+| 不良反应 | **32 / 49**（中文说明书原文 13 + openFDA 英文 interim 19） |
+| 中文说明书全文 | **13 / 49**（`fetched/labels_cn/text/*.txt`，目录内 `label` 仅存元数据） |
+| 国药准字 `approval_no` | **13 / 49**（均摘自已采集说明书原文） |
+| 中文注册块 `cn_registration` | **13 / 49**（品牌/规格/持有人同样只来自说明书） |
 
-按癌种（可重叠）：肺 18、乳腺 15、结直肠 9、胃 8、甲状腺 4、支持治疗 7。
+按癌种（可重叠）：肺 18、乳腺 15、结直肠 9、胃 8、甲状腺 4、支持治疗 7、信迪利单抗按说明书适应证字面标注为肺/胃/结直肠。
 
 ## 录入注意事项
 
 1. **中文适应证/用法用量为自动抽取的草稿**：20 号脚本按「指导原则章节 + 癌种关键词」过滤，跨癌种药品（如帕博利珠单抗、曲妥珠单抗）会合并多个章节条目，须医学顾问逐条核对是否落在 5 癌种范围内。
-2. **禁忌与不良反应仍需人工**：NMPA 查询页不含这两段；当前英文 interim 只作翻译/比对参考，正式交付前必须按说明书补齐（含发生频率与 CTCAE 提示）。
-3. **NMPA 只能补注册字段**：`approval_no`、商品名、剂型、规格、持有人按 `raw/nmpa_registry/` 样例版式人工查询后录入；同一药品多规格可能有多个批准文号。
+2. **13 种已换中文原文，其余仍是英文 interim**：`contraindications_source.lang` / `adverse_reactions_source.lang` 为 `zh` 的表示已由企业官网说明书覆盖，`en` 表示 openFDA 英文 interim，正式交付前须替换；人工补录时把 `lang` 置为 `zh` 后脚本不会再被英文覆盖。
+3. **注册字段来源**：`approval_no`、中文商品名、规格、持有人优先取自说明书原文（`cn_registration`，13/49）；说明书中没有的，再按 `raw/nmpa_registry/` 版式人工查询 NMPA 补充；同一药品多规格可能有多个批准文号。
 4. **美国市场口径**：商品名（如 TAGRISSO）、规格单位、生产企业与国内可能不同，不能直接展示给国内患者。
-5. **3 个中国原研药缺口**：埃克替尼、信迪利单抗、安罗替尼既无 FDA NDC 也无 openFDA 标签，需从 NMPA 单独补。
+5. **3 个中国原研药**：信迪利单抗已由信达官网说明书建档（DRUG-EXTRA-003）；埃克替尼（官网仅图片）、安罗替尼（PDF 扫描件）仍缺，需 OCR 或人工录入。
 6. **3 个 openFDA 缺项**：阿替利珠单抗、仑伐替尼、奥希替尼在 openFDA label 数据集中查无记录；其中阿替利珠单抗的中文适应证/用法已由指导原则补上。
-7. **ATC 缺口已闭环（2026-10-30）**：阿瑞匹坦（A04AD12）、昂丹司琼（A04AA01）属 A04 止吐类，15 号脚本已扩展 A04 + G03 组（750 条码表）并重跑 16 号，`atc_code` 现为 48/48。
+7. **ATC 覆盖 48/49（2026-10-30 补 A04/G03）**：阿瑞匹坦（A04AD12）、昂丹司琼（A04AA01）已补；信迪利单抗说明书中无 ATC，保持 null。
 8. **药理分类不全**：原表 36.2% 记录为空；本批「环磷酰胺」「曲妥珠单抗-emtansine」为空，需人工补。
 9. **支持治疗类**（G-CSF、止吐、骨转移、激素）标为 `general`，无特定癌种归属。
 10. **`annotation.status=draft`**：全自动映射/抽取，需医学顾问复核。
@@ -106,7 +115,9 @@
 2. 人工按模板填写后另存为 `raw/nmpa_labels/labels_zh.json`，每药字段：
    `approval_no`（国药准字…，来源为 NMPA 注册查询页）、`indications`（数组）、`dosage`（`{standard, adjustment}`）、`contraindications`（数组）、`adverse_reactions`（`[{term, frequency, ctcae_hint}]`）、`interactions`（可选）、`source_name`（说明书名称，必填）、`source_url`（出处链接）、`approved_date`（说明书日期）；可选 `brand_names`。
    已由 20 号脚本填好的 `indications` / `dosage` 可留空，脚本只覆盖非空项。
-3. 重跑 19 号脚本做格式校验并合并：`missing_fields` 自动收缩，审计写入 `cache/drug_labels/zh_override_audit.json`；格式不合规的条目会被拒绝并逐条报告原因。
+3. 重跑 19 号脚本做格式校验并合并：`missing_fields` 自动收缩，审计写入 `cache/drug_labels/zh_override_audit.json`；格式不合规的条目会被拒绝并逐条报告原因。合并中文禁忌/不良反应时脚本会把 `contraindications_source` / `adverse_reactions_source` 置为 `lang=zh`，后续重跑不会再被英文 interim 覆盖。
+
+逐条缺口清单（48 药 × 缺哪些字段 × 需查什么）见 `raw/nmpa_registry/a4_pending_fill.csv`。
 
 ## 复现
 
@@ -115,14 +126,33 @@
 python tools/8_fda_to_json.py              # cache/fda_ndc/ → 本目录 drug_catalog_v2.json（atc_code 先置 null）
 python tools/15_fetch_atc.py               # WHO ATC/DDD Index → fetched/atc/atc_oncology.csv（750 条，十组）
 python tools/16_atc_mapping.py             # 中文药名 ↔ INN ↔ ATC → 回补 atc_code / atc_parent
-python tools/19_fetch_openfda_labels.py    # openFDA 四段英文 → label_en_interim
+python tools/19_fetch_openfda_labels.py    # openFDA 四段英文 → label_en_interim；并派生禁忌/不良反应（英文 interim + 来源/取数时间）
 python tools/20_guideline_drug_extract.py  # 指导原则 PDF → 中文 indications / dosage / interactions（依赖 PyMuPDF）
 python tools/25_align_drug_catalog.py      # 字段名对齐 §A4 ⑥（canonical_zh→generic_name、atc→atc_code，补 brand_names 等）
-python tools/19_fetch_openfda_labels.py --offline   # 刷新 missing_fields（20 号之后必须再跑一次）
+python tools/30_fetch_cn_labels.py         # 企业官网中文说明书 → fetched/labels_cn/（PDF/HTML，robots 检查，sidecar 记 fetched_at）
+python tools/31_merge_cn_labels.py         # 只填空合并：中文原文字段 + cn_registration + label 元数据；英文 interim 整块替换
+python tools/19_fetch_openfda_labels.py --offline   # 刷新 missing_fields（20/31 号之后必须再跑一次）
 ```
 
 - 25 号脚本纯改名迁移，审计写入 `cache/drug_labels/align_v2_audit.json`；v1 原件保留为 `drug_catalog_v1_20261025.json` 供比对（G4）。
-
 - 19 号脚本幂等：已抓且文件存在时不联网（`--force` 强制重抓，`--offline` 只用已抓结果合并）。
 - 20 号脚本审计：`cache/drug_labels/guideline_extract.json`（逐药命中章节、页码、抽取条数、跳过原因）；支持 `--dry-run` 只出审计不回写。
+- 30 号脚本产出 `fetched/labels_cn/labels_cn.json`（逐药章节与字段）、`failures.json`（不可用来源与原因）、`downloads/`（原件与 `*.meta.json`，**原件不入 Git**）、`text/`（抽取文本，入库）；31 号合并审计写 `cache/drug_labels/cn_label_merge.json`。
+- 30/31/19 三段串联幂等：连续跑两遍，`drug_catalog_v2.json`、`labels_cn.json`、`failures.json` 与 `text/` 的 sha256 均一致（已实测）。
 - 抓取结果存 `fetched/openfda_labels/labels.json`，匹配审计存 `cache/drug_labels/openfda_match.json`。
+
+## 企业官网说明书：采集范围与不可用来源（2026-11-04）
+
+已采集（13 个唯一药品，全部为公开页面、无登录/验证码/付费墙）：
+
+| 来源 | 药品 | 使用限制 |
+|---|---|---|
+| 上海罗氏官网（assets.roche.com） | 阿来替尼、阿替利珠单抗、贝伐珠单抗、帕妥珠单抗、曲妥珠单抗、T-DM1 | 版权归持有人，仅限内部知识库使用，不得再分发或商用 |
+| 礼来医学网 | 培美曲塞（力比泰） | 同上 |
+| 辉瑞医学信息网 | 依西美坦（阿诺新）、克唑替尼（赛可瑞） | 同上 |
+| 江苏豪森药业官网 | 氟维司群（普来和）、吉西他滨（泽菲）、顺铂（诺欣） | 国产同通用名说明书，非原研；仅限内部知识库使用 |
+| 信达生物官网 | 信迪利单抗（达伯舒） | 同上 |
+
+已尝试但不可用（原因见 `fetched/labels_cn/failures.json`）：默沙东阿瑞匹坦（PDF 为扫描件）、正大天晴安罗替尼（扫描件）、贝达埃克替尼（官网仅 4 张 JPG）、辉瑞表柔比星/伊立替康/紫杉醇（页面需医疗卫生专业人士登录）、礼来雷莫西尤单抗（BookLink 跳转 SPA 无直链）、安进帕尼单抗/地舒单抗、卫材仑伐替尼、拜耳索拉非尼（官网未挂中文说明书全文）、齐鲁与恒瑞（无全文或说明书为图片）、默克优甲乐（中国官网未挂 PDF）。
+
+格式说明：信达 PDF 为 2 页折叠 5 栏版式，pdfplumber 直接抽取会串栏；30 号脚本对章节标题偏少的 PDF 自动改用 PyMuPDF 行级列聚类重排。礼来 PDF 有逐字水印（「仅供参考，请以实际说明书为准」），独立成行的水印字已剔除，行内插入的单字无法安全去除。

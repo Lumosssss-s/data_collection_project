@@ -41,11 +41,16 @@ SOURCE = {
     "source_file": "raw/guidelines/all/new_antitumor_drug_principles_nhc_2025.pdf",
 }
 
-# 只取 5 癌种相关章节；其余章节（泌尿/皮肤/骨与软组织/头颈/血液/卵巢/泛实体瘤）不入 A4
+# 只取与 A4 癌种子集相关章节；泌尿/皮肤/血液/妇科/中枢等章节不入 A4
+# 2026-11-04 扩展：新增「甲状腺癌用药」「头颈部肿瘤用药（甲状腺适应证）」「骨与软组织肿瘤用药」，
+# 以补齐甲状腺癌与 general 类药品的中文适应证/用法用量缺口。
 CHAPTER_TYPES = {
     "呼吸系统肿瘤用药": {"lung"},
     "消化系统肿瘤用药": {"colorectal", "gastric"},
     "乳腺癌用药": {"breast"},
+    "甲状腺癌用药": {"thyroid"},
+    "头颈部肿瘤用药": {"thyroid"},
+    "骨与软组织肿瘤用药": {"general"},
 }
 
 CANCER_KEYWORDS = {
@@ -350,7 +355,7 @@ def main():
             "source_version": SOURCE["source_version"],
             "source_section": "；".join("%s·%s、%s" % (s["chapter"], s["num"], s["zh"]) for s in used),
             "source_file": SOURCE["source_file"],
-            "updated_at": "2026-10-28",
+            "updated_at": "2026-11-04",
         }
         item["status"] = "applied"
         item["sections"] = [s["zh"] for s in used]

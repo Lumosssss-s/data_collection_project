@@ -1,0 +1,96 @@
+{
+  "generated_by": "tools/30_fetch_cn_labels.py",
+  "count": 9,
+  "failures": [
+    {
+      "drug_id": "DRUG-BREAST-005",
+      "drug_name": "表柔比星",
+      "url": "https://www.pfizermedicalinformation.cn/products/package-insert/pharmorubicin-rd",
+      "source_type": "mah_official_label",
+      "source_name": "辉瑞医学信息网 法玛新说明书",
+      "reason": "页面标注仅供医疗卫生专业人士使用，正文未在公开HTML中渲染（需登录/权限），本轮停止。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-CRC-005",
+      "drug_name": "帕尼单抗",
+      "url": "https://www.amgen.cn/",
+      "source_type": "mah_official_label",
+      "source_name": "安进中国官网",
+      "reason": "官网未检索到可公开下载的中文说明书全文；robots.txt 返回404，无法据此判断授权范围。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-EXTRA-001",
+      "drug_name": "安罗替尼",
+      "url": "https://www.cttq.com/",
+      "source_type": "mah_official_label",
+      "source_name": "正大天晴 福可维（安罗替尼）说明书PDF",
+      "reason": "官方PDF为扫描件，无文本层；本机未安装OCR，无法提取原文。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-EXTRA-002",
+      "drug_name": "埃克替尼",
+      "url": "https://www.bettapharma.com/Contact/article/id/126",
+      "source_type": "mah_official_label",
+      "source_name": "贝达药业 凯美纳（盐酸埃克替尼片）说明书",
+      "reason": "贝达官网仅提供说明书扫描图片（4张JPG），无文本层；本机未安装OCR，无法提取原文。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-LUNG-018",
+      "drug_name": "雷莫西尤单抗",
+      "url": "https://www.lillymedical.cn/zh-cn/oncology/Cyramza",
+      "source_type": "mah_official_label",
+      "source_name": "礼来医学网 希冉择说明书",
+      "reason": "说明书条目 BookLink 指向信达生物 SPA 页面，无直接PDF/全文，脚本无法稳定获取。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-SUP-001",
+      "drug_name": "阿瑞匹坦",
+      "url": "https://www.msdchina.com.cn/",
+      "source_type": "mah_official_label",
+      "source_name": "默沙东 意美（阿瑞匹坦胶囊）说明书PDF",
+      "reason": "官方PDF为扫描图片，无文本层；本机未安装OCR（tesseract），无法提取原文。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-SUP-002",
+      "drug_name": "地舒单抗",
+      "url": "https://www.amgen.cn/",
+      "source_type": "mah_official_label",
+      "source_name": "安进中国官网",
+      "reason": "官网未检索到可公开下载的中文说明书全文。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-THY-001",
+      "drug_name": "仑伐替尼",
+      "url": "https://www.eisai.com.cn/",
+      "source_type": "mah_official_label",
+      "source_name": "卫材中国官网",
+      "reason": "官网仅有新闻与产品简介页，未挂出说明书PDF/全文。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    },
+    {
+      "drug_id": "DRUG-THY-003",
+      "drug_name": "索拉非尼",
+      "url": "https://www.bayer.com.cn/",
+      "source_type": "mah_official_label",
+      "source_name": "拜耳中国官网",
+      "reason": "官网产品页仅提供简介，说明书全文需向企业索取，未公开挂出。",
+      "reason_type": "source_unavailable",
+      "checked_at": "2026-11-04"
+    }
+  ]
+}

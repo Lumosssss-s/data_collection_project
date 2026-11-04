@@ -53,6 +53,12 @@ SECTIONS = [
     ("contraindications", "contraindications"),
     ("adverse_reactions", "adverse_reactions"),
 ]
+# 早期抓取（2026-10-28）未记录 fetched_at，回填该日期；新抓取用实际日期
+LEGACY_FETCHED_AT = "2026-10-28"
+INTERIM_SOURCE = "openFDA drug/label（美国 FDA 公开标签，公有领域，非 NMPA 口径）"
+INTERIM_NOTE = "英文原文 interim，待 NMPA 中文说明书替换；不得直接作为中文说明书交付"
+CITE_RE = re.compile(r"\[[^\]]{0,200}\]|\(\s*\d+(?:\.\d+)?\s*\)")
+WS_RE = re.compile(r"\s+")
 # 少数 INN 在 openFDA 中的写法不同（生物类似药/酸根/抗体偶联药物）
 ALIAS = {
     "TRASTUZUMAB EMTANSINE": "ADO-TRASTUZUMAB EMTANSINE",
@@ -147,6 +153,152 @@ def clean_text(value):
     return text.strip()
 
 
+def _flat(s):
+    """去标签、去引用标注、压平空白，用于分句与条款抽取。"""
+    s = html.unescape(str(s or ""))
+    s = re.sub(r"<[^>]+>", " ", s)
+    s = CITE_RE.sub(" ", s).replace("\xa0", " ")
+    s = WS_RE.sub(" ", s).strip()
+    return re.sub(r"\s+([.,;:])", r"\1", s)
+
+
+def _split_terms(body):
+    """按顶层逗号/分号切分，括号内的逗号不切（避免拆断 (AST) 等）。"""
+    parts, depth, buf = [], 0, ""
+    for ch in body:
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth = max(0, depth - 1)
+        if ch in ",;" and depth == 0:
+            parts.append(buf)
+            buf = ""
+        else:
+            buf += ch
+    parts.append(buf)
+    out = []
+    for p in parts:
+        p = re.sub(r"^\s*and\s+", "", p.strip(), flags=re.I)
+        m = re.search(r"\(\s*(\d+(?:\.\d+)?)\s*%\s*\)", p)
+        pct = (m.group(1) + "%") if m else None
+        p = re.sub(r"\s*\(\s*\d+(?:\.\d+)?\s*%\s*\)", "", p).strip(" .;:")
+        if p:
+            out.append((WS_RE.sub(" ", p), pct))
+    return out
+
+
+def _tokens(s):
+    return set(re.findall(r"[a-z0-9]+", s.lower()))
+
+
+def _sentences(text):
+    t = _flat(text)
+    parts = re.split(r"(?<=[.;])\s+(?=[A-Z(])", t)
+    return [p.strip() for p in parts if len(p.strip()) >= 12]
+
+
+def derive_contraindications(text):
+    """openFDA 禁忌段 → 英文句数组（去掉章节号/标题与引用标注）。"""
+    if not text:
+        return []
+    t = _flat(text)
+    t = re.sub(r"^(?:\d+\s+)?CONTRAINDICATIONS?\s*", "", t, flags=re.I)
+    out, kept = [], []
+    for s in _sentences(t):
+        s = re.sub(r"\s*\(\s*\d+\s*\)\s*$", "", s).strip()
+        if not s or s.strip(" .").lower() == "none":
+            continue
+        toks = _tokens(s)
+        if any(toks and toks <= k for k in kept):  # 摘要式重复（如 (4) 段复述）
+            continue
+        kept.append(toks)
+        out.append(s)
+    return out[:12]
+
+
+def derive_adverse_reactions(text):
+    """只抽取带明确发生率阈值的「most common」句，不推测未标注的频率。"""
+    if not text:
+        return []
+    out, seen = [], set()
+    for s in _sentences(text):
+        low = s.lower()
+        if "most common" not in low:
+            continue
+        m = re.search(r"(?:≥|>=|>|more than|at least)\s*(\d+)\s*%", s, re.I)
+        if not m:
+            continue
+        q = m.group(0).lower()
+        freq = ("≥%s%%" if ("≥" in q or "at least" in q) else ">%s%%") % m.group(1)
+        body = None
+        for sep in (" were ", " include ", " included ", " are ", " was "):
+            idx = low.rfind(sep)
+            if idx != -1:
+                body = s[idx + len(sep):]
+                break
+        if not body:
+            continue
+        body = re.split(r"\.\s+(?=[A-Z])", body)[0]
+        for term, pct in _split_terms(body):
+            if not (2 <= len(term) <= 80) or re.search(r"\d{2,}", term):
+                continue
+            k = term.lower()
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append({
+                "term": term,
+                "frequency": pct or freq,
+                "ctcae_hint": None,
+                "lang": "en",
+                "status": "interim_pending_zh",
+            })
+    return out[:20]
+
+
+def interim_source(rec):
+    it = rec.get("label_en_interim") or {}
+    return {
+        "lang": "en",
+        "status": "interim_pending_zh",
+        "source": INTERIM_SOURCE,
+        "set_id": it.get("set_id"),
+        "effective_time": it.get("effective_time"),
+        "fetched_at": it.get("fetched_at"),
+        "note": INTERIM_NOTE,
+    }
+
+
+def _source_is_zh(rec, field):
+    src = rec.get(field + "_source") or {}
+    return src.get("lang") == "zh"
+
+
+def apply_interim_fields(rec):
+    """把 openFDA 禁忌/不良反应落到 A4 字段，并附 interim 来源与取数时间。
+
+    已有中文覆盖（*_source.lang == zh）时跳过，避免后续重跑用英文覆盖中文。
+    """
+    if not rec.get("label_en_interim"):
+        return
+    if not _source_is_zh(rec, "contraindications"):
+        ci = derive_contraindications((rec["label_en_interim"].get("sections") or {}).get("contraindications"))
+        if ci:
+            rec["contraindications"] = ci
+            rec["contraindications_source"] = interim_source(rec)
+        else:
+            rec["contraindications"] = None
+            rec.pop("contraindications_source", None)
+    if not _source_is_zh(rec, "adverse_reactions"):
+        ar = derive_adverse_reactions((rec["label_en_interim"].get("sections") or {}).get("adverse_reactions"))
+        if ar:
+            rec["adverse_reactions"] = ar
+            rec["adverse_reactions_source"] = interim_source(rec)
+        else:
+            rec["adverse_reactions"] = None
+            rec.pop("adverse_reactions_source", None)
+
+
 def pick(items, name):
     ranked = sorted(items, key=lambda it: (score(it, name), str(it.get("effective_time") or "")))
     ranked.reverse()
@@ -182,6 +334,7 @@ def fetch_one(rec, force):
         "score": score(best, name),
         "set_id": best.get("set_id"),
         "effective_time": best.get("effective_time"),
+        "fetched_at": time.strftime("%Y-%m-%d"),
         "generic_name": (o.get("generic_name") or [None])[0],
         "brand_name": (o.get("brand_name") or [None])[0],
         "spl_id": best.get("id"),
@@ -223,9 +376,11 @@ def apply_interim(rec, item):
         rec["label_en_interim"] = {
             "lang": "en",
             "status": "interim_pending_zh",
-            "source": "openFDA drug/label（美国 FDA 公开标签，公有领域，非 NMPA 口径）",
+            "source": INTERIM_SOURCE,
             "set_id": item.get("set_id"),
             "effective_time": item.get("effective_time"),
+            "fetched_at": item.get("fetched_at"),
+            "source_url": item.get("source_url"),
             "generic_name": item.get("generic_name"),
             "brand_name": item.get("brand_name"),
             "sections": item["sections"],
@@ -281,8 +436,20 @@ def apply_override(rec, ov):
         }
     if ov.get("contraindications"):
         rec["contraindications"] = ov["contraindications"]
+        rec["contraindications_source"] = {
+            "lang": "zh", "status": "zh_from_nmpa",
+            "source_name": str(ov["source_name"]).strip(),
+            "source_url": str(ov.get("source_url") or "").strip() or None,
+            "updated_at": str(ov.get("approved_date") or "").strip() or None,
+        }
     if ov.get("adverse_reactions"):
         rec["adverse_reactions"] = ov["adverse_reactions"]
+        rec["adverse_reactions_source"] = {
+            "lang": "zh", "status": "zh_from_nmpa",
+            "source_name": str(ov["source_name"]).strip(),
+            "source_url": str(ov.get("source_url") or "").strip() or None,
+            "updated_at": str(ov.get("approved_date") or "").strip() or None,
+        }
     if ov.get("interactions"):
         rec["interactions"] = ov["interactions"]
     rec["label"] = {
@@ -339,6 +506,9 @@ def main():
 
     fetched = load_json(FETCH_JSON, {"_meta": {}, "drugs": {}})
     fetched.setdefault("drugs", {})
+    # 早期抓取未记录日期，统一回填；已在 fetch_one 中写入实际抓取日
+    for _item in fetched["drugs"].values():
+        _item.setdefault("fetched_at", LEGACY_FETCHED_AT)
 
     audit = []
     for i, rec in enumerate(catalog, 1):
@@ -375,6 +545,15 @@ def main():
     save_json(FETCH_JSON, fetched)
     save_json(AUDIT, audit)
 
+    # openFDA 禁忌/不良反应 → A4 字段（英文 interim，附来源与取数时间；中文覆盖优先）
+    interim_ci = interim_ar = 0
+    for rec in catalog:
+        apply_interim_fields(rec)
+        interim_ci += 1 if rec.get("contraindications") else 0
+        interim_ar += 1 if rec.get("adverse_reactions") else 0
+    print("interim 字段落库：contraindications %d / %d，adverse_reactions %d / %d" % (
+        interim_ci, len(catalog), interim_ar, len(catalog)))
+
     # 中文覆盖
     override = load_json(OVERRIDE, {}).get("drugs", {})
     ov_audit, ov_ok = [], 0
@@ -400,7 +579,8 @@ def main():
     save_json(CAT, catalog)
 
     ok = sum(1 for v in fetched["drugs"].values() if v.get("status") == "ok")
-    miss = [v["generic_name"] for v in fetched["drugs"].values() if v.get("status") != "ok"]
+    miss = [v.get("generic_name") or v.get("canonical_zh") or v.get("drug_id")
+            for v in fetched["drugs"].values() if v.get("status") != "ok"]
     print("\n=== openFDA interim：命中 %d / %d，未命中 %s ===" % (
         ok, len(catalog), "、".join(miss) if miss else "无"))
     if override:
