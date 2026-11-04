@@ -121,8 +121,10 @@ services:
       # 挂载医疗数据
       # data/raw 必须可写：管理端新增/修改/删除文档会写入该目录
       - ./medical_rag/data/raw:/app/data/raw:rw
-      # data/clean（G3 14 目录）：清洗后数据，供 ingest.py 只读入库（BE-37）
-      - ./medical_rag/data/clean:/app/data/clean:ro
+      # data/clean（G3 14 目录）：清洗后数据；ingest 只读入库（BE-37）。
+      # 2026-11-04 起改为 rw：patient_service 生成白话后需把 patient_plain
+      # 原子写回 drug_labels/{drug_id}.json（ES 重灌会覆盖 ES 侧缓存，clean 才是持久源）。
+      - ./medical_rag/data/clean:/app/data/clean:rw
       - ./medical_rag/data/doc_catalog.json:/app/data/doc_catalog.json
       - ./medical_rag/data/taxonomy_merged.json:/app/data/taxonomy_merged.json:ro
     # 就绪探针：打 /health/ready（模型加载完成后才 200，预热期间 503）。
@@ -159,9 +161,20 @@ services:
     restart: always
     ports:
       - "3001:80"
+      # H5 移动端预览（miniapp/dist，容器内 8080）：对外固定 3100，替代原 python h5_preview 进程
+      - "3100:8080"
+    environment:
+      # H5 Basic Auth 凭据：由 /docker-entrypoint.d/40-h5-htpasswd.sh 在容器启动时生成 htpasswd
+      # 密码不落任何配置文件；缺 MEDICAL_H5_AUTH_PASS 时容器启动失败（fail-closed）
+      - MEDICAL_H5_AUTH_USER=${MEDICAL_H5_AUTH_USER:-h5}
+      - MEDICAL_H5_AUTH_PASS=${MEDICAL_H5_AUTH_PASS}
     volumes:
       - ./frontend:/usr/share/nginx/html:ro
       - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # H5 移动端站点（Taro build:h5 产物）与独立 server block（容器内 8080）
+      - ./miniapp/dist:/usr/share/nginx/h5:ro
+      - ./docker/h5.conf:/etc/nginx/conf.d/h5.conf:ro
+      - ./docker/h5-htpasswd.sh:/docker-entrypoint.d/40-h5-htpasswd.sh:ro
     # 等后端"就绪"而非"启动"：否则前端容器会在后端模型仍在预热时就绪，
     # 用户此时打开页面发起的检索会排在模型加载后面长时间等待。
     depends_on:

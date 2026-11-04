@@ -15,6 +15,7 @@ import json
 import logging
 import os
 import re
+import shutil
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
@@ -108,6 +109,8 @@ class PatientService:
             "drug_id": drug_id,
             "generic_name": base["generic_name"],
             "brand_names": base["brand_names"],
+            # 中文别名透传（零 LLM）：与列表接口同一字段源，患者端显示中文药名
+            "aliases_zh": base["aliases_zh"],
             "indication_note": raw.get("indication_note") or "",
             "indications": base["indications"],
             "dosage_standard": base["dosage_standard"],
@@ -188,13 +191,17 @@ class PatientService:
         except Exception as e:
             logger.warning(f"[Patient] 白话写回前备份失败（继续写回）: {e}")
 
+        plain_at = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         try:
             self.repo.update_fields(drug_id, {
                 "patient_plain": json.dumps(plain, ensure_ascii=False),
-                "patient_plain_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+                "patient_plain_at": plain_at,
             })
         except Exception as e:
             logger.warning(f"[Patient] 白话缓存写回失败（不影响本次返回）: {e}")
+
+        # 同步落盘 clean JSON（ES 重灌会覆盖文档，clean 才是持久源）
+        self._save_plain_to_clean(drug_id, plain, plain_at)
 
         return {"drug_id": drug_id, "plain": plain, "cached": False}
 
@@ -226,6 +233,46 @@ class PatientService:
             return None
 
     @staticmethod
+    def _save_plain_to_clean(drug_id: str, plain: Dict, plain_at: str) -> bool:
+        """把新生成的 patient_plain 原子写回 clean JSON（先备份原文件）。
+
+        写盘失败只记日志并清理临时文件，原文件不动，不影响接口返回。
+        patient_plain 存 JSON 字符串（与 ES text/index:false 字段类型一致）。
+        """
+        try:
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            path = os.path.join(base_dir, "data", "clean", "drug_labels", f"{drug_id}.json")
+            if not os.path.exists(path):
+                return False
+
+            with open(path, "r", encoding="utf-8") as f:
+                records = json.load(f)
+            if not isinstance(records, list) or not records or not isinstance(records[0], dict):
+                return False
+
+            backup_dir = os.path.join(base_dir, "data", "backups", "drug_clean_plain")
+            os.makedirs(backup_dir, exist_ok=True)
+            shutil.copy2(path, os.path.join(
+                backup_dir, f"{drug_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"))
+            records[0]["patient_plain"] = json.dumps(plain, ensure_ascii=False)
+            records[0]["patient_plain_at"] = plain_at
+
+            tmp = path + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(records, f, ensure_ascii=False, indent=2)
+            os.replace(tmp, path)
+            return True
+        except Exception as e:
+            logger.warning(f"[Patient] 白话缓存落盘 clean JSON 失败（{drug_id}）: {e}")
+            try:
+                tmp = os.path.join(base_dir, "data", "clean", "drug_labels", f"{drug_id}.json.tmp")
+                if os.path.exists(tmp):
+                    os.remove(tmp)
+            except Exception:
+                pass
+            return False
+
+    @staticmethod
     def _base_fields(raw: Dict) -> Dict:
         dosage = raw.get("dosage") or {}
         if not isinstance(dosage, dict):
@@ -241,6 +288,8 @@ class PatientService:
         return {
             "generic_name": raw.get("generic_name") or raw.get("title") or "",
             "brand_names": raw.get("brand_names") or [],
+            # 中文别名：仅保留非空字符串，与 list_drugs 同一口径（空/None → []）
+            "aliases_zh": [str(a) for a in (raw.get("aliases_zh") or []) if a],
             "indications": raw.get("indications") or [],
             "dosage_standard": dosage.get("standard", ""),
             "dosage_adjustment": dosage.get("adjustment", ""),

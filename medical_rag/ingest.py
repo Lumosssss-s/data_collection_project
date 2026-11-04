@@ -88,6 +88,9 @@ def _extract_content(data_type: str, record: Dict) -> str:
         standard = dosage.get("standard") if isinstance(dosage, dict) else None
         boxed = record.get("boxed_warning") or []
         boxed_texts = [b.get("text", "") if isinstance(b, dict) else str(b) for b in boxed]
+        # 中文别名拼入检索正文（可回溯：固定标注「中文别名：」，不覆盖原文）
+        aliases = [str(a).strip() for a in (record.get("aliases_zh") or []) if str(a).strip()]
+        alias_note = ("中文别名：" + "、".join(aliases)) if aliases else ""
         return _join_nonempty([
             record.get("generic_name"),
             record.get("indications"),
@@ -95,6 +98,7 @@ def _extract_content(data_type: str, record: Dict) -> str:
             boxed_texts,
             (standard or "")[:800],
             record.get("interactions") or [],
+            alias_note,
         ])
     if data_type == "literature":
         # 文献证据层：题名 + 英文摘要（跨语言向量检索命中，作为二级证据）
