@@ -1,0 +1,5542 @@
+[
+  {
+    "case_id": "EVAL-TRIAGE-0001",
+    "qid": "EVAL-TRIAGE-0001",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。体检发现右肺上叶一枚八毫米磨玻璃结节，无明显不适。无咳嗽、咯血、发热，体重近期无明显变化。平时身体尚可，没有规律体检的习惯。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0002",
+    "qid": "EVAL-TRIAGE-0002",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。体检发现右肺上叶一枚八毫米磨玻璃结节，无明显不适。无咳嗽、咯血、发热，体重近期无明显变化。近期工作较忙，一直拖着没来就诊。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0003",
+    "qid": "EVAL-TRIAGE-0003",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。单位体检做低剂量 CT，发现右肺上叶有个八毫米的磨玻璃小结节，自己不觉得哪里不舒服。无咳嗽、咯血、发热，体重近期无明显变化。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0004",
+    "qid": "EVAL-TRIAGE-0004",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。单位体检做低剂量 CT，发现右肺上叶有个八毫米的磨玻璃小结节，自己不觉得哪里不舒服。无咳嗽、咯血、发热，体重近期无明显变化。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0005",
+    "qid": "EVAL-TRIAGE-0005",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。反复干咳，夜间稍明显，持续一个月。无痰中带血，无胸痛气促，近期未发热。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0006",
+    "qid": "EVAL-TRIAGE-0006",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。反复干咳，夜间稍明显，持续一个月。无痰中带血，无胸痛气促，近期未发热。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0007",
+    "qid": "EVAL-TRIAGE-0007",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。干咳断断续续，晚上躺下以后咳得更明显，持续一个月。无痰中带血，无胸痛气促，近期未发热。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0008",
+    "qid": "EVAL-TRIAGE-0008",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。干咳断断续续，晚上躺下以后咳得更明显，持续一个月。无痰中带血，无胸痛气促，近期未发热。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0009",
+    "qid": "EVAL-TRIAGE-0009",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。活动后轻度胸闷，休息后可缓解，持续两周。无胸痛放射，无咯血，日常活动不受限。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0010",
+    "qid": "EVAL-TRIAGE-0010",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。活动后轻度胸闷，休息后可缓解，持续两周。无胸痛放射，无咯血，日常活动不受限。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0011",
+    "qid": "EVAL-TRIAGE-0011",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。爬三层楼会觉得胸口发闷，停下来歇一会儿就能缓过来，持续两周。无胸痛放射，无咯血，日常活动不受限。最近加班较多，症状出现后先观察了几天。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0012",
+    "qid": "EVAL-TRIAGE-0012",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。爬三层楼会觉得胸口发闷，停下来歇一会儿就能缓过来，持续两周。无胸痛放射，无咯血，日常活动不受限。子女陪同前来，平时很少主动就医。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0013",
+    "qid": "EVAL-TRIAGE-0013",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。咽喉发痒伴清嗓样咳嗽，持续两周。无发热、无痰中带血，进食睡眠正常。最近加班较多，症状出现后先观察了几天。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0014",
+    "qid": "EVAL-TRIAGE-0014",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。咽喉发痒伴清嗓样咳嗽，持续两周。无发热、无痰中带血，进食睡眠正常。子女陪同前来，平时很少主动就医。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0015",
+    "qid": "EVAL-TRIAGE-0015",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。嗓子老是发痒，总想清一清嗓子，这样咳了一阵，持续两周。无发热、无痰中带血，进食睡眠正常。平时身体尚可，没有规律体检的习惯。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0016",
+    "qid": "EVAL-TRIAGE-0016",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。嗓子老是发痒，总想清一清嗓子，这样咳了一阵，持续两周。无发热、无痰中带血，进食睡眠正常。近期工作较忙，一直拖着没来就诊。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0017",
+    "qid": "EVAL-TRIAGE-0017",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。左胸间断隐痛，深呼吸时稍明显，持续两周。疼痛轻微可忍，无放射痛，无气促。平时身体尚可，没有规律体检的习惯。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "胸外科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0018",
+    "qid": "EVAL-TRIAGE-0018",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。左胸间断隐痛，深呼吸时稍明显，持续两周。疼痛轻微可忍，无放射痛，无气促。近期工作较忙，一直拖着没来就诊。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "胸外科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0019",
+    "qid": "EVAL-TRIAGE-0019",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。左边胸口时不时隐隐作痛，深吸气的时候会更明显一点，持续两周。疼痛轻微可忍，无放射痛，无气促。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "胸外科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0020",
+    "qid": "EVAL-TRIAGE-0020",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。左边胸口时不时隐隐作痛，深吸气的时候会更明显一点，持续两周。疼痛轻微可忍，无放射痛，无气促。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "胸外科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0021",
+    "qid": "EVAL-TRIAGE-0021",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。咳嗽伴少量白痰，持续三周。痰量不多，无黄绿脓痰，无咯血及发热。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0022",
+    "qid": "EVAL-TRIAGE-0022",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。咳嗽伴少量白痰，持续三周。痰量不多，无黄绿脓痰，无咯血及发热。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0023",
+    "qid": "EVAL-TRIAGE-0023",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。咳嗽时每次能咳出一点白色的痰，持续三周。痰量不多，无黄绿脓痰，无咯血及发热。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0024",
+    "qid": "EVAL-TRIAGE-0024",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。咳嗽时每次能咳出一点白色的痰，持续三周。痰量不多，无黄绿脓痰，无咯血及发热。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0025",
+    "qid": "EVAL-TRIAGE-0025",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。发热，最高三十七度八，持续三天。伴轻微乏力，无寒战，无咳嗽咳痰加重。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0026",
+    "qid": "EVAL-TRIAGE-0026",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。发热，最高三十七度八，持续三天。伴轻微乏力，无寒战，无咳嗽咳痰加重。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0027",
+    "qid": "EVAL-TRIAGE-0027",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。连着几天有点低烧，最高量到三十七度八，持续三天。伴轻微乏力，无寒战，无咳嗽咳痰加重。最近加班较多，症状出现后先观察了几天。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0028",
+    "qid": "EVAL-TRIAGE-0028",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。连着几天有点低烧，最高量到三十七度八，持续三天。伴轻微乏力，无寒战，无咳嗽咳痰加重。子女陪同前来，平时很少主动就医。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0029",
+    "qid": "EVAL-TRIAGE-0029",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。体检胸片提示肺纹理增粗。无咳嗽、无胸痛，运动耐量同前。最近加班较多，症状出现后先观察了几天。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0030",
+    "qid": "EVAL-TRIAGE-0030",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。体检胸片提示肺纹理增粗。无咳嗽、无胸痛，运动耐量同前。子女陪同前来，平时很少主动就医。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0031",
+    "qid": "EVAL-TRIAGE-0031",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。单位体检拍胸片，报告上写着肺纹理增粗。无咳嗽、无胸痛，运动耐量同前。平时身体尚可，没有规律体检的习惯。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0032",
+    "qid": "EVAL-TRIAGE-0032",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。单位体检拍胸片，报告上写着肺纹理增粗。无咳嗽、无胸痛，运动耐量同前。近期工作较忙，一直拖着没来就诊。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0033",
+    "qid": "EVAL-TRIAGE-0033",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。长期吸烟，偶有晨起咳嗽。痰少，无咯血，无体重下降及胸痛。平时身体尚可，没有规律体检的习惯。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0034",
+    "qid": "EVAL-TRIAGE-0034",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。长期吸烟，偶有晨起咳嗽。痰少，无咯血，无体重下降及胸痛。近期工作较忙，一直拖着没来就诊。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0035",
+    "qid": "EVAL-TRIAGE-0035",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。抽了多年烟，早上起来总要咳几声，平时不太咳。痰少，无咯血，无体重下降及胸痛。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0036",
+    "qid": "EVAL-TRIAGE-0036",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。抽了多年烟，早上起来总要咳几声，平时不太咳。痰少，无咯血，无体重下降及胸痛。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0037",
+    "qid": "EVAL-TRIAGE-0037",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。体检发现左下肺五毫米实性小结节。无咳嗽咯血，无发热胸痛，体重稳定。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0038",
+    "qid": "EVAL-TRIAGE-0038",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。体检发现左下肺五毫米实性小结节。无咳嗽咯血，无发热胸痛，体重稳定。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0039",
+    "qid": "EVAL-TRIAGE-0039",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。体检报告写着左下肺有个五毫米的实性小结节。无咳嗽咯血，无发热胸痛，体重稳定。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0040",
+    "qid": "EVAL-TRIAGE-0040",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。体检报告写着左下肺有个五毫米的实性小结节。无咳嗽咯血，无发热胸痛，体重稳定。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0041",
+    "qid": "EVAL-TRIAGE-0041",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。感冒后咳嗽迁延未愈，持续四周。以干咳为主，无发热，无咯血及胸痛。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0042",
+    "qid": "EVAL-TRIAGE-0042",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。感冒后咳嗽迁延未愈，持续四周。以干咳为主，无发热，无咯血及胸痛。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0043",
+    "qid": "EVAL-TRIAGE-0043",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。上次感冒好了以后咳嗽一直没断根，持续四周。以干咳为主，无发热，无咯血及胸痛。最近加班较多，症状出现后先观察了几天。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0044",
+    "qid": "EVAL-TRIAGE-0044",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。上次感冒好了以后咳嗽一直没断根，持续四周。以干咳为主，无发热，无咯血及胸痛。子女陪同前来，平时很少主动就医。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0045",
+    "qid": "EVAL-TRIAGE-0045",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。轻度活动耐量下降，爬楼气促，持续两周。休息后缓解，无夜间憋醒，无咯血。最近加班较多，症状出现后先观察了几天。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0046",
+    "qid": "EVAL-TRIAGE-0046",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。轻度活动耐量下降，爬楼气促，持续两周。休息后缓解，无夜间憋醒，无咯血。子女陪同前来，平时很少主动就医。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0047",
+    "qid": "EVAL-TRIAGE-0047",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。最近爬楼梯比以前容易喘，感觉活动耐量下降了，持续两周。休息后缓解，无夜间憋醒，无咯血。平时身体尚可，没有规律体检的习惯。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0048",
+    "qid": "EVAL-TRIAGE-0048",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。最近爬楼梯比以前容易喘，感觉活动耐量下降了，持续两周。休息后缓解，无夜间憋醒，无咯血。近期工作较忙，一直拖着没来就诊。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0049",
+    "qid": "EVAL-TRIAGE-0049",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。反复胸闷伴反酸，持续两周。无胸痛放射，无吞咽困难，无体重下降。平时身体尚可，没有规律体检的习惯。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "消化内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0050",
+    "qid": "EVAL-TRIAGE-0050",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。反复胸闷伴反酸，持续两周。无胸痛放射，无吞咽困难，无体重下降。近期工作较忙，一直拖着没来就诊。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "消化内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0051",
+    "qid": "EVAL-TRIAGE-0051",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。胸口发闷，吃完饭容易反酸，持续两周。无胸痛放射，无吞咽困难，无体重下降。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "消化内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0052",
+    "qid": "EVAL-TRIAGE-0052",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。胸口发闷，吃完饭容易反酸，持续两周。无胸痛放射，无吞咽困难，无体重下降。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "消化内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0053",
+    "qid": "EVAL-TRIAGE-0053",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。体检肿瘤标志物癌胚抗原轻度升高。无咳嗽咯血，无体重下降，无发热。家里人不放心，陪着一起过来看看。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "肿瘤内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0054",
+    "qid": "EVAL-TRIAGE-0054",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。体检肿瘤标志物癌胚抗原轻度升高。无咳嗽咯血，无体重下降，无发热。自己买过止咳糖浆，吃了效果一般。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "肿瘤内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0055",
+    "qid": "EVAL-TRIAGE-0055",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。体检报告说癌胚抗原比参考值高了一点，自己没觉得不舒服。无咳嗽咯血，无体重下降，无发热。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "肿瘤内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0056",
+    "qid": "EVAL-TRIAGE-0056",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。体检报告说癌胚抗原比参考值高了一点，自己没觉得不舒服。无咳嗽咯血，无体重下降，无发热。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "肿瘤内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0057",
+    "qid": "EVAL-TRIAGE-0057",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。肺结节定期复查，两年基本稳定。无任何不适，无咳嗽咯血及体重变化。既往有慢性咽炎，这次感觉和以前不太一样。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0058",
+    "qid": "EVAL-TRIAGE-0058",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。肺结节定期复查，两年基本稳定。无任何不适，无咳嗽咯血及体重变化。体检时顺带查了胸部 CT，才注意到这个问题。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0059",
+    "qid": "EVAL-TRIAGE-0059",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。之前查出的三毫米肺结节，这次来复查，两年下来大小差不多。无任何不适，无咳嗽咯血及体重变化。最近加班较多，症状出现后先观察了几天。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0060",
+    "qid": "EVAL-TRIAGE-0060",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。之前查出的三毫米肺结节，这次来复查，两年下来大小差不多。无任何不适，无咳嗽咯血及体重变化。子女陪同前来，平时很少主动就医。病来精神尚可，饮食睡眠正常，大小便无异常，近期体重稳定，生活自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "呼吸内科",
+      "risk_level": "routine"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0001",
+      "REC-LUNG-NHC-0002"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0061",
+    "qid": "EVAL-TRIAGE-0061",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。咳嗽，咳出两口血丝痰，持续两周。无大咯血，无胸痛及呼吸困难，伴轻度乏力。平时身体尚可，没有规律体检的习惯。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "咯血"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "咯血丝痰",
+          "canonical": "咯血",
+          "term_id": "TERM-SYMPTOM-0028",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0062",
+    "qid": "EVAL-TRIAGE-0062",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。咳嗽两个星期了，这两天咳的时候带出两口血丝痰，持续两周。无大咯血，无胸痛及呼吸困难，伴轻度乏力。近期工作较忙，一直拖着没来就诊。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "咯血"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "咯血丝痰",
+          "canonical": "咯血",
+          "term_id": "TERM-SYMPTOM-0028",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0063",
+    "qid": "EVAL-TRIAGE-0063",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。右侧胸部胀痛，逐渐加重，持续一周。疼痛影响睡眠，无放射至背部，无发热。自己买过止咳糖浆，吃了效果一般。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "胸痛"
+      ],
+      "department": "胸外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续胸痛",
+          "canonical": "胸痛",
+          "term_id": "TERM-SYMPTOM-0058",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0064",
+    "qid": "EVAL-TRIAGE-0064",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。右边胸口胀痛，而且一天比一天重，持续一周。疼痛影响睡眠，无放射至背部，无发热。既往有慢性咽炎，这次感觉和以前不太一样。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "胸痛"
+      ],
+      "department": "胸外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续胸痛",
+          "canonical": "胸痛",
+          "term_id": "TERM-SYMPTOM-0058",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0065",
+    "qid": "EVAL-TRIAGE-0065",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。活动后气促明显加重，持续三天。平地快走即感气短，无夜间憋醒，无咯血。最近加班较多，症状出现后先观察了几天。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "呼吸困难"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "气促加重",
+          "canonical": "呼吸困难",
+          "term_id": "TERM-SYMPTOM-0001",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0066",
+    "qid": "EVAL-TRIAGE-0066",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。这三天活动以后气短得厉害，比以前明显加重，持续三天。平地快走即感气短，无夜间憋醒，无咯血。子女陪同前来，平时很少主动就医。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "呼吸困难"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "气促加重",
+          "canonical": "呼吸困难",
+          "term_id": "TERM-SYMPTOM-0001",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0067",
+    "qid": "EVAL-TRIAGE-0067",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。声音嘶哑，说话费力，持续十天。无咽痛发热，无咳嗽咯血，近期未用声过度。近期工作较忙，一直拖着没来就诊。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "声音嘶哑"
+      ],
+      "department": "胸外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0013",
+      "REC-LUNG-NHC-0014"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "声音嘶哑",
+          "canonical": "声音嘶哑",
+          "term_id": "TERM-SYMPTOM-0011",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0068",
+    "qid": "EVAL-TRIAGE-0068",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。嗓子哑了，说话挺费劲，一直没有好转，持续十天。无咽痛发热，无咳嗽咯血，近期未用声过度。家里人不放心，陪着一起过来看看。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "声音嘶哑"
+      ],
+      "department": "胸外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0013",
+      "REC-LUNG-NHC-0014"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "声音嘶哑",
+          "canonical": "声音嘶哑",
+          "term_id": "TERM-SYMPTOM-0011",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0069",
+    "qid": "EVAL-TRIAGE-0069",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。体重明显下降，持续三个月。食欲下降，无明确节食，伴间断干咳。既往有慢性咽炎，这次感觉和以前不太一样。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "体重下降"
+      ],
+      "department": "肿瘤内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "体重下降",
+          "canonical": "体重下降",
+          "term_id": "TERM-SYMPTOM-0008",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0070",
+    "qid": "EVAL-TRIAGE-0070",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。三个月下来体重掉了差不多六公斤，自己也没刻意减肥，持续三个月。食欲下降，无明确节食，伴间断干咳。体检时顺带查了胸部 CT，才注意到这个问题。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "体重下降"
+      ],
+      "department": "肿瘤内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "体重下降",
+          "canonical": "体重下降",
+          "term_id": "TERM-SYMPTOM-0008",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0071",
+    "qid": "EVAL-TRIAGE-0071",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。发热不退，最高三十八度九，持续一周。伴咳嗽黄痰，口服退热药效果差。子女陪同前来，平时很少主动就医。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "持续发热"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续发热",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0072",
+    "qid": "EVAL-TRIAGE-0072",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。发烧一直退不下来，最高到三十八度九，持续一周。伴咳嗽黄痰，口服退热药效果差。平时身体尚可，没有规律体检的习惯。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "持续发热"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续发热",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0073",
+    "qid": "EVAL-TRIAGE-0073",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。右锁骨上淋巴结肿大，持续两周。质硬、活动度差，无压痛，无发热盗汗。家里人不放心，陪着一起过来看看。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "淋巴结肿大"
+      ],
+      "department": "肿瘤内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0013",
+      "REC-LUNG-NHC-0014"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "锁骨上淋巴结肿大",
+          "canonical": "淋巴结肿大",
+          "term_id": "TERM-SYMPTOM-0046",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0074",
+    "qid": "EVAL-TRIAGE-0074",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。右边锁骨上面摸到一个肿大的淋巴结，摸着挺硬，持续两周。质硬、活动度差，无压痛，无发热盗汗。自己买过止咳糖浆，吃了效果一般。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "淋巴结肿大"
+      ],
+      "department": "肿瘤内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0013",
+      "REC-LUNG-NHC-0014"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "锁骨上淋巴结肿大",
+          "canonical": "淋巴结肿大",
+          "term_id": "TERM-SYMPTOM-0046",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0075",
+    "qid": "EVAL-TRIAGE-0075",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。痰中带血，量少，持续两周。无胸痛气促，无发热，无结核病史。体检时顺带查了胸部 CT，才注意到这个问题。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "咯血"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "痰中带血",
+          "canonical": "咯血",
+          "term_id": "TERM-SYMPTOM-0028",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0076",
+    "qid": "EVAL-TRIAGE-0076",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。痰里间断带血，每次量都不多，持续两周。无胸痛气促，无发热，无结核病史。最近加班较多，症状出现后先观察了几天。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "咯血"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "痰中带血",
+          "canonical": "咯血",
+          "term_id": "TERM-SYMPTOM-0028",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0077",
+    "qid": "EVAL-TRIAGE-0077",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。夜间干咳伴胸闷，持续十天。需垫高枕头入睡，无咯血，下肢无水肿。平时身体尚可，没有规律体检的习惯。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "夜间胸闷"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "夜间胸闷",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0078",
+    "qid": "EVAL-TRIAGE-0078",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。晚上干咳，还觉得胸口闷，持续十天。需垫高枕头入睡，无咯血，下肢无水肿。近期工作较忙，一直拖着没来就诊。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "夜间胸闷"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "夜间胸闷",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0079",
+    "qid": "EVAL-TRIAGE-0079",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。反复低热伴夜间盗汗，持续一个月。无咳嗽咯血，食欲下降，体重略减。自己买过止咳糖浆，吃了效果一般。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "持续发热",
+        "盗汗"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续发热",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "夜间盗汗",
+          "canonical": "盗汗",
+          "term_id": "TERM-SYMPTOM-0054",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0080",
+    "qid": "EVAL-TRIAGE-0080",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。总是低烧，晚上睡觉还出盗汗，持续一个月。无咳嗽咯血，食欲下降，体重略减。既往有慢性咽炎，这次感觉和以前不太一样。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "持续发热",
+        "盗汗"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续发热",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "夜间盗汗",
+          "canonical": "盗汗",
+          "term_id": "TERM-SYMPTOM-0054",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0081",
+    "qid": "EVAL-TRIAGE-0081",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。右侧胸痛伴轻度气促，持续五天。无发热咯血，无放射痛，可平卧。最近加班较多，症状出现后先观察了几天。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "胸痛",
+        "呼吸困难"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续胸痛",
+          "canonical": "胸痛",
+          "term_id": "TERM-SYMPTOM-0058",
+          "mapping_status": "pending"
+        },
+        {
+          "raw": "气促加重",
+          "canonical": "呼吸困难",
+          "term_id": "TERM-SYMPTOM-0001",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0082",
+    "qid": "EVAL-TRIAGE-0082",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。右边胸口疼，深呼吸时更疼，还有点气短，持续五天。无发热咯血，无放射痛，可平卧。子女陪同前来，平时很少主动就医。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "胸痛",
+        "呼吸困难"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续胸痛",
+          "canonical": "胸痛",
+          "term_id": "TERM-SYMPTOM-0058",
+          "mapping_status": "pending"
+        },
+        {
+          "raw": "气促加重",
+          "canonical": "呼吸困难",
+          "term_id": "TERM-SYMPTOM-0001",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0083",
+    "qid": "EVAL-TRIAGE-0083",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。咳黄脓痰伴发热，持续三天。无咯血，无胸痛，口服抗生素效果一般。近期工作较忙，一直拖着没来就诊。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "持续发热"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续发热",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0084",
+    "qid": "EVAL-TRIAGE-0084",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。咳黄色脓痰，同时发烧，最高三十八度五，持续三天。无咯血，无胸痛，口服抗生素效果一般。家里人不放心，陪着一起过来看看。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "持续发热"
+      ],
+      "department": "呼吸内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续发热",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0085",
+    "qid": "EVAL-TRIAGE-0085",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。手指末端变粗呈杵状，持续两个月。无发热咯血，无胸痛气促，体重稳定。既往有慢性咽炎，这次感觉和以前不太一样。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "胸外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0086",
+    "qid": "EVAL-TRIAGE-0086",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。手指头末端变粗，像杵状指，偶尔轻咳，持续两个月。无发热咯血，无胸痛气促，体重稳定。体检时顺带查了胸部 CT，才注意到这个问题。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [],
+      "department": "胸外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0087",
+    "qid": "EVAL-TRIAGE-0087",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。晨起面部轻度水肿，持续两周。无头痛，无呼吸困难，颈静脉未见明显充盈。子女陪同前来，平时很少主动就医。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "水肿"
+      ],
+      "department": "肿瘤内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0013",
+      "REC-LUNG-NHC-0014"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "水肿",
+          "canonical": "水肿",
+          "term_id": "TERM-SYMPTOM-0043",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0088",
+    "qid": "EVAL-TRIAGE-0088",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。早上起床脸有点肿，活动后能消一些，持续两周。无头痛，无呼吸困难，颈静脉未见明显充盈。平时身体尚可，没有规律体检的习惯。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "水肿"
+      ],
+      "department": "肿瘤内科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0013",
+      "REC-LUNG-NHC-0014"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "水肿",
+          "canonical": "水肿",
+          "term_id": "TERM-SYMPTOM-0043",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0089",
+    "qid": "EVAL-TRIAGE-0089",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。单侧下肢肿胀，持续一周。无胸痛气促，无发热，既往无静脉曲张。家里人不放心，陪着一起过来看看。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "水肿"
+      ],
+      "department": "血管外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "单侧下肢肿胀",
+          "canonical": "水肿",
+          "term_id": "TERM-SYMPTOM-0043",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0090",
+    "qid": "EVAL-TRIAGE-0090",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。右小腿肿了，走路有点胀痛，持续一周。无胸痛气促，无发热，既往无静脉曲张。自己买过止咳糖浆，吃了效果一般。病来精神欠佳，饮食减少，睡眠受影响，由家属陪同就诊，生活可自理。",
+    "gold": {
+      "red_flags": [
+        "水肿"
+      ],
+      "department": "血管外科",
+      "risk_level": "urgent"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "单侧下肢肿胀",
+          "canonical": "水肿",
+          "term_id": "TERM-SYMPTOM-0043",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0091",
+    "qid": "EVAL-TRIAGE-0091",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。突然大口咯血，约半杯量，仍在咳血。面色苍白、心慌，感胸闷气短。平时身体尚可，没有规律体检的习惯。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "咯血",
+        "窒息风险"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "大咯血",
+          "canonical": "咯血",
+          "term_id": "TERM-SYMPTOM-0028",
+          "mapping_status": "pending"
+        },
+        {
+          "raw": "窒息风险",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0092",
+    "qid": "EVAL-TRIAGE-0092",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。面部及双上肢肿胀两天，今晨加重。颈静脉充盈，平卧时气促，声音嘶哑。近期工作较忙，一直拖着没来就诊。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "上腔静脉综合征",
+        "颈静脉怒张"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "上腔静脉综合征",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "颈静脉怒张",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0093",
+    "qid": "EVAL-TRIAGE-0093",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者67岁男，戒烟五年，既往吸烟二十年。静息状态下呼吸困难，不能平卧。口唇发紫，讲话断续，伴大汗。家里人不放心，陪着一起过来看看。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "呼吸困难"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "严重呼吸困难",
+          "canonical": "呼吸困难",
+          "term_id": "TERM-SYMPTOM-0001",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0094",
+    "qid": "EVAL-TRIAGE-0094",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者39岁女，不吸烟，无肺癌家族史。胸痛剧烈伴大汗半小时。疼痛向左肩放射，伴恶心，无咯血。自己买过止咳糖浆，吃了效果一般。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "胸痛",
+        "大汗"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "剧烈胸痛",
+          "canonical": "胸痛",
+          "term_id": "TERM-SYMPTOM-0058",
+          "mapping_status": "pending"
+        },
+        {
+          "raw": "大汗",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0095",
+    "qid": "EVAL-TRIAGE-0095",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者52岁男，吸烟二十年，每天半包。咯血后突然意识模糊，呼之反应差。呼吸急促，口唇发绀，血压偏低。既往有慢性咽炎，这次感觉和以前不太一样。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "意识改变",
+        "咯血"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "意识改变",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "大咯血",
+          "canonical": "咯血",
+          "term_id": "TERM-SYMPTOM-0028",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0096",
+    "qid": "EVAL-TRIAGE-0096",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者61岁女，不吸烟，家中有人吸烟。发热四天伴意识淡漠，今日嗜睡。咳嗽气促加重，尿量减少。体检时顺带查了胸部 CT，才注意到这个问题。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "持续发热",
+        "意识改变"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "持续发热",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "意识改变",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0097",
+    "qid": "EVAL-TRIAGE-0097",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者35岁男，不吸烟，从事办公室工作。突发抽搐一次，伴剧烈头痛。抽搐约两分钟自行缓解，醒后诉头痛、恶心。最近加班较多，症状出现后先观察了几天。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "抽搐",
+        "剧烈头痛"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "抽搐",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "剧烈头痛",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0098",
+    "qid": "EVAL-TRIAGE-0098",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者73岁女，不吸烟，配偶长期吸烟。进行性背痛两周，双下肢无力两天。今晨出现大小便困难，走路需人搀扶。子女陪同前来，平时很少主动就医。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "背痛",
+        "下肢无力",
+        "大小便障碍"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "背痛",
+          "canonical": "背痛",
+          "term_id": "TERM-SYMPTOM-0057",
+          "mapping_status": "pending"
+        },
+        {
+          "raw": "下肢无力",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "大小便障碍",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0099",
+    "qid": "EVAL-TRIAGE-0099",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者58岁男，吸烟三十年，每天一包。口渴多尿一周，今晨嗜睡叫不醒。近一周恶心、便秘，今日反应迟钝。平时身体尚可，没有规律体检的习惯。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "口渴多尿",
+        "嗜睡"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "口渴多尿",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        },
+        {
+          "raw": "嗜睡",
+          "canonical": null,
+          "term_id": null,
+          "mapping_status": null
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "EVAL-TRIAGE-0100",
+    "qid": "EVAL-TRIAGE-0100",
+    "case_type": "triage_case",
+    "task_type": "triage",
+    "cancer_type": "lung",
+    "stage": null,
+    "input": "患者46岁女，不吸烟，长期二手烟暴露。突发右侧胸痛伴呼吸困难加重。患侧呼吸音明显减低，口唇发绀。近期工作较忙，一直拖着没来就诊。由家属陪同呼叫急救送入急诊，病来精神差、进食明显减少、尿量偏少，途中需持续吸氧。",
+    "gold": {
+      "red_flags": [
+        "胸痛",
+        "呼吸困难"
+      ],
+      "department": "急诊科",
+      "risk_level": "emergency"
+    },
+    "difficulty": null,
+    "disease_id": "DIS-LUNG-0001",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": [
+        {
+          "raw": "剧烈胸痛",
+          "canonical": "胸痛",
+          "term_id": "TERM-SYMPTOM-0058",
+          "mapping_status": "pending"
+        },
+        {
+          "raw": "严重呼吸困难",
+          "canonical": "呼吸困难",
+          "term_id": "TERM-SYMPTOM-0001",
+          "mapping_status": "pending"
+        }
+      ]
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0001",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "I",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "咳嗽伴痰中带血三周。三周前无诱因出现干咳，偶有痰中带血，近一周活动后气促，无发热。",
+    "structured": {
+      "主诉": "咳嗽伴痰中带血三周",
+      "现病史": "三周前无诱因出现干咳，偶有痰中带血，近一周活动后气促，无发热。",
+      "既往史": "吸烟三十年，每天一包，无高血压、糖尿病史。",
+      "检查": "胸部 CT 示右肺上叶占位，支气管镜活检病理为腺癌，EGFR 外显子 19 缺失突变。",
+      "诊断": "右肺上叶腺癌 cT1bN0M0，IA2 期。",
+      "医嘱": "建议胸外科评估肺叶切除加纵隔淋巴结清扫；完善肺功能与心肺功能评估。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0002",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "II",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "刺激性干咳两个月，声音嘶哑一周。两个月来持续干咳，近一周声音嘶哑，无明显咯血，体重下降三公斤。",
+    "structured": {
+      "主诉": "刺激性干咳两个月，声音嘶哑一周",
+      "现病史": "两个月来持续干咳，近一周声音嘶哑，无明显咯血，体重下降三公斤。",
+      "既往史": "吸烟四十年，每天两包，慢性支气管炎病史。",
+      "检查": "胸部增强 CT 示右肺门肿块伴纵隔淋巴结肿大，支气管镜病理为鳞状细胞癌。",
+      "诊断": "右肺中央型鳞状细胞癌 cT2N1M0，IIB 期。",
+      "医嘱": "建议胸外科联合肿瘤内科多学科评估，首选手术切除，术后按病理行辅助治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0003",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "胸闷气促一个月，痰中带血。一个月来活动后胸闷气促逐渐加重，间断痰中带血，无发热。",
+    "structured": {
+      "主诉": "胸闷气促一个月，痰中带血",
+      "现病史": "一个月来活动后胸闷气促逐渐加重，间断痰中带血，无发热。",
+      "既往史": "不吸烟，有肺结核病史，已治愈。",
+      "检查": "PET-CT 示右肺上叶肿块伴同侧纵隔淋巴结高代谢，EBUS 穿刺证实非小细胞肺癌。",
+      "诊断": "右肺上叶非小细胞肺癌 cT2N2M0，IIIA 期。",
+      "医嘱": "建议肿瘤内科主导多学科讨论，评估新辅助治疗后再行手术。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0004",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0003",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "咳嗽伴明显消瘦两个月。两个月来咳嗽加重，食欲差，体重下降约八公斤，偶有头晕。",
+    "structured": {
+      "主诉": "咳嗽伴明显消瘦两个月",
+      "现病史": "两个月来咳嗽加重，食欲差，体重下降约八公斤，偶有头晕。",
+      "既往史": "吸烟三十五年，已戒烟三年。",
+      "检查": "胸部 CT 示右肺下叶肿块伴多发肝转移，脑 MRI 见单发转移灶，病理为小细胞肺癌。",
+      "诊断": "右肺下叶小细胞肺癌 cT4N2M1b，IVB 期。",
+      "医嘱": "建议肿瘤内科评估全身治疗，可选铂类联合依托泊苷方案，并请放疗科评估脑转移灶。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0005",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "0",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0006",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "体检发现左下肺磨玻璃结节。单位体检低剂量 CT 发现左下肺九毫米纯磨玻璃结节，无咳嗽咯血。",
+    "structured": {
+      "主诉": "体检发现左下肺磨玻璃结节",
+      "现病史": "单位体检低剂量 CT 发现左下肺九毫米纯磨玻璃结节，无咳嗽咯血。",
+      "既往史": "不吸烟，无肿瘤家族史。",
+      "检查": "薄层 CT 示左下肺纯磨玻璃结节九毫米，边界清楚，无实性成分。",
+      "诊断": "左下肺磨玻璃结节，考虑微浸润性腺癌可能。",
+      "医嘱": "建议胸外科就诊，结合影像随访策略，必要时行胸腔镜局部切除。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0006",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "I",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "体检发现左下肺结节两周。两周前体检 CT 发现左下肺一点八厘米部分实性结节，本人无咳嗽咯血。",
+    "structured": {
+      "主诉": "体检发现左下肺结节两周",
+      "现病史": "两周前体检 CT 发现左下肺一点八厘米部分实性结节，本人无咳嗽咯血。",
+      "既往史": "不吸烟，无肿瘤家族史，无慢性肺病史。",
+      "检查": "胸部 CT 示左下肺部分实性结节，穿刺活检为腺癌，EGFR 外显子 21 L858R 突变。",
+      "诊断": "左下肺腺癌 cT2aN0M0，IB 期。",
+      "医嘱": "建议胸外科评估肺叶切除；术后如病理仍为 IB 期且 EGFR 突变阳性，可讨论奥希替尼辅助治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0007",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "咳嗽伴右侧胸痛一个月。一个月来咳嗽，右侧胸部隐痛，近两周活动后气促。",
+    "structured": {
+      "主诉": "咳嗽伴右侧胸痛一个月",
+      "现病史": "一个月来咳嗽，右侧胸部隐痛，近两周活动后气促。",
+      "既往史": "吸烟四十五年，每天一包半，慢性阻塞性肺疾病史。",
+      "检查": "增强 CT 示右肺门肿块四厘米伴同侧纵隔淋巴结肿大，支气管镜活检为鳞状细胞癌，PET-CT 无远处转移。",
+      "诊断": "右肺中央型鳞状细胞癌 cT2N2M0，IIIA 期。",
+      "医嘱": "建议多学科讨论，可先行吉西他滨联合顺铂新辅助化疗，再评估手术切除。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0008",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "咳嗽伴消瘦两个月，活动后气促。两个月来咳嗽加重，体重下降六公斤，稍活动即气促。",
+    "structured": {
+      "主诉": "咳嗽伴消瘦两个月，活动后气促",
+      "现病史": "两个月来咳嗽加重，体重下降六公斤，稍活动即气促。",
+      "既往史": "吸烟三十年，已戒烟五年，无高血压糖尿病史。",
+      "检查": "CT 示右肺上叶肿块伴多发骨转移，驱动基因阴性，PD-L1 表达 60%。",
+      "诊断": "右肺非小细胞肺癌 cT4N2M1b，IVB 期。",
+      "医嘱": "建议帕博利珠单抗联合培美曲塞和卡铂方案，骨转移灶请放疗科评估。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0009",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0003",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "干咳伴气促一个月。一个月来干咳，活动后气促逐渐加重，无咯血发热。",
+    "structured": {
+      "主诉": "干咳伴气促一个月",
+      "现病史": "一个月来干咳，活动后气促逐渐加重，无咯血发热。",
+      "既往史": "吸烟三十五年，每天两包，无结核病史。",
+      "检查": "CT 示右肺门肿块伴纵隔淋巴结融合，支气管镜活检为小细胞肺癌，脑 MRI 未见转移。",
+      "诊断": "右肺小细胞肺癌局限期 cT3N2M0，IIIB 期。",
+      "医嘱": "建议依托泊苷联合顺铂同步胸部放疗，治疗结束后评估预防性颅脑放疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0010",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "咳嗽伴新发头痛两周。两周来咳嗽，近几天出现晨起头痛，偶有恶心，无肢体无力。",
+    "structured": {
+      "主诉": "咳嗽伴新发头痛两周",
+      "现病史": "两周来咳嗽，近几天出现晨起头痛，偶有恶心，无肢体无力。",
+      "既往史": "不吸烟，无高血压及糖尿病史。",
+      "检查": "CT 示右肺下叶肿块，脑 MRI 示多发转移灶伴周围水肿，活检腺癌，ALK 融合阳性。",
+      "诊断": "右肺腺癌 cT4N2M1c，IVB 期，伴多发脑转移。",
+      "医嘱": "建议阿来替尼靶向治疗，脑转移灶请放疗科评估立体定向放疗指征。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0011",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "0",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0006",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "体检发现右肺下叶六毫米磨玻璃结节。体检薄层 CT 发现右肺下叶六毫米纯磨玻璃结节，本人无任何不适。",
+    "structured": {
+      "主诉": "体检发现右肺下叶六毫米磨玻璃结节",
+      "现病史": "体检薄层 CT 发现右肺下叶六毫米纯磨玻璃结节，本人无任何不适。",
+      "既往史": "不吸烟，无肿瘤家族史，无粉尘接触史。",
+      "检查": "薄层 CT 示右肺下叶纯磨玻璃结节六毫米，密度均匀，无实性成分及胸膜牵拉。",
+      "诊断": "右肺下叶纯磨玻璃结节，考虑微浸润性腺癌可能。",
+      "医嘱": "建议胸外科评估，可先年度低剂量 CT 随访，若增大或出现实性成分再考虑局部切除。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0012",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "咳嗽伴咯血一个月。一个月来咳嗽，间断痰中带血，近一周出现右侧胸痛。",
+    "structured": {
+      "主诉": "咳嗽伴咯血一个月",
+      "现病史": "一个月来咳嗽，间断痰中带血，近一周出现右侧胸痛。",
+      "既往史": "吸烟五十年，每天两包，无结核病史。",
+      "检查": "CT 示右肺上叶空洞型肿块六厘米伴纵隔淋巴结肿大，活检为鳞状细胞癌，PD-L1 表达 40%。",
+      "诊断": "右肺上叶鳞状细胞癌 cT3N2M1a，IVA 期。",
+      "医嘱": "建议帕博利珠单抗联合紫杉醇和卡铂方案；近期有咯血，治疗前请呼吸内科评估气道情况。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0013",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0004",
+      "REC-LUNG-NHC-0005"
+    ],
+    "scenario": "initial",
+    "narrative": "咳嗽伴胸闷三周。三周来咳嗽，右侧胸闷，偶有低热，无明显咯血。",
+    "structured": {
+      "主诉": "咳嗽伴胸闷三周",
+      "现病史": "三周来咳嗽，右侧胸闷，偶有低热，无明显咯血。",
+      "既往史": "不吸烟，无结核病史，无肿瘤家族史。",
+      "检查": "CT 示右肺上叶四厘米肿块伴同侧纵隔淋巴结肿大，EBUS 活检为腺癌，EGFR 外显子 19 缺失突变。",
+      "诊断": "右肺上叶腺癌 cT2bN2M0，IIIA 期。",
+      "医嘱": "建议多学科讨论新辅助治疗，可选培美曲塞联合卡铂方案，术后评估奥希替尼辅助治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0014",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "II",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "术后第一次复诊。右肺上叶腺癌术后一个月，恢复可，偶有切口周围麻木，无发热咳嗽。",
+    "structured": {
+      "主诉": "术后第一次复诊",
+      "现病史": "右肺上叶腺癌术后一个月，恢复可，偶有切口周围麻木，无发热咳嗽。",
+      "既往史": "吸烟三十年，已戒烟。",
+      "检查": "术后病理为腺癌 pT2aN1M0，切缘阴性；复查血常规及肝肾功能基本正常。",
+      "诊断": "右肺上叶腺癌术后 pT2aN1M0，IIB 期。",
+      "医嘱": "建议肿瘤内科评估辅助化疗，可选培美曲塞联合卡铂方案四个周期。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0015",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "II",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "术后复查伴轻度乏力。右肺鳞癌术后六周，活动后轻度乏力，无咯血胸痛，食欲一般。",
+    "structured": {
+      "主诉": "术后复查伴轻度乏力",
+      "现病史": "右肺鳞癌术后六周，活动后轻度乏力，无咯血胸痛，食欲一般。",
+      "既往史": "吸烟四十年，慢性支气管炎。",
+      "检查": "术后病理 pT2bN0M0，切缘阴性；肺功能复查较术前略下降。",
+      "诊断": "右肺鳞状细胞癌术后 pT2bN0M0，IIA 期。",
+      "医嘱": "建议肿瘤内科评估辅助化疗，可选吉西他滨联合顺铂方案，注意监测肾功能。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0016",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "新辅助治疗后复诊评估手术。确诊 IIIA 期非小细胞肺癌，完成新辅助治疗两周期后复诊，气促较前减轻。",
+    "structured": {
+      "主诉": "新辅助治疗后复诊评估手术",
+      "现病史": "确诊 IIIA 期非小细胞肺癌，完成新辅助治疗两周期后复诊，气促较前减轻。",
+      "既往史": "不吸烟，肺结核已治愈。",
+      "检查": "复查 CT 示病灶较前缩小，纵隔淋巴结缩小，无新发远处转移。",
+      "诊断": "右肺上叶非小细胞肺癌 cT2N2M0，IIIA 期，新辅助治疗后。",
+      "医嘱": "建议胸外科评估手术时机，术后按病理决定辅助治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0017",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "靶向治疗三个月复诊。右肺腺癌伴骨转移，靶向治疗三个月，咳嗽减轻，无发热，偶有皮疹。",
+    "structured": {
+      "主诉": "靶向治疗三个月复诊",
+      "现病史": "右肺腺癌伴骨转移，靶向治疗三个月，咳嗽减轻，无发热，偶有皮疹。",
+      "既往史": "不吸烟，无高血压糖尿病史。",
+      "检查": "复查 CT 示肺部病灶稳定，骨扫描未见新发病灶；肝肾功能正常。",
+      "诊断": "右肺腺癌 cT4N2M1b，IVB 期，EGFR 敏感突变。",
+      "医嘱": "建议继续奥希替尼治疗，皮疹处保湿防晒，按期复查影像与肝功能。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0018",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0003",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "化疗后复诊评估疗效。小细胞肺癌完成两周期化疗后复诊，咳嗽减轻，食欲改善，无明显恶心。",
+    "structured": {
+      "主诉": "化疗后复诊评估疗效",
+      "现病史": "小细胞肺癌完成两周期化疗后复诊，咳嗽减轻，食欲改善，无明显恶心。",
+      "既往史": "吸烟三十五年，已戒烟。",
+      "检查": "复查 CT 示肺部病灶部分缓解，血常规白细胞偏低但无发热。",
+      "诊断": "右肺下叶小细胞肺癌 cT4N2M1b，IVB 期。",
+      "医嘱": "建议继续铂类联合依托泊苷方案，复查血常规，必要时使用非格司亭。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0019",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "术后辅助靶向治疗一个月复诊。右肺腺癌术后一个月，开始辅助靶向治疗，无明显不适，偶有轻度腹泻。",
+    "structured": {
+      "主诉": "术后辅助靶向治疗一个月复诊",
+      "现病史": "右肺腺癌术后一个月，开始辅助靶向治疗，无明显不适，偶有轻度腹泻。",
+      "既往史": "不吸烟，无慢性病史。",
+      "检查": "术后病理 pT2aN2M0，EGFR 外显子 19 缺失突变；复查肝肾功能正常。",
+      "诊断": "右肺腺癌术后 pT2aN2M0，IIIA 期。",
+      "医嘱": "建议继续奥希替尼辅助治疗，按计划复查胸部 CT 与肝功能，腹泻明显时及时就诊。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0020",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "同步放化疗结束后复诊。右肺鳞癌完成同步放化疗，咳嗽减轻，进食时偶有胸骨后不适。",
+    "structured": {
+      "主诉": "同步放化疗结束后复诊",
+      "现病史": "右肺鳞癌完成同步放化疗，咳嗽减轻，进食时偶有胸骨后不适。",
+      "既往史": "吸烟四十五年，慢性阻塞性肺疾病。",
+      "检查": "复查 CT 示病灶稳定，纵隔淋巴结缩小，未见新发转移。",
+      "诊断": "右肺鳞状细胞癌 cT2N2M0，IIIA 期，同步放化疗后。",
+      "医嘱": "建议继续随访，进食柔软清淡，警惕放射性食管炎，出现发热气促及时就诊。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "放疗科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0021",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "免疫联合化疗四周期后复诊。右肺非小细胞肺癌完成四周期免疫联合化疗，咳嗽明显减轻，体力改善。",
+    "structured": {
+      "主诉": "免疫联合化疗四周期后复诊",
+      "现病史": "右肺非小细胞肺癌完成四周期免疫联合化疗，咳嗽明显减轻，体力改善。",
+      "既往史": "吸烟三十年，已戒烟五年。",
+      "检查": "复查 CT 示病灶明显缩小，甲状腺功能提示促甲状腺激素升高。",
+      "诊断": "右肺非小细胞肺癌 cT4N2M1b，IVB 期。",
+      "医嘱": "建议继续帕博利珠单抗维持治疗，补充左甲状腺素并定期复查甲状腺功能。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0022",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "靶向治疗两个月复诊，肝功能异常。右肺腺癌 ALK 融合阳性，靶向治疗两个月，咳嗽好转，无发热黄疸。",
+    "structured": {
+      "主诉": "靶向治疗两个月复诊，肝功能异常",
+      "现病史": "右肺腺癌 ALK 融合阳性，靶向治疗两个月，咳嗽好转，无发热黄疸。",
+      "既往史": "不吸烟，无肝炎病史。",
+      "检查": "复查 CT 示肺部病灶缩小；肝功能提示转氨酶升至正常上限两倍。",
+      "诊断": "右肺腺癌 cT4N2M1b，IVB 期，ALK 融合阳性。",
+      "医嘱": "建议继续阿来替尼治疗，避免饮酒，两周后复查肝功能，必要时按说明书调整剂量。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0023",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0003",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "三线治疗前评估。小细胞肺癌既往两线化疗后进展，咳嗽加重，体重下降，体力尚可。",
+    "structured": {
+      "主诉": "三线治疗前评估",
+      "现病史": "小细胞肺癌既往两线化疗后进展，咳嗽加重，体重下降，体力尚可。",
+      "既往史": "吸烟三十五年，已戒烟。",
+      "检查": "复查 CT 示肺部病灶增大，无新发脑转移；血常规及肝肾功能可耐受治疗。",
+      "诊断": "右肺小细胞肺癌 cT4N2M1b，IVB 期，二线治疗后进展。",
+      "医嘱": "建议肿瘤内科评估安罗替尼三线治疗，监测血压及出血倾向。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0024",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "维持治疗前复诊。右肺腺癌完成四周期免疫联合化疗，无明显不适，偶有乏力。",
+    "structured": {
+      "主诉": "维持治疗前复诊",
+      "现病史": "右肺腺癌完成四周期免疫联合化疗，无明显不适，偶有乏力。",
+      "既往史": "不吸烟，无高血压糖尿病史。",
+      "检查": "复查 CT 示病灶部分缓解，血常规及肝肾功能正常。",
+      "诊断": "右肺腺癌 cT4N2M1b，IVB 期。",
+      "医嘱": "建议进入维持治疗，继续帕博利珠单抗联合培美曲塞，按期复查影像。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0025",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "II",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "术后一年发现纵隔淋巴结增大。右肺鳞癌术后一年，近两周干咳，无咯血发热。",
+    "structured": {
+      "主诉": "术后一年发现纵隔淋巴结增大",
+      "现病史": "右肺鳞癌术后一年，近两周干咳，无咯血发热。",
+      "既往史": "吸烟四十年，已戒烟两年。",
+      "检查": "复查 CT 示纵隔淋巴结较前增大，PET-CT 提示高代谢，余未见远处转移。",
+      "诊断": "右肺鳞状细胞癌术后，纵隔淋巴结复发，IIB 期。",
+      "医嘱": "建议放疗科评估纵隔放疗，联合吉西他滨与顺铂全身治疗，多学科讨论顺序。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "放疗科",
+        "risk_level": "urgent"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0026",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "0",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0006",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0027",
+      "REC-LUNG-NHC-0048"
+    ],
+    "scenario": "revisit",
+    "narrative": "局部切除术后病理复诊。右肺下叶磨玻璃结节行胸腔镜局部切除，术后恢复顺利，无咳嗽气促。",
+    "structured": {
+      "主诉": "局部切除术后病理复诊",
+      "现病史": "右肺下叶磨玻璃结节行胸腔镜局部切除，术后恢复顺利，无咳嗽气促。",
+      "既往史": "不吸烟，无肿瘤家族史。",
+      "检查": "术后病理为微浸润性腺癌，切缘阴性，未见脉管侵犯。",
+      "诊断": "右肺下叶微浸润性腺癌，pT1aN0M0，0 期。",
+      "医嘱": "建议无需辅助治疗，按期年度低剂量 CT 随访，保持戒烟与规律作息。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0027",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "I",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "术后半年常规复查。右肺腺癌术后半年，无咳嗽咯血气促，体力恢复至术前水平。",
+    "structured": {
+      "主诉": "术后半年常规复查",
+      "现病史": "右肺腺癌术后半年，无咳嗽咯血气促，体力恢复至术前水平。",
+      "既往史": "吸烟三十年，已戒烟。",
+      "检查": "复查胸部 CT 未见复发，肿瘤标志物在正常范围。",
+      "诊断": "右肺上叶腺癌术后 pT1bN0M0，IA2 期。",
+      "医嘱": "建议继续按期复查胸部 CT，无需辅助治疗，保持戒烟与肺功能锻炼。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0028",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "0",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0006",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "磨玻璃结节随访一年。左下肺磨玻璃结节随访一年，无任何不适，大小较前无明显变化。",
+    "structured": {
+      "主诉": "磨玻璃结节随访一年",
+      "现病史": "左下肺磨玻璃结节随访一年，无任何不适，大小较前无明显变化。",
+      "既往史": "不吸烟，无肿瘤家族史。",
+      "检查": "复查薄层 CT 示结节仍为九毫米纯磨玻璃，密度无增高。",
+      "诊断": "左下肺纯磨玻璃结节，稳定，考虑微浸润性腺癌可能。",
+      "医嘱": "建议继续年度低剂量 CT 随访，若增大或出现实性成分再评估手术。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0029",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "II",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "术后一年复查。右肺鳞癌术后一年，偶有干咳，无咯血胸痛，体重稳定。",
+    "structured": {
+      "主诉": "术后一年复查",
+      "现病史": "右肺鳞癌术后一年，偶有干咳，无咯血胸痛，体重稳定。",
+      "既往史": "吸烟四十年，已戒烟两年。",
+      "检查": "复查 CT 未见复发，肺功能较术后改善。",
+      "诊断": "右肺鳞状细胞癌术后 pT2bN0M0，IIA 期。",
+      "医嘱": "建议继续定期复查，注意呼吸道感染防护，戒烟维持。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0030",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "放化疗结束后三个月复查。右肺非小细胞肺癌完成同步放化疗后三个月，咳嗽减轻，轻度乏力。",
+    "structured": {
+      "主诉": "放化疗结束后三个月复查",
+      "现病史": "右肺非小细胞肺癌完成同步放化疗后三个月，咳嗽减轻，轻度乏力。",
+      "既往史": "不吸烟，肺结核已治愈。",
+      "检查": "复查 CT 示病灶稳定，放射性肺炎范围较前吸收，血象正常。",
+      "诊断": "右肺上叶非小细胞肺癌 cT2N2M0，IIIA 期，放化疗后。",
+      "医嘱": "建议继续随访观察，避免受凉，出现发热气促及时就诊。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "放疗科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0031",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "维持治疗期间复查。右肺腺癌维持治疗期间复查，无明显不适，偶有乏力。",
+    "structured": {
+      "主诉": "维持治疗期间复查",
+      "现病史": "右肺腺癌维持治疗期间复查，无明显不适，偶有乏力。",
+      "既往史": "不吸烟。",
+      "检查": "复查 CT 示病灶稳定，无新发转移，肝肾功能正常。",
+      "诊断": "右肺腺癌 cT4N2M1b，IVB 期，维持治疗中。",
+      "医嘱": "建议按计划继续维持治疗，定期复查影像与血常规。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0032",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "辅助化疗结束复查。右肺腺癌术后完成四周期辅助化疗，无恶心呕吐，体力逐步恢复。",
+    "structured": {
+      "主诉": "辅助化疗结束复查",
+      "现病史": "右肺腺癌术后完成四周期辅助化疗，无恶心呕吐，体力逐步恢复。",
+      "既往史": "不吸烟，无慢性病史。",
+      "检查": "复查 CT 未见复发，血常规白细胞轻度偏低，肝肾功能正常。",
+      "诊断": "右肺腺癌术后 pT2aN1M0，IIB 期，辅助化疗后。",
+      "医嘱": "建议结束辅助化疗，进入定期随访，每三个月复查胸部 CT。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0033",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0003",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "一线化疗结束三个月复查。小细胞肺癌完成一线化疗后三个月，咳嗽轻微，食欲可，无新发症状。",
+    "structured": {
+      "主诉": "一线化疗结束三个月复查",
+      "现病史": "小细胞肺癌完成一线化疗后三个月，咳嗽轻微，食欲可，无新发症状。",
+      "既往史": "吸烟三十五年，已戒烟。",
+      "检查": "复查 CT 示肺部病灶稳定，无新发转移，血象基本正常。",
+      "诊断": "右肺小细胞肺癌 cT4N2M1b，IVB 期，一线治疗后。",
+      "医嘱": "建议密切随访，每两至三个月复查胸部 CT，出现头痛或骨痛及时就诊。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0034",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "靶向治疗一年复查。右肺腺癌 EGFR 突变，靶向治疗满一年，咳嗽轻微，生活自理。",
+    "structured": {
+      "主诉": "靶向治疗一年复查",
+      "现病史": "右肺腺癌 EGFR 突变，靶向治疗满一年，咳嗽轻微，生活自理。",
+      "既往史": "不吸烟，无高血压糖尿病史。",
+      "检查": "复查 CT 示肺部病灶稳定，无新发转移，肝肾功能正常。",
+      "诊断": "右肺腺癌 cT4N2M1b，IVB 期，EGFR 敏感突变。",
+      "医嘱": "建议继续奥希替尼治疗，注意皮疹与腹泻，按期复查影像与肝功能。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0035",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "放化疗后一年复查。右肺鳞癌同步放化疗后一年，偶有干咳，无咯血胸痛。",
+    "structured": {
+      "主诉": "放化疗后一年复查",
+      "现病史": "右肺鳞癌同步放化疗后一年，偶有干咳，无咯血胸痛。",
+      "既往史": "吸烟四十五年，已戒烟三年。",
+      "检查": "复查 CT 示病灶稳定，放射性肺炎已基本吸收，无新发转移。",
+      "诊断": "右肺鳞状细胞癌 cT2N2M0，IIIA 期，放化疗后。",
+      "医嘱": "建议继续定期复查，注意肺功能锻炼与呼吸道防护。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "放疗科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0036",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "免疫治疗两年结束复查。右肺非小细胞肺癌完成两年免疫治疗，近半年易疲劳，怕冷。",
+    "structured": {
+      "主诉": "免疫治疗两年结束复查",
+      "现病史": "右肺非小细胞肺癌完成两年免疫治疗，近半年易疲劳，怕冷。",
+      "既往史": "吸烟三十年，已戒烟五年。",
+      "检查": "复查 CT 示病灶稳定，甲状腺功能提示促甲状腺激素持续升高。",
+      "诊断": "右肺非小细胞肺癌 cT4N2M1b，IVB 期，免疫治疗后。",
+      "医嘱": "建议免疫治疗按期结束，继续左甲状腺素替代并复查甲状腺功能，按期随访影像。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "肿瘤内科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0037",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "I",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "术后两年复查。右肺腺癌术后两年，无咳嗽咯血，体力良好，已恢复工作。",
+    "structured": {
+      "主诉": "术后两年复查",
+      "现病史": "右肺腺癌术后两年，无咳嗽咯血，体力良好，已恢复工作。",
+      "既往史": "吸烟三十年，已戒烟两年。",
+      "检查": "复查 CT 未见复发，肿瘤标志物正常，肺功能稳定。",
+      "诊断": "右肺上叶腺癌术后 pT1bN0M0，IA2 期。",
+      "医嘱": "建议继续半年至一年复查胸部 CT，保持戒烟与规律运动。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0038",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "0",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0006",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0065",
+      "REC-LUNG-NHC-0066"
+    ],
+    "scenario": "followup",
+    "narrative": "磨玻璃结节随访两年。右肺下叶磨玻璃结节随访两年，无任何不适，大小形态稳定。",
+    "structured": {
+      "主诉": "磨玻璃结节随访两年",
+      "现病史": "右肺下叶磨玻璃结节随访两年，无任何不适，大小形态稳定。",
+      "既往史": "不吸烟，无肿瘤家族史。",
+      "检查": "复查薄层 CT 示结节仍为六毫米纯磨玻璃，无实性成分。",
+      "诊断": "右肺下叶纯磨玻璃结节，稳定，考虑微浸润性腺癌可能。",
+      "医嘱": "建议继续年度低剂量 CT 随访，暂无需手术干预。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "胸外科",
+        "risk_level": "routine"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0039",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "II",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "突发咯血约半杯。今晨突发咯血约半杯量，仍间断咳血，伴心慌胸闷。",
+    "structured": {
+      "主诉": "突发咯血约半杯",
+      "现病史": "今晨突发咯血约半杯量，仍间断咳血，伴心慌胸闷。",
+      "既往史": "吸烟四十年，慢性支气管炎。",
+      "检查": "急诊查血红蛋白下降，胸部 CT 示右肺门病灶伴周围渗出。",
+      "诊断": "右肺鳞状细胞癌伴咯血，IIB 期。",
+      "医嘱": "建议急诊保持侧卧位、建立静脉通路，请呼吸内科与介入科评估止血措施。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0040",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "气促加重不能平卧。两天来气促进行性加重，今日不能平卧，讲话断续。",
+    "structured": {
+      "主诉": "气促加重不能平卧",
+      "现病史": "两天来气促进行性加重，今日不能平卧，讲话断续。",
+      "既往史": "不吸烟，右肺腺癌病史。",
+      "检查": "急诊血气提示低氧，CT 示右侧大量胸腔积液。",
+      "诊断": "右肺腺癌 IVB 期伴恶性胸腔积液。",
+      "医嘱": "建议急诊吸氧、胸腔穿刺引流缓解症状，并请肿瘤内科评估后续治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0041",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0003",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "面颈部肿胀伴呼吸困难。两天前面颈部逐渐肿胀，今晨加重伴平卧气促、声音嘶哑。",
+    "structured": {
+      "主诉": "面颈部肿胀伴呼吸困难",
+      "现病史": "两天前面颈部逐渐肿胀，今晨加重伴平卧气促、声音嘶哑。",
+      "既往史": "吸烟三十五年，已戒烟。",
+      "检查": "急诊 CT 示上纵隔肿块压迫上腔静脉，病理为小细胞肺癌。",
+      "诊断": "右肺小细胞肺癌 IVB 期伴上腔静脉综合征。",
+      "医嘱": "建议急诊抬高床头、吸氧，请肿瘤内科与放疗科紧急评估减压治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0042",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "突发剧烈胸痛伴大汗。半小时前突发右侧胸痛剧烈，伴大汗恶心，无咯血。",
+    "structured": {
+      "主诉": "突发剧烈胸痛伴大汗",
+      "现病史": "半小时前突发右侧胸痛剧烈，伴大汗恶心，无咯血。",
+      "既往史": "不吸烟，右肺腺癌病史。",
+      "检查": "急诊心电图无急性缺血改变，CT 除外气胸，见胸膜转移结节。",
+      "诊断": "右肺腺癌 IVB 期伴胸膜转移，胸痛待查。",
+      "医嘱": "建议急诊镇痛、吸氧并监测生命体征，请肿瘤内科评估病因与止痛方案。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0043",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "III",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "发热伴意识淡漠。发热四天，今日出现嗜睡与反应迟钝，咳嗽气促加重。",
+    "structured": {
+      "主诉": "发热伴意识淡漠",
+      "现病史": "发热四天，今日出现嗜睡与反应迟钝，咳嗽气促加重。",
+      "既往史": "不吸烟，肺结核已治愈。",
+      "检查": "急诊血氧偏低，血象升高，CT 示右肺病灶伴阻塞性肺炎。",
+      "诊断": "右肺非小细胞肺癌 IIIA 期伴阻塞性肺炎、感染。",
+      "医嘱": "建议急诊吸氧、抗感染治疗并补液，请呼吸内科与肿瘤内科共同评估。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0044",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "突发抽搐伴头痛。今晨突发四肢抽搐约两分钟，自行缓解后诉剧烈头痛、恶心。",
+    "structured": {
+      "主诉": "突发抽搐伴头痛",
+      "现病史": "今晨突发四肢抽搐约两分钟，自行缓解后诉剧烈头痛、恶心。",
+      "既往史": "不吸烟，右肺腺癌伴脑转移病史。",
+      "检查": "急诊脑 MRI 示多发转移灶伴周围水肿，无明显出血。",
+      "诊断": "右肺腺癌 IVB 期伴多发脑转移、继发性癫痫。",
+      "医嘱": "建议急诊吸氧、防止跌倒误吸，使用地塞米松减轻脑水肿，请放疗科与神经内科评估。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0045",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "进行性背痛伴双下肢无力。两周来背痛加重，今晨双下肢无力，出现排尿困难。",
+    "structured": {
+      "主诉": "进行性背痛伴双下肢无力",
+      "现病史": "两周来背痛加重，今晨双下肢无力，出现排尿困难。",
+      "既往史": "吸烟四十五年，右肺鳞癌病史。",
+      "检查": "急诊脊柱 MRI 示胸椎转移灶压迫脊髓，尿潴留。",
+      "诊断": "右肺鳞状细胞癌 IVB 期伴胸椎转移、脊髓压迫。",
+      "医嘱": "建议急诊制动、留置导尿，使用地塞米松，请骨科与放疗科紧急评估减压治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0046",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "口渴多尿伴嗜睡。一周来口渴、多尿，今晨恶心便秘，家属发现叫不醒。",
+    "structured": {
+      "主诉": "口渴多尿伴嗜睡",
+      "现病史": "一周来口渴、多尿，今晨恶心便秘，家属发现叫不醒。",
+      "既往史": "不吸烟，右肺腺癌伴骨转移病史。",
+      "检查": "急诊血钙明显升高，肾功能提示脱水，心电图见 QT 间期缩短。",
+      "诊断": "右肺腺癌 IVB 期伴高钙血症。",
+      "医嘱": "建议急诊补液利尿、使用唑来膦酸，监测电解质与尿量，请肿瘤内科评估。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0047",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0003",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "化疗后发热伴乏力。小细胞肺癌化疗后一周，今日发热三十八度六，伴乏力、咽痛。",
+    "structured": {
+      "主诉": "化疗后发热伴乏力",
+      "现病史": "小细胞肺癌化疗后一周，今日发热三十八度六，伴乏力、咽痛。",
+      "既往史": "吸烟三十五年，已戒烟。",
+      "检查": "急诊血常规示中性粒细胞明显减少，胸片未见新发浸润。",
+      "诊断": "右肺小细胞肺癌 IVB 期，化疗后中性粒细胞减少伴发热。",
+      "医嘱": "建议急诊留观、经验性抗感染，使用非格司亭升白细胞，做好隔离防护。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0048",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0004",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "气促伴颈静脉怒张。三天来气促加重，今日不能平卧，伴头晕、下肢水肿。",
+    "structured": {
+      "主诉": "气促伴颈静脉怒张",
+      "现病史": "三天来气促加重，今日不能平卧，伴头晕、下肢水肿。",
+      "既往史": "不吸烟，右肺腺癌伴胸膜转移病史。",
+      "检查": "急诊超声示心包积液伴右心受压，血压偏低，颈静脉怒张。",
+      "诊断": "右肺腺癌 IVB 期伴恶性心包积液、心包填塞。",
+      "医嘱": "建议急诊吸氧、心包穿刺引流，监测血压与心率，请肿瘤内科评估后续治疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0049",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "II",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0005",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "喘鸣伴呼吸困难加重。两天来喘息加重，今日出现喘鸣，说话费力。",
+    "structured": {
+      "主诉": "喘鸣伴呼吸困难加重",
+      "现病史": "两天来喘息加重，今日出现喘鸣，说话费力。",
+      "既往史": "吸烟四十年，右肺鳞癌病史。",
+      "检查": "急诊 CT 示右主支气管明显狭窄，右肺阻塞性改变。",
+      "诊断": "右肺鳞状细胞癌 IIB 期伴气道阻塞。",
+      "医嘱": "建议急诊吸氧、使用地塞米松减轻气道水肿，请呼吸内科评估支气管镜介入与放疗。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  },
+  {
+    "case_id": "CASE-0050",
+    "case_type": "mock_case",
+    "cancer_type": "lung",
+    "stage": "IV",
+    "origin": "self_built",
+    "synthetic": true,
+    "disclaimer": "本病例为合成数据，非真实患者，不构成医疗建议",
+    "disease_id": "DIS-LUNG-0002",
+    "related_recommendations": [
+      "REC-LUNG-NHC-0124",
+      "REC-LUNG-NHC-0138"
+    ],
+    "scenario": "emergency",
+    "narrative": "单侧下肢肿胀后突发呼吸困难。右小腿肿胀一周，今晨起床后突发呼吸困难伴胸痛。",
+    "structured": {
+      "主诉": "单侧下肢肿胀后突发呼吸困难",
+      "现病史": "右小腿肿胀一周，今晨起床后突发呼吸困难伴胸痛。",
+      "既往史": "吸烟三十年，右肺非小细胞肺癌病史，近期活动减少。",
+      "检查": "急诊 CT 肺动脉造影示肺动脉分支充盈缺损，D-二聚体明显升高。",
+      "诊断": "右肺非小细胞肺癌 IVB 期伴肺栓塞。",
+      "医嘱": "建议急诊吸氧、抗凝治疗并监测生命体征，请呼吸内科与肿瘤内科共同评估。"
+    },
+    "labels": {
+      "expected_triage": {
+        "red_flags": [],
+        "department": "急诊科",
+        "risk_level": "emergency"
+      },
+      "qc_issues": []
+    },
+    "annotation": {
+      "author": "病例编写-A",
+      "date": "2026-11-05",
+      "status": "draft",
+      "red_flag_terms": []
+    },
+    "version": "v1",
+    "last_updated": "2026-11-05"
+  }
+]
