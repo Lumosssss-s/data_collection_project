@@ -7,6 +7,19 @@
 
 > 路径说明：需求清单中 C4 建议放 `data/clean/eval_sets/`、C6 建议放 `data/clean/mock_cases/`；本项目按要求合并为 `data/virtual_cases/` 一个独立目录，字段仍分别对齐两节规范。提交评审时需在清单/方案中注明这一目录映射。
 
+## 与需求清单目录约定的差异（评审/交接必读）
+
+需求清单给 C4、C6 各自建议了独立目录，本项目**没有按清单路径拆分**，而是统一放在 `data/virtual_cases/`，用 `case_type` 区分两类病例。
+
+| 内容 | 需求清单建议路径 | 本项目实际路径 | 识别方式 |
+|---|---|---|---|
+| C4 预问诊病例集 | `data/clean/eval_sets/` | `data/virtual_cases/virtual_cases_20261105.json` | `case_type = "triage_case"`；`qid` 形如 `EVAL-TRIAGE-0001` |
+| C6 模拟病例 | `data/clean/mock_cases/` | `data/virtual_cases/virtual_cases_20261105.json` | `case_type = "mock_case"`；`case_id` 形如 `CASE-0001` |
+
+**合并考虑**：两类都是同一批虚拟病例，生命周期一致（同一生成器产出、同一校验脚本把关、同一审核流程复核），放同一目录可避免拆成两份后版本不同步；同时减少与 `data/clean/` 下真实数据交付物混放的风险。
+
+**交接要求**：提交评审或对外交接时，必须在交付清单/评审说明中登记上表映射关系，并注明"按 `case_type` 过滤即可得到 C4 / C6 两类"；否则评审方按清单路径检索会找不到文件。若评审方坚持按清单路径交付，可按 `case_type` 拆分导出为两份文件后单独提供，但该拆分不作为本目录的默认结构。
+
 ## 依据（需求清单）
 
 | 来源 | 清单小节 | 关键要求 |
