@@ -381,8 +381,12 @@ def main():
                     skipped["duplicate"] = skipped.get("duplicate", 0) + 1
                     continue
                 seen.add(key)
+                # 分句可能跨页：页码取本条文本自身句首所在页，而不是整句/段落起始页
+                core = part[:-1] if part.endswith("。") else part
+                local = text.find(core, offset)
+                part_page = page_at(spans, local if local >= 0 else offset)
                 records.append(build_record(len(records) + 1, breadcrumb, scenario,
-                                            part, page_at(spans, offset)))
+                                            part, part_page))
                 by_section[breadcrumb] = by_section.get(breadcrumb, 0) + 1
 
     # 表格分支：表 4「非小细胞肺癌常用的二线治疗方案」等四列方案表
