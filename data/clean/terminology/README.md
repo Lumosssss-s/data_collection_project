@@ -21,8 +21,8 @@
 | `atc` | string\|null | ATC 5 级码（WHO ATC/DDD Index），drug 15 条全部已映射（15/15）；`雷洛昔芬` 为 `G03XC01`（SERM 归 G03 性激素组，2026-10-30 补抓 G03 组后回补） |
 | `loinc` | 不设 | 需求清单 A5⑥ 字段表**无 `loinc` 字段**（仅 `icd10 / icd_o3 / atc`，按类别填）；examination 现有 51 条为影像/内镜/操作类，不适用 LOINC 检验编码 |
 | `pinyin` / `en_name` | string\|null | `pinyin` 当前全为 null；drug 条目的 `en_name` 已由 16 号脚本补入 INN 英文名 |
-| `mapping_status` | enum | `confirmed`（编码直接来自官方码表）/ `pending`（无编码，待核） |
-| `cancer_type` | enum\|null | `lung`/`breast`/`colorectal`/`gastric`/`thyroid`；并发症与待核条目为 null |
+| `mapping_status` | enum | `confirmed`（编码直接来自官方码表）/ `pending`（暂无官方编码，待补） |
+| `cancer_type` | enum\|null | `lung`/`breast`/`colorectal`/`gastric`/`thyroid`；并发症与待人工判入条目为 null |
 | `source` / `origin` | string / enum | 来源说明 / 固定 `cblue` |
 | `annotation` | object | `{"annotator","date","status"}`，当前 `status=draft`；映射成功的 disease 额外带 `icd_o3_source`（NHC 原 5 位码）与 `icd_o3_basis`（匹配依据），未映射的带 `icd_o3_note`（原因） |
 
@@ -46,7 +46,7 @@
 2. **`pending` 162 条无编码**：需按需求清单 A5⑤ 的「后续确认计划」补 ICD-10 / ATC，未确认前不得作为 `confirmed` 使用。
 3. **`icd_o3` 为规则自动映射，须医学复核**：189 条中 143 条为部位性诊断兜底（`恶性肿瘤`→`M8010/3`、`原位`→`M8010/2`、`继发/转移`→`M8010/6`、`良性肿瘤`→`M8000/0`），35 条形态学关键词规则、11 条名称精确命中。部位性诊断的真实形态学亚型需由 A2 疾病档案的「病理分型」逐条给出，**`M8010/3` 只代表「癌 NOS」，不应据此推断组织学类型**。剩余 51 条经确认不适用（甲状腺肿 17、息肉 14、囊肿 7、积液 3、增生/结节/骨折/恶病质等 10），已在 `annotation.icd_o3_note` 逐条记录原因。
 4. **ICD-O-3 格式口径**：NHC 原码为 5 位（`M81400/3`，第 5 位是本地亚型细分序号，如 `M80411/3` 小细胞神经内分泌癌 vs `M80410/3` 小细胞癌）。需求清单 §A3⑦ 硬性要求 `Mxxxx/x` 4 位，且把「缺 M 前缀或行为码」列入错误清单，故本目录统一输出 4 位标准码，原 5 位码保留在 `annotation.icd_o3_source`；若后续校验允许 5 位，可从该字段无损还原。
-5. **待核疾病名质量**：40 条 pending 疾病由关系尾自动生成，含 `嗜铬细胞瘤`、`平滑肌肉瘤`、`神经纤维瘤` 等超出 5 癌种范围的肿瘤，以及 `乳头状癌`、`未分化癌`、`腺癌` 这类无部位限定名，须人工判入或剔除。
+5. **待人工判入的疾病名**：40 条 pending 疾病由关系尾自动生成，含 `嗜铬细胞瘤`、`平滑肌肉瘤`、`神经纤维瘤` 等超出 5 癌种范围的肿瘤，以及 `乳头状癌`、`未分化癌`、`腺癌` 这类无部位限定名，须人工判入或剔除（属评审决定，不是数字口径问题）。
 6. **检查/症状粒度过粗**：如 `超声`、`乳腺X线`、`活检`、`出血`、`肿块`，需补部位限定（对齐需求清单示例「胸部低剂量CT」）。
 7. **同义词不完整**：仅补入 6 个通用简称（肺癌/乳腺癌/胃癌/结肠癌/直肠癌/甲状腺癌）与 CMeIE「同义词」关系；口语别名（肺CA、NSCLC 等）尚未编集。
 8. **上下位关系须另置 A6**：NSCLC、SCLC 等已作为独立 disease 条目（pending），**未**写入 `synonyms`，符合需求清单的判别法则。
