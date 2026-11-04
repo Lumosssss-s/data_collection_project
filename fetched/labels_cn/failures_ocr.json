@@ -1,0 +1,13 @@
+[
+  {
+    "key": "cttq_anlotinib",
+    "drug_id": "DRUG-EXTRA-001",
+    "drug_name": "安罗替尼",
+    "url": "https://www.cttq.com/core/control/common/down.jsp?filename=/upload/file/2026/09/20/e43c56a3ee01408f8171581dca000e06.pdf&title=%E7%9B%90%E9%85%B8%E5%AE%89%E7%BD%97%E6%9B%BF%E5%B0%BC%E8%83%B6%E8%83%B6",
+    "source_type": "official_label_ocr",
+    "source_name": "正大天晴官网 福可维（盐酸安罗替尼胶囊）说明书PDF",
+    "reason": "OCR 后四个核心章节仅命中 无，文本严重乱码（扫描件分辨率约 100–130 dpi），不入库。",
+    "checked_at": "2026-11-05",
+    "reason_type": "ocr_unreliable"
+  }
+]

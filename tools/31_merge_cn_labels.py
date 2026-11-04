@@ -24,6 +24,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LABELS = os.path.join(ROOT, "fetched", "labels_cn", "labels_cn.json")
+LABELS_OCR = os.path.join(ROOT, "fetched", "labels_cn", "labels_cn_ocr.json")
 CAT = os.path.join(ROOT, "data", "clean", "drug_labels", "drug_catalog_v2.json")
 AUDIT = os.path.join(ROOT, "cache", "drug_labels", "cn_label_merge.json")
 
@@ -34,6 +35,18 @@ NEW_DRUGS = {
     "DRUG-EXTRA-003": {
         "generic_name": "信迪利单抗",
         "generic_name_en": "SINITILIMAB",
+        "drug_class": "靶向",
+        "atc_code": None,
+    },
+    "DRUG-EXTRA-001": {
+        "generic_name": "安罗替尼",
+        "generic_name_en": "ANLOTINIB",
+        "drug_class": "靶向",
+        "atc_code": None,
+    },
+    "DRUG-EXTRA-002": {
+        "generic_name": "埃克替尼",
+        "generic_name_en": "ICOTINIB",
         "drug_class": "靶向",
         "atc_code": None,
     },
@@ -69,10 +82,14 @@ def is_english_items(items) -> bool:
     return True
 
 
+def is_ocr(label: dict) -> bool:
+    return label.get("source_type") == "official_label_ocr"
+
+
 def source_block(label: dict) -> dict:
-    return {
+    block = {
         "lang": "zh",
-        "status": "zh_from_official_label",
+        "status": "zh_from_official_label_ocr" if is_ocr(label) else "zh_from_official_label",
         "source_type": label["source_type"],
         "source_name": label["source_name"],
         "source_url": label["source_url"],
@@ -80,12 +97,15 @@ def source_block(label: dict) -> dict:
         "fetched_at": label["fetched_at"],
         "usage_note": label["usage_note"],
     }
+    if is_ocr(label):
+        block["proofread"] = False
+    return block
 
 
 def label_block(label: dict) -> dict:
-    return {
+    block = {
         "lang": "zh",
-        "status": "zh_from_official_label",
+        "status": "zh_from_official_label_ocr" if is_ocr(label) else "zh_from_official_label",
         "source_type": label["source_type"],
         "source_name": label["source_name"],
         "source_url": label["source_url"],
@@ -102,6 +122,27 @@ def label_block(label: dict) -> dict:
         "text_stored_in_catalog": False,
         "note": "说明书全文不写入目录（体积过大），按 text_path 读取；目录仅存元数据与关键字段。",
     }
+    ocr = label.get("ocr")
+    if ocr:
+        block["proofread"] = False
+        block["ocr_engine"] = ocr.get("engine")
+        block["ocr_engine_version"] = ocr.get("engine_version")
+        block["ocr_model"] = ocr.get("model")
+        block["ocr"] = {
+            "engine": ocr.get("engine"),
+            "engine_version": ocr.get("engine_version"),
+            "model": ocr.get("model"),
+            "dpi": ocr.get("dpi"),
+            "preprocess": ocr.get("preprocess"),
+            "reliable": ocr.get("reliable"),
+            "core_sections_hit": ocr.get("core_sections_hit"),
+            "core_sections_missing": ocr.get("core_sections_missing"),
+            "page_map": ocr.get("page_map"),
+            "header_normalizations": ocr.get("header_normalizations"),
+            "text_normalizations": ocr.get("text_normalizations"),
+            "note": ocr.get("note"),
+        }
+    return block
 
 
 def recompute_missing(rec: dict) -> list[str]:
@@ -131,6 +172,19 @@ def main() -> int:
         if r.get("secondary"):
             continue
         primary[r["drug_id"]] = r
+
+    # OCR 补录：文本层优先；OCR 记录只在没有文本层记录时使用。
+    # OCR 质量不达标的记录（ocr_unreliable）不填任何中文字段，只建档并留下失败元数据。
+    ocr_labels = json.load(open(LABELS_OCR, encoding="utf-8"))["records"] \
+        if os.path.exists(LABELS_OCR) else []
+    ocr_failed = {}
+    for r in ocr_labels:
+        if r.get("secondary"):
+            continue
+        if r.get("ocr_unreliable"):
+            ocr_failed.setdefault(r["drug_id"], r)
+            continue
+        primary.setdefault(r["drug_id"], r)
 
     by_id = {r["drug_id"]: r for r in cat}
     actions = []
@@ -198,6 +252,10 @@ def main() -> int:
         if reg.get("approval_no") and not rec.get("approval_no"):
             rec["approval_no"] = reg["approval_no"]
             act["filled"].append("approval_no")
+        reg_note = ("注册类字段摘自 OCR 后的说明书原文（批准文号/商品名/规格/持有人/生产企业），"
+                    "非人工校对；不使用注册库字段；未识别项为 null。") if is_ocr(label) else (
+                    "注册类字段摘自说明书原文（批准文号/商品名/规格/持有人/生产企业），"
+                    "不使用注册库字段；未在说明书中出现的项为 null。")
         rec["cn_registration"] = {
             "approval_no": reg.get("approval_no"),
             "brand_name": reg.get("brand_name"),
@@ -205,12 +263,11 @@ def main() -> int:
             "dosage_form": reg.get("dosage_form"),
             "mah": reg.get("mah"),
             "manufacturer": reg.get("manufacturer"),
-            "source_type": "official_label_text",
+            "source_type": label["source_type"],
             "source_name": label["source_name"],
             "source_url": label["source_url"],
             "fetched_at": label["fetched_at"],
-            "note": "注册类字段摘自说明书原文（批准文号/商品名/规格/持有人/生产企业），"
-                    "不使用注册库字段；未在说明书中出现的项为 null。",
+            "note": reg_note,
         }
 
         rec["label"] = label_block(label)
@@ -259,14 +316,75 @@ def main() -> int:
                 "cancer_type": tags,
                 "origin": "cn_label",
                 "source": label["source_name"],
-                "annotation": "2026-11-04 由官网说明书原文建档；癌种标签按说明书适应证字面匹配，"
-                              "未做药理学推断。",
+                "annotation": "%s 由官网说明书%s建档；癌种标签按说明书适应证字面匹配，"
+                              "未做药理学推断。" % (label["fetched_at"][:10],
+                                                    "OCR 原文（非人工校对）" if is_ocr(label) else "原文"),
             }
             cat.append(rec)
             by_id[drug_id] = rec
             actions.append({"drug_id": drug_id, "generic_name": rec["generic_name"],
                             "status": "created", "label_key": label["key"]})
         actions.append(fill(rec, label, drug_id))
+
+    # OCR 质量不达标：不填字段，但按既有规则建档并留下可回查的失败元数据
+    for drug_id, label in sorted(ocr_failed.items()):
+        if drug_id in primary:
+            continue
+        rec = by_id.get(drug_id)
+        created = False
+        if rec is None:
+            meta = NEW_DRUGS.get(drug_id)
+            if not meta:
+                actions.append({"drug_id": drug_id, "generic_name": label["drug_name"],
+                                "status": "skip_no_catalog_record"})
+                continue
+            rec = {
+                "drug_id": drug_id,
+                "generic_name": meta["generic_name"],
+                "generic_name_en": meta["generic_name_en"],
+                "brand_names": [],
+                "atc_code": meta.get("atc_code"),
+                "approval_no": None,
+                "indications": None,
+                "dosage": None,
+                "contraindications": None,
+                "adverse_reactions": None,
+                "interactions": None,
+                "drug_class": meta["drug_class"],
+                "cancer_type": [],
+                "origin": "cn_label",
+                "source": label["source_name"],
+                "annotation": "%s 由官网说明书建档；OCR 质量不达标，中文字段全部留空。"
+                              % label["fetched_at"][:10],
+                "label": None,
+            }
+            cat.append(rec)
+            by_id[drug_id] = rec
+            created = True
+        ocr = label.get("ocr") or {}
+        rec["label_ocr_failed"] = {
+            "ocr_unreliable": True,
+            "reason": label.get("ocr_unreliable_reason"),
+            "source_type": label["source_type"],
+            "source_name": label["source_name"],
+            "source_url": label["source_url"],
+            "fetched_at": label["fetched_at"],
+            "usage_note": label["usage_note"],
+            "raw_path": label.get("raw_path"),
+            "text_path": label.get("text_path"),
+            "text_sha256": label.get("text_sha256"),
+            "pages": label.get("pages"),
+            "engine": ocr.get("engine"),
+            "engine_version": ocr.get("engine_version"),
+            "model": ocr.get("model"),
+            "dpi": ocr.get("dpi"),
+            "core_sections_hit": ocr.get("core_sections_hit"),
+        }
+        rec["missing_fields"] = recompute_missing(rec)
+        actions.append({"drug_id": drug_id, "generic_name": rec["generic_name"],
+                        "status": "created_ocr_unreliable" if created else "ocr_unreliable",
+                        "label_key": label["key"],
+                        "missing_after": list(rec["missing_fields"])})
 
     # 未拿到说明书原文的品种：只重算 missing_fields，保持 null
     for rec in cat:
@@ -298,8 +416,8 @@ def main() -> int:
     print("     filled:", summary["filled"])
     print("     replaced(EN→ZH):", summary["replaced"])
     for a in actions:
-        if a.get("status") == "created":
-            print("     created:", a["drug_id"], a["generic_name"])
+        if a.get("status") in ("created", "created_ocr_unreliable"):
+            print("     %s: %s %s" % (a["status"], a["drug_id"], a["generic_name"]))
     return 0
 
 

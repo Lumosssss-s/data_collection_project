@@ -568,7 +568,7 @@
       "dosage_form": null,
       "mah": "Roche Registration GmbH",
       "manufacturer": "Excella GmbH & Co. KG",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "上海罗氏制药有限公司官网产品说明书",
       "source_url": "https://assets.roche.com/f/249469/x/9a37ab8aac/yansuanalaitinijiaonang_20250509.pdf",
       "fetched_at": "2026-11-04T23:07:42+08:00",
@@ -1289,28 +1289,236 @@
       "fosaprepitant"
     ],
     "atc_code": "A04AD12",
-    "approval_no": null,
-    "indications": null,
-    "dosage": null,
+    "approval_no": "国药准字HJ20150377；国药准字HJ20150380；国药准字HJ20150378；国药准字HJ20150381；国药准字HJ20150379",
+    "indications": [
+      "阿瑞匹坦胶囊与其它止吐药物联合给药，适用于预防高度致吐性抗肿瘤化疗的初次和重复治疗过程中出现的急性和迟发性恶心和呕吐。"
+    ],
+    "dosage": {
+      "standard": "本品的剂型为口服胶囊。\n在阿瑞匹坦胶囊与一种糖皮质激素和一种5-HTs拮抗剂联合治疗方案中，\n本品给药3天。在开始治疗前需仔细阅读5-HTs措抗剂的说明书。本品的推荐\n剂量是在化疗前1小时口服125mg（第1天），在第2和第3天早晨每天一次口\n服80mgo\n在一项在中国开展的临床研究中，使用了以下治疗方案预防高度致吐性\n抗肿瘤化疗导致的恶心和呕吐·\n第1天第2天第3天第4天\n阿瑞匹坦口服125mg口服80mg口服80mg无\n地塞米松口服6mg口服3.75mg口服3.75mg口服3.75mg\n格拉司琼静脉输注3mg无无无\n*在第1天化疗前1小时以及第2天和第3天早晨口服阿瑞匹坦。\n**在第1天化疗前30分钟以及第2-4天的早晨服用地塞米松，服用剂量根据\n药物相互作用确定。\n十在第1天化疗前30分钟使用格拉司琼。\n一般信息\n关于本品与糖皮质激素联合应用时的其它信息参见“药物相互作用”。\n联合使用的止吐剂可参见其说明书。\n本品可以与食物同时服用，也可以不与食物同时服用。\n不同年龄、性别、种族及身体质量指数（BMI）的患者不需要调整药物的\n剂量。\n重度肾功能不全的患者（肌酐清除率<30ml/min）和进行血液透析的终\n末期肾病患者均不需要调整本品的给药剂量。\n轻、中度肝功能不全（Child-Pugh分级评分5一9分）的患者不需要调\n整本品的给药剂量。目前尚没有重度肝功能不全（Child-Pugh分级评分>9\n分）的患者使用本品的临床研究资料。",
+      "adjustment": null
+    },
     "contraindications": [
-      "Aprepitant is contraindicated in patients: • who are hypersensitive to any component of the product.",
-      "Hypersensitivity reactions including anaphylactic reactions have been reported. • taking pimozide.",
-      "Inhibition of CYP3A4 by aprepitant could result in elevated plasma concentrations of this drug which is a CYP3A4 substrate, potentially causing serious or life-threatening reactions, such as QT prolongation, a known adverse reaction of pimozide. • Known hypersensitivity to any component of this drug. • Concurrent use with pimozide."
+      "禁用于对本品中任何成份过敏者。",
+      "本品不应与匹莫齐特、特非那定、阿司咪唑、西沙比利同时使用。",
+      "阿瑞匹坦可对细胞色素P450的同功酶3A4（CYP3A4）产生剂量依赖性抑制，而使这些药物的血药浓度升高，从而有可能引起严重的或危及生命的不良反应（见“药物相互作用”）。"
     ],
     "adverse_reactions": [
       {
-        "term": "listed in Table 6",
-        "frequency": "≥3%",
+        "term": "在大约6500名患者中对阿瑞匹坦的总体安全性进行了评估。",
+        "frequency": null,
         "ctcae_hint": null,
-        "lang": "en",
-        "status": "interim_pending_zh"
+        "lang": "zh",
+        "status": "zh_from_official_label"
       },
       {
-        "term": "treated with ifosfamide chemotherapy in each arm",
-        "frequency": "≥3%",
+        "term": "国内临床试验在接受高度致吐性抗肿瘤化疗（HEC）的中国患者中开展了一项随机对照的临床研究，在该研究中412名患者在化疗第1周期接受了阿瑞匹坦的治疗，其中240名患者继续进入第2阶段的化疗。",
+        "frequency": null,
         "ctcae_hint": null,
-        "lang": "en",
-        "status": "interim_pending_zh"
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "阿瑞匹坦联合格拉司琼和地塞米松（阿瑞匹坦治疗组）给药方案的总体耐受性良好。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "临床中出现的主要不良事件为轻度到中度。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在第一周期，阿瑞匹坦治疗组大的有11.7%的患者报告了药物相关性不良事件，相比之下，采用标准疗法的患者的不良事件约为13.3%。",
+        "frequency": "11.7%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "阿瑞匹坦治疗组中最常见且略高于标准治疗组的药物相关性临床不良事件为便秘（分别为7.8%和7.6%）和食欲减退（分别为2.9%和1.9%）。",
+        "frequency": "7.8%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在阿瑞匹坦组和标准治疗组有着类似的与药物相关的实验室变化，发生率分别为5.4%和6.7%。",
+        "frequency": "5.4%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "阿瑞匹坦治疗组高于标准治疗组的与药物相关的实验室变化包括血糖水平升高，血肌酸酐升高，血钾升高，血尿素升高，中性粒细胞减少，蛋白尿。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "发生比率分别为0.5%和0%第二周期的不良事件特征总体上类似于第一周期。",
+        "frequency": "0.5%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "全球临床研究在接受高度致吐性抗肿瘤化疗（HEC）的患者中进行的2项随机对照的临床试验中，544名患者在化疗的第一个周期中接受了阿瑞匹坦治疗，而其中413名患者继续进入到多周期至6个周期的化疗。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "本品与昂丹司琼和地塞米松联合使用（阿瑞匹坦方案）的患者总体上具有良好的耐受性。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在这些临床研究中，大多数不良反应都是轻度到中度程度的。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在第一周期化疗中，药物相关的不良反应在阿瑞匹坦治疗组的发生率约为19%，而标准治疗组约为14%。",
+        "frequency": "19%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "由于药物相关的不良反应而终止阿瑞匹坦治疗的患者在阿瑞匹坦治疗组为0.6%，面在标准治疗组中为0.4%。",
+        "frequency": "0.6%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在阿瑞匹坦治疗组中最常见的且高于标准治疗组的药物相关性不良反应包括：逆（4.6%），ALT（丙氨酸氨基转移酶）升高（2.8%），消化不良（2.6%），便秘（2.4%），头痛（2.0%），和食欲减退（2.0%）。",
+        "frequency": "4.6%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在另一项1169名患者接受阿瑞匹坦针对于高度致吐性化疗的阳性药物对照临床研究中，不良事件特征总体上类似于阿瑞匹坦应用于高度致吐性化疗的其他研究。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "全球临床试验在接受中度致吐性抗肿瘤化疗（MEC）的患者中进行的2项随机对照的临床试验中，86B名患者在化疗的第一个周期接受了阿瑞匹坦治疗，而其中686名患者继续进入到多周期至4个周期的化疗。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在这2项研究中，本品与昂性。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在这些临床研究中，大多数不良反应都是轻度到中度程度的。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在对这2项研究的第一周期数据的合并分析中，药物相关性不良反应在阿瑞匹坦治疗组报告的发生率约14%，标准治疗组约为15%。",
+        "frequency": "14%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "由于药物相关性不良反应而终止阿瑞匹坦治疗的患者在阿瑞匹坦治疗组为0.7%，而在标准治疗组中为0.2%在阿瑞匹坦治疗组中最常见的且明显高于标准治疗组的药物相关性不良反应是：疲乏（1.4%）。",
+        "frequency": "0.7%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "全球临床试验对高度致吐性化疗（HEC）或中度致吐性化疗（MEC）研究进行联合分析，在阿瑞匹坦治疗组中发生率高于标准治疗组的药物相关性不良反应包括如下：[常见（≥1/100，<1/10)，不常见（≥1/1000，<1/100），罕见（≥1/10,000，<1/1,000 )1感染和传染病：罕见：念珠菌病、葡萄球菌感染血液和淋巴系统疾病：不常见：贫血、嗜中性粒细胞减少性发热代谢性和营养性疾病：常见：食欲降低罕见：多饮精神疾病：不常见：焦虑罕见：定向障碍、欣快感神经系统疾病：不常见：眩晕、嗜睡罕见：认知障碍、昏睡、味觉异常眼部疾病：罕见：结膜炎耳部和迷路疾病：罕见：耳鸣心脏疾病：不常见：心动过缓、心悸不常见：面色潮红呼吸系统、胸部和纵隔疾病：常见：呢逆罕见：口咽疼痛、喷嚏、咳嗽、鼻后滴漏、咽喉刺激胃肠道疾病：不常见：暖气、恶心、胃食管返流性疾病、呕吐、腹痛、口干、肠胃胀气剂。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "阿瑞匹坦也是CYP2C9诱导剂。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "常见：消化不良罕见：硬便、穿孔性十二指肠溃疡、中性粒细胞减少性的结肠炎、口炎、腹胀皮肤和皮下组织疾病：不常见：皮疹、痤疮罕见：光敏反应、多汗、皮脂溢、皮肤病变、皮疹、瘙痒肌肉骨骼和结缔组织疾病：罕见：肌肉疫率、肌肉虚弱肾脏和泌尿系统疾病：不常见：排尿困难罕见：尿频全身疾病和给药部位疾病：常见：疲乏无力不常见：虚弱、不适罕见：水肿、胸部不适、步伐失调研究发现：常见：ALT水平升高不常见：AST水平升高、血液碱性磷酸酶水平升高罕见：尿量增加、尿红细胞阳性、血钠降低、体重降低、糖尿、嗜中性粒细胞降低多周期至最长6个周期的化疗过程中，不良反应总体情况与第一个周期化疗中所观察到的不良反应基本相似。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在另一项关于化疗引起的恶心和呕吐（CINV）的研究中有1名患者同时接受阿瑞匹坦和其他抗肿瘤化疗药物的治疗，报告了Stevens-Johnson综合征。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "其它临床研究在接受全身平衡麻醉但未接受化疗的患者中进行了呵瑞匹坦单剂量40mg预防术后悬心及呕吐（PONV）的研究，在这些研究中，发现的比阳性对照药（昂丹司琼）发生率高的不良反应包括：ALT降低、上腹部疼痛、腹部肠鸣音、发音不良、呼吸困难、感觉减退、失眠、瞻孔缩小、恶心、直觉障碍、胃部不适、视觉灵敏度下降、气喘。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "另外，在预防术后恶心及呕吐的研究中服用高剂量阿瑞匹坦出现2例严重不良事件：便秘及分肠梗阻。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在一项非CINV/非PONV的临床研究中，服用阿瑞匹坦的一名患者报告出现了血管性水肿及尊麻疹。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "上市后经验：在阿瑞匹坦的上市后使用中，报告了以下不良反应。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "这些不良反应来自自发报告的患者，且为样本量不详的人群，通常无法可靠地估算这些不良反应的发生率或确定它们与药物之间的因果关系。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "皮肤和皮下组织疾病：瘙痒、皮疹、尊麻疹、罕见的Stevens-Johnson综合征及毒性表皮坏死症免疫系统疾病：超敏反应，包括过敏性反应",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
       }
     ],
     "interactions": null,
@@ -2034,12 +2242,7 @@
         "marketing_status": "marketed"
       }
     ],
-    "missing_fields": [
-      "indications",
-      "dosage",
-      "approval_number_cn",
-      "chinese_label"
-    ],
+    "missing_fields": [],
     "source": "FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231）",
     "origin": "fda_ndc",
     "annotation": {
@@ -2068,22 +2271,305 @@
       }
     },
     "contraindications_source": {
-      "lang": "en",
-      "status": "interim_pending_zh",
-      "source": "openFDA drug/label（美国 FDA 公开标签，公有领域，非 NMPA 口径）",
-      "set_id": "af9b6086-4bf2-472c-8740-4134eaaebace",
-      "effective_time": "20260611",
-      "fetched_at": "2026-10-28",
-      "note": "英文原文 interim，待 NMPA 中文说明书替换；不得直接作为中文说明书交付"
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "默沙东官网 意美（阿瑞匹坦胶囊）说明书PDF",
+      "source_url": "https://assets.msdchina.com.cn/sites/4/2025/05/%E6%84%8F%E7%BE%8E%E8%AF%B4%E6%98%8E%E4%B9%A6-%E5%88%86%E5%8C%85semi-%E5%8E%BB%E6%A0%87%E6%B3%A8%EF%BC%88%E6%96%B9%E6%AD%A3%E9%BB%91%E6%A8%AA%E7%89%88%EF%BC%89-25.4.27-%E6%9B%B2%E7%BA%BF.pdf",
+      "source_holder": "默沙东（MSD）",
+      "fetched_at": "2026-11-05T00:29:22+08:00",
+      "usage_note": "默沙东官网公开PDF；文字层字体编码损坏（无 ToUnicode），经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false,
+      "replaced_interim": {
+        "lang": "en",
+        "set_id": "af9b6086-4bf2-472c-8740-4134eaaebace",
+        "fetched_at": "2026-10-28"
+      }
     },
     "adverse_reactions_source": {
-      "lang": "en",
-      "status": "interim_pending_zh",
-      "source": "openFDA drug/label（美国 FDA 公开标签，公有领域，非 NMPA 口径）",
-      "set_id": "af9b6086-4bf2-472c-8740-4134eaaebace",
-      "effective_time": "20260611",
-      "fetched_at": "2026-10-28",
-      "note": "英文原文 interim，待 NMPA 中文说明书替换；不得直接作为中文说明书交付"
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "默沙东官网 意美（阿瑞匹坦胶囊）说明书PDF",
+      "source_url": "https://assets.msdchina.com.cn/sites/4/2025/05/%E6%84%8F%E7%BE%8E%E8%AF%B4%E6%98%8E%E4%B9%A6-%E5%88%86%E5%8C%85semi-%E5%8E%BB%E6%A0%87%E6%B3%A8%EF%BC%88%E6%96%B9%E6%AD%A3%E9%BB%91%E6%A8%AA%E7%89%88%EF%BC%89-25.4.27-%E6%9B%B2%E7%BA%BF.pdf",
+      "source_holder": "默沙东（MSD）",
+      "fetched_at": "2026-11-05T00:29:22+08:00",
+      "usage_note": "默沙东官网公开PDF；文字层字体编码损坏（无 ToUnicode），经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false,
+      "replaced_interim": {
+        "lang": "en",
+        "set_id": "af9b6086-4bf2-472c-8740-4134eaaebace",
+        "fetched_at": "2026-10-28",
+        "item_count": null
+      }
+    },
+    "indications_source": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "默沙东官网 意美（阿瑞匹坦胶囊）说明书PDF",
+      "source_url": "https://assets.msdchina.com.cn/sites/4/2025/05/%E6%84%8F%E7%BE%8E%E8%AF%B4%E6%98%8E%E4%B9%A6-%E5%88%86%E5%8C%85semi-%E5%8E%BB%E6%A0%87%E6%B3%A8%EF%BC%88%E6%96%B9%E6%AD%A3%E9%BB%91%E6%A8%AA%E7%89%88%EF%BC%89-25.4.27-%E6%9B%B2%E7%BA%BF.pdf",
+      "source_holder": "默沙东（MSD）",
+      "fetched_at": "2026-11-05T00:29:22+08:00",
+      "usage_note": "默沙东官网公开PDF；文字层字体编码损坏（无 ToUnicode），经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false
+    },
+    "dosage_source": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "默沙东官网 意美（阿瑞匹坦胶囊）说明书PDF",
+      "source_url": "https://assets.msdchina.com.cn/sites/4/2025/05/%E6%84%8F%E7%BE%8E%E8%AF%B4%E6%98%8E%E4%B9%A6-%E5%88%86%E5%8C%85semi-%E5%8E%BB%E6%A0%87%E6%B3%A8%EF%BC%88%E6%96%B9%E6%AD%A3%E9%BB%91%E6%A8%AA%E7%89%88%EF%BC%89-25.4.27-%E6%9B%B2%E7%BA%BF.pdf",
+      "source_holder": "默沙东（MSD）",
+      "fetched_at": "2026-11-05T00:29:22+08:00",
+      "usage_note": "默沙东官网公开PDF；文字层字体编码损坏（无 ToUnicode），经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false
+    },
+    "cn_registration": {
+      "approval_no": "国药准字HJ20150377；国药准字HJ20150380；国药准字HJ20150378；国药准字HJ20150381；国药准字HJ20150379",
+      "brand_name": "意美（EMEND)",
+      "specification": "(1)80mg;(2)125mg",
+      "dosage_form": null,
+      "mah": "Merck Sharp &Dohme B.V.",
+      "manufacturer": "Novo Nordisk Production Ireland Limited",
+      "source_type": "official_label_ocr",
+      "source_name": "默沙东官网 意美（阿瑞匹坦胶囊）说明书PDF",
+      "source_url": "https://assets.msdchina.com.cn/sites/4/2025/05/%E6%84%8F%E7%BE%8E%E8%AF%B4%E6%98%8E%E4%B9%A6-%E5%88%86%E5%8C%85semi-%E5%8E%BB%E6%A0%87%E6%B3%A8%EF%BC%88%E6%96%B9%E6%AD%A3%E9%BB%91%E6%A8%AA%E7%89%88%EF%BC%89-25.4.27-%E6%9B%B2%E7%BA%BF.pdf",
+      "fetched_at": "2026-11-05T00:29:22+08:00",
+      "note": "注册类字段摘自 OCR 后的说明书原文（批准文号/商品名/规格/持有人/生产企业），非人工校对；不使用注册库字段；未识别项为 null。"
+    },
+    "label": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "默沙东官网 意美（阿瑞匹坦胶囊）说明书PDF",
+      "source_url": "https://assets.msdchina.com.cn/sites/4/2025/05/%E6%84%8F%E7%BE%8E%E8%AF%B4%E6%98%8E%E4%B9%A6-%E5%88%86%E5%8C%85semi-%E5%8E%BB%E6%A0%87%E6%B3%A8%EF%BC%88%E6%96%B9%E6%AD%A3%E9%BB%91%E6%A8%AA%E7%89%88%EF%BC%89-25.4.27-%E6%9B%B2%E7%BA%BF.pdf",
+      "source_holder": "默沙东（MSD）",
+      "fetched_at": "2026-11-05T00:29:22+08:00",
+      "usage_note": "默沙东官网公开PDF；文字层字体编码损坏（无 ToUnicode），经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "content_type": "application/pdf",
+      "pages": 2,
+      "char_count": 18113,
+      "raw_path": "fetched/labels_cn/downloads/msd_aprepitant_1dd6935c8331.pdf",
+      "text_path": "fetched/labels_cn/text/msd_aprepitant.txt",
+      "text_sha256": "1830d72712507f91e6999aca22c94f3e6782884eac42646fa1d4a965c4f13b2e",
+      "sections": [
+        "上市许可持有人",
+        "不良反应",
+        "临床试验",
+        "儿童用药",
+        "分包装厂名称",
+        "包装",
+        "境内责任人/境内联系人",
+        "孕妇及哺乳期妇女用药",
+        "性状",
+        "成份",
+        "执行标准",
+        "有效期",
+        "注意事项",
+        "生产企业",
+        "用法用量",
+        "禁忌",
+        "老年用药",
+        "药代动力学",
+        "药品名称",
+        "药品批准文号",
+        "药物相互作用",
+        "药物过量",
+        "药理毒理",
+        "规格",
+        "贮藏",
+        "适应症"
+      ],
+      "text_stored_in_catalog": false,
+      "note": "说明书全文不写入目录（体积过大），按 text_path 读取；目录仅存元数据与关键字段。",
+      "proofread": false,
+      "ocr_engine": "rapidocr-onnxruntime",
+      "ocr_engine_version": "1.4.4",
+      "ocr_model": "PP-OCRv4 (ch_PP-OCRv4_det_infer.onnx + ch_PP-OCRv4_rec_infer.onnx, CPU)",
+      "ocr": {
+        "engine": "rapidocr-onnxruntime",
+        "engine_version": "1.4.4",
+        "model": "PP-OCRv4 (ch_PP-OCRv4_det_infer.onnx + ch_PP-OCRv4_rec_infer.onnx, CPU)",
+        "dpi": 300,
+        "preprocess": "RGB; PDF render at 300 dpi",
+        "reliable": true,
+        "core_sections_hit": [
+          "适应症",
+          "用法用量",
+          "禁忌",
+          "不良反应"
+        ],
+        "core_sections_missing": [],
+        "page_map": [
+          {
+            "section": "药品名称",
+            "page": 1,
+            "y": 549,
+            "image": 1
+          },
+          {
+            "section": "成份",
+            "page": 1,
+            "y": 685,
+            "image": 1
+          },
+          {
+            "section": "性状",
+            "page": 1,
+            "y": 1154,
+            "image": 1
+          },
+          {
+            "section": "适应症",
+            "page": 1,
+            "y": 1262,
+            "image": 1
+          },
+          {
+            "section": "规格",
+            "page": 1,
+            "y": 1372,
+            "image": 1
+          },
+          {
+            "section": "用法用量",
+            "page": 1,
+            "y": 1406,
+            "image": 1
+          },
+          {
+            "section": "不良反应",
+            "page": 1,
+            "y": 185,
+            "image": 1
+          },
+          {
+            "section": "禁忌",
+            "page": 1,
+            "y": 1433,
+            "image": 1
+          },
+          {
+            "section": "注意事项",
+            "page": 1,
+            "y": 1595,
+            "image": 1
+          },
+          {
+            "section": "孕妇及哺乳期妇女用药",
+            "page": 1,
+            "y": 1912,
+            "image": 1
+          },
+          {
+            "section": "儿童用药",
+            "page": 1,
+            "y": 2097,
+            "image": 1
+          },
+          {
+            "section": "老年用药",
+            "page": 1,
+            "y": 185,
+            "image": 1
+          },
+          {
+            "section": "药物相互作用",
+            "page": 1,
+            "y": 270,
+            "image": 1
+          },
+          {
+            "section": "药物过量",
+            "page": 1,
+            "y": 1337,
+            "image": 1
+          },
+          {
+            "section": "临床试验",
+            "page": 1,
+            "y": 1624,
+            "image": 1
+          },
+          {
+            "section": "药理毒理",
+            "page": 2,
+            "y": 1662,
+            "image": 2
+          },
+          {
+            "section": "药代动力学",
+            "page": 2,
+            "y": 976,
+            "image": 2
+          },
+          {
+            "section": "贮藏",
+            "page": 2,
+            "y": 1071,
+            "image": 2
+          },
+          {
+            "section": "包装",
+            "page": 2,
+            "y": 1108,
+            "image": 2
+          },
+          {
+            "section": "有效期",
+            "page": 2,
+            "y": 1215,
+            "image": 2
+          },
+          {
+            "section": "执行标准",
+            "page": 2,
+            "y": 1248,
+            "image": 2
+          },
+          {
+            "section": "药品批准文号",
+            "page": 2,
+            "y": 1284,
+            "image": 2
+          },
+          {
+            "section": "上市许可持有人",
+            "page": 2,
+            "y": 1418,
+            "image": 2
+          },
+          {
+            "section": "生产企业",
+            "page": 2,
+            "y": 1502,
+            "image": 2
+          },
+          {
+            "section": "分包装厂名称",
+            "page": 2,
+            "y": 1589,
+            "image": 2
+          },
+          {
+            "section": "境内责任人/境内联系人",
+            "page": 2,
+            "y": 1671,
+            "image": 2
+          }
+        ],
+        "header_normalizations": [],
+        "text_normalizations": [],
+        "note": "OCR 抽取，非人工校对；表格与小字注释可能不可靠，原文以官网 PDF/图片为准。"
+      }
+    },
+    "label_zh_source": {
+      "source_name": "默沙东官网 意美（阿瑞匹坦胶囊）说明书PDF",
+      "source_version": "2026-11-05T00:29:22+08:00",
+      "source_section": "说明书全文",
+      "source_file": "fetched/labels_cn/text/msd_aprepitant.txt",
+      "updated_at": "2026-11-05"
     }
   },
   {
@@ -3088,7 +3574,7 @@
       "dosage_form": null,
       "mah": "Roche Registration GmbH",
       "manufacturer": "企业名称 ： Roche Diagnostics GmbH",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "上海罗氏制药有限公司官网产品说明书",
       "source_url": "https://assets.roche.com/f/249469/x/54dbc6441f/atilizhudankangzhusheye_20260401.pdf",
       "fetched_at": "2026-11-04T23:07:49+08:00",
@@ -4605,7 +5091,7 @@
       "dosage_form": null,
       "mah": "Roche Pharma (Schweiz) AG",
       "manufacturer": "Roche Diagnostics GmbH",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "上海罗氏制药有限公司官网产品说明书",
       "source_url": "https://assets.roche.com/f/249469/x/adf32e4105/beifazhudankangzhusheye_20260211.pdf",
       "fetched_at": "2026-11-04T23:07:59+08:00",
@@ -6698,7 +7184,7 @@
       "dosage_form": null,
       "mah": "江苏豪森药业集团有限公司",
       "manufacturer": "江苏豪森药业集团有限公司",
-      "source_type": "official_label_text",
+      "source_type": "domestic_generic_label",
       "source_name": "江苏豪森药业 诺欣（顺铂注射液）说明书",
       "source_url": "https://www.hansoh.cn/upload/file/2025/04/15/ea09d04587aa42be8753e15a0a8c5478.pdf",
       "fetched_at": "2026-11-04T23:09:39+08:00",
@@ -8128,7 +8614,7 @@
       "dosage_form": null,
       "mah": "PFIZER EUROPE MA EEIG",
       "manufacturer": "Pfizer Manufacturing Deutschland GmbH",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "辉瑞医学信息网 赛可瑞（克唑替尼胶囊）说明书",
       "source_url": "https://www.pfizermedicalinformation.cn/products/package-insert/xalkori",
       "fetched_at": "2026-11-04T23:20:52+08:00",
@@ -19071,7 +19557,7 @@
       "dosage_form": null,
       "mah": "Pfizer Italia s.r.l.",
       "manufacturer": "Pfizer Italia s.r.l.",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "辉瑞医学信息网 阿诺新（依西美坦片）说明书",
       "source_url": "https://www.pfizermedicalinformation.cn/products/package-insert/aromasin",
       "fetched_at": "2026-11-04T23:08:33+08:00",
@@ -21231,7 +21717,7 @@
       "dosage_form": null,
       "mah": "江苏豪森药业集团有限公司",
       "manufacturer": "江苏豪森药业集团有限公司",
-      "source_type": "official_label_text",
+      "source_type": "domestic_generic_label",
       "source_name": "江苏豪森药业 普来和（氟维司群注射液）说明书",
       "source_url": "https://www.hansoh.cn/upload/file/2024/01/23/eb1528835f9c43ebaed72eab433ee992.pdf",
       "fetched_at": "2026-11-04T23:09:00+08:00",
@@ -22359,7 +22845,7 @@
       "dosage_form": null,
       "mah": "江苏豪森药业集团有限公司",
       "manufacturer": "江苏豪森药业集团有限公司",
-      "source_type": "official_label_text",
+      "source_type": "domestic_generic_label",
       "source_name": "江苏豪森药业 泽菲（注射用盐酸吉西他滨）说明书",
       "source_url": "https://www.hansoh.cn/upload/file/2025/11/20/5029add79bb846ef9432eafd70ab062b.pdf",
       "fetched_at": "2026-11-04T23:09:27+08:00",
@@ -41826,7 +42312,7 @@
       "dosage_form": null,
       "mah": "Eli Lilly Nederland B.V.",
       "manufacturer": "Vianex S.A.–Plant C",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "礼来医学网 力比泰说明书",
       "source_url": "https://www.lillymedical.cn/file/raw/86e07c09-4783-4f99-aa24-6599681ab758/Alimta-CN-%20PI_master%20truth%20copy-%E6%A0%BC%E5%BC%8F%E8%B0%83%E6%95%B4%E5%90%8E.pdf",
       "fetched_at": "2026-11-04T23:20:45+08:00",
@@ -42678,7 +43164,7 @@
       "dosage_form": null,
       "mah": "Roche Pharma (Schweiz) AG",
       "manufacturer": "Roche Diagnostics GmbH",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "上海罗氏制药有限公司官网产品说明书",
       "source_url": "https://assets.roche.com/f/249469/x/860634fd47/patuozhudankangzhusheye_20251028.pdf",
       "fetched_at": "2026-11-04T23:08:07+08:00",
@@ -45129,7 +45615,7 @@
       "dosage_form": null,
       "mah": "Roche Pharma (Schweiz) AG",
       "manufacturer": "Genentech Inc.",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "上海罗氏制药有限公司官网产品说明书",
       "source_url": "https://assets.roche.com/f/249469/x/ed584d17d7/zhusheyongqutuozhu-dankang_20250220.pdf",
       "fetched_at": "2026-11-04T23:08:20+08:00",
@@ -45719,7 +46205,7 @@
       "dosage_form": null,
       "mah": "Roche Pharma (Schweiz) AG",
       "manufacturer": "F. Hoffmann-La Roche Ltd",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "上海罗氏制药有限公司官网产品说明书",
       "source_url": "https://assets.roche.com/f/249469/x/37c9ff5886/zhusheyongenmeiqutuozhudankang_20260224.pdf",
       "fetched_at": "2026-11-04T23:08:28+08:00",
@@ -48914,7 +49400,7 @@
       "dosage_form": null,
       "mah": "信达生物制药（苏州）有限公司",
       "manufacturer": "信达生物制药（苏州）有限公司",
-      "source_type": "official_label_text",
+      "source_type": "mah_official_label",
       "source_name": "信达生物 达伯舒（信迪利单抗注射液）说明书",
       "source_url": "https://img.innoventbio.com/PackageInsert/sintilimab.pdf",
       "fetched_at": "2026-11-04T23:29:10+08:00",
@@ -48973,6 +49459,668 @@
     },
     "missing_fields": [
       "atc_code"
+    ]
+  },
+  {
+    "drug_id": "DRUG-EXTRA-002",
+    "generic_name": "埃克替尼",
+    "generic_name_en": "ICOTINIB",
+    "brand_names": [],
+    "atc_code": null,
+    "approval_no": "国药准字H20110061",
+    "indications": [
+      "本品单药适用于治疗表皮生长因子受体（EGFR）基因具有敏感突变的局部脱期或转移性非小细胞肺癌（NSCLC）患者的一线治疗。",
+      "本品单药可适用于治疗既往接受过至少一个化疗方案失败后的局部晚期或转移性非小细胞肺癌（NSCLC），既往化疗主要是指以铂类为基础的联合化疗。",
+      "本品单药适用于IHIIA期伴有表皮生长因子受体（EGFR）基因敏感突变非小细胞肺癌（NSCLC）术后辅助治疗。",
+      "不推荐本品用于EGFR野生型非小细胞肺癌患者。"
+    ],
+    "dosage": {
+      "standard": "本品的推荐剂量为每次125mg（1片），每天三次。口服，空腹或与食物同服，高热量食物可能明显增加药物的吸收\n（见【临床试验】）。\n术后辅助治疗：推荐剂量为每次125mg（1片），每天三次，口服，空腹或与食物同服，高热量食物可能明显增加药物的\n吸收，用药直至疾病复发或出现不能耐受的毒性或治疗达2年。\n剂量调整：当患者出现不能耐受的皮疹、腹泻等不良反应时，可暂停（1~2同）用药直至症状缓解或消失：随后恢复每\n次125mg（1片），每天三次的剂量：对氨基转移酶轻度升高（ALT[丙氨酸氨基转移酶]及AST[天门冬氨酸氨基转移酶]低于\n转移离，当转移离恢复（ALT及AST均低于1COIU/L，或正常）后可恢复给药（见【不良反应】）。\n对在不同年龄和性别等患者血药浓度资料分析结果显示患者的血药浓度不受年龄和性别等因素的影响，故不推荐根据\n年龄和性别调整剂量。\n特殊人要：目前尚无针对儿童或孕妇的临床研究结果。针对老年忌者及肝、肾功能不全患者的临床研究正在进行中。",
+      "adjustment": "剂量调整：当患者出现不能耐受的皮疹、腹泻等不良反应时，可暂停（1~2同）用药直至症状缓解或消失：随后恢复每\n次125mg（1片），每天三次的剂量：对氨基转移酶轻度升高（ALT[丙氨酸氨基转移酶]及AST[天门冬氨酸氨基转移酶]低于\n转移离，当转移离恢复（ALT及AST均低于1COIU/L，或正常）后可恢复给药（见【不良反应】）。\n对在不同年龄和性别等患者血药浓度资料分析结果显示患者的血药浓度不受年龄和性别等因素的影响，故不推荐根据\n年龄和性别调整剂量。\n特殊人要：目前尚无针对儿童或孕妇的临床研究结果。针对老年忌者及肝、肾功能不全患者的临床研究正在进行中。"
+    },
+    "contraindications": [
+      "对本品活性成分或任何一种辅料过敏者，禁用本品。"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "埃克替尼的安全性评估主要是基于支持注册的I期临床试验（ICOGEN）、上市后IV期临床试验和术后辅助治疗注册性研究（EVIDENCE）中收集的安全性信息。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "总体上，埃克替尼耐受性良好：W期临床试验ICOGEN研究是联往接受过一个或两个化疗后失败的局部晚期（IIB或IV期）或转移性非小细胞肺癌（NSCLC）患者中开展的随机、双盲、对照、多中心研究。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "399例受试者按1：1随机接受了盐酸埃克替尼片125mg每天三次或吉非替尼250mg每天一次给药。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "最常报告的不良反应为皮疹（40.0%）、腹泻（18.5%）和转氨酶升高（8.0%），绝大多数为1级，一般见于服药后1-3周内，通常是可送性的，无需特殊处理，可自行消失。",
+        "frequency": "40.0%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "表1列出了在ICOGEN试验中报道的常见不良反应及其严重程度。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "表1ICOGEN研究不良反应（>5.0%）",
+        "frequency": "5.0%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "身体器官系统不良反应NCI-CTC分级NCI-CTC分级所有分级%川级%IV级%所有分级%川级%IV级%皮肤及其附件皮疹40 0.5 0 49.2 1.0 0消化系统腹泻18.5 0 0 27.6 2.0 0",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "代谢和营养转氨酶升高8.0 0.5 S'0 12.6 1.0 0肝功能异常4.5 0.5 0 5.0 0 0",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "白细胞下降3.0 0 0 5.0 0 0另外一项单臂、多中心、I期扩展研究（BD-IC-IVO1），其研究人群、给药方案等均与ICOGEN研究中埃克替尼组相同。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "共127例患者进入安全性分析集，总体不良反应发生率为48.8%，最常见的不良反应为皮恋（26.0%）、转氨前升高（14.2%）和腹泻（11.8%），与ICOGEN研究结果一致。",
+        "frequency": "48.8%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "上市后IV期临床试验该试验为多中心、单臂、开放性IV期临床观察研究，以安全性观察为主要目的。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "2011年8月正式启动，截至2013年10月28日，共收集6673例可评价惠者的安全性信息。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "总体不良反应发生率为31.0%，非常常见的不良反应为皮疹，发生率为0%，常见不良反应为腹泻，发生率为8.3%；",
+        "frequency": "31.0%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "均以轻度为主，川度不良反应发生率为0.5%，未见V度不良反应，共有19例患者因不能耐受毒副反应停药。",
+        "frequency": "0.5%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "腹泻8.3 0.12 0 0.21上市后IV期研究中共收集到219例EGFR突变患者一线使用埃克替尼治疗的安全性数据，不良反应发生率为46.6%，最常见的不良反应为皮疹（25.6%），腹泻（9.1%），转氨酶升高（3.2%）。",
+        "frequency": "46.6%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "不良反应以轻中度为主，川度及以上不良反应少见。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "与总体人群相似。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "EVIDENCE研究EVIDENCE研究（BD-IC-IV61）是在手术完全切除后、经病理证实为I-IIA期的NSCLC患者中开展的一项随机、对照、开放、多中心的I期临床研究，以标准辅助化疗为对照，比较两种治疗作为I-IIA期伴EGFR敏感突变的非小细胞肺癌术后辅助铂：长春瑞滨25mg/m²静脉给药（静脉推注或静脉滴注），第1天及第8天：顺铂75mg/m静脉滴注，第1天或总量分3天给予：21天为一周期，连续4个周期，或至肿瘤复发转移或出现难以耐受的毒性反应：2、培美由塞+顺铂[仅用于非鳞癌患者]：培美曲塞500mg/m静脉滴注，第1天：顺铂75mg/m²静脉滴注，第1天或总量分3天给予：21天为一周期，连续4个周期，或至肿瘤复发转移或出现难以耐受的毒性反应。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "埃克替尼最常见的不良反应是皮疹（38.46%）、腹泻（19.87%）、丙氨酸氨基转移酶升高（18.59%）、天门冬氨酸氨基转移酯升高（17.95%）、口腔溃疡（8.97%）、肝功能异常（7.69%）、皮肤干燥（7.69%）和脱发（6.41%）：其中>3级ADR为皮疹（1.92%）、肝功能异常（1.28%），未报告因AE导致的死亡。",
+        "frequency": "38.46%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "表3列出了EVIDENCE研究常见不良反应的发生率及严重程度。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "表3EVIDENCE研究不良反应（≥5.0%）系统器官分类埃克替尼组（N=156）标准辅助化疗组（N=139）首选语所有分级%三级%IV级%所有分级%川级%IV级%皮肤及皮下组织类疾病46.79 2.56 0 10.79 0 0皮疹38.46 1.92 0 1.44 0 0皮肤干燥7.69 0.64 0 0 0 0脱发6.41 0 0 9.35 0 0各类检查28.85 0 0 79.14 26.62 17.99丙复酸氨基转移酶升高18.59 0 0 15.11 0.72 0天门冬氨酸氨基转移醇升高17.95 0 0 13.67 0 0Y-谷氨酰转移酶升高4.49 0 0 16 0.72 0血胆红囊升高4.49 0 0 5.04 0 0血肌酐升高2.56 0 0 9.35 0 0血小板计数降低1.92 0 0 20.86 1.44 1.44中性粒细胞计数降低1.92 0 0 69.06 24.46 16.55白细胞计数降低1.28 0 0 60.43 18.71 0.72淋巴细胞计数降低0 0 0 5.04 0.72 0血尿素升高0 0 0 6.47 0 0胃肠系统疾病28.85 0.64 0 76.98 17.27 0.72康泻19.87 0.64 0 5.04 0 0口腔溃疡8.97 0 0 0.72 0 0恶心1.28 0 0 58.99 7.19 0腹账1.28 0 0 6.47 2.16 0呕吐0.64 0 0 51.08 12.95 0便秘0 0 0 15.11 0.72 0肝胆系统疾病11.54 1.28 0 4.32 0 0肝功能异常7.69 1.28 0 1.44 0 0呼吸系统、胸及纵隔疾病7.69 0 0 9.35 0.72 0咳嗽3.21 0 0 5.04 0.72 0代谢及营养类疾病2.56 0 0 33.09 5.04 1.44低钾血症0.64 0 0 7.91 1.44 1.44食欲减退0.64 0 0 16.55 1.44 0低钠血症0 0 0 7.19 2.88 0摄食量减少0 0 0 6.47 0.72 0全身性疾病及2.56 0 0 25.18 2.88 0给药部位各种反应胸部不适0.64 0 0 5.04 0.72 0乏力0 0 0 20.86 2.16 0血液及淋巴系统疾病0 0 0 43.88 7.91 2.16骨髓功能衰姆0 0 0 7.91 1.44 2.16",
+        "frequency": "5.0%",
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "所有临床研究以下是所有临床研究中在接受埃克替尼125mg单药治疗的患者中观察到的不良反应。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "根据以下的术语对不良反应的发生率进行分级：非常常见（>1/10）：常见（1/100.<1/10）：少见（1/1000，<1/100）：罕见（>1/10000，<1/1000）：非常罕见（<1/10000）：包括个例报告。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "这些研究中非常常见的不良反应见表1，其他频率的不良反应分类总结如下。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "消化系统异常常见不良反应：包括食欲不振、呕吐和腹痛：少见不良反应：便秘、口腔黏膜炎、大便干燥、黑便、口干、口腔红肿、呕血、胃溃疡和胃胀。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "罕见不良反应：遗疡性口炎。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "肾功能异常少见不良反应：尿蛋白升高、蛋白尿、肌酐升高、尿白细胞升高、尿常规异常、尿索氨升高、排尿疼癌、肾功能损害。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "肝功能异常少见不良反应：胆红案升高和谷氢酰转肽酶（GGT）升高。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "呼吸道、胸部异常少见不良反应：咳嗽、鼻腔干燥、鼻、呼吸困难、略血、上呼吸感染、鼻内黄痛、肺部感染、咳痰、流涕、声音斯哑、胸部不适、胸腔积液、间质性肺病（ILD）。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "皮肤和皮下组织异常少见不良反应：甲沟炎、皮肤癌痒、皮肤干燥、脱皮、手足综合症、指甲改变、皮肤裂、脱发、皮肤反应、痤疮、面部危险三角区感染、皮肤水泡、四肢裂和色素沉着。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "眼疾罕见不良反应：眼病和干眼病。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "血液系统异常少见不良反应：白细胞下降、中性粒细胞减少、血红蛋白下降、血小板降低、红细胞下降、贫血、舌部癌血。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "罕见不良反应：白细胞增多，神经系统罕见不良反应：失神和嗜睡。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "实验室检查异常少见不良反应：低钠血症和血糖升高。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "其他少见不良反应：疼痛、乏力（I-l）级、发热、头晕、胸闷、过敏、四肢麻木、头痛、味觉改变、下肢水肿、心包积液、心悸、牙齿脱落、肢端肿胀、阳癌、低血压和指端麻木。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "间质性肺炎（ILD）ILD是EGFR-TKI类药物治疗中少见但严重的不良反应。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "在埃克替尼的期临床研究中出现2例疑似ILD患者，其中1例进行了进一步病理检查后，排除了LD并确认为疾病进展，与研究药物无关；",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "另一例因未获得病理检查结果，所以尚无法排除。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "I期试验（ICOGEN）中在埃克替尼和吉非替尼组均未出现ILD的患者；",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "单臂I期研究中出现1例间质性肺炎，忠者停药1月后死亡；",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "上市后IV期研究中共报告3例间质性肺炎（ILD），停药并予激素积极治疗后2例好转，1例患者停药后5月后死亡。",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      },
+      {
+        "term": "所有LD患者联往均接受过至少4个周期化疗，经CT确诊，最短在给药后1周出现，最长在给药后4个月出现，",
+        "frequency": null,
+        "ctcae_hint": null,
+        "lang": "zh",
+        "status": "zh_from_official_label"
+      }
+    ],
+    "interactions": null,
+    "drug_class": "靶向",
+    "cancer_type": [
+      "lung"
+    ],
+    "origin": "cn_label",
+    "source": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+    "annotation": "2026-11-05 由官网说明书OCR 原文（非人工校对）建档；癌种标签按说明书适应证字面匹配，未做药理学推断。",
+    "indications_source": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+      "source_url": "https://www.bettapharma.com/Contact/article/id/126",
+      "source_holder": "贝达药业",
+      "fetched_at": "2026-11-05T00:30:46+08:00",
+      "usage_note": "贝达药业官网公开说明书图片（4张JPG）；经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false
+    },
+    "dosage_source": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+      "source_url": "https://www.bettapharma.com/Contact/article/id/126",
+      "source_holder": "贝达药业",
+      "fetched_at": "2026-11-05T00:30:46+08:00",
+      "usage_note": "贝达药业官网公开说明书图片（4张JPG）；经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false
+    },
+    "contraindications_source": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+      "source_url": "https://www.bettapharma.com/Contact/article/id/126",
+      "source_holder": "贝达药业",
+      "fetched_at": "2026-11-05T00:30:46+08:00",
+      "usage_note": "贝达药业官网公开说明书图片（4张JPG）；经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false
+    },
+    "adverse_reactions_source": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+      "source_url": "https://www.bettapharma.com/Contact/article/id/126",
+      "source_holder": "贝达药业",
+      "fetched_at": "2026-11-05T00:30:46+08:00",
+      "usage_note": "贝达药业官网公开说明书图片（4张JPG）；经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "proofread": false
+    },
+    "cn_registration": {
+      "approval_no": "国药准字H20110061",
+      "brand_name": "凯美纳",
+      "specification": "125mg.",
+      "dosage_form": null,
+      "mah": "贝达药业股份有限公司",
+      "manufacturer": "贝达药业股份有限公司",
+      "source_type": "official_label_ocr",
+      "source_name": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+      "source_url": "https://www.bettapharma.com/Contact/article/id/126",
+      "fetched_at": "2026-11-05T00:30:46+08:00",
+      "note": "注册类字段摘自 OCR 后的说明书原文（批准文号/商品名/规格/持有人/生产企业），非人工校对；不使用注册库字段；未识别项为 null。"
+    },
+    "label": {
+      "lang": "zh",
+      "status": "zh_from_official_label_ocr",
+      "source_type": "official_label_ocr",
+      "source_name": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+      "source_url": "https://www.bettapharma.com/Contact/article/id/126",
+      "source_holder": "贝达药业",
+      "fetched_at": "2026-11-05T00:30:46+08:00",
+      "usage_note": "贝达药业官网公开说明书图片（4张JPG）；经 OCR 抽取，非人工校对；版权归持有人，仅限内部知识库使用，不得再分发。",
+      "content_type": "image/jpeg",
+      "pages": 4,
+      "char_count": 14200,
+      "raw_path": [
+        "fetched/labels_cn/downloads/betta_icotinib_1_2d0aed9ba93c.jpg",
+        "fetched/labels_cn/downloads/betta_icotinib_2_fa3f5ad66454.jpg",
+        "fetched/labels_cn/downloads/betta_icotinib_3_142714d91237.jpg",
+        "fetched/labels_cn/downloads/betta_icotinib_4_0c55e3c6d7ad.jpg"
+      ],
+      "text_path": "fetched/labels_cn/text/betta_icotinib.txt",
+      "text_sha256": "587ab2cf4fa16e69ce7bb577602b47bb69483c7013fbf6f0a413f499c09d0e66",
+      "sections": [
+        "上市许可持有人及生产企业",
+        "不良反应",
+        "临床试验",
+        "儿童用药",
+        "包装",
+        "孕妇及哺乳期妇女用药",
+        "性状",
+        "成份",
+        "执行标准",
+        "批准文号",
+        "有效期",
+        "注意事项",
+        "用法用量",
+        "禁忌",
+        "老年用药",
+        "药代动力学",
+        "药品名称",
+        "药物相互作用",
+        "药物过量",
+        "药理毒理",
+        "规格",
+        "购藏",
+        "适应症"
+      ],
+      "text_stored_in_catalog": false,
+      "note": "说明书全文不写入目录（体积过大），按 text_path 读取；目录仅存元数据与关键字段。",
+      "proofread": false,
+      "ocr_engine": "rapidocr-onnxruntime",
+      "ocr_engine_version": "1.4.4",
+      "ocr_model": "PP-OCRv4 (ch_PP-OCRv4_det_infer.onnx + ch_PP-OCRv4_rec_infer.onnx, CPU)",
+      "ocr": {
+        "engine": "rapidocr-onnxruntime",
+        "engine_version": "1.4.4",
+        "model": "PP-OCRv4 (ch_PP-OCRv4_det_infer.onnx + ch_PP-OCRv4_rec_infer.onnx, CPU)",
+        "dpi": null,
+        "preprocess": "RGB; Lanczos 2x upscale (width<1500px)",
+        "reliable": true,
+        "core_sections_hit": [
+          "适应症",
+          "用法用量",
+          "禁忌",
+          "不良反应"
+        ],
+        "core_sections_missing": [],
+        "page_map": [
+          {
+            "section": "药品名称",
+            "page": 1,
+            "y": 756,
+            "image": 1
+          },
+          {
+            "section": "成份",
+            "page": 1,
+            "y": 1045,
+            "image": 1
+          },
+          {
+            "section": "性状",
+            "page": 1,
+            "y": 1978,
+            "image": 1
+          },
+          {
+            "section": "适应症",
+            "page": 1,
+            "y": 2095,
+            "image": 1
+          },
+          {
+            "section": "规格",
+            "page": 1,
+            "y": 2502,
+            "image": 1
+          },
+          {
+            "section": "用法用量",
+            "page": 1,
+            "y": 2620,
+            "image": 1
+          },
+          {
+            "section": "不良反应",
+            "page": 1,
+            "y": 3317,
+            "image": 1
+          },
+          {
+            "section": "禁忌",
+            "page": 2,
+            "y": 3835,
+            "image": 2
+          },
+          {
+            "section": "注意事项",
+            "page": 2,
+            "y": 3956,
+            "image": 2
+          },
+          {
+            "section": "孕妇及哺乳期妇女用药",
+            "page": 2,
+            "y": 4822,
+            "image": 2
+          },
+          {
+            "section": "儿童用药",
+            "page": 2,
+            "y": 5172,
+            "image": 2
+          },
+          {
+            "section": "老年用药",
+            "page": 2,
+            "y": 5293,
+            "image": 2
+          },
+          {
+            "section": "药物相互作用",
+            "page": 2,
+            "y": 6517,
+            "image": 2
+          },
+          {
+            "section": "药物过量",
+            "page": 2,
+            "y": 6867,
+            "image": 2
+          },
+          {
+            "section": "临床试验",
+            "page": 2,
+            "y": 7100,
+            "image": 2
+          },
+          {
+            "section": "药理毒理",
+            "page": 4,
+            "y": 5224,
+            "image": 4
+          },
+          {
+            "section": "药代动力学",
+            "page": 4,
+            "y": 6302,
+            "image": 4
+          },
+          {
+            "section": "购藏",
+            "page": 4,
+            "y": 7994,
+            "image": 4
+          },
+          {
+            "section": "包装",
+            "page": 4,
+            "y": 8053,
+            "image": 4
+          },
+          {
+            "section": "有效期",
+            "page": 4,
+            "y": 8113,
+            "image": 4
+          },
+          {
+            "section": "执行标准",
+            "page": 4,
+            "y": 8161,
+            "image": 4
+          },
+          {
+            "section": "批准文号",
+            "page": 4,
+            "y": 8227,
+            "image": 4
+          },
+          {
+            "section": "上市许可持有人及生产企业",
+            "page": 4,
+            "y": 8284,
+            "image": 4
+          }
+        ],
+        "header_normalizations": [
+          {
+            "from": "蒙忌",
+            "to": "禁忌",
+            "page": 2,
+            "y": 3835,
+            "image": 2
+          }
+        ],
+        "text_normalizations": [
+          {
+            "from": "国药准宇",
+            "to": "国药准字",
+            "count": 1
+          }
+        ],
+        "note": "OCR 抽取，非人工校对；表格与小字注释可能不可靠，原文以官网 PDF/图片为准。"
+      }
+    },
+    "label_zh_source": {
+      "source_name": "贝达药业官网 凯美纳（盐酸埃克替尼片）说明书图片（4张JPG）",
+      "source_version": "2026-11-05T00:30:46+08:00",
+      "source_section": "说明书全文",
+      "source_file": "fetched/labels_cn/text/betta_icotinib.txt",
+      "updated_at": "2026-11-05"
+    },
+    "missing_fields": [
+      "atc_code"
+    ]
+  },
+  {
+    "drug_id": "DRUG-EXTRA-001",
+    "generic_name": "安罗替尼",
+    "generic_name_en": "ANLOTINIB",
+    "brand_names": [],
+    "atc_code": null,
+    "approval_no": null,
+    "indications": null,
+    "dosage": null,
+    "contraindications": null,
+    "adverse_reactions": null,
+    "interactions": null,
+    "drug_class": "靶向",
+    "cancer_type": [],
+    "origin": "cn_label",
+    "source": "正大天晴官网 福可维（盐酸安罗替尼胶囊）说明书PDF",
+    "annotation": "2026-11-05 由官网说明书建档；OCR 质量不达标，中文字段全部留空。",
+    "label": null,
+    "label_ocr_failed": {
+      "ocr_unreliable": true,
+      "reason": "OCR 后四个核心章节仅命中 无，文本严重乱码（扫描件分辨率约 100–130 dpi），不入库。",
+      "source_type": "official_label_ocr",
+      "source_name": "正大天晴官网 福可维（盐酸安罗替尼胶囊）说明书PDF",
+      "source_url": "https://www.cttq.com/core/control/common/down.jsp?filename=/upload/file/2026/09/20/e43c56a3ee01408f8171581dca000e06.pdf&title=%E7%9B%90%E9%85%B8%E5%AE%89%E7%BD%97%E6%9B%BF%E5%B0%BC%E8%83%B6%E8%83%B6",
+      "fetched_at": "2026-11-05T00:30:24+08:00",
+      "usage_note": "正大天晴官网公开PDF扫描件；分辨率偏低（约100–130 dpi），OCR 文本严重乱码，不作为中文字段来源，仅保留原件与失败原因。",
+      "raw_path": "fetched/labels_cn/downloads/cttq_anlotinib_e1a4d1e7caa0.pdf",
+      "text_path": "fetched/labels_cn/text/cttq_anlotinib.txt",
+      "text_sha256": "b9fe9a774d6d96f52cef7279eec40d84827c8d1d54c3dc9a9ff148ecb845e25d",
+      "pages": 2,
+      "engine": "rapidocr-onnxruntime",
+      "engine_version": "1.4.4",
+      "model": "PP-OCRv4 (ch_PP-OCRv4_det_infer.onnx + ch_PP-OCRv4_rec_infer.onnx, CPU)",
+      "dpi": 260,
+      "core_sections_hit": []
+    },
+    "missing_fields": [
+      "atc_code",
+      "indications",
+      "dosage",
+      "contraindications",
+      "adverse_reactions",
+      "approval_number_cn",
+      "chinese_label"
     ]
   }
 ]
