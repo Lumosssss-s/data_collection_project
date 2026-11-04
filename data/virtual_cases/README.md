@@ -76,7 +76,7 @@
 |---|---|---|
 | `risk_level` | 统一为 **`routine` / `urgent` / `emergency`** | **已对齐** §6.1 受控词表；原 `normal` 已全部替换为 `routine` |
 | `qc_issues` | 数组，元素固定为 `{"field","type","severity"}`；`type` ∈ `completeness` / `consistency` / `standardization` / `timeliness`（B6 四类），`severity` ∈ `high` / `medium` / `low` | **结构已定义并纳入校验**；本批无质量问题，全部为 `[]` |
-| 红旗征 `red_flags` | `gold.red_flags` / `labels.expected_triage.red_flags` 有 A5 canonical 的已改用 canonical；每条原始表述保留在 `annotation.red_flag_terms`（`raw`/`canonical`/`term_id`/`mapping_status`） | **已映射 9 个词条**（咯血、胸痛、呼吸困难、声音嘶哑、体重下降、淋巴结肿大、盗汗、水肿、背痛）；上腔静脉综合征、窒息风险、夜间胸闷、持续发热、大汗、意识改变、颈静脉怒张、喘鸣、抽搐、下肢无力、大小便障碍、口渴多尿、嗜睡、心包填塞等 **A5 无对应词条，保留原表述并标 `canonical=null`**，待 A5 补词后批量映射 |
+| 红旗征 `red_flags` | `gold.red_flags` / `labels.expected_triage.red_flags` 有 A5 canonical 的已改用 canonical；每条原始表述保留在 `annotation.red_flag_terms`（`raw`/`canonical`/`term_id`/`mapping_status`） | **已映射 9 个词条**（咯血、胸痛、呼吸困难、声音嘶哑、体重下降、淋巴结肿大、盗汗、水肿、背痛）；另有 **13 类原始表述在 A5 中无对应 canonical 词条（明细与出现次数见文末「待复核事项」第 3 项），保留原表述并标 `canonical=null`**，待 A5 补词后批量映射 |
 | 审核角色代号 | 项目统一代号见根 `README.md`「审核角色代号约定」 | **已建立**：`病例编写-A`、`医学审核-A` 等，禁止真实人名 |
 | 目录映射 | 合并存放于 `data/virtual_cases/`，与 C4 `eval_sets/`、C6 `mock_cases/` 的差异已在根 README 与本文件登记 | 已登记，待评审确认 |
 
@@ -199,7 +199,25 @@ python tools\34_validate_virtual_cases.py
 
 1. **医学审核**：150 条全部为 `draft`，须由执业医师逐条复核后改 `reviewed`/`approved`；**复核前不得作为临床依据**。
 2. **审核角色代号**：现用 `病例编写-A`、`医学审核-A`（尚未指定实际审核人）；真实姓名名单只保留在仓库外的内部台账。
-3. **红旗征待映射词条**：上腔静脉综合征、窒息风险、夜间胸闷、持续发热、大汗、意识改变、颈静脉怒张、喘鸣、抽搐、下肢无力、大小便障碍、口渴多尿、嗜睡、心包填塞共 14 类，A5 补词后需批量映射。
+3. **红旗征待映射词条（13 类 / 21 次）**：统计口径来自 150 条病例的 `annotation.red_flag_terms` 中 `canonical=null` 的条目，共 13 类 21 次；`心包填塞` 与 `喘鸣` 未作为红旗征标记（仅出现在叙述/诊断中）。明细：
+
+   | 原始表述 | 出现条数 | 建议词条类别 |
+   |---|---|---|
+   | 持续发热 | 7 | symptom（发热） |
+   | 夜间胸闷 | 2 | symptom（胸闷） |
+   | 意识改变 | 2 | symptom（意识障碍） |
+   | 窒息风险 | 1 | symptom 或 risk_flag |
+   | 上腔静脉综合征 | 1 | complication / condition（非单一症状） |
+   | 颈静脉怒张 | 1 | sign（体征） |
+   | 大汗 | 1 | symptom（出汗异常） |
+   | 抽搐 | 1 | symptom（癫痫样发作） |
+   | 剧烈头痛 | 1 | symptom（头痛） |
+   | 下肢无力 | 1 | symptom（肌力下降） |
+   | 大小便障碍 | 1 | symptom（排尿排便障碍） |
+   | 口渴多尿 | 1 | symptom（多饮多尿） |
+   | 嗜睡 | 1 | symptom（嗜睡） |
+
+   A5 补词后需重跑生成器并批量映射；`上腔静脉综合征` 建议归入 complication/condition，不宜强塞进 symptom。
 4. **A5 `mapping_status`**：symptom 词条当前均为 `pending`，待上游码表核验后统一改为 `confirmed`，届时同步刷新 `annotation.red_flag_terms.mapping_status`。
 5. **`qc_issues` 填充**：本批无缺陷，全部 `[]`；后续若引入缺陷样本，按 `{field,type,severity}` 填写。
 6. **目录映射**：与清单 C4（`eval_sets/`）、C6（`mock_cases/`）的路径差异需在清单或方案中登记。
