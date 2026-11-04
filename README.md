@@ -230,3 +230,10 @@ data_collection_project/
 | `tools/26_fetch_cmkb_drugs.py` | CMKB 无开放许可、详情正文需 SinoMed 登录授权；只能取到目录级字段，产出仅供内部评估 |
 | `tools/27_match_cmkb_to_catalog.py` | 依赖 26 号产物，输出仅落 `cache/` 做缺口评估，不进入 `data/clean/` |
 | `tools/29_cmkb_a4_interim.py` | 产出 `fetched/cmkb_drugs/a4_interim.json`，为受限 interim（`license_status=restricted_internal_only`），不可交付 |
+
+**判定口径（2026-11-04 确认）**：按「**产出能否交付**」判定，不按「来源是否开放」判定。产出是可交付的元数据/成品，脚本即保留；只有取不到数据、或取到的数据只能内部参考、无法进入交付物的脚本才移出。据此明确保留以下两个边界脚本，**后续不得照字面按「来源有版权/付费」误删**：
+
+| 脚本 | 保留理由 |
+|---|---|
+| `tools/12_ingest_inbox_guidelines.py` | 不联网抓取，只归档用户自备文件并录入元数据；产出是可交付的指南元数据（NCCN 原件仍在 `external/`，不复制正文） |
+| `tools/23_fetch_caca_csco_guidelines.py` | CACA 英译版为 CC BY 4.0、可公开下载；CSCO 仅著录书目元数据（付费正文未采集）；两类产出均为可交付元数据 |
