@@ -10,9 +10,10 @@
 | `inbox/` | **收件箱**：新找到的文件暂存，尚未分类 | 只做中转：确认癌种/功能类型后移入 `raw/`，本目录平时保持为空；不做任何加工 |
 | `fetched/` | **抓取存放**：脚本或人工从网站抓回、**尚未加工**的数据（HTML 解析结果、下载件） | 只放抓取原样结果，不改写；由 `tools/` 里的抓取脚本写入，供下游清洗脚本读取；可按来源建子目录（`atc/`、`codetables/`、`openfda_labels/`） |
 | `raw/` | **输入**：已分类、可直接供流水线读取的源数据，**按数据集 id 分目录**，只读不改 | 原文件永不修改、不解压后回写；处理一律走脚本。**已评估为弃用/无产出的文件，一律移入 `raw/_deprecated/<数据集>/`**，不删除、也不留在可直接读取的目录 |
-| `tools/` | **工具**：清洗/抓取脚本，按流水线步骤编号（`1_`、`2_`…） | 每个数据集自己的脚本；输入读 `raw/` 或 `fetched/`，中间写 `cache/`，成品写 `data/clean/` |
+| `tools/` | **工具**：清洗/抓取脚本，按流水线步骤编号（`1_`、`2_`…） | 每个数据集自己的脚本；输入读 `raw/` 或 `fetched/`，中间写 `cache/`，成品写 `data/clean/`（自建虚拟病例写 `data/virtual_cases/`） |
 | `cache/` | **处理缓存**：脚本运行中间产物，**按数据集 id 分目录** | 可随时整体删除，重跑脚本即可再生；**不放源数据，也不放最终成品** |
 | `data/clean/` | **输出**：最终交付 JSON，**按功能类型分目录**（`eval_sets/`、`corpus/`、`kg_triples/`、`drug_labels/`…），**不再按数据集分子目录** | 只放对齐字段结构的成品；每个功能目录一份 README；数据来源写入每条记录的 `source`（文字说明）与 `origin`（短码）字段 |
+| `data/virtual_cases/` | **虚拟病例**：C4 预问诊病例集 + C6 模拟病例，**不放在 `data/clean/`** | 全部为合成数据（`synthetic=true` + 固定 `disclaimer`），用 `case_type` 区分两类；未过医学审核前不得作为临床依据 |
 | `external/` | **不可交付**：版权受限的第三方资料（如 NCCN 指南、CC BY-NC-ND 类数据集） | 不进入 `raw/`、不随竞赛交付、不做清洗输出；报告中只能按官方格式引用其推荐意见，禁止复制 Algorithm 流程图、表格、图表与大段 Discussion 文本 |
 
 **数据流（单向，不可逆向回写）**
@@ -23,6 +24,7 @@
                                      ├─→ tools/（脚本处理）─→ cache/（中间件）─→ data/clean/（输出）
 raw/ ────────────────────────────────┘
 版权受限资料 ─→ external/（不可交付，只引用不输出）
+自建合成病例 ─→ data/virtual_cases/（synthetic=true，独立于 data/clean/，须医学审核）
 ```
 
 **目录归属判别**：① 人工/官方**下载原件** → `raw/`；② **抓回来还没加工** → `fetched/`；③ 脚本**跑出来的中间件**（解压临时目录、解析中间态、映射审计）→ `cache/`；④ **交付物** → `data/clean/`；⑤ **不能对外** → `external/`；⑥ **评估后弃用/无产出** → `raw/_deprecated/<数据集>/`（保留原件以便复核，但不参与流水线）。
@@ -44,11 +46,11 @@ data_collection_project/
 │   ├── openfda_labels/             #   openFDA drug/label 抓取结果（19 号脚本）
 │   │   └── labels.json             #     48 种药的说明书四段英文（45 命中，3 未命中）
 │   ├── cmkb_drugs/                 #   CMKB 药物库抓取结果（26 号脚本）+ a4_interim.json（29 号，内部参考，带来源/时间/license_status；站点版权保留、**不入 Git**）
-│       ├── drugs.json              #     2,724 条药物目录级字段（名称/类别/适应证/禁忌/相互作用）
-│       ├── a4_interim.json         #     29 号：21 药 A4 缺口 interim（source/URL/时间/license_status=restricted_internal_only，内部参考）
-│       └── manifest.json           #     抓取参数与条数审计
+│   │   ├── drugs.json              #     2,724 条药物目录级字段（名称/类别/适应证/禁忌/相互作用）
+│   │   ├── a4_interim.json         #     29 号：21 药 A4 缺口 interim（source/URL/时间/license_status=restricted_internal_only，内部参考）
+│   │   └── manifest.json           #     抓取参数与条数审计
 │   ├── labels_cn/                  #   企业官网中文说明书（30 号文本层 / 32 号 OCR）
-│   │   ├── labels_cn.json          #     13 药文本层抽取 + 元数据（lang=zh，含 source_url/fetched_at/usage_note）
+│   │   ├── labels_cn.json          #     14 个来源 / 13 个唯一药品的文本层抽取 + 元数据（lang=zh，含 source_url/fetched_at/usage_note）
 │   │   ├── labels_cn_ocr.json      #     3 药 OCR 结果（2 达标入库、1 不可用；含 ocr engine/model/dpi/page_map）
 │   │   ├── failures.json           #     未获取来源与原因（登录墙/仅图片等）
 │   │   ├── failures_ocr.json       #     OCR 后仍不可用的来源与原因（安罗替尼扫描件分辨率不足）
@@ -57,8 +59,8 @@ data_collection_project/
 ├── raw/                            # 【输入】已分类、可直接供流水线读取，按数据集 id 分目录，只读不改
 │   ├── cmedqa2/                    # 数据集1：cMedQA2 v2.0 原始 zip + LICENSE
 │   ├── pubmed_cancer/              # 数据集2：PubMed-Cancer-NLP 4 个癌种 CSV + README
-│   ├── kgdrug/                     # 数据集3：gStore 医药知识图谱建库目录（约 295MB 二进制索引）
-│   ├── fda_ndc/                    # 数据集4：FDA NDC 药品目录 product.txt（38MB）+ README
+│   ├── kgdrug/                     # 数据集3：gStore 医药知识图谱建库目录（约 309 MB 二进制索引）
+│   ├── fda_ndc/                    # 数据集4：FDA NDC 药品目录 product.txt（约 40 MB）+ README
 │   ├── cblue/                      # 数据集6：CBLUE 已采用子集（CHIP-CDN.zip、CMeIE-V2.zip）+ 上游 README
 │   ├── codetables/                 # 码表来源说明（原件由 17 号脚本抓取至 fetched/codetables/，raw 不留副本）
 │   │   └── README.md               #   NHC M 码 / WHO ATC 来源、授权、补码进度与复现命令
@@ -67,6 +69,7 @@ data_collection_project/
 │   │   └── labels_zh.json          #   人工填写后的中文覆盖文件（待补，19 号脚本校验并合并）
 │   ├── nmpa_registry/              # 数据集8：NMPA 注册信息人工查询样例（无说明书正文）
 │   │   ├── README.md               #   查询页字段清单、限制说明与录入注意
+│   │   ├── a4_pending_fill.csv     #   48 药 A4 缺项清单（19 号脚本生成，供人工逐药补录）
 │   │   └── nmpa_registry_alectinib_HJ20180047.pdf  # 阿来替尼注册信息查询页（4 页样例）
 │   ├── guidelines/                 # 数据集5：A1 指南与规范原文，按癌种分目录
 │   │   ├── lung/                   #   nhc2022_01_lung.pdf（卫健委 2022 版）；caca2024_lung_en.pdf（CACA 官方英译版，CC BY 4.0）；caca2024_lung_zh_abstract.docx（CACA 官方中文摘要转录）
@@ -98,7 +101,7 @@ data_collection_project/
 │   ├── 17_fetch_icdo3.py                  # NHC 资料包下载 + M 码表校验（表头/编码/名称/行为码/行数/SHA-256）→ fetched/codetables/
 │   ├── 18_icdo3_mapping.py                # M 码表 → 回补 terminology disease icd_o3（4 位 WHO 写法，原 5 位码存 annotation）
 │   ├── 19_fetch_openfda_labels.py         # openFDA 说明书四段英文 interim → drug_catalog.label_en_interim；合并人工中文覆盖
-│   ├── 20_guideline_drug_extract.py       # 指导原则 PDF → 中文适应证/用法用量/相互作用（20/49）→ drug_catalog.indications/dosage
+│   ├── 20_guideline_drug_extract.py       # 指导原则 PDF → 中文适应证/用法用量/相互作用（20 种药）→ drug_catalog.indications/dosage
 │   ├── 21_a2_recommendation_extract.py    # guidelines → A2 结构化推荐条目（批次一肺癌 145 条，含表格分支与逐句页码）→ data/clean/recommendations/
 │   ├── 22_a3_disease_profile.py           # guidelines → A3 疾病档案（1 主体 + 5 亚型）→ data/clean/disease_profiles/
 │   ├── 23_fetch_caca_csco_guidelines.py   # A1 补源：CACA 英译版 PDF + 官网中文摘要转录 + CSCO 书目元数据
@@ -107,18 +110,21 @@ data_collection_project/
 │   ├── 26_fetch_cmkb_drugs.py             # 【不随仓库分发】CMKB 目录级字段抓取（2,724 条）→ fetched/cmkb_drugs/；详情正文需登录，未采集
 │   ├── 27_match_cmkb_to_catalog.py         # 【不随仓库分发】CMKB ↔ A4 药单匹配 + 缺口评估 → cache/，不写 data/clean/
 │   ├── 29_cmkb_a4_interim.py               # 【不随仓库分发】CMKB 目录级字段 → A4 缺口 interim（内部参考，21 药；补适应证 18 / 禁忌 3）→ fetched/cmkb_drugs/a4_interim.json
-│   ├── 30_fetch_cn_labels.py               # 企业官网中文说明书采集（13 药文本层；robots 检查 + 低频 + sidecar 记 fetched_at）→ fetched/labels_cn/
-│   ├── 32_ocr_cn_labels.py                 # 扫描件/图片说明书 OCR（rapidocr-onnxruntime，纯 pip；列优先重排 + 质量门槛）→ labels_cn_ocr.json
+│   ├── 30_fetch_cn_labels.py               # 企业官网中文说明书采集（13 个唯一药品 / 14 个来源；robots 检查 + 低频 + sidecar 记 fetched_at）→ fetched/labels_cn/
 │   ├── 31_merge_cn_labels.py               # 只填空合并中文原文字段（文本层 + OCR）/ cn_registration / label 元数据；英文 interim 整块替换 → drug_catalog_v2.json
+│   ├── 32_ocr_cn_labels.py                 # 扫描件/图片说明书 OCR（rapidocr-onnxruntime，纯 pip；列优先重排 + 质量门槛）→ labels_cn_ocr.json
+│   ├── 33_generate_virtual_cases.py        # 虚拟病例生成（C4 100 + C6 50；模板固定、确定性、幂等）→ data/virtual_cases/
+│   ├── 34_validate_virtual_cases.py        # 虚拟病例结构校验（只读；字段/受控值/ID 可解析/脱敏/药名，退出码 0 通过）
 │   └── word_to_docx.ps1            # 辅助：PowerShell + Word COM 把 .doc 转 .docx（供 11 号脚本调用）
 ├── cache/                          # 【处理缓存】脚本中间产物，可整目录删除后重跑再生；不放源数据/成品
 │   ├── cmedqa2/                    # cmedqa2 中间产物（含 _unzipped/ 解压临时目录）
 │   ├── pubmed_cancer/              # pubmed_cancer 中间产物（cleaned_records.json）
-│   ├── kgdrug/                     # kgdrug 中间产物（triples.jsonl 528,039 条，约 162MB）
+│   ├── kgdrug/                     # kgdrug 中间产物（triples.jsonl 528,039 条，约 169.9 MB）
 │   ├── fda_ndc/                    # fda_ndc 中间产物（oncology_products.csv 2,235 条）
 │   ├── cblue/                      # cblue 中间产物（_unzipped/ 解压 + kg_candidates.json）
+│   ├── betta/                      # betta（贝达）说明书 OCR 中间图片 4 张（32 号脚本）
 │   ├── codetables/                 # codetables 中间产物（icdo3_mapping.json：18 号逐条映射审计；icdo3_source_check.json：17 号抓取校验报告；_unzipped/：资料包解压临时目录）
-│   ├── drug_labels/                # drug_labels 中间产物（openfda_match.json：19 号候选打分审计；zh_override_audit.json：中文覆盖校验审计；guideline_extract.json：20 号逐药抽取审计；align_v2_audit.json：25 号字段改名审计；cmkb_match_audit.json：27 号 CMKB↔A4 匹配评估）
+│   ├── drug_labels/                # drug_labels 中间产物（openfda_match.json：19 号候选打分审计；guideline_extract.json：20 号逐药抽取审计；align_v2_audit.json：25 号字段改名审计；cmkb_match_audit.json：27 号 CMKB↔A4 匹配评估；cn_label_merge.json：31 号中文合并审计；zh_override_audit.json 仅在人工补录后生成，当前尚未产生）
 │   ├── recommendations/            # recommendations 中间产物（a2_extract_audit.json：21 号块数/页数/各过滤环节丢弃计数；a2_caca_extract_audit.json：24 号英文抽取审计）
 │   ├── disease_profiles/           # disease_profiles 中间产物（a3_extract_audit.json：22 号 section 填充数与缺口清单）
 │   └── guidelines/                 # guidelines 中间产物（nhc_2022_attachments.json、nccn_2026_documents.json、caca_csco_20261028.json）
@@ -177,7 +183,7 @@ data_collection_project/
 └── 医疗数据需求清单.md
 ```
 
-> 说明：原 `7_clean_fda_ndc.py`（fda_ndc 过滤步骤）已移除，其产物固化在 `cache/fda_ndc/oncology_products.csv`；重跑 fda_ndc 只需执行 `8_fda_to_json.py`，该目录请勿删除。
+> 说明：原 `7_clean_fda_ndc.py`（fda_ndc 过滤步骤）已移除，其产物固化在 `cache/fda_ndc/oncology_products.csv`；重跑 fda_ndc 只需执行 `8_fda_to_json.py`，该目录请勿删除。编号 **28** 无对应脚本（历史空缺，未保留），`tools/` 实际编号为 1~6、8~27、29~34 及 `word_to_docx.ps1`。
 
 ## 2. 数据集登记表
 
@@ -193,7 +199,7 @@ data_collection_project/
 | `nmpa_registry` | 国家药品监督管理局数据查询页（人工查询打印，样例 `raw/nmpa_registry/nmpa_registry_alectinib_HJ20180047.pdf`） | 注册证号/批准文号、产品名称（中/英）、商品名、剂型、规格、包装规格、上市许可持有人、生产厂商、发证/有效期、境内责任人、药品本位码、产品类别 | NMPA 公开注册信息（人工查询留存） | 已归档 1 份样例（阿来替尼，国药准字HJ20180047）；**仅补 `approval_no`/商品名/剂型/规格/持有人**，查询页**无说明书正文**；已生成 48 药逐条缺项清单 `a4_pending_fill.csv` 供人工补录 | `raw/nmpa_registry/`（供人工逐药查询对照） |
 | `cmkb` | 临床医学知识库 CMKB（中国医学科学院医学信息研究所/图书馆，<http://www.cmkb.cn>）；前端接口 `POST /front/date/pagelist`，`tools/26_fetch_cmkb_drugs.py` 可幂等重抓 | 药物库存量 **2,724 条**（化学药 hxyw 1,164 + 中成药 zcy 1,560）：药物名、类别、适应证、禁忌症、药物相互作用；有值覆盖：适应证 2,577 / 禁忌 994 / 相互作用 825 | **站点版权声明（© 中国医学科学院 北京协和医学院医学信息研究所/图书馆），无 robots.txt、无开放许可** | 已抓取目录级字段，**未采集详情正文**（`/view/disease/todetail` 正文由登录态渲染，脚本不绕过登录；`/tomain?tabletype=user` 同样 302 重定向循环，未登录不可用）；29 号脚本已把目录级字段对齐 A4 缺口，产出 `a4_interim.json`（21/48 命中，可补适应证 18 种、禁忌 3 种；用法用量/不良反应无目录字段），每条带 source/URL/抓取时间/license_status，仅作内部参考；写入 `fetched/` 而非 `data/clean/`，对外分发/入库前需向 sinomed@imicams.ac.cn 取得书面授权 | `fetched/cmkb_drugs/` |
 | `guidelines` | 国家卫健委官网（[肿瘤和血液病相关病种诊疗指南 2022 年版通知](https://www.nhc.gov.cn/yzygj/c100068/202204/0c1f7d3aca0545abbeb02030ce255930.shtml)，国卫办医函〔2022〕104号）+ [结直肠癌筛查与早诊早治方案 2024 年版通知](https://www.nhc.gov.cn/ylyjs/gzdt/202408/42f43b5f0c4c4ebe90c78ee127959b92.shtml) + [结直肠癌诊疗规范 2015 年版](https://www.nhc.gov.cn/yzygj/c100068/201510/922e2426eb02416e8344715cab601f2e.shtml) + 新型抗肿瘤药物临床应用指导原则 2025 年版；NCCN 指南 8 份（用户提供，存 `external/nccn/`）；CACA 肺癌指南官方英译版（[Springer HIO 2024;3:10](https://link.springer.com/article/10.1007/s44178-024-00069-w)，CC BY 4.0）+ 官网中文摘要；CSCO 非小细胞肺癌诊疗指南 2025（人卫社付费电子书） | 元数据 **18 条**：NHC 7 份（2022 批 4 份 + 结直肠 2 份 + 全癌种用药原则 1 份）+ NCCN 8 份（NSCLC/SCLC/肺癌筛查、乳腺、结肠、直肠、胃、甲状腺，**仅著录、非交付物**）+ CACA 2 份（英译版全文 44 页 + 中文摘要 382 字符）+ CSCO 1 份（**仅书目，正文未采集**） | NHC 公开可引用；CACA 英译版 CC BY 4.0 可交付；**NCCN 版权保留、禁止再分发**；CSCO 付费电子书未采集 | 已完成归档 + 文本自检 + SHA-256 + 元数据录入（18 条），待医学审核；**可交付原件 9 份（NHC 7 + CACA 2），仍低于 A1 10~20 份要求**；中文完整指南仍只有 NHC 一家，CACA 中文原版需会员、CSCO 需付费，均未获取（见 `data/clean/guidelines/README.md`「获取限制」节）；其中《新型抗肿瘤药物临床应用指导原则（2025年版）》另被 `tools/20_guideline_drug_extract.py` 原文抽取（非整篇复制），为 A4 提供 20 种药的中文适应证/用法用量 | `data/clean/guidelines/` |
-| `bios` | THUMedInfo BIOS v3（用户提供压缩包，2026-10-25 由 `inbox/` 归档至 `external/bios/`） | 术语 46,024,274 / 概念 22,104,559 / 关系 99,849,860；Concepts 为 UMLS 式超细概念（PT/ET、EN/CN），Semtypes 给语义类型，Relations 为三元组 | **CC BY-NC-ND 4.0（ND 禁止分发衍生作品）** | **不采用**：已评估为不可交付（粒度错位、无 ICD-10/ICD-O-3/ATC 编码、中文机器翻译错误多）；仅存 `external/bios/` 作内部比对参考，**不产出 `data/clean/` 成品**；A5 改用官方码表建设 | 无（`external/bios/README.md` 记录评估结论） |
+| `bios` | THUMedInfo BIOS v3（用户提供压缩包，2026-10-25 由 `inbox/` 归档至 `external/bios/`） | Concepts 全量扫描 **46,333,006 行**（EN 35.9M / CN 10.5M）；概念 22,104,559、关系 99,849,860 为历史登记值，**待核**；Concepts 为 UMLS 式超细概念（PT/ET、EN/CN），Semtypes 给语义类型，Relations 为三元组 | **CC BY-NC-ND 4.0（ND 禁止分发衍生作品）** | **不采用**：已评估为不可交付（粒度错位、无 ICD-10/ICD-O-3/ATC 编码、中文机器翻译错误多）；仅存 `external/bios/` 作内部比对参考，**不产出 `data/clean/` 成品**；A5 改用官方码表建设 | 无（`external/bios/README.md` 记录评估结论） |
 | `cblue` | CBLUE 中文医疗 NLP 基准（用户提供 6 个子任务 zip，2026-10-27 归档；官网 tianchi.aliyun.com/cblue，GitHub CBLUEbenchmark/CBLUE） | CHIP-CDN（含 **ICD-10 北京临床版 v601 码表 40,474 条** + 6,000 条诊断归一）、CMeIE-V2（14,339 条文本 / 64,835 三元组）、CMeEE-V2（15,000 条 / 82,649 实体）、CHIP-CTC（22,962 条入排标准）、CMedCausal（800 条）、KUAKE-IR（10 万 query / 96 万段落） | Apache-2.0（官方仓库）；数据经天池发布，商用交付前建议复核原始授权 | **部分采用**：CHIP-CDN 的 ICD-10 码表 → A5 疾病条目 200 条（编码 confirmed）；CMeIE-V2 → A5 尾实体 177 条（40 条 disease 已补 `icd_o3`、15 条 drug 已补 `atc`；6 条药物类别名/短语已按非单药剔除）+ A6 三元组 187 条；CMeEE-V2 / CHIP-CTC / CMedCausal / KUAKE-IR 未采用（癌种覆盖不足或无对应需求类别），原件已移至 `raw/_deprecated/cblue/` | `data/clean/terminology/`、`data/clean/kg_triples/` |
 | `codetables` | ① 国家卫健委 HQMS 2.0 官方资料包（<https://www.hqms.org.cn/usp/downFile.html>，2026-10-27 下载；`tools/17_fetch_icdo3.py` 可重下并做结构 + SHA-256 校验）② WHO ATC/DDD Index（<https://atcddd.fhi.no/atc_ddd_index/>，索引更新 2026-01-20） | ① 疾病分类与代码国家临床版2.0（2022汇总版）35,865 条 / 手术操作分类代码国家临床版3.0 13,652 条 / **肿瘤形态学编码（M码）国家临床版2.0 1,427 条**；② **ATC 5 级码 750 条（L01/L02/L03/H02/H03/M05/A11/A12/A04/G03 十个顶级组，2026-10-30 补 A04 止吐与 G03 性激素）** | 卫健委行业码表（公开可引用）；WHO ATC 版权，仅作编码对照引用、不整体再分发 | 已补码：`icd_o3` 189/240（4 位 WHO 写法，原 5 位码留 annotation）、`atc` 15/15（drug）；`loinc` 非必填字段，当前 examination 不适用。**（1）疾病分类 2.0、（2）手术操作 3.0 未接入**（与需求类别不对应），原件已移至 `raw/_deprecated/codetables/nhc/` | `fetched/codetables/nhc/`（M 码抓取结果，17 号）、`fetched/atc/`（ATC 抓取结果） |
 | `virtual_cases` | **自建（合成，不涉真实患者）**，对应需求清单 §C4 预问诊病例集 + §C6 模拟病例；无外部数据源。**库存 `data/virtual_cases/`，不在 `data/clean/`** | C 组虚拟病例：`triage_case` 100 条（C4：80~200 字叙述 + 红旗征/科室/风险等级，routine 60 / urgent 30 / emergency 10）+ `mock_case` 50 条（C6：initial 13 / revisit 13 / followup 12 / emergency 12，结构化六项）；共 **150 条** | 项目自建（合成数据，非真实患者，`synthetic=true` + 固定 `disclaimer`） | 已生成并通过结构校验（幂等），**状态全部 `draft`，待医学审核**；未复核前不得作为临床依据 | `data/virtual_cases/` |
@@ -234,7 +240,7 @@ data_collection_project/
 
 ## 4. 硬口径（采集与清洗全程遵守，详见需求清单 §0.2）
 
-- **只做文本类**：不采影像数据、不使用训练语料、不做 OCR；源文档仅收文本可提取的原生 PDF/DOCX。
+- **只做文本类**：不采医学影像、不使用训练语料；源文档优先收文本可提取的原生 PDF/DOCX。**OCR 仅限企业官网说明书扫描件/图片的文字抽取**（`tools/32_ocr_cn_labels.py`，产出标 `proofread=false` 待人工校对），不用于影像、手写病历或其他非说明书材料。
 - **疾病范围仅 5 癌种**：`lung` / `breast` / `colorectal` / `gastric` / `thyroid`（外加癌前病变、良性肿瘤、肿瘤并发症）。
 - **不使用真实患者数据**：演示与评测数据全部为模拟 + 脱敏虚构；公开数据集需保留原 License 标注。
 - **License 红线**：CC BY 可竞赛/商用；**CC BY-NC 仅限研究用途**，竞赛交付前需确认授权。
@@ -257,7 +263,7 @@ data_collection_project/
 
 - **可复现**：`data/clean/` 下的交付 JSON 均已入库，直接可用；要重建只需按 `tools/` 编号顺序执行（各功能目录 README 的「复现」节有命令）。
 - **凭据**：仓库不包含任何 token、密钥或账号信息（`.env`、`*.pem`、`*.key` 等已被忽略）。
-- **注意**：`data/clean/corpus/cancer_literature_corpus.json` 约 44.6 MB，是已入库的交付成品；GitHub 单文件上限 100 MB，后续如需继续扩充语料请改用 Git LFS 或拆分文件。
+- **注意**：`data/clean/corpus/cancer_literature_corpus.json` 实际 **45,118,199 字节（约 45.1 MB）**，是已入库的交付成品；GitHub 单文件上限 100 MB，后续如需继续扩充语料请改用 Git LFS 或拆分文件。
 
 **采集脚本收录规则（2026-11-04）**：**拿不到数据、或取到的数据不能用于交付的采集脚本，一律不进仓库**。以下脚本仅保留在本地，不随仓库分发（`tools/` 下同名文件已由 `.gitignore` 排除）：
 
@@ -273,3 +279,19 @@ data_collection_project/
 |---|---|
 | `tools/12_ingest_inbox_guidelines.py` | 不联网抓取，只归档用户自备文件并录入元数据；产出是可交付的指南元数据（NCCN 原件仍在 `external/`，不复制正文） |
 | `tools/23_fetch_caca_csco_guidelines.py` | CACA 英译版为 CC BY 4.0、可公开下载；CSCO 仅著录书目元数据（付费正文未采集）；两类产出均为可交付元数据 |
+
+## 6. 已知问题与待办（2026-11-05 按磁盘实际文件核对）
+
+> 本节数字均取自实际文件统计；无法确认的项标「待核」，不沿用历史估计值。
+
+| 项目 | 当前实际状态 | 影响 / 下一步 |
+|---|---|---|
+| A1 指南数量 | 元数据 **18 条**（NHC 7 + NCCN 8 + CACA 2 + CSCO 1）；**可交付原件 9 份**（NHC 7 + CACA 英译版 + CACA 中文摘要） | 低于需求清单 A1「10~20 份」；中文完整指南仅 NHC 一家，CACA 中文原版需会员、CSCO 需付费，均未获取 |
+| A2 页码口径 | v3 **145 条**已由「块起始页」改为逐句所在页，其中 **126 条**与 v2 不同；v2/v1 按 G4 保留比对 | 跨页长段落与表格分支的页码仍建议人工抽查（**待核**）；引用时不得沿用 v2 页码 |
+| A3 疾病档案 | **6 条**（1 主体 + 5 亚型）；`icd10` 已改 4 位 WHO 码，5 位国家临床版原码存 `annotation` | 待医学审核 |
+| A4 字段缺口 | **51 种**：国药准字/中文说明书元数据 15、中文适应证/用法用量 28（含 OCR 2）、禁忌 39、不良反应 33、相互作用 14 | 36 种缺国药准字与中文说明书全文；23 / 12 / 18 种分别缺适应证 / 禁忌 / 不良反应；英文 interim（禁忌 24、不良反应 18）**不得直接交付** |
+| A4 中文来源 | 15 种已换中文原文（13 个唯一药品文本层 + 2 个 OCR）；OCR 来源 `source_type=official_label_ocr`、`proofread=false` | 2 条 OCR 字段须人工校对；原件在 `fetched/labels_cn/downloads/`，不入 Git |
+| A5 术语/编码 | **377 条**：disease 240（confirmed 200 / pending 40）、symptom 66（全 pending）、examination 51（全 pending）、drug 15（confirmed）、staging 4、gene 1；`icd_o3` 189/240、`atc` 15/15 | 症状与检查词条待核；**13 类红旗征**（21 次）在 A5 无 canonical，病例侧保留原表述并记 `canonical=null` |
+| 虚拟病例 | **150 条**（C4 100 + C6 50）；风险 routine 60 / urgent 30 / emergency 10，场景 13 / 13 / 12 / 12；全部 `status=draft`、`synthetic=true` | 未经执业医师逐条复核前**不得作为临床依据**；审核人只登记角色代号（`医学审核-A`），实际人员未指定 |
+| 受限资料 | NCCN 8 份原件在 `external/nccn/`；CMKB 2,724 条与 21 药 a4_interim 在 `fetched/cmkb_drugs/`，两者均不入 Git | 对外分发或入库前须分别向 NCCN、SinoMed 取得书面授权 |
+| 指南日期 | 2025 年版《新型抗肿瘤药物临床应用指导原则》PDF 未印发布日，`publish_date` 暂按年份起始日记 | **待核**，获取官方发布日期后回填 |
