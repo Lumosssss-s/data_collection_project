@@ -1,0 +1,162 @@
+{
+  "disease_id": "DIS-COLORECTAL-004",
+  "name_canonical": "乙状结肠癌",
+  "synonyms": [
+    "乙状结肠恶性肿瘤"
+  ],
+  "name_en": "Sigmoid colon cancer",
+  "pinyin": "yizhuangjiechangai",
+  "icd10": "C18.7",
+  "icd_o3": "M8140/3",
+  "category": "primary_cancer",
+  "body_system": "消化系统",
+  "departments": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "department": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "cancer_type": "colorectal",
+  "sections": {
+    "overview": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n乙状结肠癌是结肠癌的一种类型，早期症状可表现有：腹痛、消化不良、腹胀，后期可出现排便不正常。该病发病部位位于降结肠与直肠之间的一段结肠处。",
+    "epidemiology": null,
+    "etiology": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n乙状结肠癌1、发病年龄，大多数病人在50岁以后发病。2、家族史：如果某人的一级亲属，比如说父母，得过结直肠癌的，他在一生中患此病危险性比普通人群要高8倍，大约四分之一的新发病人有结直肠癌的家族史。3、结肠疾病史：某些结肠疾病如克隆氏病或溃疡性结肠炎可能增加结直肠癌的发病机会，他们结肠癌的危险性是常人的30倍。4、息肉：大部分结直肠癌是从小的癌前病变发展而来，它们被称为息肉，其中绒毛样腺瘤样息肉更容易发展成癌，恶变得机会约为25%;管状腺瘤样息肉恶变率为1-5%。5、基因特征：一些家族性肿瘤综合症，如遗传性非息肉病结肠癌，可明显增加结直肠癌的发病机会，而且发病时间更为年轻。",
+    "pathophysiology": null,
+    "pathology_subtypes": "本节整理自 1 条指南推荐条目：\n· Recent studies have also demonstrated that anti-EGFR antibody drugs are highly effective for patients with primary tumors located on the left side (descending colon, sigmoid colon, or rectum) during f【来源 REC-COLORECTAL-EPMC-0225】",
+    "symptoms_early": "常见症状（kgdrug 2018 科普库）：腹痛、便秘、消瘦、消化不良、粪便脓血、低热",
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "HCRC is diagnosed in a three-step process: risk assessment based on clinical information (step 1), pathological and molecular pathological assessments (step 2), and genetic testing (step 3) (Fig. 4).Fig. 4Risk assessment of hereditary colorectal cancer. MMR-IHC, mismatch repair-immunohistochemistry; MSI, microsatellite instability Step 1: Risk assessment based on clinical information The first step in the diagnosis of HCRC is risk assessment based on clinical information, including (1) early onset, (2) synchronous/metachronous CRC, (3) history of malignancy other than CRC, (4) physical features, and (5) a maternal and paternal family history of up to a third-degree relative (at least second-degree relative) with CRC (Fig. 4). Patients with HCRC often develop extra-colorectal lesions, which may include dental abnormalities, lip pigmentation, and macrocephaly, findings of which help with diagnosis and estimation of the causative gene. The current trend toward nuclear families may make it difficult to obtain information concerning even second-degree relatives.（节选，原文约 8072 字符）（本节含指南表格 4 张，未转录）【来源 REC-COLORECTAL-EPMC-0492】",
+    "diagnosis": "Endoscopic findings in the gastrointestinal tract are crucial in the diagnosis of HCRC. Therefore, the number, type, and location of polyps detected by both lower and upper gastrointestinal endoscopy should be accurately recorded.\n\nIf HCRC is suspected based on clinical information, clinicians should proceed to step 2 and then to step 3 if a patient with CRC has a family member already diagnosed with HCRC and their phenotype matches that of the disease [14].\n\nPatients with polyposis should undergo biopsy for pathologic assessment.\n\nPatients with a non-polyposis syndrome should undergo MSI or mismatch repair immunohistochemistry testing using CRC tissue, given that most CRCs associated with Lynch syndrome show MSI-High or loss of expression of mismatch repair proteins corresponding to the causative gene. However, regardless of the results, clinicians should proceed to step 3 if the patient’s family history indicates a high incidence of Lynch syndrome-associated tumors.（节选，原文约 4389 字符）（本节含指南表格 4 张，未转录）【来源 REC-COLORECTAL-EPMC-0492】\n\n同一指南章节的其他内容见「COLORECTAL-004/workup」",
+    "differential": null,
+    "staging": null,
+    "treatment": "本节整理自 2 条指南推荐条目：\n· Recent studies have also demonstrated that anti-EGFR antibody drugs are highly effective for patients with primary tumors located on the left side (descending colon, sigmoid colon, or rectum) during f【来源 REC-COLORECTAL-EPMC-0225】\n· The extent of the perirectal lymph nodes in rectal cancer is defined as follows: the oral side is defined by the lowest plunge point of the sigmoid artery, while the anal side is defined by the distan【来源 REC-COLORECTAL-EPMC-0091】\n可及药物（FDA 说明书，详见 A4）：BEVACIZUMAB、CAPECITABINE、CETUXIMAB、FLUOROURACIL、IRINOTECAN、OXALIPLATIN、PANITUMUMAB、PEMBROLIZUMAB、REGORAFENIB",
+    "complications": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n当肿瘤发展到一定阶段，特别已经引起梗阻时才会引发一系列症状。包括：虚弱、乏力、贫血、不明原因的体重下降、持续性腹痛、黑便或鲜血便、大便习惯改变等。",
+    "prognosis": null,
+    "followup": null,
+    "prevention": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n结肠癌是世界死因顺位中列第3位的肿瘤，尽管结肠癌的治疗手段有很大进展，但多年来晚期结肠癌的5年生存率并无多大改观。因此，结肠癌预防的意义愈显重要。根据癌变过程的多阶段理论。结肠癌的发生也经过启动(initiation)、促癌(promotion)和进展(progression)3个阶段。在形态上则表现为正常黏膜→增生→腺瘤形成→腺瘤癌变→浸润转移。如以家族性腺瘤性息肉病的癌变为模型，结肠癌的自然史可长达10～35年。这就为结肠癌的预防提供了极有利的机会。根据结肠癌自然史的各个不同阶段采取不同的干预措施，我国制定出以下预防策略。1、一级预防在肿瘤发生之前，消除或减少大肠黏膜对致癌剂的暴露，抑制或阻断上皮细胞的癌变过程，从而防止肿瘤的发生。这些措施包括饮食干预、化学预防和治疗癌前病变。(1)饮食干预英国学者Burkitt早就指出结肠癌是一种“现代病”，与现代生活方式和饮食类型有关。大量流行病学研究，特别是移民流行病学研究显示，结肠癌的发病与能量摄入过多、肥胖、过多饱和脂肪酸摄入、体力活动减少，膳食纤维和微营养素(维生素A、E、C，微量元素硒和钙)摄入不足有关。在饮食干预方面，对膳食纤维的研究最多。早在20世纪六、七十年代Burkitt发现结肠癌在非洲黑人中十分罕见，而非洲原著民的饮食中含有大量食物纤维，于是他提出高纤维饮食是结肠癌保护因子的假设。其后大量研究认为膳食纤维可以稀释或吸收粪便中的致癌物，加快食物残渣在肠道的通过时问，从而减少了肠黏膜对食物中致癌物的暴露。同时膳食纤维还可通过改变胆酸的代谢，降低结肠的pH值，并增加短链脂肪酸的产生，从而起到对结肠癌的保护作用。早期的观察性流行病学研究和病例对照研究均显示，随着摄入量的增加，膳食纤维对结肠癌的保护作用也相应增强。如Howe汇集了总数为5287例患者和 10470名对照的13个病例对照研究的资料，发现其中12个研究均支持膳食纤维摄入与结肠癌发病的负相关;同时还发现经调整混杂因素后维生素C和β胡萝卜素的摄入与结肠癌发病只有很小的负相关性。鉴于前瞻性临床干预试验中，如以结肠癌的发生作为“终点指标”(end-point)则需",
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "patient_version": {
+    "overview": "乙状结肠是结肠的一段，位置在降结肠和直肠之间，形状弯曲像字母“S”，长在这段肠管上的癌就叫乙状结肠癌。资料把它归入结肠癌的一种类型，性质上与结肠其他部位的癌属于同一类，区别主要在位置。资料列出的早期表现是腹痛、消化不良和腹胀，到了后期主要表现为排便不正常。原文没有说明这些表现的先后顺序、持续时间和发生比例，这里不作补充。需要说明的是，腹痛、腹胀、消化不良在普通人中很常见，多数与肿瘤无关；但如果这类不适持续存在或逐渐加重，尤其同时出现排便习惯改变，应尽早去医院检查。以上内容出自 2018 年的科普资料，未经医学审核，只能帮助理解疾病背景，不能替代医生的诊断与建议。\n【来源 kgdrug 2018 科普库】",
+    "epidemiology": null,
+    "etiology": "资料把乙状结肠癌的可能相关因素归纳为五类。第一是年龄：大多数病人在 50 岁以后发病。第二是家族史：如果一级亲属（如父母）得过结直肠癌，本人一生中患病危险性比普通人群高约 8 倍；资料称大约四分之一的新发病例有结直肠癌家族史。第三是结肠疾病史：克隆氏病（克罗恩病）或溃疡性结肠炎可能增加结直肠癌的发病机会，资料称其结肠癌危险性约为常人的 30 倍。第四是息肉：大部分结直肠癌由小的癌前病变发展而来，这类病变称为息肉；其中绒毛样腺瘤样息肉更容易变成癌，资料给的恶变机会约为 25%，管状腺瘤样息肉的恶变率为 1%～5%。第五是基因特征：遗传性非息肉病结肠癌等家族性肿瘤综合征会明显增加发病机会，而且发病年龄更年轻。以上数字都是该科普资料原文表述，未经医学审核，也不能用来推算个人风险。\n【来源 kgdrug 2018 科普库】",
+    "pathophysiology": null,
+    "pathology_subtypes": "这一节的专业版来自一条指南推荐条目，讨论的是肿瘤长在哪一侧与药物效果的关系。原文的意思是：近年研究显示，抗 EGFR 抗体类药物对原发肿瘤位于左侧（降结肠、乙状结肠或直肠）的患者效果较好。这里说的“左侧”，指解剖位置偏左的那段结肠，也就是降结肠、乙状结肠和直肠这一段，乙状结肠正好在其中，因此这条信息与本档案直接相关。抗 EGFR 抗体是一类作用于表皮生长因子受体的药物，用不用、什么时候用，需要由医生结合病情判断。需要如实说明：原文这句话在“during f…”处被截断，后半段关于用药时机或联合方案的内容没有保留下来，本节不做推测，也不补写原文没有的适用条件。\n【来源 REC-COLORECTAL-EPMC-0225】",
+    "symptoms_early": "资料列出的常见表现有六项：腹痛、便秘、消瘦、消化不良、粪便脓血、低热。换成日常说法：腹痛就是肚子疼；便秘指排便次数减少、大便干硬难解；消瘦指体重在没有刻意减重的情况下明显下降；消化不良包括上腹不适、腹胀、早饱等；粪便脓血指大便里混有脓样黏液和血；低热指体温轻度升高。需要提醒的是，这六项都不是乙状结肠癌独有的表现，肠炎、痔疮、功能性肠病等也可能出现。原文只列了症状名称，没有给出各项的发生比例、持续时间和严重程度，这里不作补充。如果这些情况持续存在或反复出现，应尽早到医院查明原因，不要凭症状自行判断。\n【来源 kgdrug 2018 科普库】",
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "遗传性结直肠癌的诊断分三步：第一步根据临床信息做风险评估，第二步做病理和分子病理评估，第三步做基因检测。第一步要看的临床信息包括：发病早、同时或先后出现多个结直肠癌、除结直肠癌之外还有恶性肿瘤史、体征，以及父系和母系三代以内（至少二级）亲属中有结直肠癌的家族史。遗传性结直肠癌患者常出现结直肠以外的表现，比如牙齿异常、嘴唇色素沉着、头围增大，这些线索有助于诊断和推测致病基因。现在核心家庭越来越普遍，有时连二级亲属的信息都很难问到。本节含指南表格4张，本系统未转录表格正文。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0492】",
+    "diagnosis": "胃肠内镜所见对遗传性结直肠癌的诊断至关重要，因此应准确记录下消化道和上消化道内镜所检出息肉的数量、类型和位置。若根据临床信息怀疑遗传性结直肠癌，而患者已有确诊该病的家属且表型与该病相符，临床医生应进入第2步，必要时再进入第3步。息肉病患者应取活检做病理评估。非息肉病综合征患者应使用结直肠癌组织做MSI或错配修复免疫组化检测，因为多数林奇综合征相关结直肠癌呈MSI-High或相应错配修复蛋白表达缺失；但无论结果如何，若家族史提示林奇综合征相关肿瘤高发，仍应进入第3步。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0492】",
+    "differential": null,
+    "staging": null,
+    "treatment": "这一节的专业版由两条指南条目和一份药物清单组成，可分三块看。第一块讲药物与肿瘤位置的关系：抗 EGFR 抗体类药物对原发肿瘤位于左侧（降结肠、乙状结肠或直肠）的患者效果较好，原文在此处被截断，后半句没有保留。第二块讲直肠癌直肠周围淋巴结范围的界定方法：口侧以乙状结肠动脉的最低点为界，肛侧以远端为界；这段话同样在“distan…”处截断，后半段未保留。第三块是本库已收录说明书的可及药物名单，中文对应为贝伐珠单抗、卡培他滨、西妥昔单抗、氟尿嘧啶、伊立替康、奥沙利铂、帕尼单抗、帕博利珠单抗、瑞戈非尼。名单只说明库里有这些药的说明书，不等于推荐使用；具体方案、剂量和先后顺序必须由肿瘤专科医生根据分期、基因检测和身体状况决定。\n【来源 REC-COLORECTAL-EPMC-0225；REC-COLORECTAL-EPMC-0091；FDA 说明书】",
+    "complications": "资料说，当肿瘤发展到一定阶段、特别是已经引起梗阻时，才会引发一系列症状，列出的有：虚弱、乏力、贫血、不明原因的体重下降、持续性腹痛、黑便或鲜血便、大便习惯改变。换成日常说法：虚弱、乏力指体力明显下降、容易疲劳；贫血指血液中红细胞或血红蛋白不足，常表现为面色苍白、心慌、头晕；黑便指大便呈柏油样黑色，鲜血便指大便表面或混有鲜红色血，两者都提示消化道可能有出血；大便习惯改变指原本规律的排便变得次数增多或减少、形状变细等。原文没有说明各项出现的比例和时间顺序，这里不作补充。出现黑便、鲜血便或持续腹痛时，应尽快就医，不要自行观察等待。\n【来源 kgdrug 2018 科普库】",
+    "prognosis": null,
+    "followup": null,
+    "prevention": "资料先讲了为什么预防重要：结肠癌在世界死因顺位中列第 3 位，尽管治疗手段有很大进展，多年来晚期结肠癌的 5 年生存率并无多大改观，因此预防的意义更显重要。接着讲癌变过程：按多阶段理论，结肠癌的发生经过启动、促癌和进展三个阶段；形态上表现为正常黏膜→增生→腺瘤形成→腺瘤癌变→浸润转移。以家族性腺瘤性息肉病的癌变为模型，结肠癌的自然史可长达 10～35 年，为预防留下了较长的时间窗口。资料给出的一级预防思路是：在肿瘤发生之前，消除或减少大肠黏膜对致癌剂的暴露，抑制或阻断上皮细胞的癌变过程，措施包括饮食干预、化学预防和治疗癌前病变。饮食方面，资料认为发病与能量摄入过多、肥胖、过多饱和脂肪酸摄入、体力活动减少，以及膳食纤维和微营养素（维生素 A、E、C，微量元素硒和钙）摄入不足有关；膳食纤维被研究得最多，被认为能稀释粪便中的致癌物、加快食物残渣通过。资料还引用了一项汇总 13 个病例对照研究（5,287 例患者、10,470 名对照）的分析，称其中 12 个支持膳食纤维摄入与结肠癌发病呈负相关。原文在“前瞻性临床干预试验……则需”处被截断；本节只是复述资料观点，不构成饮食处方。\n【来源 kgdrug 2018 科普库】",
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "section_gaps": [
+    "epidemiology: 无可靠来源（指南/说明书未覆盖）",
+    "pathophysiology: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_late: 无可靠来源（指南/说明书未覆盖）",
+    "signs: 无可靠来源（指南/说明书未覆盖）",
+    "differential: 无可靠来源（指南/说明书未覆盖）",
+    "staging: 无可靠来源（指南/说明书未覆盖）",
+    "prognosis: 无可靠来源（指南/说明书未覆盖）",
+    "followup: 无可靠来源（指南/说明书未覆盖）",
+    "screening: 无可靠来源（指南/说明书未覆盖）",
+    "patient_education: 无可靠来源（指南/说明书未覆盖）",
+    "care_seeking: 无可靠来源（指南/说明书未覆盖）"
+  ],
+  "links": {
+    "symptoms": [
+      "腹痛",
+      "便秘",
+      "消瘦",
+      "消化不良",
+      "粪便脓血",
+      "低热"
+    ],
+    "drugs": [
+      "BEVACIZUMAB",
+      "CAPECITABINE",
+      "CETUXIMAB",
+      "FLUOROURACIL",
+      "IRINOTECAN",
+      "OXALIPLATIN",
+      "PANITUMUMAB",
+      "PEMBROLIZUMAB",
+      "REGORAFENIB"
+    ],
+    "checks": [],
+    "diseases": [],
+    "guidelines": [
+      "DOC-COLORECTAL-EPMC-001",
+      "DOC-COLORECTAL-EPMC-002",
+      "DOC-COLORECTAL-EPMC-003"
+    ],
+    "genes": [
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ],
+    "biomarkers": [
+      "腺癌",
+      "鳞癌",
+      "MSI-H/dMMR",
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ]
+  },
+  "symptom_early": [
+    "腹痛",
+    "便秘",
+    "消瘦",
+    "消化不良",
+    "粪便脓血",
+    "低热"
+  ],
+  "symptom_late": [],
+  "signs": [],
+  "pathology_subtypes": [
+    "腺癌",
+    "鳞癌",
+    "MSI-H/dMMR",
+    "EGFR 突变",
+    "ALK 融合",
+    "KRAS 突变"
+  ],
+  "stages": [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ],
+  "treatment_methods": [
+    "手术",
+    "手术切除",
+    "化疗",
+    "放疗",
+    "靶向治疗",
+    "放化疗"
+  ],
+  "overview_text": "乙状结肠癌 Sigmoid colon cancer 乙状结肠癌是结肠癌的一种类型，早期症状可表现有：腹痛、消化不良、腹胀，后期可出现排便不正常。该病发病部位位于降结肠与直肠之间的一段结肠处。 · Recent studies have also demonstrated that anti-EGFR antibody drugs are highly effective for patients with primary tumors located on the left side (descending colon, sigmoid colon, or rectum) during",
+  "sources": [
+    "A4:drug_labels",
+    "REC:REC-COLORECTAL-EPMC-0091",
+    "REC:REC-COLORECTAL-EPMC-0225",
+    "REC:REC-COLORECTAL-EPMC-0492",
+    "kgdrug"
+  ],
+  "profile_version": "2026.10-draft",
+  "last_updated": "2026-10-27"
+}

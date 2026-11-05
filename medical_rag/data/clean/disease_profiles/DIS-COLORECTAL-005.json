@@ -1,0 +1,157 @@
+{
+  "disease_id": "DIS-COLORECTAL-005",
+  "name_canonical": "肛管癌",
+  "synonyms": [
+    "肛门癌",
+    "anal cancer"
+  ],
+  "name_en": "Anal canal cancer",
+  "pinyin": "angguanai",
+  "icd10": "C21.1",
+  "icd_o3": "M8070/3",
+  "category": "primary_cancer",
+  "body_system": "消化系统",
+  "departments": [
+    "肿瘤内科",
+    "胃肠外科",
+    "放疗科"
+  ],
+  "department": [
+    "肿瘤内科",
+    "胃肠外科",
+    "放疗科"
+  ],
+  "cancer_type": "colorectal",
+  "sections": {
+    "overview": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n肛管位于大肠的末段，上界为齿线，下界为肛缘，长3～4cm。男性肛管前面紧贴尿道和前列腺，女性则为子宫和阴道;后面为尾骨，周围有内、外括约肌围绕。",
+    "epidemiology": null,
+    "etiology": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n肛管癌(一)发病原因肛管癌真正病因尚未明了，但有研究表明它是多因素作用下多基因失控所致，以往注意到长期慢性刺激如肛瘘、湿疣和免疫性疾患(如Crohn病)与肛管癌发生有关。近年来发现人乳头状病毒(HPV)与它有密切关系，特别是HPV-16，50%～80%的肛管癌细胞中有HPV-16。性行为异常也是肛管癌的高危因素，男性同性恋患者47%有肛管湿疣史，其肛管癌发病危险系数是正常配偶的12.4倍。女性患者中30%有肛交史。免疫抑制如肾移植术后患者，肛管癌的发病率要比正常人群高100倍。肛管癌也存在基因表达异常，67%的肛管癌可见p53基因突变，71%的肛管癌有癌基因C-myc的表达，且分布异常。此外，也有人注意到吸烟也是肛管癌的重要诱因，有吸烟史的男、女性发病率分别是正常人的9.4倍和7.7倍。(二)发病机制1.病理学 肛管是内、外胚层交接之处，所以肿瘤组织学来源较为复杂。大致分为3大类：上皮细胞肿瘤(如鳞状上皮癌、基底细胞癌、腺癌等)、非上皮细胞肿瘤(如肉瘤、淋巴瘤等)和恶性黑色素瘤。肛管癌以鳞状细胞癌最多见，约占2/3以上。按细胞分化程度分高、中和低分化癌。少数为腺癌。至于肉瘤和淋巴瘤在肛管区少见。恶性黑色素瘤在肛管直肠肿瘤中不足1%。中山医科大学肿瘤医院统计肛管直肠肿瘤574例中，仅有4例黑色素瘤，占0.7%。但其恶性度极高，生长快，迅速转移至区域淋巴结和其他脏器，预后甚差。肛管癌扩散途径主要是淋巴道转移，而且主要是沿直肠上动脉向上方转移至直肠旁淋巴结，汇成直肠上淋巴结，继而转移到肠系膜下动脉周围。肛管癌亦可向侧方淋巴转移至髂内、髂总淋巴结。向下方转移主要向前经过会阴及大腿内侧部皮下组织到达腹股沟浅淋巴结，少数向后沿臀部外侧经两侧髂嵴进入腹股沟浅淋巴结，最后均汇至腹股沟深淋巴结和髂外、髂总淋巴结。可见，腹股沟淋巴结转移常可成为第1站淋巴结转移，与直肠癌有所不同。其次，肛管癌局部扩散可侵入肛门括约肌、阴道后壁、会阴、前列腺和膀胱，造成肛管阴道瘘或肛管膀胱瘘，所以在行腹会阴联合直肠切除术治疗肛管癌时，会阴部切除范围应较直肠癌手术时广泛。肛管癌第3条扩散途径是经血道至肝、肺、骨",
+    "pathophysiology": null,
+    "pathology_subtypes": "（本节所引指南章节主题为「Clinical questions」，其中部分内容涉及外科术式，与节名不完全对应）\n\nThe 2009 edition added budding as a factor for which additional treatment should be considered, and project research on other histopathological factors is also underway. In addition, in cases of metastasis or recurrence, salvage surgery is often not possible, and there is a possibility of death from the cancer. This risk must be discussed with the surgeon.\n\nLarge-scale randomized-controlled trials and Cochrane reviews [284–295] have reported that while laparoscopic surgery takes longer operation time than open surgery, it offers superior short-term outcomes, including less blood loss, less postoperative pain, earlier recovery of postoperative intestinal peristalsis, and shorter hospital stays [284, 287–291].\n\nIn addition, the complication rates and long-term outcomes have been shown to be similar [286, 288, 292–295].\n\nFor these reasons, laparoscopic surgery has been accepted as one of the options for colorectal cancer surgery.\n\nOn the other hand, the technical challenges of laparoscopic surgery have been pointed out, such as the limited range of motion caused by straight forceps and instability due to the surgeon's or assistant's hands tremor.（节选，原文约 35212 字符）【来源 REC-COLORECTAL-EPMC-0431】\n\n同一指南章节的其他内容见「COLORECTAL-002/prognosis」",
+    "symptoms_early": null,
+    "symptoms_late": null,
+    "signs": null,
+    "workup": null,
+    "diagnosis": null,
+    "differential": null,
+    "staging": null,
+    "treatment": "Total colectomy in women with FAP may reduce fertility (Side Note II-2: Surgery, fertility, pregnancy, and childbirth).\n\nThe surgical approach for a patient with FAP who has developed CRC should be determined based on the stage and location of the CRC as well as other clinical considerations. If curative resection is possible, total proctocolectomy or total colectomy with regional lymph node dissection should be considered. Managing unresectable advanced CRC, metastatic lesions, and chemotherapy should follow the same protocols as those for sporadic CRC.\n\nA study of 58 women with FAP in Denmark [113] reported a fertility rate of 90%, which was comparable to that in the general population. Another study involving 162 European women with FAP found that the fertility rate in patients with FAP who had not undergone surgery was comparable to that in the general population, as was that in patients who underwent IRA; however, those who underwent IPAA had a 0.46 times lower fertility rate [30]. In contrast, a study of 138 patients with FAP in the Netherlands reported that fertility was unrelated to the type of surgery but was associated with age at the time of initial surgery [114].（节选，原文约 5250 字符）（本节含指南表格 2 张，未转录）【来源 REC-COLORECTAL-EPMC-0640 / REC-COLORECTAL-EPMC-0641】\n\n同一指南章节的其他内容见「COLORECTAL-003/treatment」",
+    "complications": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n肛管癌发展到晚期尚可出现许多侵袭性症状，例如当淋巴结转移并累及闭孔神经时可出现顽固性会阴部疼痛且放射至大腿内侧;肿瘤侵犯括约肌可致大便失禁;侵犯阴道形成肛管-阴道瘘，大便从阴道排出;侵袭前列腺时小便异常或血尿或尿闭;侵袭膀胱时可引起肛管-膀胱瘘;如已发生血道转移，则可出现肝转移、肺转移、胃转移等相应的症状和体征。",
+    "prognosis": "本节整理自 3 条指南推荐条目：\n· Radiotherapy encompasses adjuvant therapy aimed at preventing postoperative recurrence of rectal cancer, reducing tumor burden before surgery, and preserving anal function, as well as palliative radio【来源 REC-COLORECTAL-EPMC-0244】\n· However, there are some risks, such as intraoperative damage to the urethra, autonomic nerves, or intestines; contamination of the surgical field due to rupture of the purse-string suture that closes 【来源 REC-COLORECTAL-EPMC-0102】\n· and whose tumor’s lower edge was located on the anal side of the peritoneal reflection, with recurrence-free survival as the primary endpoint.【来源 REC-COLORECTAL-EPMC-0344】",
+    "followup": null,
+    "prevention": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n目前没有相关内容描述。",
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "patient_version": {
+    "overview": "肛管是大肠的最末一段，上界叫齿线（直肠与肛管交界处的一条环形线），下界叫肛缘（肛门边缘），整段长约 3～4 厘米。位置关系上，男性肛管前方紧贴尿道和前列腺，女性前方则是子宫和阴道；后方是尾骨；周围有内、外两层括约肌环绕，这两层肌肉负责控制排便。长在这一段肠管上的癌就叫肛管癌。资料这段只交代了位置和长度，用来帮助理解“肛管癌”这个名字指的是哪个部位，没有涉及症状、分期或治疗。需要提醒的是，肛管虽属大肠末段，但它与直肠癌、结肠癌在解剖位置和淋巴引流上并不相同，不能按同一部位对待。以上属于解剖背景介绍，用于帮助定位，不涉及病情严重程度的判断。\n【来源 kgdrug 2018 科普库】",
+    "epidemiology": null,
+    "etiology": "资料称肛管癌的真正病因尚未明了，但研究表明它由多因素作用、多基因失控所致。长期慢性刺激（如肛瘘、湿疣）和免疫性疾病（如克罗恩病）被认为与发病有关；近年发现人乳头状病毒（HPV）与它关系密切，尤其 HPV-16，资料称 50%～80% 的肛管癌细胞中含 HPV-16。性行为因素也有关：男性同性恋患者中 47% 有肛管湿疣史，发病危险系数为正常配偶的 12.4 倍；女性患者中 30% 有肛交史。免疫抑制者风险更高：肾移植术后患者发病率比正常人群高 100 倍。基因方面，67% 有 p53 突变，71% 有 C-myc 表达异常。吸烟也是诱因：有吸烟史的男、女性发病率分别为正常人的 9.4 倍和 7.7 倍。病理方面，肛管位于内、外胚层交接处，组织学来源复杂，分上皮细胞肿瘤（鳞状上皮癌、基底细胞癌、腺癌等）、非上皮细胞肿瘤（肉瘤、淋巴瘤等）和恶性黑色素瘤三类；其中鳞癌最多见，约占三分之二以上。扩散以淋巴道为主：向上沿直肠上动脉至直肠旁淋巴结，向侧方至髂内、髂总淋巴结，向下至腹股沟浅淋巴结，因此腹股沟淋巴结转移常成为第一站，与直肠癌不同。以上数字均为 2018 年科普资料原文，未经医学审核。\n【来源 kgdrug 2018 科普库】",
+    "pathophysiology": null,
+    "pathology_subtypes": "本节内容来自另一主题的指南章节，与标题不完全对应。2009年版指南把“出芽”列为应考虑追加治疗的因素，其他组织病理学因素的相关项目研究仍在进行。一旦发生转移或复发，补救手术往往无法实施，存在死于该癌的可能，这一风险必须与外科医生讨论。大规模随机对照试验和Cochrane综述报告，腹腔镜手术比开腹手术耗时更长，但近期结果更优：失血更少、术后疼痛更轻、肠蠕动恢复更早、住院时间更短；并发症发生率和长期结果则相似。因此腹腔镜手术已被接受为结直肠癌手术的选项之一。另一方面，其技术难点也被指出，例如直器械造成活动范围受限、术者或助手手抖导致不稳定。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0431】",
+    "symptoms_early": null,
+    "symptoms_late": null,
+    "signs": null,
+    "workup": null,
+    "diagnosis": null,
+    "differential": null,
+    "staging": null,
+    "treatment": "女性FAP患者行全结肠切除可能降低生育力。FAP患者发生结直肠癌后，手术方式应根据肿瘤分期、位置及其他临床因素确定；若可根治性切除，应考虑全直肠结肠切除或全结肠切除加区域淋巴结清扫。不可切除的晚期结直肠癌、转移灶的处理和化疗，应按散发性结直肠癌的同一方案进行。丹麦一项58例女性FAP研究报道生育率为90%，与一般人群相当。另一项162例欧洲女性FAP研究显示，未手术者和行回肠直肠吻合术者的生育力与一般人群相当，但行回肠储袋肛管吻合术者的生育力低0.46倍。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0640 / REC-COLORECTAL-EPMC-0641】",
+    "complications": "资料列出肛管癌晚期可能出现的侵袭性症状，按受累部位可以分几类。一是淋巴结转移累及闭孔神经时，可出现顽固性会阴部疼痛，并向大腿内侧放射。二是肿瘤侵犯括约肌时，可导致大便失禁。三是侵犯阴道时可形成肛管-阴道瘘，大便从阴道排出。四是侵袭前列腺时，可出现小便异常、血尿或尿闭（排不出尿）。五是侵袭膀胱时，可引起肛管-膀胱瘘。六是发生血道转移时，可出现肝转移、肺转移、胃转移等相应症状和体征。原文只描述症状，没有给出各情况的发生比例或出现顺序，这里不作补充。出现上述情况说明病变已较晚，需要及时由医生处理，原文未提及具体处理方式，请遵医嘱。\n【来源 kgdrug 2018 科普库】",
+    "prognosis": "需要说明：本节标题是“预后”，但专业版里并没有给出生存率、复发率等预后数字，而是三条与其他主题相关的条目。第一条界定放疗范围：包括以预防直肠癌术后复发为目的的辅助放疗、术前减少肿瘤负荷、保留肛门功能，以及姑息性放疗，句子在此处被截断。第二条讲手术风险：术中可能损伤尿道、自主神经或肠道，荷包缝合线破裂可造成手术野污染，原句在“that closes…”处截断，后续风险未保留。第三条是一项研究的入组条件：肿瘤下缘位于腹膜反折的肛侧，以无复发生存为主要终点，原文同样被截断。因此本节能说明的只是资料中缺少肛管癌的预后数据，无法给出任何生存期估计；如需了解预后，应由主治医生结合分期、病理和全身状况判断。\n【来源 REC-COLORECTAL-EPMC-0244；REC-COLORECTAL-EPMC-0102；REC-COLORECTAL-EPMC-0344】",
+    "followup": null,
+    "prevention": "本节原文只有一句“目前没有相关内容描述”，也就是说这份 2018 年的科普资料没有提供肛管癌的预防内容。为避免补充原文没有的信息，本节不作扩写，也不从其他资料拼接预防建议。如果您关心预防，尤其是与 HPV 相关的部分，请以正规医疗机构或权威指南的意见为准。\n【来源 kgdrug 2018 科普库】",
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "section_gaps": [
+    "epidemiology: 无可靠来源（指南/说明书未覆盖）",
+    "pathophysiology: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_early: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_late: 无可靠来源（指南/说明书未覆盖）",
+    "signs: 无可靠来源（指南/说明书未覆盖）",
+    "workup: 无可靠来源（指南/说明书未覆盖）",
+    "diagnosis: 无可靠来源（指南/说明书未覆盖）",
+    "differential: 无可靠来源（指南/说明书未覆盖）",
+    "staging: 无可靠来源（指南/说明书未覆盖）",
+    "followup: 无可靠来源（指南/说明书未覆盖）",
+    "screening: 无可靠来源（指南/说明书未覆盖）",
+    "patient_education: 无可靠来源（指南/说明书未覆盖）",
+    "care_seeking: 无可靠来源（指南/说明书未覆盖）"
+  ],
+  "links": {
+    "symptoms": [],
+    "drugs": [
+      "BEVACIZUMAB",
+      "CAPECITABINE",
+      "CETUXIMAB",
+      "FLUOROURACIL",
+      "IRINOTECAN",
+      "OXALIPLATIN",
+      "PANITUMUMAB",
+      "PEMBROLIZUMAB",
+      "REGORAFENIB"
+    ],
+    "checks": [],
+    "diseases": [],
+    "guidelines": [
+      "DOC-COLORECTAL-EPMC-001",
+      "DOC-COLORECTAL-EPMC-002",
+      "DOC-COLORECTAL-EPMC-003"
+    ],
+    "genes": [
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ],
+    "biomarkers": [
+      "腺癌",
+      "鳞癌",
+      "MSI-H/dMMR",
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ]
+  },
+  "symptom_early": [],
+  "symptom_late": [],
+  "signs": [],
+  "pathology_subtypes": [
+    "腺癌",
+    "鳞癌",
+    "MSI-H/dMMR",
+    "EGFR 突变",
+    "ALK 融合",
+    "KRAS 突变"
+  ],
+  "stages": [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ],
+  "treatment_methods": [
+    "手术",
+    "手术切除",
+    "化疗",
+    "放疗",
+    "靶向治疗",
+    "放化疗"
+  ],
+  "overview_text": "肛管癌 Anal canal cancer 肛管位于大肠的末段，上界为齿线，下界为肛缘，长3～4cm。男性肛管前面紧贴尿道和前列腺，女性则为子宫和阴道;后面为尾骨，周围有内、外括约肌围绕。 · 9Surgical procedures for patients with familial adenomatous polyposis Table 8Characteristics of the surgical procedure for FAPSurgical proceduresTotal proctocolectomy with permanent ileostomyTotal p",
+  "sources": [
+    "A4:drug_labels",
+    "REC:REC-COLORECTAL-EPMC-0099",
+    "REC:REC-COLORECTAL-EPMC-0102",
+    "REC:REC-COLORECTAL-EPMC-0244",
+    "REC:REC-COLORECTAL-EPMC-0344",
+    "REC:REC-COLORECTAL-EPMC-0431",
+    "REC:REC-COLORECTAL-EPMC-0640",
+    "REC:REC-COLORECTAL-EPMC-0641",
+    "kgdrug"
+  ],
+  "profile_version": "2026.10-draft",
+  "last_updated": "2026-10-27"
+}

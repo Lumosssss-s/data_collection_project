@@ -1,0 +1,122 @@
+{
+  "disease_id": "DIS-GASTRIC-001",
+  "name_canonical": "胃癌",
+  "synonyms": [
+    "胃恶性肿瘤",
+    "胃ca",
+    "gastric cancer"
+  ],
+  "name_en": "Gastric cancer",
+  "pinyin": "weiai",
+  "icd10": "C16.9",
+  "icd_o3": "M8010/3",
+  "category": "primary_cancer",
+  "body_system": "消化系统",
+  "departments": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "department": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "cancer_type": "gastric",
+  "sections": {
+    "overview": "AbstractThe 7th edition of the Gastric Cancer Treatment Guidelines was published in March 2025 covering new evidences. Following the format of the previous edition, this guideline consists of a text-based “Treatment” section and a “Clinical Questions” section that includes recommendations and explanations for clinical questions. The Treatment section describes the established standard treatments for gastric cancer, including surgery, endoscopic resection, and chemotherapy. The Clinical Questions section is based on a literature search and evaluation by the independent systematic review team. This allows for evidence-based responses to clinical issues and also presents future research topics in gastric cancer treatment.Keyword: Treatment guidelines, Surgery, Endoscopic resection, Chemotherapy, Evidence-based medicine\n【逐字引自 DOC-GASTRIC-EPMC-001 摘要（英文原文，未翻译未改写）】",
+    "epidemiology": "本章节暂无已入库证据",
+    "etiology": "本章节暂无已入库证据",
+    "pathophysiology": "本章节暂无已入库证据",
+    "pathology_subtypes": "本章节暂无已入库证据",
+    "symptoms_early": "本章节暂无已入库证据",
+    "symptoms_late": "本章节暂无已入库证据",
+    "signs": "本章节暂无已入库证据",
+    "workup": "本章节暂无已入库证据",
+    "diagnosis": "本章节暂无已入库证据",
+    "differential": "本章节暂无已入库证据",
+    "staging": "Recommendation It is weakly recommended not to perform PET-CT (Consensus rate 70%, 7/10, Strength of evidence C).（节选，原文约 112 字符）【来源 REC-GASTRIC-EPMC-0010】\n\nRecommendation Staging laparoscopy is weakly recommended to determine the treatment strategy for patients with advanced gastric cancer who are likely to have peritoneal metastasis (Consensus rate 90%, 9/10, Strength of evidence B).（节选，原文约 230 字符）【来源 REC-GASTRIC-EPMC-0011】",
+    "treatment": "本节全部逐字引自已入库推荐条目（REC），未做任何改写；SoE/共识率原样透出，evidence_level 为项目映射（A→high、B→moderate、C→low、D→very_low）。\n\n### 微创手术（CQ1-1–CQ1-4）（逐字引用 4 条）\n· Laparoscopic distal gastrectomy is strongly recommended as one of the standard treatments (Consensus rate 100%, 10/10, Strength of evidence A). 【来源 REC-GASTRIC-EPMC-0001 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· Robotic gastrectomy is weakly recommended for resectable gastric cancer. 【来源 REC-GASTRIC-EPMC-0002 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· Laparoscopic total gastrectomy is weakly recommended as a standard treatment. 【来源 REC-GASTRIC-EPMC-0003 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· Minimally invasive surgery is weakly recommended for patients who received preoperative chemotherapy. 【来源 REC-GASTRIC-EPMC-0004 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### 功能保留手术（CQ2-1、CQ2-2）（逐字引用 2 条）\n· PPG is weakly recommended for early gastric cancer in the middle portion of the stomach (Consensus rate 100%, 10/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0005 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· Proximal gastrectomy is weakly recommended for early proximal gastric cancer as function-preserving surgery (Consensus rate 90%, 9/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0006 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n\n### 联合切除与扩大手术（CQ3-1–CQ3-3）（逐字引用 3 条）\n· Omentectomy is weakly recommended for cT3-T4 gastric cancer (Consensus rate 80%, 8/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0007 | SoE C; 共识率 80%; evidence_level low（项目映射）】\n· It is strongly recommended not to perform splenectomy or splenic hilar lymph node dissection for tumors which have not invaded the greater curvature (Consensus rate 100%, 9/9, Strength of evidence A). 【来源 REC-GASTRIC-EPMC-0008 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· Pancreaticoduodenectomy is weakly recommended for advanced gastric cancer with invasion of the duodenum or head of the pancreas with certain conditions (Consensus rate 100%, 10/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0009 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### Stage IV 胃癌手术（CQ5-1、CQ5-3）（逐字引用 2 条）\n· Surgical resection after neoadjuvant chemotherapy is weakly recommended for a small number of paraaortic lymph node metastases confined to No.16a2/b1, if there are no other non-curable factors (Consensus rate 94.7%, 18/19, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0012 | SoE C; 共识率 94.7%; evidence_level low（项目映射）】\n· Palliative resection, bypass surgery, or stent placement is weakly recommended for bleeding or stenosis from incurable gastric cancer (Consensus rate 100%, 19/19), Strength of evidence D). 【来源 REC-GASTRIC-EPMC-0013 | SoE D; 共识率 100%; evidence_level very_low（项目映射）】\n\n### 食管胃结合部癌（CQ6-1×3、CQ6-2、CQ6-3）（逐字引用 5 条）\n· In surgery for esophagogastric junctional cancer deeper than cT2, Lower mediastinal lymph node dissection is weakly recommended if the esophageal invasion length is greater than 2 cm (Consensus rate 90%, 9/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0014 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· Upper, middle, and lower mediastinal lymph node dissection is weakly recommended if the esophageal invasion length is greater than 4 cm (Consensus rate 80%, 8/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0031 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· It is weakly recommended not to perform para-aortic lymph node (No.16a2) dissection, taking into consideration the entire surgical stress (Consensus rate 100%, 10/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0032 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· Proximal gastrectomy is weakly recommended for esophagogastric junctional cancer (Consensus rate 100%, 10/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0015 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· Laparoscopic or robotic surgery is weakly recommended for esophagogastric junctional cancer (Consensus rate 70%, 7/10, Strength of evidence D). 【来源 REC-GASTRIC-EPMC-0016 | SoE D; 共识率 70%; evidence_level very_low（项目映射）】\n\n### 残胃癌（CQ7-1、CQ7-3）（逐字引用 2 条）\n· Splenic hilar dissection with splenectomy is weakly recommended for advanced carcinoma of the gastric remnant with greater curvature invasion (Consensus rate 100%, 10/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0017 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· Mesenteric lymph node dissection is weakly recommended for carcinoma of the gastric remnant located at the gastrojejunostomy (Consensus rate 100%, 10/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0018 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### 胃切除术后长期管理（CQ9-1、CQ9-2）（逐字引用 2 条）\n· Pneumococcal vaccination after splenectomy for gastric cancer surgery is weakly recommended (Consensus rate 90%, 9/10, Strength of evidence D). 【来源 REC-GASTRIC-EPMC-0019 | SoE D; 共识率 90%; evidence_level very_low（项目映射）】\n· Administration of vitamin B12 is weakly recommended after total gastrectomy (Consensus rate 90%, 9/10, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0020 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n\n### 老年患者（CQ10-1、CQ10-2）（逐字引用 2 条）\n· Limited surgery with reduced lymph node dissection or minimally invasive surgery is weakly recommended for elderly patients (Consensus rate 100%, 19/19, Strength of evidence D). 【来源 REC-GASTRIC-EPMC-0021 | SoE D; 共识率 100%; evidence_level very_low（项目映射）】\n· Considering age when deciding on the indication of systemic chemotherapy is weakly recommended for an elderly patient with unresectable advanced or recurrent gastric cancer, who is fit, has decision-making capacity, and is willing to undergo treatment after carefully assessing the patient’s overall condition and motivation (Consensus rate 100%, 19/19, Strength of evidence B). 【来源 REC-GASTRIC-EPMC-0022 | SoE B; 共识率 100%; evidence_level moderate（项目映射）】\n\n### 化疗与生物标志物（CQ11-1、CQ11-2、CQ12、CQ13-1、CQ14）（逐字引用 5 条）\n· Chemotherapy is weakly recommended for patients with impaired oral intake or massive ascites after careful assessment of their general condition (Consensus rate 100%, 7/7, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0023 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· It is weakly recommended to perform appropriate genomic profiling tests in later-line treatment and to treat based on the genetic alterations found for unresectable advanced or recurrent gastric cancer patients (Consensus rate 100%, 7/7, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0024 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· Chemotherapy in combination with an immune checkpoint inhibitor (nivolumab or pembrolizumab) is strongly recommended as first-line treatment for HER2-negative unresectable advanced/recurrent gastric/gastroesophageal junction cancer, taking into account biomarkers (PD-L1 (CPS), MSI, MMR, CLDN18) and the patient’s general condition (Consensus rate 100%, 7/7, Strength of evidence A). 【来源 REC-GASTRIC-EPMC-0025 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· Selection of first-line treatment based on biomarkers is strongly recommended for patients with unresectable advanced or recurrent gastric cancer (Consensus rate 100%, 7/7, Strength of evidence A). 【来源 REC-GASTRIC-EPMC-0026 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· It is strongly recommended not to continuously use or re-administer fluoropyrimidine, trastuzumab, or ramucirumab in chemotherapy for unresectable advanced or recurrent gastric cancers (Consensus rate 100%, 7/7, Strength of evidence A). 【来源 REC-GASTRIC-EPMC-0027 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n\n### 姑息与支持治疗（CQ15-1、CQ15-2）（逐字引用 2 条）\n· In patients with advanced gastric cancer and a non-refractory cachexia state, appropriate dosing of anamorelin is weakly recommended to promote appetite and weight gain (Consensus rate 100%, 7/7, Strength of evidence D). 【来源 REC-GASTRIC-EPMC-0028 | SoE D; 共识率 100%; evidence_level very_low（项目映射）】\n· For patients with incurable advanced gastric cancer with bleeding, radiation for the purpose of hemostasis is weakly recommended, taking into consideration the patient’s overall condition and prognosis (Consensus rate 100%, 7/7, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0029 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### 围手术期化疗（CQ16-2）（逐字引用 1 条）\n· Adjuvant chemotherapy is weakly recommended for stage IV gastric cancer with R0 resection (Consensus rate 94.7%, 18/19, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0030 | SoE C; 共识率 94.7%; evidence_level low（项目映射）】\n\n\n章节级 source_rec_ids：REC-GASTRIC-EPMC-0010, REC-GASTRIC-EPMC-0011, REC-GASTRIC-EPMC-0001, REC-GASTRIC-EPMC-0002, REC-GASTRIC-EPMC-0003, REC-GASTRIC-EPMC-0004, REC-GASTRIC-EPMC-0005, REC-GASTRIC-EPMC-0006, REC-GASTRIC-EPMC-0007, REC-GASTRIC-EPMC-0008, REC-GASTRIC-EPMC-0009, REC-GASTRIC-EPMC-0012, REC-GASTRIC-EPMC-0013, REC-GASTRIC-EPMC-0014, REC-GASTRIC-EPMC-0031, REC-GASTRIC-EPMC-0032, REC-GASTRIC-EPMC-0015, REC-GASTRIC-EPMC-0016, REC-GASTRIC-EPMC-0017, REC-GASTRIC-EPMC-0018, REC-GASTRIC-EPMC-0019, REC-GASTRIC-EPMC-0020, REC-GASTRIC-EPMC-0021, REC-GASTRIC-EPMC-0022, REC-GASTRIC-EPMC-0023, REC-GASTRIC-EPMC-0024, REC-GASTRIC-EPMC-0025, REC-GASTRIC-EPMC-0026, REC-GASTRIC-EPMC-0027, REC-GASTRIC-EPMC-0028, REC-GASTRIC-EPMC-0029, REC-GASTRIC-EPMC-0030",
+    "complications": "本章节暂无已入库证据",
+    "prognosis": "本章节暂无已入库证据",
+    "followup": "本章节暂无已入库证据",
+    "prevention": "本章节暂无已入库证据",
+    "screening": "本章节暂无已入库证据",
+    "patient_education": "本章节暂无已入库证据",
+    "care_seeking": "本章节暂无已入库证据"
+  },
+  "patient_version": {
+    "overview": "### 指南概况\n· 第7版《胃癌治疗指南》于2025年3月发布，纳入了新的证据。【来源 DOC-GASTRIC-EPMC-001】\n· 本指南沿用上一版的格式，由文字版的“治疗”部分和“临床问题”部分组成，后者包含针对临床问题的推荐和解释。【来源 DOC-GASTRIC-EPMC-001】\n· “治疗”部分描述胃癌已确立的标准治疗，包括手术、内镜切除和化疗。【来源 DOC-GASTRIC-EPMC-001】\n· “临床问题”部分基于独立系统评价团队的文献检索与评估，从而对临床问题给出循证回答，并提出胃癌治疗未来的研究课题。【来源 DOC-GASTRIC-EPMC-001】",
+    "epidemiology": null,
+    "etiology": null,
+    "pathophysiology": null,
+    "pathology_subtypes": null,
+    "symptoms_early": null,
+    "symptoms_late": null,
+    "signs": null,
+    "workup": null,
+    "diagnosis": null,
+    "differential": null,
+    "staging": "关于进展期胃癌治疗前的分期检查，指南有两条推荐。第一条：不建议做PET-CT。这是一条弱推荐，专家共识率70%（10位专家中7位同意），证据强度为C。第二条：对很可能已经有腹膜转移的进展期胃癌患者，建议做分期腹腔镜，用来确定治疗策略；这也是弱推荐，专家共识率90%（10位中9位同意），证据强度为B。两条都属于弱推荐，意思是获益与风险比较接近，需要医生结合患者的具体情况来决定；其中分期腹腔镜这条的共识率和证据强度都高于PET-CT这条。本节依据指南原文节选整理。【来源 REC-GASTRIC-EPMC-0010 / REC-GASTRIC-EPMC-0011】",
+    "treatment": "本节全部逐字引自已入库推荐条目（REC），未做任何改写；SoE/共识率原样透出，evidence_level 为项目映射（A→high、B→moderate、C→low、D→very_low）。\n\n### 微创手术（CQ1-1–CQ1-4）\n· 腹腔镜远端胃切除术是标准治疗之一，强烈推荐（共识率 100%，10/10，证据强度 A）。【来源 REC-GASTRIC-EPMC-0001 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· 机器人胃切除术用于可切除胃癌属于弱推荐（可以考虑）。【来源 REC-GASTRIC-EPMC-0002 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· 腹腔镜全胃切除术作为标准治疗属于弱推荐（可以考虑）。【来源 REC-GASTRIC-EPMC-0003 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· 接受过术前化疗的患者，微创手术属于弱推荐（可以考虑）。【来源 REC-GASTRIC-EPMC-0004 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### 功能保留手术（CQ2-1、CQ2-2）\n\n· 对于胃中部早期胃癌，弱推荐（可以考虑）PPG。【来源 REC-GASTRIC-EPMC-0005 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· 对于近端早期胃癌，弱推荐（可以考虑）近端胃切除术作为功能保留手术。【来源 REC-GASTRIC-EPMC-0006 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n\n### 联合切除与扩大手术\n\n· 对于 cT3-T4 期胃癌，弱推荐（可以考虑）行网膜切除术（共识率 80%，8/10，证据强度 C）。【来源 REC-GASTRIC-EPMC-0007 | SoE C; 共识率 80%; evidence_level low（项目映射）】\n· 强烈推荐：对于未侵犯胃大弯的肿瘤，不要行脾切除术或脾门淋巴结清扫（共识率 100%，9/9，证据强度 A）。【来源 REC-GASTRIC-EPMC-0008 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· 对于侵犯十二指肠或胰头的晚期胃癌，在特定条件下弱推荐（可以考虑）行胰十二指肠切除术（共识率 100%，10/10，证据强度 C）。【来源 REC-GASTRIC-EPMC-0009 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### IV 期胃癌的手术治疗（CQ5-1、CQ5-3）\n\n· 如果化疗后仅剩 No.16a2/b1 区域的少数腹主动脉旁淋巴结转移，且没有其他无法治愈的因素，可以考虑手术切除。【来源 REC-GASTRIC-EPMC-0012 | SoE C; 共识率 94.7%; evidence_level low（项目映射）】\n· 对于无法治愈的胃癌引起的出血或狭窄，可以考虑姑息性切除、 bypass 手术或支架置入。【来源 REC-GASTRIC-EPMC-0013 | SoE D; 共识率 100%; evidence_level very_low（项目映射）】\n\n### 食管胃结合部癌手术相关推荐\n\n· 对于肿瘤深度超过 cT2 的食管胃结合部癌手术，如果食管侵犯长度大于 2 cm，可以考虑清扫下纵隔淋巴结（弱推荐）【来源 REC-GASTRIC-EPMC-0014 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· 如果食管侵犯长度大于 4 cm，可以考虑清扫上、中、下纵隔淋巴结（弱推荐）【来源 REC-GASTRIC-EPMC-0031 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· 综合考虑整体手术创伤，可以考虑不做腹主动脉旁淋巴结（No.16a2）清扫（弱推荐）【来源 REC-GASTRIC-EPMC-0032 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n· 食管胃结合部癌可以考虑行近端胃切除术（弱推荐）【来源 REC-GASTRIC-EPMC-0015 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· 食管胃结合部癌可以考虑行腹腔镜或机器人手术（弱推荐）【来源 REC-GASTRIC-EPMC-0016 | SoE D; 共识率 70%; evidence_level very_low（项目映射）】\n\n### 残胃癌（CQ7-1、CQ7-3）\n· 对于侵犯胃大弯的进展期残胃癌，可以考虑在切除脾脏的同时清扫脾门淋巴结（弱推荐；共识率 100%，10/10，证据强度 C）。【来源 REC-GASTRIC-EPMC-0017 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· 对于位于胃空肠吻合口的残胃癌，可以考虑清扫肠系膜淋巴结（弱推荐；共识率 100%，10/10，证据强度 C）。【来源 REC-GASTRIC-EPMC-0018 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### 胃切除术后长期管理\n\n· 胃癌手术切除脾脏后，弱推荐接种肺炎球菌疫苗（共识率 90%，9/10，证据强度 D）。【来源 REC-GASTRIC-EPMC-0019 | SoE D; 共识率 90%; evidence_level very_low（项目映射）】\n· 全胃切除术后，弱推荐补充维生素 B12（共识率 90%，9/10，证据强度 C）。【来源 REC-GASTRIC-EPMC-0020 | SoE C; 共识率 90%; evidence_level low（项目映射）】\n\n### 老年患者（CQ10-1、CQ10-2）\n· 对老年患者，可以考虑缩小手术范围、减少淋巴结清扫，或采用微创手术（弱推荐）。【来源 REC-GASTRIC-EPMC-0021 | SoE D; 共识率 100%; evidence_level very_low（项目映射）】\n· 对无法切除的晚期或复发胃癌老年患者，如果身体状况较好、有决策能力、愿意接受治疗，在仔细评估整体状况和治疗意愿后，决定是否做全身化疗时可以考虑年龄因素（弱推荐）。【来源 REC-GASTRIC-EPMC-0022 | SoE B; 共识率 100%; evidence_level moderate（项目映射）】\n\n### 化疗与生物标志物\n\n· 对进食困难或大量腹水的患者，在仔细评估整体状况后，弱推荐（可以考虑）化疗。【来源 REC-GASTRIC-EPMC-0023 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· 对不可切除的晚期或复发胃癌患者，弱推荐（可以考虑）在后线治疗中做适当的基因组检测，并根据发现的基因改变来治疗。【来源 REC-GASTRIC-EPMC-0024 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n· 对 HER2 阴性、不可切除的晚期/复发胃或胃食管结合部癌，强烈推荐化疗联合免疫检查点抑制剂（nivolumab 或 pembrolizumab）作为一线治疗，需结合生物标志物（PD-L1（CPS）、MSI、MMR、CLDN18）和患者整体状况。【来源 REC-GASTRIC-EPMC-0025 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· 对不可切除的晚期或复发胃癌患者，强烈推荐根据生物标志物选择一线治疗。【来源 REC-GASTRIC-EPMC-0026 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n· 对不可切除的晚期或复发胃癌，强烈推荐不要持续使用或再次使用 fluoropyrimidine、trastuzumab 或 ramucirumab 进行化疗。【来源 REC-GASTRIC-EPMC-0027 | SoE A; 共识率 100%; evidence_level high（项目映射）】\n\n### 姑息与支持治疗\n\n· 晚期胃癌患者若尚未进入难治性恶病质阶段，可以考虑使用适当剂量的 anamorelin，以帮助改善食欲、增加体重（弱推荐）。【来源 REC-GASTRIC-EPMC-0028 | SoE D; 共识率 100%; evidence_level very_low（项目映射）】\n· 无法治愈的晚期胃癌患者如出现出血，在综合考虑患者整体状况和预后后，可以考虑采用放疗来止血（弱推荐）。【来源 REC-GASTRIC-EPMC-0029 | SoE C; 共识率 100%; evidence_level low（项目映射）】\n\n### 围手术期化疗（CQ16-2）（逐字引用 1 条）\n· Adjuvant chemotherapy is weakly recommended for stage IV gastric cancer with R0 resection (Consensus rate 94.7%, 18/19, Strength of evidence C). 【来源 REC-GASTRIC-EPMC-0030 | SoE C; 共识率 94.7%; evidence_level low（项目映射）】\n\n\n章节级 source_rec_ids：REC-GASTRIC-EPMC-0010, REC-GASTRIC-EPMC-0011, REC-GASTRIC-EPMC-0001, REC-GASTRIC-EPMC-0002, REC-GASTRIC-EPMC-0003, REC-GASTRIC-EPMC-0004, REC-GASTRIC-EPMC-0005, REC-GASTRIC-EPMC-0006, REC-GASTRIC-EPMC-0007, REC-GASTRIC-EPMC-0008, REC-GASTRIC-EPMC-0009, REC-GASTRIC-EPMC-0012, REC-GASTRIC-EPMC-0013, REC-GASTRIC-EPMC-0014, REC-GASTRIC-EPMC-0031, REC-GASTRIC-EPMC-0032, REC-GASTRIC-EPMC-0015, REC-GASTRIC-EPMC-0016, REC-GASTRIC-EPMC-0017, REC-GASTRIC-EPMC-0018, REC-GASTRIC-EPMC-0019, REC-GASTRIC-EPMC-0020, REC-GASTRIC-EPMC-0021, REC-GASTRIC-EPMC-0022, REC-GASTRIC-EPMC-0023, REC-GASTRIC-EPMC-0024, REC-GASTRIC-EPMC-0025, REC-GASTRIC-EPMC-0026, REC-GASTRIC-EPMC-0027, REC-GASTRIC-EPMC-0028, REC-GASTRIC-EPMC-0029, REC-GASTRIC-EPMC-0030",
+    "complications": null,
+    "prognosis": null,
+    "followup": null,
+    "prevention": null,
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "links": {
+    "symptoms": [],
+    "drugs": [
+      "TRASTUZUMAB",
+      "CAPECITABINE",
+      "FLUOROURACIL",
+      "TISLELIZUMAB",
+      "DOCETAXEL",
+      "RAMUCIRUMAB"
+    ],
+    "checks": [],
+    "diseases": null,
+    "genes": null,
+    "biomarkers": [
+      "HER2",
+      "PD-L1"
+    ],
+    "guidelines": [
+      "DOC-GASTRIC-EPMC-001"
+    ]
+  },
+  "drug_basis_note": "drugs 全部依据药品说明书 cancer_types 含 gastric（TRASTUZUMAB/CAPECITABINE/FLUOROURACIL/TISLELIZUMAB/DOCETAXEL/RAMUCIRUMAB）；guideline_use_cancers 字段在该 6 条中均为空，无第二依据。",
+  "section_gaps": [
+    "epidemiology/etiology/pathophysiology/pathology_subtypes/symptoms/signs/workup/diagnosis/differential/complications/prognosis/followup/prevention/screening/patient_education/care_seeking: 32 条已入库 REC 均为治疗/分期推荐结论，无对应章节证据，不填充",
+    "overview: 仅逐字引用 DOC 英文摘要，未做中文改写"
+  ],
+  "sources": [
+    "Japanese gastric cancer treatment guidelines 2025 (7th edition)"
+  ],
+  "version": "v1",
+  "profile_version": "2026.11-rule-v1",
+  "last_updated": "2026-11-02",
+  "annotation": {
+    "annotator": "rule-assemble build_profiles.py（0 token，无 LLM）",
+    "date": "2026-11-02",
+    "status": "draft",
+    "note": "treatment/staging 节全部逐字引自 REC recommendation_text（32/32 全覆盖）；SoE/共识率原样透出。patient_version 于 2026-11-03 由 DeepSeek 按既有事实白话改写（3 节），逐条保留【来源】标注，数字一致性已机检。",
+    "icd10_note": "C16.9/M8010/3 为标准编码标识（沿用 DIS-LUNG-001 的 M8010/3 惯例），非医学结论"
+  },
+  "overview_text": "AbstractThe 7th edition of the Gastric Cancer Treatment Guidelines was published in March 2025 covering new evidences. Following the format of the previous edition, this guideline consists of a text-based “Treatment” section and a “Clinical Questions” section that includes recommendations and explanations for clinical questions. The Treatment section describes the established standard treatments for gastric cancer, including surgery, endoscopic resection, and chemotherapy. The Clinical Questions section is based on a literature search and evaluation by the independent systematic review team. This allows for evidence-based responses to clinical issues and also presents future research topics in gastric cancer treatment.Keyword: Treatment guidelines, Surgery, Endoscopic resection, Chemotherapy, Evidence-based medicine",
+  "symptoms": [],
+  "symptom_early": [],
+  "symptom_late": [],
+  "signs": [],
+  "pathology_subtypes": [],
+  "stages": [],
+  "treatment_methods": [
+    "手术",
+    "化疗",
+    "免疫治疗",
+    "放疗",
+    "靶向治疗"
+  ],
+  "treatment_methods_note": "由 REC 文本字面关键词映射（gastrectomy-resection-surgery/chemotherapy/immune checkpoint/radiation/trastuzumab-ramucirumab），非语义判断"
+}

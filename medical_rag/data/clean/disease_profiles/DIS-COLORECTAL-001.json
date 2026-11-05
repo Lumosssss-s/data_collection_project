@@ -1,0 +1,196 @@
+{
+ "disease_id": "DIS-COLORECTAL-001",
+ "name_canonical": "结直肠癌",
+ "synonyms": [
+  "大肠癌",
+  "colorectal cancer",
+  "CRC"
+ ],
+ "name_en": "Colorectal cancer",
+ "pinyin": "jiezhichangai",
+ "icd10": "C18.9",
+ "icd_o3": "M8010/3",
+ "category": "primary_cancer",
+ "body_system": "消化系统",
+ "departments": [
+  "肿瘤内科",
+  "胃肠外科",
+  "消化内科"
+ ],
+ "department": [
+  "肿瘤内科",
+  "胃肠外科",
+  "消化内科"
+ ],
+ "cancer_type": "colorectal",
+ "sections": {
+  "overview": "（本节依据 kgdrug 2018 科普资料改写，数据与表述可能过时，仅供背景参考）\n大肠癌是指大肠粘膜上皮在环境或遗传等多种致癌因素作用下发生的恶性病变，预后不良，死亡率较高，是我国常见的恶性肿瘤之一；由粘膜上皮发生的恶性肿瘤统称为大肠癌，为胃肠道最常见的恶性肿瘤，起源于间叶组织者称为肉瘤，约占大肠恶性病变的1%。手术切除后的5年生存率平均可达40%～60%，早期发现、早期诊断、早期治疗以及开展规范化的手术治疗仍是提高大肠癌疗效的关键。【来源 kgdrug 2018 科普库】",
+  "epidemiology": "结直肠癌是全球第三大癌症相关死亡原因，其发病率上升及致癌过程年轻化趋势部分归因于生活方式特征【来源 REC-COLORECTAL-EPMC-0001】。在遗传易感方面，遗传性乳腺癌和卵巢癌的致病基因BRCA1与BRCA2在结直肠癌患者中各检出约1%，PALB2、BRIP1、NBN与RAD51D的检出率合计约3%【来源 REC-COLORECTAL-EPMC-0458】。基于结直肠癌患者胚系多基因面板检测（MGPT）的研究显示，家族性腺瘤性息肉病（FAP）约占0.5%，Lynch综合征约占3%，ATM、CHEK2、MUTY等基因的胚系致病性变异亦有检出【来源 REC-COLORECTAL-EPMC-0457】。此外，关于体力活动与已切除结肠癌患者临床结局改善之间直接因果关系的高级别证据，以及运动量、强度等相关数据，目前仍在积累中【来源 REC-COLORECTAL-EPMC-0004】。",
+  "etiology": "（本节依据 kgdrug 2018 科普资料改写，数据与表述可能过时，仅供背景参考）\n大肠癌的发生是结肠黏膜上皮受遗传和环境多种因素作用、导致多基因改变的结果。流行病学研究提示，大肠癌可能的病因与社会经济发展、生活方式改变，尤其与膳食结构改变密切相关，并与环境、遗传等因素相关。饮食因素被认为极为重要：70%～90%的肿瘤发病与环境因素和生活方式有关，其中40%～60%的环境因素在一定程度上与饮食、营养有关。高脂肪饮食方面，高发区人群每日脂肪摄入量高于中、低发区，发病率可相差数倍；动物实验亦提示高脂肪摄入可增加大肠癌危险性，使肿瘤出现更早、恶性程度和转移率增加、存活时间缩短。上述资料来自未经医学审核的科普库，证据等级有限【来源 kgdrug 2018】。",
+  "pathophysiology": null,
+  "pathology_subtypes": "病理分型方面，对于早期结直肠癌，多项单中心及多中心前瞻性研究已证实，内镜黏膜下剥离术（ESD）适用于黏膜内病变≥20 mm、分期至 T1a 且无组织学危险因素的早期癌【来源 REC-COLORECTAL-EPMC-0057】。分子及遗传性分型方面，息肉病综合征按遗传方式与致病基因分类，包括 AXIN2 相关息肉病（常染色体显性，致病基因 AXIN2，结直肠息肉<100 枚，病理为腺瘤）【来源 REC-COLORECTAL-EPMC-0439】；另有 ARNTHL1 相关息肉病（遗传方式未标注，致病基因 ARNTHL1，结直肠息肉>1 且<100 枚，病理为腺瘤，结直肠癌风险>20%，可伴乳腺癌、子宫内膜癌、膀胱癌、头颈鳞癌及皮肤癌等肠外肿瘤）【来源 REC-COLORECTAL-EPMC-0439】。遗传性结直肠癌（HCRC）诊断第一步为基于临床信息的风险评估，包括早发等临床特征；微卫星不稳定（MSI）为相关分子检测指标【来源 REC-COLORECTAL-EPMC-0482】。",
+  "symptoms_early": "（本节依据 kgdrug 2018 科普资料改写，数据与表述可能过时，仅供背景参考）\n结直肠癌早期症状常不典型，据科普资料，常见表现包括便血、腹痛、便秘、腹泻及腹部肿块，其中便血可表现为血与粪便混合【来源 kgdrug 2018】。上述为一般人群科普性描述，非特定分期或循证等级证据，出现相关症状应及时就医评估。",
+  "symptoms_late": null,
+  "signs": null,
+  "workup": null,
+  "diagnosis": null,
+  "differential": null,
+  "staging": "结直肠癌分期相关推荐主要涉及Ⅱ期与Ⅲ期结肠癌的辅助治疗决策路径，指南以流程图形式分别给出Ⅱ期（Figure 1）和Ⅲ期（Figure 2）结肠癌的辅助治疗算法【来源 REC-COLORECTAL-EPMC-0031】【来源 REC-COLORECTAL-EPMC-0034】。在证据层面，加拿大癌症试验组Ⅲ期CHALLENGE试验纳入962例已接受标准辅助化疗后完成治疗、经切除的Ⅲ期或高危Ⅱ期结肠癌患者进行随机分组【来源 REC-COLORECTAL-EPMC-0005】；该研究主要终点为无病生存期（DFS），定义为直至结肠癌复发、任何来源的新原发癌或任何原因死亡【来源 REC-COLORECTAL-EPMC-0015】。上述信息界定了高危Ⅱ期与Ⅲ期结肠癌人群及DFS终点，但摘录未提供具体分期定义、分期检查方法或各期治疗药物与剂量，故本节不对分期技术细节及用药方案作补充。",
+  "treatment": "对于已切除的局限性结肠癌患者，应鼓励其保持健康生活方式，包括每周进行相当于10 MET-hours的运动、戒烟及避免过量饮酒【来源 REC-COLORECTAL-EPMC-0044】。医护人员应向已切除的III期或高危II期结肠癌患者明确告知其参与结构化运动项目的适用性，并说明相关基础设施安排【来源 REC-COLORECTAL-EPMC-0040】。已切除的III期或高危II期结肠癌患者应被告知，现有证据提示结构化运动项目可带来生存获益（证据等级I，A）【来源 REC-COLORECTAL-EPMC-0039】。加拿大癌症试验组III期CHALLENGE试验随机纳入962例已完成标准辅助化疗的已切除III期或高危II期结肠癌患者【来源 REC-COLORECTAL-EPMC-0005】。",
+  "complications": "（本节依据 kgdrug 2018 科普资料改写，数据与表述可能过时，仅供背景参考）\n结直肠癌并发症与肿瘤部位及进展程度相关。便血因病变距肛门较近，血色多呈鲜红色或暗红色，常为血、便分离，出血量较多时大便可呈棕红色、果酱样；右半结肠癌病人中肉眼可见便血者占36.5%。长期慢性失血超过机体造血代偿功能时可出现贫血。肿瘤长至相当体积或浸润肠壁肌层时，可引起肠管狭窄、肠腔变小、肠内容通过受阻，进而出现肠膨胀、体液丢失、电解质紊乱、感染和毒血症。癌灶呈深溃疡穿透肠壁时可发生穿孔。肿瘤浸润或压迫坐骨神经或闭孔神经根（腰骶丛）时，还可出现坐骨神经痛或闭孔神经痛【来源 kgdrug 2018 科普库，未经医学审核】。",
+  "prognosis": "已切除的Ⅲ期或高危Ⅱ期结肠癌患者，应告知其现有证据提示结构化运动方案可带来生存获益[I, A]【来源 REC-COLORECTAL-EPMC-0039】。对于早期、黏膜内病变≥20 mm、浸润至T1a且无组织学风险的早期癌，多项单中心及多中心前瞻性研究已予以证实【来源 REC-COLORECTAL-EPMC-0057】。结直肠癌登记处的汇总数据可提供按肿瘤部位与浸润深度统计的淋巴结转移发生率、按分期统计的治愈性切除率及5年生存率【来源 REC-COLORECTAL-EPMC-0111】。一般而言，原发灶治愈性切除后出现的淋巴结复发或腹膜复发应视为全身性疾病的一部分【来源 REC-COLORECTAL-EPMC-0130】。",
+  "followup": null,
+  "prevention": "（本节依据 kgdrug 2018 科普资料改写，数据与表述可能过时，仅供背景参考）\n调整饮食习惯和生活方式对结直肠癌预防具有重要价值，建议以低脂肪、低蛋白、高纤维素及粗制碳水化合物食物为主，增加香蕉、绿叶蔬菜、谷类等摄入比例，减少脂肪、动物蛋白及精制碳水化合物，以增加大便量、加快肠道排泄速度，缩短致癌物与结肠黏膜接触时间。同时应减少体内亚硝胺生成，如食用富含维生素C的食物、增加维生素E摄入、正确贮存蔬菜、尽可能食用新鲜肉类。减少能量摄入亦可能降低大肠癌发病率，并应减少食物中脂肪含量，尤其尽量少吃煎烤后的棕色肉类。需注意，上述内容来自未经医学审核的科普库，仅供参考【来源 kgdrug 2018】。",
+  "screening": null,
+  "patient_education": null,
+  "care_seeking": null
+ },
+ "patient_version": {
+  "overview": "大肠癌是大肠内壁细胞在环境或遗传等因素影响下发生的恶性病变。它在我国比较常见，死亡率较高。大肠癌是胃肠道最常见的恶性肿瘤。早期发现、早期治疗和规范手术，是提高疗效的关键。",
+  "epidemiology": "结直肠癌是全球常见癌症死亡原因之一。\n发病增多和年轻化，部分与生活方式有关。\n部分患者存在遗传易感（天生更容易患病）。\nBRCA1、BRCA2等基因在患者中较少见。\n多基因检测（一次查多个相关基因）可发现少数遗传风险。\n家族性腺瘤性息肉病（一种遗传性息肉病）约占少数。\nLynch综合征（一种遗传性癌症易感综合征）也占少数。\n体力活动能否改善已手术患者的结局，证据仍在积累。",
+  "etiology": "大肠癌（大肠部位的恶性肿瘤）发生与遗传和环境等多因素有关。\n社会经济、生活方式和膳食结构改变可能影响发病。\n饮食因素很重要，部分环境因素与饮食营养有关。\n高脂肪饮食（脂肪摄入较多）可能增加风险。\n以上来自科普资料，证据有限，仅供背景参考。",
+  "pathophysiology": null,
+  "pathology_subtypes": "早期结直肠癌若病变较浅、无危险因素，可经内镜做微创剥离。息肉病综合征与基因有关，可能遗传给家人。部分类型肠道息肉多，还会增加乳腺、子宫等风险。遗传性肠癌先看家族史和发病年龄，再查微卫星不稳定等指标。",
+  "symptoms_early": "结直肠癌早期症状常不明显。\n可能有大便带血、肚子痛、便秘或腹泻。\n大便带血时，血可能和粪便混在一起。\n这些只是科普说法，不代表一定有病。\n有这些表现要尽快去医院评估。",
+  "symptoms_late": null,
+  "signs": null,
+  "workup": null,
+  "diagnosis": null,
+  "differential": null,
+  "staging": "结直肠癌分期会影响后续治疗选择。\n医生常按二期和三期结肠癌分别考虑辅助治疗（术后帮助降低复发风险的治疗）。\n有研究纳入已手术并完成标准辅助化疗的患者。\n研究关注无病生存期（从治疗到复发、新发癌或死亡的时间）。\n具体分期检查和用药方案需由医生结合个人情况说明。",
+  "treatment": "结肠癌术后患者应保持健康生活。每周运动量相当于10代谢当量小时（一种衡量运动量的单位）。同时要戒烟，避免过量饮酒。医护人员应告诉已切除肿瘤的III期或高危II期患者，他们适合参加有组织的运动项目。还应说明相关场地和安排。现有证据提示，结构化运动（有计划的规律锻炼）可能带来生存获益。加拿大一项III期试验纳入了962例患者。这些患者已切除肿瘤，并完成了标准辅助化疗（术后化疗）。",
+  "complications": "结直肠癌的不适，和肿瘤位置、进展有关。\n便血多因离肛门近，颜色偏鲜红或暗红。\n血和大便常分开，出血多时大便可呈果酱样。\n右半结肠癌中，肉眼可见便血者约占36.5%。\n长期慢性失血可能引起贫血（血色不足）。\n肿瘤变大或侵犯肠壁时，肠腔可能变窄。\n肠内容物通过受阻，可能引起肠胀、脱水等。\n电解质紊乱指体内盐分平衡被打乱。\n肿瘤形成深溃疡并穿透肠壁时，可能穿孔。\n压迫腰骶丛神经时，可能引起坐骨神经痛等。",
+  "prognosis": "结肠癌术后处于三期或有较高风险二期的患者，可了解规律运动（按计划坚持锻炼）可能帮助延长生存。\n早期且病变很浅、范围较大的情况，已有研究提供参考。\n登记数据能按肿瘤位置和深度，汇总淋巴结转移（癌细胞跑到淋巴结）比例等信息。\n原发肿瘤切除后若淋巴结或腹膜（腹腔内壁）再出现病灶，通常按全身情况看待。",
+  "followup": null,
+  "prevention": "调整饮食和生活方式有助于预防结直肠癌。\n建议多吃低脂肪、低蛋白、高纤维素食物（帮助排便的粗纤维）。\n可增加香蕉、绿叶蔬菜和谷类摄入。\n少吃脂肪、动物蛋白和精制碳水（如白米白面）。\n这样能增加大便量，加快肠道排出。\n缩短致癌物与肠黏膜接触时间。\n减少体内亚硝胺生成（某些不新鲜食物中的有害物）。\n可吃富含维生素C的食物，增加维生素E摄入。\n蔬菜要正确贮存，肉类尽量吃新鲜的。\n减少能量摄入也可能有帮助。\n少吃煎烤后的棕色肉类。\n以上来自科普资料，仅供参考。",
+  "screening": null,
+  "patient_education": null,
+  "care_seeking": null
+ },
+ "section_gaps": [
+  "pathophysiology: 无可靠来源（指南/说明书未覆盖）",
+  "symptoms_late: 无可靠来源（指南/说明书未覆盖）",
+  "signs: 无可靠来源（指南/说明书未覆盖）",
+  "differential: 无可靠来源（指南/说明书未覆盖）",
+  "followup: 无可靠来源（指南/说明书未覆盖）",
+  "patient_education: 无可靠来源（指南/说明书未覆盖）",
+  "care_seeking: 无可靠来源（指南/说明书未覆盖）",
+  "workup: 现有摘录为遗传性结直肠癌诊断流程，与一般检查评估不符（LLM 判定摘录不匹配，待补充来源）",
+  "diagnosis: 现有摘录为遗传性结直肠癌诊断流程，与一般诊断不符（LLM 判定摘录不匹配，待补充来源）",
+  "screening: 现有摘录为 Lynch 综合征家系标准，与人群筛查不符（LLM 判定摘录不匹配，待补充来源）"
+ ],
+ "links": {
+  "symptoms": [
+   "便血",
+   "腹痛",
+   "便秘",
+   "腹泻",
+   "腹部肿块",
+   "便血且血与粪便混合"
+  ],
+  "drugs": [
+   "BEVACIZUMAB",
+   "CAPECITABINE",
+   "CETUXIMAB",
+   "FLUOROURACIL",
+   "IRINOTECAN",
+   "OXALIPLATIN",
+   "PANITUMUMAB",
+   "PEMBROLIZUMAB",
+   "REGORAFENIB"
+  ],
+  "checks": [],
+  "diseases": [],
+  "guidelines": [
+   "DOC-COLORECTAL-EPMC-001",
+   "DOC-COLORECTAL-EPMC-002",
+   "DOC-COLORECTAL-EPMC-003"
+  ],
+  "genes": [
+   "EGFR 突变",
+   "ALK 融合",
+   "KRAS 突变"
+  ],
+  "biomarkers": [
+   "腺癌",
+   "鳞癌",
+   "MSI-H/dMMR",
+   "EGFR 突变",
+   "ALK 融合",
+   "KRAS 突变"
+  ]
+ },
+ "symptom_early": [
+  "便血",
+  "腹痛",
+  "便秘",
+  "腹泻",
+  "腹部肿块",
+  "便血且血与粪便混合"
+ ],
+ "symptom_late": [],
+ "signs": [],
+ "pathology_subtypes": [
+  "腺癌",
+  "鳞癌",
+  "MSI-H/dMMR",
+  "EGFR 突变",
+  "ALK 融合",
+  "KRAS 突变"
+ ],
+ "stages": [
+  "I",
+  "II",
+  "III",
+  "IV"
+ ],
+ "treatment_methods": [
+  "手术",
+  "手术切除",
+  "化疗",
+  "放疗",
+  "靶向治疗",
+  "放化疗"
+ ],
+ "overview_text": "结直肠癌 Colorectal cancer 大肠癌是指大肠粘膜上皮在环境或遗传等多种致癌因素作用下发生的恶性病变，预后不良，死亡率较高，是我国常见的恶性肿瘤之一。其中由粘膜上皮发生的恶性肿瘤统称为大肠癌，为胃肠道最常见的恶性肿瘤。起源于间叶组织者称为肉瘤，约占大肠恶性病变的1%。手术切除后的5年生存率平均可达40%～60%，早期发现、早期诊断、早期治疗以及开展规范化的手术治疗仍是提高大肠癌疗效的关键。 · •Patients with resected localised colon cancer should be encouraged to maintain a healthy lifestyle, including exercise (10 MET-hours per week), smoking cessation, avoidance of excessive alcohol int",
+ "sources": [
+  "A4:drug_labels",
+  "LLM改写（基于指南/kgdrug 摘录，未经医学审核）",
+  "REC:REC-COLORECTAL-EPMC-0001",
+  "REC:REC-COLORECTAL-EPMC-0004",
+  "REC:REC-COLORECTAL-EPMC-0005",
+  "REC:REC-COLORECTAL-EPMC-0015",
+  "REC:REC-COLORECTAL-EPMC-0031",
+  "REC:REC-COLORECTAL-EPMC-0034",
+  "REC:REC-COLORECTAL-EPMC-0039",
+  "REC:REC-COLORECTAL-EPMC-0040",
+  "REC:REC-COLORECTAL-EPMC-0044",
+  "REC:REC-COLORECTAL-EPMC-0057",
+  "REC:REC-COLORECTAL-EPMC-0111",
+  "REC:REC-COLORECTAL-EPMC-0130",
+  "REC:REC-COLORECTAL-EPMC-0436",
+  "REC:REC-COLORECTAL-EPMC-0439",
+  "REC:REC-COLORECTAL-EPMC-0457",
+  "REC:REC-COLORECTAL-EPMC-0458",
+  "REC:REC-COLORECTAL-EPMC-0482",
+  "REC:REC-COLORECTAL-EPMC-0491",
+  "REC:REC-COLORECTAL-EPMC-0493",
+  "REC:REC-COLORECTAL-EPMC-0512",
+  "REC:REC-COLORECTAL-EPMC-0882",
+  "kgdrug"
+ ],
+ "profile_version": "2026.10-llm-draft",
+ "last_updated": "2026-10-27",
+ "section_evidence": {
+  "overview": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n大肠癌是指大肠粘膜上皮在环境或遗传等多种致癌因素作用下发生的恶性病变，预后不良，死亡率较高，是我国常见的恶性肿瘤之一。其中由粘膜上皮发生的恶性肿瘤统称为大肠癌，为胃肠道最常见的恶性肿瘤。起源于间叶组织者称为肉瘤，约占大肠恶性病变的1%。手术切除后的5年生存率平均可达40%～60%，早期发现、早期诊断、早期治疗以及开展规范化的手术治疗仍是提高大肠癌疗效的关键。",
+  "epidemiology": "本节整理自 4 条指南推荐条目：\n· Colon cancer is the third most common cause of cancer-related death globally. 2 The reported increase in incidence and shift to early-age carcinogenesis are partly attributed to lifestyles characteris【来源 REC-COLORECTAL-EPMC-0001】\n· Furthermore, BRCA1 and BRCA2, which are causative genes for hereditary breast and ovarian cancers, have each been detected in 1% of patients, and PALB2, BRIP1, NBN, and RAD51D were detected in 3% over【来源 REC-COLORECTAL-EPMC-0458】\n· 7 High-level evidence establishing a direct causal relationship between physical activity and improved clinical outcomes for patients with resected colon cancer, as well as data on the volume, intensi【来源 REC-COLORECTAL-EPMC-0004】\n· PJS, Peutz-Jeghers syndrome\nAccording to studies of germline multi-gene panel testing (*MGPT) for CRC patients, FAP accounts for 0. 5% and Lynch syndrome for 3% of cases, with GPVs in ATM, CHEK2, MUTY【来源 REC-COLORECTAL-EPMC-0457】",
+  "etiology": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n大肠癌大肠癌的发生是结肠粘膜上皮受遗传和环境多种因素作用导致多基因改变的结果。许多大肠癌流行病学的研究表明，大肠癌可能的病因是社会经济的发展、生活方式的改变，尤其是膳食结构的改变密切相关，与环境、遗传等其他因素也存在相关性。1.饮食因素 流行病学的研究表明，在肿瘤发病中饮食因素是一种极为重要的因素，因为有70%～90%的肿瘤发病与环境因素和生活方式有关，而其中40%～60%的环境因素在一定程度上与饮食、营养有关。(1)高脂肪饮食：世界范围内的调查发现，在大肠癌高发的北美、西欧、澳大利亚等国家，人们每天进食的脂肪量在120g以上。在大肠癌发病率居中的波兰、西班牙、南斯拉夫等国家，每人每天消费的脂肪在60～120g。而在大肠癌低发的哥伦比亚、斯里兰卡、泰国等地每人每天的脂肪消费量只有20～60g。高、低发区大肠癌的发病率相差可达6倍以上。中、低发区则可相差3倍左右。大肠癌高发的美国人饮食中脂肪含量占总热量的41.8%，且以饱和脂肪为主。而大肠癌低发的日本人(大肠癌的发病率较美国低1倍左右)，其饮食中脂肪占总热量的12.2%，并以不饱和脂肪为主。我国上海市大肠癌发病率时间趋势与膳食结构的相关分析，同样也说明结肠癌发病率变化与膳食结构改变的密切相关性。如调查显示，上海市居民80年代一些主要食品人均消耗量比50年代明显增加，其中猪肉增加了3倍，禽蛋2.2倍，新鲜蔬菜1.6倍。1992年上海市区每人每天消费脂肪86.4g，在热能来源中占31.2%;郊区则分别为58.7g与22.4%。同时期上海市区男性大肠癌年龄标化发病率为21.5/10万，与国际上相当于大肠癌中发区的西班牙、波兰同时期的发病率相似。一些动物实验研究也证实，高脂肪摄入可增加患大肠癌的危险性。Reddy等用二甲肼(DMH)诱发大鼠大肠肿瘤，在含5%脂肪的饮食组诱发率为17%～36%，在含20%脂肪的饮食组为64%～67%，两组有显著性差异。结果提示给动物高脂肪饮食，可以增加大肠肿瘤的发病率，使肿瘤出现得更早，增加肿瘤的恶性程度和转移率，使肿瘤动物存活时间显著缩短。高脂肪饮食之所以会增加大肠癌的发病率，其可能的机制是：①",
+  "pathology_subtypes": "本节整理自 4 条指南推荐条目：\n· Regarding ESD, multiple single-center and multicenter prospective studies [30] have confirmed that for early stage cancers with intramucosal lesions of 20 mm or more up to T1a and no histological risk【来源 REC-COLORECTAL-EPMC-0057】\n· NA, not applicablePolyposisDisordermode of inheritanceCausative genePrevalenceNumber of colonic polypsHistologyRisk of colorectal cancerExtra-colonic polyposisExtra-colonic neoplasmsAdenomatous polypo【来源 REC-COLORECTAL-EPMC-0436】\n· ciated polyposisARNTHL1NA > 1, < 100adenoma > 20%–breast cancer, endometrial cancer, bladder cancer, HNSCC, skin cancer, etcAXIN2-associated polyposisADAXIN2NA < 100adenoma–––Hamartomatous polyposisPJ【来源 REC-COLORECTAL-EPMC-0439】\n· MSI, microsatellite instability\nStep 1: Risk assessment based on clinical information\nThe first step in the diagnosis of HCRC is risk assessment based on clinical information, including (1) early onse【来源 REC-COLORECTAL-EPMC-0482】",
+  "symptoms_early": "常见症状（kgdrug 2018 科普库）：便血、腹痛、便秘、腹泻、腹部肿块、便血且血与粪便混合",
+  "staging": "本节整理自 4 条指南推荐条目：\n· The Canadian Cancer Trials Group phase III CHALLENGE trial randomised 962 patients with resected stage III or high-risk stage II colon cancer who had completed standard adjuvant chemotherapy (ChT) to 【来源 REC-COLORECTAL-EPMC-0005】\n· Algorithms for the adjuvant treatment of stage II and stage III colon cancer are provided in Figures 1 and 2. Figure 1Adjuvant treatment of stage II colon cancer. Purple: algorithm title; blue: system【来源 REC-COLORECTAL-EPMC-0031】\n· MET-h, metabolic equivalent task-hour. The primary study endpoint was disease-free survival (DFS) until colon cancer recurrence, a new primary cancer of any origin or death from any cause. 8 Secondary【来源 REC-COLORECTAL-EPMC-0015】\n· org/guidelines/esmo-mcbs/esmo-mcbs-evaluation-forms). Figure 2Adjuvant treatment of stage III colon cancer. Purple: algorithm title; blue: systemic anticancer therapy or their combination; white: othe【来源 REC-COLORECTAL-EPMC-0034】",
+  "treatment": "本节整理自 4 条指南推荐条目：\n· •Patients with resected localised colon cancer should be encouraged to maintain a healthy lifestyle, including exercise (10 MET-hours per week), smoking cessation, avoidance of excessive alcohol intak【来源 REC-COLORECTAL-EPMC-0044】\n· •Health care professionals should clearly communicate to patients with resected stage III or high-risk stage II colon cancer their eligibility for a structured exercise programme and specify the infra【来源 REC-COLORECTAL-EPMC-0040】\n· •Patients with resected stage III or high-risk stage II colon cancer should be informed of the available evidence suggesting survival benefits from a structured exercise programme [I, A].【来源 REC-COLORECTAL-EPMC-0039】\n· The Canadian Cancer Trials Group phase III CHALLENGE trial randomised 962 patients with resected stage III or high-risk stage II colon cancer who had completed standard adjuvant chemotherapy (ChT) to 【来源 REC-COLORECTAL-EPMC-0005】\n可及药物（FDA 说明书，详见 A4）：BEVACIZUMAB、CAPECITABINE、CETUXIMAB、FLUOROURACIL、IRINOTECAN、OXALIPLATIN、PANITUMUMAB、PEMBROLIZUMAB、REGORAFENIB",
+  "complications": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n1.便血 因病变距肛门较近，血色多呈鲜红色或暗红色，且往往是血、便分离。只在出血量较多时才可见大便呈棕红色、果酱样。复旦大学附属肿瘤医院收治的右半结肠癌病人中有这种肉眼可见的便血者占36.5%。2.贫血 当长期慢性失血超过机体造血的代偿功能时，病人即可出现贫血。3.肿瘤阻塞 当肿瘤长至相当体积或浸润肠壁肌层时，可引起肠管狭窄，肠腔变小，肠内容通过受阻。肠膨胀、体液丢失、电解质紊乱、感染和毒血症4.穿孔 当癌灶呈深溃疡穿透肠壁时可发生穿孔。5.当肿瘤浸润或压迫坐骨神经或闭孔神经根(腰骶丛)时还可出现坐骨神经痛或闭孔神经痛。",
+  "prognosis": "本节整理自 4 条指南推荐条目：\n· •Patients with resected stage III or high-risk stage II colon cancer should be informed of the available evidence suggesting survival benefits from a structured exercise programme [I, A].【来源 REC-COLORECTAL-EPMC-0039】\n· Regarding ESD, multiple single-center and multicenter prospective studies [30] have confirmed that for early stage cancers with intramucosal lesions of 20 mm or more up to T1a and no histological risk【来源 REC-COLORECTAL-EPMC-0057】\n· ”\n[Aggregate data from the JSCCR colorectal cancer registry]The incidence of lymph-node metastasis by site and depth of tumor invasion, the curative resection rate by stage, and the 5-year survival ra【来源 REC-COLORECTAL-EPMC-0111】\n· (CQ20)\nComment\n[Lymph-node recurrence/peritoneal recurrence]In general, lymph node or peritoneal recurrence after curative resection of the primary lesion should be considered part of systemic disease【来源 REC-COLORECTAL-EPMC-0130】",
+  "prevention": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n1.一级预防(1)调整饮食习惯和生活方式：由于高蛋白、高脂肪、缺乏维生素A及低纤维素，饮食习惯和生活方式与结肠癌的发生有重要的关系。因此，在饮食习惯和生活方式方面应该提倡增加以高纤维的水果香蕉、绿叶蔬菜(洋白菜、青菜、土豆、红薯等)、谷类(如玉米)粗制的碳水化合物比例，减少脂肪及动物蛋白(如牛肉)及精制碳水化物的比例，增加大便量和肠道排泄速度，这样，一方面可减少肠内中性固醇及胆酸浓度，也就降低了肠内细菌的降解的致癌物质或协同致癌物质，另一方面，因大便量增加，加快了排泄速度，使上述致癌物或协同致癌物质与结肠黏膜接触时间缩短，可减少结肠癌的发病率。此外，有人认为亚硝胺类化合物中的致癌物质不仅是人类食管癌和胃癌的重要病因，也可能是结肠癌的致病因素之一，为了减少体内亚硝胺的产生，应该①食用富含维生素C的食物，以抑制体内亚硝酸胺的形成。如在吃鸡蛋及火腿时可同时喝一杯桔子汁或增加新鲜蔬菜及水果的食入。②增加维生素E摄入。③正确贮存蔬菜，减少亚硝酸盐生成途径。④尽可能食用新鲜的肉类。总之，尽管结肠癌的确切病因不十分明了，但大量的研究证实结肠癌的发生与饮食习惯和生活方式有重要的关系，应提倡低脂肪、低蛋白、高纤维素及粗制碳水化合物食物为主，多食用新鲜蔬菜及减少亚硝酸胺在体内生成，增加大便量，加速粪便的排泄，在结肠癌的预防上有重要的价值。减少、消除大肠癌的致病因素，抑制正常细胞的癌变过程。饮食调整虽然大肠癌有一定的遗传倾向，但绝大多数散发性的大肠癌与环境因素，特别是饮食因素密切相关，对饮食干预，可以降低大肠癌的发病率。①能量摄入 能量摄入与大肠癌发生有关。大部分的研究表明，总的能量摄入与大肠癌危险性有关系，无论摄入的能量是蛋白质、脂肪还是碳水化合物。减少能量的摄入有可能降低大肠癌的发病率。②脂肪与红肉 大肠癌的发生与动物脂肪和肉类密切相关，有研究表明高脂射入的妇女与低脂妇女相比大肠癌相比大肠癌风险增加32%。而肉类中摄入红肉是大肠癌发生的一个强的危险因素。减少食物中脂肪的含量，特别是尽量少吃煎烤后的棕色肉类，有助于大肠癌的发生。③水果、蔬菜和膳食纤维 纤维素能增加粪便量，稀释结肠内的致癌剂"
+ }
+}

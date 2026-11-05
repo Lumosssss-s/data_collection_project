@@ -18,6 +18,11 @@ medical_rag/eval_data/results/
 # 清洗后数据（G3 14 目录，数据交付件，体积大，不入库；由 ingest.py 只读消费）
 medical_rag/data/clean/
 
+# 例外：疾病档案是人工校对的知识资产，需可追溯，仅放行该子目录（同级其它数据仍忽略）
+!medical_rag/data/clean/
+medical_rag/data/clean/*
+!medical_rag/data/clean/disease_profiles/
+
 # 生成的图表（可重新生成）
 medical_rag/eval_data/charts/
 

@@ -1,0 +1,169 @@
+{
+  "disease_id": "DIS-COLORECTAL-003",
+  "name_canonical": "直肠癌",
+  "synonyms": [
+    "直肠恶性肿瘤",
+    "rectal cancer"
+  ],
+  "name_en": "Rectal cancer",
+  "pinyin": "zhichangai",
+  "icd10": "C20",
+  "icd_o3": "M8140/3",
+  "category": "primary_cancer",
+  "body_system": "消化系统",
+  "departments": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "department": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "cancer_type": "colorectal",
+  "sections": {
+    "overview": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n直肠癌是指位于齿状线至乙状结肠、直肠交界处之间的癌。是胃肠道中常见的恶性肿瘤发病率仅次于胃和食管癌是大肠癌的最常见部分(占60%左右)绝大多数基因病人在40岁以上30岁以下者约占15%男性较多见男女之比为2-3：1 ，直肠癌是一种生活方式病。目前，它已在癌症排行榜中跃居第二位了，所以饮食，生活方式，是癌症的祸根。",
+    "epidemiology": null,
+    "etiology": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n直肠癌(一)发病原因导致结直肠癌发生的危险因素可分为相对危险与绝对危险两类。1.饮食因素(1)脂肪、纤维素与热卡：饮食因素在结直肠癌发生中具有极其重要的地位。目前在世界范围内结直肠癌占恶性肿瘤的第2位，在西方发达国家它占第2位，而在一些不发达国家中它仅占第8位。流行病学观察和实验研究表明饮食在结直肠癌发生中具有决定性地位，脂肪消耗量的增加与结直肠癌发病率的上升是平行的，直接测定饮食脂肪的含量显示消耗脂肪量高的人群，其结直肠癌的病死率也高。从低脂肪饮食区至高脂饮食区的移民研究发现其结直肠癌的发生率与原来国家相比明显增高了。从日本移民至夏威夷的移民患结肠癌的死亡明显增加，从波兰移民至澳大利亚的移民也呈现这种病死率的增高。许多对照病例的研究均支持脂肪摄入与结直肠癌的相关性。但其他流行病学资料并不证实这种相关性，尤其在同一国家的不同地区，例如美国犹他州结肠癌的发病率比美国平均发病率低得多，而按人口每人的脂肪的消耗量则是相同的。流行病学资料之所以出现这种矛盾现象是因为没有考虑那些对抗结肠癌发生的保护性饮食因素。从北欧的一个研究发现丹麦人的结肠癌发病率明显比芬兰人高，虽然脂肪摄入是相同的，但芬兰人摄入纤维素量比丹麦人高，从而表明纤维素可能具有调节脂肪的致癌作用。最近，Willett等再次证实结肠癌的发生与动物脂肪的消耗量呈正相关。此外，最近的一个流行病学研究分析脂肪摄入与各种癌肿的关系中发现脂肪摄入与结直肠等6种癌肿的发生有肯定的关系。大多数流行病资料表明结肠癌与总的脂肪消耗量相关而不是与特殊的食物脂肪有关。但也有流行病学研究阐述脂肪类型与结肠癌关系的;一些研究认为与动物脂肪相关，另一些研究支持植物脂肪作用最大。在二甲肼(DMH)诱发的实验性结肠癌中，高浓度植物油和多不饱和脂肪膳食的动物具有较高的发病率。反之，高度多不饱和鱼油和单不饱和橄榄油则在动物的化学性诱导的结肠癌中却并无增强作用。Reddy等(1991)报道在一组化学性诱发的结肠癌实验中发现，脂肪类型、脂肪消耗量以及消耗脂肪所处的时间均对结肠癌的发生有作用。有两个报道表明单不饱和脂肪对结肠癌则起保护作用。Anti等(1992",
+    "pathophysiology": null,
+    "pathology_subtypes": "It has been reported that the rate of lymph-node metastasis is relatively low if the only risk factor is submucosal invasion of 1,000 μm or more [282]. In a study of JSCCR, when the histological type of cancer was evaluated based on the worst differentiated component rather than the predominant histological type, the rate of lymph-node metastasis in patients with SM invasion of 1,000 μm or greater and negative for all other risk factors for lymph-node metastasis was 1.3% (95% CI 0–2.4%). According to the results of a recent study, the rate of lymph-node metastasis in patients with SM invasion of 2,000 μm or more was 11.0%, and the results of a nomogram-based lymph-node metastasis risk prediction model showed that patients with SM invasion of 2,000 μm or more had a higher risk of lymph-node metastasis [283]. Although further evidence is needed, additional bowel resection should be considered when submucosal invasion is 2,000 μm or greater, even if other risk factors for lymph-node metastasis are negative.（节选，原文约 35212 字符）【来源 REC-COLORECTAL-EPMC-0336 / REC-COLORECTAL-EPMC-0337 / REC-COLORECTAL-EPMC-0335】\n\n同一指南章节的其他内容见「COLORECTAL-002/prognosis」",
+    "symptoms_early": "常见症状（kgdrug 2018 科普库）：便血、便秘、腹泻、便血且血与粪便混合、阴道内出现粪质和血性分泌",
+    "symptoms_late": null,
+    "signs": null,
+    "workup": null,
+    "diagnosis": null,
+    "differential": null,
+    "staging": null,
+    "treatment": "Endoscopic treatment The most reliable treatment for prevention of death from CRC is prophylactic colectomy before the development of cancer. However, technical advances have made it possible to resect many colorectal polyps safely during colonoscopy. A single-center trial investigated the outcomes in patients with sparse FAP who declined surgery and were managed by regular endoscopic polypectomy and follow-up [92]. No cases of perforation or severe bleeding were observed during colonoscopy, and no cases of advanced cancer were detected during follow-up. A subsequent multicenter, prospective, exploratory Phase I/II study (J-FAPP III) evaluated the safety and efficacy of intensive downstaging polypectomy [93]. Colonoscopies were performed until all adenomas ≥ 10 mm were resected, followed by removal of adenomas ≥ 5 mm and, if possible, those that were smaller. Of 166 patients who had not undergone colectomy, 150 (90.4%) completed the 5-year intervention period without surgery.（节选，原文约 10723 字符）（本节含指南表格 2 张，未转录）【来源 REC-COLORECTAL-EPMC-0641】\n\nSurgery Surgical options for CRC in patients with Lynch syndrome include the following:oResection equivalent to that for sporadic CRCoExtended surgery (total colectomy, proctocolectomy)The extent of resection is typically equivalent to that for sporadic CRC in Lynch syndrome. When selecting the surgical approach for Lynch syndrome, it is important to consider the location of the primary cancer, the gene responsible, the frequency and timing of colorectal tumors, and other risk factors. Currently, risk stratification for multiple CRCs is inadequate, and no systematic recommendation exists for a specific surgical approach. In Japan, the surgical approach for initial and metachronous CRC is individualized, taking into account the patient’s age, comorbidities, and other factors. The need for postoperative surveillance and its limitations should be explained in detail and the patient’s preferences ascertained before proceeding with surgery [207, 352].In Western countries, extended surgery, such as total colectomy for colon cancer and proctocolectomy for rectal cancer, is recommended for patients with Lynch syndrome and MLH1 or MSH2 variants.（节选，原文约 13703 字符）【来源 REC-COLORECTAL-EPMC-0945 / REC-COLORECTAL-EPMC-0941】\n\n（其余 1 个来源节点未展开，可在下方来源表回溯）",
+    "complications": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n1.结肠梗阻 是直肠癌的晚期并发症之一，可为突然发生，也可为逐渐发生。多由肿瘤增生阻塞肠腔或肠腔缩窄所致，也可由于肿瘤处发生急性炎症、充血、水肿、出血等所致。2.肠穿孔 直肠癌并发穿孔有2种情况：穿孔发生在癌肿局部;近侧结肠穿孔，系癌肿梗阻的并发症。穿孔发生后，临床可表现为弥漫性腹膜炎、局限性腹膜炎或局部脓肿形成。弥漫性腹膜炎常伴有中毒性休克，病死率极高。直肠癌的预后与患者的性别和年龄无关，但与其病程、癌肿浸润范围、分化程度和有无转移则密切相关。",
+    "prognosis": "本节整理自 4 条指南推荐条目：\n· Radiotherapy encompasses adjuvant therapy aimed at preventing postoperative recurrence of rectal cancer, reducing tumor burden before surgery, and preserving anal function, as well as palliative radio【来源 REC-COLORECTAL-EPMC-0244】\n· In a JSCCR survey of 2,125 cases, the 5-year survival rate after ISR was equivalent to that for lower rectal cancer cases in the JSCCR colorectal cancer registry, but the 5-year local recurrence rate 【来源 REC-COLORECTAL-EPMC-0098】\n· Immune checkpoint inhibitors are highly effective in MSI-H/dMMR locally advanced rectal cancer [338], and clinical trials are ongoing. Although there is no disadvantage to biomarker testing before per【来源 REC-COLORECTAL-EPMC-0336】\n· A meta-analysis of non-randomized studies reported that no difference in the local recurrence rate between TaTME and conventional laparoscopic rectal surgery (3. 5% for TaTME cases and 2. 2% for lapar【来源 REC-COLORECTAL-EPMC-0103】",
+    "followup": null,
+    "prevention": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n由于直肠癌的病因还不完全明确，所以至目前还没有特殊的预防办法。下面列举的预防措施，主要是为了减少癌变机会和早期发现病人、早期治疗。(1) 积极防治直肠息肉、肛瘘、肛裂、溃疡性大肠炎及慢性肠道炎症的刺激;对多发性息肉、乳头状息肉，一旦诊断明确应早期手术切除，以减少癌变的机会。(2) 饮食宜多样化，养成良好的饮食习惯，不偏食，不挑食，不要长期食用高脂肪、高蛋白饮食，经常吃些含有维生素和纤维素的新鲜蔬菜，可能对预防癌症有重要作用。(3) 防止便秘，保持大便通畅。(4) 高度重视定期的防癌普查工作，随时注意自我检查提高警惕性。发现“警戒信号”后，及时进行诊治，做到早发现、早治疗，以提高直肠癌的生存率。",
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "patient_version": {
+    "overview": "直肠癌是指位于齿状线至乙状结肠、直肠交界处之间的癌。资料称它是胃肠道常见的恶性肿瘤，发病率仅次于胃和食管癌，是大肠癌中最常见的部分，约占六成。绝大多数病人在 40 岁以上，30 岁以下者约占 15%，男性较多见，男女之比约 2～3∶1。资料把直肠癌称为一种“生活方式病”，认为饮食与生活方式是重要背景因素。以上为 2018 年科普资料表述，数据较早，仅供参考。原文没有说明这些比例来自哪一年、哪一人群，也不能据此推算个人风险；分型、分期与治疗方案均未在概述中展开。本节只交代这是什么病、长在哪里，其余内容请看后面的分节。\n【来源 kgdrug 2018 科普库】",
+    "epidemiology": null,
+    "etiology": "资料把结直肠癌的危险因素分为相对危险与绝对危险两类，其中饮食因素被放在首位。脂肪方面，脂肪消耗量的增加与结直肠癌发病率的上升是平行的；直接测定饮食脂肪含量显示，脂肪消耗量高的人群病死率也高。移民研究也支持这一点：从低脂肪饮食区移居到高脂饮食区的人群，发病率比原来国家明显增高，例如日本移民到夏威夷、波兰移民到澳大利亚后病死率升高。不过资料也指出，同一国家不同地区存在矛盾现象，例如美国犹他州发病率明显低于全国平均，而人均脂肪消耗量相同；作者认为这是因为没有把保护性饮食因素算进去。北欧研究显示，丹麦人结肠癌发病率明显高于芬兰人，两地脂肪摄入相同，但芬兰人纤维素摄入更高，提示纤维素可能调节脂肪的致癌作用。另有研究认为结肠癌与总脂肪消耗量相关，而非某种特定食物脂肪；动物实验提示高浓度植物油和多不饱和脂肪膳食的动物发病率较高，高度多不饱和鱼油和单不饱和橄榄油在化学诱导的动物结肠癌中未见增强作用。\n【来源 kgdrug 2018 科普库】",
+    "pathophysiology": null,
+    "pathology_subtypes": "指南指出，若唯一危险因素是黏膜下浸润达到1,000 μm以上，淋巴结转移率相对较低。JSCCR研究在评估癌的组织学类型时采用最差分化的成分而非主要类型：黏膜下浸润≥1,000 μm且其他淋巴结转移危险因素均为阴性的患者，淋巴结转移率为1.3%（95%置信区间0–2.4%）。近期研究显示，黏膜下浸润≥2,000 μm者淋巴结转移率为11.0%，列线图风险预测模型也提示其风险更高。尽管证据仍需积累，但当黏膜下浸润≥2,000 μm时，即使其他危险因素阴性，也应考虑追加肠切除。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0336 / REC-COLORECTAL-EPMC-0337 / REC-COLORECTAL-EPMC-0335】",
+    "symptoms_early": "资料列出的常见表现是：便血、便秘、腹泻、便血且血与粪便混合，以及阴道内出现粪质和血性分泌物。最后一条多见于肿瘤侵犯阴道时，属于较晚的表现，并非早期信号。原文只列出症状名称，没有给出发生频率或持续时间，这里不作补充。出现这些情况不等于就是直肠癌，但持续存在或反复出现时，应尽早就医查明原因。最后一项涉及女性生殖道，原文没有解释成因，本节也不代为推断，出现此类情况应同时告知妇科与肛肠科医生。原文只列名称、不列频率，说明它更像一张需要留意什么的清单，而不是筛查标准。这六项按原文顺序排列，本版没有重新排序，也没有增补原文之外的症状。\n【来源 kgdrug 2018 科普库】",
+    "symptoms_late": null,
+    "signs": null,
+    "workup": null,
+    "diagnosis": null,
+    "differential": null,
+    "staging": null,
+    "treatment": "内镜治疗：预防结直肠癌死亡最可靠的办法，是在癌变之前做预防性结肠切除。随着技术进步，很多结直肠息肉已经可以在结肠镜下安全切除。一项单中心试验观察了拒绝手术、改用定期内镜息肉切除加随访的稀疏型FAP患者：检查过程中没有穿孔或严重出血，随访中也没有发现进展期癌。随后一项多中心、前瞻性、探索性I/II期研究（J-FAPP III）评估了强化降期息肉切除术：166例未做结肠切除的患者中，150例（90.4%）完成5年干预期且始终没有手术。外科治疗：Lynch综合征的手术方式有两种，一是与散发性病例相当的切除，二是扩大切除（全结肠切除、直肠结肠切除）。选术式要考虑原发癌部位、责任基因、肿瘤出现的频率和时序等。日本对首诊和异时癌按年龄、合并症个体化决定，术前要说明术后监测的必要性和局限。西方国家对携带MLH1或MSH2变异者推荐扩大切除。本节含指南表格2张，未转录。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0641 / REC-COLORECTAL-EPMC-0945 / REC-COLORECTAL-EPMC-0941】",
+    "complications": "资料列出两类晚期并发症。一是结肠梗阻，可为突然发生，也可逐渐发生，多由肿瘤增生阻塞肠腔或肠腔缩窄引起，也可因肿瘤处急性炎症、充血、水肿、出血所致。二是肠穿孔，分两种情况：穿孔发生在癌肿局部，或近侧结肠因癌肿梗阻而穿孔。穿孔后可表现为弥漫性腹膜炎、局限性腹膜炎或局部脓肿形成，其中弥漫性腹膜炎常伴中毒性休克，病死率极高。资料还指出，直肠癌的预后与性别和年龄无关，而与病程、癌肿浸润范围、分化程度和有无转移密切相关。原文未给出两类并发症各自的发生率，也没有说明哪些情况更容易出现；本节按原文转述，不作因果推断。\n【来源 kgdrug 2018 科普库】",
+    "prognosis": "资料对放疗的界定是：包括以预防直肠癌术后复发为目的的辅助放疗、术前减少肿瘤负荷、保留肛门功能，以及姑息性放疗。一项日本结直肠癌学会的调查纳入 2,125 例，结果显示接受括约肌间切除术者的 5 年生存率与登记资料中低位直肠癌病例相当；该句在 5 年局部复发率处被截断，具体数值未在本节呈现。免疫检查点抑制剂对 MSI-H/dMMR 的局部晚期直肠癌高度有效。另一项针对非随机研究的汇总分析显示，经肛全直肠系膜切除与常规腹腔镜直肠手术的局部复发率没有差别（前者 3.5%，后者 2.2%），原文该句在此处截断。\n【来源 REC-COLORECTAL-EPMC-0244；REC-COLORECTAL-EPMC-0098；REC-COLORECTAL-EPMC-0336；REC-COLORECTAL-EPMC-0103】",
+    "followup": null,
+    "prevention": "资料开篇即说明：直肠癌的病因还不完全明确，目前没有特殊的预防办法，下面措施主要是减少癌变机会、争取早发现早治疗。可采纳的部分有四条：一是积极防治直肠息肉、肛瘘、肛裂、溃疡性大肠炎及慢性肠道炎症刺激，对多发性息肉、乳头状息肉一旦诊断明确应早期手术切除，以减少癌变机会；二是饮食多样化，养成良好饮食习惯，不偏食挑食，不长期食用高脂肪、高蛋白饮食，经常吃含维生素和纤维素的新鲜蔬菜，可能对预防癌症有重要作用；三是防止便秘，保持大便通畅；四是重视定期防癌普查，注意自我检查，发现“警戒信号”后及时诊治。\n【来源 kgdrug 2018 科普库】",
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "section_gaps": [
+    "epidemiology: 无可靠来源（指南/说明书未覆盖）",
+    "pathophysiology: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_late: 无可靠来源（指南/说明书未覆盖）",
+    "signs: 无可靠来源（指南/说明书未覆盖）",
+    "workup: 无可靠来源（指南/说明书未覆盖）",
+    "diagnosis: 无可靠来源（指南/说明书未覆盖）",
+    "differential: 无可靠来源（指南/说明书未覆盖）",
+    "staging: 无可靠来源（指南/说明书未覆盖）",
+    "followup: 无可靠来源（指南/说明书未覆盖）",
+    "screening: 无可靠来源（指南/说明书未覆盖）",
+    "patient_education: 无可靠来源（指南/说明书未覆盖）",
+    "care_seeking: 无可靠来源（指南/说明书未覆盖）"
+  ],
+  "links": {
+    "symptoms": [
+      "便血",
+      "便秘",
+      "腹泻",
+      "便血且血与粪便混合",
+      "阴道内出现粪质和血性分泌"
+    ],
+    "drugs": [
+      "BEVACIZUMAB",
+      "CAPECITABINE",
+      "CETUXIMAB",
+      "FLUOROURACIL",
+      "IRINOTECAN",
+      "OXALIPLATIN",
+      "PANITUMUMAB",
+      "PEMBROLIZUMAB",
+      "REGORAFENIB"
+    ],
+    "checks": [],
+    "diseases": [],
+    "guidelines": [
+      "DOC-COLORECTAL-EPMC-001",
+      "DOC-COLORECTAL-EPMC-002",
+      "DOC-COLORECTAL-EPMC-003"
+    ],
+    "genes": [
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ],
+    "biomarkers": [
+      "腺癌",
+      "鳞癌",
+      "MSI-H/dMMR",
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ]
+  },
+  "symptom_early": [
+    "便血",
+    "便秘",
+    "腹泻",
+    "便血且血与粪便混合",
+    "阴道内出现粪质和血性分泌"
+  ],
+  "symptom_late": [],
+  "signs": [],
+  "pathology_subtypes": [
+    "腺癌",
+    "鳞癌",
+    "MSI-H/dMMR",
+    "EGFR 突变",
+    "ALK 融合",
+    "KRAS 突变"
+  ],
+  "stages": [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ],
+  "treatment_methods": [
+    "手术",
+    "手术切除",
+    "化疗",
+    "放疗",
+    "靶向治疗",
+    "放化疗"
+  ],
+  "overview_text": "直肠癌 Rectal cancer 直肠癌是指位于齿状线至乙状结肠、直肠交界处之间的癌。是胃肠道中常见的恶性肿瘤发病率仅次于胃和食管癌是大肠癌的最常见部分(占60%左右)绝大多数基因病人在40岁以上30岁以下者约占15%男性较多见男女之比为2-3：1 ，直肠癌是一种生活方式病。目前，它已在癌症排行榜中跃居第二位了，所以饮食，生活方式，是癌症的祸根。 · Colorectal cancer almost preventedPreservation of natural anal functionGood bowel functionRelatively easy surgical techniqueLower complication rate than that of IPAADisadvantagesDeteriorated body im",
+  "sources": [
+    "A4:drug_labels",
+    "REC:REC-COLORECTAL-EPMC-0098",
+    "REC:REC-COLORECTAL-EPMC-0103",
+    "REC:REC-COLORECTAL-EPMC-0244",
+    "REC:REC-COLORECTAL-EPMC-0335",
+    "REC:REC-COLORECTAL-EPMC-0336",
+    "REC:REC-COLORECTAL-EPMC-0337",
+    "REC:REC-COLORECTAL-EPMC-0641",
+    "REC:REC-COLORECTAL-EPMC-0941",
+    "REC:REC-COLORECTAL-EPMC-0945",
+    "REC:REC-COLORECTAL-EPMC-0951",
+    "kgdrug"
+  ],
+  "profile_version": "2026.10-draft",
+  "last_updated": "2026-10-27"
+}

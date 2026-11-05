@@ -1,0 +1,162 @@
+{
+  "disease_id": "DIS-COLORECTAL-006",
+  "name_canonical": "结直肠腺瘤性息肉",
+  "synonyms": [
+    "腺瘤性息肉",
+    "结直肠腺瘤",
+    "adenomatous polyp"
+  ],
+  "name_en": "Colorectal adenomatous polyp",
+  "pinyin": "jiezhichangxianliu",
+  "icd10": "D12.6",
+  "icd_o3": "M8140/0",
+  "category": "precancerous_lesion",
+  "body_system": "消化系统",
+  "departments": [
+    "消化内科",
+    "胃肠外科"
+  ],
+  "department": [
+    "消化内科",
+    "胃肠外科"
+  ],
+  "cancer_type": "colorectal",
+  "sections": {
+    "overview": null,
+    "epidemiology": null,
+    "etiology": null,
+    "pathophysiology": null,
+    "pathology_subtypes": "Hereditary colorectal cancers (HCRCs) are disorders for which causative genes have been identified that increase the risk of colorectal cancer (CRC). In HCRCs, the mode of inheritance, density of colorectal polyps, histological type, risk of CRC, and extra-colorectal manifestations vary depending on the causative gene. Table 4 summarizes the molecular genetic characteristics and clinicopathological features of the representative HCRCs. Table 4Genetic and clinical characteristics of representative hereditary colorectal cancers.（节选，原文约 3543 字符）（本节含指南表格 2 张，未转录）【来源 REC-COLORECTAL-EPMC-0436 / REC-COLORECTAL-EPMC-0439】\n\nCRCs with MMR deficiency have several histological features. The revised Bethesda guidelines [295] list the following four characteristics:Tumor-infiltrating lymphocytesMedullary growthMucinous and signet-ring cell differentiationA Crohn’s-like lymphocytic reaction (Fig. 18).However, these histopathological features are not specific to CRC in patients with Lynch syndrome and are also commonly observed in sporadic MMR-deficient CRC [304].In a Japanese study, IHC testing of colorectal tumors from patients with Lynch syndrome identified MMR deficiency in 68 (79%) of 89 cases, regardless of degree of atypia, suggesting that MMR deficiency precedes adenoma formation [305].Fig. 18Histologic characteristics of MSI-H colorectal cancer. A Tumor-infiltrating lymphocytes. Numerous intra-epithelial lymphocytes showing clear halos. B Medullary carcinoma. Tumor showing a solid growth pattern without a glandular structure. C Mucinous carcinoma. Prominent extracellular mucin. D Crohn’s-like lymphocytic reaction. Characterized by peritumoral lymphocytic aggregates. MSI-H, high frequency of microsatellite instability CRCs with MMR deficiency have several histological features.（节选，原文约 1929 字符）【来源 REC-COLORECTAL-EPMC-0887】\n\nGuidelines for management of duodenal adenomas according to the modified Spigelman classification are shown in Fig. 14Endoscopic treatments for duodenal adenoma include snare resection, argon plasma coagulation, and other techniques [143]. Recent reports on the safety and efficacy of new treatment techniques (such as bipolar snare resection, cold snare polypectomy, and underwater endoscopic mucosal resection) have expanded the treatment options [155–158].Complete endoscopic resection of Spigelman stage II/III duodenal adenoma is associated with high recurrence and complication rates (50%–100%) [141]. However, recent improvements in endoscopic resection techniques and the introduction of new treatments have increased the safety and efficacy of endoscopic resection [155–159].A systematic review identified modified Spigelman stage IV as a risk factor for the development of non-ampullary duodenal carcinoma [160]. The incidence of duodenal cancer was approximately 2.3% for stage II, 2.4% for stage III [161], and 7%–36% for stage IV [148, 161]. Therefore, evaluation by a specialist for surgical intervention or surveillance every 6–12 months is recommended.（节选，原文约 4636 字符）【来源 REC-COLORECTAL-EPMC-0683】",
+    "symptoms_early": null,
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "Genetic testing for diagnosis of HCRC involves analysis of DNA extracted from whole blood to detect the GPV of the causative gene, which allows estimation of the cancer risk. The results are useful for informed consent and surveillance [15, 16] and can also be used to diagnose relatives.\n\nDirect sequencing reads the base sequence of the exons and exon–intron boundary regions encoding the protein of the suspected causative gene one base at a time.\n\nMLPA detects large deletions or duplications by adding specific probes to each exon.\n\nDirect sequencing or MLPA is used when the causative gene is strongly suspected.\n\nHowever, pathogenic variants in APC may not be detected, even in cases with thousands of adenomatous polyps.\n\nFor diagnosis of relatives, it is sufficient to analyze only the pathogenic variant identified in the proband (single-site analysis); therefore, direct sequencing or MLPA is used depending on the variant to be detected.\n\nTargeted sequencing by MGPT generates a panel of candidate causative genes for HCRC, which are then analyzed by next-generation sequencing.（节选，原文约 4389 字符）（本节含指南表格 4 张，未转录）【来源 REC-COLORECTAL-EPMC-0493 / REC-COLORECTAL-EPMC-0492】\n\n同一指南章节的其他内容见「COLORECTAL-004/workup」",
+    "diagnosis": "本节无独立来源节点：诊断流程已在「COLORECTAL-004 workup」展开，MMR缺陷的组织学特征见「COLORECTAL-006 pathology_subtypes」，此处不再重复。",
+    "differential": null,
+    "staging": null,
+    "treatment": "Duodenal and ampullary adenomas (Fig. 12) are rarely observed in healthy individuals without FAP, and the presence of multiple duodenal adenomas is a hallmark of FAP, making it useful for auxiliary diagnosis.Duodenal adenomas are observed in 30%–90% of patients with FAP [139–141], with an increase in prevalence after the age of 40 years [140, 141].According to a multicenter study in Japan, the cumulative incidence of duodenal adenoma was 39.2% by the age of 50 years, with classical FAP having a substantially higher cumulative incidence than AFAP (42.5% vs.（节选，原文约 4519 字符）【来源 REC-COLORECTAL-EPMC-0664】\n\n本节（治疗）与「COLORECTAL-003 treatment」引用同一指南章节（Treatment），不重复展示\n\n本节（治疗）与「COLORECTAL-003 treatment」引用同一指南章节（Treatment guidelines for colorectal cancer），不重复展示",
+    "complications": null,
+    "prognosis": "（本节所引指南章节主题为「Characteristics and classification」，内容为十二指肠息肉病相关数据，与\"预后\"不完全对应）\n\nAmpullary tumors have been observed in up to 72% of cases [143].\n\nForward-viewing and side-viewing endoscopy is used to observe duodenal lesions and the ampullary region.\n\nThe relationship between duodenal adenomas, ampullary tumors, and the APC genotype is not clearly established [132].\n\nThe Spigelman classification has reproducibility between and within examiners [144].\n\nDuodenal cancer accounts for approximately 3% of deaths in patients with FAP and is one of the leading causes of death after prophylactic colectomy [32, 145].\n\nThe relative risk of duodenal cancer is approximately 250–330.8 times higher in patients with FAP than in the general population [146, 147], with an estimated cumulative incidence rate of 4–10% [30, 148, 149].\n\nThe Spigelman scoring system is used for clinicopathological classification of duodenal adenomas in patients with FAP [137].\n\nUse of narrow-band imaging increases the detection rate of duodenal adenomas but does not affect the Spigelman classification [151].（节选，原文约 1359 字符）【来源 REC-COLORECTAL-EPMC-0663 / REC-COLORECTAL-EPMC-0664 / REC-COLORECTAL-EPMC-0665 / REC-COLORECTAL-EPMC-0666 / REC-COLORECTAL-EPMC-0667 / REC-COLORECTAL-EPMC-0668 / REC-COLORECTAL-EPMC-0669 / REC-COLORECTAL-EPMC-0670 / REC-COLORECTAL-EPMC-0671 / REC-COLORECTAL-EPMC-0672】\n\n同一指南章节的其他内容见「COLORECTAL-006/treatment」",
+    "followup": null,
+    "prevention": null,
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "patient_version": {
+    "overview": null,
+    "epidemiology": null,
+    "etiology": null,
+    "pathophysiology": null,
+    "pathology_subtypes": "遗传性结直肠癌（HCRC）是指已经找到致病基因、并会提高结直肠癌风险的一类疾病。不同致病基因对应的遗传方式、结直肠息肉密度、组织学类型、结直肠癌风险和结直肠外表现都不一样。MMR缺陷型结直肠癌在组织学上有几个特点：肿瘤浸润淋巴细胞、髓样生长、黏液和印戒细胞分化、以及Crohn样淋巴细胞反应。不过这些特点并非Lynch综合征所特有，散发性MMR缺陷型结直肠癌里也常见。十二指肠腺瘤的处理按改良Spigelman分级，内镜手段包括圈套切除、氩离子凝固等。II/III期十二指肠腺瘤即使完全内镜切除，复发和并发症仍高达50%–100%。改良Spigelman IV期是非壶腹部十二指肠癌的危险因素，十二指肠癌发生率约为II期2.3%、III期2.4%、IV期7%–36%，因此建议专科评估是否手术或每6–12个月监测。本节含指南表格2张，未转录。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0436 / REC-COLORECTAL-EPMC-0439 / REC-COLORECTAL-EPMC-0887 / REC-COLORECTAL-EPMC-0683】",
+    "symptoms_early": null,
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "遗传性结直肠癌的基因检测，是取全血提取DNA，检测致病基因的胚系致病变异，从而估计癌症风险。结果有助于知情同意和监测，也可用于诊断亲属。直接测序逐一读取可疑致病基因外显子及外显子–内含子交界区的碱基序列；MLPA通过为每个外显子加特异探针，检测大片段缺失或重复。高度怀疑某致病基因时使用直接测序或MLPA。但即使有数千枚腺瘤性息肉，也可能检不出APC的致病变异。诊断亲属时只需分析先证者已检出的致病变异（单位点分析），因此根据待检变异选择直接测序或MLPA。多基因面板（MGPT）靶向测序则先列出候选致病基因，再用下一代测序分析。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0493 / REC-COLORECTAL-EPMC-0492】",
+    "diagnosis": "本节内容见「COLORECTAL-004 workup」的诊断流程一节，以及「COLORECTAL-006 pathology_subtypes」的组织学特征一节，这里不重复。",
+    "differential": null,
+    "staging": null,
+    "treatment": "十二指肠和壶腹部腺瘤在健康人身上很少见；如果一个人有多枚十二指肠腺瘤，这往往是FAP的标志，有助于辅助诊断。FAP患者中30%–90%有十二指肠腺瘤，40岁以后患病比例还会上升。日本一项多中心研究显示，到50岁时十二指肠腺瘤的累积发生率是39.2%，经典型FAP明显高于衰减型FAP；原文在给出这组对比数值时被截断，节选未包含具体数字，因此这里不补写。本节属于节选，只覆盖原文开头部分（FAP中十二指肠与壶腹部腺瘤的发生率、年龄分布和50岁累积发生率），其余分级与随访内容未在节选中展开。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0664】",
+    "complications": null,
+    "prognosis": "本节内容来自另一主题的指南章节，与标题不完全对应。壶腹部肿瘤在多达72%的病例中被观察到。前视和侧视内镜用于观察十二指肠病变和壶腹部区域。十二指肠腺瘤、壶腹部肿瘤与APC基因型之间的关系尚无明确结论。Spigelman分类在检查者之间和检查者自身具有可重复性。十二指肠癌约占FAP患者死亡的3%，是预防性结肠切除后的主要死因之一。FAP患者十二指肠癌的相对风险约为一般人群的250–330.8倍，估计累积发病率为4%–10%。Spigelman评分系统用于FAP患者十二指肠腺瘤的临床病理分类；窄带成像可提高十二指肠腺瘤检出率，但不影响Spigelman分类。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0663 等 10 条（详见专业版来源表）】",
+    "followup": null,
+    "prevention": null,
+    "screening": null,
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "section_gaps": [
+    "overview: 无可靠来源（指南/说明书未覆盖）",
+    "epidemiology: 无可靠来源（指南/说明书未覆盖）",
+    "etiology: 无可靠来源（指南/说明书未覆盖）",
+    "pathophysiology: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_early: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_late: 无可靠来源（指南/说明书未覆盖）",
+    "signs: 无可靠来源（指南/说明书未覆盖）",
+    "differential: 无可靠来源（指南/说明书未覆盖）",
+    "staging: 无可靠来源（指南/说明书未覆盖）",
+    "complications: 无可靠来源（指南/说明书未覆盖）",
+    "followup: 无可靠来源（指南/说明书未覆盖）",
+    "prevention: 无可靠来源（指南/说明书未覆盖）",
+    "screening: 无可靠来源（指南/说明书未覆盖）",
+    "patient_education: 无可靠来源（指南/说明书未覆盖）",
+    "care_seeking: 无可靠来源（指南/说明书未覆盖）"
+  ],
+  "links": {
+    "symptoms": [],
+    "drugs": [
+      "BEVACIZUMAB",
+      "CAPECITABINE",
+      "CETUXIMAB",
+      "FLUOROURACIL",
+      "IRINOTECAN",
+      "OXALIPLATIN",
+      "PANITUMUMAB",
+      "PEMBROLIZUMAB",
+      "REGORAFENIB"
+    ],
+    "checks": [],
+    "diseases": [],
+    "guidelines": [
+      "DOC-COLORECTAL-EPMC-001",
+      "DOC-COLORECTAL-EPMC-002",
+      "DOC-COLORECTAL-EPMC-003"
+    ],
+    "genes": [
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ],
+    "biomarkers": [
+      "腺癌",
+      "鳞癌",
+      "MSI-H/dMMR",
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ]
+  },
+  "symptom_early": [],
+  "symptom_late": [],
+  "signs": [],
+  "pathology_subtypes": [
+    "腺癌",
+    "鳞癌",
+    "MSI-H/dMMR",
+    "EGFR 突变",
+    "ALK 融合",
+    "KRAS 突变"
+  ],
+  "stages": [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ],
+  "treatment_methods": [
+    "手术",
+    "手术切除",
+    "化疗",
+    "放疗",
+    "靶向治疗",
+    "放化疗"
+  ],
+  "overview_text": "结直肠腺瘤性息肉 Colorectal adenomatous polyp · The timing of prophylactic colectomy should be decided based on following considerations, (1) the cumulative prevalence of CRC [32], (2) adenoma density [94], (3) adenoma size and morphology, (4) ag",
+  "sources": [
+    "A4:drug_labels",
+    "REC:REC-COLORECTAL-EPMC-0055",
+    "REC:REC-COLORECTAL-EPMC-0065",
+    "REC:REC-COLORECTAL-EPMC-0436",
+    "REC:REC-COLORECTAL-EPMC-0439",
+    "REC:REC-COLORECTAL-EPMC-0492",
+    "REC:REC-COLORECTAL-EPMC-0493",
+    "REC:REC-COLORECTAL-EPMC-0631",
+    "REC:REC-COLORECTAL-EPMC-0664",
+    "REC:REC-COLORECTAL-EPMC-0679",
+    "REC:REC-COLORECTAL-EPMC-0683",
+    "REC:REC-COLORECTAL-EPMC-0684",
+    "REC:REC-COLORECTAL-EPMC-0887"
+  ],
+  "profile_version": "2026.10-draft",
+  "last_updated": "2026-10-27"
+}

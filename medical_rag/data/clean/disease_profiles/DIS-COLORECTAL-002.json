@@ -1,0 +1,174 @@
+{
+  "disease_id": "DIS-COLORECTAL-002",
+  "name_canonical": "结肠癌",
+  "synonyms": [
+    "结肠恶性肿瘤",
+    "colon cancer"
+  ],
+  "name_en": "Colon cancer",
+  "pinyin": "jiechangai",
+  "icd10": "C18.9",
+  "icd_o3": "M8140/3",
+  "category": "primary_cancer",
+  "body_system": "消化系统",
+  "departments": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "department": [
+    "肿瘤内科",
+    "胃肠外科"
+  ],
+  "cancer_type": "colorectal",
+  "sections": {
+    "overview": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n结肠癌是常见的消化道恶性肿瘤，占胃肠道肿瘤的第二位。好发部位为直肠及直肠与乙状结肠交界处，占60%。发病多在40岁以后，男女之比为2：1。",
+    "epidemiology": "Colon cancer is the third most common cause of cancer-related death globally.2 The reported increase in incidence and shift to early-age carcinogenesis are partly attributed to lifestyles characterised by obesity, reduced physical activity, alcohol consumption, high red meat intake, smoking and imbalances in the microbiota.3,4 Preclinical and observational studies have correlated higher levels of recreational physical activity after anticancer therapy with a lower risk of malignant recurrence and death, and have suggested metabolic, inflammatory and immune modulating effects as possible protective mechanisms.5,6 This epidemiological evidence resulted in recommendations for health-promoting survivorship plans including exercise, cessation of tobacco and alcohol intake and dietary adjustments.7 High-level evidence establishing a direct causal relationship between physical activity and improved clinical outcomes for patients with resected colon cancer, as well as data on the volume, intensity and structure of exercise programmes suitable for cancer survivors, were lacking until recently.（节选，原文约 1101 字符）【来源 REC-COLORECTAL-EPMC-0001 / REC-COLORECTAL-EPMC-0004】",
+    "etiology": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n结肠癌临床发现某些因素可能大大增加发病的危险性。它们包括：1.发病年龄，大多数病人在50岁以后发病。2.家族史：如果某人的一级亲属，比如说父母，得过结直肠癌的，他在一生中患此病危险性比普通人群要高8倍。大约四分之一的新发病人有结直肠癌的家族史。3.结肠疾病史：某些结肠疾病如克隆氏病或溃疡性结肠炎可能增加结直肠癌的发病机会。他们结肠癌的危险性是常人的30倍。4.息肉：大部分结直肠癌是从小的癌前病变发展而来，它们被称为息肉。其中绒毛样腺瘤样息肉更容易发展成癌，恶变得机会约为25%;管状腺瘤样息肉恶变率为1-5%。5.基因特征：一些家族性肿瘤综合症，如遗传性非息肉病结肠癌，可明显增加结直肠癌的发病机会。而且发病时间更为年轻。(一)发病原因一些结肠癌流行病学研究表明：社会发展状况、生活方式及膳食结构与结肠癌密切相关，并有现象提示影响不同部位、不同年龄组结肠癌发病的环境、遗传因素可能存在差异。环境(尤其是饮食)、遗传、体力活动、职业等，是影响结肠癌发病的可能病因因素。1.饮食因素 流行病学研究表明，有70%～90%的肿瘤发病与环境因素和生活方式有关，而其中40%～60%的环境因素在一定程度上与饮食、营养相关联，故在肿瘤发病中饮食因素被看作是极为重要的因素。(1)高脂、高蛋白、低纤维素的作用机制：可归纳如下：①影响肠道脂质代谢，高脂饮食使7a-脱羟基化酶活性增高，导致次级胆酸形成增多，而纤维素的作用正相反，并通过抑制重吸收、稀释及吸附、螯合作用，降低肠道的脱氧胆汁酸浓度增加粪便中固相物质，促进排出;一些饮食因素(如钙离子)可降低肠道离子化脂肪酸和游离胆汁酸的水平，这两种物质均对肠道上皮有损伤作用;抑制肠道胆固醇的降解。牛奶、乳糖、半乳糖具有抑制胆烷氧化还原作用。②纤维素还具有改变肠道菌群，影响肠黏膜结构和功能的作用，并影响黏膜上皮细胞的生长速度，调解肠道酸碱度，以及通过黏蛋白加强黏膜屏障作用，减少肠内有毒物质对肠上皮的侵害;③高脂肪及部分碳水化合物能增加肠道细胞酶的活性(如葡萄糖醛酸酶、鸟氨酸脱羟酶、硝基还原酶、偶氮氧化酶、脂氧酶、环氧酶)，促进致癌物、辅癌物的产生。④生物大分子活",
+    "pathophysiology": null,
+    "pathology_subtypes": "GAPPS is an autosomal dominant disorder that is primarily characterized by fundic gland polyposis, caused by GPVs in the promoter 1B region of the APC gene, and characterized as APC-associated polyposis [9, 21, 40].In the stomach, the APC promoter 1A region is inactivated by hypermethylation, whereas the promoter 1B region regulates gene expression. A pathogenic variant in the promoter 1B region results in the loss of normal expression of APC protein in the stomach. In contrast, expression of APC protein in the colon/rectum is primarily regulated by the promoter 1A region; therefore, a pathogenic variant in the promoter 1B region does not affect expression of APC protein in the colon/rectum. Thus, GAPPS is characterized by fundic gland polyposis with minimal colorectal adenomas [21, 40].Patients with GAPPS have a 12%–25% lifetime risk of developing gastric cancer [41]; however, their risk of CRC is unknown, and risk management should be based on family history. Surveillance for gastric cancer should begin at the age of 15 years, and prophylactic total gastrectomy may be considered after the age of 20–30 years [42].（节选，原文约 2404 字符）【来源 REC-COLORECTAL-EPMC-0586】\n\nHCRCs are classified into two groups, namely, polyposis and non-polyposis. HCRCs with polyposis are further classified into adenomatous, hamartomatous, and serrated polyposis according to histological type.Adenomatous polyposis is defined as ≥ 10 adenomatous polyps in the colon and rectum. It is sometimes classified as severe/profuse/dense type (≥ 1,000–2,000), sparse type (100–1,000), or attenuated type (10–100) based on the number of polyps. However, the number of polyps observed depends on the patient's age, the use of high-resolution endoscopy, chromoendoscopy, and image enhanced endoscopy, including spraying dye and narrow-band imaging, and the physician. Patients with thousands of adenomatous polyps are often diagnosed with familial adenomatous polyposis (FAP), which frequently involves gastric and duodenal polyps.（节选，原文约 5141 字符）【来源 REC-COLORECTAL-EPMC-0444】\n\n本节（病理分型）与「COLORECTAL-003 treatment」引用同一指南章节（Treatment guidelines for colorectal cancer），不重复展示\n\n（其余 1 个来源节点未展开，可在下方来源表回溯）",
+    "symptoms_early": "常见症状（kgdrug 2018 科普库）：贫血、便血、便秘、腹泻、水肿、便血且血与粪便混合",
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "If genetic testing using MGPT does not identify a causative gene, the condition is termed CPUE [9]. However, conventional genetic testing may not detect somatic mosaicism [35, 37], gene inversions [82], translocations [83], intronic variants distant from exon–intron junctions [84, 85], or promoter region variants [86]. As a result, some cases of CPUE may be attributed to technical limitations in identifying the causative genes. If ≥ 100 adenomas are identified in the colon/rectum, surveillance, treatment, and familial management should be implemented as for FAP, even if genetic testing has not been performed or no pathogenic variants are detected.（节选，原文约 655 字符）【来源 REC-COLORECTAL-EPMC-0616】\n\nConstitutional mismatch repair deficiency (CMMRD) syndrome is caused by biallelic GPVs in an MMR gene, leading to early onset of multiple synchronous or metachronous cancers, including CRC, during childhood [322]. CMMRD follows an autosomal recessive mode of inheritance, with PMS2 and MSH6 being the genes most commonly affected. Non-tumor manifestations frequently include café-au-lait spots resembling those observed in neurofibromatosis type 1 [322, 323]. Patients with PMS2 pathogenic variants may also present with immunodeficiency owing to class switch recombination defects, which are characterized by decreased IgG and IgA levels and an increased IgM level [324]. In a prospective registry study, the median age at first diagnosis of cancer was 9.2 years (range 1.7–39.5), with brain tumors being the most common, followed by CRC and hematological malignancies [325]. The colon typically shows multiple adenomas, with clinical features resembling those of FAP.（节选，原文约 1346 字符）【来源 REC-COLORECTAL-EPMC-0912】\n\n本节（检查评估）与「COLORECTAL-002 pathology_subtypes」引用同一指南章节（Gastric adenocarcinoma and proximal polyposis of the stomach (GAPPS)），不重复展示\n\n本节（检查评估）与「COLORECTAL-002 screening」引用同一指南章节（Universal screening），不重复展示",
+    "diagnosis": "In families with Lynch syndrome, 15%–27% of members meet the Amsterdam criteria II [298, 300] and 68%–89% meet the revised Bethesda guidelines [298].\n\nIn a study by the Japanese Society for Cancer of the Colon and Rectum, 1.2% of all patients with CRC in Japan fulfilled the Amsterdam criteria II [301]. In a study from Spain, approximately one quarter of patients with CRC fulfilled the revised Bethesda guidelines [302]. Thus, the revised Bethesda guidelines provide high sensitivity but relatively low specificity when screening for Lynch syndrome, whereas the Amsterdam criteria II have lower sensitivity but higher specificity.\n\nAll patients with endometrial cancer should undergo MSI testing or MMR-IHC as part of universal screening.（节选，原文约 3384 字符）【来源 REC-COLORECTAL-EPMC-0882】\n\n同一指南章节的其他内容见「COLORECTAL-002/screening」",
+    "differential": null,
+    "staging": "The Canadian Cancer Trials Group phase III CHALLENGE trial randomised 962 patients with resected stage III or high-risk stage II colon cancer who had completed standard adjuvant chemotherapy (ChT) to receive either standard-practice health education materials that promote physical activity and healthy nutrition (health education group) or health education materials plus a 3-year structured exercise programme (exercise group).8 Eligible patients had completed adjuvant ChT within the past 2-6 months, were fit [Eastern Cooperative Oncology Group performance status (PS) score 0-1] and were able to complete at least two stages of a submaximal treadmill test (walking at a casual pace for 6 minutes) or the 6-minute walk test.8（节选，原文约 9264 字符）（本节含指南表格 2 张，未转录）【来源 REC-COLORECTAL-EPMC-0005 / REC-COLORECTAL-EPMC-0031 / REC-COLORECTAL-EPMC-0015 / REC-COLORECTAL-EPMC-0034】",
+    "treatment": "The efficacy of adjuvant chemotherapy specifically for CRC in Lynch syndrome is still unclear; therefore, treatment is often based on the approaches used for sporadic MSI-H CRC. It is important to note the differences between Lynch syndrome-associated CRC and sporadic MSI-H CRC, such as the frequency of BRAF V600E variants and methylation status. For example, it has been found that while 5-fluorouracil-based adjuvant chemotherapy is not effective for sporadic MSI-H CRC, it could be beneficial for MSI-H CRC in individuals under 50 years of age who are suspected of having Lynch syndrome [358]. This finding suggests the need to consider Lynch syndrome-associated CRC separately from sporadic MSI-H CRC. However, little useful data are available on adjuvant chemotherapy for Lynch syndrome-associated and sporadic MSI-H rectal cancer.\n\nA meta-analysis that focused on the relationship between MSI status and the efficacy of 5-fluorouracil-based adjuvant chemotherapy in patients with stage II/III sporadic CRC found that while MSI-H CRC had a better prognosis than microsatellite-stable (MSS) CRC, adjuvant chemotherapy did not improve overall survival or relapse-free survival [359, 360].\n\n（节选，原文约 13371 字符）【来源 REC-COLORECTAL-EPMC-0950 / REC-COLORECTAL-EPMC-0951 / REC-COLORECTAL-EPMC-0952】\n\n同一指南章节的其他内容见「COLORECTAL-003/treatment」",
+    "complications": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n当肿瘤发展到一定阶段，特别已经引起梗阻时才会引发一系列症状。包括：虚弱、乏力、贫血、不明原因的体重下降、持续性腹痛、黑便或鲜血便、大便习惯改变等。直肠癌可局部侵犯膀胱、阴道壁或周围神经，导致会阴或骶骨疼痛，但这些症状在晚期发生。贫血、结肠内瘘、部分或完全性肠梗阻和肠穿孔等是结肠癌常见并发症，亦为病人就诊的主要原因。",
+    "prognosis": "•Patients with resected stage III or high-risk stage II colon cancer should be informed of the available evidence suggesting survival benefits from a structured exercise programme [I, A].•Health care professionals should clearly communicate to patients with resected stage III or high-risk stage II colon cancer their eligibility for a structured exercise programme and specify the infrastructure and support needed [I, A].（节选，原文约 2899 字符）【来源 REC-COLORECTAL-EPMC-0039】\n\nCQ1: What are the indications for additional treatment after endoscopically resected pT1 colorectal cancer? (Fig. 11). Risk factors for regional lymph-node metastasis in pT1 cancer include the depth of submucosal invasion [279], histological type (such as poorly differentiated adenocarcinoma, signet-ring cell carcinoma, or mucinous carcinoma [280]), the presence of poorly differentiated areas or mucinous component at the invasive front, budding G2/3, and lymphovascular invasion [280, 281]. A submucosal invasion depth of 1,000 μm has been established as the threshold for considering additional bowel resection and is identified as a risk factor for lymph-node metastasis in the Colorectal Cancer Treatment Guidelines for Physicians, 2005 Edition. However, even when the depth of submucosal invasion is 1,000 μm or greater, approximately 90% of patients do not develop lymph-node metastasis.（节选，原文约 37909 字符）【来源 REC-COLORECTAL-EPMC-0320】\n\n本节（预后）与「COLORECTAL-002 staging」引用同一指南章节（Stage II and stage III disease），不重复展示\n\n本节（预后）与「COLORECTAL-003 treatment」引用同一指南章节（Treatment guidelines for colorectal cancer），不重复展示",
+    "followup": null,
+    "prevention": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n结肠癌是世界死因顺位中列第3位的肿瘤，尽管结肠癌的治疗手段有很大进展，但多年来晚期结肠癌的5年生存率并无多大改观。因此，结肠癌预防的意义愈显重要。根据癌变过程的多阶段理论。结肠癌的发生也经过启动(initiation)、促癌(promotion)和进展(progression)3个阶段。在形态上则表现为正常黏膜→增生→腺瘤形成→腺瘤癌变→浸润转移。如以家族性腺瘤性息肉病的癌变为模型，结肠癌的自然史可长达10～35年。这就为结肠癌的预防提供了极有利的机会。根据结肠癌自然史的各个不同阶段采取不同的干预措施，我国制定出以下预防策略。1.一级预防：在肿瘤发生之前，消除或减少大肠黏膜对致癌剂的暴露，抑制或阻断上皮细胞的癌变过程，从而防止肿瘤的发生。这些措施包括饮食干预、化学预防和治疗癌前病变。(1)饮食干预：英国学者Burkitt早就指出结肠癌是一种“现代病”，与现代生活方式和饮食类型有关。大量流行病学研究，特别是移民流行病学研究显示，结肠癌的发病与能量摄入过多、肥胖、过多饱和脂肪酸摄入、体力活动减少，膳食纤维和微营养素(维生素A、E、C，微量元素硒和钙)摄入不足有关。在饮食干预方面，对膳食纤维的研究最多。早在20世纪六、七十年代Burkitt发现结肠癌在非洲黑人中十分罕见，而非洲原著民的饮食中含有大量食物纤维，于是他提出高纤维饮食是结肠癌保护因子的假设。其后大量研究认为膳食纤维可以稀释或吸收粪便中的致癌物，加快食物残渣在肠道的通过时问，从而减少了肠黏膜对食物中致癌物的暴露。同时膳食纤维还可通过改变胆酸的代谢，降低结肠的pH值，并增加短链脂肪酸的产生，从而起到对结肠癌的保护作用。早期的观察性流行病学研究和病例对照研究均显示，随着摄入量的增加，膳食纤维对结肠癌的保护作用也相应增强。如Howe汇集了总数为5287例患者和10470名对照的13个病例对照研究的资料，发现其中12个研究均支持膳食纤维摄入与结肠癌发病的负相关;同时还发现经调整混杂因素后维生素C和β胡萝卜素的摄入与结肠癌发病只有很小的负相关性。鉴于前瞻性临床干预试验中，如以结肠癌的发生作为“终点指标”(end-point)则",
+    "screening": "In Western countries, universal screening by MSI testing or MMR-IHC on all CRC cases (or those aged ≤ 70 years) is recommended as a highly sensitive and cost-effective method for diagnosing Lynch syndrome.Pooled analyses have indicated that MSI testing, MMR-IHC, or a combination of both 0.93 (95% CI 0.87–0.96), 0.91 (95% CI 0.85–0.95), and 0.97 (95% CI 0.90–0.99), respectively [297].The incidence of Lynch syndrome among patients with CRC identified by universal screening is 2.4%–3.7% internationally [290, 291] and 0.7%–1.01% in Japan, suggesting that the efficiency of universal screening may be lower in Japan than in other countries.Among older patients with CRC, the prevalence of Lynch syndrome is relatively low but the frequency of sporadic MMR-deficient CRC is higher [293, 298, 299].（节选，原文约 3384 字符）【来源 REC-COLORECTAL-EPMC-0882】",
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "patient_version": {
+    "overview": "结肠癌是我国常见的消化道恶性肿瘤。按原资料的说法，它在胃肠道肿瘤中排在第二位，最常发生在直肠以及直肠与乙状结肠交界处，这部分大约占六成。发病多在 40 岁以后，男性患者约为女性的两倍。资料同时强调，早发现、早诊断、早治疗以及规范的手术切除，是提高疗效的关键。以上为 2018 年科普资料中的表述，年代较早，具体数字请以医生的当面解释为准。原资料没有给出分型、分期或治疗方案的细节，本节仅作背景介绍。文中比例未标注调查年份与样本来源，不宜用来推算个人风险；具体病情请以肠镜、病理结果和医生的当面解释为准。\n【来源 kgdrug 2018 科普库】",
+    "epidemiology": "结肠癌在全球癌症死亡原因中排第三。近年发病上升、发病年龄提前，部分与肥胖、久坐少动、饮酒、红肉吃得多、吸烟和肠道菌群失衡有关。观察性研究发现，抗癌治疗结束后规律进行休闲运动的人，肿瘤复发和死亡的风险更低，可能的机制包括代谢、炎症和免疫调节方面的改变。基于这些流行病学证据，指南提出为康复期患者制定健康促进计划，内容包括运动、戒烟戒酒和调整饮食。在此之前，一直缺少高质量证据来确认运动与已切除结肠癌患者临床结局之间的直接因果关系，也缺少关于运动量、强度和项目结构的数据。因此指南把运动写进结直肠癌康复期的健康促进计划，而不只是泛泛的生活方式建议。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0001 / REC-COLORECTAL-EPMC-0004】",
+    "etiology": "资料认为，结肠癌的发生与多种因素有关。发病年龄方面，多数病人在 50 岁以后发病。家族史方面，如果父母等一级亲属得过结直肠癌，本人一生中患病危险性比普通人群高约 8 倍，大约四分之一的新病人有结直肠癌家族史。结肠疾病史方面，克隆氏病或溃疡性结肠炎会明显增加发病机会，资料称其危险性是常人的约 30 倍。息肉方面，大部分结直肠癌由癌前病变（息肉）发展而来，其中绒毛样腺瘤样息肉恶变机会约 25%，管状腺瘤样息肉约 1%～5%。此外，遗传性非息肉病结肠癌等家族性肿瘤综合征会明显增加发病机会，且发病更年轻。饮食与生活方式也被列为重要因素：资料称 70%～90% 的肿瘤发病与环境因素和生活方式有关，其中 40%～60% 的环境因素与饮食、营养相关，高脂、高蛋白、低纤维饮食被认为与风险升高有关。这些均为科普资料表述，未做删改，也未补充原文以外的数据。\n【来源 kgdrug 2018 科普库】",
+    "pathophysiology": null,
+    "pathology_subtypes": "遗传性结直肠癌按有没有息肉分成两类：息肉型和非息肉型。息肉型再按组织学分成腺瘤性、错构瘤性和锯齿状三类。结肠和直肠里腺瘤达到或超过10枚，就定义为腺瘤性息肉病；按数量还可分成密集型、稀疏型和衰减型。实际数到多少枚，受患者年龄、是否用高清内镜、染色内镜和图像增强内镜以及医生判断的影响。息肉成千上万枚的人，常被诊断为家族性腺瘤性息肉病（FAP），这类人还常合并胃和十二指肠息肉。另一种是GAPPS：属于常染色体显性遗传，主要表现为胃底腺息肉病，由APC基因启动子1B区域的致病变异引起；胃里APC蛋白表达因此丢失，而结肠直肠主要靠启动子1A调控，所以结肠直肠腺瘤很少。GAPPS患者一生中发生胃癌的风险为12%–25%，结直肠癌风险尚不清楚，风险管理要依据家族史。胃癌监测从15岁开始，20–30岁以后可考虑预防性全胃切除。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0586 / REC-COLORECTAL-EPMC-0444】",
+    "symptoms_early": "资料列出的常见表现包括：贫血、便血、便秘、腹泻、水肿，以及大便中混有血液。便血既可能是鲜血，也可能与粪便混合，容易被当作痔疮或肠炎而延误。需要说明的是，出现这些表现并不等于就是结肠癌，但若持续存在或逐渐加重，应尽早就医，由医生判断原因。原文只列出症状名称，没有给出出现频率、持续时间或轻重程度，这里不作补充。这六项表现的共同点是不具特异性，单看任何一项都无法与良性肠道疾病区分，这也是不能靠症状自我判断的原因。原文没有说明这些表现与肿瘤部位或分期的对应关系，本节不作推测，也不建议据此自行判断就医的紧急程度。\n【来源 kgdrug 2018 科普库】",
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "如果多基因面板检测（MGPT）找不到致病基因，这种情况叫CPUE（病因不明的结肠腺瘤性息肉病）。不过常规基因检测本身有局限，可能漏掉体细胞嵌合、基因倒位、易位、离外显子–内含子交界较远的内含子变异，以及启动子区域变异，所以一部分CPUE其实是检测技术的限制造成的。只要结肠直肠里发现100枚以上腺瘤，即使没做基因检测或没检出致病变异，随访、治疗和家族管理都应按FAP来做。CMMRD（结构性错配修复缺陷综合征）由MMR基因的双等位致病变异引起，儿童期就会出现多个同时或先后发生的癌症，包括结直肠癌。它按常染色体隐性方式遗传，最常累及PMS2和MSH6。PMS2变异者还可能因为类别转换重组缺陷出现免疫缺陷，表现为IgG和IgA降低、IgM升高。一项前瞻性登记研究显示，首次诊断癌症的中位年龄是9.2岁（范围1.7–39.5岁），最常见的是脑肿瘤，其次是结直肠癌和血液系统肿瘤。结肠通常有多枚腺瘤，临床特征类似FAP。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0616 / REC-COLORECTAL-EPMC-0912】",
+    "diagnosis": "林奇综合征家族中，约15%–27%的成员符合阿姆斯特丹II标准，68%–89%符合修订版Bethesda指南。日本结直肠癌学会的研究显示，日本全部结直肠癌患者中只有1.2%符合阿姆斯特丹II标准；西班牙一项研究中约四分之一符合修订版Bethesda指南。因此在筛查林奇综合征时，修订版Bethesda指南敏感性高、特异性相对低，而阿姆斯特丹II标准敏感性低、特异性高。也就是说，单靠阿姆斯特丹II标准会漏掉一部分患者，单靠修订版Bethesda指南则会带来较多需要进一步检查的人。所有子宫内膜癌患者都应做MSI检测或错配修复免疫组化，作为普遍筛查的一部分。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0882】",
+    "differential": null,
+    "staging": "加拿大癌症试验组（CCTG）开展的III期CHALLENGE试验，纳入962例已切除的III期或高危II期结肠癌患者，这些人都已经完成标准辅助化疗。研究把他们随机分成两组：一组只发健康宣教材料，鼓励多运动、健康饮食；另一组在同样的材料之外，再加一个为期3年的结构化运动项目。入组条件包括：辅助化疗结束至今2–6个月、体能状态评分（ECOG）0–1分、能完成次极量跑步机测试至少两个阶段（以平常速度走6分钟），或能完成6分钟步行测试。本节含指南表格2张，本系统未转录表格正文。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0005 / REC-COLORECTAL-EPMC-0031 / REC-COLORECTAL-EPMC-0015 / REC-COLORECTAL-EPMC-0034】",
+    "treatment": "林奇综合征相关结直肠癌术后辅助化疗的证据仍不明确，治疗多参照散发性MSI-H（微卫星高度不稳定）结直肠癌。但两类肿瘤在BRAF V600E突变频率和甲基化状态上并不相同：5-氟尿嘧啶类化疗对散发性MSI-H无效，却可能对50岁以下、疑似林奇综合征的MSI-H患者有益，应分开考虑。针对林奇相关及散发性MSI-H直肠癌的辅助化疗数据很少。一项荟萃分析显示，Ⅱ/Ⅲ期散发性MSI-H结直肠癌预后优于微卫星稳定（MSS）肿瘤，但辅助化疗未改善总生存或无复发生存。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0950 / REC-COLORECTAL-EPMC-0951 / REC-COLORECTAL-EPMC-0952】",
+    "complications": "当肿瘤发展到一定阶段，特别是已经引起梗阻时，才会引发一系列症状，包括虚弱、乏力、贫血、不明原因的体重下降、持续性腹痛、黑便或鲜血便、大便习惯改变等。直肠癌可局部侵犯膀胱、阴道壁或周围神经，导致会阴或骶骨疼痛，但这些症状多在晚期出现。贫血、结肠内瘘、部分或完全性肠梗阻以及肠穿孔，是结肠癌常见的并发症，也是病人就诊的主要原因。原文未给出各并发症的发生率。原文把贫血、结肠内瘘、肠梗阻和肠穿孔列为结肠癌常见并发症，并说明它们也是患者就诊的主要原因，这提示并发症有时比肿瘤本身更早引起注意。各项发生率原文未给出，本节不作补充。\n【来源 kgdrug 2018 科普库】",
+    "prognosis": "指南给出两条建议：一是对已切除的III期或高危II期结肠癌患者，应当告知他们，现有证据提示结构化运动项目可能带来生存获益（推荐强度I，证据等级A）；二是医护人员应清楚说明患者是否有条件参加结构化运动项目，并说明需要哪些设施和支持（I，A）。另一条临床问题讨论的是：内镜下切除的pT1期结直肠癌，什么情况下要追加治疗。pT1癌发生区域淋巴结转移的危险因素包括黏膜下浸润深度、组织学类型（如低分化腺癌、印戒细胞癌、黏液癌）、浸润前沿存在低分化区或黏液成分、肿瘤出芽G2/3级，以及淋巴血管侵犯。黏膜下浸润深度达到1000微米，一直被当作考虑追加肠切除的界值。但即使浸润深度达到或超过1000微米，大约90%的患者并没有发生淋巴结转移。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0039 / REC-COLORECTAL-EPMC-0320】",
+    "followup": null,
+    "prevention": "资料指出，结肠癌在世界死因顺位中列第 3 位，治疗手段虽有较大进展，但多年来晚期结肠癌的 5 年生存率并无多大改观，因此预防的意义更重要。按癌变多阶段理论，结肠癌的发生经过启动、促癌和进展三个阶段，形态上表现为正常黏膜→增生→腺瘤形成→腺瘤癌变→浸润转移。以家族性腺瘤性息肉病为模型，其自然史可长达 10～35 年，这为预防提供了机会。一级预防指在肿瘤发生之前，消除或减少大肠黏膜对致癌剂的暴露，抑制或阻断上皮细胞癌变，措施包括饮食干预、化学预防和治疗癌前病变。饮食方面，资料称发病与能量摄入过多、肥胖、过多饱和脂肪酸摄入、体力活动减少，以及膳食纤维和多种维生素、微量元素摄入不足有关；膳食纤维的作用在于稀释或吸收粪便中的致癌物、加快残渣通过肠道，从而减少肠黏膜的暴露，并可通过改变胆酸代谢、降低结肠 pH 值、增加短链脂肪酸产生而起到保护作用。\n【来源 kgdrug 2018 科普库】",
+    "screening": "在西方国家，推荐对全部结直肠癌病例（或70岁及以下的病例）普遍做MSI检测或MMR免疫组化，把它作为诊断Lynch综合征灵敏度高、成本效果好的方法。汇总分析显示，单用MSI、单用MMR免疫组化、或两者联合，灵敏度分别为0.93（95%置信区间0.87–0.96）、0.91（0.85–0.95）和0.97（0.90–0.99）。通过普遍筛查发现的结直肠癌患者中，Lynch综合征的比例在国际上是2.4%–3.7%，在日本是0.7%–1.01%，说明在日本做普遍筛查的效率可能低于其他国家。在年龄较大的结直肠癌患者中，Lynch综合征的患病率相对较低，但散发性MMR缺陷型结直肠癌更多见。本节依据指南原文节选整理。【来源 REC-COLORECTAL-EPMC-0882】",
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "section_gaps": [
+    "pathophysiology: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_late: 无可靠来源（指南/说明书未覆盖）",
+    "signs: 无可靠来源（指南/说明书未覆盖）",
+    "differential: 无可靠来源（指南/说明书未覆盖）",
+    "followup: 无可靠来源（指南/说明书未覆盖）",
+    "patient_education: 无可靠来源（指南/说明书未覆盖）",
+    "care_seeking: 无可靠来源（指南/说明书未覆盖）"
+  ],
+  "links": {
+    "symptoms": [
+      "贫血",
+      "便血",
+      "便秘",
+      "腹泻",
+      "水肿",
+      "便血且血与粪便混合"
+    ],
+    "drugs": [
+      "BEVACIZUMAB",
+      "CAPECITABINE",
+      "CETUXIMAB",
+      "FLUOROURACIL",
+      "IRINOTECAN",
+      "OXALIPLATIN",
+      "PANITUMUMAB",
+      "PEMBROLIZUMAB",
+      "REGORAFENIB"
+    ],
+    "checks": [],
+    "diseases": [],
+    "guidelines": [
+      "DOC-COLORECTAL-EPMC-001",
+      "DOC-COLORECTAL-EPMC-002",
+      "DOC-COLORECTAL-EPMC-003"
+    ],
+    "genes": [
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ],
+    "biomarkers": [
+      "腺癌",
+      "鳞癌",
+      "MSI-H/dMMR",
+      "EGFR 突变",
+      "ALK 融合",
+      "KRAS 突变"
+    ]
+  },
+  "symptom_early": [
+    "贫血",
+    "便血",
+    "便秘",
+    "腹泻",
+    "水肿",
+    "便血且血与粪便混合"
+  ],
+  "symptom_late": [],
+  "signs": [],
+  "pathology_subtypes": [
+    "腺癌",
+    "鳞癌",
+    "MSI-H/dMMR",
+    "EGFR 突变",
+    "ALK 融合",
+    "KRAS 突变"
+  ],
+  "stages": [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ],
+  "treatment_methods": [
+    "手术",
+    "手术切除",
+    "化疗",
+    "放疗",
+    "靶向治疗",
+    "放化疗"
+  ],
+  "overview_text": "结肠癌 Colon cancer 结肠癌是常见的消化道恶性肿瘤，占胃肠道肿瘤的第二位。好发部位为直肠及直肠与乙状结肠交界处，占60%。发病多在40岁以后，男女之比为2：1。 · •Patients with resected localised colon cancer should be encouraged to maintain a healthy lifestyle, including exercise (10 MET-hours per week), smoking cessation, avoidance of excessive alcohol int",
+  "sources": [
+    "A4:drug_labels",
+    "REC:REC-COLORECTAL-EPMC-0001",
+    "REC:REC-COLORECTAL-EPMC-0004",
+    "REC:REC-COLORECTAL-EPMC-0005",
+    "REC:REC-COLORECTAL-EPMC-0015",
+    "REC:REC-COLORECTAL-EPMC-0031",
+    "REC:REC-COLORECTAL-EPMC-0034",
+    "REC:REC-COLORECTAL-EPMC-0039",
+    "REC:REC-COLORECTAL-EPMC-0040",
+    "REC:REC-COLORECTAL-EPMC-0044",
+    "REC:REC-COLORECTAL-EPMC-0186",
+    "REC:REC-COLORECTAL-EPMC-0225",
+    "REC:REC-COLORECTAL-EPMC-0320",
+    "REC:REC-COLORECTAL-EPMC-0444",
+    "REC:REC-COLORECTAL-EPMC-0586",
+    "REC:REC-COLORECTAL-EPMC-0616",
+    "REC:REC-COLORECTAL-EPMC-0846",
+    "REC:REC-COLORECTAL-EPMC-0882",
+    "REC:REC-COLORECTAL-EPMC-0912",
+    "kgdrug"
+  ],
+  "profile_version": "2026.10-draft",
+  "last_updated": "2026-10-27"
+}

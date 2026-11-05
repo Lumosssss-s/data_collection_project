@@ -1,0 +1,153 @@
+{
+  "disease_id": "DIS-LUNG-002",
+  "name_canonical": "非小细胞肺癌",
+  "synonyms": [
+    "NSCLC",
+    "非小细胞肺癌",
+    "肺腺癌",
+    "肺鳞癌"
+  ],
+  "name_en": "Non-small cell lung cancer",
+  "pinyin": "feixiaoxibaofeiai",
+  "icd10": "C34.9",
+  "icd_o3": "M8046/3",
+  "category": "primary_cancer",
+  "body_system": "呼吸系统",
+  "departments": [
+    "肿瘤内科",
+    "胸外科"
+  ],
+  "department": [
+    "肿瘤内科",
+    "胸外科"
+  ],
+  "cancer_type": "lung",
+  "sections": {
+    "overview": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n非小细胞肺癌则占肺癌总数的80%，是最为常见的肺癌。它主要包括腺癌、鳞状细胞癌即肺鳞癌、大细胞未分化癌三类，其对于传统放化疗敏感性较差。肺癌的早期诊断可以通过拍摄胸部X线片来了解肺内的异常情况。此外还可进行血液常规检查以及痰液找病理细胞等相关化验帮助诊断，并进行一系列深入的检查，包括支气管镜、纵隔镜、肺组织活检以及胸腔镜等。",
+    "epidemiology": null,
+    "etiology": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n非小细胞肺癌1.相关数据显示，吸二手烟亦是导致肺癌的重要危险因素，在不吸烟却患非小细胞肺癌的人群中，大约有25%的人群是由吸二手烟引起的。因此，拒绝抽烟在一定程度上能使自己与他人远离恶性肺癌。2.我国肺癌病死率升高的主要原因是由于目前肺癌早期缺乏有效的筛选和诊断，所以80%的肺癌患者在确诊已经是晚期，失去了最佳的治疗时间。",
+    "pathophysiology": null,
+    "pathology_subtypes": "To maximize cancer detection while minimizing harms from over-investigation, nodules are referred for further investigation only when there is a high probability of malignancy, based on size and non-size characteristics, such as spiculations, pleural indentation, or cavitation with thick walls. For baseline, the size threshold for a solid non-calcified nodule according to the EUPS guidelines is a volume of 300 mm3 [21]. The British Thoracic Society has further modified this, with referral only when the malignancy risk using the Brock model is at least 10%, thus incorporating other important nodule features (spiculation, upper lobe location, and nodule count) [27]. The ESTI guidelines have been inspired by these existing guidelines, but their primary objectives are to reduce the number of follow-up examinations while avoiding the risk of a major change stage shift, and the overdiagnosis risk (defined below) [28]. High-risk solid nodules are those with a large volume and/or a fast volume doubling time (VDT) (Fig. 2).（节选，原文约 2913 字符）【来源 REC-LUNG-EPMC-0365 / REC-LUNG-EPMC-0373 / REC-LUNG-EPMC-0363】\n\n本节（病理分型）与「LUNG-002 workup」引用同一指南章节（Subsolid nodules and the risk of overdiagnosis），不重复展示",
+    "symptoms_early": null,
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "In the vast majority of cases, persistent SSN represents indolent forms of lung adenocarcinoma, which progressively evolve from atypical adenomatous hyperplasia to in situ proliferation, then to minimally invasive forms and finally to invasive forms of adenocarcinoma. They represent the main source of overdiagnosis during LCS. Overdiagnosis and overtreatment refer to the screen detection and treatment of cancer that would not have affected the subject’s life expectancy because of low tumor aggressiveness (which is the case of SSN) or concurrent comorbidities, which are most frequent in advanced age. Long-term surveillance of SSN to detect growth of solid component (either new or increasing) has proven to be a safe strategy [30]. Indeed, individuals with SSN are more likely than others to develop LC, but clinically relevant LC mainly develop at another location [31] (Fig. 4). Those arising from the SSN were never the cause of death over a median follow-up of 9 years in a series evaluating 400 SSN from the Multicentric Italian lung detection (MILD) trial [30]. Such results were subsequently confirmed in a clinical setting and the bioMILD LCS trial [31, 32].（节选，原文约 1172 字符）【来源 REC-LUNG-EPMC-0375】",
+    "diagnosis": "（本节所引指南章节为筛查结果判定标准，与\"诊断\"不完全对应）\n\nAt baseline, the high-risk size threshold is ≥ 500 mm3, in line with NELSON’s original criteria (or a baseline maximum diameter of ≥ 10 mm if volumetry is not available or fails), requiring referral to a multidisciplinary team (MDT) for further diagnostic work-up. Solid nodules with a baseline volume of less than 100 mm3 represent a negative screen result. Solid nodules between 100 mm3 and 250 mm3 require a 6-month follow-up and referral to MDT if their VDT is < 400 days, whereas those between 250 mm3 and 500 mm3 are reevaluated at 3 months and referred to MDT if their VDT is < 250 days. For those resolving or with slow growth, the following LDCT may be scheduled 12 months after the last CT scan, in order to minimize radiation and optimize the number of patient visits.\n\nAt annual follow-up, a VDT < 500 days is considered suspicious. If volumetry fails, an increase in diameter > 1.5 mm is considered to indicate significant growth.\n\nNew nodules are usually inflammatory, and most (66% in the NELSON trial) will resolve in the next follow-up CT.\n\nThose ≥ 30 mm3 require short-term (3-months) re-evaluation and are referred to MDT if they grow.（节选，原文约 2071 字符）【来源 REC-LUNG-EPMC-0358 / REC-LUNG-EPMC-0359 / REC-LUNG-EPMC-0360 / REC-LUNG-EPMC-0361 / REC-LUNG-EPMC-0362 / REC-LUNG-EPMC-0363 / REC-LUNG-EPMC-0364 / REC-LUNG-EPMC-0365 / REC-LUNG-EPMC-0366 / REC-LUNG-EPMC-0367 / REC-LUNG-EPMC-0368 / REC-LUNG-EPMC-0369 / REC-LUNG-EPMC-0370 / REC-LUNG-EPMC-0371 / REC-LUNG-EPMC-0372 / REC-LUNG-EPMC-0373 / REC-LUNG-EPMC-0374】\n\n同一指南章节的其他内容见「LUNG-002/pathology_subtypes」",
+    "differential": null,
+    "staging": null,
+    "treatment": "可及药物（FDA 说明书，详见 A4）：ALECTINIB、ATEZOLIZUMAB、BEVACIZUMAB、CARBOPLATIN、CISPLATIN、CRIZOTINIB、DOCETAXEL、DURVALUMAB、ERLOTINIB、ETOPOSIDE、GEFITINIB、GEMCITABINE、NIVOLUMAB、OSIMERTINIB、PACLITAXEL、PEMBROLIZUMAB、PEMETREXED、RAMUCIRUMAB",
+    "complications": "（来源：kgdrug 2018 科普库，未经医学审核，仅供参考）\n1、呼吸道并发症：肺炎、痰液潴留等是最常见的小细胞肺癌呼吸道并发症。这是因为当患者做完手术后，咳嗽现象往往会因为伤口的疼痛受到限制，所以就会很容易导致痰液留积现象的发生，从而引肺不张等肺部疾病。2、血胸、脓胸、支气管胸膜瘘：这是在肺癌术后常见的并发症，但是发病率往往是比较低的。一旦发生血胸，必须要及时地救治，因为此病的危害很大。脓胸往往是由于支气管以及肺内分泌物污染胸腔所引起的。支气管胸膜瘘是由于手术操作不当、支气管残端癌存留等所引起的。3、心血管系统并发症：血压、心律失常。",
+    "prognosis": null,
+    "followup": null,
+    "prevention": null,
+    "screening": "A number of potential blood, exhaled air, or sputum biomarkers are being studied, but none have yet been validated to help detect LC at an early stage [15]. Rather than being used as a first-line selection method, they could be combined with LDCT to increase specificity, if their cost is acceptable [16].\n\nIt was conventionally assumed that LCS with LDCT had to be undertaken annually, but a biennial screening interval is increasingly proposed as more sustainable, since it is safe after a negative scan [17]. A longer interval is associated with a higher risk of interval cancers. Further refinement of selection and screening strategy is continuously being investigated; the European 4-IN THE LUNG RUN trial aims to investigate personalized invitation and frequency of LCS [18].\n\nParticipation is key and is mainly driven by the personal perceived risk of lung cancer [19].（节选，原文约 2005 字符）（本节含指南表格 2 张，未转录）【来源 REC-LUNG-EPMC-0331 / REC-LUNG-EPMC-0332 / REC-LUNG-EPMC-0333 / REC-LUNG-EPMC-0334 / REC-LUNG-EPMC-0335 / REC-LUNG-EPMC-0336 / REC-LUNG-EPMC-0337 / REC-LUNG-EPMC-0338 / REC-LUNG-EPMC-0339 / REC-LUNG-EPMC-0340 / REC-LUNG-EPMC-0341 / REC-LUNG-EPMC-0342 / REC-LUNG-EPMC-0343 / REC-LUNG-EPMC-0344】\n\n同一指南章节的其他内容见「LUNG-002/pathology_subtypes」",
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "patient_version": {
+    "overview": "非小细胞肺癌约占肺癌总数的 80%，是最常见的一类肺癌。资料把它分为三型：腺癌、鳞状细胞癌（即肺鳞癌）和大细胞未分化癌，并指出它对传统放化疗的敏感性较差。早期发现方面，资料提到可以拍胸部 X 线片了解肺内有无异常，也可以做血常规、痰液找病理细胞等化验帮助判断；进一步检查包括支气管镜、纵隔镜、肺组织活检和胸腔镜等。需要说明：这段是 2018 年科普资料的概述，表述较概括，没有给出各型的比例、好发部位或治疗方案，本节不作补充。另外，“对传统放化疗敏感性较差”是资料对整类疾病的笼统说法，原文并未按亚型细分，患者不应据此自行判断治疗前景。\n【来源 kgdrug 2018 科普库】",
+    "epidemiology": null,
+    "etiology": "资料提出两点。第一，二手烟也是导致肺癌的重要危险因素：在不吸烟却患非小细胞肺癌的人当中，大约 25% 是由吸二手烟引起的，因此拒绝抽烟在一定程度上有助于让自己和他人远离恶性肺癌。第二，我国肺癌病死率升高的主要原因，是肺癌早期缺乏有效的筛查和诊断，资料称 80% 的肺癌患者在确诊时已是晚期，失去了最佳治疗时间。需要说明：这两个数字都出自 2018 年的科普资料，未标注研究来源，本节照原文转述，不做数值校正。就读者能做的事而言，资料强调的核心是两点：避免吸烟和二手烟暴露；重视早期筛查，不要等到有明显症状才就诊。\n【来源 kgdrug 2018 科普库】",
+    "pathophysiology": null,
+    "pathology_subtypes": "为了既尽量发现癌症、又减少过度检查带来的伤害，只有恶性可能性高的结节才建议进一步检查，判断依据包括大小，以及大小之外的特征，比如毛刺、胸膜牵拉、厚壁空洞。按EUPS指南，基线时实性非钙化结节的体积阈值是300立方毫米。英国胸科协会又做了修改，只有用Brock模型算出的恶性风险达到10%及以上才转诊，这样就把毛刺、位于上叶、结节数量等其他特征也算了进去。ESTI指南参考了这些已有指南，但主要目标是减少随访检查次数，同时避免分期大幅改变的风险和过度诊断风险。高危实性结节是指体积大和/或体积倍增时间（VDT）快的结节。本节依据指南原文节选整理。【来源 REC-LUNG-EPMC-0365 / REC-LUNG-EPMC-0373 / REC-LUNG-EPMC-0363】",
+    "symptoms_early": null,
+    "symptoms_late": null,
+    "signs": null,
+    "workup": "绝大多数情况下，持续存在的亚实性结节（SSN）属于惰性的肺腺癌类型，会从非典型腺瘤样增生逐步发展成原位增殖，再到微浸润，最后成为浸润性腺癌。它们也是肺癌筛查中过度诊断的主要来源。所谓过度诊断和过度治疗，是指筛查发现并治疗了那些因为肿瘤侵袭性低、或因为合并其他疾病（在高龄人群中更常见），本来不会影响预期寿命的癌症。对SSN长期随访、观察实性成分是否新增或增大，已被证明是安全的策略。SSN人群比其他人更容易得肺癌，但真正有临床意义的肺癌大多长在别的位置。在意大利多中心肺癌筛查（MILD）试验评估的400个SSN中，中位随访9年，由SSN本身引起的死亡为零；这些结果后来在临床环境和bioMILD筛查试验中得到重复。本节依据指南原文节选整理。【来源 REC-LUNG-EPMC-0375】",
+    "diagnosis": "本节内容来自另一主题的指南章节，与标题不完全对应。基线时高危体积阈值为≥500 mm3（与NELSON原始标准一致；无法或未能做体积测量时，基线最大径≥10 mm），需转多学科团队进一步诊断。基线体积<100 mm3的实性结节为筛查阴性。100–250 mm3的实性结节需6个月随访，若体积倍增时间（VDT）<400天则转多学科团队；250–500 mm3者在3个月复评，若VDT<250天则转多学科团队。对吸收或生长缓慢者，下一次低剂量CT可安排在末次CT后12个月，以减少辐射并优化就诊次数。年度随访时VDT<500天视为可疑；体积测量失败时，直径增加>1.5 mm视为显著生长。本节依据指南原文节选整理。【来源 REC-LUNG-EPMC-0358 等 17 条（详见专业版来源表）】",
+    "differential": null,
+    "staging": null,
+    "treatment": "本节专业版只有一份药物清单，没有治疗原则或方案描述。清单是本库已收录说明书的药物，中文对应为：阿来替尼、阿替利珠单抗、贝伐珠单抗、卡铂、顺铂、克唑替尼、多西他赛、度伐利尤单抗、厄洛替尼、依托泊苷、吉非替尼、吉西他滨、纳武利尤单抗、奥希替尼、紫杉醇、帕博利珠单抗、培美曲塞、雷莫芦单抗。这份名单只表示数据库里有这些药的说明书可供查询，既不代表它们都适用于非小细胞肺癌的某个阶段，也不代表推荐顺序。原文没有说明各药用于哪个分期、哪一线，也没有说明是否需要先做基因检测或 PD-L1 检测，本节不作补充，也不推测方案组合。实际用药必须由肿瘤专科医生根据病理类型、分期、检测结果和身体状况决定。\n【来源 FDA 说明书】",
+    "complications": "资料把肺癌术后并发症分为三类。第一类是呼吸道并发症：肺炎、痰液潴留最常见，原因是术后咳嗽常因伤口疼痛而受限，痰液容易积在肺内，进而引起肺不张等肺部问题。第二类是血胸、脓胸和支气管胸膜瘘：这类并发症在肺癌术后常见，但发病率通常较低；一旦发生血胸必须及时救治，危害较大；脓胸多由支气管及肺内分泌物污染胸腔引起；支气管胸膜瘘则与手术操作、支气管残端癌存留等因素有关。第三类是心血管系统并发症：血压异常和心律失常。需要指出：资料这一节开头写的是“小细胞肺癌呼吸道并发症”，而本档案是非小细胞肺癌，原文没有区分两者，本节照原文转述，不能据此认为这些并发症只属于某一类型。\n【来源 kgdrug 2018 科普库】",
+    "prognosis": null,
+    "followup": null,
+    "prevention": null,
+    "screening": "一些潜在的血液、呼出气或痰生物标志物正在研究中，但尚无一种被验证可用于早期发现肺癌。它们不宜作为一线初筛方法；若成本可接受，可与低剂量CT联合以提高特异性。过去认为低剂量CT肺癌筛查必须每年一次，但两年一次越来越被提出，因为阴性扫描后这样做是安全的，且更可持续；间隔越长，间期癌风险越高。筛查选择和策略仍在不断细化，欧洲4-IN THE LUNG RUN试验旨在研究个体化邀请与筛查频率。参与率是关键，主要由个人对肺癌风险的感知驱动。本节依据指南原文节选整理。【来源 REC-LUNG-EPMC-0331 等 14 条（详见专业版来源表）】",
+    "patient_education": null,
+    "care_seeking": null
+  },
+  "section_gaps": [
+    "epidemiology: 无可靠来源（指南/说明书未覆盖）",
+    "pathophysiology: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_early: 无可靠来源（指南/说明书未覆盖）",
+    "symptoms_late: 无可靠来源（指南/说明书未覆盖）",
+    "signs: 无可靠来源（指南/说明书未覆盖）",
+    "differential: 无可靠来源（指南/说明书未覆盖）",
+    "staging: 无可靠来源（指南/说明书未覆盖）",
+    "prognosis: 无可靠来源（指南/说明书未覆盖）",
+    "followup: 无可靠来源（指南/说明书未覆盖）",
+    "prevention: 无可靠来源（指南/说明书未覆盖）",
+    "patient_education: 无可靠来源（指南/说明书未覆盖）",
+    "care_seeking: 无可靠来源（指南/说明书未覆盖）"
+  ],
+  "links": {
+    "symptoms": [],
+    "drugs": [
+      "ALECTINIB",
+      "ATEZOLIZUMAB",
+      "BEVACIZUMAB",
+      "CARBOPLATIN",
+      "CISPLATIN",
+      "CRIZOTINIB",
+      "DOCETAXEL",
+      "DURVALUMAB",
+      "ERLOTINIB",
+      "ETOPOSIDE",
+      "GEFITINIB",
+      "GEMCITABINE",
+      "NIVOLUMAB",
+      "OSIMERTINIB",
+      "PACLITAXEL",
+      "PEMBROLIZUMAB",
+      "PEMETREXED",
+      "RAMUCIRUMAB"
+    ],
+    "checks": [],
+    "diseases": [],
+    "guidelines": [
+      "DOC-LUNG-EPMC-001",
+      "DOC-LUNG-EPMC-002",
+      "DOC-LUNG-EPMC-003"
+    ],
+    "genes": [
+      "EGFR 突变",
+      "ALK 融合"
+    ],
+    "biomarkers": [
+      "腺癌",
+      "鳞癌",
+      "EGFR 突变",
+      "ALK 融合"
+    ]
+  },
+  "symptom_early": [],
+  "symptom_late": [],
+  "signs": [],
+  "pathology_subtypes": [
+    "腺癌",
+    "鳞癌",
+    "EGFR 突变",
+    "ALK 融合"
+  ],
+  "stages": [
+    "I",
+    "II"
+  ],
+  "treatment_methods": [
+    "手术",
+    "手术切除",
+    "放疗",
+    "靶向治疗"
+  ],
+  "overview_text": "非小细胞肺癌 Non-small cell lung cancer 非小细胞肺癌则占肺癌总数的80%，是最为常见的肺癌。它主要包括腺癌、鳞状细胞癌即肺鳞癌、大细胞未分化癌三类，其对于传统放化疗敏感性较差。肺癌的早期诊断可以通过拍摄胸部X线片来了解肺内的异常情况。此外还可进行血液常规检查以及痰液找病理细胞等相关化验帮助诊断，并进行一系列深入的检查，包括支气管镜、纵隔镜、肺组织活检以及胸腔镜等。 可及药物（FDA 说明书，详见 A4）：ALECTINIB、ATEZOLIZUMAB、BEVACIZUMAB、CARBOPLATIN、CISPLATIN、CRIZOTINIB、DOCETAXEL、DURVALUMAB、ERLOTINIB、ETOPOSIDE、GEFITINIB、GEMCITABINE、NIVOLUMAB、OSIMERTINIB、PACLITAXEL、PEMBROLIZUMAB、PE",
+  "sources": [
+    "A4:drug_labels",
+    "REC:REC-LUNG-EPMC-0363",
+    "REC:REC-LUNG-EPMC-0365",
+    "REC:REC-LUNG-EPMC-0373",
+    "REC:REC-LUNG-EPMC-0375",
+    "kgdrug"
+  ],
+  "profile_version": "2026.10-draft",
+  "last_updated": "2026-10-27"
+}
