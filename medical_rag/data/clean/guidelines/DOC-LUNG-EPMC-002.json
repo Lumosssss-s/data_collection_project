@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "DOC-LUNG-EPMC-002",
+    "title": "Guideline for the Comprehensive Perioperative Management of Older Patients With Lung Cancer (2025)",
+    "summary": "ABSTRACT With the accelerating population aging, the number of older adult patients with lung cancer continues to increase. These patients often present with multiple chronic diseases and geriatric syndromes, resulting in more complex perioperative management and significantly increased surgical risks. This guideline was developed and reported on the basis of the Grading of Recommendations Assessment, Development and Evaluation (GRADE) system and the Reporting Items for Practice Guidelines in Healthcare (RIGHT) checklist. Focusing on 28 key clinical issues commonly encountered among older adults with lung cancer, such as frailty, malnutrition, and falls, a total of 55 recommendations were formulated. This guideline aims to provide standardized perioperative management strategies through comprehensive geriatric assessment, comorbidity management, and early identification and intervention for complications to reduce the incidence of postoperative complications and improve patients’ quality of life.",
+    "doc_type": "guideline",
+    "issuer": "Journal of Evidence-Based Medicine",
+    "publish_date": "2026-08-11",
+    "cancer_types": [
+      "lung"
+    ],
+    "license_note": "Open Access (Europe PMC)",
+    "file_path": "raw/guidelines/DOC-LUNG-EPMC-002.xml",
+    "doc_hash": "51b34e070390c65115b952a0bed413934e1e60211bd6a734635996ede1c6e724",
+    "review_status": "approved",
+    "_source": "europepmc",
+    "_pmid": "42576681",
+    "_pmcid": "PMC13613263",
+    "_doi": "10.1111/jebm.70178",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13613263/fullTextXML",
+    "_xml_bytes": 599437,
+    "source_name": "Guideline for the Comprehensive Perioperative Management of Older Patients With Lung Cancer (2025)",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DOC-LUNG-EPMC-002.xml",
+    "updated_at": "2026-10-21"
+  }
+]

@@ -1,0 +1,314 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-018",
+    "generic_name": "RAMUCIRUMAB",
+    "brand_names": [],
+    "aliases_zh": [
+      "雷莫芦单抗",
+      "雷莫西尤单抗"
+    ],
+    "title": "RAMUCIRUMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "CYRAMZA® is a human vascular endothelial growth factor receptor 2 (VEGFR2) antagonist indicated:",
+      "CYRAMZA®, as a single agent or in combination with paclitaxel, is indicated for the treatment of adults with advanced or metastatic, gastric or gastro-esophageal junction (GEJ) adenocarcinoma with disease progression on or after prior fluoropyrimidine- or platinum-containing chemotherapy.",
+      "CYRAMZA, in combination with erlotinib, is indicated for the first-line treatment of adults with metastatic non-small cell lung cancer (NSCLC) whose tumors have epidermal growth factor receptor (EGFR) exon 19 deletions or exon 21 (L858R) substitution mutations.",
+      "CYRAMZA, in combination with docetaxel, is indicated for the treatment of adults with metastatic non-small cell lung cancer (NSCLC) with disease progression on or after platinum-based chemotherapy. Patients with epidermal growth factor receptor (EGFR) or anaplastic lymphoma kinase (ALK) genomic tumor aberrations should have disease progression on FDA-approved therapy for these aberrations prior to receiving CYRAMZA.",
+      "CYRAMZA, in combination with FOLFIRI (irinotecan, folinic acid, and fluorouracil), is indicated for the treatment of adults with metastatic colorectal cancer (mCRC) with disease progression on or after prior therapy with bevacizumab, oxaliplatin, and a fluoropyrimidine.",
+      "CYRAMZA, as a single agent, is indicated for the treatment of adults with hepatocellular carcinoma (HCC) who have an alpha fetoprotein (AFP) of ≥400 ng/mL and have been treated with sorafenib.",
+      "【中文适应证】联合紫杉醇用于在含氟尿嘧啶类或含铂类化疗期间或化疗后岀现疾病进展的晚期胃或胃食管结合部腺癌患者。"
+    ],
+    "dosage": {
+      "standard": "EGFR Exon 19 Deletions or Exon 21 (L858R) Substitution Mutations – CYRAMZA in Combination with Erlotinib Disease Progression On Or After Platinum-based Chemotherapy – CYRAMZA in Combination with Docetaxel Reduce dose, withhold dose, or discontinue CYRAMZA to manage adverse reactions as described in Table 1. Adverse Reaction Severity a Dosage Modification a National Cancer Institute Common Toxicity Criteria for Adverse Events (NCI CTCAE) version 4.0 used to identify adverse reactions Hemorrhage [see Warnings and Precautions (5.1)] Grade 3 or 4 Permanently discontinue CYRAMZA Gastrointestinal Perforation [see Warnings and Precautions (5.2)] All Grades Permanently discontinue CYRAMZA Wound Healing Complications [see Warnings and Precautions (5.3)] All Grades Withhold CYRAMZA for 28 days prior to elective surgery. Resume CYRAMZA no sooner than 2 weeks after surgery and until adequate wound healing. The safety of resumption of CYRAMZA after resolution of wound healing complications has not been established. Arterial Thromboembolic Events [see Warnings and Precautions (5.4)] All Grades Permanently discontinue CYRAMZA Hypertension [see Warnings and Precautions (5.5)] Severe hypertension Withhold CYRAMZA until controlled with medical management Severe hypertension that cannot be controlled with antihypertensive therapy Permanently discontinue CYRAMZA Infusion-Related Reaction (IRR) [see Dosage and Administration (2.1), Warnings and Precautions (5.6)] Grade 1 or 2 IRR Reduce the infusion rate of CYRAMZA by 50% Grade 3 or 4 IRR Permanently discontinue CYRAMZA Posterior Reversible Encephalopathy Syndrome (PRES) [see Warnings and Precautions (5.8)] All Grades Permanently discontinue CYRAMZA Proteinuria [see Warnings and Precautions (5.9)] First occurrence of increased urine protein",
+      "adjustment": "Adverse Reaction Severity a Dosage Modification a National Cancer Institute Common Toxicity Criteria for Adverse Events (NCI CTCAE) version 4.0 used to identify adverse reactions Hemorrhage [see Warnings and Precautions (5.1)] Grade 3 or 4 Permanently discontinue CYRAMZA Gastrointestinal Perforation [see Warnings and Precautions (5.2)] All Grades Permanently discontinue CYRAMZA Wound Healing Complications [see Warnings and Precautions (5.3)] All Grades Withhold CYRAMZA for 28 days prior to elective surgery. Resume CYRAMZA no sooner than 2 weeks after surgery and until adequate wound healing. The safety of resumption of CYRAMZA after resolution of wound healing complications has not been established. Arterial Thromboembolic Events [see Warnings and Precautions (5.4)] All Grades Permanently discontinue CYRAMZA Hypertension [see Warnings and Precautions (5.5)] Severe hypertension Withhold CYRAMZA until controlled with medical management Severe hypertension that cannot be controlled with antihypertensive therapy Permanently discontinue CYRAMZA Infusion-Related Reaction (IRR) [see Dosage and Administration (2.1), Warnings and Precautions (5.6)] Grade 1 or 2 IRR Reduce the infusion rate "
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following serious adverse reactions are described elsewhere in the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Eli Lilly and Company at 1-800-LillyRx (1-800-545-5979) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data described in the Warnings and Precautions section reflect exposure to CYRAMZA in 2137 patients from six studies: REGARD, RAINBOW, RAISE, REVEL, REACH-2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of CYRAMZA was evaluated in REGARD and RAINBOW [see Clinical Studies (14.1)]. Patients in both trials had locally advanced or metastatic gastric canc",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "CYRAMZA Administered as a Single Agent (REGARD)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Patients received either CYRAMZA 8 mg/kg or placebo intravenously every two weeks. Patients randomized to CYRAMZA received a median of 4 doses; the median durat",
+        "frequency": "14%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common serious adverse reactions with CYRAMZA were anemia (3.8%) and intestinal obstruction (2.1%). Red blood cell transfusions were given to 11% of CY",
+        "frequency": "3.8%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (all grades) observed in CYRAMZA-treated patients at a rate of ≥10% and ≥2% higher than placebo were hypertension and diarrhea",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "a Hypertension is a consolidated term.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions CYRAMZA (N=236) Placebo (N=115)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades (%) Grade 3-4 (%) All Grades (%) Grade 3-4 (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hypertensiona 16 8 8 3",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metabolism and Nutrition",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hyponatremia 6 3 2 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Clinically relevant adverse reactions reported in ≥1% and <5% of CYRAMZA-treated patients in REGARD were:",
+        "frequency": "1%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Across clinical trials of CYRAMZA administered as a single agent, clinically relevant adverse reactions (including Grade ≥3) reported in CYRAMZA-treated patient",
+        "frequency": "8%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "CYRAMZA Administered in Combination with Paclitaxel (RAINBOW)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Patients received paclitaxel 80 mg/m2 on Days 1, 8, and 15 of each 28-day cycle with either CYRAMZA 8 mg/kg or placebo intravenously every two weeks. Patients r",
+        "frequency": "28%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common serious adverse reactions in patients who received CYRAMZA with paclitaxel were neutropenia (3.7%) and febrile neutropenia (2.4%); 19% of patien",
+        "frequency": "3.7%",
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-06-10",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-018.xml",
+    "doc_hash": "3b78aa00e1bbacd2695a72640f7b4cf272fbbb9e2a52c21b9be8700144a17938",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "c6080942-dee6-423e-b688-1272c2ae90d4",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/c6080942-dee6-423e-b688-1272c2ae90d4.xml",
+    "atc_code": "L01FG02",
+    "approval_no": null,
+    "source_name": "RAMUCIRUMAB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-018.xml",
+    "updated_at": "2026-10-26",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Hemorrhage",
+        "text": "5.1 Hemorrhage: CYRAMZA increased the risk of hemorrhage and gastrointestinal hemorrhage, including Grade ≥3 hemorrhagic events. Across six clinical studies in 2137 patients with various cancers treated with CYRAMZA, the incidence of all Grade hemorrhage ranged from 13-55%. Grade 3-5 hemorrhage incidence ranged from 2-5% [see Adverse Reactions (6.1)]. Patients with gastric cancer receiving nonsteroidal anti-inflammatory drugs (NSAIDs) were excluded from enrollment in REGARD and RAINBOW; therefore, the risk of gastric hemorrhage in CYRAMZA-treated patients with gastric tumors receiving NSAIDs is unknown. Patients with NSCLC receiving therapeutic anticoagulation or with evidence of major airway invasion by cancer were excluded from REVEL. In addition, patients with NSCLC with a recent history of gross hemoptysis, those receiving chronic therapy with NSAIDs or other anti-platelet therapy other than once daily aspirin, or with radiographic evidence of major blood vessel invasion or intratumor cavitation were excluded from REVEL and RELAY; therefore, the risk of pulmonary hemorrhage in these groups of patients is unknown. Permanently discontinue CYRAMZA in patients who experience severe (Grade 3 or 4) bleeding [see Dosage and Administration (2.6)].",
+        "char_len": 1263,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Hemorrhage",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Gastrointestinal Perforations",
+        "text": "5.2 Gastrointestinal Perforations: CYRAMZA can increase the risk of gastrointestinal perforation, a potentially fatal event. Across six clinical studies in 2137 patients with various cancers treated with CYRAMZA, the incidence of all Grade and Grade 3-5 gastrointestinal perforations ranged from <1-2% [see Adverse Reactions (6.1)]. Permanently discontinue CYRAMZA in patients who experience a gastrointestinal perforation [see Dosage and Administration (2.6)].",
+        "char_len": 461,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Gastrointestinal Perforations",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Impaired Wound Healing",
+        "text": "5.3 Impaired Wound Healing: Impaired wound healing can occur in patients who receive drugs that inhibit the VEGF or VEGFR pathway. CYRAMZA, a VEGFR2 antagonist, has the potential to adversely affect wound healing. CYRAMZA has not been studied in patients with serious or non-healing wounds. Withhold CYRAMZA for 28 days prior to elective surgery. Do not administer CYRAMZA for at least 2 weeks following a major surgical procedure and until adequate wound healing. The safety of resumption of CYRAMZA after resolution of wound healing complications has not been established [see Dosage and Administration (2.6)].",
+        "char_len": 612,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Impaired Wound Healing",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Arterial Thromboembolic Events",
+        "text": "5.4 Arterial Thromboembolic Events: Serious, sometimes fatal, arterial thromboembolic events (ATEs), including myocardial infarction, cardiac arrest, cerebrovascular accident, and cerebral ischemia, occurred across clinical trials. Across six clinical studies in 2137 patients with various cancers treated with CYRAMZA, the incidence of all Grade ATE was 1-3%. Grade 3-5 ATE incidence was <1-2% [see Adverse Reactions (6.1)]. Permanently discontinue CYRAMZA in patients who experience an ATE [see Dosage and Administration (2.6)].",
+        "char_len": 530,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Arterial Thromboembolic Events",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Hypertension",
+        "text": "5.5 Hypertension: An increased incidence of severe hypertension occurred in patients receiving CYRAMZA. Across five clinical studies, excluding RELAY, in 1916 patients with various cancers treated with CYRAMZA, the incidence of all Grade hypertension ranged from 11-26%. Grade 3-5 hypertension incidence ranged from 6-15% [see Adverse Reactions (6.1)]. In 221 patients with NSCLC receiving CYRAMZA in combination with erlotinib in the RELAY study, the incidence of new or worsening hypertension was higher (45%), as was the incidence of Grade 3-5 hypertension (24%). Of the patients experiencing new or worsening hypertension in RELAY (N=100 CYRAMZA and erlotinib; N=27 placebo and erlotinib), 13% of those treated with CYRAMZA and erlotinib required initiation of 3 or more antihypertensive medications compared to 4% of patients treated with placebo and erlotinib. Control hypertension prior to initiating treatment with CYRAMZA. Monitor blood pressure every two weeks or more frequently as indicated during treatment. Withhold CYRAMZA for severe hypertension until medically controlled. Permanently discontinue CYRAMZA for medically significant hypertension that cannot be controlled with antihypertensive therapy or in patients with hypertensive crisis or hypertensive encephalopathy [see Dosage and Administration (2.6)].",
+        "char_len": 1326,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Hypertension",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Infusion-Related Reactions",
+        "text": "5.6 Infusion-Related Reactions: Infusion-related reactions (IRR), including severe and life-threatening IRR, occurred in CYRAMZA clinical trials. The majority of IRR across trials occurred during or following a first or second CYRAMZA infusion. Symptoms of IRR included rigors/tremors, back pain/spasms, chest pain and/or tightness, chills, flushing, dyspnea, wheezing, hypoxia, and paresthesia. In severe cases, symptoms included bronchospasm, supraventricular tachycardia, and hypotension. Across six clinical studies in 2137 patients with various cancers treated with CYRAMZA in which premedication was recommended or required, the incidence of all Grade IRR ranged from <1-9%. Grade 3-5 IRR incidence was <1% [see Adverse Reactions (6.1)]. Premedicate prior to each CYRAMZA infusion [see Dosage and Administration (2.1)]. Monitor patients during the infusion for signs and symptoms of IRR in a setting with available resuscitation equipment. Reduce the infusion rate by 50% for Grade 1-2 IRR. Permanently discontinue CYRAMZA for Grade 3-4 IRR [see Dosage and Administration (2.6)].",
+        "char_len": 1085,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Infusion-Related Reactions",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Worsening of Pre-existing Hepatic Impairment",
+        "text": "5.7 Worsening of Pre-existing Hepatic Impairment: Clinical deterioration, manifested by new onset or worsening encephalopathy, ascites, or hepatorenal syndrome, was reported in patients with Child-Pugh B or C cirrhosis who received single agent CYRAMZA. Use CYRAMZA in patients with Child-Pugh B or C cirrhosis only if the potential benefits of treatment are judged to outweigh the risks of clinical deterioration. Based on safety data from REACH-2, in patients with Child-Pugh A liver cirrhosis, the pooled incidence of hepatic encephalopathy and hepatorenal syndrome was higher for patients who received CYRAMZA (6%) compared to patients who received placebo (0%) [see Adverse Reactions (6.1)].",
+        "char_len": 696,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Worsening of Pre-existing Hepatic Impairment",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Posterior Reversible Encephalopathy Syndrome",
+        "text": "5.8 Posterior Reversible Encephalopathy Syndrome: Posterior Reversible Encephalopathy Syndrome (PRES) (also known as Reversible Posterior Leukoencephalopathy Syndrome [RPLS]) has been reported in <0.1% of 2137 patients enrolled in six clinical studies with CYRAMZA. Symptoms of PRES include seizure, headache, nausea/vomiting, blindness, or altered consciousness, with or without associated hypertension. Confirm the diagnosis of PRES with magnetic resonance imaging and permanently discontinue CYRAMZA in patients who develop PRES. Symptoms may resolve or improve within days, although some patients with PRES can experience ongoing neurologic sequelae or death [see Dosage and Administration (2.6)].",
+        "char_len": 701,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Posterior Reversible Encephalopathy Syndrome",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Proteinuria Including Nephrotic Syndrome",
+        "text": "5.9 Proteinuria Including Nephrotic Syndrome: Across six clinical studies in 2137 patients with various cancers treated with CYRAMZA, the incidence of all Grade proteinuria ranged from 3-34%. Grade ≥3 proteinuria (including 4 patients with nephrotic syndrome) incidence ranged from <1-3% [see Adverse Reactions (6.1)]. Monitor proteinuria by urine dipstick and/or urinary protein creatinine ratio. If the result of the urine dipstick is 2+ or greater, perform a 24-hour urine collection for protein measurement. Withhold CYRAMZA for urine protein levels that are 2 or more grams over 24 hours. Reinitiate CYRAMZA at a reduced dose once the urine protein level returns to less than 2 grams over 24 hours. Permanently discontinue CYRAMZA for urine protein levels greater than 3 grams over 24 hours or in the setting of nephrotic syndrome [see Dosage and Administration (2.6)].",
+        "char_len": 874,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Proteinuria Including Nephrotic Syndrome",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Thyroid Dysfunction",
+        "text": "5.10 Thyroid Dysfunction: Across six clinical studies in 2137 patients with various cancers treated with CYRAMZA, the incidence of Grade 1-2 hypothyroidism ranged from <1-3%; there were no reports of Grade 3-5 hypothyroidism [see Adverse Reactions (6.1)]. Monitor thyroid function during treatment with CYRAMZA.",
+        "char_len": 311,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Thyroid Dysfunction",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.11 Embryo-Fetal Toxicity",
+        "text": "5.11 Embryo-Fetal Toxicity: Based on its mechanism of action, CYRAMZA can cause fetal harm when administered to pregnant women. Animal models link angiogenesis, VEGF and VEGFR2 to critical aspects of female reproduction, embryo-fetal development, and postnatal development. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with CYRAMZA and for 3 months after the last dose [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 514,
+        "source_section_code": "42229-5",
+        "source_title": "5.11 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-018.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "88829-7",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: No dose adjustment is recommended for patients with mild (total bilirubin within ULN and aspartate aminotransferase [AST] >ULN or total bilirubin >1 to 1.5 times ULN and any AST) or moderate (total bilirubin >1.5 to 3 times ULN and any AST) hepatic impairment. Clinical deterioration was reported in patients with Child-Pugh B or C cirrhosis who received single agent CYRAMZA [see Warnings and Precautions (5.7), Clinical Pharmacology (12.3)].",
+            "char_len": 467,
+            "source_section_code": "88829-7",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-018.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.6 Dosage Modifications for Adverse Reactions",
+            "text": "2.6 Dosage Modifications for Adverse Reactions: Reduce dose, withhold dose, or discontinue CYRAMZA to manage adverse reactions as described in Table 1. Adverse Reaction Severity a Dosage Modification a National Cancer Institute Common Toxicity Criteria for Adverse Events (NCI CTCAE) version 4.0 used to identify adverse reactions Hemorrhage [see Warnings and Precautions (5.1)] Grade 3 or 4 Permanently discontinue CYRAMZA Gastrointestinal Perforation [see Warnings and Precautions (5.2)] All Grades Permanently discontinue CYRAMZA Wound Healing Complications [see Warnings and Precautions (5.3)] All Grades Withhold CYRAMZA for 28 days prior to elective surgery. Resume CYRAMZA no sooner than 2 weeks after surgery and until adequate wound healing. The safety of resumption of CYRAMZA after resolution of wound healing complications has not been established. Arterial Thromboembolic Events [see Warnings and Precautions (5.4)] All Grades Permanently discontinue CYRAMZA Hypertension [see Warnings and Precautions (5.5)] Severe hypertension Withhold CYRAMZA until controlled with medical management Severe hypertension that cannot be controlled with antihypertensive therapy Permanently discontinue CYRAMZA Infusion-Related Reaction (IRR) [see Dosage and Administration (2.1), Warnings and Precautions (5.6)] Grade 1 or 2 IRR Reduce the infusion rate of CYRAMZA by 50% Grade 3 or 4 IRR Permanently discontinue CYRAMZA Posterior Reversible Encephalopathy Syndrome (PRES) [see Warnings and Precautions (5.8)] All Grades Permanently discontinue CYRAMZA Proteinuria [see Warnings and Precautions (5.9)] First occurrence of increased urine protein levels greater than or equal to 2 g per 24 hours Withhold CYRAMZA until urine protein level is less than 2 g per 24 hours Resume CYRAMZA at a reduced dose: Reduce 8 mg/kg dose to 6 mg/kg Reduce 10 mg/kg dose to 8 mg/kg Reoccurrence of urine protein level greater than 2 g per 24 hours following initial dose reduction Withhold CYRAMZA until urine protein level is less than 2 g per 24 hours Resume CYRAMZA at a reduced dose: Reduce 6 mg/kg dose to 5 mg/kg Reduce 8 mg/kg dose to 6 mg/kg Urine protein level greater than 3 g per 24 hours or in the setting of nephrotic syndrome Permanently discontinue CYRAMZA",
+            "char_len": 2252,
+            "source_section_code": "42229-5",
+            "source_title": "2.6 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-018.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-018.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung",
+      "gastric"
+    ],
+    "guideline_use_cancers": [],
+    "patient_plain": "{\"what_is_it\": \"这是一种通过静脉输注使用的抗癌药，能阻断肿瘤血管生长，用于治疗某些晚期胃癌、肺癌、结直肠癌和肝癌。\", \"how_to_use\": \"本药为静脉输注，具体方案因癌种不同而异。肺癌可单用或与厄洛替尼、多西他赛联用；胃癌可单用或与紫杉醇联用；结直肠癌与FOLFIRI方案联用；肝癌单用。出现不良反应时，医生会按说明书调整剂量、暂停或永久停药。\", \"cautions\": [\"出现3级或4级出血时，需永久停用本药。\", \"发生胃肠道穿孔时，无论轻重，需永久停用本药。\", \"计划手术前需停药28天，术后至少2周且伤口愈合后再恢复用药。\", \"发生动脉血栓事件时，无论轻重，需永久停用本药。\", \"出现严重高血压时，需暂停用药直至药物控制稳定。\", \"高血压无法用降压药控制时，需永久停用本药。\", \"输注反应为1级或2级时，输注速度需减慢50%。\", \"输注反应为3级或4级时，需永久停用本药。\", \"发生后可逆性脑病综合征时，无论轻重，需永久停用本药。\", \"出现蛋白尿时，需按说明书进行剂量调整。\", \"本药说明书未列出禁忌证。\"], \"side_effects\": [{\"term\": \"高血压\", \"plain\": \"血压升高，单药治疗时较常见。\", \"when_to_seek_help\": \"血压严重升高或降压药控制不住时，需及时就医。\"}, {\"term\": \"出血\", \"plain\": \"可能出现出血，严重程度不一。\", \"when_to_seek_help\": \"出现3级或4级出血时，需立即就医并永久停药。\"}, {\"term\": \"胃肠道穿孔\", \"plain\": \"胃肠道出现破孔，属于严重情况。\", \"when_to_seek_help\": \"一旦发生，需立即就医并永久停药。\"}, {\"term\": \"伤口愈合不良\", \"plain\": \"手术后伤口可能愈合变慢或出现问题。\", \"when_to_seek_help\": \"计划手术或伤口愈合异常时，需告知医生并暂停用药。\"}, {\"term\": \"动脉血栓事件\", \"plain\": \"动脉内形成血栓，属于严重情况。\", \"when_to_seek_help\": \"一旦发生，需立即就医并永久停药。\"}, {\"term\": \"输注相关反应\", \"plain\": \"输注过程中可能出现反应，轻重不一。\", \"when_to_seek_help\": \"出现3级或4级输注反应时，需立即就医并永久停药。\"}, {\"term\": \"可逆性脑病综合征\", \"plain\": \"一种脑部不良反应，属于严重情况。\", \"when_to_seek_help\": \"一旦发生，需立即就医并永久停药。\"}, {\"term\": \"蛋白尿\", \"plain\": \"尿中蛋白质增多。\", \"when_to_seek_help\": \"出现蛋白尿时，需按医生指导调整用药。\"}, {\"term\": \"贫血\", \"plain\": \"单药治疗时较常见的严重不良反应之一。\", \"when_to_seek_help\": \"出现明显乏力、面色苍白等情况时，需及时就医。\"}, {\"term\": \"肠梗阻\", \"plain\": \"单药治疗时较常见的严重不良反应之一。\", \"when_to_seek_help\": \"出现腹痛、呕吐、排便困难时，需及时就医。\"}, {\"term\": \"腹泻\", \"plain\": \"单药治疗时较常见，发生率高于安慰剂组。\", \"when_to_seek_help\": \"腹泻严重或持续不缓解时，需及时就医。\"}, {\"term\": \"低钠血症\", \"plain\": \"血中钠水平偏低。\", \"when_to_seek_help\": \"出现明显乏力、恶心、意识异常时，需及时就医。\"}, {\"term\": \"中性粒细胞减少\", \"plain\": \"与紫杉醇联用时较常见的严重不良反应之一。\", \"when_to_seek_help\": \"出现发热、感染迹象时，需及时就医。\"}, {\"term\": \"发热性中性粒细胞减少\", \"plain\": \"中性粒细胞减少伴发热，与紫杉醇联用时可见。\", \"when_to_seek_help\": \"出现发热时，需立即就医。\"}], \"seek_help\": \"出现3级或4级出血、胃肠道穿孔、动脉血栓事件、3级或4级输注反应、可逆性脑病综合征、严重或控制不住的高血压、发热伴中性粒细胞减少、明显乏力面色苍白、腹痛呕吐排便困难等情况时，需及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:17:31"
+  }
+]

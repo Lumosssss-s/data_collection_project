@@ -1,0 +1,226 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-017",
+    "generic_name": "PACLITAXEL",
+    "brand_names": [],
+    "aliases_zh": [
+      "紫杉醇"
+    ],
+    "title": "PACLITAXEL 说明书（FDA DailyMed）",
+    "indications": [
+      "Paclitaxel Injection USP is indicated as subsequent therapy for the treatment of advanced carcinoma of the ovary. As first-line therapy, paclitaxel injection is indicated in combination with cisplatin.",
+      "Paclitaxel Injection USP is indicated for the adjuvant treatment of node-positive breast cancer administered sequentially to standard doxorubicin-containing combination chemotherapy. In the clinical trial, there was an overall favorable effect on disease-free and overall survival in the total population of patients with receptor-positive and receptor-negative tumors, but the benefit has been specifically demonstrated by available data (median follow-up 30 months) only in the patients with estrogen and progesterone receptor-negative tumors (see CLINICAL STUDIES, Breast Carcinoma ).",
+      "Paclitaxel Injection USP is indicated for the treatment of breast cancer after failure of combination chemotherapy for metastatic disease or relapse within 6 months of adjuvant chemotherapy. Prior therapy should have included an anthracycline unless clinically contraindicated.",
+      "Paclitaxel Injection USP, in combination with cisplatin, is indicated for the first-line treatment of non-small cell lung cancer in patients who are not candidates for potentially curative surgery and/or radiation therapy.",
+      "Paclitaxel Injection USP is indicated for the second-line treatment of AIDS-related Kaposi’s sarcoma."
+    ],
+    "dosage": {
+      "standard": "Note: Contact of the undiluted concentrate with plasticized PVC equipment or devices used to prepare solutions for infusion is not recommended. In order to minimize patient exposure to the plasticizer DEHP [di-(2-ethylhexyl)phthalate], which may be leached from PVC infusion bags or sets, diluted paclitaxel injection solutions should be stored in bottles (glass, polypropylene) or plastic bags (polypropylene, polyolefin) and administered through polyethylene-lined administration sets. All patients should be premedicated prior to paclitaxel injection administration in order to prevent severe hypersensitivity reactions. Such premedication may consist of dexamethasone 20 mg PO administered approximately 12 and 6 hours before paclitaxel injection, diphenhydramine (or its equivalent) 50 mg IV 30 to 60 minutes prior to paclitaxel injection, and cimetidine (300 mg) or ranitidine (50 mg) IV 30 to 60 minutes before paclitaxel injection. For patients with carcinoma of the ovary, the following regimens are recommended (see CLINICAL STUDIES, Ovarian Carcinoma ): 1) For previously untreated patients with carcinoma of the ovary, one of the following recommended regimens may be given every 3 weeks. In selecting the appropriate regimen, differences in toxicities should be considered (see TABLE 11 in ADVERSE REACTIONS, Disease-Specific Adverse Event Experiences ). 2) In patients previously treated with chemotherapy for carcinoma of the ovary, paclitaxel injection has been used at several doses and schedules; however, the optimal regimen is not yet clear (see CLINICAL STUDIES, Ovarian Carcinoma ). The recommended regimen is paclitaxel injection 135 mg/m2 or 175 mg/m2 administered intravenously over 3 hours every 3 weeks. For patients with carcinoma of the breast, the following is recommend",
+      "adjustment": "1) For previously untreated patients with carcinoma of the ovary, one of the following recommended regimens may be given every 3 weeks. In selecting the appropriate regimen, differences in toxicities should be considered (see TABLE 11 in ADVERSE REACTIONS, Disease-Specific Adverse Event Experiences ). 2) In patients previously treated with chemotherapy for carcinoma of the ovary, paclitaxel injection has been used at several doses and schedules; however, the optimal regimen is not yet clear (see CLINICAL STUDIES, Ovarian Carcinoma ). The recommended regimen is paclitaxel injection 135 mg/m2 or 175 mg/m2 administered intravenously over 3 hours every 3 weeks. For patients with carcinoma of the breast, the following is recommended (see CLINICAL STUDIES, Breast Carcinoma ): 1) For the adjuvant treatment of node-positive breast cancer, the recommended regimen is paclitaxel injection, at a dose of 175 mg/m2 intravenously over 3 hours every 3 weeks for 4 courses administered sequentially to doxorubicin-containing combination chemotherapy. The clinical trial used 4 courses of doxorubicin and cyclophosphamide (see CLINICAL STUDIES, Breast Carcinoma ). 2) After failure of initial chemotherap"
+    },
+    "contraindications": [
+      "Paclitaxel injection is contraindicated in patients who have a history of hypersensitivity reactions to paclitaxel injection or other drugs formulated in polyoxyl 35 castor oil, NF.",
+      "Paclitaxel injection should not be used in patients with solid tumors who have baseline neutrophil counts of < 1500 cells/mm3 or in patients with AIDS-related Kaposi’s sarcoma with baseline neutrophil counts of < 1000 cells/mm3."
+    ],
+    "adverse_reactions": [
+      {
+        "term": "Data in the following table are based on the experience of 812 patients (493 with ovarian carcinoma and 319 with breast carcinoma) enrolled in 10 studies who re",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Percent of Patients (n = 812)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Neutropenia < 2000/mm3 90",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Leukopenia < 4000/mm3 90",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Thrombocytopenia < 100,000/mm3 20",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Anemia < 11 g/dL 78",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Red Cell Transfusions 25",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Red Cell Transfusions",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Platelet Transfusions 2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Platelet Transfusions",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "• Hypersensitivity Reaction b",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Vital Sign Changesc",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Bradycardia (n = 537) 3",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Bradycardia (n = 537)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Hypotension (n = 532) 12",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Hypotension (n = 532)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Significant Cardiovascular Events 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Significant Cardiovascular Events",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Pts with normal baseline (n = 559) 14",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "—Pts with normal baseline (n = 559)",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-09-10",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-017.xml",
+    "doc_hash": "86b7c58d7cf27131a471b94540a775ef425f9d423cdfff44defbe1d541c8c2ab",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "e4be6cbf-72b9-4f7f-9b1b-459b2d35961a",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/e4be6cbf-72b9-4f7f-9b1b-459b2d35961a.xml",
+    "atc_code": "L01CD01",
+    "approval_no": null,
+    "source_name": "PACLITAXEL 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-017.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "In a Phase 1 trial using escalating doses of paclitaxel (110 to 200 mg/m2) and cisplatin (50 or 75 mg/m2) given as sequential infusions, myelosuppression was more profound when paclitaxel was given after cisplatin than with the alternate sequence (i.e., paclitaxel before cisplatin). Pharmacokinetic data from these patients demonstrated a decrease in paclitaxel clearance of approximately 33% when paclitaxel was administered following cisplatin.",
+      "The metabolism of paclitaxel injection is catalyzed by cytochrome P450 isoenzymes CYP2C8 and CYP3A4. In the absence of formal clinical drug interaction studies, caution should be exercised when administering paclitaxel concomitantly with known substrates or inhibitors of the cytochrome P450 isoenzymes CYP2C8 and CYP3A4. Caution should be exercised when paclitaxel injection is concomitantly administered with known substrates (e.g., midazolam, buspirone, felodipine, lovastatin, eletriptan, sildenafil, simvastatin, and triazolam), inhibitors (e.g., atazanavir, clarithromycin, indinavir, itraconazole, ketoconazole, nefazodone, nelfinavir, ritonavir, saquinavir, and telithromycin), and inducers (e.g., rifampin and carbamazepine) of CYP3A4 (see CLINICAL PHARMACOLOGY ).",
+      "Caution should also be exercised when paclitaxel injection is concomitantly administered with known substrates (e.g., repaglinide and rosiglitazone), inhibitors (e.g., gemfibrozil), and inducers (e.g., rifampin) of CYP2C8 (see CLINICAL PHARMACOLOGY ).",
+      "Potential interactions between paclitaxel injection, a substrate of CYP3A4, and protease inhibitors (ritonavir, saquinavir, indinavir, and nelfinavir), which are substrates and/or inhibitors of CYP3A4, have not been evaluated in clinical trials.",
+      "Reports in the literature suggest that plasma levels of doxorubicin (and its active metabolite doxorubicinol) may be increased when paclitaxel and doxorubicin are used in combination."
+    ],
+    "warnings": [
+      {
+        "code": "34071-1",
+        "title": "WARNINGS",
+        "text": "WARNINGS: Anaphylaxis and severe hypersensitivity reactions characterized by dyspnea and hypotension requiring treatment, angioedema, and generalized urticaria have occurred in 2 to 4% of patients receiving paclitaxel in clinical trials. Fatal reactions have occurred in patients despite premedication. All patients should be pretreated with corticosteroids, diphenhydramine, and H2 antagonists (see DOSAGE AND ADMINISTRATION ). Patients who experience severe hypersensitivity reactions to paclitaxel injection should not be rechallenged with the drug. Bone marrow suppression (primarily neutropenia) is dose-dependent and is the dose-limiting toxicity. Neutrophil nadirs occurred at a median of 11 days. Paclitaxel injection should not be administered to patients with baseline neutrophil counts of less than 1500 cells/mm3 (< 1000 cells/mm3 for patients with KS). Frequent monitoring of blood counts should be instituted during paclitaxel injection treatment. Patients should not be re-treated with subsequent cycles of paclitaxel injection until neutrophils recover to a level > 1500 cells/mm3 (> 1000 cells/mm3 for patients with KS) and platelets recover to a level > 100,000 cells/mm3. Severe conduction abnormalities have been documented in < 1% of patients during paclitaxel injection therapy and in some cases requiring pacemaker placement. If patients develop significant conduction abnormalities during paclitaxel infusion, appropriate therapy should be administered and continuous cardiac monitoring should be performed during subsequent therapy with paclitaxel injection.",
+        "char_len": 1583,
+        "source_section_code": "34071-1",
+        "source_title": "WARNINGS",
+        "source_xml": "DRUG-LUNG-FDA-017.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Pregnancy",
+        "text": "Pregnancy: Paclitaxel injection can cause fetal harm when administered to a pregnant woman. Administration of paclitaxel during the period of organogenesis to rabbits at doses of 3 mg/kg/day (about 0.2 the daily maximum recommended human dose on a mg/m2 basis) caused embryo- and fetotoxicity, as indicated by intrauterine mortality, increased resorptions, and increased fetal deaths. Maternal toxicity was also observed at this dose. No teratogenic effects were observed at 1 mg/kg/day (about 1/15 the daily maximum recommended human dose on a mg/m2 basis); teratogenic potential could not be assessed at higher doses due to extensive fetal mortality. There are no adequate and well-controlled studies in pregnant women. If paclitaxel injection is used during pregnancy, or if the patient becomes pregnant while receiving this drug, the patient should be apprised of the potential hazard to the fetus. Women of childbearing potential should be advised to avoid becoming pregnant.",
+        "char_len": 980,
+        "source_section_code": "42229-5",
+        "source_title": "Pregnancy",
+        "source_xml": "DRUG-LUNG-FDA-017.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "",
+        "text": "Paclitaxel injection should be administered under the supervision of a physician experienced in the use of cancer chemotherapeutic agents. Appropriate management of complications is possible only when adequate diagnostic and treatment facilities are readily available. Anaphylaxis and severe hypersensitivity reactions characterized by dyspnea and hypotension requiring treatment, angioedema, and generalized urticaria have occurred in 2 to 4% of patients receiving paclitaxel in clinical trials. Fatal reactions have occurred in patients despite premedication. All patients should be pretreated with corticosteroids, diphenhydramine, and H2 antagonists (see DOSAGE AND ADMINISTRATION ). Patients who experience severe hypersensitivity reactions to paclitaxel injection should not be rechallenged with the drug. Paclitaxel injection therapy should not be given to patients with solid tumors who have baseline neutrophil counts of less than 1500 cells/mm3 and should not be given to patients with AIDS-related Kaposi’s sarcoma if the baseline neutrophil count is less than 1000 cells/mm3. In order to monitor the occurrence of bone marrow suppression, primarily neutropenia, which may be severe and result in infection, it is recommended that frequent peripheral blood cell counts be performed on all patients receiving paclitaxel injection.",
+        "char_len": 1340,
+        "source_section_code": "34066-1",
+        "source_title": "",
+        "source_xml": "DRUG-LUNG-FDA-017.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "Hepatic Impairment",
+            "text": "Hepatic Impairment: Patients with hepatic impairment may be at increased risk of toxicity, particularly grade III–IV myelosuppression (see CLINICAL PHARMACOLOGY and PRECAUTIONS, Hepatic ). Recommendations for dosage adjustment for the first course of therapy are shown in TABLE 17 for both 3 and 24 hour infusions. Further dose reduction in subsequent courses should be based on individual tolerance. Patients should be monitored closely for the development of profound myelosuppression. Degree of Hepatic Impairment Transaminase Levels Bilirubin Levelsb Recommended Paclitaxel Injection Dosec Transaminase Levels Bilirubin Levelsb Recommended Paclitaxel Injection Dosec 24 hour infusion < 2 × ULN and ≤ 1.5 mg/dL 135 mg/m2 2 to < 10 × ULN and ≤ 1.5 mg/dL 100 mg/m2 2 to < 10 × ULN < 10 × ULN and 1.6 to 7.5 mg/dL 50 mg/m2 1.6 to 7.5 mg/dL ≥ 10 × ULN or > 7.5 mg/dL Not recommended Not recommended 3 hour infusion < 10 × ULN and ≤ 1.25 × ULN 175 mg/m2 < 10 × ULN and 1.26 to 2 × ULN 135 mg/m2 1.26 to 2 × ULN < 10 × ULN and 2.01 to 5 × ULN 90 mg/m2 2.01 to 5 × ULN ≥ 10 × ULN or > 5 × ULN Not recommended a These recommendations are based on dosages for patients without hepatic impairment of 135 mg/m2 over 24 hours or 175 mg/m2 over 3 hours; data are not available to make dose adjustment recommendations for other regimens (e.g., for AIDS-related Kaposi’s sarcoma). b Differences in criteria for bilirubin levels between the 3 and 24 hour infusion are due to differences in clinical trial design. c Dosage recommendations are for the first course of therapy; further dose reduction in subsequent courses should be based on individual tolerance.",
+            "char_len": 1647,
+            "source_section_code": "42229-5",
+            "source_title": "Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-017.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": false,
+        "reason": "D&A 树下无标题含 dosage/dose modification 的子节",
+        "items": []
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-017.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种叫紫杉醇的注射用抗癌药，用于治疗卵巢癌、乳腺癌、非小细胞肺癌和艾滋病相关卡波西肉瘤。\", \"how_to_use\": \"用药前需先服用地塞米松，并静脉用苯海拉明及西咪替丁或雷尼替丁，以防严重过敏。\", \"cautions\": [\"对紫杉醇或聚氧乙烯35蓖麻油过敏者禁用。\", \"实体瘤患者中性粒细胞低于1500/mm³时不应使用。\", \"艾滋病相关卡波西肉瘤患者中性粒细胞低于1000/mm³时不应使用。\", \"稀释后的药液应存放在玻璃瓶或聚丙烯等容器中。\", \"输注时应使用聚乙烯衬里的输液器。\", \"不应让未稀释药液接触聚氯乙烯器材。\", \"与顺铂合用且紫杉醇在顺铂之后给药时，骨髓抑制更明显。\", \"与CYP3A4或CYP2C8的底物、抑制剂或诱导剂合用需谨慎。\", \"与多柔比星合用时，多柔比星及其代谢物血药浓度可能升高。\"], \"side_effects\": [{\"term\": \"中性粒细胞减少\", \"plain\": \"中性粒细胞低于2000/mm³，身体抗感染能力可能下降。\", \"when_to_seek_help\": \"出现发热、寒战或感染迹象时应及时就医。\"}, {\"term\": \"白细胞减少\", \"plain\": \"白细胞低于4000/mm³，抵抗力可能变弱。\", \"when_to_seek_help\": \"出现反复发热或明显乏力时应就医。\"}, {\"term\": \"血小板减少\", \"plain\": \"血小板低于100000/mm³，可能更容易出血。\", \"when_to_seek_help\": \"出现异常出血或瘀斑时应及时就医。\"}, {\"term\": \"贫血\", \"plain\": \"血红蛋白低于11g/dL，可能感到疲倦或气短。\", \"when_to_seek_help\": \"出现明显乏力、头晕或气短时应就医。\"}, {\"term\": \"红细胞输注\", \"plain\": \"部分患者需要输注红细胞来改善贫血。\", \"when_to_seek_help\": \"医生建议输血时应配合就医处理。\"}, {\"term\": \"血小板输注\", \"plain\": \"少数患者需要输注血小板来改善出血风险。\", \"when_to_seek_help\": \"医生建议输血小板时应配合就医处理。\"}, {\"term\": \"过敏反应\", \"plain\": \"可能发生过敏反应，用药前需预防性用药。\", \"when_to_seek_help\": \"出现皮疹、瘙痒、呼吸困难时应立即就医。\"}, {\"term\": \"心率减慢\", \"plain\": \"部分患者可能出现心率偏慢。\", \"when_to_seek_help\": \"出现头晕、晕厥或心悸时应就医。\"}, {\"term\": \"低血压\", \"plain\": \"部分患者可能出现血压偏低。\", \"when_to_seek_help\": \"出现头晕、眼前发黑或乏力时应就医。\"}, {\"term\": \"重要心血管事件\", \"plain\": \"少数患者可能发生较明显的心血管问题。\", \"when_to_seek_help\": \"出现胸痛、明显心悸或呼吸困难时应立即就医。\"}], \"seek_help\": \"出现发热、寒战、异常出血、皮疹、呼吸困难、头晕晕厥、胸痛或明显心悸时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:17:24"
+  }
+]

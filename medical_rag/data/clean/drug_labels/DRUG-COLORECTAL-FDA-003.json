@@ -1,0 +1,225 @@
+[
+  {
+    "drug_id": "DRUG-COLORECTAL-FDA-003",
+    "generic_name": "FLUOROURACIL",
+    "brand_names": [],
+    "aliases_zh": [
+      "氟尿嘧啶"
+    ],
+    "title": "FLUOROURACIL 说明书（FDA DailyMed）",
+    "indications": [
+      "Fluorouracil is indicated for the treatment of patients with:",
+      "Fluorouracil is a nucleoside metabolic inhibitor indicated for the treatment of patients with"
+    ],
+    "dosage": {
+      "standard": "Prior to initiating fluorouracil, test patients for genetic variants of the DPYD gene unless immediate treatment is necessary. An FDA-authorized test for the detection of the DPYD gene to identify patients at risk of serious adverse reactions with fluorouracil is not currently available. Currently available tests used to identify DPYD variants may vary in accuracy and design (e.g., which DPYD variant(s) they identify). Avoid use of fluorouracil in patients known to have certain homozygous or compound heterozygous DPYD variants that result in complete DPD deficiency. No fluorouracil dose has been proven safe for patients with complete DPD deficiency. For patients with partial DPD deficiency, individualize the dosage and modify based on tolerability and intent of treatment [see Warnings and Precautions (5.1)]. Fluorouracil is recommended for administration either as an intravenous bolus or as an intravenous infusion. Do not inject the entire contents of the vial directly into patients. Individualize the dose and dosing schedule of Fluorouracil based on tumor type, the specific regimen administered, disease state, response to treatment, and patient risk factors. Withhold Fluorouracil for any of the following: Upon resolution or improvement to Grade 1 diarrhea, mucositis, myelosuppression, or palmar-plantar erythrodysesthesia, resume Fluorouracil administration at a reduced dose. There is no recommended dose for resumption of Fluorouracil administration following development of any of the following adverse reactions: Fluorouracil is supplied in a pharmacy bulk package consisting of a vial. The pharmacy bulk package can be used to prepare doses for more than one patient. It is not supplied with a sterile transfer device, which is required for dispensing when multiple doses w",
+      "adjustment": "Fluorouracil is recommended for administration either as an intravenous bolus or as an intravenous infusion. Do not inject the entire contents of the vial directly into patients. Individualize the dose and dosing schedule of Fluorouracil based on tumor type, the specific regimen administered, disease state, response to treatment, and patient risk factors. Withhold Fluorouracil for any of the following: Upon resolution or improvement to Grade 1 diarrhea, mucositis, myelosuppression, or palmar-plantar erythrodysesthesia, resume Fluorouracil administration at a reduced dose. There is no recommended dose for resumption of Fluorouracil administration following development of any of the following adverse reactions: Fluorouracil is supplied in a pharmacy bulk package consisting of a vial. The pharmacy bulk package can be used to prepare doses for more than one patient. It is not supplied with a sterile transfer device, which is required for dispensing when multiple doses will be prepared from the single vial. The 50 mL vial is only intended for preparation in a Pharmacy Admixture Service under appropriate conditions for cytotoxic drugs [see References (15)]. Store vial at room temperature"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in more detail in other sections of the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Alembic Pharmaceuticals, Inc. at 1-866-210-9797 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The following adverse reactions have been identified during postapproval use of Fluorouracil. Because these reactions are reported voluntarily from a population",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hematologic: pancytopenia [see Warnings and Precautions (5.7)]",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal: gastrointestinal ulceration, nausea, vomiting Allergic Reactions: anaphylaxis and generalized allergic reactions Neurologic: nystagmus, headac",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "colorectal",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-09-24",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-COLORECTAL-FDA-003.xml",
+    "doc_hash": "b29adda73f717aaaaed45ab038457c28edb98f2259060cf82c3c25f658bad1a6",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "6b34cbf2-66f9-48a4-b41f-deb84ba8e8c4",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/6b34cbf2-66f9-48a4-b41f-deb84ba8e8c4.xml",
+    "atc_code": "L01BC02",
+    "approval_no": null,
+    "source_name": "FLUOROURACIL 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-COLORECTAL-FDA-003.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "Elevated coagulation times have been reported in patients taking Fluorouracil concomitantly with warfarin. While pharmacokinetic data are not available to assess the effect of Fluorouracil administration on warfarin pharmacokinetics, the elevation of coagulation times that occurs with the Fluorouracil prodrug capecitabine is accompanied by an increase in warfarin concentrations. Thus, the interaction may be due to inhibition of cytochrome P450 2C9 by Fluorouracil or its metabolites."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Serious Adverse Reactions or Death from Dihydropyrimidine Dehydrogenase (DPD) Deficiency",
+        "text": "5.1 Serious Adverse Reactions or Death from Dihydropyrimidine Dehydrogenase (DPD) Deficiency: Patients with certain homozygous or compound heterozygous variants in the DPYD gene known to result in complete or near complete absence of DPD activity (complete DPD deficiency) are at increased risk for acute early-onset toxicity and serious, including fatal, adverse reactions due to fluorouracil (e.g., mucositis, diarrhea, neutropenia, and neurotoxicity). Patients with partial DPD activity (partial DPD deficiency) may also have increased risk of serious, or fatal, adverse reactions. Prior to initiating fluorouracil, test patients for genetic variants of the DPYD gene unless immediate treatment is necessary [see Clinical Pharmacology (12.5)]. Serious adverse reactions may still occur even if no DPYD variants are identified. Avoid use of fluorouracil in patients with certain homozygous or compound heterozygous DPYD variants that result in complete DPD deficiency. Withhold or permanently discontinue fluorouracil based on clinical assessment of the onset, duration, and severity of adverse reactions in patients with evidence of acute early-onset or unusually severe reactions. No fluorouracil dose has been proven safe for patients with complete DPD deficiency. For patients with partial DPD deficiency, individualize the dosage and modify based on tolerability and intent of treatment. An FDA-authorized test for the detection of genetic variants of the DPYD gene to identify patients at risk of serious adverse reactions with fluorouracil treatment is not currently available. Currently available tests used to identify DPYD variants may vary in accuracy and design (e.g., which DPYD variant(s) they identify).",
+        "char_len": 1720,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Serious Adverse Reactions or Death from Dihydropyrimidine Dehydrogenase (DPD) Deficiency",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Cardiotoxicity",
+        "text": "5.2 Cardiotoxicity: Fluorouracil can cause cardiotoxicity, including angina, myocardial infarction/ischemia, arrhythmia, and heart failure, based on postmarketing reports. Reported risk factors for cardiotoxicity are administration by continuous infusion rather than intravenous bolus and presence of coronary artery disease. Withhold Fluorouracil for cardiotoxicity. The risks of resumption of Fluorouracil in patients with cardiotoxicity that has resolved have not been established.",
+        "char_len": 484,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Cardiotoxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Hyperammonemic Encephalopathy",
+        "text": "5.3 Hyperammonemic Encephalopathy: Fluorouracil can cause hyperammonemic encephalopathy in the absence of liver disease or other identifiable cause, based on postmarketing reports. Signs or symptoms of hyperammonemic encephalopathy began within 72 hours after initiation of Fluorouracil infusion; these included altered mental status, confusion, disorientation, coma, or ataxia, in the presence of concomitant elevated serum ammonia level. Withhold Fluorouracil for hyperammonemic encephalopathy and initiate ammonia-lowering therapy. The risks of resumption of Fluorouracil in patients with hyperammonemic encephalopathy that has resolved have not been established.",
+        "char_len": 666,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Hyperammonemic Encephalopathy",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Neurologic Toxicity",
+        "text": "5.4 Neurologic Toxicity: Fluorouracil can cause neurologic toxicity, including acute cerebellar syndrome and other neurologic events, based on postmarketing reports. Neurologic symptoms included confusion, disorientation, ataxia, or visual disturbances. Withhold Fluorouracil for neurologic toxicity. There are insufficient data on the risks of resumption of Fluorouracil in patients with neurologic toxicity that has resolved.",
+        "char_len": 427,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Neurologic Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Diarrhea",
+        "text": "5.5 Diarrhea: Fluorouracil can cause severe diarrhea. Withhold Fluorouracil for Grade 3 or 4 diarrhea until resolved or decreased in intensity to Grade 1, then resume Fluorouracil at a reduced dose. Administer fluids, electrolyte replacement, or antidiarrheal treatments as necessary.",
+        "char_len": 284,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Diarrhea",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Palmar-Plantar Erythrodysesthesia (Hand-Foot Syndrome)",
+        "text": "5.6 Palmar-Plantar Erythrodysesthesia (Hand-Foot Syndrome): Fluorouracil can cause palmar-plantar erythrodysesthesia, also known as hand-foot syndrome (HFS). Symptoms of HFS include a tingling sensation, pain, swelling, and erythema with tenderness, and desquamation. HFS occurs more commonly when Fluorouracil is administered as a continuous infusion than when Fluorouracil is administered as a bolus injection, and has been reported to occur more frequently in patients with previous exposure to chemotherapy. HFS is generally observed after 8-9 weeks of Fluorouracil administration but may occur earlier. Institute supportive measures for symptomatic relief of HFS. Withhold Fluorouracil administration for Grade 2 or 3 HFS; resume Fluorouracil at a reduced dose when HFS is completely resolved or decreased in severity to Grade 1.",
+        "char_len": 834,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Palmar-Plantar Erythrodysesthesia (Hand-Foot Syndrome)",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Myelosuppression",
+        "text": "5.7 Myelosuppression: Fluorouracil can cause severe and fatal myelosuppression which may include neutropenia, thrombocytopenia, and anemia. The nadir in neutrophil counts commonly occurs between 9 and 14 days after Fluorouracil administration. Obtain complete blood counts prior to each treatment cycle, weekly if administered on a weekly or similar schedule, and as needed. Withhold Fluorouracil until Grade 4 myelosuppression resolves; resume Fluorouracil at a reduced dose when myelosuppression has resolved or improved to Grade 1 in severity.",
+        "char_len": 546,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Myelosuppression",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Mucositis",
+        "text": "5.8 Mucositis: Mucositis, stomatitis or esophagopharyngitis, which may lead to mucosal sloughing or ulceration, can occur with Fluorouracil. The incidence is reported to be higher with administration of Fluorouracil by intravenous bolus compared with administration by continuous infusion. Withhold Fluorouracil administration for Grade 3 or 4 mucositis; resume Fluorouracil at a reduced dose once mucositis has resolved or decreased in severity to Grade 1.",
+        "char_len": 457,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Mucositis",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Increased Risk of Elevated International Normalized Ratio (INR) with Warfarin",
+        "text": "5.9 Increased Risk of Elevated International Normalized Ratio (INR) with Warfarin: Clinically significant elevations in coagulation parameters have been reported during concomitant use of warfarin and Fluorouracil. Closely monitor patients receiving concomitant coumarin-derivative anticoagulants such as warfarin for INR or prothrombin time in order to adjust the anticoagulant dose accordingly [see Drug Interactions (7)].",
+        "char_len": 424,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Increased Risk of Elevated International Normalized Ratio (INR) with Warfarin",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Embryofetal Toxicity",
+        "text": "5.10 Embryofetal Toxicity: Based on its mechanism of action, Fluorouracil can cause fetal harm when administered to a pregnant woman. In animal studies, administration of Fluorouracil at doses lower than a human dose of 12 mg/kg caused teratogenicity. If this drug is used during pregnancy, or if the patient becomes pregnant while taking this drug, the patient should be apprised of the potential hazard to a fetus. Advise females of reproductive potential and males with female partners of reproductive potential to use effective contraception during and for 3 months following cessation of therapy with Fluorouracil [see Use in Specific Populations (8.1, 8.6), Clinical Pharmacology (12.1), and Nonclinical Toxicology (13.1)].",
+        "char_len": 729,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Embryofetal Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: SERIOUS ADVERSE REACTIONS OR DEATH IN PATIENTS WITH COMPLETE DPD DEFICIENCY",
+        "text": "WARNING: SERIOUS ADVERSE REACTIONS OR DEATH IN PATIENTS WITH COMPLETE DPD DEFICIENCY: Increased Risk of Serious Adverse Reactions or Death in Patients with Complete DPD Deficiency Test patients for genetic variants of DPYD prior to initiating fluorouracil unless immediate treatment is necessary. Avoid use of fluorouracil in patients with certain homozygous or compound heterozygous DPYD variants that result in complete DPD deficiency [see Warnings and Precautions (5.1)]. WARNING: SERIOUS ADVERSE REACTIONS OR DEATH IN PATIENTS WITH COMPLETE DPD DEFICIENCY See full prescribing information for complete boxed warning Serious adverse reactions or death may occur in patients with complete DPD deficiency. Test patients for genetic variants of DPYD prior to initiating fluorouracil unless immediate treatment is necessary. Avoid use of fluorouracil in patients with certain homozygous or compound heterozygous DPYD variants that result in complete DPD deficiency. (2.1, 5.1)",
+        "char_len": 975,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: SERIOUS ADVERSE REACTIONS OR DEATH IN PATIENTS WITH COMPLETE DPD DEFICIENCY",
+        "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.7 Dose Modifications",
+            "text": "2.7 Dose Modifications: Withhold Fluorouracil for any of the following: Upon resolution or improvement to Grade 1 diarrhea, mucositis, myelosuppression, or palmar-plantar erythrodysesthesia, resume Fluorouracil administration at a reduced dose. There is no recommended dose for resumption of Fluorouracil administration following development of any of the following adverse reactions:",
+            "char_len": 384,
+            "source_section_code": "42229-5",
+            "source_title": "2.7 Dose Modifications",
+            "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-COLORECTAL-FDA-003.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "colorectal",
+      "gastric"
+    ],
+    "guideline_use_cancers": [],
+    "patient_plain": "{\"what_is_it\": \"这是一种核苷代谢抑制剂，用于治疗部分肿瘤患者。\", \"how_to_use\": \"用药前通常需检测DPYD基因，除非需要立即治疗。\", \"cautions\": [\"目前尚无FDA批准的DPYD基因检测来识别高风险患者。\", \"现有DPYD检测的准确性和设计可能不同。\", \"已知有特定DPYD变异导致完全DPD缺乏者应避免使用。\", \"完全DPD缺乏者尚无被证明安全的剂量。\", \"部分DPD缺乏者需个体化调整剂量。\", \"给药方式为静脉推注或静脉输注。\", \"不可将整瓶药液直接注入患者体内。\", \"剂量和给药计划需根据多种因素个体化。\", \"出现特定不良反应时需暂停用药。\", \"不良反应改善后可降低剂量恢复用药。\", \"部分严重不良反应后无推荐恢复剂量。\", \"药品为药房大包装，可供多名患者配药使用。\", \"该包装不含无菌转移装置。\", \"50毫升瓶仅限在药房加药服务中配制。\", \"药瓶应室温保存。\"], \"side_effects\": [{\"term\": \"全血细胞减少\", \"plain\": \"血液中多种血细胞减少。\", \"when_to_seek_help\": \"出现相关异常表现时应就医。\"}, {\"term\": \"胃肠道溃疡\", \"plain\": \"胃肠道可能出现溃疡。\", \"when_to_seek_help\": \"出现胃肠道不适或异常时应就医。\"}, {\"term\": \"恶心\", \"plain\": \"可能感到恶心。\", \"when_to_seek_help\": \"恶心明显或持续时应就医。\"}, {\"term\": \"呕吐\", \"plain\": \"可能发生呕吐。\", \"when_to_seek_help\": \"呕吐明显或持续时应就医。\"}, {\"term\": \"过敏反应\", \"plain\": \"包括过敏性休克和全身过敏反应。\", \"when_to_seek_help\": \"出现过敏表现时应立即就医。\"}, {\"term\": \"眼球震颤\", \"plain\": \"眼球出现不自主震颤。\", \"when_to_seek_help\": \"出现此表现时应就医。\"}, {\"term\": \"头痛\", \"plain\": \"可能发生头痛。\", \"when_to_seek_help\": \"头痛明显或持续时应就医。\"}], \"seek_help\": \"出现过敏反应、明显恶心呕吐、胃肠道异常或血细胞异常表现时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:15:47"
+  }
+]

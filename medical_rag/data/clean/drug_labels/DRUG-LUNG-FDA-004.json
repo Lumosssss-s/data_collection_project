@@ -1,0 +1,194 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-004",
+    "generic_name": "PEMETREXED",
+    "brand_names": [
+      "ALIMTA"
+    ],
+    "aliases_zh": [
+      "培美曲塞"
+    ],
+    "title": "PEMETREXED 说明书（FDA DailyMed）",
+    "indications": [
+      "1 INDICATIONS AND USAGE ALIMTA ® is a folate analog metabolic inhibitor indicated: in combination with pembrolizumab and platinum chemotherapy, for the initial treatment of patients with metastatic non-squamous non-small cell lung cancer (NSCLC), with no EGFR or ALK genomic tumor aberrations. ( 1.1 ) in combination with cisplatin for the initial treatment of patients with locally advanced or metastatic, non-squamous NSCLC. ( 1.1 ) as a single agent for the maintenance treatment of patients with locally advanced or metastatic, non-squamous NSCLC whose disease has not progressed after four cycles of platinum-based first-line chemotherapy. ( 1.1 ) as a single agent for the treatment of patients with recurrent, metastatic non-squamous, NSCLC after prior chemotherapy. ( 1.1 ) Limitations of Use: ALIMTA is not indicated for the treatment of patients with squamous cell, non-small cell lung cancer. ( 1.1 ) initial treatment, in combination with cisplatin, of patients with malignant pleural mesothelioma whose disease is unresectable or who are otherwise not candidates for curative surgery. ( 1.2 ) 1.1 Non-Squamous Non-Small Cell Lung Cancer (NSCLC) ALIMTA ® is indicated: in combination with pembrolizumab and platinum chemotherapy, for the initial treatment of patients with metastatic non-squamous non-small cell lung cancer (NSCLC), with no EGFR or ALK genomic tumor aberrations. in combination with cisplatin for the initial treatment of patients with locally advanced or metastatic, non-squamous NSCLC. as a single agent for the maintenance treatment of patients with locally advanced or metastatic, non-squamous NSCLC whose disease has not progressed after four cycles of platinum-based first-line chemotherapy. as a single agent for the treatment of patients with recurrent, metastatic non-squamous, NSCLC after prior chemotherapy. Limitations of Use: ALIMTA is not indicated for the treatment of patients with squamous cell, non-small cell lung cancer. 1.2 Mesothelioma ALIMTA is indicated, in combination with cisplatin, for the initial treatment of patients with malignant pleural mesothelioma whose disease is unresectable or who are otherwise not candidates for curative surgery.",
+      "【中文适应证】本品联合信迪利单抗和铂类用于表皮生长因子受体（EGFR）基因突变阴性和间变性淋巴瘤激酶（ALK）阴性、不可手术切除的局部晚期或转移性非鳞状非小细胞肺癌的一线治疗。",
+      "【中文适应证】本品联合帕博利珠单抗和铂类用于表皮生长因子受体（EGFR）基因突变阴性和间变性淋巴瘤激酶（ALK）阴性的转移性非鳞状非小细胞肺癌（NSCLC）的一线治疗。",
+      "【中文适应证】本品与顺铂联合，适用于局部晚期或者转移性非鳞状非小细胞肺癌患者的一线化疗。",
+      "【中文适应证】本品单药适用于经 4 个周期以铂类为基础的一线化疗后未出现进展的局部晚期或转移性的非鳞状非小细胞肺癌患者的维持治疗。",
+      "【中文适应证】本品单药适用于既往接受一线化疗后出现进展的局部晚期或转移性非鳞状非小细胞肺癌患者的治疗。",
+      "【中文适应证】不推荐本品在以组织学为鳞状细胞癌为主的患者中使用。",
+      "【中文适应证】本品联合顺铂用于治疗无法手术的恶性胸膜间皮瘤。"
+    ],
+    "dosage": {
+      "standard": "2 DOSAGE AND ADMINISTRATION The recommended dose of ALIMTA administered with pembrolizumab and platinum chemotherapy in patients with a creatinine clearance (calculated by Cockcroft-Gault equation) of 45 mL/min or greater is 500 mg/m 2 as an intravenous infusion over 10 minutes, administered after pembrolizumab and prior to platinum chemotherapy, on Day 1 of each 21-day cycle. ( 2.1 ) The recommended dose of ALIMTA, administered as a single agent or with cisplatin, in patients with creatinine clearance of 45 mL/minute or greater is 500 mg/m 2 as an intravenous infusion over 10 minutes on Day 1 of each 21-day cycle. ( 2.1 , 2.2 ) Initiate folic acid 400 mcg to 1000 mcg orally, once daily, beginning 7 days prior to the first dose of ALIMTA and continue until 21 days after the last dose of ALIMTA. ( 2.4 ) Administer vitamin B 12 , 1 mg intramuscularly, 1 week prior to the first dose of ALIMTA and every 3 cycles. ( 2.4 ) Administer dexamethasone 4 mg orally, twice daily the day before, the day of, and the day after ALIMTA administration. ( 2.4 ) 2.1 Recommended Dosage for Non-Squamous NSCLC The recommended dose of ALIMTA when administered with pembrolizumab and platinum chemotherapy for the initial treatment of metastatic non-squamous NSCLC in patients with a creatinine clearance (calculated by Cockcroft-Gault equation) of 45 mL/min or greater is 500 mg/m 2 as an intravenous infusion over 10 minutes administered after pembrolizumab and prior to carboplatin or cisplatin on Day 1 of each 21-day cycle for 4 cycles. Following completion of platinum-based therapy, treatment with ALIMTA with or without pembrolizumab is administered until disease progression or unacceptable toxicity. Please refer to the full prescribing information for pembrolizumab and for carboplatin or cisplatin. The recommended dose of ALIMTA when administered with cisplatin for initial treatment of locally advanced or metastatic non-squamous NSCLC in patients with a creatinine clearance (calculated by Cockcroft-Gault equation) of 45 mL/min or greater is 500 mg/m 2 as an intravenous infusion over 10 minutes administered prior to cisplatin on Day 1 of each 21-day cycle for up to six cycles in the absence of disease progression or unacceptable toxicity. The recommended dose of ALIMTA for maintenance treatment of non-squamous NSCLC in patients with a creatinine clearance (calculated by Cockcroft-Gault equation) of 45 mL/min or greater is 500 mg/m 2 as an intravenous infusion over 10 minutes on Day 1 of each 21-day cycle until disease progression or unacceptable toxicity after four cycles of platinum-based first-line chemotherapy. The recommended dose of ALIMTA for treatment of recurrent non-squamous NSCLC in patients with a creatinine clearance (calculated by Cockcroft-Gault equation) of 45 mL/min or greater is 500 mg/m 2 as an intravenous infusion over 10 minutes on Day 1 of each 21-day cycle until disease progression or unacceptable toxicity. 2.2 Recommended Dosage for Mesothelioma The recommended dose of ALIMTA when administered with cisplatin in patients with a creatinine clearance (calculated by Cockcroft-Gault equation) of 45 mL/min or greater is 500 mg/m 2 as an intravenous infusion over 10 minutes on Day 1 of each 21-day cycle until disease progression or unacceptable toxicity. 2.3 Renal Impairment ALIMTA dosing recommendations are provided for patients with a creatinine clearance (calculated by Cockcroft-Gault equation) of 45 mL/min or greater [see Dosage and Administration ( 2.1 , 2.2 )] . There is no recommended dose for patients whose creatinine clearance is less than 45 mL/min [see Use in Specific Populations ( 8.6 )] . 2.4 Premedication and Concomitant Medications to Mitigate Toxicity Vitamin Supplementation Initiate folic acid 400 mcg to 1000 mcg orally once daily, beginning 7 days before the first dose of ALIMTA and continuing until 21 days after the last dose of ALIMTA [see Warnings and Precautions ( 5.1 )] . Administer vitamin B 12 , 1 mg intramuscular",
+      "adjustment": ""
+    },
+    "contraindications": [
+      "ALIMTA is contraindicated in patients with a history of severe hypersensitivity reaction to pemetrexed.",
+      "History of severe hypersensitivity reaction to pemetrexed."
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the labeling: Myelosuppression Renal failure Bullous and exfoliative skin toxicity Interstitial pneumonitis Radiation recall The most common adverse reactions (incidence ≥20%) of ALIMTA, when administered as a single agent are fatigue, nausea, and anorexia. ( 6.1 ) The most common adverse reactions (incidence ≥20%) of ALIMTA when administered with cisplatin are vomiting, neutropenia, anemia, stomatitis/pharyngitis, thrombocytopenia, and constipation. ( 6.1 ) The most common adverse reactions (incidence ≥20%) of ALIMTA when administered in combination with pembrolizumab and platinum chemotherapy are fatigue/asthenia, nausea, constipation, diarrhea, decreased appetite, rash, vomiting, cough, dyspnea, and pyrexia. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Eli Lilly and Company at 1-800-LillyRx (1-800-545-5979) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reactions rates cannot be directly compared to rates in other clinical trials and may not reflect the rates observed in clinical practice. In clinical trials, the most common adverse reactions (incidence ≥20%) of ALIMTA, when administered as a single agent, are fatigue, nausea, and anorexia. The most common adverse reactions (incidence ≥20%) of ALIMTA, when administered in combination with cisplatin are vomiting, neutropenia, anemia, stomatitis/pharyngitis, thrombocytopenia, and constipation. The most common adverse reactions (incidence ≥20%) of ALIMTA, when administered in combination with pembrolizumab and platinum chemotherapy, are fatigue/asthenia, nausea, constipation, diarrhea, decreased appetite, rash, vomiting, cough, dyspnea, and pyrexia. Non-Squamous NSCLC First-line Treatment of Metastatic Non-squamous NSCLC with Pembrolizumab and Platinum Chemotherapy The safety of ALIMTA, in combination with pembrolizumab and investigator's choice of platinum (either carboplatin or cisplatin), was investigated in Study KEYNOTE-189, a multicenter, double-blind, randomized (2:1), active-controlled trial in patients with previously untreated, metastatic non-squamous NSCLC with no EGFR or ALK genomic tumor aberrations. A total of 607 patients received ALIMTA, pembrolizumab, and platinum every 3 weeks for 4 cycles followed by ALIMTA and pembrolizumab (n=405), or placebo, ALIMTA, and platinum every 3 weeks for 4 cycles followed by placebo and ALIMTA (n=202). Patients with autoimmune disease that required systemic therapy within 2 years of treatment; a medical condition that required immunosuppression; or who had received more than 30 Gy of thoracic radiation within the prior 26 weeks were i",
+        "frequency": "20%",
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "FDA DailyMed public label",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-004.xml",
+    "doc_hash": "765141a48a54f7de4ec0ff7bf8e1afb058df45f7f1dbb1ff4f11850827572254",
+    "review_status": "approved",
+    "_source": "dailymed",
+    "_setid": "f5a860f3-37ec-429c-ae04-9c88d7c55c08",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/f5a860f3-37ec-429c-ae04-9c88d7c55c08.xml",
+    "atc_code": "L01BA04",
+    "approval_no": "国药准字HJ20140662；国药准字HJ20150445",
+    "source_name": "PEMETREXED 说明书（FDA DailyMed）",
+    "source_version": "2023",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-004.xml",
+    "updated_at": "2026-10-21",
+    "interactions": [
+      "Ibuprofen increased risk of ALIMTA toxicity in patients with mild to moderate renal impairment. Modify the ibuprofen dosage as recommended for patients with a creatinine clearance between 45 mL/min and 79 mL/min. (2.5, 5.6, 7)",
+      "Effects of Ibuprofen on Pemetrexed",
+      "Ibuprofen increases exposure (AUC) of pemetrexed [see Clinical Pharmacology (12.3)]. In patients with creatinine clearance between 45 mL/min and 79 mL/min:"
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Myelosuppression and Increased Risk of Myelosuppression without Vitamin Supplementation",
+        "text": "5.1 Myelosuppression and Increased Risk of Myelosuppression without Vitamin Supplementation: ALIMTA can cause severe myelosuppression resulting in a requirement for transfusions and which may lead to neutropenic infection. The risk of myelosuppression is increased in patients who do not receive vitamin supplementation. In Study JMCH, incidences of Grade 3-4 neutropenia (38% versus 23%), thrombocytopenia (9% versus 5%), febrile neutropenia (9% versus 0.6%), and neutropenic infection (6% versus 0) were higher in patients who received ALIMTA plus cisplatin without vitamin supplementation as compared to patients who were fully supplemented with folic acid and vitamin B12 prior to and throughout ALIMTA plus cisplatin treatment. Initiate supplementation with oral folic acid and intramuscular vitamin B12 prior to the first dose of ALIMTA; continue vitamin supplementation during treatment and for 21 days after the last dose of ALIMTA to reduce the severity of hematologic and gastrointestinal toxicity of ALIMTA [see Dosage and Administration (2.4)]. Obtain a complete blood count at the beginning of each cycle. Do not administer ALIMTA until the ANC is at least 1500 cells/mm3 and platelet count is at least 100,000 cells/mm3. Permanently reduce ALIMTA in patients with an ANC of less than 500 cells/mm3 or platelet count of less than 50,000 cells/mm3 in previous cycles [see Dosage and Administration (2.6)]. In Studies JMDB and JMCH, among patients who received vitamin supplementation, incidence of Grade 3-4 neutropenia was 15% and 23%, the incidence of Grade 3-4 anemia was 6% and 4%, and incidence of Grade 3-4 thrombocytopenia was 4% and 5%, respectively. In Study JMCH, 18% of patients in the ALIMTA arm required red blood cell transfusions compared to 7% of patients in the cisplatin arm [see Adverse Reactions (6.1)]. In Studies JMEN, PARAMOUNT, and JMEI, where all patients received vitamin supplementation, incidence of Grade 3-4 neutropenia ranged from 3% to 5%, and incidence of Grade 3-4 anemia ranged from 3% to 5%.",
+        "char_len": 2039,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Myelosuppression and Increased Risk of Myelosuppression without Vitamin Supplementation",
+        "source_xml": "DRUG-LUNG-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Renal Failure",
+        "text": "5.2 Renal Failure: ALIMTA can cause severe, and sometimes fatal, renal toxicity. The incidences of renal failure in clinical studies in which patients received ALIMTA with cisplatin were: 2.1% in Study JMDB and 2.2% in Study JMCH. The incidence of renal failure in clinical studies in which patients received ALIMTA as a single agent ranged from 0.4% to 0.6% (Studies JMEN, PARAMOUNT, and JMEI [see Adverse Reactions (6.1)]. Determine creatinine clearance before each dose and periodically monitor renal function during treatment with ALIMTA. Withhold ALIMTA in patients with a creatinine clearance of less than 45 mL/minute [see Dosage and Administration (2.3)].",
+        "char_len": 663,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Renal Failure",
+        "source_xml": "DRUG-LUNG-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Bullous and Exfoliative Skin Toxicity",
+        "text": "5.3 Bullous and Exfoliative Skin Toxicity: Serious and sometimes fatal, bullous, blistering and exfoliative skin toxicity, including cases suggestive of Stevens-Johnson Syndrome/Toxic epidermal necrolysis can occur with ALIMTA. Permanently discontinue ALIMTA for severe and life-threatening bullous, blistering or exfoliating skin toxicity.",
+        "char_len": 340,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Bullous and Exfoliative Skin Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Interstitial Pneumonitis",
+        "text": "5.4 Interstitial Pneumonitis: Serious interstitial pneumonitis, including fatal cases, can occur with ALIMTA treatment. Withhold ALIMTA for acute onset of new or progressive unexplained pulmonary symptoms such as dyspnea, cough, or fever pending diagnostic evaluation. If pneumonitis is confirmed, permanently discontinue ALIMTA.",
+        "char_len": 329,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Interstitial Pneumonitis",
+        "source_xml": "DRUG-LUNG-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Radiation Recall",
+        "text": "5.5 Radiation Recall: Radiation recall can occur with ALIMTA in patients who have received radiation weeks to years previously. Monitor patients for inflammation or blistering in areas of previous radiation treatment. Permanently discontinue ALIMTA for signs of radiation recall.",
+        "char_len": 279,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Radiation Recall",
+        "source_xml": "DRUG-LUNG-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Increased Risk of Toxicity with Ibuprofen in Patients with Renal Impairment",
+        "text": "5.6 Increased Risk of Toxicity with Ibuprofen in Patients with Renal Impairment: Exposure to ALIMTA is increased in patients with mild to moderate renal impairment who take concomitant ibuprofen, increasing the risks of adverse reactions of ALIMTA. In patients with creatinine clearances between 45 mL/min and 79 mL/min, avoid administration of ibuprofen for 2 days before, the day of, and 2 days following administration of ALIMTA. If concomitant ibuprofen use cannot be avoided, monitor patients more frequently for ALIMTA adverse reactions, including myelosuppression, renal, and gastrointestinal toxicity [see Dosage and Administration (2.5), Drug Interactions (7), and Clinical Pharmacology (12.3)].",
+        "char_len": 704,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Increased Risk of Toxicity with Ibuprofen in Patients with Renal Impairment",
+        "source_xml": "DRUG-LUNG-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Embryo-Fetal Toxicity",
+        "text": "5.7 Embryo-Fetal Toxicity: Based on findings from animal studies and its mechanism of action, ALIMTA can cause fetal harm when administered to a pregnant woman. In animal reproduction studies, intravenous administration of pemetrexed to pregnant mice during the period of organogenesis was teratogenic, resulting in developmental delays and increased malformations at doses lower than the recommended human dose of 500 mg/m2. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with ALIMTA and for 6 months after the last dose. Advise males with female partners of reproductive potential to use effective contraception during treatment with ALIMTA and for 3 months after the last dose [see Use in Specific Populations (8.1, 8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 856,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-004.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modification of Ibuprofen in Patients with Mild to Moderate Renal Impairment Receiving ALIMTA",
+            "text": "2.5 Dosage Modification of Ibuprofen in Patients with Mild to Moderate Renal Impairment Receiving ALIMTA: In patients with creatinine clearances between 45 mL/min and 79 mL/min, modify administration of ibuprofen as follows [see Warnings and Precautions (5.6), Drug Interactions (7) and Clinical Pharmacology (12.3)]:",
+            "char_len": 317,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modification of Ibuprofen in Patients with Mild to Moderate Renal Impairment Receiving ALIMTA",
+            "source_xml": "DRUG-LUNG-FDA-004.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "88828-9",
+            "title": "8.6 Patients with Renal Impairment",
+            "text": "8.6 Patients with Renal Impairment: ALIMTA is primarily excreted by the kidneys. Decreased renal function results in reduced clearance and greater exposure (AUC) to ALIMTA compared with patients with normal renal function [Warnings and Precautions (5.2, 5.6) and Clinical Pharmacology (12.3)]. No dose is recommended for patients with creatinine clearance less than 45 mL/min [see Dosage and Administration (2.3)].",
+            "char_len": 414,
+            "source_section_code": "88828-9",
+            "source_title": "8.6 Patients with Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-004.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.6 Dosage Modifications for Adverse Reactions",
+            "text": "2.6 Dosage Modifications for Adverse Reactions: Obtain complete blood count on Days 1, 8, and 15 of each cycle. Assess creatinine clearance prior to each cycle. Do not administer ALIMTA if the creatinine clearance is less than 45 mL/min. Delay initiation of the next cycle of ALIMTA until: Upon recovery, modify the dosage of ALIMTA in the next cycle as specified in Table 1. For dosing modifications for cisplatin, carboplatin, or pembrolizumab, refer to their prescribing information. a National Cancer Institute Common Toxicity Criteria for Adverse Events version 2 (NCI CTCAE v2). Toxicity in Most Recent Treatment Cycle ALIMTA Dose Modification for Next Cycle Myelosuppressive toxicity [see Warnings and Precautions (5.1)] ANC less than 500/mm3 and platelets greater than or equal to 50,000/mm3 OR Platelet count less than 50,000/mm3 without bleeding. 75% of previous dose Platelet count less than 50,000/mm3 with bleeding 50% of previous dose Recurrent Grade 3 or 4 myelosuppression after 2 dose reductions Discontinue Non-hematologic toxicity Any Grade 3 or 4 toxicities EXCEPT mucositis or neurologic toxicity OR Diarrhea requiring hospitalization 75% of previous dose Grade 3 or 4 mucositis 50% of previous dose Renal toxicity [see Warnings and Precautions (5.2)] Withhold until creatinine clearance is 45 mL/min or greater Grade 3 or 4 neurologic toxicity Permanently discontinue Recurrent Grade 3 or 4 non-hematologic toxicity after 2 dose reductions Permanently discontinue Severe and life-threatening Skin Toxicity [see Warnings and Precautions (5.3)] Permanently discontinue Interstitial Pneumonitis [see Warnings and Precautions (5.4)] Permanently discontinue",
+            "char_len": 1674,
+            "source_section_code": "42229-5",
+            "source_title": "2.6 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-004.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-004.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种含培美曲塞的化疗药，用于治疗某些类型的肺癌和胸膜间皮瘤。\", \"how_to_use\": \"通常每21天一个周期，第1天静脉输注约10分钟，剂量由医生根据体表面积计算。\", \"cautions\": [\"此药不适用于鳞状细胞型非小细胞肺癌患者。\", \"用药前需补充叶酸和维生素B12，并服用地塞米松预防副作用。\", \"叶酸从首次用药前7天开始口服，持续到末次用药后21天。\", \"维生素B12在首次用药前1周肌注，之后每3个周期一次。\", \"地塞米松在用药前一天、当天和后天口服，每天两次。\", \"肾功能明显下降者（肌酐清除率低于45）没有推荐剂量。\", \"对培美曲塞曾有严重过敏反应者禁用此药。\", \"与布洛芬等药物同用可能增加毒性，需医生调整剂量。\"], \"side_effects\": [{\"term\": \"乏力\", \"plain\": \"感到疲倦、没有力气。\", \"when_to_seek_help\": \"乏力严重到影响日常活动时需就医。\"}, {\"term\": \"恶心\", \"plain\": \"感到想吐或胃部不适。\", \"when_to_seek_help\": \"恶心持续不缓解或影响进食时需就医。\"}, {\"term\": \"食欲下降\", \"plain\": \"不想吃东西，胃口变差。\", \"when_to_seek_help\": \"食欲明显下降导致体重减轻时需就医。\"}, {\"term\": \"呕吐\", \"plain\": \"把胃里的东西吐出来。\", \"when_to_seek_help\": \"呕吐频繁或无法进食进水时需就医。\"}, {\"term\": \"中性粒细胞减少\", \"plain\": \"一种帮助抵抗感染的白细胞减少。\", \"when_to_seek_help\": \"出现发热或感染迹象时需立即就医。\"}, {\"term\": \"贫血\", \"plain\": \"红细胞减少，可能感到头晕或气短。\", \"when_to_seek_help\": \"明显头晕、气短或面色苍白时需就医。\"}, {\"term\": \"口腔炎/咽炎\", \"plain\": \"口腔或喉咙发炎、疼痛。\", \"when_to_seek_help\": \"口腔或喉咙疼痛影响进食时需就医。\"}, {\"term\": \"血小板减少\", \"plain\": \"帮助止血的血细胞减少。\", \"when_to_seek_help\": \"出现异常出血或瘀斑时需就医。\"}, {\"term\": \"便秘\", \"plain\": \"排便困难或次数减少。\", \"when_to_seek_help\": \"便秘持续不缓解或伴腹痛时需就医。\"}, {\"term\": \"腹泻\", \"plain\": \"大便稀或次数增多。\", \"when_to_seek_help\": \"腹泻严重或导致脱水时需就医。\"}, {\"term\": \"皮疹\", \"plain\": \"皮肤出现红疹或不适。\", \"when_to_seek_help\": \"皮疹加重或伴水疱时需就医。\"}, {\"term\": \"咳嗽\", \"plain\": \"喉咙或肺部受刺激引起咳嗽。\", \"when_to_seek_help\": \"咳嗽加重或伴呼吸困难时需就医。\"}, {\"term\": \"呼吸困难\", \"plain\": \"感觉气不够用或喘不上气。\", \"when_to_seek_help\": \"出现呼吸困难时需及时就医。\"}, {\"term\": \"发热\", \"plain\": \"体温升高。\", \"when_to_seek_help\": \"出现发热时需及时就医。\"}], \"seek_help\": \"出现严重过敏、发热、异常出血、呼吸困难、严重皮疹或水疱、严重腹泻或呕吐等情况时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:16"
+  }
+]

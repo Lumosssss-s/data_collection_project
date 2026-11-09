@@ -1,0 +1,35 @@
+[
+  {
+    "drug_id": "DRUG-THY-001",
+    "generic_name": "仑伐替尼",
+    "brand_names": [
+      "Lenvima"
+    ],
+    "aliases_zh": [
+      "仑伐替尼"
+    ],
+    "title": "仑伐替尼",
+    "indications": [
+      "进展性、局部晚期或转移性放射性碘难治分化型甲状腺癌患者。"
+    ],
+    "dosage": {
+      "standard": "推荐剂量为24mg/次，每天一次，口服，应持续治疗直至疾病进展或出现不可耐受的毒性。",
+      "adjustment": "必要时减量、暂停用药或永久停用。一旦出现持续性或不可耐受的2～3 级不良反应，应当暂停给药，直至缓解至0～1 级或基线水平，按调整后减量推荐：20mg→14mg→10mg 的日剂量减量。"
+    },
+    "contraindications": [],
+    "adverse_reactions": [],
+    "interactions": [
+      "在接受仑伐替尼的患者中，应谨慎使用己知具有较窄治疗指数的CYP3A4 底物（如阿司咪唑、特非那定、西沙必利、匹莫齐特、奎尼丁、苄普地尔）或麦角生物碱（麦角胺、二氢麦角胺）。"
+    ],
+    "approval_no": null,
+    "atc_code": "L01EX08",
+    "cancer_type": "thyroid",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "内部知识库使用，不得再分发（来源: FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231））",
+    "file_path": null,
+    "doc_hash": null,
+    "review_status": "draft"
+  }
+]

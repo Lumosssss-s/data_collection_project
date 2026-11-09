@@ -1,0 +1,41 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-008",
+    "generic_name": "拉帕替尼",
+    "brand_names": [
+      "Lapatinib",
+      "TYKERB"
+    ],
+    "aliases_zh": [
+      "拉帕替尼"
+    ],
+    "title": "拉帕替尼",
+    "indications": [
+      "与卡培他滨联合使用，适用于HER2 过表达且既往接受过包括蒽环类、紫杉类和曲妥珠单抗治疗的晚期或转移性乳腺癌。"
+    ],
+    "dosage": {
+      "standard": "本品单独使用时1250mg/次，每天一次，口服，第1～ 21 天连续服用。与卡培他滨联合使用时，拉帕替尼的推荐剂量同上，每天一次，每21 天1 个周期，建议将每天剂量一次性服用，不推荐分次服用。",
+      "adjustment": "使用本品可发生心脏毒性，主要表现为LVEF 降低，建议治疗前评估LVEF，治疗中定期检测LVEF，若LVEF 下降至正常值下限，或出现2 级或2 级以上与LVEF 下降相关的症状，应停药。若恢复至正常，且患者无症状，可以在停用至少2 周后将本品减量使用（每天1g 与卡培他滨联合使用）。如果患者漏服了某一天的剂量，第2 天的剂量不要加倍，在下一次服药时间按计划继续服用即可。"
+    },
+    "contraindications": [
+      "TYKERB is contraindicated in patients with known severe hypersensitivity (e.g., anaphylaxis) to this product or any of its components."
+    ],
+    "adverse_reactions": [],
+    "interactions": [
+      "与卡培他滨联合使用时，拉帕替尼的推荐剂量同上，每天一次，每21 天1 个周期，建议将每天剂量一次性服用，不推荐分次服用。",
+      "若恢复至正常，且患者无症状，可以在停用至少2 周后将本品减量使用（每天1g 与卡培他滨联合使用）。",
+      "本品主要经CYP3A4 代谢。",
+      "服药期间禁食葡萄柚、葡萄柚汁，与CYP3A4 抑制剂或诱导剂联合使用时需谨慎，谨慎与质子泵抑制剂联合使用。"
+    ],
+    "approval_no": null,
+    "atc_code": "L01EH01",
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "内部知识库使用，不得再分发（来源: FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231））",
+    "file_path": null,
+    "doc_hash": null,
+    "review_status": "draft"
+  }
+]

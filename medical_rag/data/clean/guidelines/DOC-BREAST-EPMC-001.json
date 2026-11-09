@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "DOC-BREAST-EPMC-001",
+    "title": "The Japanese Breast Cancer Society Clinical Practice Guidelines for systemic treatment of breast cancer, 2022 edition",
+    "summary": "AbstractThe Japanese Breast Cancer Society (JBCS) Clinical Practice Guidelines for systemic treatment of breast cancer were updated to the 2022 edition through a process started in 2018. The updated guidelines consist of 12 background questions (BQs), 33 clinical questions (CQs), and 20 future research questions (FRQs). Multiple outcomes including efficacy and safety were selected in each CQ, and then quantitative and qualitative systematic reviews were conducted to determine the strength of evidence and strength of recommendation, which was finally determined through a voting process among designated committee members. Here, we describe eight selected CQs as important updates from the previous guidelines, including novel practice-changing updates, and recommendations based on evidence that has emerged specifically from Japanese clinical trials.Supplementary InformationThe online version contains supplementary material available at 10.1007/s12282-023-01505-x.Keywords: Breast cancer, Guidelines, Systemic treatment, JBCS",
+    "doc_type": "guideline",
+    "issuer": "Breast Cancer (Tokyo, Japan)",
+    "publish_date": "2023-10-07",
+    "cancer_types": [
+      "breast"
+    ],
+    "license_note": "CC BY 4.0（Europe PMC license 字段：cc by；原文 XML：https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10587293/fullTextXML；DOI：https://doi.org/10.1007/s12282-023-01505-x）。版本：2022 年版（2023-10-07 首发，JBCS 系统治疗临床实践指南）。适用范围提示：单一国家（日本乳腺学会）协会指南，距发布已近 4 年，不覆盖 2023 年后 CDK4/6 抑制剂、T-DXd 等新证据，且非中国大陆诊疗路径；仅可作为对照来源，需与 ESMO/ASCO/CSCO 等交叉核验后使用。",
+    "file_path": "raw/guidelines/breast/DOC-BREAST-EPMC-001.xml",
+    "doc_hash": "12303b84f9d8f14895983165cf7f1483f8f728841d4ab89299a751a6d31dce07",
+    "review_status": "draft",
+    "_source": "europepmc",
+    "_pmid": "37804479",
+    "_pmcid": "PMC10587293",
+    "_doi": "10.1007/s12282-023-01505-x",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10587293/fullTextXML",
+    "_xml_bytes": 140823,
+    "source_name": "The Japanese Breast Cancer Society Clinical Practice Guidelines for systemic treatment of breast cancer, 2022 edition",
+    "source_version": "2022",
+    "source_section": "全文",
+    "source_file": "DOC-BREAST-EPMC-001.xml",
+    "updated_at": "2026-11-01"
+  }
+]

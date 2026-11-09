@@ -1,0 +1,30 @@
+[
+  {
+    "doc_id": "DOC-BREAST-EPMC-004",
+    "title": "The Japanese breast cancer society clinical practice guidelines for pathological diagnosis of breast cancer, 2022 edition",
+    "summary": null,
+    "doc_type": "guideline",
+    "issuer": "Breast Cancer (JBCS)",
+    "publish_date": "2023-11-07",
+    "cancer_types": [
+      "breast"
+    ],
+    "license_note": "CC BY 4.0（Europe PMC license 字段：cc by；原文 XML license 原文：Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.；来源 URL：https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10764572/fullTextXML；DOI：https://doi.org/10.1007/s12282-023-01518-6）。版本：2022 edition。抓取时间：2026-11-02。适用范围提示：单一国家协会指南，需与 ESMO/ASCO/CSCO 等对照核验。",
+    "file_path": "raw/guidelines/breast/DOC-BREAST-EPMC-004.xml",
+    "doc_hash": "2d7b4913e2df4d3e4d1f5c993834ad66d1e8bb30910dbf39f5d8b09d970898ae",
+    "review_status": "draft",
+    "_source": "europepmc",
+    "_pmid": "37934318",
+    "_pmcid": "PMC10764572",
+    "_doi": "10.1007/s12282-023-01518-6",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10764572/fullTextXML",
+    "_xml_bytes": 84320,
+    "source_name": "The Japanese breast cancer society clinical practice guidelines for pathological diagnosis of breast cancer, 2022 edition",
+    "source_version": "2022 edition",
+    "source_section": "全文",
+    "source_file": "DOC-BREAST-EPMC-004.xml",
+    "updated_at": "2026-11-02",
+    "_excluded_reason": "no_rec",
+    "_excluded_note": "病理篇/总论无治疗推荐，不入索引不入catalog"
+  }
+]

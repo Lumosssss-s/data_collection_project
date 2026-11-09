@@ -1,0 +1,300 @@
+[
+  {
+    "drug_id": "DRUG-COLORECTAL-FDA-006",
+    "generic_name": "PANITUMUMAB",
+    "brand_names": [],
+    "aliases_zh": [
+      "帕尼单抗"
+    ],
+    "title": "PANITUMUMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "Vectibix is an epidermal growth factor receptor (EGFR) antagonist indicated for the treatment of:",
+      "Adult patients with wild-type RAS (defined as wild-type in both KRAS and NRAS as determined by an FDA-approved test) Metastatic Colorectal Cancer (mCRC)*:",
+      "KRAS G12C-mutated Metastatic Colorectal Cancer (mCRC)*",
+      "*Limitations of Use: Vectibix is not indicated for the treatment of patients with RAS-mutant mCRC unless used in combination with sotorasib in KRAS G12C-mutated mCRC. Vectibix is not indicated for the treatment of patients with mCRC for whom RAS mutation status is unknown (1, 2.1, 5.2, 12.1, 14.3).",
+      "Metastatic Colorectal Cancer (mCRC)",
+      "Limitations of Use: Vectibix is not indicated for the treatment of patients with RAS-mutant mCRC unless used in combination with sotorasib in KRAS G12C-mutated mCRC. Vectibix is not indicated for the treatment of patients with mCRC for whom RAS mutation status is unknown [see Dosage and Administration (2.1), Warnings and Precautions (5.2), Clinical Pharmacology (12.1) and Clinical Studies (14.3)]."
+    ],
+    "dosage": {
+      "standard": "Prior to initiation of treatment with Vectibix as monotherapy, assess RAS mutational status in colorectal tumors and confirm the absence of a RAS mutation in exon 2 (codons 12 and 13), exon 3 (codons 59 and 61), and exon 4 (codons 117 and 146) of both KRAS and NRAS. KRAS G12C-mutated mCRC Prior to initiation of treatment with Vectibix in combination with sotorasib, confirm the presence of the KRAS G12C mutation using an FDA-approved test. Information on FDA-approved tests for the detection of RAS mutations in patients with mCRC is available at: http://www.fda.gov/CompanionDiagnostics. The recommended dosage of Vectibix is 6 mg/kg, administered as an intravenous infusion every 14 days until disease progression or unacceptable toxicity [see Dosage and Administration (2.4)]. Appropriate medical resources for the treatment of severe infusion reactions should be available during Vectibix infusions [see Warnings and Precautions (5.4)]. Administer the first sotorasib dose prior to the first Vectibix infusion. The recommended dosage for Vectibix in combination with sotorasib is 6 mg/kg, administered as an intravenous infusion every 14 days until disease progression, unacceptable toxicity, or until sotorasib is withheld or discontinued [see Dosage and Administration (2.3, 2.4)]. Refer to the sotorasib full prescribing information for recommended sotorasib dosing information. Dose Modifications for Vectibix in Combination with Sotorasib When Vectibix is administered in combination with sotorasib, if treatment with sotorasib is temporarily withheld or permanently discontinued, temporarily withhold or permanently discontinue Vectibix, respectively [see Clinical Studies (14.4)]. Refer to the sotorasib full prescribing information for dose modifications for adverse reactions associat",
+      "adjustment": "Information on FDA-approved tests for the detection of RAS mutations in patients with mCRC is available at: http://www.fda.gov/CompanionDiagnostics. The recommended dosage of Vectibix is 6 mg/kg, administered as an intravenous infusion every 14 days until disease progression or unacceptable toxicity [see Dosage and Administration (2.4)]. Appropriate medical resources for the treatment of severe infusion reactions should be available during Vectibix infusions [see Warnings and Precautions (5.4)]. Administer the first sotorasib dose prior to the first Vectibix infusion. The recommended dosage for Vectibix in combination with sotorasib is 6 mg/kg, administered as an intravenous infusion every 14 days until disease progression, unacceptable toxicity, or until sotorasib is withheld or discontinued [see Dosage and Administration (2.3, 2.4)]. Refer to the sotorasib full prescribing information for recommended sotorasib dosing information. Dose Modifications for Vectibix in Combination with Sotorasib When Vectibix is administered in combination with sotorasib, if treatment with sotorasib is temporarily withheld or permanently discontinued, temporarily withhold or permanently discontinue Ve"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the label:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Amgen Inc. at 1-800-77-AMGEN (1-800-772-6436) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates in the clinical trials of a drug cannot be directly compared to ra",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data described in WARNINGS AND PRECAUTIONS reflect exposure to Vectibix in four clinical trials in which patients received Vectibix: Study 20020408, an open",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Vectibix Monotherapy",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In Study 20020408, the most common adverse reactions (≥ 20%) with Vectibix were skin rash with variable presentations, paronychia, fatigue, nausea, and diarrhea",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common (> 5%) serious adverse reactions in the Vectibix arm were general physical health deterioration and intestinal obstruction. The most frequently ",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "For Study 20020408, the data described in Table 1 and in other sections below, except where noted, reflect exposure to Vectibix administered to patients with mC",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "System Organ ClassPreferred Term Vectibix PlusBest Supportive Care(N = 229) Best Supportive Care(N = 234)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Any Graden (%) Grade 3-4n (%) Any Graden (%) Grade 3-4n (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Growth of eyelashes 13 (6)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal Disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nausea 52 (23) 2 (< 1) 37 (16) 1 (< 1)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Diarrhea 49 (21) 4 (2) 26 (11)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Vomiting 43 (19) 6 (3) 28 (12) 2 (< 1)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Stomatitis 15 (7) 2 (< 1)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "General Disorders and Administration Site Conditions",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Fatigue 60 (26) 10 (4) 34 (15) 7 (3)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Mucosal inflammation 15 (7) 1 (< 1) 2 (< 1)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Infections and Infestations",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "colorectal",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-06-26",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-COLORECTAL-FDA-006.xml",
+    "doc_hash": "7665e5a8c75d8b3223e81d55ad9b51fba057875ca0e9ef23cb5e2520a3251ce2",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "e0fa4bca-f245-4d92-ae29-b0c630a315c2",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/e0fa4bca-f245-4d92-ae29-b0c630a315c2.xml",
+    "atc_code": "L01FE02",
+    "approval_no": null,
+    "source_name": "PANITUMUMAB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-COLORECTAL-FDA-006.xml",
+    "updated_at": "2026-10-26",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Dermatologic and Soft Tissue Toxicity",
+        "text": "5.1 Dermatologic and Soft Tissue Toxicity: Vectibix can cause dermatologic toxicity, which may be severe. Clinical manifestations included, but were not limited to, acneiform dermatitis, pruritis, erythema, rash, skin exfoliation, paronychia, dry skin, and skin fissures. Among 229 patients who received Vectibix as monotherapy, dermatologic toxicity occurred in 90% including Grade 3 (15%). Among 585 patients who received Vectibix in combination with FOLFOX, dermatologic toxicity occurred in 96% including Grade 4 (1%) and Grade 3 (32%). In 126 patients receiving Vectibix in combination with sotorasib across clinical studies, dermatologic toxicities occurred in 94%, including Grade 3 (16%) of patients. Monitor patients who develop dermatologic or soft tissue toxicities while receiving Vectibix for the development of inflammatory or infectious sequelae. Life-threatening and fatal infectious complications including necrotizing fasciitis, abscesses, and sepsis have been observed in patients treated with Vectibix. Life-threatening and fatal bullous mucocutaneous disease with blisters, erosions, and skin sloughing has also been observed in patients treated with Vectibix. It could not be determined whether these mucocutaneous adverse reactions were directly related to EGFR inhibition or to idiosyncratic immune-related effects (e.g., Stevens-Johnson syndrome or toxic epidermal necrolysis). Withhold or discontinue Vectibix for dermatologic or soft tissue toxicity associated with severe or life-threatening inflammatory or infectious complications [see Boxed Warning and Adverse Reactions (6.1, 6.2)]. Dose modifications for Vectibix concerning dermatologic toxicity are provided [see Dosage and Administration (2.3)].",
+        "char_len": 1731,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Dermatologic and Soft Tissue Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Increased Tumor Progression, Increased Mortality, or Lack of Benefit in Patients with RAS-Mutant mCRC Receiving Vectibix Monotherapy or in Combination with Oxaliplatin-based Chemotherapy",
+        "text": "5.2 Increased Tumor Progression, Increased Mortality, or Lack of Benefit in Patients with RAS-Mutant mCRC Receiving Vectibix Monotherapy or in Combination with Oxaliplatin-based Chemotherapy: Vectibix monotherapy or in combination with oxaliplatin-based chemotherapy is not indicated for the treatment of patients with colorectal cancer that harbor somatic RAS mutations in exon 2 (codons 12 and 13), exon 3 (codons 59 and 61), and exon 4 (codons 117 and 146) of either KRAS or NRAS and hereafter is referred to as \"RAS\" [see Indications and Usage (1), Dosage and Administration (2.1), Clinical Pharmacology (12.1) and Clinical Studies (14.3)]. Retrospective subset analyses across several randomized clinical trials were conducted to investigate the role of RAS mutations on the clinical effects of anti-EGFR-directed monoclonal antibodies (panitumumab or cetuximab). Anti-EGFR antibodies in patients with tumors containing RAS mutations resulted in exposing those patients to anti-EGFR related adverse reactions without clinical benefit from these agents [see Indications and Usage (1) and Clinical Pharmacology (12.1)]. Additionally, in Study 20050203, 272 patients with RAS-mutant mCRC tumors received Vectibix in combination with FOLFOX and 276 patients received FOLFOX alone. In an exploratory subgroup analysis, overall survival (OS) was shorter (HR = 1.21, 95% CI: 1.01-1.45) in patients with RAS-mutant mCRC who received Vectibix and FOLFOX versus FOLFOX alone [see Indications and Usage (1)].",
+        "char_len": 1502,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Increased Tumor Progression, Increased Mortality, or Lack of Benefit in Patients with RAS-Mutant mCRC Receiving Vectibix Monotherapy or in Combination with Oxaliplatin-based Chemotherapy",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Electrolyte Depletion/Monitoring",
+        "text": "5.3 Electrolyte Depletion/Monitoring: Vectibix can cause progressively decreasing serum magnesium levels leading to severe (Grade 3 or 4) hypomagnesemia. Among 229 patients who received Vectibix as monotherapy, decreased magnesium occurred in 38% including Grade 4 (1.3%) and Grade 3 (2.6%). Among 585 patients who received Vectibix in combination with FOLFOX, decreased magnesium occurred in 51% including Grade 4 (5%) and Grade 3 (6%). In 126 patients receiving Vectibix in combination with sotorasib across clinical studies, decreased magnesium occurred in 69%, including Grade 4 (2.4%) and Grade 3 (14%). Monitor patients for hypomagnesemia and hypocalcemia prior to initiating Vectibix treatment, periodically during Vectibix treatment, and for up to 8 weeks after the completion of treatment. Other electrolyte disturbances, including hypokalemia, have also been observed. Replete magnesium and other electrolytes as appropriate.",
+        "char_len": 935,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Electrolyte Depletion/Monitoring",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Infusion Reactions",
+        "text": "5.4 Infusion Reactions: In Study 20020408, 4% of patients experienced infusion reactions and 1% of patients experienced severe infusion reactions (NCI-CTC Grade 3-4). Infusion reactions, manifesting as fever, chills, dyspnea, bronchospasm, and hypotension, can occur following Vectibix administration [see Adverse Reactions (6.1, 6.2)]. Fatal infusion reactions occurred in postmarketing experience. Terminate the infusion for severe infusion reactions [see Dosage and Administration (2.3)].",
+        "char_len": 491,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Infusion Reactions",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Acute Renal Failure",
+        "text": "5.5 Acute Renal Failure: Severe diarrhea and dehydration, leading to acute renal failure and other complications, have been observed in patients treated with Vectibix. Among 229 patients who received Vectibix as monotherapy, acute renal failure occurred in 2% including Grade 3 or 4 (2%). Among 585 patients who received Vectibix in combination with FOLFOX, acute renal failure occurred in 2% including Grade 3 or 4 (2%). In 126 patients receiving Vectibix in combination with sotorasib across clinical studies, acute renal failure occurred in 3.2% including Grade 3 (0.8%). Monitor patients for diarrhea and dehydration, provide supportive care (including anti-emetic or anti-diarrheal therapy) as needed, and withhold Vectibix if necessary.",
+        "char_len": 742,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Acute Renal Failure",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Pulmonary Fibrosis/Interstitial Lung Disease (ILD)",
+        "text": "5.6 Pulmonary Fibrosis/Interstitial Lung Disease (ILD): Fatal and nonfatal cases of interstitial lung disease (ILD) (1%) and pulmonary fibrosis have been observed in patients treated with Vectibix. Pulmonary fibrosis occurred in less than 1% (2/1467) of patients enrolled in clinical studies of Vectibix. Grade 1 ILD/pneumonitis occurred in 0.8% (1/126) of patients enrolled in clinical studies of Vectibix in combination with sotorasib. In the event of acute onset or worsening of pulmonary symptoms, interrupt Vectibix therapy. Discontinue Vectibix therapy if ILD is confirmed. In patients with a history of interstitial pneumonitis or pulmonary fibrosis, or evidence of interstitial pneumonitis or pulmonary fibrosis, the benefits of therapy with Vectibix versus the risk of pulmonary complications must be carefully considered.",
+        "char_len": 831,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Pulmonary Fibrosis/Interstitial Lung Disease (ILD)",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Photosensitivity",
+        "text": "5.7 Photosensitivity: Exposure to sunlight can exacerbate dermatologic toxicity. Advise patients to wear sunscreen and hats and limit sun exposure while receiving Vectibix.",
+        "char_len": 172,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Photosensitivity",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Ocular Toxicities",
+        "text": "5.8 Ocular Toxicities: Serious cases of keratitis, ulcerative keratitis, and corneal perforation have occurred with Vectibix use. Among 585 patients who received Vectibix in combination with FOLFOX, keratitis occurred in 0.3%. In 126 patients receiving Vectibix in combination with sotorasib across clinical studies, keratitis occurred in 1.6%, ulcerative keratitis occurred in 0.8%, and vernal keratoconjunctivitis in 0.8% (all were Grade 1-2). Monitor for evidence of keratitis, ulcerative keratitis, or corneal perforation. Interrupt or discontinue Vectibix therapy for acute or worsening keratitis, ulcerative keratitis, or corneal perforation.",
+        "char_len": 648,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Ocular Toxicities",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Increased Mortality and Toxicity with Vectibix in Combination with Bevacizumab and Chemotherapy",
+        "text": "5.9 Increased Mortality and Toxicity with Vectibix in Combination with Bevacizumab and Chemotherapy: In an interim analysis of an open-label, multicenter, randomized clinical trial in the first-line setting in patients with mCRC, the addition of Vectibix to the combination of bevacizumab and chemotherapy resulted in decreased OS and increased incidence of NCI-CTC Grade 3-5 (87% vs 72%) adverse reactions. NCI-CTC Grade 3-4 adverse reactions occurring at a higher rate in Vectibix-treated patients included rash/acneiform dermatitis (26% vs 1%), diarrhea (23% vs 12%), dehydration (16% vs 5%), primarily occurring in patients with diarrhea, hypokalemia (10% vs 4%), stomatitis/mucositis (4% vs < 1%), and hypomagnesemia (4% vs 0%). NCI-CTC Grade 3-5 pulmonary embolism occurred at a higher rate in Vectibix-treated patients (7% vs 3%) and included fatal events in three (< 1%) Vectibix-treated patients. As a result of the toxicities experienced, patients randomized to Vectibix, bevacizumab, and chemotherapy received a lower mean relative dose intensity of each chemotherapeutic agent (oxaliplatin, irinotecan, bolus 5-FU, and/or infusional 5-FU) over the first 24 weeks on study compared with those randomized to bevacizumab and chemotherapy.",
+        "char_len": 1247,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Increased Mortality and Toxicity with Vectibix in Combination with Bevacizumab and Chemotherapy",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Embryo-fetal Toxicity",
+        "text": "5.10 Embryo-fetal Toxicity: Based on data from animal studies and its mechanism of action, Vectibix can cause fetal harm when administered to a pregnant woman. When given during organogenesis, panitumumab administration resulted in embryolethality in cynomolgus monkeys at exposures approximately 1.25 to 5 times the recommended human dose. Advise pregnant women and females of reproductive potential of the potential risk to the fetus. Advise females of reproductive potential to use effective contraception during treatment, and for at least 2 months after the last dose of Vectibix [see Use in Specific Populations (8.1, 8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 663,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Embryo-fetal Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: DERMATOLOGIC TOXICITY",
+        "text": "WARNING: DERMATOLOGIC TOXICITY: Dermatologic Toxicity: Dermatologic toxicities occurred in 90% of patients and were severe (NCI-CTC Grade 3 and higher) in 15% of patients receiving Vectibix monotherapy [see Dosage and Administration (2.3), Warnings and Precautions (5.1) and Adverse Reactions (6.1)]. WARNING: DERMATOLOGIC TOXICITY See full prescribing information for complete boxed warning.",
+        "char_len": 392,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: DERMATOLOGIC TOXICITY",
+        "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.3 Dose Modifications",
+            "text": "2.3 Dose Modifications: Dose Modifications for Vectibix in Combination with Sotorasib When Vectibix is administered in combination with sotorasib, if treatment with sotorasib is temporarily withheld or permanently discontinued, temporarily withhold or permanently discontinue Vectibix, respectively [see Clinical Studies (14.4)]. Refer to the sotorasib full prescribing information for dose modifications for adverse reactions associated with the use of sotorasib. Dose Modifications for Specific Adverse Reactions Associated with the Use of Vectibix Infusion Reactions [see Warnings and Precautions (5.4) and Adverse Reactions (6.1, 6.2)] Dermatologic Toxicity [see Boxed Warning, Warnings and Precautions (5.1) and Adverse Reactions (6.1, 6.2)] Permanently discontinue Vectibix following the occurrence of a Grade 4 dermatologic reaction or for a Grade 3 (NCI-CTC/CTCAE) dermatologic reaction that does not recover after withholding 1 or 2 doses.",
+            "char_len": 948,
+            "source_section_code": "42229-5",
+            "source_title": "2.3 Dose Modifications",
+            "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-COLORECTAL-FDA-006.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "colorectal"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种用于治疗转移性结直肠癌的靶向药，属于表皮生长因子受体拮抗剂。\", \"how_to_use\": \"用药前需先检测肿瘤的RAS基因状态。\", \"cautions\": [\"单药使用前，需确认KRAS和NRAS多个位点均无突变。\", \"与sotorasib联用前，需确认存在KRAS G12C突变。\", \"RAS突变状态未知的结直肠癌患者不适用此药。\", \"RAS突变患者一般不适用，除非与sotorasib联用治KRAS G12C突变。\", \"推荐剂量为每14天静脉输注一次，每次6毫克/千克体重。\", \"持续用药直至疾病进展或出现无法耐受的毒性。\", \"输注期间需备好处理严重输注反应的医疗资源。\", \"与sotorasib联用时，先服sotorasib再输注本药。\", \"联用时若sotorasib暂停或停用，本药也应相应暂停或停用。\", \"说明书未列出禁忌证。\"], \"side_effects\": [{\"term\": \"皮疹\", \"plain\": \"可能出现表现多样的皮肤皮疹。\", \"when_to_seek_help\": \"皮疹严重或持续加重时需就医。\"}, {\"term\": \"甲沟炎\", \"plain\": \"指甲周围可能发炎。\", \"when_to_seek_help\": \"指甲周围红肿疼痛明显时需就医。\"}, {\"term\": \"乏力\", \"plain\": \"可能感到疲劳、没力气。\", \"when_to_seek_help\": \"乏力严重影响日常活动时需就医。\"}, {\"term\": \"恶心\", \"plain\": \"可能感到想吐。\", \"when_to_seek_help\": \"恶心严重或无法进食时需就医。\"}, {\"term\": \"腹泻\", \"plain\": \"可能拉肚子。\", \"when_to_seek_help\": \"腹泻频繁或导致脱水时需就医。\"}, {\"term\": \"呕吐\", \"plain\": \"可能发生呕吐。\", \"when_to_seek_help\": \"呕吐严重或无法进水时需就医。\"}, {\"term\": \"口腔炎\", \"plain\": \"口腔可能发炎不适。\", \"when_to_seek_help\": \"口腔疼痛影响进食时需就医。\"}, {\"term\": \"睫毛增长\", \"plain\": \"睫毛可能变长。\", \"when_to_seek_help\": \"睫毛异常影响视力时需就医。\"}, {\"term\": \"黏膜炎症\", \"plain\": \"黏膜可能发炎。\", \"when_to_seek_help\": \"黏膜炎症明显或疼痛时需就医。\"}, {\"term\": \"全身健康状况恶化\", \"plain\": \"整体身体状态可能变差，属严重不良反应。\", \"when_to_seek_help\": \"整体状态明显变差时需及时就医。\"}, {\"term\": \"肠梗阻\", \"plain\": \"肠道可能发生梗阻，属严重不良反应。\", \"when_to_seek_help\": \"出现腹痛、腹胀、停止排便排气时需及时就医。\"}], \"seek_help\": \"出现严重输注反应、整体状态明显恶化、肠梗阻表现或无法耐受的不良反应时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:02"
+  }
+]

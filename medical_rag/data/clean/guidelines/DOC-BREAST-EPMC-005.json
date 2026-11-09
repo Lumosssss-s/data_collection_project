@@ -1,0 +1,30 @@
+[
+  {
+    "doc_id": "DOC-BREAST-EPMC-005",
+    "title": "The Japanese Breast Cancer Society Clinical Practice Guidelines for Breast Cancer, 2022 Edition: changes from the 2018 edition and general statements on breast cancer treatment",
+    "summary": "AbstractThe Japanese Breast Cancer Society Clinical Practice Guidelines for Breast Cancer, 2022 Edition was published in June 2022. The guidelines were prepared while conforming as much as possible to the “Minds Manual for Guideline Development 2020 ver. 3.0.” edited by the Minds Manual Development Committee of the Japan Council for Quality Health Care in 2021. In addition, a survey of Japanese Breast Cancer Society members on the 2018 edition of the guidelines was conducted from February 19 to March 4, 2021. Based on the responses from over 600 members, original innovations were made to make the guidelines more user-friendly. The 2018 edition of the guidelines was developed to provide support tools for physicians and patients to utilize shared decision-making. The 2022 guidelines consist of two volumes: (1) an “Epidemiology and Diagnosis” section covering “Screening and Diagnosis”, “Radiological diagnosis”, and “Pathological diagnosis”, and (2) a “Treatment” section covering “Surgical therapy”, “Radiation therapy”, and “Systemic therapy”. We believe that this concise summary of the guidelines will be useful to physicians and researchers in Japan and overseas.Keywords: Breast cancer, Guideline, Local therapy, Systemic therapy",
+    "doc_type": "guideline",
+    "issuer": "Breast Cancer (JBCS)",
+    "publish_date": "2024-04-03",
+    "cancer_types": [
+      "breast"
+    ],
+    "license_note": "CC BY 4.0（Europe PMC license 字段：cc by；原文 XML license 原文：Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.；来源 URL：https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11045566/fullTextXML；DOI：https://doi.org/10.1007/s12282-024-01566-6）。版本：2022 edition。抓取时间：2026-11-02。适用范围提示：单一国家协会指南，需与 ESMO/ASCO/CSCO 等对照核验。",
+    "file_path": "raw/guidelines/breast/DOC-BREAST-EPMC-005.xml",
+    "doc_hash": "378203cee365e1862dedcc6b6f626bbc4d42b2b48f643fd6ca551e4e94224bff",
+    "review_status": "draft",
+    "_source": "europepmc",
+    "_pmid": "38570435",
+    "_pmcid": "PMC11045566",
+    "_doi": "10.1007/s12282-024-01566-6",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11045566/fullTextXML",
+    "_xml_bytes": 45623,
+    "source_name": "The Japanese Breast Cancer Society Clinical Practice Guidelines for Breast Cancer, 2022 Edition: changes from the 2018 edition and general statements on breast cancer treatment",
+    "source_version": "2022 edition",
+    "source_section": "全文",
+    "source_file": "DOC-BREAST-EPMC-005.xml",
+    "updated_at": "2026-11-02",
+    "_excluded_reason": "no_rec",
+    "_excluded_note": "病理篇/总论无治疗推荐，不入索引不入catalog"
+  }
+]

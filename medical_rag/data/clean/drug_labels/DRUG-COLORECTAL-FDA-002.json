@@ -1,0 +1,282 @@
+[
+  {
+    "drug_id": "DRUG-COLORECTAL-FDA-002",
+    "generic_name": "CETUXIMAB",
+    "brand_names": [],
+    "aliases_zh": [
+      "西妥昔单抗"
+    ],
+    "title": "CETUXIMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "ERBITUX® is an epidermal growth factor receptor (EGFR) antagonist indicated for treatment of:",
+      "Head and Neck Cancer",
+      "Limitations of Use: ERBITUX is not indicated for treatment of Ras-mutant colorectal cancer or when the results of the Ras mutation tests are unknown. (5.7)",
+      "ERBITUX® is indicated:",
+      "ERBITUX is indicated for the treatment of K-Ras wild-type, epidermal growth factor receptor (EGFR)-expressing, metastatic colorectal cancer (mCRC) as determined by an FDA-approved test [see Dosage and Administration (2.2)]:",
+      "Limitations of Use: ERBITUX is not indicated for treatment of Ras-mutant colorectal cancer or when the results of the Ras mutation tests are unknown [see Warnings and Precautions (5.7)].",
+      "ERBITUX is indicated, in combination with encorafenib, for the treatment of adult patients with metastatic colorectal cancer (CRC) with a BRAF V600E mutation, as detected by an FDA-approved test, after prior therapy [see Dosage and Administration (2.3)].",
+      "【中文适应证】用于治疗RAS 基因野生型的转移性结直肠癌：与FOLFOX 或FOLFIRI 方案联合使用于一线治疗；与伊立替康联合使用于经含伊立替康治疗失败后的患者。"
+    ],
+    "dosage": {
+      "standard": "Select patients with metastatic colorectal cancer (CRC) for treatment with ERBITUX based on the presence of: Information on FDA-approved tests for the detection of K-Ras or BRAF V600E mutations in CRC in patients with metastatic CRC is available at: http://www.fda.gov/CompanionDiagnostics. In combination with radiation therapy As a single-agent or in combination with platinum-based therapy and fluorouracil Administer Erbitux as a single-agent or in combination with platinum-based therapy and fluorouracil on a weekly or biweekly schedule. Complete ERBITUX administration 1 hour prior to platinum-based therapy with fluorouracil. Continue treatment until disease progression or unacceptable toxicity. As a single-agent or in combination with irinotecan or FOLFIRI (irinotecan, fluorouracil, leucovorin) Administer Erbitux as a single-agent or in combination with irinotecan or FOLFIRI (irinotecan, fluorouracil, leucovorin) on a weekly or biweekly schedule. Complete ERBITUX administration 1 hour prior to irinotecan or FOLFIRI. Continue treatment until disease progression or unacceptable toxicity. In combination with encorafenib Refer to the encorafenib prescribing information for recommended encorafenib dosage information. Premedicate with a histamine-1 (H1) receptor antagonist intravenously 30–60 minutes prior to the first dose or subsequent doses as deemed necessary [see Warnings and Precautions (5.1)]. Reduce, delay, or discontinue ERBITUX to manage adverse reactions as described in Table 1. Adverse Reaction Severity a Dosage Modification a National Cancer Institute (NCI) Common Toxicity Criteria (CTC), version 2.0. Infusion reactions [see Warnings and Precautions (5.1)] Grade 1 or 2 Reduce the infusion rate by 50%. Grade 3 or 4 Immediately and permanently, discontinue ERBITUX",
+      "adjustment": "As a single-agent or in combination with platinum-based therapy and fluorouracil Administer Erbitux as a single-agent or in combination with platinum-based therapy and fluorouracil on a weekly or biweekly schedule. Complete ERBITUX administration 1 hour prior to platinum-based therapy with fluorouracil. Continue treatment until disease progression or unacceptable toxicity. As a single-agent or in combination with irinotecan or FOLFIRI (irinotecan, fluorouracil, leucovorin) Administer Erbitux as a single-agent or in combination with irinotecan or FOLFIRI (irinotecan, fluorouracil, leucovorin) on a weekly or biweekly schedule. Complete ERBITUX administration 1 hour prior to irinotecan or FOLFIRI. Continue treatment until disease progression or unacceptable toxicity. In combination with encorafenib Refer to the encorafenib prescribing information for recommended encorafenib dosage information. Premedicate with a histamine-1 (H1) receptor antagonist intravenously 30–60 minutes prior to the first dose or subsequent doses as deemed necessary [see Warnings and Precautions (5.1)]. Reduce, delay, or discontinue ERBITUX to manage adverse reactions as described in Table 1. Adverse Reaction Se"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the label:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (incidence ≥25%) with Erbitux as a single-agent or in combination with radiotherapy or chemotherapy (FOLFIRI, Irinotecan and 5",
+        "frequency": "25%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (>25%) for ERBITUX, in combination with encorafenib, are fatigue, nausea, diarrhea, dermatitis acneiform, abdominal pain, decr",
+        "frequency": "25%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Eli Lilly and Company at 1-800-LillyRx (1-800-545-5979) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data described in Warnings and Precautions reflect exposure to ERBITUX in 1373 patients with SCCHN or CRC enrolled in clinical trials and treated at the rec",
+        "frequency": "25%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Squamous Cell Carcinoma of the Head and Neck (SCCHN)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In Combination with Radiation Therapy",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of ERBITUX in combination with radiation therapy compared to radiation therapy alone was evaluated in BONNER. The data described below reflect exposu",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 2 provides the frequency and severity of adverse reactions in BONNER.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction ERBITUX with Radiation(n=208) Radiation Therapy Alone(n=212)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Grades1–4 b Grades3 and 4 Grades1–4 Grades3 and 4",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "a Adverse reactions occurring in ≥10% of patients in the ERBITUX combination arm and at a higher incidence (≥5%) compared to the radiation alone arm.",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "b Adverse reactions were graded using the NCI CTC, version 2.0.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "c Includes cases also reported as infusion reaction.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "d Infusion reaction defined as any event described at any time during the clinical study as “allergic reaction” or “anaphylactoid reaction”, or any event occurr",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "e Based on laboratory measurements, not on reported adverse reactions, the number of subjects with tested samples varied from 205–206 for ERBITUX with Radiation",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "f Acneiform rash defined as any event described as “acne”, “rash”, “maculopapular rash”, “pustular rash”, “dry skin”, or “exfoliative dermatitis”.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Infusion Reactiond 15 3 2 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metabolism and Nutrition",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "colorectal",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-04-30",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-COLORECTAL-FDA-002.xml",
+    "doc_hash": "22c825e8cf8149cd4253675dc769dfd81c0bdf61337a6995255031e0228f829d",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "8bc6397e-4bd8-4d37-a007-a327e4da34d9",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/8bc6397e-4bd8-4d37-a007-a327e4da34d9.xml",
+    "atc_code": "L01FE01",
+    "approval_no": null,
+    "source_name": "CETUXIMAB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-COLORECTAL-FDA-002.xml",
+    "updated_at": "2026-10-26",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Infusion Reactions",
+        "text": "5.1 Infusion Reactions: ERBITUX can cause serious and fatal infusion reactions. Infusion reactions of any grade occurred in 8.4% of 1373 patients who received ERBITUX across clinical trials. Severe (Grades 3 and 4) infusion reactions occurred in 2.2% of patients [see Adverse Reactions (6.1)]. Signs and symptoms included rapid onset of airway obstruction (bronchospasm, stridor, hoarseness), hypotension, shock, loss of consciousness, myocardial infarction, and/or cardiac arrest. The risk of anaphylactic reactions may be increased in patients with a history of tick bites, red meat allergy, or in the presence of IgE antibodies directed against galactose-α-1,3-galactose (alpha-gal). Consider testing patients for alpha-gal IgE antibodies using FDA-cleared methods prior to initiating ERBITUX. Negative results for alpha-gal antibodies do not rule out the risk of severe infusion reactions. Approximately 90% of severe infusion reactions occurred with the first infusion despite premedication with antihistamines. Infusion reactions may occur during or several hours following completion of the infusion. Premedicate with a histamine-1(H1) receptor antagonist as recommended [see Dosage and Administration (2.4)]. Monitor patients for at least 1 hour following each ERBITUX infusion, in a setting with resuscitation equipment and other agents necessary to treat anaphylaxis. In patients requiring treatment for infusion reactions, monitor for more than 1 hour to confirm resolution of the reaction. Interrupt the infusion and upon recovery, resume the infusion at a slower rate or permanently discontinue ERBITUX based on severity [see Dosage and Administration (2.5)].",
+        "char_len": 1672,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Infusion Reactions",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Cardiopulmonary Arrest",
+        "text": "5.2 Cardiopulmonary Arrest: ERBITUX can cause cardiopulmonary arrest. Cardiopulmonary arrest or sudden death occurred in 2% of 208 patients treated with radiation therapy and ERBITUX in BONNER. Three patients with prior history of coronary artery disease died at home, with myocardial infarction as the presumed cause of death. One of these patients had arrhythmia and one had congestive heart failure. Death occurred 27, 32, and 43 days after the last dose of ERBITUX. One patient with no prior history of coronary artery disease died one day after the last dose of ERBITUX. In EXTREME, fatal cardiac disorders and/or sudden death occurred in 3% of 219 patients treated with a cetuximab product in combination with platinum-based therapy and fluorouracil. Carefully consider use of ERBITUX with radiation therapy or platinum-based therapy with fluorouracil in patients with SCCHN with a history of coronary artery disease, congestive heart failure, or arrhythmias. Monitor serum electrolytes, including serum magnesium, potassium, and calcium, during and after ERBITUX [see Warnings and Precautions (5.6)].",
+        "char_len": 1107,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Cardiopulmonary Arrest",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Pulmonary Toxicity",
+        "text": "5.3 Pulmonary Toxicity: ERBITUX can cause interstitial lung disease (ILD). ILD, including 1 fatality, occurred in <0.5% of 1570 patients receiving ERBITUX in clinical trials. Monitor patients for signs and symptoms of pulmonary toxicity. Interrupt or permanently discontinue ERBITUX for acute onset or worsening of pulmonary symptoms. Permanently discontinue ERBITUX for confirmed ILD [see Dosage and Administration (2.5)].",
+        "char_len": 423,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Pulmonary Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Dermatologic Toxicity",
+        "text": "5.4 Dermatologic Toxicity: ERBITUX can cause dermatologic toxicities, including acneiform rash, skin drying and fissuring, paronychial inflammation, infectious sequelae (for example, S. aureus sepsis, abscess formation, cellulitis, blepharitis, conjunctivitis, keratitis/ulcerative keratitis with decreased visual acuity, cheilitis), and hypertrichosis. Acneiform rash occurred in 82% of the 1373 patients who received ERBITUX across clinical trials. Severe (Grades 3 or 4) acneiform rash occurred in 10% of patients [see Adverse Reactions (6.1)]. Acneiform rash usually developed within the first two weeks of therapy; the rash lasted more than 28 days after stopping ERBITUX in most patients. Life-threatening and fatal bullous mucocutaneous disease with blisters, erosions, and skin sloughing, has been observed in patients who received ERBITUX. It could not be determined whether these mucocutaneous adverse reactions were directly related to EGFR inhibition or to idiosyncratic immune-related effects (e.g., Stevens-Johnson syndrome or toxic epidermal necrolysis). Monitor patients receiving ERBITUX for dermatologic toxicities and infectious sequelae. Instruct patients to limit sun exposure during ERBITUX therapy. Withhold, reduce dose or permanently discontinue ERBITUX based on severity of acneiform rash or mucocutaneous disease [see Dosage and Administration (2.5)].",
+        "char_len": 1378,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Dermatologic Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Risks Associated with Use in Combination with Radiation and Cisplatin",
+        "text": "5.5 Risks Associated with Use in Combination with Radiation and Cisplatin: In a controlled study, 940 patients with locally advanced SCCHN were randomized 1:1 to receive either ERBITUX in combination with radiation therapy and cisplatin or radiation therapy and cisplatin alone. The addition of ERBITUX resulted in an increase in the incidence of Grade 3 and 4 mucositis, radiation recall syndrome, acneiform rash, cardiac events, and electrolyte disturbances compared to radiation and cisplatin alone. Adverse reactions with fatal outcome were reported in 4% of patients in the ERBITUX combination arm and 3% in the control arm. In the ERBITUX arm, 2% experienced myocardial ischemia compared to 0.9% in the control arm. The main efficacy outcome of the study was progression-free survival (PFS). The addition of ERBITUX to radiation and cisplatin did not improve PFS. ERBITUX is not indicated for the treatment of SCCHN in combination with radiation and cisplatin.",
+        "char_len": 966,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Risks Associated with Use in Combination with Radiation and Cisplatin",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Hypomagnesemia and Accompanying Electrolyte Abnormalities",
+        "text": "5.6 Hypomagnesemia and Accompanying Electrolyte Abnormalities: ERBITUX can cause hypomagnesemia. Hypomagnesemia occurred in 55% of 365 patients receiving ERBITUX in Study CA225-025 and two other clinical trials in patients with colorectal cancer (CRC) or head and neck cancer, including Grades 3 and 4 in 6% to 17%. In EXTREME, where a cetuximab product was administered in combination with platinum-based therapy, the addition of cetuximab to cisplatin and fluorouracil resulted in an increased incidence of hypomagnesemia of any grade (14%) and of Grade 3 or 4 hypomagnesemia (7%). Hypomagnesemia of any grade occurred in 4% of patients who received cetuximab, carboplatin, and fluorouracil. No patient experienced Grade 3 or 4 hypomagnesemia [see Adverse Reactions (6.1)]. Hypomagnesemia and accompanying electrolyte abnormalities can occur days to months after initiating ERBITUX. Monitor patients weekly during treatment for hypomagnesemia, hypocalcemia, and hypokalemia, and for at least 8 weeks following the completion of ERBITUX. Replete electrolytes as necessary.",
+        "char_len": 1073,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Hypomagnesemia and Accompanying Electrolyte Abnormalities",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Increased Tumor Progression, Increased Mortality, or Lack of Benefit in Patients with Ras-Mutant mCRC",
+        "text": "5.7 Increased Tumor Progression, Increased Mortality, or Lack of Benefit in Patients with Ras-Mutant mCRC: ERBITUX is not indicated for the treatment of patients with CRC that harbor somatic mutations in exon 2 (codons 12 and 13), exon 3 (codons 59 and 61), and exon 4 (codons 117 and 146) of either K-Ras or N-Ras and hereafter is referred to as “Ras” or when the Ras status is unknown. Retrospective subset analyses of Ras-mutant and wild-type populations across several randomized clinical trials, including CRYSTAL, were conducted to investigate the role of Ras mutations on the clinical effects of anti-EGFR-directed monoclonal antibodies. Use of cetuximab in patients with Ras mutations resulted in no clinical benefit with treatment related toxicity. Confirm Ras mutation status in tumor specimens prior to initiating ERBITUX [see Indications and Usage (1.2)].",
+        "char_len": 867,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Increased Tumor Progression, Increased Mortality, or Lack of Benefit in Patients with Ras-Mutant mCRC",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Embryo-Fetal Toxicity",
+        "text": "5.8 Embryo-Fetal Toxicity: Based on animal data and its mechanism of action, ERBITUX can cause fetal harm when administered to a pregnant woman. There are no available data for ERBITUX exposure in pregnant women. In an animal reproduction study, intravenous administration of cetuximab once weekly to pregnant cynomolgus monkeys during the period of organogenesis resulted in an increased incidence of embryolethality and abortion. Disruption or depletion of EGFR in animal models results in impairment of embryo-fetal development including effects on placental, lung, cardiac, skin, and neural development. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with ERBITUX and for 2 months after the last dose of ERBITUX [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 859,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: INFUSION REACTIONS and CARDIOPULMONARY ARREST",
+        "text": "WARNING: INFUSION REACTIONS and CARDIOPULMONARY ARREST: Infusion Reactions: ERBITUX can cause serious and fatal infusion reactions [see Warnings and Precautions (5.1), Adverse Reactions (6)] . Immediately interrupt and permanently discontinue ERBITUX for serious infusion reactions [see Dosage and Administration (2.5)] . Cardiopulmonary Arrest: Cardiopulmonary arrest or sudden death occurred in patients with squamous cell carcinoma of the head and neck receiving ERBITUX with radiation therapy or a cetuximab product with platinum-based therapy and fluorouracil. Monitor serum electrolytes, including serum magnesium, potassium, and calcium, during and after ERBITUX administration [see Warnings and Precautions (5.2, 5.6)] . WARNING: INFUSION REACTIONS and CARDIOPULMONARY ARREST See full prescribing information for complete boxed warning.",
+        "char_len": 844,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: INFUSION REACTIONS and CARDIOPULMONARY ARREST",
+        "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modifications for Adverse Reactions",
+            "text": "2.5 Dosage Modifications for Adverse Reactions: Reduce, delay, or discontinue ERBITUX to manage adverse reactions as described in Table 1. Adverse Reaction Severity a Dosage Modification a National Cancer Institute (NCI) Common Toxicity Criteria (CTC), version 2.0. Infusion reactions [see Warnings and Precautions (5.1)] Grade 1 or 2 Reduce the infusion rate by 50%. Grade 3 or 4 Immediately and permanently, discontinue ERBITUX. Dermatologic toxicities and infectious sequelae (e.g., acneiform rash, mucocutaneous disease) [see Warnings and Precautions (5.4)] 1st occurrence; Grade 3 or 4 Delay infusion 1 to 2 weeks; if condition improves, continue at 250 mg/m2.If no improvement, discontinue ERBITUX. 2nd occurrence; Grade 3 or 4 Delay infusion 1 to 2 weeks; if condition improves, continue at 200 mg/m2.If no improvement, discontinue ERBITUX. 3rd occurrence; Grade 3 or 4 Delay infusion 1 to 2 weeks; if condition improves, continue at 150 mg/m2.If no improvement, discontinue ERBITUX. 4th occurrence; Grade 3 or 4 Discontinue ERBITUX. Pulmonary toxicity [see Warnings and Precautions (5.3)] Acute onset or worsening pulmonary symptoms Delay infusion 1 to 2 weeks; if condition improves, continue at the dose that was being administered at the time of occurrence.If no improvement in 2 weeks or interstitial lung disease (ILD) is confirmed, discontinue ERBITUX.",
+            "char_len": 1366,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-COLORECTAL-FDA-002.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "colorectal"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种用于治疗某些头颈癌和结直肠癌的靶向药。\", \"how_to_use\": \"可单独使用或与放疗、化疗等联合使用。通常每周或每两周给药一次。与某些化疗合用时，本药需提前1小时输完。首次用药前可能需用抗过敏药预防反应。治疗一般持续到病情进展或出现不能耐受的反应。\", \"cautions\": [\"本药不适用于Ras突变型结直肠癌患者。\", \"Ras突变检测结果未知时也不适用本药。\", \"结直肠癌用药前需经FDA批准的检测确认K-Ras或BRAF V600E状态。\", \"输液反应1级或2级时，需将输注速度降低50%。\", \"输液反应3级或4级时，需立即并永久停用本药。\", \"首次用药前30至60分钟可能需静脉用抗组胺药预防反应。\", \"后续用药是否需预防用药由医生判断。\", \"出现不良反应时，医生可能会减量、延迟或停药。\"], \"side_effects\": [{\"term\": \"输液反应\", \"plain\": \"输注本药时可能出现过敏样反应。\", \"when_to_seek_help\": \"出现严重输液反应时需立即就医。\"}, {\"term\": \"乏力\", \"plain\": \"感觉疲倦、没有力气。\", \"when_to_seek_help\": \"乏力明显加重或影响日常活动时需就医。\"}, {\"term\": \"恶心\", \"plain\": \"感到想吐或胃部不适。\", \"when_to_seek_help\": \"恶心严重到无法进食或持续不缓解时需就医。\"}, {\"term\": \"腹泻\", \"plain\": \"大便次数增多或变稀。\", \"when_to_seek_help\": \"腹泻严重或导致脱水时需就医。\"}, {\"term\": \"痤疮样皮炎\", \"plain\": \"皮肤出现类似痘痘的皮疹。\", \"when_to_seek_help\": \"皮疹严重、破溃或伴感染迹象时需就医。\"}, {\"term\": \"腹痛\", \"plain\": \"肚子疼痛或不适。\", \"when_to_seek_help\": \"腹痛剧烈或持续加重时需就医。\"}], \"seek_help\": \"出现严重输液反应、严重腹泻、严重皮疹或剧烈腹痛时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-03T14:55:56"
+  }
+]

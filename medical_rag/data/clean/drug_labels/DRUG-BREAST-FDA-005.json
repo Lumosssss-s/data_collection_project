@@ -1,0 +1,267 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-005",
+    "generic_name": "LETROZOLE",
+    "brand_names": [],
+    "aliases_zh": [
+      "来曲唑"
+    ],
+    "title": "LETROZOLE 说明书（FDA DailyMed）",
+    "indications": [
+      "Femara is an aromatase inhibitor indicated for:",
+      "Femara (letrozole) is indicated for the adjuvant treatment of postmenopausal women with hormone receptor positive early breast cancer.",
+      "Femara is indicated for the extended adjuvant treatment of early breast cancer in postmenopausal women, who have received 5 years of adjuvant tamoxifen therapy. The effectiveness of Femara in extended adjuvant treatment of early breast cancer is based on an analysis of disease-free survival (DFS) in patients treated with Femara for a median of 60 months [see Clinical Studies (14.2, 14.3)].",
+      "Femara is indicated for first-line treatment of postmenopausal women with hormone receptor positive or unknown, locally advanced or metastatic breast cancer. Femara is also indicated for the treatment of advanced breast cancer in postmenopausal women with disease progression following antiestrogen therapy [see Clinical Studies (14.4, 14.5)]."
+    ],
+    "dosage": {
+      "standard": "Femara tablets are taken orally without regard to meals (2): The recommended dose of Femara is one 2.5 mg tablet administered once a day, without regard to meals. In the adjuvant setting, the optimal duration of treatment with letrozole is unknown. In both the adjuvant study and the post approval adjuvant study, median treatment duration was 5 years. Treatment should be discontinued at relapse [ see Clinical Studies (14.1) ] . In the extended adjuvant setting, the optimal treatment duration with Femara is not known. The planned duration of treatment in the study was 5 years. In the final updated analysis, conducted at a median follow-up of 62 months, the median treatment duration for Femara was 60 months. Seventy-one percent (71%) of patients were treated for at least 3 years and 58% of patients completed at least 4.5 years of extended adjuvant treatment. The treatment should be discontinued at tumor relapse [see Clinical Studies (14.2)]. In patients with advanced disease, treatment with Femara should continue until tumor progression is evident [see Clinical Studies (14.4, 14.5)]. No dosage adjustment is recommended for patients with mild to moderate hepatic impairment, although Femara blood concentrations were modestly increased in subjects with moderate hepatic impairment due to cirrhosis. The dose of Femara in patients with cirrhosis and severe hepatic dysfunction should be reduced by 50% [see Warnings and Precautions (5. 3 ) ] . The recommended dose of Femara for such patients is 2.5 mg administered every other day. The effect of hepatic impairment on Femara exposure in noncirrhotic cancer patients with elevated bilirubin levels has not been determined. No dosage adjustment is required for patients with renal impairment if creatinine clearance is greater than or equ",
+      "adjustment": "In the extended adjuvant setting, the optimal treatment duration with Femara is not known. The planned duration of treatment in the study was 5 years. In the final updated analysis, conducted at a median follow-up of 62 months, the median treatment duration for Femara was 60 months. Seventy-one percent (71%) of patients were treated for at least 3 years and 58% of patients completed at least 4.5 years of extended adjuvant treatment. The treatment should be discontinued at tumor relapse [see Clinical Studies (14.2)]. In patients with advanced disease, treatment with Femara should continue until tumor progression is evident [see Clinical Studies (14.4, 14.5)]. No dosage adjustment is recommended for patients with mild to moderate hepatic impairment, although Femara blood concentrations were modestly increased in subjects with moderate hepatic impairment due to cirrhosis. The dose of Femara in patients with cirrhosis and severe hepatic dysfunction should be reduced by 50% [see Warnings and Precautions (5. 3 ) ] . The recommended dose of Femara for such patients is 2.5 mg administered every other day. The effect of hepatic impairment on Femara exposure in noncirrhotic cancer patients w"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the labeling.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (greater than 20%) were hot flashes, arthralgia; flushing, asthenia, edema, arthralgia, headache, dizziness, hypercholesterole",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Novartis Pharmaceuticals Corporation at 1-888-669-6682 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reactions rates observed in the clinical trials of a drug cannot be directly comp",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adjuvant Treatment of Early Breast Cancer",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In study, BIG 1-98, the median treatment duration of adjuvant treatment was 60 months and the median duration of follow-up for safety was 96 months for patients",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Certain adverse reactions were prospectively specified for analysis (see Table 1), based on the known pharmacologic properties and side effect profiles of the t",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions were analyzed irrespective of whether a symptom was present or absent at baseline. Most adverse reactions reported (approximately 75% of patie",
+        "frequency": "75%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Grades 1-4 Grades 3-4",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Femara Tamoxifen Femara Tamoxifen",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse R eaction s N = 2448 N = 2447 N = 2448 N = 2447",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "n (%) n (%) n (%) n (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Patients with any adverse reaction 2309 (94.3) 2212 (90.4) 636 (26.0) 606 (24.8)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hypercholesterolemia* 1280 (52.3) 700 (28.6) 11 (0.4) 6 (0.2)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hot flashes* 819 (33.5) 929 (38.0) - - - -",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Arthralgia/arthritis* 621 (25.4) 504 (20.6) 84 (3.4) 50 (2.0)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Bone fractures1 361 (14.7) 280 (11.4) - - - -",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Night sweats* 356 (14.5) 426 (17.4) - - - -",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Weight increase* 317 (12.9) 378 (15.4) 27 (1.1) 39 (1.6)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nausea* 284 (11.6) 277 (11.3) 6 (0.2) 9 (0.4)",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-06-15",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-005.xml",
+    "doc_hash": "18ac035b913912c52879c1aa078538c19174a3d8e23abe0260c791275b5e6c77",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "82b77d74-085f-45ac-a7dd-1f5c038bf406",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/82b77d74-085f-45ac-a7dd-1f5c038bf406.xml",
+    "atc_code": "L02BG04",
+    "approval_no": null,
+    "source_name": "LETROZOLE 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-005.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "Coadministration of Femara and tamoxifen 20 mg daily resulted in a reduction of letrozole plasma levels of 38% on average (Study P015). Clinical experience in the second-line breast cancer trials (AR/BC2 and AR/BC3) indicates that the therapeutic effect of Femara therapy is not impaired if Femara is administered immediately after tamoxifen.",
+      "A pharmacokinetic interaction study with cimetidine (Study P004) showed no clinically significant effect on letrozole pharmacokinetics.",
+      "An interaction study (P017) with warfarin showed no clinically significant effect of letrozole on warfarin pharmacokinetics.",
+      "Other Anticancer Agents",
+      "There is no clinical experience to date on the use of Femara in combination with other anticancer agents."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Bone Effects",
+        "text": "5.1 Bone Effects: Use of Femara may cause decreases in bone mineral density (BMD). Consideration should be given to monitoring BMD. Results of a safety study to evaluate safety in the adjuvant setting comparing the effect on lumbar spine (L2-L4) BMD of adjuvant treatment with letrozole to that with tamoxifen showed at 24 months a median decrease in lumbar spine BMD of 4.1% in the letrozole arm compared to a median increase of 0.3% in the tamoxifen arm (difference = 4.4%) (P < 0.0001) [ s ee Adverse Reactions (6)]. Updated results from the BMD substudy (MA-17B) in the extended adjuvant setting demonstrated that at 2 years patients receiving letrozole had a median decrease from baseline of 3.8% in hip BMD compared to a median decrease of 2.0% in the placebo group. The changes from baseline in lumbar spine BMD in letrozole and placebo treated groups were not significantly different [see Adverse Reactions (6)]. In the adjuvant trial (BIG 1-98) the incidence of bone fractures at any time after randomization was 14.7% for letrozole and 11.4% for tamoxifen at a median follow-up of 96 months. The incidence of osteoporosis was 5.1% for letrozole and 2.7% for tamoxifen [ s ee Adver se R eactions (6)]. In the extended adjuvant trial (MA-17), the incidence of bone fractures at any time after randomization was 13.3% for letrozole and 7.8% for placebo at a median follow-up of 62 months. The incidence of new osteoporosis was 14.5% for letrozole and 7.8% for placebo [ s ee Adverse Reactions (6) ] .",
+        "char_len": 1507,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Bone Effects",
+        "source_xml": "DRUG-BREAST-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Cholesterol",
+        "text": "5.2 Cholesterol: Consideration should be given to monitoring serum cholesterol. In the adjuvant trial (BIG 1-98), hypercholesterolemia was reported in 52.3% of letrozole patients and 28.6% of tamoxifen patients. Grade 3-4 hypercholesterolemia was reported in 0.4% of letrozole patients and 0.1% of tamoxifen patients. Also in the adjuvant setting, an increase of greater than or equal to 1.5 x upper limit of normal (ULN) in total cholesterol (generally nonfasting) was observed in patients on monotherapy who had baseline total serum cholesterol within the normal range (i.e., less than = 1.5 x ULN) in 155/1843 (8.4%) patients on letrozole vs 71/1840 (3.9%) patients on tamoxifen Lipid lowering medications were required for 29% of patients on letrozole and 20% on tamoxifen [ s ee Adverse R eactions (6)].",
+        "char_len": 808,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Cholesterol",
+        "source_xml": "DRUG-BREAST-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Hepatic Impairment",
+        "text": "5.3 Hepatic Impairment: Subjects with cirrhosis and severe hepatic impairment who were dosed with 2.5 mg of Femara experienced approximately twice the exposure to Femara as healthy volunteers with normal liver function [see Clinical Pharmacology ( 12.3 ) ]. Therefore, a dose reduction is recommended for this patient population. The effect of hepatic impairment on Femara exposure in cancer patients with elevated bilirubin levels has not been determined [ see Dosage and Administration (2. 5 ) ] .",
+        "char_len": 499,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Hepatic Impairment",
+        "source_xml": "DRUG-BREAST-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Fatigue and Dizziness",
+        "text": "5.4 Fatigue and Dizziness: Because fatigue, dizziness, and somnolence have been reported with the use of Femara, caution is advised when driving or using machinery until it is known how the patient reacts to Femara use.",
+        "char_len": 219,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Fatigue and Dizziness",
+        "source_xml": "DRUG-BREAST-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Laboratory Test Abnormalities",
+        "text": "5.5 Laboratory Test Abnormalities: No dose-related effect of Femara on any hematologic or clinical chemistry parameter was evident. Moderate decreases in lymphocyte counts, of uncertain clinical significance, were observed in some patients receiving Femara 2.5 mg. This depression was transient in about half of those affected. Two patients on Femara developed thrombocytopenia; relationship to the study drug was unclear. Patient withdrawal due to laboratory abnormalities, whether related to study treatment or not was infrequent.",
+        "char_len": 532,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Laboratory Test Abnormalities",
+        "source_xml": "DRUG-BREAST-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Embryo-Fetal Toxicity",
+        "text": "5.6 Embryo-Fetal Toxicity: Based on post-marketing reports, findings from animal studies and the mechanism of action, Femara can cause fetal harm and is contraindicated for use in pregnant women. In post-marketing reports, use of letrozole during pregnancy resulted in cases of spontaneous abortions and congenital birth defects. Letrozole caused embryo-fetal toxicities in rats and rabbits at maternal exposures that were below the maximum recommended human dose (MHRD) on a mg/m2 basis. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during therapy with Femara and for at least 3 weeks after the last dose [see Adverse Reactions (6.2), Use in Specific Populations (8.1, 8.3), and Clinical Pharmacology (12.1)].",
+        "char_len": 793,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-005.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.6 Use in Renal Impairment",
+            "text": "2.6 Use in Renal Impairment: No dosage adjustment is required for patients with renal impairment if creatinine clearance is greater than or equal to 10 mL/min [ s ee Clinical Pharmacology (12.3) ].",
+            "char_len": 197,
+            "source_section_code": "42229-5",
+            "source_title": "2.6 Use in Renal Impairment",
+            "source_xml": "DRUG-BREAST-FDA-005.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Use in Hepatic Impairment",
+            "text": "2.5 Use in Hepatic Impairment: No dosage adjustment is recommended for patients with mild to moderate hepatic impairment, although Femara blood concentrations were modestly increased in subjects with moderate hepatic impairment due to cirrhosis. The dose of Femara in patients with cirrhosis and severe hepatic dysfunction should be reduced by 50% [see Warnings and Precautions (5. 3 ) ] . The recommended dose of Femara for such patients is 2.5 mg administered every other day. The effect of hepatic impairment on Femara exposure in noncirrhotic cancer patients with elevated bilirubin levels has not been determined.",
+            "char_len": 618,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Use in Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-005.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": false,
+        "reason": "D&A 树下无标题含 dosage/dose modification 的子节",
+        "items": []
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-005.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种芳香化酶抑制剂，用于绝经后女性的某些类型乳腺癌治疗。\", \"how_to_use\": \"每天口服一次，每次一片2.5毫克，不受进食影响。\", \"cautions\": [\"辅助治疗的最佳疗程尚不明确，研究中位治疗时间为5年。\", \"复发时应停止治疗。\", \"延长辅助治疗的最佳疗程尚不明确，研究计划疗程为5年。\", \"晚期疾病患者应持续治疗直至肿瘤进展明显。\", \"轻中度肝功能损害者不建议调整剂量。\", \"肝硬化伴严重肝功能损害者剂量应减少50%，即2.5毫克隔日一次。\", \"肾功能损害者如肌酐清除率不低于某值，无需调整剂量。\", \"与他莫昔芬20毫克每日同服，可使来曲唑血药浓度平均降低38%。\", \"与西咪替丁或华法林合用未见有临床意义的相互作用。\", \"目前尚无与其他抗癌药联合使用的临床经验。\"], \"side_effects\": [{\"term\": \"潮热\", \"plain\": \"突然感到发热、出汗。\", \"when_to_seek_help\": \"如潮热严重影响到日常生活，请就医。\"}, {\"term\": \"关节痛/关节炎\", \"plain\": \"关节疼痛或肿胀。\", \"when_to_seek_help\": \"如关节疼痛明显或持续加重，请就医。\"}, {\"term\": \"面色潮红\", \"plain\": \"面部发红发热。\", \"when_to_seek_help\": \"如反复出现且难以忍受，请就医。\"}, {\"term\": \"乏力\", \"plain\": \"感到没有力气、容易疲劳。\", \"when_to_seek_help\": \"如乏力严重或持续不缓解，请就医。\"}, {\"term\": \"水肿\", \"plain\": \"身体某些部位出现肿胀。\", \"when_to_seek_help\": \"如水肿明显或突然加重，请就医。\"}, {\"term\": \"头痛\", \"plain\": \"头部疼痛。\", \"when_to_seek_help\": \"如头痛剧烈或持续不缓解，请就医。\"}, {\"term\": \"头晕\", \"plain\": \"感到头昏、不稳。\", \"when_to_seek_help\": \"如头晕频繁或影响行走，请就医。\"}, {\"term\": \"高胆固醇血症\", \"plain\": \"血液中胆固醇水平升高。\", \"when_to_seek_help\": \"如检查发现胆固醇明显升高，请就医。\"}, {\"term\": \"盗汗\", \"plain\": \"夜间出汗。\", \"when_to_seek_help\": \"如盗汗严重影响到睡眠，请就医。\"}, {\"term\": \"体重增加\", \"plain\": \"体重较前上升。\", \"when_to_seek_help\": \"如体重明显增加，请就医。\"}, {\"term\": \"恶心\", \"plain\": \"感到想吐。\", \"when_to_seek_help\": \"如恶心严重或持续不缓解，请就医。\"}, {\"term\": \"骨折\", \"plain\": \"骨骼发生断裂。\", \"when_to_seek_help\": \"如出现骨痛或疑似骨折，请及时就医。\"}], \"seek_help\": \"如出现严重或持续不缓解的不良反应，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:15:35"
+  }
+]

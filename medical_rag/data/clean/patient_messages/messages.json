@@ -1,0 +1,162 @@
+[
+  {
+    "msg_id": "MSG-followup-001",
+    "msg_type": "followup_reminder",
+    "template": "{姓名}您好，您术后已满{月份}个月，建议复查{检查项目}。就诊时请带上既往报告。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名", "月份", "检查项目"],
+    "ref_tpl_id": "TPL-LUNG-001",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-followup-002",
+    "msg_type": "followup_reminder",
+    "template": "{姓名}您好，按计划本次需要复查{检查项目}。如已在外院完成，请把结果告知主管医生。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名", "检查项目"],
+    "ref_tpl_id": "TPL-LUNG-004",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-followup-003",
+    "msg_type": "followup_reminder",
+    "template": "{姓名}您好，本次随访重点是{随访内容}。近期如有新发不适，请提前告知。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名", "随访内容"],
+    "ref_tpl_id": "TPL-COLORECTAL-001",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-followup-004",
+    "msg_type": "followup_reminder",
+    "template": "{姓名}您好，按计划本次需做{检查项目}。检查前请按要求准备，如有疑问可先咨询门诊。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名", "检查项目"],
+    "ref_tpl_id": "TPL-COLORECTAL-004",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-followup-005",
+    "msg_type": "followup_reminder",
+    "template": "{姓名}您好，您的随访时间快到了。请确认{月份}月的门诊安排，如需改期请提前联系。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名", "月份"],
+    "ref_tpl_id": "TPL-LUNG-001",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-followup-006",
+    "msg_type": "followup_reminder",
+    "template": "{姓名}您好，康复期随访建议关注{康复项目}。在家可记录每日变化，就诊时带给医生。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名", "康复项目"],
+    "ref_tpl_id": "TPL-LUNG-003",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-alert-001",
+    "msg_type": "abnormal_alert",
+    "template": "{姓名}您好，您反馈的{症状}较明显，建议尽快联系主管医生。如出现{危险信号}，请立即就医。本条信息仅供参考，不构成诊断。",
+    "placeholders": ["姓名", "症状", "危险信号"],
+    "ref_tpl_id": "TPL-LUNG-001",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-alert-002",
+    "msg_type": "abnormal_alert",
+    "template": "{姓名}您好，您反馈的不适已达{等级}级，建议尽快就诊评估。不要自行加药或停药。本条信息仅供参考，不构成诊断。",
+    "placeholders": ["姓名", "等级"],
+    "ref_tpl_id": "TPL-LUNG-002",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-alert-003",
+    "msg_type": "abnormal_alert",
+    "template": "{姓名}您好，治疗后出现发热请及时测温并记录。体温达到38℃及以上，请当天就诊。本条信息仅供参考，不构成诊断。",
+    "placeholders": ["姓名"],
+    "ref_tpl_id": "TPL-LUNG-002",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-alert-004",
+    "msg_type": "abnormal_alert",
+    "template": "{姓名}您好，您记录的{症状}已持续较久，建议尽快复诊。就诊时请说明出现时间与变化。本条信息仅供参考，不构成诊断。",
+    "placeholders": ["姓名", "症状"],
+    "ref_tpl_id": "TPL-COLORECTAL-001",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-alert-005",
+    "msg_type": "abnormal_alert",
+    "template": "{姓名}您好，如出现{危险信号}，请立即前往急诊或拨打120。不要等待下次门诊。本条信息仅供参考，不构成诊断。",
+    "placeholders": ["姓名", "危险信号"],
+    "ref_tpl_id": "TPL-COLORECTAL-002",
+    "audience": "family"
+  },
+  {
+    "msg_id": "MSG-edu-001",
+    "msg_type": "health_education",
+    "template": "治疗期间请注意均衡饮食、适当活动，保证休息。如有不适随时记录。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": [],
+    "ref_tpl_id": null,
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-edu-002",
+    "msg_type": "health_education",
+    "template": "戒烟对肺部健康很重要。如需帮助，可咨询门诊的戒烟指导。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": [],
+    "ref_tpl_id": "TPL-LUNG-003",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-edu-003",
+    "msg_type": "health_education",
+    "template": "免疫治疗期间如出现干咳、气促或皮疹加重，请及时告知医生。不要自行处理。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": [],
+    "ref_tpl_id": "TPL-LUNG-002",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-edu-004",
+    "msg_type": "health_education",
+    "template": "结直肠术后饮食宜少量多餐、细嚼慢咽。出现腹胀或排便改变请记录。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": [],
+    "ref_tpl_id": "TPL-COLORECTAL-003",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-edu-005",
+    "msg_type": "health_education",
+    "template": "长期生存期仍需按计划复查。保持规律作息与适度运动有助于恢复。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": [],
+    "ref_tpl_id": "TPL-LUNG-004",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-adherence-001",
+    "msg_type": "adherence",
+    "template": "{姓名}您好，请按医嘱时间服药，不要自行增减剂量。漏服后请咨询医生。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名"],
+    "ref_tpl_id": "TPL-LUNG-002",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-adherence-002",
+    "msg_type": "adherence",
+    "template": "{姓名}您好，本次复查尚未完成，请尽快预约。推迟复查可能影响判断。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名"],
+    "ref_tpl_id": "TPL-COLORECTAL-001",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-adherence-003",
+    "msg_type": "adherence",
+    "template": "{姓名}您好，建议每天简单记录症状与体温。复诊时带给医生参考。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名"],
+    "ref_tpl_id": "TPL-COLORECTAL-002",
+    "audience": "patient"
+  },
+  {
+    "msg_id": "MSG-adherence-004",
+    "msg_type": "adherence",
+    "template": "{姓名}您好，就诊前请整理用药清单与近期检查报告。这样能减少来回奔波。本条信息仅供参考，具体请遵医嘱。",
+    "placeholders": ["姓名"],
+    "ref_tpl_id": null,
+    "audience": "family"
+  }
+]

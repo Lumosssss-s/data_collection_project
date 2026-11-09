@@ -1,0 +1,41 @@
+[
+  {
+    "drug_id": "DRUG-THY-003",
+    "generic_name": "索拉非尼",
+    "brand_names": [
+      "Nexavar",
+      "Sorafenib",
+      "Sorafenib Tosylate",
+      "sorafenib"
+    ],
+    "aliases_zh": [
+      "索拉非尼"
+    ],
+    "title": "索拉非尼",
+    "indications": [
+      "治疗局部复发或转移的进展性的放射性碘难治性分化型甲状腺癌。"
+    ],
+    "dosage": {
+      "standard": "推荐剂量为每次0.4g，每日2 次，空腹或伴低脂、中脂饮食给药，以一杯温开水吞服。",
+      "adjustment": "存在可疑的药物不良反应时，可能需要暂停和/或减少索拉非尼剂量。"
+    },
+    "contraindications": [
+      "Sorafenib tablets are contraindicated in patients with known severe hypersensitivity to sorafenib or any other component of sorafenib tablets.",
+      "Sorafenib tablets in combination with carboplatin and paclitaxel is contraindicated in patients with squamous cell lung cancer. 4 CONTRAINDICATIONS Sorafenib tablets are contraindicated in patients with known severe hypersensitivity to sorafenib or any other component of sorafenib tablets."
+    ],
+    "adverse_reactions": [],
+    "interactions": [
+      "与UGT1A1 途径代谢/清除的药物联合应用时，需谨慎；与多西他赛联合应用时，需谨慎；与CYP3A4 诱导剂联合应用时可导致索拉非尼的药物浓度降低；与新霉素联合应用可导致索拉非尼的暴露量下降。"
+    ],
+    "approval_no": null,
+    "atc_code": "L01EX02",
+    "cancer_type": "thyroid",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "内部知识库使用，不得再分发（来源: FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231））",
+    "file_path": null,
+    "doc_hash": null,
+    "review_status": "draft"
+  }
+]

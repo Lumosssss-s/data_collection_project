@@ -1,0 +1,249 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-007",
+    "generic_name": "PALBOCICLIB",
+    "brand_names": [],
+    "aliases_zh": [
+      "哌柏西利"
+    ],
+    "title": "PALBOCICLIB 说明书（FDA DailyMed）",
+    "indications": [
+      "IBRANCE is a kinase inhibitor indicated:",
+      "IBRANCE is indicated for the treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative advanced or metastatic breast cancer in combination with:",
+      "IBRANCE is indicated in combination with inavolisib and fulvestrant for the treatment of adult patients with endocrine-resistant, PIK3CA-mutated, HR-positive, HER2-negative, locally advanced or metastatic breast cancer, as detected by an FDA-authorized test, following recurrence on or after completing adjuvant endocrine therapy.",
+      "IBRANCE is indicated in combination with trastuzumab, with or without pertuzumab, and endocrine therapy for the maintenance treatment of adult patients with HR-positive, HER2-positive locally advanced or metastatic breast cancer following induction treatment."
+    ],
+    "dosage": {
+      "standard": "The recommended dosage of IBRANCE is a 125 mg tablet taken orally once daily for 21 consecutive days followed by 7 days off treatment to comprise a complete cycle of 28 days. IBRANCE tablet may be taken with or without food [see Clinical Pharmacology (12.3)]. Advise patients to take their dose of IBRANCE at approximately the same time each day. If the patient vomits or misses a dose, an additional dose should not be taken. The next prescribed dose should be taken at the usual time. IBRANCE tablets should be swallowed whole (do not chew, crush, or split them prior to swallowing). Tablets should not be ingested if they are broken, cracked, or otherwise not intact. Pre/perimenopausal women treated with the combination IBRANCE plus an aromatase inhibitor or fulvestrant, IBRANCE plus inavolisib and fulvestrant therapy, or IBRANCE plus trastuzumab, with or without pertuzumab, plus endocrine therapy should also be treated with luteinizing hormone-releasing hormone (LHRH) agonists according to current clinical practice standards. For men treated with combination IBRANCE plus aromatase inhibitor, IBRANCE plus inavolisib and fulvestrant therapy, or IBRANCE plus trastuzumab, with or without pertuzumab, plus endocrine therapy, consider treatment with an LHRH agonist according to current clinical practice standards. Refer to the Prescribing Information for recommended dosage for endocrine therapy, inavolisib, trastuzumab and pertuzumab administered in combination with IBRANCE. The recommended dose modifications for adverse reactions are listed in Tables 1, 2, and 3. Recommended starting dose 125 mg/day Recommended starting dose First dose reduction 100 mg/day First dose reduction Second dose reduction 75 mg/dayIf further dose reduction below 75 mg/day is required, discontinue. Secon",
+      "adjustment": "Pre/perimenopausal women treated with the combination IBRANCE plus an aromatase inhibitor or fulvestrant, IBRANCE plus inavolisib and fulvestrant therapy, or IBRANCE plus trastuzumab, with or without pertuzumab, plus endocrine therapy should also be treated with luteinizing hormone-releasing hormone (LHRH) agonists according to current clinical practice standards. For men treated with combination IBRANCE plus aromatase inhibitor, IBRANCE plus inavolisib and fulvestrant therapy, or IBRANCE plus trastuzumab, with or without pertuzumab, plus endocrine therapy, consider treatment with an LHRH agonist according to current clinical practice standards. Refer to the Prescribing Information for recommended dosage for endocrine therapy, inavolisib, trastuzumab and pertuzumab administered in combination with IBRANCE. The recommended dose modifications for adverse reactions are listed in Tables 1, 2, and 3. Recommended starting dose 125 mg/day Recommended starting dose First dose reduction 100 mg/day First dose reduction Second dose reduction 75 mg/dayIf further dose reduction below 75 mg/day is required, discontinue. Second dose reduction 75 mg/dayIf further dose reduction below 75 mg/day is "
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following clinically significant adverse reactions are described elsewhere in the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Most common adverse reactions (incidence ≥20%) in combination with either letrozole or fulvestrant, including laboratory abnormalities, were white blood cell co",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Pfizer Inc at 1-800-438-1985 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch .",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "PALOMA-2: IBRANCE plus Letrozole",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Patients with estrogen receptor (ER)-positive, HER2-negative advanced or metastatic breast cancer for initial endocrine-based therapy",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of IBRANCE plus letrozole was evaluated in a randomized, double-blind trial (PALOMA-2) in 666 patients with ER-positive, HER2-negative advanced breas",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Dose reductions due to an adverse reaction of any grade occurred in 36% of patients receiving IBRANCE plus letrozole. No dose reduction was allowed for letrozol",
+        "frequency": "36%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Permanent discontinuation associated with an adverse reaction occurred in 43 of 444 (10%) patients receiving IBRANCE plus letrozole and in 13 of 222 (6%) patien",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (≥10%) of any grade reported in patients in the IBRANCE plus letrozole arm by descending frequency were neutropenia, infection",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most frequently reported Grade ≥3 adverse reactions (≥5%) in patients receiving IBRANCE plus letrozole by descending frequency were neutropenia, leukopenia,",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions (≥10%) reported in patients who received IBRANCE plus letrozole or placebo plus letrozole in PALOMA-2 are listed in Table 4.",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Grading according to CTCAE 4.0.CTCAE=Common Terminology Criteria for Adverse Events; N=number of patients; N/A=not applicable;",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "IBRANCE plus Letrozole (N=444) Placebo plus Letrozole (N=222)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "IBRANCE plus Letrozole (N=444)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Placebo plus Letrozole (N=222)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction All Grades % Grade 3 % Grade 4 % All Grades % Grade 3 % Grade 4 %",
+        "frequency": "3 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Infections and infestations",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "InfectionsInfections includes all reported preferred terms (PTs) that are part of the System Organ Class Infections and infestations. 60Most common infections (",
+        "frequency": "1%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "InfectionsInfections includes all reported preferred terms (PTs) that are part of the System Organ Class Infections and infestations.",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-07-09",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-007.xml",
+    "doc_hash": "1bfb66b2642dd7ef5697ef7d0a2b47fcc6fdd205d6db66ef6d8fc05b159342cb",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "89a142d5-7e61-48bf-9e77-e2cd124c4792",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/89a142d5-7e61-48bf-9e77-e2cd124c4792.xml",
+    "atc_code": "L01EF01",
+    "approval_no": null,
+    "source_name": "PALBOCICLIB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-007.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "Palbociclib is primarily metabolized by CYP3A and sulfotransferase (SULT) enzyme SULT2A1. In vivo, palbociclib is a time-dependent inhibitor of CYP3A.",
+      "Effect of CYP3A Inhibitors",
+      "Coadministration of a strong CYP3A inhibitor (itraconazole) increased the plasma exposure of palbociclib in healthy subjects by 87%. Avoid concomitant use of strong CYP3A inhibitors (e.g., clarithromycin, indinavir, itraconazole, ketoconazole, lopinavir/ritonavir, nefazodone, nelfinavir, posaconazole, ritonavir, saquinavir, telaprevir, telithromycin, and voriconazole). Avoid grapefruit or grapefruit juice during IBRANCE treatment. If coadministration of IBRANCE with a strong CYP3A inhibitor cannot be avoided, reduce the dose of IBRANCE [see Dosage and Administration (2.2) and Clinical Pharmaco",
+      "Effect of CYP3A Inducers",
+      "Coadministration of a strong CYP3A inducer (rifampin) decreased the plasma exposure of palbociclib in healthy subjects by 85%. Avoid concomitant use of strong CYP3A inducers (e.g., phenytoin, rifampin, carbamazepine, enzalutamide, and St John's Wort) [see Clinical Pharmacology (12.3)].",
+      "Coadministration of midazolam with multiple doses of IBRANCE increased the midazolam plasma exposure by 61%, in healthy subjects, compared to administration of midazolam alone. The dose of the sensitive CYP3A substrate with a narrow therapeutic index (e.g., alfentanil, cyclosporine, dihydroergotamine, ergotamine, everolimus, fentanyl, pimozide, quinidine, sirolimus, and tacrolimus) may need to be reduced, as IBRANCE may increase its exposure [see Clinical Pharmacology (12.3)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Neutropenia",
+        "text": "5.1 Neutropenia: Neutropenia was the most frequently reported adverse reaction in PALOMA-2 with an incidence of 80% and PALOMA-3 with an incidence of 83%. A Grade ≥3 decrease in neutrophil counts was reported in 66% of patients receiving IBRANCE plus letrozole in PALOMA-2 and 66% of patients receiving IBRANCE plus fulvestrant in PALOMA-3. In PALOMA-2 and PALOMA-3, the median time to first episode of any grade neutropenia was 15 days and the median duration of Grade ≥3 neutropenia was 7 days [see Adverse Reactions (6.1)]. Neutropenia was the most frequently reported adverse reaction in PATINA with an incidence of 78%. Grade ≥3 neutropenia was reported in 61% of patients receiving IBRANCE in combination with trastuzumab, with or without pertuzumab, and endocrine therapy. Based on laboratory findings, 93% had a decrease in neutrophil counts including 47% with Grade 3 and 3.1% with Grade 4. The median time to first episode of any grade neutropenia was 22 days and the median duration of Grade ≥3 neutropenia events was 9 days [see Adverse Reactions (6.1)]. Monitor complete blood counts prior to starting IBRANCE therapy and at the beginning of each cycle, as well as on Day 15 of the first 2 cycles, and as clinically indicated. Dose interruption, dose reduction, or delay in starting treatment cycles is recommended for patients who develop Grade 3 or 4 neutropenia [see Dosage and Administration (2.2)]. Febrile neutropenia has been reported in 1.8% of patients exposed to IBRANCE across PALOMA-2 and PALOMA-3. One death due to neutropenic sepsis was observed in PALOMA-3. Febrile neutropenia has been reported in 0.8% of patients exposed to IBRANCE in the PATINA study. Physicians should inform patients to promptly report any episodes of fever [see Patient Counseling Information (17)].",
+        "char_len": 1801,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Neutropenia",
+        "source_xml": "DRUG-BREAST-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Interstitial Lung Disease (ILD)/Pneumonitis",
+        "text": "5.2 Interstitial Lung Disease (ILD)/Pneumonitis: Severe, life-threatening, or fatal interstitial lung disease (ILD) and/or pneumonitis can occur in patients treated with cyclin-dependent kinase 4/6 (CDK4/6) inhibitors, including IBRANCE when taken in combination with endocrine therapy. Across clinical trials (PALOMA-1, PALOMA-2, PALOMA-3), 1% of IBRANCE-treated patients had ILD/pneumonitis of any grade, 0.1% had Grade 3 or 4 and no fatal cases were reported. In PATINA, 1% of IBRANCE-treated patients had ILD/pneumonitis of any grade. No Grade 3, 4, or fatal cases were reported. Additional cases of ILD/pneumonitis have been observed in the postmarketing setting, with fatalities reported [see Adverse Reactions (6.2)]. Monitor patients for pulmonary symptoms indicative of ILD/pneumonitis (e.g. hypoxia, cough, dyspnea). In patients who have new or worsening respiratory symptoms and are suspected to have developed pneumonitis, interrupt IBRANCE immediately and evaluate the patient. Permanently discontinue IBRANCE in patients with severe ILD or pneumonitis [see Dosage and Administration (2.2)].",
+        "char_len": 1104,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Interstitial Lung Disease (ILD)/Pneumonitis",
+        "source_xml": "DRUG-BREAST-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Embryo-Fetal Toxicity",
+        "text": "5.3 Embryo-Fetal Toxicity: Based on findings from animal studies and its mechanism of action, IBRANCE can cause fetal harm when administered to a pregnant woman. In animal reproduction studies, administration of palbociclib to pregnant rats and rabbits during organogenesis resulted in embryo-fetal toxicity at maternal exposures that were ≥4 times the human clinical exposure based on area under the curve (AUC). Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with IBRANCE and for at least 3 weeks after the last dose [see Use in Specific Populations (8.1 and 8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 698,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-007.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "88828-9",
+            "title": "8.7 Renal Impairment",
+            "text": "8.7 Renal Impairment: No dose adjustment is required in patients with mild, moderate, or severe renal impairment (CrCl >15 mL/min). Based on a pharmacokinetic trial in subjects with varying degrees of renal function, the total palbociclib exposure (AUCINF) increased by 39%, 42%, and 31% with mild (60 mL/min ≤ CrCl <90 mL/min), moderate (30 mL/min ≤ CrCl <60 mL/min), and severe (CrCl <30 mL/min) renal impairment, respectively, relative to subjects with normal renal function. Peak palbociclib exposure (Cmax) increased by 17%, 12%, and 15% for mild, moderate, and severe renal impairment, respectively, relative to subjects with normal renal function. The pharmacokinetics of palbociclib have not been studied in patients requiring hemodialysis [see Clinical Pharmacology (12.3)].",
+            "char_len": 783,
+            "source_section_code": "88828-9",
+            "source_title": "8.7 Renal Impairment",
+            "source_xml": "DRUG-BREAST-FDA-007.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "88829-7",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: No dose adjustment is required in patients with mild or moderate hepatic impairment (Child-Pugh classes A and B). For patients with severe hepatic impairment (Child-Pugh class C), the recommended dose of IBRANCE is 75 mg once daily for 21 consecutive days followed by 7 days off treatment to comprise a complete cycle of 28 days [see Dosage and Administration (2.2)]. Based on a pharmacokinetic trial in subjects with varying degrees of hepatic function, the palbociclib unbound exposure (unbound AUCINF) decreased by 17% in subjects with mild hepatic impairment (Child-Pugh class A), and increased by 34% and 77% in subjects with moderate (Child-Pugh class B) and severe (Child-Pugh class C) hepatic impairment, respectively, relative to subjects with normal hepatic function. Peak palbociclib unbound exposure (unbound Cmax) increased by 7%, 38% and 72% for mild, moderate and severe hepatic impairment, respectively, relative to subjects with normal hepatic function [see Clinical Pharmacology (12.3)]. Review the Full Prescribing Information for the aromatase inhibitor or fulvestrant for dose modifications related to hepatic impairment.",
+            "char_len": 1166,
+            "source_section_code": "88829-7",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-007.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.2 Dose Modification",
+            "text": "2.2 Dose Modification: The recommended dose modifications for adverse reactions are listed in Tables 1, 2, and 3. Dose Level Dose Recommended starting dose 125 mg/day Recommended starting dose First dose reduction 100 mg/day First dose reduction Second dose reduction 75 mg/dayIf further dose reduction below 75 mg/day is required, discontinue. Second dose reduction 75 mg/dayIf further dose reduction below 75 mg/day is required, discontinue. Grading according to CTCAE 4.0.CTCAE=Common Terminology Criteria for Adverse Events; LLN=lower limit of normal. Monitor complete blood counts prior to the start of IBRANCE therapy and at the beginning of each cycle, as well as on Day 15 of the first 2 cycles, and as clinically indicated. For patients who experience a maximum of Grade 1 or 2 neutropenia in the first 6 cycles, monitor complete blood counts for subsequent cycles every 3 months, prior to the beginning of a cycle and as clinically indicated. CTCAE Grade Dose Modifications Dose Modifications Grade 1 or 2 No dose adjustment is required. No dose adjustment is required. Grade 3 Day 1 of cycle:Withhold IBRANCE, repeat complete blood count monitoring within 1 week. When recovered to Grade ≤2, start the next cycle at the same dose. Day 15 of first 2 cycles:If Grade 3 on Day 15, continue IBRANCE at current dose to complete cycle and repeat complete blood count on Day 22.If Grade 4 on Day 22, see Grade 4 dose modification guidelines below. Consider dose reduction in cases of prolonged (>1 week) recovery from Grade 3 neutropenia or recurrent Grade 3 neutropenia on Day 1 of subsequent cycles. Day 1 of cycle:Withhold IBRANCE, repeat complete blood count monitoring within 1 week. When recovered to Grade ≤2, start the next cycle at the same dose. Day 15 of first 2 cycles:If Grade 3 on Day 15, continue IBRANCE at current dose to complete cycle and repeat complete blood count on Day 22.If Grade 4 on Day 22, see Grade 4 dose modification guidelines below. Consider dose reduction in cases of prolonged (>1 week) recovery from Grade 3 neutropenia or recurrent Grade 3 neutropenia on Day 1 of subsequent cycles. Grade 3 neutropeniaAbsolute neutrophil count (ANC): Grade 1: ANC < LLN – 1500/mm3; Grade 2: ANC 1000 – <1500/mm3; Grade 3: ANC 500 – <1000/mm3; Grade 4: ANC <500/mm3. with fever ≥38.5 °C and/or infection At any time:Withhold IBRANCE until recovery to Grade ≤2.Resume at the next lower dose. Grade 3 neutropeniaAbsolute neutrophil count (ANC): Grade 1: ANC < LLN – 1500/mm3; Grade 2: ANC 1000 – <1500/mm3; Grade 3: ANC 500 – <1000/mm3; Grade 4: ANC <500/mm3. with fever ≥38.5 °C and/or infection At any time:Withhold IBRANCE until recovery to Grade ≤2.Resume at the next lower dose. Grade 4 At any time:Withhold IBRANCE until recovery to Grade ≤2.Resume at the next lower dose. Grading according to CTCAE 4.0.CTCAE=Common Terminology Criteria for Adverse Events. Grade ≥3 non-hematologic toxicity (if persisting despite optimal medical treatment) Withhold until symptoms resolve to: •Grade ≤1; •Grade ≤2 (if not considered a safety risk for the patient) Resume at the next lower dose. Grade ≥3 non-hematologic toxicity (if persisting despite optimal medical treatment) Withhold until symptoms resolve to: Resume at the next lower dose. Permanently discontinue IBRANCE in patients with severe interstitial lung disease (ILD)/pneumonitis. Refer to the Full Prescribing Information for endocrine therapy, inavolisib, trastuzumab, and pertuzumab administered in combination with IBRANCE for dose adjustment guidelines in the event of toxicity and for other relevant safety information or contraindications. Dose Modifications for Use With Strong CYP3A Inhibitors Avoid concomitant use of strong CYP3A inhibitors and consider an alternative concomitant medication with no or minimal CYP3A inhibition. If patients must be coadministered a strong CYP3A inhibitor, reduce the IBRANCE dose to 75 mg once daily. If the strong inhibitor is discontinued, increase the IBRANCE dose (after 3 to 5 half-lives of the inhibitor) to the dose used prior to the initiation of the strong CYP3A inhibitor [see Drug Interactions (7.1) and Clinical Pharmacology (12.3)]. Dose Modifications for Hepatic Impairment No dose adjustment is required for patients with mild or moderate hepatic impairment (Child-Pugh classes A and B). For patients with severe hepatic impairment (Child-Pugh class C), the recommended dose of IBRANCE is 75 mg once daily for 21 consecutive days followed by 7 days off treatment to comprise a complete cycle of 28 days [see Use in Specific Populations (8.6) and Clinical Pharmacology (12.3)].",
+            "char_len": 4615,
+            "source_section_code": "42229-5",
+            "source_title": "2.2 Dose Modification",
+            "source_xml": "DRUG-BREAST-FDA-007.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-007.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种激酶抑制剂类抗癌药，用于治疗部分成人乳腺癌患者。\", \"how_to_use\": \"常规剂量为125毫克片剂，每天口服一次。连续服用21天，然后停药7天，构成28天一个周期。可与食物同服或空腹服用。建议每天大致同一时间服药。如呕吐或漏服，不要补服额外剂量，按原定时间服下一次。片剂应整片吞服，不要咀嚼、压碎或掰开。如药片破损、开裂或不完整，不要服用。部分绝经前/围绝经期女性及男性患者，按临床标准可能还需配合LHRH激动剂治疗。\", \"cautions\": [\"绝经前/围绝经期女性联合某些内分泌治疗时，应按临床标准配合LHRH激动剂。\", \"男性联合某些内分泌治疗时，可按临床标准考虑配合LHRH激动剂。\", \"避免与强CYP3A抑制剂合用，如克拉霉素、伊曲康唑、酮康唑等。\", \"治疗期间避免食用葡萄柚或饮用葡萄柚汁。\", \"如无法避免合用强CYP3A抑制剂，说明书提到需调整剂量。\", \"避免与强CYP3A诱导剂合用，如苯妥英、利福平、卡马西平、圣约翰草等。\", \"与某些经CYP3A代谢且治疗窗窄的药物合用时，可能需要调整后者剂量。\", \"如因不良反应需要减量，说明书列出的减量方案为125→100→75毫克/天。\", \"如仍需减至75毫克/天以下，应停药。\", \"说明书未列出禁忌证。\"], \"side_effects\": [{\"term\": \"中性粒细胞减少\", \"plain\": \"白细胞中的中性粒细胞减少，是较常见的不良反应。\", \"when_to_seek_help\": \"如出现发热、感染迹象或明显不适，应及时就医。\"}, {\"term\": \"白细胞减少\", \"plain\": \"白细胞计数下降，属于常见实验室异常。\", \"when_to_seek_help\": \"如伴发热、乏力或反复感染，应及时就医。\"}, {\"term\": \"感染\", \"plain\": \"研究中最常见的感染包括各类感染事件。\", \"when_to_seek_help\": \"如出现发热、咳嗽、尿痛等感染表现，应及时就医。\"}, {\"term\": \"其他常见不良反应\", \"plain\": \"与来曲唑或氟维司群联用时，部分不良反应发生率≥20%。\", \"when_to_seek_help\": \"如出现明显不适或症状加重，应及时就医。\"}], \"seek_help\": \"如出现发热、感染迹象、明显不适或不良反应加重，应及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:02:02"
+  }
+]

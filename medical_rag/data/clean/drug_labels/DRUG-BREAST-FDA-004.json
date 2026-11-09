@@ -1,0 +1,258 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-004",
+    "generic_name": "ANASTROZOLE",
+    "brand_names": [],
+    "aliases_zh": [
+      "阿那曲唑"
+    ],
+    "title": "ANASTROZOLE 说明书（FDA DailyMed）",
+    "indications": [
+      "ARIMIDEX is an aromatase inhibitor indicated for:",
+      "ARIMIDEX is indicated for adjuvant treatment of postmenopausal women with hormone receptor-positive early breast cancer.",
+      "ARIMIDEX is indicated for the first-line treatment of postmenopausal women with hormone receptor-positive or hormone receptor-unknown locally advanced or metastatic breast cancer.",
+      "ARIMIDEX is indicated for the treatment of advanced breast cancer in postmenopausal women with disease progression following tamoxifen therapy. Patients with ER-negative disease and patients who did not respond to previous tamoxifen therapy rarely responded to ARIMIDEX."
+    ],
+    "dosage": {
+      "standard": "One 1 mg tablet taken once daily (2.1) The dose of ARIMIDEX is one 1 mg tablet taken once a day. For patients with advanced breast cancer, ARIMIDEX should be continued until tumor progression. ARIMIDEX can be taken with or without food. For adjuvant treatment of early breast cancer in postmenopausal women, the optimal duration of therapy is unknown. In the ATAC trial, ARIMIDEX was administered for five years [see Clinical Studies (14.1)]. No dosage adjustment is necessary for patients with renal impairment or for elderly patients [see Use in Specific Populations (8.6)]. No changes in dose are recommended for patients with mild-to-moderate hepatic impairment. ARIMIDEX has not been studied in patients with severe hepatic impairment [see Use in Specific Populations (8.7)].",
+      "adjustment": "No dosage adjustment is necessary for patients with renal impairment or for elderly patients [see Use in Specific Populations (8.6)]. No changes in dose are recommended for patients with mild-to-moderate hepatic impairment. ARIMIDEX has not been studied in patients with severe hepatic impairment [see Use in Specific Populations (8.7)]."
+    },
+    "contraindications": [
+      "Hypersensitivity",
+      "ARIMIDEX is contraindicated in any patient who has shown a hypersensitivity reaction to the drug or to any of the excipients. Observed reactions include anaphylaxis, angioedema, and urticaria [see Adverse Reactions (6.2)].",
+      "Patients with demonstrated hypersensitivity to ARIMIDEX or any excipient (4)"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "Serious adverse reactions with ARIMIDEX occurring in less than 1 in 10,000 patients, are: 1) skin reactions such as lesions, ulcers, or blisters; 2) allergic re",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Common adverse reactions (occurring with an incidence of ≥10%) in women taking ARIMIDEX included: hot flashes, asthenia, arthritis, pain, arthralgia, hypertensi",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the ATAC trial, the most common reported adverse reaction (>0.1%) leading to discontinuation of therapy for both treatment groups was hot flashes, although t",
+        "frequency": "0.1%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the early breast cancer (ATAC) study, the most common (occurring with an incidence of ≥10%) side effects occurring in women taking ARIMIDEX included: hot fla",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the advanced breast cancer studies, the most common (occurring with an incidence of >10%) side effects occurring in women taking ARIMIDEX included: hot flash",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact ANI Pharmaceuticals, Inc. at 1-855-204-1431 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reaction data for adjuvant therapy are based on the ATAC trial [see Clinical Studies (14.1)]. The median duration of adjuvant treatment for safety evalu",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions occurring with an incidence of at least 5% in either treatment group during treatment or within 14 days of the end of treatment are presented ",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Body system and adverse reactions by COSTART preferred term COSTART Coding Symbols for Thesaurus of Adverse Reaction Terms. A patient may have had more than 1 a",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Asthenia 575 (19) 544 (18)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Pain 533 (17) 485 (16)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Back pain 321 (10) 309 (10)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Headache 314 (10) 249 (8)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Abdominal pain 271 (9) 276 (9)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Infection 285 (9) 276 (9)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Accidental injury 311 (10) 303 (10)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Flu syndrome 175 (6) 195 (6)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Chest pain 200 (7) 150 (5)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Neoplasm 162 (5) 144 (5)",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-03-05",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-004.xml",
+    "doc_hash": "c25afd781103e40566af371f29d824d2fca4e24ff4e70a0f557caefa46841589",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "acbfaaa9-503c-4691-9828-76a7146ed6de",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/acbfaaa9-503c-4691-9828-76a7146ed6de.xml",
+    "atc_code": "L02BG03",
+    "approval_no": null,
+    "source_name": "ANASTROZOLE 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-004.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "Co-administration of anastrozole and tamoxifen in breast cancer patients reduced anastrozole plasma concentration by 27%. However, the co-administration of anastrozole and tamoxifen did not affect the pharmacokinetics of tamoxifen or N-desmethyltamoxifen. At a median follow-up of 33 months, the combination of ARIMIDEX and tamoxifen did not demonstrate any efficacy benefit when compared with tamoxifen in all patients as well as in the hormone receptor-positive subpopulation. This treatment arm was discontinued from the trial [see Clinical Studies (14.1)]. Based on clinical and pharmacokinetic r",
+      "Estrogen-containing therapies should not be used with ARIMIDEX as they may diminish its pharmacological action.",
+      "In a study conducted in 16 male volunteers, anastrozole did not alter the exposure (as measured by Cmax and AUC) and anticoagulant activity (as measured by prothrombin time, activated partial thromboplastin time, and thrombin time) of both R- and S-warfarin.",
+      "Based on in vitro and in vivo results, it is unlikely that co-administration of ARIMIDEX 1 mg will affect other drugs as a result of inhibition of cytochrome P450 [see Clinical Pharmacology (12.3)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Ischemic Cardiovascular Events",
+        "text": "5.1 Ischemic Cardiovascular Events: In women with pre-existing ischemic heart disease, an increased incidence of ischemic cardiovascular events was observed with ARIMIDEX in the ATAC trial (17% of patients on ARIMIDEX and 10% of patients on tamoxifen). Consider risk and benefits of ARIMIDEX therapy in patients with pre-existing ischemic heart disease [see Adverse Reactions (6.1)].",
+        "char_len": 383,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Ischemic Cardiovascular Events",
+        "source_xml": "DRUG-BREAST-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Bone Effects",
+        "text": "5.2 Bone Effects: Results from the ATAC trial bone substudy at 12 and 24 months demonstrated that patients receiving ARIMIDEX had a mean decrease in both lumbar spine and total hip bone mineral density (BMD) compared to baseline. Patients receiving tamoxifen had a mean increase in both lumbar spine and total hip BMD compared to baseline. Consider bone mineral density monitoring in patients treated with ARIMIDEX [see Adverse Reactions (6.1)].",
+        "char_len": 445,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Bone Effects",
+        "source_xml": "DRUG-BREAST-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Cholesterol",
+        "text": "5.3 Cholesterol: During the ATAC trial, more patients receiving ARIMIDEX were reported to have elevated serum cholesterol compared to patients receiving tamoxifen (9% versus 3.5%, respectively) [see Adverse Reactions (6.1)].",
+        "char_len": 224,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Cholesterol",
+        "source_xml": "DRUG-BREAST-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Embryo-Fetal Toxicity",
+        "text": "5.4 Embryo-Fetal Toxicity: Based on findings from animal studies and its mechanism of action, ARIMIDEX can cause fetal harm when administered to a pregnant woman. Anastrozole caused embryo-fetal toxicities in rats at maternal exposure that were 9 times the human clinical exposure, based on area under the curve (AUC). In rabbits, anastrozole caused pregnancy failure at doses equal to or greater than 16 times the recommended human dose on a mg/m2 basis. Advise pregnant women and females of reproductive potential of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during therapy with ARIMIDEX and for at least 3 weeks after the last dose [see Use in Specific Populations (8.1, 8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 774,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-004.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: Since only about 10% of anastrozole is excreted unchanged in the urine, the renal impairment does not influence the total body clearance. Dosage adjustment in patients with renal impairment is not necessary [see Dosage and Administration (2.1) and Clinical Pharmacology (12.3)].",
+            "char_len": 300,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-BREAST-FDA-004.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.2 Patients with Hepatic Impairment",
+            "text": "2.2 Patients with Hepatic Impairment: No changes in dose are recommended for patients with mild-to-moderate hepatic impairment. ARIMIDEX has not been studied in patients with severe hepatic impairment [see Use in Specific Populations (8.7)].",
+            "char_len": 241,
+            "source_section_code": "42229-5",
+            "source_title": "2.2 Patients with Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-004.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "42229-5",
+            "title": "8.7 Hepatic Impairment",
+            "text": "8.7 Hepatic Impairment: The plasma anastrozole concentrations in the subjects with hepatic cirrhosis were within the range of concentrations seen in normal subjects across all clinical trials. Therefore, dosage adjustment is also not necessary in patients with stable hepatic cirrhosis. ARIMIDEX has not been studied in patients with severe hepatic impairment [see Dosage and Administration (2.2) and Clinical Pharmacology (12.3)].",
+            "char_len": 431,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-004.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": false,
+        "reason": "D&A 树下无标题含 dosage/dose modification 的子节",
+        "items": []
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-004.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种用于部分绝经后女性乳腺癌治疗的芳香化酶抑制剂。\", \"how_to_use\": \"常规为每天一次，每次一片1毫克，可与食物同服或不同服。晚期乳腺癌患者通常持续用药直至肿瘤进展。早期乳腺癌辅助治疗的最佳疗程尚不明确，试验中曾使用五年。肾功能不全者和老年人无需调整剂量。轻中度肝功能不全者不建议调整剂量。重度肝功能不全者尚未研究。\", \"cautions\": [\"对本品或任何辅料过敏者禁用。\", \"曾出现过敏反应者禁用，包括过敏性休克、血管性水肿和荨麻疹。\", \"含雌激素的疗法不应与本品同用，可能减弱本品作用。\", \"与他莫昔芬同用可降低本品血药浓度约27%。\", \"本品与他莫昔芬联用未显示额外疗效获益。\", \"肾功能不全者无需调整剂量。\", \"老年人无需调整剂量。\", \"轻中度肝功能不全者不建议调整剂量。\", \"重度肝功能不全者尚未研究。\"], \"side_effects\": [{\"term\": \"皮肤反应\", \"plain\": \"可能出现皮肤病变、溃疡或水疱等严重皮肤反应。\", \"when_to_seek_help\": \"出现皮肤病变、溃疡或水疱时需就医。\"}, {\"term\": \"过敏反应\", \"plain\": \"可能出现过敏性休克、血管性水肿和荨麻疹等过敏反应。\", \"when_to_seek_help\": \"出现过敏反应表现时需就医。\"}, {\"term\": \"潮热\", \"plain\": \"服药女性中较常见，发生率可达10%以上。\", \"when_to_seek_help\": \"潮热明显或难以忍受时需就医。\"}, {\"term\": \"乏力\", \"plain\": \"服药女性中较常见，发生率可达10%以上。\", \"when_to_seek_help\": \"乏力明显或影响日常时需就医。\"}, {\"term\": \"关节炎\", \"plain\": \"服药女性中较常见，发生率可达10%以上。\", \"when_to_seek_help\": \"关节症状明显或加重时需就医。\"}, {\"term\": \"疼痛\", \"plain\": \"服药女性中较常见，发生率可达10%以上。\", \"when_to_seek_help\": \"疼痛明显或加重时需就医。\"}, {\"term\": \"关节痛\", \"plain\": \"服药女性中较常见，发生率可达10%以上。\", \"when_to_seek_help\": \"关节痛明显或加重时需就医。\"}, {\"term\": \"高血压\", \"plain\": \"服药女性中较常见，发生率可达10%以上。\", \"when_to_seek_help\": \"血压异常或明显不适时需就医。\"}, {\"term\": \"背痛\", \"plain\": \"早期乳腺癌研究中发生率约10%。\", \"when_to_seek_help\": \"背痛明显或加重时需就医。\"}, {\"term\": \"头痛\", \"plain\": \"早期乳腺癌研究中发生率约10%。\", \"when_to_seek_help\": \"头痛明显或加重时需就医。\"}, {\"term\": \"意外伤害\", \"plain\": \"早期乳腺癌研究中发生率约10%。\", \"when_to_seek_help\": \"发生意外伤害时需就医。\"}, {\"term\": \"腹痛\", \"plain\": \"早期乳腺癌研究中发生率约9%。\", \"when_to_seek_help\": \"腹痛明显或加重时需就医。\"}, {\"term\": \"感染\", \"plain\": \"早期乳腺癌研究中发生率约9%。\", \"when_to_seek_help\": \"出现感染表现时需就医。\"}, {\"term\": \"胸痛\", \"plain\": \"早期乳腺癌研究中发生率约7%。\", \"when_to_seek_help\": \"胸痛明显或加重时需就医。\"}, {\"term\": \"流感样症状\", \"plain\": \"早期乳腺癌研究中发生率约6%。\", \"when_to_seek_help\": \"流感样症状明显或加重时需就医。\"}, {\"term\": \"肿瘤\", \"plain\": \"早期乳腺癌研究中发生率约5%。\", \"when_to_seek_help\": \"发现肿瘤相关异常变化时需就医。\"}], \"seek_help\": \"出现皮肤病变、溃疡或水疱，或出现过敏反应表现时，需及时就医。出现潮热、乏力、关节痛、疼痛、高血压等明显或难以忍受的不良反应时，也需就医。\"}",
+    "patient_plain_at": "2026-11-04T06:15:29"
+  }
+]

@@ -1,0 +1,279 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-006",
+    "generic_name": "EXEMESTANE",
+    "brand_names": [],
+    "aliases_zh": [
+      "依西美坦"
+    ],
+    "title": "EXEMESTANE 说明书（FDA DailyMed）",
+    "indications": [
+      "AROMASIN is an aromatase inhibitor indicated for:",
+      "AROMASIN is indicated for adjuvant treatment of postmenopausal women with estrogen-receptor positive early breast cancer who have received two to three years of tamoxifen and are switched to AROMASIN for completion of a total of five consecutive years of adjuvant hormonal therapy [see Clinical Studies (14.1)].",
+      "AROMASIN is indicated for the treatment of advanced breast cancer in postmenopausal women whose disease has progressed following tamoxifen therapy [see Clinical Studies (14.2)].",
+      "【中文适应证】用于经他莫昔芬辅助治疗2－3年后，绝经后雌激素受体阳性的妇女的早期浸润性乳腺癌的辅助治疗，直至完成总共5年的辅助内分泌治疗。",
+      "【中文适应证】用于经他莫昔芬治疗后，其病情仍有进展的自然或人工绝经后妇女的晚期乳腺癌。",
+      "【中文适应证】尚不明确本品在雌激素受体阴性患者中的疗效。"
+    ],
+    "dosage": {
+      "standard": "Recommended Dose: One 25 mg tablet once daily after a meal (2.1). The recommended dose of AROMASIN in early and advanced breast cancer is one 25 mg tablet once daily after a meal. Concomitant use of strong CYP 3A4 inducers decreases exemestane exposure, For patients receiving AROMASIN with a strong CYP 3A4 inducer such as rifampicin or phenytoin, the recommended dose of AROMASIN is 50 mg once daily after a meal [see Drug Interactions (7) and Clinical Pharmacology (12.3)].",
+      "adjustment": null
+    },
+    "contraindications": [
+      "AROMASIN is contraindicated in patients with a known hypersensitivity to the drug or to any of the excipients.",
+      "Patients with a known hypersensitivity to the drug or to any of the excipients (4)."
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following clinically significant adverse reactions are described elsewhere in the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Pfizer Inc at 1-800-438-1985 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch .",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data described below reflect exposure to AROMASIN in 2325 postmenopausal women with early breast cancer. AROMASIN tolerability in postmenopausal women with ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The median duration of adjuvant treatment was 27.4 months and 27.3 months for patients receiving AROMASIN or tamoxifen, respectively, within the IES study and 2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Certain adverse reactions, which were expected based on the known pharmacological properties and side effect profiles of test drugs, were actively sought throug",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Within the IES study, discontinuations due to adverse reactions occurred in 6% and 5% of patients receiving AROMASIN and tamoxifen, respectively, and in 12% and",
+        "frequency": "6%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Deaths due to any cause were reported for 1.3% of the exemestane treated patients and 1.4% of the tamoxifen treated patients within the IES study. There were 6 ",
+        "frequency": "1.3%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The incidence of cardiac ischemic events (myocardial infarction, angina, and myocardial ischemia) was 1.6% in exemestane treated patients and 0.6% in tamoxifen ",
+        "frequency": "1.6%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the adjuvant treatment of early breast cancer, the most common adverse reactions occurring in ≥10% of patients in any treatment group (AROMASIN vs. tamoxifen",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Treatment-emergent adverse reactions and illnesses including all causalities and occurring with an incidence of ≥5% in either treatment group of the IES study d",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Body system and Adverse Reaction by MedDRA dictionary AROMASIN 25 mg daily (N=2252) Tamoxifen 20 mg daily 75 patients received tamoxifen 30 mg daily; (N=2280)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Visual disturbancesEvent actively sought. 5 3.8",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Visual disturbancesEvent actively sought.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Osteoarthritis 6 4.5",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin & Subcutaneous Tissue",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Increased sweating 12 10",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the IES study, as compared to tamoxifen, AROMASIN was associated with a higher incidence of events in musculoskeletal disorders and in nervous system disorde",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Tamoxifen was associated with a higher incidence of muscle cramps [3.1% vs. 1.5%], thromboembolism [2.0% vs. 0.9%], endometrial hyperplasia [1.7% vs. 0.6%], and",
+        "frequency": "3.1%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Common adverse reactions occurring in study 027 are described in Table 3.",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2025-12-25",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-006.xml",
+    "doc_hash": "9bea43ea031fd0dcf48e03a54e1c4b2574ad3d4613a29955151b41e050345ed2",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "cf066b7a-032a-416c-8d40-15ba581423e3",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/cf066b7a-032a-416c-8d40-15ba581423e3.xml",
+    "atc_code": "L02BG06",
+    "approval_no": "国药准字HJ20160052；国药准字HJ20160053；国药准字HJ20160054",
+    "source_name": "EXEMESTANE 说明书（FDA DailyMed）",
+    "source_version": "2025",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-006.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "Strong CYP 3A4 inducers: Concomitant use of strong CYP 3A4 inducers decreases exemestane exposure. Increase the AROMASIN dose to 50 mg (2.2, 7).",
+      "Drugs That Induce CYP 3A4",
+      "Co-medications that induce CYP 3A4 (e.g., rifampicin, phenytoin, carbamazepine, phenobarbital, or St. John's wort) may significantly decrease exposure to exemestane. Dose modification is recommended for patients who are also receiving a strong CYP 3A4 inducer [see Dosage and Administration (2.2) and Clinical Pharmacology (12.3)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Reductions in Bone Mineral Density (BMD)",
+        "text": "5.1 Reductions in Bone Mineral Density (BMD): Reductions in bone mineral density (BMD) over time are seen with exemestane use. Table 1 describes changes in BMD from baseline to 24 months in patients receiving exemestane compared to patients receiving tamoxifen (IES) or placebo (027). Concomitant use of bisphosphonates, vitamin D supplementation, and calcium was not allowed. BMD Exemestane N=29 Tamoxifen1 N=38 Exemestane N=59 Placebo1 N=65 Lumbar spine (%) -3.1 -0.2 -3.5 -2.4 Lumbar spine (%) Femoral neck (%) -4.2 -0.3 -4.6 -2.6 Femoral neck (%) During adjuvant treatment with exemestane, women with osteoporosis or at risk of osteoporosis should have their bone mineral density formally assessed by bone densitometry at the commencement of treatment. Monitor patients for bone mineral density loss and treat as appropriate.",
+        "char_len": 829,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Reductions in Bone Mineral Density (BMD)",
+        "source_xml": "DRUG-BREAST-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Vitamin D Assessment",
+        "text": "5.2 Vitamin D Assessment: Routine assessment of 25-hydroxy vitamin D levels prior to the start of aromatase inhibitor treatment should be performed, due to the high prevalence of vitamin D deficiency in women with early breast cancer (EBC). Women with vitamin D deficiency should receive supplementation with vitamin D.",
+        "char_len": 319,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Vitamin D Assessment",
+        "source_xml": "DRUG-BREAST-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Administration with Estrogen-Containing Agents",
+        "text": "5.3 Administration with Estrogen-Containing Agents: AROMASIN should not be coadministered with systemic estrogen-containing agents as these could interfere with its pharmacologic action.",
+        "char_len": 186,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Administration with Estrogen-Containing Agents",
+        "source_xml": "DRUG-BREAST-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Laboratory Abnormalities",
+        "text": "5.4 Laboratory Abnormalities: In patients with early breast cancer, the incidence of hematological abnormalities of Common Toxicity Criteria (CTC) grade ≥1 was lower in the exemestane treatment group, compared with tamoxifen. Incidence of CTC grade 3 or 4 abnormalities was low (approximately 0.1%) in both treatment groups. Approximately 20% of patients receiving exemestane in clinical studies in advanced breast cancer experienced CTC grade 3 or 4 lymphocytopenia. Of these patients, 89% had a pre-existing lower grade lymphopenia. Forty percent of patients either recovered or improved to a lesser severity while on treatment. Patients did not have a significant increase in viral infections, and no opportunistic infections were observed. Elevations of serum levels of AST, ALT, alkaline phosphatase, and gamma glutamyl transferase >5 times the upper value of the normal range (i.e., ≥ CTC grade 3) have been rarely reported in patients treated for advanced breast cancer but appear mostly attributable to the underlying presence of liver and/or bone metastases. In the comparative study in advanced breast cancer patients, CTC grade 3 or 4 elevation of gamma glutamyl transferase without documented evidence of liver metastasis was reported in 2.7% of patients treated with AROMASIN and in 1.8% of patients treated with megestrol acetate. In patients with early breast cancer, elevations in bilirubin, alkaline phosphatase, and creatinine were more common in those receiving exemestane than either tamoxifen or placebo. Treatment-emergent bilirubin elevations (any CTC grade) occurred in 5% of exemestane patients and 0.8% of tamoxifen patients on the Intergroup Exemestane Study (IES), and in 7% of exemestane treated patients vs. 0% of placebo treated patients in the 027 study. CTC grade 3–4 increases in bilirubin occurred in 0.9% of exemestane treated patients compared to 0.1% of tamoxifen treated patients. Alkaline phosphatase elevations of any CTC grade occurred in 15% of exemestane treated patients on the IES compared to 2.6% of tamoxifen treated patients, and in 14% of exemestane treated patients compared to 7% of placebo treated patients in study 027. Creatinine elevations occurred in 6% of exemestane treated patients and 4.3% of tamoxifen treated patients on the IES and in 6% of exemestane treated patients and 0% of placebo treated patients in study 027.",
+        "char_len": 2381,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Laboratory Abnormalities",
+        "source_xml": "DRUG-BREAST-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Use in Premenopausal Women",
+        "text": "5.5 Use in Premenopausal Women: AROMASIN is not indicated for the treatment of breast cancer in premenopausal women.",
+        "char_len": 116,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Use in Premenopausal Women",
+        "source_xml": "DRUG-BREAST-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Embryo-Fetal Toxicity",
+        "text": "5.6 Embryo-Fetal Toxicity: Based on findings from animal studies and its mechanism of action, AROMASIN can cause fetal harm when administered to a pregnant woman. In animal reproduction studies, administration of exemestane to pregnant rats and rabbits caused increased incidence of abortions and embryo-fetal toxicity. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with AROMASIN and for 1 month after the last dose [see Use in Specific Populations (8.1), (8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 595,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-006.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.7 Renal Impairment",
+            "text": "8.7 Renal Impairment: The AUC of exemestane was increased in subjects with moderate or severe renal impairment (creatinine clearance <35 mL/min/1.73 m2) [see Clinical Pharmacology (12.3)]. However, based on experience with exemestane at repeated doses up to 200 mg daily that demonstrated a moderate increase in non life-threatening adverse reactions, dosage adjustment does not appear to be necessary.",
+            "char_len": 402,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Renal Impairment",
+            "source_xml": "DRUG-BREAST-FDA-006.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: The AUC of exemestane was increased in subjects with moderate or severe hepatic impairment (Childs-Pugh B or C) [see Clinical Pharmacology (12.3)]. However, based on experience with exemestane at repeated doses up to 200 mg daily that demonstrated a moderate increase in non life-threatening adverse reactions, dosage adjustment does not appear to be necessary.",
+            "char_len": 385,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-006.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.2 Dose Modifications",
+            "text": "2.2 Dose Modifications: Concomitant use of strong CYP 3A4 inducers decreases exemestane exposure, For patients receiving AROMASIN with a strong CYP 3A4 inducer such as rifampicin or phenytoin, the recommended dose of AROMASIN is 50 mg once daily after a meal [see Drug Interactions (7) and Clinical Pharmacology (12.3)].",
+            "char_len": 320,
+            "source_section_code": "42229-5",
+            "source_title": "2.2 Dose Modifications",
+            "source_xml": "DRUG-BREAST-FDA-006.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-006.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种芳香化酶抑制剂，用于绝经后女性的某些乳腺癌治疗。\", \"how_to_use\": \"常规剂量是每天一次，每次一片25毫克，饭后服用。\", \"cautions\": [\"如果对这款药或它的任何辅料过敏，则不能使用。\", \"同时服用利福平或苯妥英等强CYP3A4诱导剂时，说明书推荐剂量为每天一次50毫克，饭后服用。\", \"同时服用利福平、苯妥英、卡马西平、苯巴比妥或圣约翰草等药物，可能明显降低本药在体内的暴露量。\", \"说明书建议，同时使用强CYP3A4诱导剂的患者需要调整剂量。\"], \"side_effects\": [{\"term\": \"视觉障碍\", \"plain\": \"可能出现视力方面的不适或异常。\", \"when_to_seek_help\": \"如出现视力变化或视觉不适，应及时就医。\"}, {\"term\": \"骨关节炎\", \"plain\": \"可能出现关节方面的不适。\", \"when_to_seek_help\": \"如关节症状明显或加重，应及时就医。\"}, {\"term\": \"出汗增多\", \"plain\": \"可能比平时更容易出汗。\", \"when_to_seek_help\": \"如出汗明显影响生活，可咨询医生。\"}, {\"term\": \"心脏缺血事件（心肌梗死、心绞痛、心肌缺血）\", \"plain\": \"研究中有心脏缺血事件的发生报告。\", \"when_to_seek_help\": \"如出现胸痛、胸闷等心脏不适，应立即就医。\"}], \"seek_help\": \"如出现视力变化、关节明显不适、出汗明显影响生活，或胸痛、胸闷等心脏不适，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:15:38"
+  }
+]

@@ -1,0 +1,251 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-005",
+    "generic_name": "CRIZOTINIB",
+    "brand_names": [
+      "XALKORI"
+    ],
+    "aliases_zh": [
+      "克唑替尼"
+    ],
+    "title": "CRIZOTINIB 说明书（FDA DailyMed）",
+    "indications": [
+      "adult patients with metastatic non-small cell lung cancer (NSCLC) whose tumors are anaplastic lymphoma kinase (ALK) or ROS1-positive as detected by an FDA-approved test.",
+      "pediatric patients 1 year of age and older and young adults with relapsed or refractory, systemic anaplastic large cell lymphoma (ALCL) that is ALK-positive. ( 1.2 , 2.3 ) o Limitations of Use: The safety and efficacy of XALKORI have not been established in older adults with relapsed or refractory, systemic ALK-positive ALCL.",
+      "adult and pediatric patients 1 year of age and older with unresectable, recurrent, or refractory inflammatory myofibroblastic tumor (IMT) that is ALK-positive. ( 1.3 , 2.3 ) 1.1 ALK- or ROS1-Positive Metastatic Non-Small Cell Lung Cancer XALKORI is indicated for the treatment of adult patients with metastatic non-small cell lung cancer (NSCLC) whose tumors are anaplastic lymphoma kinase (ALK) or ROS1-positive as detected by an FDA-approved test . 1.2 Relapsed or Refractory, Systemic ALK-Positive Anaplastic Large Cell Lymphoma XALKORI is indicated for the treatment of pediatric patients 1 year of age and older and young adults with relapsed or refractory, systemic anaplastic large cell lymphoma (ALCL) that is ALK-positive . Limitations of Use : The safety and efficacy of XALKORI have not been established in older adults with relapsed or refractory, systemic ALK-positive ALCL. 1.3 Unresectable, Recurrent, or Refractory ALK-Positive Inflammatory Myofibroblastic Tumor XALKORI is indicated for the treatment of adult and pediatric patients 1 year of age and older with unresectable, recurrent, or refractory inflammatory myofibroblastic tumor (IMT) that is ALK-positive.",
+      "【中文适应证】间变性淋巴瘤激酶（ALK）阳性的局部晚期或转移性NSCLC 患者的治疗。",
+      "【中文适应证】ROS1 阳性的晚期NSCLC 患者的治疗。"
+    ],
+    "dosage": {
+      "standard": "2 DOSAGE AND ADMINISTRATION • Metastatic NSCLC: The recommended dosage is 250 mg orally twice daily. ( 2.3 ) • Systemic ALCL: The recommended dosage is 280 mg/m 2 orally twice daily based on body surface area. ( 2.3 ) • Unresectable IMT: o Adult: The recommended dosage is 250 mg orally twice daily. ( 2.3 ) o Pediatric: The recommended dosage is 280 mg/m 2 orally twice daily based on body surface area. ( 2.3 ) • See full prescribing information for dosage adjustments by indication for patients with moderate or severe hepatic impairment or severe renal impairment. ( 2.7 , 2.8 ) 2.1 Patient Selection Select patients for the treatment of metastatic NSCLC with XALKORI based on the presence of ALK or ROS1 positivity in tumor specimens [see Clinical Studies (14.1 , 14.2 , 14.3) ] . Information on FDA-approved tests for the detection of ALK and ROS1 rearrangements in NSCLC is available at http://www.fda.gov/companiondiagnostics . 2.2 Recommended Testing During Treatment with XALKORI • Monitor liver function tests, including alanine aminotransferase (ALT), aspartate aminotransferase (AST), and total bilirubin, every 2 weeks during the first 2 months of treatment, then once a month, and as clinically indicated, with more frequent repeat testing for increased liver transaminases, alkaline phosphatase, or total bilirubin in patients who develop increased transaminases [see Warnings and Precautions (5.1) ] . • Monitor complete blood counts including differential weekly for the first month of therapy and then at least monthly, with more frequent monitoring if Grade 3 or 4 abnormalities, fever, or infection occur [see Adverse Reactions (6.1) ] . • For pediatric and young adult patients with ALCL or pediatric patients with IMT, obtain baseline and follow-up ophthalmologic examinations including retinal examination within 1 month of starting XALKORI and every 3 months thereafter [see Warnings and Precautions (5.5) ] . 2.3 Recommended Dosage The recommended dosage of XALKORI is provided in Table 1. Table 1. Recommended Dosage of XALKORI Indication Recommended Dosage of XALKORI ALK- or ROS1-Positive Metastatic NSCLC Adults : 250 mg orally twice daily Relapsed or Refractory, Systemic ALK-Positive ALCL Pediatric Patients and Young Adults : 280 mg/m 2 orally twice daily See Table 2 for Recommended Dosage based on body surface area for pediatric patients and young adults with ALCL for the capsules and oral pellets. Unresectable, Recurrent, or Refractory ALK-Positive IMT Adults : 250 mg orally twice daily Pediatric Patients : 280 mg/m 2 orally twice daily See Table 3 for Recommended Dosage based on body surface area for pediatric patients with IMT for the capsules and oral pellets. Recommended Dosage for Adult Patients with ALK- or ROS1-Positive Metastatic NSCLC • The recommended dosage for adult patients with ALK- or ROS1-positive metastatic NSCLC is XALKORI capsules 250 mg orally, twice daily, with or without food until disease progression or unacceptable toxicity occurs. • For adults who cannot swallow capsules, the recommended dosage of XALKORI pellets is 250 mg (2 x 50 mg + 1 x 150 mg) orally, twice daily, with or without food until disease progression or unacceptable toxicity occurs. Recommended Dosage for Pediatric and Young Adult Patients with ALK-Positive ALCL • The recommended dosage for pediatric patients 1 year of age and older and young adults with relapsed or refractory, systemic ALK-positive ALCL is based on body surface area (BSA) and is provided in Table 2. • Administer XALKORI capsules or pellets orally, twice daily, with or without food until disease progression or unacceptable toxicity occurs. Table 2 provides the dosage based on body surface area (BSA) for XALKORI capsules or pellets. Table 2. Recommended XALKORI Dosage for Pediatric Patients 1 Year of Age and Older and Young Adults With ALK-Positive ALCL Using Either XALKORI Capsules or Pellets Body Surface Area (BSA) Recommended XALKORI Dosage to Achieve 280 mg/m 2 Twice Daily ",
+      "adjustment": ""
+    },
+    "contraindications": [
+      "尚无禁忌（FDA 说明书原文：None）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "Hepatotoxicity",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Interstitial Lung Disease/Pneumonitis",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "QT Interval Prolongation",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Bradycardia",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Severe Visual Loss",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal Toxicity in Pediatric and Young Adult Patients with ALCL or Pediatric Patients with IMT The most common adverse reactions (≥25%) in adult patients with NSCLC are vision disorders, nausea, diarrhea, vomiting, edema, constipation, elevated transaminases, fatigue, decreased appetite, upper respiratory infection, dizziness, and neuropathy. ( 6.1 ) The most common adverse reactions (≥35%) in patients with ALCL are diarrhea, vomiting, nausea, vision disorder, headache, musculoskeletal pain, stomatitis, fatigue, decreased appetite, pyrexia, abdominal pain, cough, and pruritus. Grade 3–4 laboratory abnormalities (≥15%) are neutropenia, lymphopenia, and thrombocytopenia. ( 6.1 ) The most common adverse reactions (≥35%) in adult patients with IMT are vision disorders, nausea, and edema. ( 6.1 ) The most common adverse reactions (≥35%) in pediatric patients with IMT are vomiting, nausea, diarrhea, abdominal pain, rash, vision disorder, upper respiratory tract infection, cough, pyrexia, musculoskeletal pain, fatigue, edema, constipation, and headache. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Pfizer Inc. at 1-800-438-1985 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch . 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in clinical practice. The data in the Warnings and Precautions reflect exposure to XALKORI in 1719 patients with NSCLC who received XALKORI 250 mg twice daily enrolled on Studies 1 (including an additional 109 patients who crossed over from the control arm), 2, 3, a single-arm trial (n=1063) of ALK-positive NSCLC, and an additional ALK-positive NSCLC expansion cohort of a dose finding study (n=154). The data also reflect exposure to XALKORI in 121 patients ages 1 to ≤21 years with relapsed or refractory tumors, including 26 patients with systemic ALCL and 14 pediatric patients with IMT, in a single-arm trial (Study ADVL0912). The data are also described for 7 adult patients with IMT treated with XALKORI in a single-arm trial (Study A8081013). ALK- or ROS1-Positive Metastatic NSCLC The data described below is based primarily on 343 patients with ALK-positive metastatic NSCLC who received XALKORI 250 mg orally twice daily from 2 open-label, randomized, active-controlled trials (Studies 1 and 2). The safety of XALKORI was also eval",
+        "frequency": "25%",
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "FDA DailyMed public label",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-005.xml",
+    "doc_hash": "26917c78fa18ded231b40eeb49ceebccf434f3bfade0261ab99a17529f14c975",
+    "review_status": "approved",
+    "_source": "dailymed",
+    "_setid": "2a51b0de-47d6-455e-a94c-d2c737b04ff7",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/2a51b0de-47d6-455e-a94c-d2c737b04ff7.xml",
+    "atc_code": "L01ED01",
+    "approval_no": "国药准字HJ20171008；国药准字HJ20171011；国药准字HJ20171012；国药准字HJ20171009；国药准字HJ20171013；国药准字HJ20171014",
+    "source_name": "CRIZOTINIB 说明书（FDA DailyMed）",
+    "source_version": "2025",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-005.xml",
+    "updated_at": "2026-10-21",
+    "interactions": [
+      "Strong or Moderate CYP3A Inhibitors",
+      "Concomitant use of crizotinib with strong CYP3A inhibitors increases crizotinib plasma concentrations [see Clinical Pharmacology (12.3)], which may increase the risk of adverse reactions of XALKORI. Avoid concomitant use of strong CYP3A inhibitors. If concomitant use of strong CYP3A inhibitors is unavoidable, reduce the XALKORI dosage [see Dosage and Administration (2.9)]. Avoid grapefruit or grapefruit juice which may also increase plasma concentrations of crizotinib. Use caution with concomitant use of moderate CYP3A inhibitors.",
+      "Strong CYP3A Inducers",
+      "Concomitant use of crizotinib with strong CYP3A inducers decreases crizotinib plasma concentrations [see Clinical Pharmacology (12.3)], which may decrease the efficacy of XALKORI. Avoid concomitant use of strong CYP3A inducers.",
+      "CYP3A Substrates",
+      "Concomitant use of crizotinib increases plasma concentrations of CYP3A substrates [see Clinical Pharmacology (12.3)], which may increase the risk of adverse reactions of these substrates. Avoid concomitant use of XALKORI with CYP3A substrates where minimal concentration changes may lead to serious adverse reactions. If concomitant use of XALKORI is unavoidable, decrease the CYP3A substrate dosage in accordance with approved product labeling.",
+      "XALKORI can prolong the QT/QTc interval. Avoid concomitant use of XALKORI with drugs that prolong the QT interval [see Warnings and Precautions (5.3), Clinical Pharmacology (12.2)].",
+      "XALKORI can cause bradycardia. Avoid concomitant use of XALKORI with drugs that cause bradycardia (e.g., beta-blockers, non-dihydropyridine calcium channel blockers, clonidine, and digoxin) [see Warnings and Precautions (5.4)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Hepatotoxicity",
+        "text": "5.1 Hepatotoxicity: Drug-induced hepatotoxicity with fatal outcome occurred in 0.1% of the 1719 patients treated with XALKORI for NSCLC across clinical trials [see Adverse Reactions (6.1)]. Concurrent elevations in ALT or AST ≥3 times the ULN and total bilirubin ≥2 times the ULN, with normal alkaline phosphatase, occurred in <1% of patients treated with XALKORI. Increased ALT or AST >5 times the ULN occurred in 11% and 6% of patients, respectively. One percent (1.0%) of patients required permanent discontinuation due to elevated transaminases. Increased transaminases generally occurred within the first 2 months of treatment. In Study ADVL0912, of 121 patients ages 1 to ≤21 years treated with XALKORI for relapsed or refractory tumors including ALCL and IMT, 71% and 79% had increases of AST and ALT, respectively, with increased ALT or AST >5 times the ULN in 6% each. Of the 26 patients with ALCL treated with XALKORI, 65% and 81% had increases of AST and ALT, respectively, with increases >5 times the ULN in 4% each. Of the 14 pediatric patients with IMT treated with XALKORI, 71% had increases of AST and 71% had increases of ALT. In Study A8081013, of the 7 adult patients with IMT treated with XALKORI, 57% and 43% had increases of AST and ALT, respectively. Monitor liver function tests, including ALT, AST, and total bilirubin, every 2 weeks during the first 2 months of treatment, then once a month, and as clinically indicated, with more frequent repeat testing for increased liver transaminases, alkaline phosphatase, or total bilirubin in patients who develop increased transaminases. Withhold, reduce dose, or permanently discontinue XALKORI for hepatotoxicity as recommended [see Dosage and Administration (2.6)].",
+        "char_len": 1736,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Hepatotoxicity",
+        "source_xml": "DRUG-LUNG-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Interstitial Lung Disease/Pneumonitis",
+        "text": "5.2 Interstitial Lung Disease/Pneumonitis: Severe, life-threatening, or fatal interstitial lung disease (ILD)/pneumonitis can occur in patients treated with XALKORI. Across clinical trials in patients with NSCLC (n=1719), 2.9% of XALKORI-treated patients had ILD of any grade, 1% had Grade 3 or 4 ILD, and 0.5% had fatal ILD [see Adverse Reactions (6.1)]. Interstitial lung disease generally occurred within 3 months after the initiation of XALKORI. In Study ADVL0912, among 121 patients ages 1 to ≤21 years with relapsed or refractory tumors, including ALCL and IMT, ILD occurred in 0.8% of patients. Monitor patients for pulmonary symptoms indicative of ILD/pneumonitis. Exclude other potential causes of ILD/pneumonitis, and permanently discontinue XALKORI in patients diagnosed with drug-related ILD/pneumonitis [see Dosage and Administration (2.6)].",
+        "char_len": 854,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Interstitial Lung Disease/Pneumonitis",
+        "source_xml": "DRUG-LUNG-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 QT Interval Prolongation",
+        "text": "5.3 QT Interval Prolongation: QTc prolongation can occur in patients treated with XALKORI. Across clinical trials in patients with NSCLC, 2.1% of 1616 patients had QTcF (corrected QT for heart rate by the Fridericia method) greater than or equal to 500 ms and 5% of 1582 patients had an increase from baseline QTcF greater than or equal to 60 ms by automated machine-read evaluation of ECGs. In Study ADVL0912, QTc prolongation was reported as an adverse reaction in 4.1% of patients, including 8% of patients with ALCL and 7% of pediatric patients with IMT. Avoid use of XALKORI in patients with congenital long QT syndrome. Monitor ECGs and electrolytes in patients with congestive heart failure, bradyarrhythmias, electrolyte abnormalities, or who are taking medications that are known to prolong the QT interval. Withhold, reduce dose, or permanently discontinue XALKORI for QT/QTc interval prolongation as recommended [see Dosage and Administration (2.6), Clinical Pharmacology (12.2)].",
+        "char_len": 991,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 QT Interval Prolongation",
+        "source_xml": "DRUG-LUNG-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Bradycardia",
+        "text": "5.4 Bradycardia: Symptomatic bradycardia can occur in patients receiving XALKORI. Across clinical trials in patients with NSCLC, bradycardia occurred in 13% of 1719 patients treated with XALKORI. Grade 3 syncope occurred in 2.4% of XALKORI-treated patients and in 0.6% of the chemotherapy-treated patients [see Adverse Reactions (6.1)]. In Study ADVL0912, among 121 patients ages 1 to ≤21 years treated with XALKORI, bradycardia was reported in 14%, including Grade 3 bradycardia in 0.8% of patients. Of the 26 patients with ALCL treated with XALKORI, bradycardia (all Grade 1) was reported in 19%. Of the 14 pediatric patients with IMT treated with XALKORI, bradycardia was reported in 14% of patients, including Grade 3 bradycardia in 7% of patients. Avoid using XALKORI in combination with other medications known to cause bradycardia (e.g., beta-blockers, nondihydropyridine-calcium channel blockers, clonidine, and digoxin) to the extent possible. Monitor heart rate and blood pressure regularly. If bradycardia occurs, re-evaluate for the use of concomitant medications known to cause bradycardia. Withhold, reduce dose, or permanently discontinue XALKORI for bradycardia as recommended [see Dosage and Administration (2.6)].",
+        "char_len": 1231,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Bradycardia",
+        "source_xml": "DRUG-LUNG-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Severe Visual Loss",
+        "text": "5.5 Severe Visual Loss: Across all clinical trials in patients with NSCLC, the incidence of Grade 4 visual field defect with visual loss was 0.2% of 1719 patients [see Adverse Reactions (6.1)]. Optic atrophy and optic nerve disorder have been reported as potential causes of visual loss. In Study ADVL0912, visual disorders occurred in 46% of 121 patients with XALKORI, including 65% of 26 patients with ALCL and 50% of 14 patients with IMT. Of the 56 patients who experienced visual disorders, one pediatric patient with IMT experienced Grade 3 myopic optic nerve disorder. The most common visual symptoms were blurred vision and visual impairment. Assessment of visual symptoms for all patients is recommended monthly during treatment. Report new visual symptoms to an eye specialist. For pediatric and young adult patients with ALCL or pediatric patients with IMT, obtain baseline and follow-up ophthalmologic examinations including retinal examination within 1 month of starting XALKORI and every 3 months thereafter. The ophthalmological evaluation should consist of best corrected visual acuity, retinal photographs, visual fields, optical coherence tomography (OCT), and other evaluations as appropriate [see Dosage and Administration (2.6), Adverse Reactions (6.1)]. Permanently discontinue XALKORI for Grade 3 or 4 ocular disorders or severe visual loss (best corrected vision less than 20/200 in one or both eyes) unless another cause is identified [see Dosage and Administration (2.6)]. There is insufficient information to characterize the risks of resumption of XALKORI in patients who develop visual symptoms or visual loss. A decision to resume XALKORI should consider the potential benefits versus risks to the patient.",
+        "char_len": 1735,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Severe Visual Loss",
+        "source_xml": "DRUG-LUNG-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Gastrointestinal Toxicity in Pediatric and Young Adult Patients with ALCL or Pediatric Patients with IMT",
+        "text": "5.6 Gastrointestinal Toxicity in Pediatric and Young Adult Patients with ALCL or Pediatric Patients with IMT: XALKORI can cause severe gastrointestinal toxicities in pediatric and young adult patients with ALCL or pediatric patients with IMT [see Adverse Reactions (6.1)]. In patients with ALCL (n=26), gastrointestinal toxicity occurred in 100% of patients; Grade 3 gastrointestinal toxicity occurred in 27% of patients and included diarrhea, nausea, vomiting, and stomatitis. In pediatric patients with IMT (n=14), vomiting occurred in 93%, nausea occurred in 86%, and diarrhea occurred in 64% of patients. Provide standard antiemetic and antidiarrheal agents for gastrointestinal toxicities in pediatric and young adult patients with ALCL or pediatric patients with IMT. Antiemetics are recommended prior to and during treatment with XALKORI to prevent nausea and vomiting. If patients develop Grade 3 nausea lasting 3 days or Grade 3 or 4 diarrhea or vomiting despite maximum medical therapy, withhold XALKORI until resolved, and then resume at the next lower dose level. Consider supportive care such as hydration, electrolyte supplementation, and nutritional support as clinically indicated [see Dosage and Administration (2.6)].",
+        "char_len": 1235,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Gastrointestinal Toxicity in Pediatric and Young Adult Patients with ALCL or Pediatric Patients with IMT",
+        "source_xml": "DRUG-LUNG-FDA-005.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Embryo-Fetal Toxicity",
+        "text": "5.7 Embryo-Fetal Toxicity: Based on its mechanism of action, XALKORI can cause fetal harm when administered to a pregnant woman. In animal reproduction studies, oral administration of crizotinib in pregnant rats during organogenesis at exposures similar to those observed with the maximum recommended human dose resulted in embryotoxicity and fetotoxicity. Advise pregnant women and females of reproductive potential of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with XALKORI and for 45 days following the last dose. Advise male patients with female partners of reproductive potential to use condoms during treatment with XALKORI and for 90 days after the last dose [see Use in Specific Populations (8.1, 8.3), Nonclinical Toxicology (13.1)].",
+        "char_len": 819,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-005.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.8 Dosage Modification for Severe Renal Impairment",
+            "text": "2.8 Dosage Modification for Severe Renal Impairment: The recommended dosage of XALKORI in patients with severe renal impairment [creatinine clearance (CLcr) less than 30 mL/min, calculated using the modified Cockcroft-Gault equation for adult patients and the Schwartz equation for pediatric patients] not requiring dialysis is the second dose reduction shown in Table 4 for adult patients with NSCLC or IMT and Table 5 for pediatric patients with ALCL or IMT and young adults with ALCL [see Use in Specific Populations (8.7), Clinical Pharmacology (12.3)].",
+            "char_len": 557,
+            "source_section_code": "42229-5",
+            "source_title": "2.8 Dosage Modification for Severe Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-005.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "88828-9",
+            "title": "8.7 Renal Impairment",
+            "text": "8.7 Renal Impairment: Increased exposure to crizotinib occurred in patients with pre-existing severe renal impairment (CLcr less than 30 mL/min calculated using the modified Cockcroft-Gault equation for adult patients and the Schwartz equation for pediatric patients) not requiring dialysis, therefore reduce dosage of XALKORI in these patients [see Dosage and Administration (2.8), Clinical Pharmacology (12.3)]. No dose adjustment is recommended in patients with mild to moderate renal impairment (CLcr 30 to 89 mL/min).",
+            "char_len": 522,
+            "source_section_code": "88828-9",
+            "source_title": "8.7 Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-005.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.7 Dosage Modifications for Moderate and Severe Hepatic Impairment",
+            "text": "2.7 Dosage Modifications for Moderate and Severe Hepatic Impairment: The recommended dose of XALKORI in patients with moderate hepatic impairment [any aspartate aminotransferase (AST) and total bilirubin greater than 1.5 times the upper limit of normal (ULN) and less than or equal to 3 times ULN] is the first dose reduction shown in Table 4 for adult patients with NSCLC or IMT and Table 5 for pediatric patients with ALCL or IMT and young adults with ALCL [see Use in Specific Populations (8.7), Clinical Pharmacology (12.3)]. The recommended dose of XALKORI in patients with severe hepatic impairment (any AST and total bilirubin greater than 3 times ULN) is the second dose reduction shown in Table 4 for adult patients with NSCLC or IMT and Table 5 for pediatric patients with ALCL or IMT and young adults with ALCL [see Dosage and Administration (2.6), Use in Specific Populations (8.7), Clinical Pharmacology (12.3)].",
+            "char_len": 925,
+            "source_section_code": "42229-5",
+            "source_title": "2.7 Dosage Modifications for Moderate and Severe Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-005.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "88829-7",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: Crizotinib concentrations increased in patients with pre-existing moderate (any AST and total bilirubin greater than 1.5 times ULN and less than or equal to 3 times ULN) or severe (any AST and total bilirubin greater than 3 times ULN) hepatic impairment [see Clinical Pharmacology (12.3)]. Reduce XALKORI dosage in patients with moderate or severe hepatic impairment [see Dosage and Administration (2.7)]. No dose adjustment is recommended in patients with pre-existing mild hepatic impairment (AST > ULN and total bilirubin less than or equal to 1 times ULN or any AST and total bilirubin greater than 1 times ULN but less than or equal to1.5 times ULN).",
+            "char_len": 679,
+            "source_section_code": "88829-7",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-005.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.6 Dosage Modifications for Adverse Reactions",
+            "text": "2.6 Dosage Modifications for Adverse Reactions: The recommended dosage modifications for adverse reactions for adult patients with NSCLC or IMT are provided in Table 4. Dose Reduction Dose and Schedule Dose and Schedule First Dose Reduction 200 mg twice daily First Dose Reduction 200 mg twice daily Second Dose Reduction 250 mg once daily Second Dose Reduction 250 mg once daily Permanently discontinue XALKORI capsules or pellets if unable to tolerate 250 mg taken once daily. The recommended dosage modifications for adverse reactions for pediatric patients with ALCL or IMT and young adults with ALCL are based on body surface area and are provided in Table 5. Body Surface Area (BSA) First Dose Reduction Second Dose Reduction Permanently discontinue in patients who are unable to tolerate XALKORI capsules or pellets after 2 dose reductions. Body Surface Area Second Dose Reduction Permanently discontinue in patients who are unable to tolerate XALKORI capsules or pellets after 2 dose reductions. Dosage Dosage Form and Strength to Achieve Recommended Dose Reduction Dosage Dosage Form and Strength to Achieve Recommended Dose Reduction Dosage Form and Strength to Achieve Recommended Dose Reduction 0.38 to 0.46 m2 90 mg twice daily Pellets: 2 x 20 mg + 1 x 50 mg 70 mg twice daily Pellets: 1 x 20 mg + 1 x 50 mg 0.38 to 0.46 m2 Pellets: 2 x 20 mg + Pellets: 1 x 20 mg + 0.47 to 0.51 m2 100 mg twice daily Pellets: 2 x 50 mg 80 mg twice daily Pellets: 4 x 20 mg 0.47 to 0.51 m2 Pellets: 2 x 50 mg Pellets: 4 x 20 mg 0.52 to 0.61 m2 120 mg twice daily Pellets: 1 x 20 mg + 2 x 50 mg 90 mg twice daily Pellets: 2 x 20 mg + 1 x 50 mg 0.52 to 0.61 m2 0.62 to 0.80 m2 150 mg twice daily Pellets: 1 x 150 mg 120 mg twice daily Pellets: 1 x 20 mg + 2 x 50 mg 0.62 to 0.80 m2 Pellets: 1 x 150 mg 0.81 to 0.97 m2 200 mg twice daily Pellets: 1 x 50 mg + 1 x 150 mg 150 mg twice daily Pellets: 1 x 150 mg 0.81 to 0.97 m2 Pellets: 1 x 50 mg + 0.98 to 1.16 m2 220 mg twice daily Pellets: 1 x 20 mg + 1 x 50 mg + 1 x 150 mg 170 mg twice daily Pellets: 1 x 20 mg + 1 x 150 mg 0.98 to 1.16 m2 1.17 to 1.33 m2 250 mg twice daily Pellets: 2 x 50 mg + 1 x 150 mg 200 mg twice daily Pellets: 1 x 50 mg + 1 x 150 mg 1.17 to 1.33 m2 Pellets: 2 x 50 mg + 1.34 to 1.69 m2 250 mg twice daily Pellets: 2 x 50 mg + 1 x 150 mg Or Capsule: 1 x 250 mg 200 mg twice daily Pellets: 1 x 50 mg + 1 x 150 mg Or Capsule: 1 x 200 mg 1.34 to 1.69 m2 Capsule: 1 x 250 mg Capsule: 1 x 200 mg 1.7 m2 or greater 400 mg twice daily Pellets: 2 x 50 mg + 2 x 150 mg Or Capsule: 2 x 200 mg 250 mg twice daily Pellets: 2 x 50 mg + 1 x 150 mg Or Capsule: 1 x 250 mg 1.7 m2 or greater Capsule: 2 x 200 mg Recommended Dosage Modifications for Hematologic Adverse Reactions for Adult Patients with NSCLC or IMT The recommended dosage modifications for hematologic adverse reactions for adult patients with NSCLC or IMT are provided in Table 6. Severity of Adverse Reaction Grade based on National Cancer Institute (NCI) Common Terminology Criteria for Adverse Events (CTCAE), version 4.0. XALKORI Dosage Modification Severity of Adverse Reaction Grade based on National Cancer Institute (NCI) Common Terminology Criteria for Adverse Events (CTCAE), version 4.0. XALKORI Dosage Modification Grade 3 Withhold until recovery to Grade 2 or less, then resume at the same dosage. Withhold until recovery to Grade 2 or less, then resume at the same dosage. Grade 4 Withhold until recovery to Grade 2 or less, then resume at next lower dosage. Withhold until recovery to Grade 2 or less, then resume at next lower dosage. Monitor complete blood counts including differential weekly for the first month of therapy and then at least monthly, with more frequent monitoring if Grade 3 or 4 abnormalities, fever, or infection occur. Recommended Dosage Modifications for Hematologic Adverse Reactions in Pediatric and Young Adult Patients with ALCL or Pediatric Patients with IMT The recommended dosage modifications for hematologic adverse reactions in pediatric and young adult patients with ALCL or pediatric patients with IMT are provided in Table 7. Severity of Adverse Reaction XALKORI Dosage Modification Severity of Adverse Reaction Absolute Neutrophil Count (ANC) Less than 0.5 x 109/L First occurrence: Withhold until recovery to ANC greater than 1.0 x 109/L, then resume at the next lower dosage. Second occurrence: •Permanently discontinue for recurrence complicated by febrile neutropenia or infection. •For uncomplicated Grade 4 neutropenia, either permanently discontinue, or withhold until recovery to ANC greater than 1.0 x 109/L, then resume at the next lower dosage.Permanently discontinue in patients who are unable to tolerate XALKORI after 2 dose reductions. Less than 0.5 x 109/L First occurrence: Withhold until recovery to ANC greater than 1.0 x 109/L, then resume at the next lower dosage. Second occurrence: 25 to 50 x 109/L with concurrent bleeding Withhold until recovery to platelet count greater than 50 x 109/L and bleeding resolves, then resume at the same dosage. 25 to 50 x 109/L with concurrent bleeding Withhold until recovery to platelet count greater than 50 x 109/L and bleeding resolves, then resume at the same dosage. Less than 25 x 109/L Withhold until recovery to platelet count greater than 50 x 109/L, then resume at the next lower dosage. Permanently discontinue for recurrence. Less than 25 x 109/L Withhold until recovery to platelet count greater than 50 x 109/L, then resume at the next lower dosage. Permanently discontinue for recurrence. Hemoglobin less than 8 g/dL Withhold until recovery to hemoglobin 8 g/dL or more, then resume at the same dosage. Hemoglobin less than 8 g/dL Withhold until recovery to hemoglobin 8 g/dL or more, then resume at the same dosage. Life-threatening anemia; urgent intervention indicated. Withhold until recovery to hemoglobin 8 g/dL or more, then resume at the next lower dosage. Permanently discontinue for recurrence. Life-threatening anemia; urgent intervention indicated. Withhold until recovery to hemoglobin 8 g/dL or more, then resume at the next lower dosage. Permanently discontinue for recurrence. Recommended Dosage Modifications for Non-Hematologic Adverse Reactions The recommended dosage modifications for non-hematologic adverse reactions are provided in Table 8. Alanine aminotransferase (ALT) or aspartate aminotransferase (AST) greater than 5 times upper limit of normal (ULN) with total bilirubin less than or equal to 1.5 times ULN Withhold until recovery to baseline or less than or equal to 3 times ULN, then resume at next lower dosage. Alanine aminotransferase (ALT) or aspartate aminotransferase (AST) greater than 5 times upper limit of normal (ULN) with total bilirubin less than or equal to 1.5 times ULN Withhold until recovery to baseline or less than or equal to 3 times ULN, then resume at next lower dosage. ALT or AST greater than 3 times ULN with concurrent total bilirubin greater than 1.5 times ULN (in the absence of cholestasis or hemolysis) Permanently discontinue. ALT or AST greater than 3 times ULN with concurrent total bilirubin greater than 1.5 times ULN (in the absence of cholestasis or hemolysis) Permanently discontinue. Interstitial Lung Disease (Pneumonitis) [see Warnings and Precautions (5.2)] Any grade drug-related interstitial lung disease/pneumonitis Permanently discontinue. Any grade drug-related interstitial lung disease/pneumonitis QT Interval Prolongation [see Warnings and Precautions (5.3)] QT corrected for heart rate (QTc) greater than 500 ms on at least 2 separate electrocardiograms (ECGs) Withhold until recovery to baseline or to a QTc less than 481 ms, then resume at next lower dosage. QT corrected for heart rate (QTc) greater than 500 ms on at least 2 separate electrocardiograms (ECGs) Withhold until recovery to baseline or to a QTc less than 481 ms, then resume at next lower dosage. QTc greater than 500 ms or greater than or equal to 60 ms change from baseline with Torsade de pointes or polymorphic ventricular tachycardia or signs/symptoms of serious arrhythmia Permanently discontinue. QTc greater than 500 ms or greater than or equal to 60 ms change from baseline with Torsade de pointes or polymorphic ventricular tachycardia or signs/symptoms of serious arrhythmia BradycardiaAdult patients: Heart rate less than 60 beats per minute (bpm); Pediatric patients: Resting heart rate less than the 2.5th percentile per age-specific norms. (symptomatic, may be severe and medically significant, medical intervention indicated) Withhold until recovery to a resting heart rate according to the patient’s age (based on the 2.5th percentile per age-specific norms) as follows: •1 to less than 2 years: 91 bpm or above •2 to 3 years: 82 bpm or above •4 to 5 years: 72 bpm or above •6 to 8 years: 64 bpm or above •Older than 8 years: 60 bpm or above Evaluate concomitant medications known to cause bradycardia, as well as antihypertensive medications. If contributing concomitant medication is identified and discontinued, or its dose is adjusted, resume at previous dose upon recovery to asymptomatic bradycardia or to the age-specific heart rate provided above. If no contributing concomitant medication is identified, or if contributing concomitant medications are not discontinued or dose adjusted, resume at reduced dose upon recovery to asymptomatic bradycardia or to the age-specific heart rate provided above. BradycardiaAdult patients: Heart rate less than 60 beats per minute (bpm); Pediatric patients: Resting heart rate less than the 2.5th percentile per age-specific norms. (symptomatic, may be severe and medically significant, medical intervention indicated) Withhold until recovery to a resting heart rate according to the patient’s age (based on the 2.5th percentile per age-specific norms) as follows: Evaluate concomitant medications known to cause bradycardia, as well as antihypertensive medications. If contributing concomitant medication is identified and discontinued, or its dose is adjusted, resume at previous dose upon recovery to asymptomatic bradycardia or to the age-specific heart rate provided above. If no contributing concomitant medication is identified, or if contributing concomitant medications are not discontinued or dose adjusted, resume at reduced dose upon recovery to asymptomatic bradycardia or to the age-specific heart rate provided above. Bradycardia (life-threatening consequences, urgent intervention indicated) Permanently discontinue if no contributing concomitant medication is identified. If contributing concomitant medication is identified and discontinued, or its dose is adjusted, resume at the second dose reduction level in Table 4 or 5 upon recovery to asymptomatic bradycardia or to the heart rate criteria listed for management of symptomatic or severe, medically significant bradycardia, with frequent monitoring. Permanently discontinue for recurrence. Bradycardia (life-threatening consequences, urgent intervention indicated) Permanently discontinue if no contributing concomitant medication is identified. If contributing concomitant medication is identified and discontinued, or its dose is adjusted, resume at the second dose reduction level in Table 4 or 5 upon recovery to asymptomatic bradycardia or to the heart rate criteria listed for management of symptomatic or severe, medically significant bradycardia, with frequent monitoring. Permanently discontinue for recurrence. Ocular Toxicity, including Visual Loss [see Warnings and Precautions (5.5)] Visual Symptoms, Grade 1 (mild symptoms) or Grade 2 (moderate symptoms affecting ability to perform age-appropriate activities of daily living) Monitor symptoms and report any symptoms to an eye specialist. Consider dose reduction for Grade 2 visual disorders. Visual Symptoms, Grade 1 (mild symptoms) or Grade 2 (moderate symptoms affecting ability to perform age-appropriate activities of daily living) Monitor symptoms and report any symptoms to an eye specialist. Consider dose reduction for Grade 2 visual disorders. Visual Loss (Grade 3 or 4 Ocular Disorder, marked decrease in vision) Discontinue during evaluation of severe visual loss. Permanently discontinue XALKORI for Grade 3 or 4 ocular disorders or severe visual loss if no other cause found on evaluation. Visual Loss (Grade 3 or 4 Ocular Disorder, marked decrease in vision) Discontinue during evaluation of severe visual loss. Permanently discontinue XALKORI for Grade 3 or 4 ocular disorders or severe visual loss if no other cause found on evaluation. Gastrointestinal Toxicity Dosage modifications for gastrointestinal toxicity for pediatric patients with ALCL or IMT and young adults with ALCL only. [see Warnings and Precautions (5.6)] Nausea (Grade 3: inadequate oral intake for more than 3 days, medical intervention required) Grade 3 (despite maximum medical therapy): Withhold until resolved, and then resume at the next lower dose level.Permanently discontinue in patients who are unable to tolerate XALKORI after 2 dose reductions. Nausea (Grade 3: inadequate oral intake for more than 3 days, medical intervention required) Grade 3 (despite maximum medical therapy): Withhold until resolved, and then resume at the next lower dose level.Permanently discontinue in patients who are unable to tolerate XALKORI after 2 dose reductions. Vomiting (Grade 3: more than 6 episodes in 24 hours for more than 3 days, medical intervention required, i.e., tube feeding or hospitalization; Grade 4: life-threatening consequences, urgent intervention indicated) Grade 3 or 4 (despite maximum medical therapy): Withhold until resolved, and then resume at the next lower dose level. Vomiting (Grade 3: more than 6 episodes in 24 hours for more than 3 days, medical intervention required, i.e., tube feeding or hospitalization; Grade 4: life-threatening consequences, urgent intervention indicated) Grade 3 or 4 (despite maximum medical therapy): Withhold until resolved, and then resume at the next lower dose level. Diarrhea (Grade 3: increase of 7 or more stools per day over baseline; incontinence; hospitalization indicated; Grade 4: life-threatening consequences, urgent intervention indicated) Grade 3 or 4 (despite maximum medical therapy): Withhold until resolved, and then resume at the next lower dose level. Diarrhea (Grade 3: increase of 7 or more stools per day over baseline; incontinence; hospitalization indicated; Grade 4: life-threatening consequences, urgent intervention indicated)",
+            "char_len": 14498,
+            "source_section_code": "42229-5",
+            "source_title": "2.6 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-005.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "42229-5",
+            "title": "2.9 Dosage Modification for Concomitant Use of Strong CYP3A Inhibitors",
+            "text": "2.9 Dosage Modification for Concomitant Use of Strong CYP3A Inhibitors: Avoid concomitant use of strong CYP3A inhibitors [see Drug Interactions (7.1)]. If concomitant use of strong CYP3A inhibitors is unavoidable, reduce the dose of XALKORI to the second dose reduction shown in Table 4 for adult patients with NSCLC or IMT and Table 5 for pediatric patients with ALCL or IMT and young adults with ALCL. After discontinuation of a strong CYP3A inhibitor, resume the XALKORI dose used prior to initiating the strong CYP3A inhibitor.",
+            "char_len": 531,
+            "source_section_code": "42229-5",
+            "source_title": "2.9 Dosage Modification for Concomitant Use of Strong CYP3A Inhibitors",
+            "source_xml": "DRUG-LUNG-FDA-005.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-005.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种靶向药，用于治疗某些检测阳性的肺癌、淋巴瘤和软组织肿瘤。\", \"how_to_use\": \"成人肺癌和成人软组织肿瘤：每次250毫克，每天两次，口服。儿童淋巴瘤和儿童软组织肿瘤：按体表面积计算，每次280毫克每平方米，每天两次，口服。可随餐或空腹服用，直到病情进展或出现不能耐受的副作用。\", \"cautions\": [\"用药前需通过FDA批准的检测确认肿瘤为ALK或ROS1阳性。\", \"治疗前2个月每2周查一次肝功能，之后每月查一次。\", \"治疗第1个月每周查一次血常规，之后至少每月查一次。\", \"儿童和年轻成人淋巴瘤患者及儿童软组织肿瘤患者，用药前和用药后1个月内做眼科检查，之后每3个月一次。\", \"避免与强CYP3A抑制剂同用，如无法避免需调整剂量。\", \"避免吃葡萄柚或喝葡萄柚汁。\", \"与中度CYP3A抑制剂同用需谨慎。\", \"避免与强CYP3A诱导剂同用。\", \"避免与CYP3A底物同用，如无法避免需按说明书调整底物剂量。\", \"避免与延长QT间期的药物同用。\", \"避免与引起心动过缓的药物同用，如β受体阻滞剂等。\", \"中度或重度肝损伤、重度肾损伤患者需按说明书调整剂量。\", \"尚无禁忌症。\"], \"side_effects\": [{\"term\": \"肝毒性\", \"plain\": \"可能影响肝脏功能，需定期查血。\", \"when_to_seek_help\": \"出现皮肤或眼白发黄、尿色变深、右上腹不适时需就医。\"}, {\"term\": \"间质性肺病/肺炎\", \"plain\": \"可能引起肺部炎症。\", \"when_to_seek_help\": \"出现新发或加重的咳嗽、呼吸困难、发热时需就医。\"}, {\"term\": \"QT间期延长\", \"plain\": \"可能影响心脏电活动。\", \"when_to_seek_help\": \"出现心悸、头晕、昏厥时需就医。\"}, {\"term\": \"心动过缓\", \"plain\": \"可能使心跳变慢。\", \"when_to_seek_help\": \"出现头晕、乏力、昏厥时需就医。\"}, {\"term\": \"严重视力丧失\", \"plain\": \"可能影响视力。\", \"when_to_seek_help\": \"出现视力明显下降或视野改变时需就医。\"}, {\"term\": \"儿童和年轻成人淋巴瘤及儿童软组织肿瘤的胃肠毒性\", \"plain\": \"可能引起胃肠道不适。\", \"when_to_seek_help\": \"出现严重呕吐、腹泻、腹痛时需就医。\"}, {\"term\": \"成人肺癌常见不良反应\", \"plain\": \"常见视力障碍、恶心、腹泻、呕吐、水肿、便秘、转氨酶升高、疲劳、食欲下降、上呼吸道感染、头晕、神经病变。\", \"when_to_seek_help\": \"这些反应严重或持续不缓解时需就医。\"}, {\"term\": \"淋巴瘤常见不良反应\", \"plain\": \"常见腹泻、呕吐、恶心、视力障碍、头痛、肌肉骨骼疼痛、口腔炎、疲劳、食欲下降、发热、腹痛、咳嗽、瘙痒。\", \"when_to_seek_help\": \"这些反应严重或持续不缓解时需就医。\"}, {\"term\": \"淋巴瘤常见实验室异常\", \"plain\": \"常见中性粒细胞减少、淋巴细胞减少、血小板减少。\", \"when_to_seek_help\": \"出现发热、感染或出血倾向时需就医。\"}, {\"term\": \"成人软组织肿瘤常见不良反应\", \"plain\": \"常见视力障碍、恶心、水肿。\", \"when_to_seek_help\": \"这些反应严重或持续不缓解时需就医。\"}, {\"term\": \"儿童软组织肿瘤常见不良反应\", \"plain\": \"常见呕吐、恶心、腹泻、腹痛、皮疹、视力障碍、上呼吸道感染、咳嗽、发热、肌肉骨骼疼痛、疲劳、水肿、便秘、头痛。\", \"when_to_seek_help\": \"这些反应严重或持续不缓解时需就医。\"}], \"seek_help\": \"出现皮肤或眼白发黄、尿色变深、右上腹不适、新发或加重的咳嗽、呼吸困难、发热、心悸、头晕、昏厥、视力明显下降或视野改变、严重呕吐腹泻腹痛、出血倾向时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:22"
+  }
+]

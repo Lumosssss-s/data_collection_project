@@ -1,0 +1,79 @@
+[
+ {
+  "drug_id": "DRUG-COLORECTAL-FDA-009",
+  "generic_name": "BEVACIZUMAB",
+  "brand_names": [
+   "AVASTIN"
+  ],
+  "title": "BEVACIZUMAB 说明书（FDA DailyMed，结直肠癌适应证）",
+  "indications": [
+   "1 INDICATIONS AND USAGE Avastin is a vascular endothelial growth factor inhibitor indicated for the treatment of: Metastatic colorectal cancer, in combination with intravenous fluorouracil-based chemotherapy for first- or second-line treatment. ( 1.1 ) Metastatic colorectal cancer, in combination with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy for second-line treatment in patients who have progressed on a first-line bevacizumab product-containing regimen. ( 1.1 ) Limitations of Use : Avastin is not indicated for adjuvant treatment of colon cancer. ( 1.1 ) Unresectable, locally advanced, recurrent or metastatic non-squamous non-small cell lung cancer, in combination with carboplatin and paclitaxel for first-line treatment. ( 1.2 ) Recurrent glioblastoma in adults. ( 1.3 ) Metastatic renal cell carcinoma in combination with interferon alfa. ( 1.4 ) Persistent, recurrent, or metastatic cervical cancer, in combination with paclitaxel and cisplatin, or paclitaxel and topotecan. ( 1.5 ) Epithelial ovarian, fallopian tube, or primary peritoneal cancer: in combination with carboplatin and paclitaxel, followed by Avastin as a single agent, for stage III or IV disease following initial surgical resection ( 1.6 ) in combination with paclitaxel, pegylated liposomal doxorubicin, or topotecan for platinum-resistant recurrent disease who received no more than 2 prior chemotherapy regimens ( 1.6 ) in combination with carboplatin and paclitaxel or carboplatin and gemcitabine, followed by Avastin as a single agent, for platinum-sensitive recurrent disease ( 1.6 ) Hepatocellular Carcinoma (HCC) in combination with atezolizumab for the treatment of patients with unresectable or metastatic HCC who have not received prior systemic therapy ( 1.7 ) 1.1 Metastatic Colorectal Cancer Avastin, in combination with intravenous fluorouracil-based chemotherapy, is indicated for the first-or second-line treatment of patients with metastatic colorectal cancer (mCRC). Avastin, in combination with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy, is indicated for the second-line treatment of patients with mCRC who have progressed on a first-line bevacizumab product-containing regimen. Limitations of Use : Avastin is not indicated for adjuvant treatment of colon cancer. 1.2 First-Line Non-Squamous Non–Small Cell Lung Cancer Avastin, in combination with carboplatin and paclitaxel, is indicated for the first-line treatment of patients with unresectable, locally advanced, recurrent or metastatic non–squamous non–small cell lung cancer (NSCLC). 1.3 Recurrent Glioblastoma Avastin is indicated for the treatment of recurrent glioblastoma (GBM) in adults. 1.4 Metastatic Renal Cell Carcinoma Avastin, in combination with interferon alfa, is indicated for the treatment of metastatic renal cell carcinoma (mRCC). 1.5 Persistent, Recurrent, or Metastatic Cervical Cancer Avastin, in combination with paclitaxel and cisplatin or paclitaxel and topotecan, is indicated for the treatment of patients with persistent, recurrent, or metastatic cervical cancer. 1.6 Epithelial Ovarian, Fallopian Tube, or Primary Peritoneal Cancer Avastin, in combination with carboplatin and paclitaxel, followed by Avastin as a single agent, is indicated for the treatment of patients with stage III or IV epithelial ovarian, fallopian tube, or primary peritoneal cancer following initial surgical resection. Avastin, in combination with paclitaxel, pegylated liposomal doxorubicin, or topotecan, is indicated for the treatment of patients with platinum-resistant recurrent epithelial ovarian, fallopian tube or primary peritoneal cancer who received no more than 2 prior chemotherapy regimens. Avastin, in combination with carboplatin and paclitaxel, or with carboplatin and gemcitabine, followed by Avastin as a single agent, is indicated for the treatment of patients with platinum-sensitive recurrent epithelial ovari"
+  ],
+  "dosage": {
+   "standard": "2 DOSAGE AND ADMINISTRATION Withhold for at least 28 days prior to elective surgery. Do not administer Avastin for 28 days following major surgery and until adequate wound healing. ( 2.1 ) Metastatic colorectal cancer ( 2.2 ) 5 mg/kg every 2 weeks with bolus-IFL 10 mg/kg every 2 weeks with FOLFOX4 5 mg/ kg every 2 weeks or 7.5 mg/kg every 3 weeks with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy after progression on a first-line bevacizumab product-containing regimen First-line non–squamous non–small cell lung cancer ( 2.3 ) 15 mg/kg every 3 weeks with carboplatin and paclitaxel Recurrent glioblastoma ( 2.4 ) 10 mg/kg every 2 weeks Metastatic renal cell carcinoma ( 2.5 ) 10 mg/kg every 2 weeks with interferon alfa Persistent, recurrent, or metastatic cervical cancer ( 2.6 ) 15 mg/kg every 3 weeks with paclitaxel and cisplatin, or paclitaxel and topotecan Stage III or IV epithelial ovarian, fallopian tube or primary peritoneal cancer following initial surgical resection ( 2.7 ) 15 mg/kg every 3 weeks with carboplatin and paclitaxel for up to 6 cycles, followed by 15 mg/kg every 3 weeks as a single agent, for a total of up to 22 cycles Platinum-resistant recurrent epithelial ovarian, fallopian tube or primary peritoneal cancer ( 2.7 ) 10 mg/kg every 2 weeks with paclitaxel, pegylated liposomal doxorubicin, or topotecan given every week 15 mg/kg every 3 weeks with topotecan given every 3 weeks Platinum-sensitive recurrent epithelial ovarian, fallopian tube, or primary peritoneal cancer ( 2.7 ) 15 mg/kg every 3 weeks with carboplatin and paclitaxel for 6-8 cycles, followed by 15 mg/kg every 3 weeks as a single agent 15 mg/kg every 3 weeks with carboplatin and gemcitabine for 6-10 cycles, followed by 15 mg/kg every 3 weeks as a single agent Hepatocellular Carcinoma ( 2.8 ) 15 mg/kg after administration of 1,200 mg of atezolizumab every 3 weeks Administer as an intravenous infusion after dilution. See full Prescribing Information for preparation and administration instructions and dosage modifications for adverse reactions ( 2.9 , 2.10 ) 2.1 Important Administration Information Withhold for at least 28 days prior to elective surgery. Do not administer Avastin until at least 28 days following major surgery and until adequate wound healing. 2.2 Metastatic Colorectal Cancer The recommended dosage when Avastin is administered in combination with intravenous fluorouracil-based chemotherapy is: 5 mg/kg intravenously every 2 weeks in combination with bolus-IFL. 10 mg/kg intravenously every 2 weeks in combination with FOLFOX4. 5 mg/kg intravenously every 2 weeks or 7.5 mg/kg intravenously every 3 weeks in combination with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy in patients who have progressed on a first-line bevacizumab product-containing regimen. 2.3 First-Line Non-Squamous Non-Small Cell Lung Cancer The recommended dosage is 15 mg/kg intravenously every 3 weeks in combination with carboplatin and paclitaxel. 2.4 Recurrent Glioblastoma The recommended dosage is 10 mg/kg intravenously every 2 weeks. 2.5 Metastatic Renal Cell Carcinoma The recommended dosage is 10 mg/kg intravenously every 2 weeks in combination with interferon alfa. 2.6 Persistent, Recurrent, or Metastatic Cervical Cancer The recommended dosage is 15 mg/kg intravenously every 3 weeks in combination with paclitaxel and cisplatin or in combination with paclitaxel and topotecan. 2.7 Epithelial Ovarian, Fallopian Tube or Primary Peritoneal Cancer Stage III or IV Disease Following Initial Surgical Resection The recommended dosage is 15 mg/kg intravenously every 3 weeks in combination with carboplatin and paclitaxel for up to 6 cycles, followed by Avastin 15 mg/kg every 3 weeks as a single agent for a total of up to 22 cycles or until disease progression, whichever occurs earlier. Recurrent Disease Platinum Resistant The recommended dosage is 10 mg/kg intravenously every 2 weeks in combination with paclita",
+   "adjustment": ""
+  },
+  "contraindications": [
+   "尚无禁忌（FDA 说明书原文：None）"
+  ],
+  "adverse_reactions": [
+   {
+    "term": "The following clinically significant adverse reactions are described elsewhere in the labeling: Gastrointestinal Perforations and Fistulae . Surgery and Wound Healing Complications. Hemorrhage. Arterial Thromboembolic Events. Venous Thromboembolic Events. Hypertension. Posterior Reversible Encephalopathy Syndrome. Renal Injury and Proteinuria. Infusion-Related Reactions. Ovarian Failure. Congestive Heart Failure. Most common adverse reactions incidence (incidence > 10%) are epistaxis, headache, hypertension, rhinitis, proteinuria, taste alteration, dry skin, hemorrhage, lacrimation disorder, back pain and exfoliative dermatitis. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Genentech, Inc. at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. 6.1 Clinical Trials Experience Because clinical studies are conducted under widely varying conditions, adverse reaction rates observed in the clinical studies of a drug cannot be directly compared to rates in the clinical studies of another drug and may not reflect the rates observed in practice. The safety data in Warnings and Precautions and described below reflect exposure to Avastin in 4463 patients including those with mCRC (AVF2107g, E3200), non-squamous NSCLC (E4599), GBM (EORTC 26101), mRCC (BO17705), cervical cancer (GOG-0240), epithelial ovarian, fallopian tube, or primary peritoneal cancer (MO22224, AVF4095, GOG-0213, and GOG-0218), or HCC (IMbrave150) at the recommended dose and schedule for a median of 6 to 23 doses. The most common adverse reactions observed in patients receiving Avastin as a single agent or in combination with other anti-cancer therapies at a rate > 10% were epistaxis, headache, hypertension, rhinitis, proteinuria, taste alteration, dry skin, hemorrhage, lacrimation disorder, back pain, and exfoliative dermatitis. Across clinical studies, Avastin was discontinued in 8% to 22% of patients because of adverse reactions. Metastatic Colorectal Cancer In Combination with bolus-IFL The safety of Avastin was evaluated in 392 patients who received at least one dose of Avastin in a double-blind, active-controlled study (AVF2107g), which compared Avastin (5 mg/kg every 2 weeks) with bolus-IFL to placebo with bolus-IFL in patients with mCRC . Patients were randomized (1:1:1) to placebo with bolus-IFL, Avastin with bolus-IFL, or Avastin with fluorouracil and leucovorin. The demographics of the safety population were similar to the demographics of the efficacy population. All G",
+    "frequency": "10%",
+    "ctcae_hint": null
+   }
+  ],
+  "cancer_type": "colorectal",
+  "doc_type": "drug_label",
+  "issuer": "FDA / DailyMed",
+  "publish_date": null,
+  "license_note": "FDA DailyMed public label",
+  "file_path": "raw/drug_labels/DRUG-LUNG-FDA-003.xml",
+  "doc_hash": "8f44417c744e1fb2d98ade54e9239bce91e63b20466cacef6e4efa198d4e094e",
+  "review_status": "draft",
+  "_source": "dailymed",
+  "_setid": "939b5d1f-9fb2-4499-80ef-0607aa6b114e",
+  "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/939b5d1f-9fb2-4499-80ef-0607aa6b114e.xml",
+  "atc_code": "L01FG01",
+  "approval_no": null,
+  "source_name": "BEVACIZUMAB 说明书（FDA DailyMed，结直肠癌适应证）",
+  "source_version": "2025",
+  "source_section": "全文",
+  "source_file": "DRUG-LUNG-FDA-003.xml",
+  "updated_at": "2026-10-26",
+  "interactions": [
+   "Effects of Avastin on Other Drugs",
+   "No clinically meaningful effect on the pharmacokinetics of irinotecan or its active metabolite SN38, interferon alfa, carboplatin or paclitaxel was observed when Avastin was administered in combination with these drugs; however, 3 of the 8 patients receiving Avastin with paclitaxel and carboplatin had lower paclitaxel exposure after four cycles of treatment (at Day 63) than those at Day 0, while patients receiving paclitaxel and carboplatin alone had a greater paclitaxel exposure at Day 63 than at Day 0."
+  ],
+  "warnings": null,
+  "boxed_warning": null,
+  "dosage_adjustment": {
+   "renal": {
+    "located": false,
+    "reason": "source XML missing（无原始 XML，无法规则抽取）",
+    "items": []
+   },
+   "hepatic": {
+    "located": false,
+    "reason": "source XML missing（无原始 XML，无法规则抽取）",
+    "items": []
+   },
+   "toxicity_modification": {
+    "located": false,
+    "reason": "source XML missing（无原始 XML，无法规则抽取）",
+    "items": []
+   }
+  },
+  "safety_extraction_meta": {
+   "extractor": "extract_drug_safety_v2.py",
+   "extracted_at": "2026-11-02",
+   "source_xml": "DRUG-COLORECTAL-FDA-009.xml",
+   "xml_present": false
+  },
+  "cancer_types": [
+   "colorectal"
+  ],
+  "duplicate_of": "DRUG-LUNG-FDA-003",
+  "duplicate_reason": "由 fetch_dailymed_labels.link_colorectal_views() 从 DRUG-LUNG-FDA-003 克隆（同 setid/doc_hash/file_path，无独立 XML）；保留记录仅作结直肠视图，入库时应跳过，以 duplicate_of 指向的主记录为准"
+ }
+]

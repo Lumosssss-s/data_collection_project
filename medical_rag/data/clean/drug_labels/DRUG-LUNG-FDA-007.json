@@ -1,0 +1,235 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-007",
+    "generic_name": "ATEZOLIZUMAB",
+    "brand_names": [],
+    "aliases_zh": [
+      "阿替利珠单抗"
+    ],
+    "title": "ATEZOLIZUMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "TECENTRIQ is a programmed death-ligand 1 (PD-L1) blocking antibody indicated:",
+      "Non-Small Cell Lung Cancer (NSCLC)",
+      "Small Cell Lung Cancer (SCLC)",
+      "Hepatocellular Carcinoma (HCC)",
+      "Alveolar Soft Part Sarcoma (ASPS)",
+      "Muscle Invasive Bladder Cancer (MIBC)",
+      "Mismatch Repair–Deficient Colon Cancer",
+      "TECENTRIQ, in combination with bevacizumab, is indicated for the treatment of adult patients with unresectable or metastatic hepatocellular carcinoma (HCC) who have not received prior systemic therapy.",
+      "TECENTRIQ, in combination with cobimetinib and vemurafenib, is indicated for the treatment of adult patients with BRAF V600 mutation-positive unresectable or metastatic melanoma [see Dosage and Administration (2.1)].",
+      "TECENTRIQ, as a single agent, is indicated for the treatment of adult and pediatric patients 2 years of age and older with unresectable or metastatic alveolar soft part sarcoma (ASPS).",
+      "【中文适应证】阿替利珠单抗用于经国家药品监督管理局批准的检测方法评估为≥50%肿瘤细胞PD-L1 染色阳性（TC≥50%）或肿瘤浸润PD-L1 阳性免疫细胞（IC）覆盖≥10%的肿瘤面积（IC≥10%）的EGFR 基因突变阴性和ALK 阴性的转移性NSCLC一线单药治疗。（附条件获批）3.阿替利珠单抗联合培美曲塞和铂类化疗用于EGFR 基因突变阴性和ALK 阴性的转移性非鳞状细胞NSCLC 患者的一线治疗。",
+      "【中文适应证】阿替利珠单抗单药用于检测评估为≥1%肿瘤细胞（TC）PD-L1 染色阳性、经手术切除、以铂类为基础化疗之后的Ⅱ～ ⅢA 期NSCLC 患者的辅助治疗。"
+    ],
+    "dosage": {
+      "standard": "Administer TECENTRIQ intravenously over 60 minutes. If the first infusion is tolerated, all subsequent infusions may be delivered over 30 minutes. Small Cell Lung Cancer Hepatocellular Carcinoma Select patients with: Information regarding FDA-authorized tests for determining PD-L1 expression in metastatic NSCLC, detecting BRAF V600 mutations in melanoma, and determining ctDNA MRD status in MIBC are available at: http://www.fda.gov/CompanionDiagnostics. An FDA-authorized test for detection of dMMR tumor status in patients with colon cancer is not currently available. The recommended dosages of TECENTRIQ are presented in Table 1. Administer TECENTRIQ as an intravenous infusion over 60 minutes. If the first infusion is tolerated, all subsequent infusions may be delivered over 30 minutes. Indication Recommended Dosage of TECENTRIQ Duration of Therapy Metastatic NSCLC 840 mg every 2 weeks or 1200 mg every 3 weeks or 1680 mg every 4 weeks Until disease progression or unacceptable toxicity Adjuvant Treatment of NSCLC 840 mg every 2 weeks or 1200 mg every 3 weeks or 1680 mg every 4 weeks Up to one year, unless there is disease recurrence or unacceptable toxicity ASPS (adult) 840 mg every 2 weeks or 1200 mg every 3 weeks or 1680 mg every 4 weeks Until disease progression or unacceptable toxicity ASPS (pediatric, 2 years of age and older) 15 mg/kg (up to a maximum of 1200 mg) every 3 weeks MIBC 840 mg every 2 weeks or 1200 mg every 3 weeks or 1680 mg every 4 weeks Up to one year, unless there is disease recurrence or unacceptable toxicity The recommended intravenous dosages of TECENTRIQ in combination with other therapeutic agents are presented in Table 2. Refer to the respective Prescribing Information for each therapeutic agent administered in combination with TECENTRIQ for the",
+      "adjustment": "Select patients with: Information regarding FDA-authorized tests for determining PD-L1 expression in metastatic NSCLC, detecting BRAF V600 mutations in melanoma, and determining ctDNA MRD status in MIBC are available at: http://www.fda.gov/CompanionDiagnostics. An FDA-authorized test for detection of dMMR tumor status in patients with colon cancer is not currently available. The recommended dosages of TECENTRIQ are presented in Table 1. Administer TECENTRIQ as an intravenous infusion over 60 minutes. If the first infusion is tolerated, all subsequent infusions may be delivered over 30 minutes. Indication Recommended Dosage of TECENTRIQ Duration of Therapy Metastatic NSCLC 840 mg every 2 weeks or 1200 mg every 3 weeks or 1680 mg every 4 weeks Until disease progression or unacceptable toxicity Adjuvant Treatment of NSCLC 840 mg every 2 weeks or 1200 mg every 3 weeks or 1680 mg every 4 weeks Up to one year, unless there is disease recurrence or unacceptable toxicity ASPS (adult) 840 mg every 2 weeks or 1200 mg every 3 weeks or 1680 mg every 4 weeks Until disease progression or unacceptable toxicity ASPS (pediatric, 2 years of age and older) 15 mg/kg (up to a maximum of 1200 mg) every "
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following clinically significant adverse reactions are described elsewhere in the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "TECENTRIQ as a single-agent",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "TECENTRIQ in combination with other antineoplastic drugs",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "TECENTRIQ in combination with bevacizumab",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "TECENTRIQ in combination with cobimetinib and vemurafenib",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Genentech at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data described in WARNINGS AND PRECAUTIONS reflect exposure to TECENTRIQ as a single-agent in 2616 patients in two randomized, active-controlled studies (PO",
+        "frequency": "36%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "In addition, the data reflect exposure to TECENTRIQ in combination with other antineoplastic drugs in 2421 patients with NSCLC (N = 2223) or SCLC (N = 198) enro",
+        "frequency": "53%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data also reflect exposure to TECENTRIQ administered in combination with cobimetinib and vemurafenib in 230 patients enrolled in IMspire150. Among the 230 p",
+        "frequency": "62%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Non-Small Cell Lung Cancer (NSCLC)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adjuvant Treatment of Early-stage NSCLC",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of TECENTRIQ was evaluated in IMpower010, a multicenter, open-label, randomized trial for the adjuvant treatment of patients with stage IB (tumors ≥ ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Fatal adverse reactions occurred in 1.8% of patients receiving TECENTRIQ; these included multiple organ dysfunction syndrome, pneumothorax, interstitial lung di",
+        "frequency": "1.8%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Serious adverse reactions occurred in 18% of patients receiving TECENTRIQ. The most frequent serious adverse reactions (>1%) were pneumonia (1.8%), pneumonitis ",
+        "frequency": "18%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "TECENTRIQ was discontinued due to adverse reactions in 18% of patients; the most common adverse reactions (≥1%) leading to TECENTRIQ discontinuation were pneumo",
+        "frequency": "18%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions leading to interruption of TECENTRIQ occurred in 29% of patients; the most common (>1%) were rash (3.0%), hyperthyroidism (2.8%), hypothyroidi",
+        "frequency": "29%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Tables 4 and 5 summarize adverse reactions and selected laboratory abnormalities in patients receiving TECENTRIQ in IMpower010.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse ReactionGraded per NCI CTCAE v4.0 TECENTRIQN = 495 Best Supportive Care N = 495",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades(%) Grades 3–4(%) All Grades(%) Grades 3–4(%)",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-10-16",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-007.xml",
+    "doc_hash": "810bcef355ea8edfedf55687ee2b2323ba46343f3121b2933528a91bab676fb9",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "6fa682c9-a312-4932-9831-f286908660ee",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/6fa682c9-a312-4932-9831-f286908660ee.xml",
+    "atc_code": "L01FF05",
+    "approval_no": "国药准字SJ20200004",
+    "source_name": "ATEZOLIZUMAB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-007.xml",
+    "updated_at": "2026-10-26",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions",
+        "text": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions: TECENTRIQ is a monoclonal antibody that belongs to a class of drugs that bind to either the programmed death-receptor 1 (PD-1) or the PD-ligand 1 (PD-L1), blocking the PD-1/PD-L1 pathway, thereby removing inhibition of the immune response, potentially breaking peripheral tolerance and inducing immune-mediated adverse reactions. Important immune-mediated adverse reactions listed under Warnings and Precautions may not include all possible severe and fatal immune-mediated reactions. Immune-mediated adverse reactions, which may be severe or fatal, can occur in any organ system or tissue. Immune-mediated adverse reactions can occur at any time after starting a PD-1/PD-L1 blocking antibody. While immune-mediated adverse reactions usually manifest during treatment with PD-1/PD-L1 blocking antibodies, immune-mediated adverse reactions can also manifest after discontinuation of PD-1/PD-L1 blocking antibodies. Early identification and management of immune-mediated adverse reactions are essential to ensure safe use of PD-1/PD-L1 blocking antibodies. Monitor patients closely for symptoms and signs that may be clinical manifestations of underlying immune-mediated adverse reactions. Evaluate liver enzymes, creatinine, and thyroid function at baseline and periodically during treatment. In cases of suspected immune-mediated adverse reactions, initiate appropriate workup to exclude alternative etiologies, including infection. Institute medical management promptly, including specialty consultation as appropriate. Withhold or permanently discontinue TECENTRIQ depending on severity [see Dosage and Administration (2.3)]. In general, if TECENTRIQ requires interruption or discontinuation, administer systemic corticosteroid therapy (1 to 2 mg/kg/day prednisone or equivalent) until improvement to Grade 1 or less. Upon improvement to Grade 1 or less, initiate corticosteroid taper and continue to taper over at least 1 month. Consider administration of other systemic immunosuppressants in patients whose immune-mediated adverse reactions are not controlled with corticosteroid therapy. Toxicity management guidelines for adverse reactions that do not necessarily require systemic steroids (e.g., endocrinopathies and dermatologic reactions) are discussed below. Immune-Mediated Pneumonitis TECENTRIQ can cause immune-mediated pneumonitis. The incidence of pneumonitis is higher in patients who have received prior thoracic radiation. TECENTRIQ as a Single Agent: Immune-mediated pneumonitis occurred in 3% (83/2616) of patients receiving TECENTRIQ as a single agent, including fatal (<0.1%), Grade 4 (0.2%), Grade 3 (0.8%), and Grade 2 (1.1%) adverse reactions. Pneumonitis led to permanent discontinuation of TECENTRIQ in 0.5% and withholding of TECENTRIQ in 1.5% of patients. Systemic corticosteroids were required in 55% (46/83) of patients with pneumonitis. Pneumonitis resolved in 69% of the 83 patients. Of the 39 patients in whom TECENTRIQ was withheld for pneumonitis, 25 reinitiated TECENTRIQ after symptom improvement; of these, 4% had recurrence of pneumonitis. In IMpower010 immune-mediated pneumonitis occurred in 3.8% (19/495) of patients receiving TECENTRIQ as a single agent, including fatal (0.2%), Grade 4 (0.2%), and Grade 3 (0.6%) adverse reactions. Pneumonitis led to permanent discontinuation of TECENTRIQ in 2.2% and withholding of TECENTRIQ in 0.8% of patients. Systemic corticosteroids were required in 63% (12/19) of patients with pneumonitis. Pneumonitis resolved in 84% of the 19 patients. TECENTRIQ in Combination with Cobimetinib and Vemurafenib: Immune-mediated pneumonitis occurred in 13% (29/230) of patients receiving TECENTRIQ in combination with cobimetinib and vemurafenib, including Grade 3 (1.3%) and Grade 2 (7%) adverse reactions. Pneumonitis led to permanent discontinuation of TECENTRIQ in 2.6% and withholding of TECENTRIQ in 7.4% of patients. Systemic corticosteroids were required in 55% (16/29) of patients with pneumonitis. Pneumonitis resolved in 97% of the 29 patients. Of the 17 patients in whom TECENTRIQ was withheld for pneumonitis, 10 reinitiated TECENTRIQ after symptom improvement; of these, 50% had recurrence of pneumonitis. Immune-Mediated Colitis TECENTRIQ can cause immune-mediated colitis. Colitis can present with diarrhea, abdominal pain, and lower gastrointestinal (GI) bleeding. Cytomegalovirus (CMV) infection/reactivation has been reported in patients with corticosteroid-refractory immune-mediated colitis. In cases of corticosteroid-refractory colitis, consider repeating infectious workup to exclude alternative etiologies. Immune-mediated colitis occurred in 1% (26/2616) of patients receiving TECENTRIQ as a single agent, including Grade 3 (0.5%) and Grade 2 (0.3%) adverse reactions. Colitis led to permanent discontinuation of TECENTRIQ in 0.2% and withholding of TECENTRIQ in 0.5% of patients. Systemic corticosteroids were required in 50% (13/26) of patients with colitis. Colitis resolved in 73% of the 26 patients. Of the 12 patients in whom TECENTRIQ was withheld for colitis, 8 reinitiated treatment with TECENTRIQ after symptom improvement; of these, 25% had recurrence of colitis. Immune-Mediated Hepatitis TECENTRIQ can cause immune-mediated hepatitis. Immune-mediated hepatitis occurred in 1.8% (48/2616) of patients receiving TECENTRIQ as a single agent, including fatal (<0.1%), Grade 4 (0.2%), Grade 3 (0.5%), and Grade 2 (0.5%) adverse reactions. Hepatitis led to permanent discontinuation of TECENTRIQ in 0.2% and withholding of TECENTRIQ in 0.2% of patients. Systemic corticosteroids were required in 25% (12/48) of patients with hepatitis. Hepatitis resolved in 50% of the 48 patients. Of the 6 patients in whom TECENTRIQ was withheld for hepatitis, 4 reinitiated treatment with TECENTRIQ after symptom improvement; of these, none had recurrence of hepatitis. Immune-mediated hepatitis occurred in 6.1% (14/230) of patients receiving TECENTRIQ in combination with cobimetinib and vemurafenib, including Grade 4 (1.3%), Grade 3 (1.7%) and Grade 2 (1.3%) adverse reactions. Hepatitis led to permanent discontinuation of TECENTRIQ in 2.2% and withholding of TECENTRIQ in 1.7% of patients. Systemic corticosteroids were required in 50% (7/14) of patients with hepatitis. Hepatitis resolved in 93% of the 14 patients. Of the 4 patients in whom TECENTRIQ was withheld for hepatitis, 3 reinitiated TECENTRIQ after symptom improvement; of these, 33% had recurrence of hepatitis. Immune-Mediated Endocrinopathies Adrenal Insufficiency TECENTRIQ can cause primary or secondary adrenal insufficiency. For Grade 2 or higher adrenal insufficiency, initiate symptomatic treatment, including hormone replacement as clinically indicated. Withhold or permanently discontinue TECENTRIQ depending on severity [see Dosage and Administration (2.3)]. Adrenal insufficiency occurred in 0.4% (11/2616) of patients receiving TECENTRIQ as a single agent, including Grade 3 (<0.1%) and Grade 2 (0.2%) adverse reactions. Adrenal insufficiency led to permanent discontinuation of TECENTRIQ in one patient and withholding of TECENTRIQ in one patient. Systemic corticosteroids were required in 82% (9/11) of patients with adrenal insufficiency; of these, 3 patients remained on systemic corticosteroids. The single patient in whom TECENTRIQ was withheld for adrenal insufficiency did not reinitiate TECENTRIQ. In IMpower010 immune-mediated adrenal insufficiency occurred in 1.2% (6/495) of patients receiving TECENTRIQ as a single agent, including Grade 3 (0.4%) adverse reactions. Adrenal insufficiency led to permanent discontinuation of TECENTRIQ in 0.6% and withholding of TECENTRIQ in 0.2% of patients. Systemic corticosteroids were required in 83% (5/6) of patients with adrenal insufficiency; of these, 4 patients remained on systemic corticosteroids. TECENTRIQ can cause immune-mediated hypophysitis. Hypophysitis can present with acute symptoms associated with mass effect such as headache, photophobia, or visual field cuts. Hypophysitis can cause hypopituitarism. Initiate hormone replacement as clinically indicated. Withhold or permanently discontinue TECENTRIQ depending on severity [see Dosage and Administration (2.3)]. Hypophysitis occurred in <0.1% (2/2616) of patients receiving TECENTRIQ as a single agent, including Grade 2 (1 patient, <0.1%) adverse reactions. Hypophysitis led to permanent discontinuation of TECENTRIQ in one patient and no patients required withholding of TECENTRIQ. Systemic corticosteroids were required in 50% (1/2) of patients with hypophysitis. Hypophysitis did not resolve in these 2 patients. Thyroid disorders TECENTRIQ can cause immune-mediated thyroid disorders. Thyroiditis can present with or without endocrinopathy. Hypothyroidism can follow hyperthyroidism. Initiate hormone replacement for hypothyroidism or medical management for hyperthyroidism as clinically indicated. Withhold or permanently discontinue TECENTRIQ depending on severity [see Dosage and Administration (2.3)]. Thyroiditis occurred in 0.2% (4/2616) of patients receiving TECENTRIQ as a single agent, including Grade 2 (<0.1%) adverse reactions. Thyroiditis did not lead to permanent discontinuation of TECENTRIQ in any of these patients, but led to withholding of TECENTRIQ in one patient. Hormone replacement therapy was required in 75% (3/4) of patients with thyroiditis. Systemic corticosteroids were required in 25% (1/4) of patients with thyroiditis. Thyroiditis resolved in 50% of patients. The single patient in whom TECENTRIQ was withheld for thyroiditis reinitiated TECENTRIQ; this patient did not have recurrence of thyroiditis. In IMpower010, thyroiditis occurred in 1.2% (6/495) of patients receiving TECENTRIQ as a single agent, including Grade 2 (0.4%) adverse reactions. Thyroiditis led to withholding of TECENTRIQ in one patient. Hormone replacement therapy was required in 67% (4/6) of patients with thyroiditis. Systemic corticosteroids were required in 33% (2/6) of patients with thyroiditis. Thyroiditis resolved in 50% of patients. Hyperthyroidism: Hyperthyroidism occurred in 0.8% (21/2616) of patients receiving TECENTRIQ as a single agent, including Grade 2 (0.4%) adverse reactions. Hyperthyroidism did not lead to permanent discontinuation of TECENTRIQ in any of these patients, but led to withholding of TECENTRIQ in 0.1% of patients. Antithyroid therapy was required in 29% (6/21) of patients with hyperthyroidism. Of these 6 patients, the majority remained on antithyroid treatment. Of the 3 patients in whom TECENTRIQ was withheld for hyperthyroidism, one patient reinitiated TECENTRIQ; this patient did not have recurrence of hyperthyroidism. In IMpower010 hyperthyroidism occurred in 6% (32/495) of patients receiving TECENTRIQ as a single agent, including Grade 3 (0.4%) adverse reactions. Hyperthyroidism led to permanent discontinuation of TECENTRIQ in 0.8% and withholding of TECENTRIQ in 2.8% of patients. Antithyroid therapy was required in 38% (12/32) of patients with hyperthyroidism. Of these 12 patients, the majority remained on antithyroid treatment. Of the 14 patients in whom TECENTRIQ was withheld for hyperthyroidism, 9 patients reinitiated TECENTRIQ. Hyperthyroidism occurred in 19% (43/230) of patients receiving TECENTRIQ in combination with cobimetinib and vemurafenib, including Grade 3 (0.9%) and Grade 2 (7.8%) adverse reactions. Hyperthyroidism led to permanent discontinuation of TECENTRIQ in 0.4% and withholding of TECENTRIQ in 10% of patients. Antithyroid therapy was required in 53% (23/43) of patients with hyperthyroidism. Of these 23 patients, the majority remained on antithyroid treatment. Of the 24 patients in whom TECENTRIQ was withheld for hyperthyroidism, 18 patients reinitiated TECENTRIQ; of these, 28% had recurrence of hyperthyroidism. Hypothyroidism occurred in 4.9% (128/2616) of patients receiving TECENTRIQ as a single agent, including Grade 3 (0.2%) and Grade 2 (3.4%) adverse reactions. Hypothyroidism did not lead to permanent discontinuation of TECENTRIQ in any of these patients, but led to withholding of TECENTRIQ in 0.6% of patients. Hormone replacement therapy was required in 81% (104/128) of patients with hypothyroidism. The majority of patients with hypothyroidism remained on thyroid hormone replacement. Of the 17 patients in whom TECENTRIQ was withheld for hypothyroidism, 8 reinitiated TECENTRIQ after symptom improvement. In IMpower010 hypothyroidism occurred in 17% (86/495) of patients receiving TECENTRIQ as a single agent. Hypothyroidism led to permanent discontinuation of TECENTRIQ in 1.6% and withholding of TECENTRIQ in 1.6% of patients. Hormone replacement was required in 57% (49/86) of patients with hypothyroidism. The majority of patients with hypothyroidism remained on thyroid hormone replacement. Of the 8 patients in whom TECENTRIQ was withheld for hypothyroidism, 3 reinitiated TECENTRIQ after symptom improvement. TECENTRIQ in Combination with Platinum-based Chemotherapy: Hypothyroidism occurred in 11% (277/2421) of patients with NSCLC and SCLC receiving TECENTRIQ in combination with platinum-based chemotherapy, including Grade 4 (<0.1%), Grade 3 (0.3%), and Grade 2 (5.7%) adverse reactions. Hypothyroidism led to permanent discontinuation of TECENTRIQ in 0.1% and withholding of TECENTRIQ in 1.6% of patients. Hormone replacement therapy was required in 71% (198/277) of patients with hypothyroidism. The majority of patients with hypothyroidism remained on thyroid hormone replacement. Of the 39 patients in whom TECENTRIQ was withheld for hypothyroidism, 9 reinitiated TECENTRIQ after symptom improvement. Hypothyroidism occurred in 26% (60/230) of patients receiving TECENTRIQ in combination with cobimetinib and vemurafenib, including Grade 2 (9.1%) adverse reactions. Hypothyroidism did not lead to permanent discontinuation of TECENTRIQ in any of these patients, but led to withholding of TECENTRIQ in 2.6% of patients. Hormone replacement therapy was required in 52% (31/60) of patients with hypothyroidism. The majority of patients with hypothyroidism remained on thyroid hormone replacement. Of the 6 patients in whom TECENTRIQ was withheld for hypothyroidism, 4 reinitiated TECENTRIQ after symptom improvement. The majority of patients with hypothyroidism required long term thyroid replacement. Type 1 Diabetes Mellitus, which can present with Diabetic Ketoacidosis Monitor patients for hyperglycemia or other signs and symptoms of diabetes. Initiate treatment with insulin as clinically indicated. Withhold or permanently discontinue TECENTRIQ depending on severity [see Dosage and Administration (2.3)]. Type 1 diabetes mellitus occurred in 0.3% (7/2616) of patients receiving TECENTRIQ, including Grade 3 (0.2%) and Grade 2 (<0.1%) adverse reactions. Type 1 diabetes mellitus led to permanent discontinuation of TECENTRIQ in one patient and withholding of TECENTRIQ in two patients. Treatment with insulin was required for all patients with confirmed Type 1 diabetes mellitus and insulin therapy was continued long-term. Of the 2 patients in whom TECENTRIQ was withheld for Type 1 diabetes mellitus, both re-initiated TECENTRIQ treatment. Immune-Mediated Nephritis with Renal Dysfunction TECENTRIQ can cause immune-mediated nephritis. Immune-mediated nephritis with renal dysfunction occurred in <0.1% (1/2616) of patients receiving TECENTRIQ as a single agent, and this adverse reaction was a Grade 3 (<0.1%) adverse reaction. Nephritis led to permanent discontinuation of TECENTRIQ in this patient. This patient required systemic corticosteroids. In this patient, nephritis did not resolve. Immune-mediated nephritis with renal dysfunction occurred in 1.3% (3/230) of patients receiving TECENTRIQ in combination with cobimetinib and vemurafenib, including Grade 2 (1.3%) adverse reactions. Nephritis led to permanent discontinuation of TECENTRIQ in 0.4% and withholding of TECENTRIQ in 0.9% of patients. Systemic corticosteroids were required in 67% (2/3) of patients with nephritis. Nephritis resolved in all 3 of these patients. Of the 2 patients in whom TECENTRIQ was withheld for nephritis, both reinitiated TECENTRIQ after symptom improvement and neither had recurrence of nephritis. Immune-Mediated Dermatologic Adverse Reactions TECENTRIQ can cause immune-mediated rash or dermatitis. Exfoliative dermatitis, including Stevens-Johnson syndrome (SJS), DRESS, and toxic epidermal necrolysis (TEN), has occurred with PD-1/PD-L1 blocking antibodies. Topical emollients and/or topical corticosteroids may be adequate to treat mild to moderate non-exfoliative rashes. Withhold or permanently discontinue TECENTRIQ depending on severity [see Dosage and Administration (2.3)]. Immune-mediated dermatologic adverse reactions occurred in 0.6% (15/2616) of patients receiving TECENTRIQ as a single agent, including Grade 3 (<0.1%) and Grade 2 (0.2%) adverse reactions. Dermatologic adverse reactions led to permanent discontinuation of TECENTRIQ in 0.1% and withholding of TECENTRIQ in 0.2% of patients. Systemic corticosteroids were required in 20% (3/15) of patients with dermatologic adverse reactions. Dermatologic adverse reactions resolved in 87% of the 15 patients. Of the 4 patients in whom TECENTRIQ was withheld for immune-mediated dermatologic adverse reactions, none re-initiated TECENTRIQ. Other Immune-Mediated Adverse Reactions The following clinically significant immune-mediated adverse reactions occurred at an incidence of < 1% (unless otherwise noted) in patients who received TECENTRIQ or were reported with the use of other PD-1/PD-L1 blocking antibodies. Severe or fatal cases have been reported for some of these adverse reactions. Cardiac/Vascular: Myocarditis, pericarditis, vasculitis. Nervous System: Meningitis, encephalitis, myelitis and demyelination, myasthenic syndrome/myasthenia gravis (including exacerbation), Guillain-Barré syndrome, nerve paresis, autoimmune neuropathy. Ocular: Uveitis, iritis, and other ocular inflammatory toxicities can occur. Some cases can be associated with retinal detachment. Various grades of visual impairment, including blindness, can occur. If uveitis occurs in combination with other immune-mediated adverse reactions, consider a Vogt-Koyanagi-Harada-like syndrome, as this may require treatment with systemic steroids to reduce the risk of permanent vision loss. Gastrointestinal: Pancreatitis to include increases in serum amylase and lipase levels, gastritis, duodenitis. Musculoskeletal and Connective Tissue: Myositis/polymyositis, rhabdomyolysis and associated sequelae including renal failure, arthritis, polymyalgia rheumatic. Endocrine: Hypoparathyroidism. Hematologic/Immune: Hemolytic anemia, aplastic anemia, hemophagocytic lymphohistiocytosis, systemic inflammatory response syndrome, histiocytic necrotizing lymphadenitis (Kikuchi lymphadenitis), sarcoidosis, immune thrombocytopenic purpura, solid organ transplant rejection, other transplant (including corneal graft) rejection. Other: Myocarditis-Myositis-Myasthenia Gravis (or Myasthenia-Like) Overlap Syndrome, reported as the co-occurrence of either two or all three adverse reactions.",
+        "char_len": 19208,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions",
+        "source_xml": "DRUG-LUNG-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Infusion-Related Reactions",
+        "text": "5.2 Infusion-Related Reactions: TECENTRIQ can cause severe or life-threatening infusion-related reactions, including anaphylaxis. Monitor for signs and symptoms of infusion-related reactions. Interrupt, slow the rate of, or permanently discontinue TECENTRIQ based on the severity [see Dosage and Administration (2.3)]. For Grade 1 or 2 infusion-related reactions, consider using pre-medications with subsequent doses. In clinical studies enrolling 2616 patients with various cancers who received TECENTRIQ as a single-agent [see Adverse Reactions (6.1)], infusion-related reactions occurred in 1.3% of patients, including Grade 3 (0.2%). The frequency and severity of infusion-related reactions were similar whether TECENTRIQ was given as a single-agent in patients with various cancers, in combination with other antineoplastic drugs in NSCLC and SCLC, and across the recommended dose range (840 mg Q2W to 1680 mg Q4W).",
+        "char_len": 920,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Infusion-Related Reactions",
+        "source_xml": "DRUG-LUNG-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Complications of Allogeneic HSCT after PD-1/PD-L1 Inhibitors",
+        "text": "5.3 Complications of Allogeneic HSCT after PD-1/PD-L1 Inhibitors: Fatal and other serious complications can occur in patients who receive allogeneic hematopoietic stem cell transplantation (HSCT) before or after being treated with a PD-1/PD-L1 blocking antibody. Transplant-related complications include hyperacute graft-versus-host disease (GVHD), acute GVHD, chronic GVHD, hepatic veno-occlusive disease (VOD) after reduced intensity conditioning, and steroid-requiring febrile syndrome (without an identified infectious cause). These complications may occur despite intervening therapy between PD-1/PD-L1 blockage and allogeneic HSCT. Follow patients closely for evidence of transplant-related complications and intervene promptly. Consider the benefits versus risks of treatment with a PD-1/PD-L1 blocking antibody prior to or after an allogeneic HSCT.",
+        "char_len": 856,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Complications of Allogeneic HSCT after PD-1/PD-L1 Inhibitors",
+        "source_xml": "DRUG-LUNG-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Embryo-Fetal Toxicity",
+        "text": "5.4 Embryo-Fetal Toxicity: Based on its mechanism of action, TECENTRIQ can cause fetal harm when administered to a pregnant woman. There are no available data on the use of TECENTRIQ in pregnant women. Animal studies have demonstrated that inhibition of the PD-L1/PD-1 pathway can lead to increased risk of immune-related rejection of the developing fetus resulting in fetal death. Verify pregnancy status of females of reproductive potential prior to initiating TECENTRIQ. Advise females of reproductive potential of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with TECENTRIQ and for at least 5 months after the last dose [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 744,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-007.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.3 Dosage Modifications for Adverse Reactions",
+            "text": "2.3 Dosage Modifications for Adverse Reactions: No dose reduction for TECENTRIQ is recommended. In general, withhold TECENTRIQ for severe (Grade 3) immune-mediated adverse reactions. Permanently discontinue TECENTRIQ for life-threatening (Grade 4) immune-mediated adverse reactions, recurrent severe (Grade 3) immune-mediated reactions that require systemic immunosuppressive treatment, or an inability to reduce corticosteroid dose to 10 mg or less of prednisone or equivalent per day within 12 weeks of initiating steroids. Dosage modifications for TECENTRIQ for adverse reactions that require management different from these general guidelines are summarized in Table 3. Adverse Reaction SeverityBased on Common Terminology Criteria for Adverse Events (CTCAE), version 4 Dosage Modification ALT = alanine aminotransferase, AST = aspartate aminotransferase, ULN = upper limit normal, DRESS = Drug Rash with Eosinophilia and Systemic Symptoms, SJS = Stevens Johnson syndrome, TEN = toxic epidermal necrolysis Immune-Mediated Adverse Reactions [see Warnings and Precautions (5.1)] Pneumonitis Grade 2 WithholdResume in patients with complete or partial resolution (Grade 0 to 1) after corticosteroid taper. Permanently discontinue if no complete or partial resolution within 12 weeks of initiating steroids or inability to reduce prednisone to 10 mg per day or less (or equivalent) within 12 weeks of initiating steroids Grades 3 or 4 Permanently discontinue Colitis Grades 2 or 3 Withhold Grade 4 Permanently discontinue Hepatitis with no tumor involvement of the liver AST or ALT increases to more than 3 and up to 8 times ULNorTotal bilirubin increases to more than 1.5 and up to 3 times ULN Withhold AST or ALT increases to more than 8 times ULNor Total bilirubin increases to more than 3 times ULN Permanently discontinue Hepatitis with tumor involvement of the liverIf AST and ALT are less than or equal to ULN at baseline, withhold or permanently discontinue TECENTRIQ based on recommendations for hepatitis with no liver involvement Baseline AST or ALT is more than 1 and up to 3 times ULN and increases to more than 5 and up to 10 times ULN orBaseline AST or ALT is more than 3 and up to 5 times ULN and increases to more than 8 and up to 10 times ULN Withhold AST or ALT increases to more than 10 times ULN orTotal bilirubin increases to more than 3 times ULN Permanently discontinue Endocrinopathies Grades 3 or 4 Withhold until clinically stable or permanently discontinue depending on severity Nephritis with Renal Dysfunction Grades 2 or 3 increased blood creatinine Withhold Grade 4 increased blood creatinine Permanently discontinue Exfoliative Dermatologic Conditions Suspected SJS, TEN, or DRESS Withhold Confirmed SJS, TEN, or DRESS Permanently discontinue Myocarditis or Pericarditis Grades 2, 3, or 4 Permanently discontinue Neurological Toxicities Grade 2 Withhold Other Adverse Reactions Infusion-Related Reactions [see Warnings and Precautions (5.2)] Grades 1 or 2 Interrupt or slow the rate of infusion",
+            "char_len": 3027,
+            "source_section_code": "42229-5",
+            "source_title": "2.3 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-007.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-007.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种阻断PD-L1蛋白的抗体药，用于治疗多种癌症。\", \"how_to_use\": \"通常通过静脉输注给药，第一次约60分钟，之后若耐受可缩短至30分钟。\", \"cautions\": [\"不同癌症的用药剂量和疗程不同，具体方案由医生根据病情决定。\", \"部分癌症需先做FDA批准的检测，确认适合使用后再用药。\", \"结肠癌的dMMR检测目前尚无FDA批准的检测方法。\", \"用药期间需按医生安排定期复查和监测。\", \"说明书未列出禁忌证，但仍需告知医生您的全部病史。\"], \"side_effects\": [{\"term\": \"严重不良反应\", \"plain\": \"部分患者可能出现需要住院处理的严重反应。\", \"when_to_seek_help\": \"出现严重不适或症状快速加重时，请及时就医。\"}, {\"term\": \"肺炎/肺部炎症\", \"plain\": \"可能出现肺部炎症或肺炎等呼吸系统问题。\", \"when_to_seek_help\": \"出现咳嗽、气短或呼吸困难时，请及时就医。\"}, {\"term\": \"甲状腺功能异常\", \"plain\": \"可能出现甲状腺功能亢进或减退。\", \"when_to_seek_help\": \"出现心慌、怕冷、乏力或体重明显变化时，请就医。\"}, {\"term\": \"皮疹\", \"plain\": \"部分患者会出现皮疹。\", \"when_to_seek_help\": \"皮疹明显加重或伴有其他不适时，请就医。\"}, {\"term\": \"多器官功能障碍\", \"plain\": \"极少数患者可能出现多个器官功能异常。\", \"when_to_seek_help\": \"出现全身状况明显变差时，请立即就医。\"}, {\"term\": \"气胸\", \"plain\": \"极少数患者可能出现胸腔漏气的情况。\", \"when_to_seek_help\": \"突然胸痛或呼吸困难时，请立即就医。\"}], \"seek_help\": \"出现严重不适、呼吸困难、胸痛、皮疹加重或全身状况明显变差时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:30"
+  }
+]

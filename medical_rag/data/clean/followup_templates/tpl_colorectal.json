@@ -1,0 +1,396 @@
+[
+  {
+    "tpl_id": "TPL-COLORECTAL-001",
+    "cancer_type": "colorectal",
+    "stage": [
+      "I",
+      "II",
+      "III",
+      "unknown"
+    ],
+    "phase": "postoperative",
+    "schedule": [
+      {
+        "timepoint": "术后3个月",
+        "interval_days": 90,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后6个月",
+        "interval_days": 180,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "胸部CT",
+          "腹盆腔CT"
+        ]
+      },
+      {
+        "timepoint": "术后12个月",
+        "interval_days": 365,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "胸部CT",
+          "腹盆腔CT",
+          "结肠镜"
+        ]
+      },
+      {
+        "timepoint": "术后18个月",
+        "interval_days": 545,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后24个月",
+        "interval_days": 730,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "胸部CT",
+          "腹盆腔CT"
+        ]
+      },
+      {
+        "timepoint": "术后36个月",
+        "interval_days": 1095,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "胸部CT",
+          "腹盆腔CT",
+          "结肠镜"
+        ]
+      },
+      {
+        "timepoint": "术后48个月",
+        "interval_days": 1460,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后60个月",
+        "interval_days": 1825,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "胸部CT",
+          "腹盆腔CT",
+          "结肠镜"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "中性粒细胞减少",
+        "grade_action": {
+          "1-2": "观察并复查血常规",
+          "3": "停药并尽快就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "腹泻",
+        "grade_action": {
+          "1-2": "补液、观察",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "周围感觉神经病",
+        "grade_action": {
+          "1-2": "观察、注意保暖",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "掌跖红斑感觉异常综合征",
+        "grade_action": {
+          "1-2": "保湿、避免摩擦",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "肝功能异常",
+        "grade_action": {
+          "1-2": "监测并复查肝功",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-followup-003",
+      "MSG-alert-004",
+      "MSG-adherence-002"
+    ],
+    "timepoint_basis": "指南原文：pStage I~III 术后监测约 5 年，前 3 年间隔更密；监测肝、肺、局部、吻合口、淋巴结、腹膜；结肠镜监测异时性多发癌",
+    "source_name": "Japanese Society for Cancer of the Colon and Rectum (JSCCR) guidelines 2024 for the treatment of colorectal cancer",
+    "source_version": "2025",
+    "source_section": "Treatment guidelines for colorectal cancer / Surveillance after colorectal cancer surgery",
+    "source_file": "DOC-COLORECTAL-EPMC-002.xml",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "rule-extract（基于 REC-COLORECTAL-EPMC-0275~0279 随访条目）",
+      "date": "2026-11-01",
+      "note": "时间框架（5 年、前 3 年更密）与监测部位来自指南正文；具体检查项目（CEA/CT/结肠镜）按常规随访实践补全，指南 Fig.8 随访表格未采集，未逐项核对"
+    }
+  },
+  {
+    "tpl_id": "TPL-COLORECTAL-002",
+    "cancer_type": "colorectal",
+    "stage": [
+      "II",
+      "III",
+      "IV",
+      "unknown"
+    ],
+    "phase": "on_treatment",
+    "schedule": [
+      {
+        "timepoint": "第1周期末",
+        "interval_days": 14,
+        "items": [
+          "血常规",
+          "肝肾功能",
+          "不良反应评估"
+        ]
+      },
+      {
+        "timepoint": "每2周期",
+        "interval_days": 28,
+        "items": [
+          "血常规",
+          "肝肾功能",
+          "不良反应分级"
+        ]
+      },
+      {
+        "timepoint": "每3周期影像评估",
+        "interval_days": 42,
+        "items": [
+          "胸部CT",
+          "腹盆腔CT",
+          "疗效评估"
+        ]
+      },
+      {
+        "timepoint": "治疗结束时",
+        "interval_days": 84,
+        "items": [
+          "全面评估",
+          "后续随访计划"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "中性粒细胞减少",
+        "grade_action": {
+          "1-2": "观察并复查血常规",
+          "3": "停药并尽快就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "腹泻",
+        "grade_action": {
+          "1-2": "补液、观察",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "周围感觉神经病",
+        "grade_action": {
+          "1-2": "观察、注意保暖",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "掌跖红斑感觉异常综合征",
+        "grade_action": {
+          "1-2": "保湿、避免摩擦",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "肝功能异常",
+        "grade_action": {
+          "1-2": "监测并复查肝功",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-alert-005",
+      "MSG-adherence-003"
+    ],
+    "timepoint_basis": "需求清单 B4 时间点设计原则（治疗中每 1~2 周期评估）",
+    "source_name": "医疗数据需求清单 B4（时间点设计原则），非指南原文",
+    "source_version": "需求清单 v1.0",
+    "source_section": "B4 ⑤/⑥ 时间点设计原则",
+    "source_file": "医疗数据需求清单.md",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "design（无指南章节支撑治疗中随访时间点）",
+      "date": "2026-11-01",
+      "note": "演示级模板，时间点未经指南原文确认，需医学顾问复核"
+    }
+  },
+  {
+    "tpl_id": "TPL-COLORECTAL-003",
+    "cancer_type": "colorectal",
+    "stage": [
+      "I",
+      "II",
+      "III",
+      "unknown"
+    ],
+    "phase": "rehabilitation",
+    "schedule": [
+      {
+        "timepoint": "治疗后3个月",
+        "interval_days": 90,
+        "items": [
+          "症状评估",
+          "排便功能评估",
+          "营养评估"
+        ]
+      },
+      {
+        "timepoint": "治疗后6个月",
+        "interval_days": 180,
+        "items": [
+          "症状评估",
+          "影像复查"
+        ]
+      },
+      {
+        "timepoint": "治疗后12个月",
+        "interval_days": 365,
+        "items": [
+          "症状评估",
+          "影像复查",
+          "康复计划调整"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "疲乏",
+        "grade_action": {
+          "1-2": "休息与运动调整",
+          "3": "就诊评估",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "腹泻",
+        "grade_action": {
+          "1-2": "补液、观察",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-edu-004"
+    ],
+    "timepoint_basis": "需求清单 B4 时间点设计原则（康复期按阶段评估）",
+    "source_name": "医疗数据需求清单 B4（时间点设计原则），非指南原文",
+    "source_version": "需求清单 v1.0",
+    "source_section": "B4 ⑤ 时间点设计原则",
+    "source_file": "医疗数据需求清单.md",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "design（A3 结直肠档案 followup 节为空，无原文可抽）",
+      "date": "2026-11-01",
+      "note": "演示级模板，未经指南原文确认"
+    }
+  },
+  {
+    "tpl_id": "TPL-COLORECTAL-004",
+    "cancer_type": "colorectal",
+    "stage": [
+      "I",
+      "II",
+      "III",
+      "unknown"
+    ],
+    "phase": "survivorship",
+    "schedule": [
+      {
+        "timepoint": "术后5年（长期生存期起点）",
+        "interval_days": 1825,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "胸部CT",
+          "腹盆腔CT",
+          "结肠镜"
+        ]
+      },
+      {
+        "timepoint": "此后每年1次",
+        "interval_days": 365,
+        "items": [
+          "肿瘤标志物（CEA/CA19-9）",
+          "症状评估"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "疲乏",
+        "grade_action": {
+          "1-2": "休息与运动调整",
+          "3": "就诊评估",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "周围感觉神经病",
+        "grade_action": {
+          "1-2": "观察、注意保暖",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-followup-004"
+    ],
+    "timepoint_basis": "指南原文：监测期约 5 年；5 年后复发仍可能发生（约 0.5%），需长期警惕",
+    "source_name": "Japanese Society for Cancer of the Colon and Rectum (JSCCR) guidelines 2024 for the treatment of colorectal cancer",
+    "source_version": "2025",
+    "source_section": "Treatment guidelines for colorectal cancer / Surveillance after colorectal cancer surgery",
+    "source_file": "DOC-COLORECTAL-EPMC-002.xml",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "rule-extract（基于 REC-COLORECTAL-EPMC-0276/0284 随访条目）",
+      "date": "2026-11-01",
+      "note": "5 年监测期与 5 年后残余风险来自指南正文；「此后每年 1 次」为按原文长期警惕表述派生的演示节奏，未经指南明确"
+    }
+  }
+]

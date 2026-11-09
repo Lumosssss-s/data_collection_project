@@ -1,0 +1,223 @@
+[
+ {
+  "drug_id": "DRUG-GASTRIC-FDA-002",
+  "generic_name": "TORIPALIMAB",
+  "brand_names": [],
+  "title": "TORIPALIMAB 说明书（FDA DailyMed）",
+  "indications": [
+   "LOQTORZI is a programmed death receptor-1 (PD-1)- blocking antibody indicated:",
+   "LOQTORZI is indicated, in combination with cisplatin and gemcitabine, for the first-line treatment of adults with metastatic or with recurrent, locally advanced nasopharyngeal carcinoma (NPC).",
+   "LOQTORZI is indicated, as a single agent, for the treatment of adults with recurrent unresectable or metastatic NPC with disease progression on or after a platinum-containing chemotherapy."
+  ],
+  "dosage": {
+   "standard": "In combination with cisplatin and gemcitabine: First Infusion: Infuse over 60 minutes. Subsequent Infusions: If no infusion-related reactions occurred during the first infusion, subsequent infusions may be administered over 30 minutes. The recommended dosages of LOQTORZI are provided in Table 1. Administer as recommended [see Dosage and Administration (2.3)]. Indication Recommended Dosage of LOQTORZI Duration of Treatment First-line NPC 240 mg every three weeks Until disease progression, unacceptable toxicity, or up to 24 months. Recurrent NPC 3 mg/kg every two weeks Until disease progression or unacceptable toxicity. No dose reductions of LOQTORZI are recommended. In general, withhold LOQTORZI for severe (Grade 3) immune-mediated adverse reactions. Permanently discontinue LOQTORZI for life-threatening (Grade 4) immune-mediated adverse reactions, recurrent severe (Grade 3) immune-mediated reactions that require systemic immunosuppressive treatment, or an inability to reduce prednisone to 10 mg per day or less (or equivalent) within 12 weeks of initiating steroids. Dosage modifications for LOQTORZI for adverse reactions that require management different from these general guidelines are summarized in Table 2. Adverse Reaction SeverityBased on National Cancer Institute (NCI) Common Terminology for Adverse Events (CTCAE) version 5.0 Dose Modification ALT=alanine aminotransferase, AST=aspartate aminotransferase, DRESS=drug rash with eosinophilia and systemic symptoms, SJS=Stevens Johnson syndrome, TEN=toxic epidermal necrolysis, ULN=upper limit of normal Immune-Related Adverse Reactions [see Warnings and Precautions (5.1)] Pneumonitis Grade 2 WithholdResume LOQTORZI in patients with complete or partial resolution to Grade 0-1 after corticosteroid taper. Permanently disconti",
+   "adjustment": "The recommended dosages of LOQTORZI are provided in Table 1. Administer as recommended [see Dosage and Administration (2.3)]. Indication Recommended Dosage of LOQTORZI Duration of Treatment First-line NPC 240 mg every three weeks Until disease progression, unacceptable toxicity, or up to 24 months. Recurrent NPC 3 mg/kg every two weeks Until disease progression or unacceptable toxicity. No dose reductions of LOQTORZI are recommended. In general, withhold LOQTORZI for severe (Grade 3) immune-mediated adverse reactions. Permanently discontinue LOQTORZI for life-threatening (Grade 4) immune-mediated adverse reactions, recurrent severe (Grade 3) immune-mediated reactions that require systemic immunosuppressive treatment, or an inability to reduce prednisone to 10 mg per day or less (or equivalent) within 12 weeks of initiating steroids. Dosage modifications for LOQTORZI for adverse reactions that require management different from these general guidelines are summarized in Table 2. Adverse Reaction SeverityBased on National Cancer Institute (NCI) Common Terminology for Adverse Events (CTCAE) version 5.0 Dose Modification ALT=alanine aminotransferase, AST=aspartate aminotransferase, DRES"
+  },
+  "contraindications": [
+   "无（FDA 说明书原文标注 None，未列出禁忌证）"
+  ],
+  "adverse_reactions": [
+   {
+    "term": "The following clinically significant adverse reactions are described elsewhere in the labeling:",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "To report SUSPECTED ADVERSE REACTIONS, contact Coherus Oncology, Inc. at 1-800-483-3692 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "The data described in the WARNINGS AND PRECAUTIONS section reflect exposure to LOQTORZI at a dose of 240 mg every 3 weeks in combination with up to 6 cycles of ",
+    "frequency": "73%",
+    "ctcae_hint": null
+   },
+   {
+    "term": "The data described in the WARNINGS AND PRECAUTIONS section also reflects exposure to LOQTORZI as a single agent at a dose of 3 mg/kg IV every 2 weeks in 851 pat",
+    "frequency": "35%",
+    "ctcae_hint": null
+   },
+   {
+    "term": "First-line Treatment of Metastatic or Recurrent, Locally Advanced Nasopharyngeal Carcinoma (NPC)",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "The safety of LOQTORZI in combination with cisplatin and gemcitabine was evaluated in JUPITER-02 [see Clinical Studies (14)] . Key eligibility criteria were rec",
+    "frequency": "73%",
+    "ctcae_hint": null
+   },
+   {
+    "term": "The median age of patients who received LOQTORZI was 48 years (range: 19 to 72), 83% male, 100% Asian, 60% had recurrent disease, and 40% presented with metasta",
+    "frequency": "83%",
+    "ctcae_hint": null
+   },
+   {
+    "term": "Serious adverse reactions occurred in 43% of patients receiving LOQTORZI in combination with cisplatin and gemcitabine. Serious adverse drug reactions in ≥ 2% w",
+    "frequency": "43%",
+    "ctcae_hint": null
+   },
+   {
+    "term": "Permanent discontinuation of LOQTORZI, when given in combination with cisplatin and gemcitabine, due to an adverse reaction occurred in 12% of patients. Adverse",
+    "frequency": "12%",
+    "ctcae_hint": null
+   },
+   {
+    "term": "Dosage interruptions of LOQTORZI due to an adverse reaction occurred in 50% of patients. Adverse reactions which required dosage interruption in ≥2% were anemia",
+    "frequency": "50%",
+    "ctcae_hint": null
+   },
+   {
+    "term": "Table 3 summarizes the adverse reactions in JUPITER-02.",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "Adverse ReactionNCI CTCAE v5.0. LOQTORZICisplatin/GemcitabineN = 146 PlaceboCisplatin/GemcitabineN = 143",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "All Grades(%) Grade 3 or 4(%) All Grades(%) Grade 3 or 4(%)",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "Gastrointestinal Disorders",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "Nausea 71 1.4 84 2.8",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "Vomiting 68 2.1 66 2.1",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "Constipation 39 0 46 0",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "Diarrhea 31 1.4 23 0",
+    "frequency": null,
+    "ctcae_hint": null
+   },
+   {
+    "term": "StomatitisIncludes mouth ulceration, stomatitis, and radiation stomatitis. 12 0 8 0.7",
+    "frequency": null,
+    "ctcae_hint": null
+   }
+  ],
+  "cancer_types": [],
+  "cancer_type": null,
+  "doc_type": "drug_label",
+  "issuer": "FDA / DailyMed",
+  "publish_date": "2026-07-27",
+  "license": "Public Domain (NLM)",
+  "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+  "license_note": "FDA DailyMed public label（公有领域，可引用）",
+  "fetched_at": "2026-11-02",
+  "file_path": "raw/drug_labels/DRUG-GASTRIC-FDA-002.xml",
+  "doc_hash": "dada5fdad254ee4f954f22332d23d99ba77f8d515d76ec6d769d1aee4dad4cae",
+  "review_status": "draft",
+  "_source": "dailymed",
+  "_setid": "82e7921a-1e84-4988-9799-0ad7d19b2a75",
+  "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/82e7921a-1e84-4988-9799-0ad7d19b2a75.xml",
+  "atc_code": "L01FF13",
+  "approval_no": null,
+  "source_name": "TORIPALIMAB 说明书（FDA DailyMed）",
+  "source_version": "2026",
+  "source_section": "全文",
+  "source_file": "DRUG-GASTRIC-FDA-002.xml",
+  "updated_at": "2026-11-02",
+  "interactions": null,
+  "warnings": [
+   {
+    "code": "42229-5",
+    "title": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions",
+    "text": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions: LOQTORZI is a monoclonal antibody that belongs to a class of drugs that bind to either the programmed death receptor-1 (PD-1) or PD-ligand 1 (PD-L1), blocking the PD-1/PD-L1 pathway, thereby removing inhibition of the immune response, potentially breaking peripheral tolerance and inducing immune-mediated adverse reactions. Important immune-mediated adverse reactions listed under WARNINGS AND PRECAUTIONS may not include all possible severe and fatal immune-mediated reactions. Immune-mediated adverse reactions, which may be severe or fatal, can occur in any organ system or tissue and can affect more than one body system simultaneously. Immune-mediated adverse reactions can occur at any time after starting PD-1/PD-L1 blocking antibody. While immune-mediated adverse reactions usually manifest during treatment with PD-1/PD-L1 blocking antibodies, immune-mediated adverse reactions can also manifest after discontinuation of PD-1/PD-L1 blocking antibodies. Early identification and management of immune-mediated adverse reactions are essential to ensure safe use of PD-1/PD-L1 blocking antibodies. Monitor closely for symptoms and signs that may be clinical manifestations of underlying immune-mediated adverse reactions. Evaluate liver enzymes, creatinine, and thyroid function at baseline and periodically during treatment. In cases of suspected immune-mediated adverse reactions, initiate appropriate workup to exclude alternative etiologies, including infection. Institute medical management promptly, including specialty consultation as appropriate. Withhold or permanently discontinue LOQTORZI depending on severity [see Dosage and Administration (2.2)]. In general, if LOQTORZI requires interruption or discontinuation, administer systemic corticosteroid therapy (1 to 2 mg/kg/day prednisone or equivalent) until improvement to Grade 1 or less. Upon improvement to Grade 1 or less, initiate corticosteroid taper and continue to taper over at least 1 month. Consider administration of other systemic immunosuppressants in patients whose immune-mediated adverse reactions are not controlled with corticosteroid therapy. Toxicity management guidelines for adverse reactions that do not necessarily require systemic steroids (e.g., endocrinopathies and dermatologic reactions) are discussed below. Immune-Mediated Pneumonitis LOQTORZI in Combination with Cisplatin and Gemcitabine LOQTORZI in combination with cisplatin and gemcitabine can cause immune-mediated pneumonitis. In patients treated with other PD-1/PD-L1 blocking antibodies, the incidence of pneumonitis is higher in patients who have received prior thoracic radiation. Immune-mediated pneumonitis occurred in 2.1% (3/146) of patients receiving LOQTORZI, including Grade 2 (1.4%) adverse reactions. Pneumonitis resolved in 67% (2/3) of these patients. LOQTORZI as a Single-Agent LOQTORZI can cause immune-mediated pneumonitis. In patients treated with other PD-1/PD-L1 blocking antibodies, the incidence of pneumonitis is higher in patients who have received prior thoracic radiation. Immune-mediated pneumonitis occurred in 2.6% (22/851) of patients receiving LOQTORZI, including fatal (0.2%), Grade 3 (0.7%), and Grade 2 (1.1%) adverse reactions. Systemic corticosteroids were required in 82% (18/22) of patients with pneumonitis. Pneumonitis led to permanent discontinuation of LOQTORZI in 1.2% (10/851) of patients. Pneumonitis resolved in 23% (5/22) of these patients. Immune-Mediated Colitis LOQTORZI can cause immune-mediated colitis, which may present with diarrhea. Cytomegalovirus (CMV) infection/reactivation has been reported in patients with corticosteroid-refractory immune-mediated colitis. In cases of corticosteroid-refractory colitis, consider repeating infectious workup to exclude alternative etiologies. Immune-mediated colitis occurred in 0.4% (3/851) of patients receiving LOQTORZI, including Grade 3 (0.2%) and Grade 2 (0.1%) adverse reactions. Colitis resolved in all 3 patients. Hepatotoxicity and Immune-Mediated Hepatitis LOQTORZI in combination with cisplatin and gemcitabine can cause immune-mediated hepatitis. Immune-mediated hepatitis occurred in 0.7% (1/146) of patients receiving LOQTORZI in combination with cisplatin and gemcitabine, which was a Grade 3 (0.7%) adverse reaction. The patient with immune-mediated hepatitis required systemic corticosteroids. LOQTORZI can cause immune-mediated hepatitis. Immune-mediated hepatitis occurred in 3.3% (28/851) of patients receiving LOQTORZI, including Grade 4 (0.8%), Grade 3 (2.1%), and Grade 2 (0.4%) adverse reactions. Hepatitis led to permanent discontinuation of LOQTORZI in 1.1% of patients and withholding of LOQTORZI in 0.8% of patients. Hepatitis resolved in 54% (15/28) of these patients. Immune-Mediated Endocrinopathies Adrenal Insufficiency LOQTORZI can cause primary or secondary adrenal insufficiency. For Grade 2 or higher adrenal insufficiency, initiate symptomatic treatment, including hormone replacement as clinically indicated. Withhold or permanently discontinue LOQTORZI depending on severity [see Dosage and Administration (2.2)]. Adrenal insufficiency occurred in 0.5% (4/851) of the patients receiving LOQTORZI, including Grade 2 (0.4%) and Grade 1 (0.1%) adverse reactions. Systemic corticosteroids were required in 75% (3/4) of the patients with adrenal insufficiency. Adrenal insufficiency led to withholding of LOQTORZI in 0.1% (1/851) of patients. In the one patient in whom LOQTORZI was withheld, LOQTORZI was reinitiated after symptom improvement. LOQTORZI can cause immune-mediated hypophysitis. Hypophysitis can present with acute symptoms associated with mass effects such as headache, photophobia, or visual field defects. Hypophysitis can cause hypopituitarism. Initiate hormone replacement as indicated. Withhold or permanently discontinue LOQTORZI depending on severity [see Dosage and Administration (2.2)]. Hypophysitis occurred in 0.4% (3/851) of patients receiving LOQTORZI, including Grade 3 (0.2%) and Grade 2 (0.1%) adverse reactions. All three patients received systemic corticosteroids. Hypophysitis led to permanent discontinuation of LOQTORZI in 0.1% (1/851) of patients and withholding of LOQTORZI in 0.1% (1/851) of patients. The one patient in whom LOQTORZI was withheld reinitiated LOQTORZI. Thyroid Disorders LOQTORZI can cause immune-mediated thyroid disorders. Thyroiditis can present with or without endocrinopathy. Hypothyroidism can follow hyperthyroidism. Initiate hormone replacement for hypothyroidism or institute medical management of hyperthyroidism as clinically indicated. Withhold or permanently discontinue LOQTORZI depending on severity [see Dosage and Administration (2.2)]. Thyroiditis occurred in 2.1% (3/146) of patients receiving LOQTORZI in combination with cisplatin and gemcitabine, including Grade 2 (1.4%). Three patients required thyroid hormone replacement therapy. Thyroiditis resolved in one of the 3 patients. Hyperthyroidism occurred in 1.4% (2/146) of patients receiving LOQTORZI in combination with cisplatin and gemcitabine. Hyperthyroidism resolved in these 2 patients. Hypothyroidism occurred in 30% (44/146) of patients receiving LOQTORZI in combination with cisplatin and gemcitabine, including Grade 2 (24%) and Grade 1 (6%). Eighty percent of the 44 patients required thyroid hormone replacement therapy. LOQTORZI was withheld in 2.1% (3/146) of the patients. Of the 3 patients in whom LOQTORZI was withheld, 2 patients reinitiated LOQTORZI. Thyroiditis occurred in 0.6% (5/851) of patients receiving LOQTORZI, including Grade 2 (0.1%). Two of these 5 patients received systemic corticosteroids and 2 required thyroid hormone replacement therapy. Thyroiditis resolved in 2 of the 5 patients. Hyperthyroidism occurred in 7% (55/851) of patients receiving LOQTORZI, including Grade 2 (1.9%). Hyperthyroidism resolved in 85% (47/55) of the patients. Hypothyroidism occurred in 15% (128/851) of patients receiving LOQTORZI, including Grade 2 (8%). Sixty three percent of the 128 patients required thyroid hormone replacement therapy. LOQTORZI was withheld in 0.5% of patients. Of the 4 patients in whom LOQTORZI was withheld, 3 patients reinitiated LOQTORZI. Type 1 Diabetes Mellitus, which can present with Diabetic Ketoacidosis Monitor patients for hyperglycemia or other signs and symptoms of diabetes. Initiate treatment with insulin as clinically indicated. Withhold or permanently discontinue LOQTORZI depending on severity [see Dosage and Administration (2.2)]. Diabetes mellitus occurred in 0.9% (8/851) of patients receiving LOQTORZI, including Grade 4 (0.1%), Grade 3 (0.7%), and Grade 2 (0.1%). Diabetes mellitus led to permanent discontinuation in 0.4% of patients. Six of the 8 (75%) patients with diabetes mellitus required long-term insulin therapy. Immune-Mediated Nephritis with Renal Dysfunction LOQTORZI in combination with cisplatin and gemcitabine can cause immune-mediated nephritis. Immune-mediated nephritis occurred in 0.7% (1/146) of patients receiving LOQTORZI. The one patient with immune-mediated nephritis (Grade 4) required systemic corticosteroids and nephritis led to discontinuation of LOQTORZI. Nephritis resolved in this patient. LOQTORZI can cause immune-mediated nephritis. Immune-mediated nephritis occurred in 0.5% (4/851) of patients receiving LOQTORZI, including Grade 3 (0.5%) adverse reactions. Nephritis resolved in 75% (3/4) of these patients. Immune-Mediated Dermatologic Adverse Reactions LOQTORZI can cause immune-mediated rash or dermatitis. Exfoliative dermatitis, including Stevens-Johnson Syndrome (SJS), drug rash with eosinophilia and systemic symptoms (DRESS), and toxic epidermal necrolysis (TEN), has occurred with PD-1/PD-L1 blocking antibodies. Topical emollients and/or topical corticosteroids may be adequate to treat mild to moderate non-exfoliative rashes. Withhold or permanently discontinue LOQTORZI depending on severity [see Dosage and Administration (2.2)]. Immune-mediated dermatologic adverse reactions occurred in 8% (12/146) of patients receiving LOQTORZI, including Grade 3 (3.4%) and Grade 2 (1.4%) adverse reactions. Systemic corticosteroids were required in 25% (3/12) of the patients with immune-mediated dermatologic adverse reactions. Immune-mediated dermatologic adverse reactions led to permanent discontinuation of LOQTORZI in 2.1% (3) of patients. Immune-mediated dermatologic adverse reactions resolved in 92% (11/12) of these patients. Immune-mediated dermatologic adverse reactions occurred in 4% (34/851) of patients receiving LOQTORZI, including Grade 3 (0.4%) and Grade 2 (1.4%) adverse reactions. Immune-mediated dermatologic adverse reactions led to withholding of LOQTORZI in 0.4% (3) of the patients. Systemic corticosteroids were required in 12% (4/34) of the patients with immune-mediated dermatologic adverse reactions. Immune-mediated dermatologic adverse reactions resolved in 71% (24/34) of these patients. Other Immune-Mediated Adverse Reactions The following clinically significant immune-mediated adverse reactions occurred at an incidence of <1% (unless otherwise noted) in patients who received LOQTORZI or were reported with the use of other PD1/PD-L1 blocking antibodies. Severe or fatal cases have been reported for some of these adverse reactions. Cardiac/Vascular: Myocarditis, pericarditis, vasculitis, pericardial effusion Nervous System: Meningitis, encephalitis, myelitis and demyelination, myasthenic syndrome/myasthenia gravis (including exacerbation), Guillain-Barré syndrome, nerve paresis, autoimmune neuropathy Ocular: Uveitis, iritis and other ocular inflammatory toxicities can occur. Some cases can be associated with retinal detachment. Various grades of visual impairment, including blindness, can occur. If uveitis occurs in combination with other immune-mediated adverse reactions, consider a Vogt-Koyanagi-Harada-like syndrome, as this may require treatment with systemic steroids to reduce the risk of permanent vision loss. Gastrointestinal: Pancreatitis, to include increases in serum amylase and lipase levels, gastritis, duodenitis Musculoskeletal and Connective Tissue: Myositis/polymyositis, rhabdomyolysis (and associated sequelae, including renal failure), arthritis, polymyalgia rheumatica, dermatomyositis Endocrine: Hypoparathyroidism Hematologic/Immune: Hemolytic anemia, aplastic anemia, hemophagocytic lymphohistiocytosis, systemic inflammatory response syndrome, histiocytic necrotizing lymphadenitis (Kikuchi lymphadenitis), sarcoidosis, immune thrombocytopenic purpura, solid organ transplant rejection, other transplant (including corneal graft) rejection. Other : Myocarditis-Myositis-Myasthenia Gravis (or Myasthenia-Like) Overlap Syndrome, reported as the co-occurrence of either two or all three adverse reactions",
+    "char_len": 12867,
+    "source_section_code": "42229-5",
+    "source_title": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions",
+    "source_xml": "DRUG-GASTRIC-FDA-002.xml",
+    "match_by_title": false
+   },
+   {
+    "code": "42229-5",
+    "title": "5.2 Infusion-Related Reactions",
+    "text": "5.2 Infusion-Related Reactions: LOQTORZI can cause severe or life-threatening infusion-related reactions including hypersensitivity and anaphylaxis. LOQTORZI in Combination with Cisplatin and Gemcitabine Infusion-related reactions have been reported in 4.1% of patients receiving LOQTORZI in combination with cisplatin and gemcitabine, including Grade 2 (0.7%) reactions. LOQTORZI as a Single-Agent Infusion-related reactions occurred in 2% of 851 patients receiving LOQTORZI as single agent, including Grade 3 (0.1%) and Grade 2 (0.6%). LOQTORZI was withheld for one Grade 3 infusion related reaction. Monitor patients for signs and symptoms of infusion-related reactions including rigors, chills, wheezing, pruritus, flushing, rash, hypotension, hypoxemia, and fever. Interrupt or slow the rate of infusion for mild (Grade 1) or moderate (Grade 2) infusion-related reactions. For severe (Grade 3) or life-threatening (Grade 4) infusion-related reactions, stop infusion and permanently discontinue LOQTORZI [see Dosage and Administration (2.2)].",
+    "char_len": 1046,
+    "source_section_code": "42229-5",
+    "source_title": "5.2 Infusion-Related Reactions",
+    "source_xml": "DRUG-GASTRIC-FDA-002.xml",
+    "match_by_title": false
+   },
+   {
+    "code": "42229-5",
+    "title": "5.3 Complications of Allogeneic HSCT",
+    "text": "5.3 Complications of Allogeneic HSCT: Fatal and other serious complications can occur in patients who receive allogeneic hematopoietic stem cell transplantation (HSCT) before or after being treated with a PD-1/PD-L1 blocking antibody. Transplant-related complications include hyperacute graft-versus-host-disease (GVHD), acute GVHD, chronic GVHD, hepatic veno-occlusive disease (VOD) after reduced intensity conditioning, and steroid-requiring febrile syndrome (without an identified infectious cause). These complications may occur despite intervening therapy between PD-1/PD-L1 blockade and allogeneic HSCT. Follow patients closely for evidence of transplant-related complications and intervene promptly. Consider the benefit versus risks of treatment with a PD-1/PD-L1 blocking antibody prior to or after an allogeneic HSCT.",
+    "char_len": 827,
+    "source_section_code": "42229-5",
+    "source_title": "5.3 Complications of Allogeneic HSCT",
+    "source_xml": "DRUG-GASTRIC-FDA-002.xml",
+    "match_by_title": false
+   },
+   {
+    "code": "42229-5",
+    "title": "5.4 Embryo-Fetal Toxicity",
+    "text": "5.4 Embryo-Fetal Toxicity: Based on its mechanism of action, LOQTORZI can cause fetal harm when administered to a pregnant woman. Animal studies have demonstrated that inhibition of the PD-1/PD-L1 pathway can lead to increased risk of immune-mediated rejection of the developing fetus resulting in fetal death. Advise women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with LOQTORZI and for 4 months after the last dose [see Use in Specific Populations (8.1 , 8.3)].",
+    "char_len": 544,
+    "source_section_code": "42229-5",
+    "source_title": "5.4 Embryo-Fetal Toxicity",
+    "source_xml": "DRUG-GASTRIC-FDA-002.xml",
+    "match_by_title": false
+   }
+  ],
+  "boxed_warning": null,
+  "dosage_adjustment": {
+   "renal": {
+    "located": false,
+    "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+    "items": []
+   },
+   "hepatic": {
+    "located": false,
+    "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+    "items": []
+   },
+   "toxicity_modification": {
+    "located": true,
+    "reason": null,
+    "items": [
+     {
+      "code": "42229-5",
+      "title": "2.2 Dosage Modifications",
+      "text": "2.2 Dosage Modifications: No dose reductions of LOQTORZI are recommended. In general, withhold LOQTORZI for severe (Grade 3) immune-mediated adverse reactions. Permanently discontinue LOQTORZI for life-threatening (Grade 4) immune-mediated adverse reactions, recurrent severe (Grade 3) immune-mediated reactions that require systemic immunosuppressive treatment, or an inability to reduce prednisone to 10 mg per day or less (or equivalent) within 12 weeks of initiating steroids. Dosage modifications for LOQTORZI for adverse reactions that require management different from these general guidelines are summarized in Table 2. Adverse Reaction SeverityBased on National Cancer Institute (NCI) Common Terminology for Adverse Events (CTCAE) version 5.0 Dose Modification ALT=alanine aminotransferase, AST=aspartate aminotransferase, DRESS=drug rash with eosinophilia and systemic symptoms, SJS=Stevens Johnson syndrome, TEN=toxic epidermal necrolysis, ULN=upper limit of normal Immune-Related Adverse Reactions [see Warnings and Precautions (5.1)] Pneumonitis Grade 2 WithholdResume LOQTORZI in patients with complete or partial resolution to Grade 0-1 after corticosteroid taper. Permanently discontinue if no complete or partial resolution within 12 weeks of initiating steroids or inability to reduce prednisone to 10 mg per day or less (or equivalent) within 12 weeks of initiating steroids. Grades 3 or 4 Permanently discontinue Colitis Grade 2 or 3 Withhold Grade 4 Permanently discontinue Hepatitis with no tumor involvement of the liver AST/ALT increases to more than 3 and up to 8 times ULNorTotal bilirubin increases to more than 1.5 and up to 3 times ULN Withhold AST or ALT increases to more than 8 times ULNorTotal bilirubin increases to more than 3 times ULN Permanently discontinue Hepatitis with tumor involvement of the liverIf AST and ALT are less than or equal to ULN at baseline in patients with liver involvement, withhold or permanently discontinue LOQTORZI based on recommendations for hepatitis with no liver involvement. Baseline AST or ALT is more than 1 and up to 3 times ULN and increases to more than 5 and up to 10 times ULNorBaseline AST or ALT is more than 3 and up to 5 times ULN and increases to more than 8 and up to 10 times ULN Withhold Baseline AST or ALT is above the ULN and increases to more than 10 times ULNorTotal bilirubin increases to more than 3 times ULN Permanently discontinue Endocrinopathies Grades 3 or 4 Withhold until clinically stable or permanently discontinue depending on severity Nephritis with Renal Dysfunction Grade 2 or 3 increased blood creatinine Withhold Grade 4 increased blood creatinine Permanently discontinue Exfoliative Dermatologic Conditions Suspected SJS, TEN, or DRESS Withhold Confirmed SJS, TEN, or DRESS Permanently discontinue Myocarditis Grades 2, 3, or 4 Permanently discontinue Neurological toxicities Grade 2 Withhold Grade 3-4 Permanently discontinue Other Adverse Reactions Infusion-related reactions [see Warnings and Precautions (5.2)] Grade 1 or 2 Interrupt or slow the rate of infusion Grade 3 or 4 Stop infusionPermanently discontinue",
+      "char_len": 3125,
+      "source_section_code": "42229-5",
+      "source_title": "2.2 Dosage Modifications",
+      "source_xml": "DRUG-GASTRIC-FDA-002.xml",
+      "match_by_title": true
+     }
+    ]
+   }
+  },
+  "safety_extraction_meta": {
+   "extractor": "extract_drug_safety_v2.py",
+   "extracted_at": "2026-11-02",
+   "source_xml": "DRUG-GASTRIC-FDA-002.xml",
+   "xml_present": true
+  },
+  "guideline_use_cancers": []
+ }
+]

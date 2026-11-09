@@ -1,0 +1,260 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-001",
+    "generic_name": "TRASTUZUMAB",
+    "brand_names": [],
+    "aliases_zh": [
+      "曲妥珠单抗"
+    ],
+    "title": "TRASTUZUMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "Herceptin is a HER2/neu receptor antagonist indicated in adults for:",
+      "Select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin (1, 2.2).",
+      "Herceptin is indicated in adults for adjuvant treatment of HER2 overexpressing node positive or node negative (ER/PR negative or with one high risk feature [see Clinical Studies (14.1)]) breast cancer",
+      "Select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin [see Dosage and Administration (2.2)].",
+      "Herceptin is indicated in adults:",
+      "Herceptin is indicated in adults, in combination with cisplatin and capecitabine or 5-fluorouracil, for the treatment of patients with HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma who have not received prior treatment for metastatic disease.",
+      "【中文适应证】转移性乳腺癌：本品适用于HER2 阳性的转移性乳腺癌，作为单一药物治疗已接受过1 个或多个化疗方案的转移性乳腺癌；与紫杉醇或者多西他赛联合，用于未接受化疗的转移性乳腺癌患者。",
+      "【中文适应证】早期乳腺癌：本品适用于HER2 阳性的早期乳腺癌：接受了手术、含蔥环类抗生素辅助化疗和放疗（如果适用）后的单药辅助治疗；多柔比星和环磷酰胺化疗后序贯本品与紫杉醇或多西他赛的联合辅助治疗；与多西他赛和卡铂联合的辅助治疗；与化疗联合新辅助治疗，继以辅助治疗，用于局部晚期（包括炎性）或者肿瘤直径＞2cm 的乳腺癌。",
+      "【中文适应证】本品联合卡培他滨或氟尿嘧啶和顺铂适用于既往未接受过针对转移性疾病治疗的HER2 阳性的转移性胃腺癌或胃食管结合部腺癌患者；曲妥珠单抗只能用于HER2 阳性的转移性胃癌患者，HER2 阳性的定义为使用已验证的检测方法得到的IHC3+或IHC2+/FISH+结果。"
+    ],
+    "dosage": {
+      "standard": "For intravenous (IV) infusion only. Do not administer as an IV push or bolus. Herceptin has different dosage and administration instructions than subcutaneous trastuzumab products. (2.3) Do not substitute Herceptin (trastuzumab) for or with ado-trastuzumab emtansine or fam-trastuzumab deruxtecan. (2.3) Perform HER2 testing using FDA-authorized tests by laboratories with demonstrated proficiency. (1, 2.2) Adjuvant Treatment of HER2-Overexpressing Breast Cancer (2.2) Administer at either: Metastatic HER2-Overexpressing Breast Cancer (2.3) Metastatic HER2-Overexpressing Gastric Cancer (2.3) Assess left ventricular ejection fraction (LVEF) prior to initiation of Herceptin and at regular intervals during treatment. [see Boxed Warning, Dosage and Administration (2.5), Warnings and Precautions (5.1)]. Verify the pregnancy status of females of reproductive potential prior to the initiation of Herceptin [see Warnings and Precautions (5.3), Use in Specific Populations (8.1, 8.3)]. Select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens [see Indications and Usage (1) and Clinical Studies (14)]. Assessment of HER2 protein overexpression and HER2 gene amplification should be performed using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency. Information on the FDA-authorized tests for the detection of HER2 protein overexpression and HER2 gene amplification is available at: http://www.fda.gov/CompanionDiagnostics. Assessment of HER2 protein overexpression and HER2 gene amplification in metastatic gastric cancer should be performed using FDA-authorized tests specifically for gastric cancers due to differences in gastric vs. breast histopathology, including incomplete membrane staining and",
+      "adjustment": "Adjuvant Treatment of HER2-Overexpressing Breast Cancer (2.2) Administer at either: Metastatic HER2-Overexpressing Breast Cancer (2.3) Metastatic HER2-Overexpressing Gastric Cancer (2.3) Assess left ventricular ejection fraction (LVEF) prior to initiation of Herceptin and at regular intervals during treatment. [see Boxed Warning, Dosage and Administration (2.5), Warnings and Precautions (5.1)]. Verify the pregnancy status of females of reproductive potential prior to the initiation of Herceptin [see Warnings and Precautions (5.3), Use in Specific Populations (8.1, 8.3)]. Select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens [see Indications and Usage (1) and Clinical Studies (14)]. Assessment of HER2 protein overexpression and HER2 gene amplification should be performed using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency. Information on the FDA-authorized tests for the detection of HER2 protein overexpression and HER2 gene amplification is available at: http://www.fda.gov/CompanionDiagnostics. Assessment of HER2 protein overexpression and HER2 gene amplification in metastatic ga"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the label:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adjuvant Breast Cancer",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metastatic Breast Cancer",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metastatic Gastric Cancer",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Genentech at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions in patients receiving Herceptin in the adjuvant and metastatic breast cancer setting are fever, nausea, vomiting, infusion rea",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the metastatic gastric cancer setting, the most common adverse reactions (≥ 10%) that were increased (≥ 5% difference) in the Herceptin arm as compared to th",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions which resulted in discontinuation of treatment on the Herceptin-containing arm in the absence of disease progression were infe",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The information below reflects exposure to one-year Herceptin therapy across three randomized, open-label studies, Studies 1, 2, and 3, with (n = 3678) or witho",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 3 reflects exposure to Herceptin in 1678 patients in HERA; the median treatment duration was 51 weeks and median number of infusions was 18 [see Clinical ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions Herceptin(n = 1678)% Observation(n = 1708)%",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Urinary tract infection 3 0.8",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Upper abdominal pain 2 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Peripheral edema 5 2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Influenza-like illness 2 0.2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Respiratory Thoracic Mediastinal",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Pharyngolaryngeal pain 2 0.5",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Ejection fraction decreased 3.5 0.6",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Cardiac arrhythmiasHigher level grouping term. 3 1",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast",
+      "gastric"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-06-03",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-001.xml",
+    "doc_hash": "0cce78eb36d9b7f11e815e973a2d584aa63b79e33dd6a3a74c22c09e92a19b66",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "492dbdb2-077e-4064-bff3-372d6af0a7a2",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/492dbdb2-077e-4064-bff3-372d6af0a7a2.xml",
+    "atc_code": "L01FD01",
+    "approval_no": "国药准字SJ20181016；国药准字SJ20181017",
+    "source_name": "TRASTUZUMAB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-001.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "Patients who receive anthracycline after stopping Herceptin may be at increased risk of cardiac dysfunction because of trastuzumab's estimated long washout period [see Clinical Pharmacology (12.3)]. If possible, avoid anthracycline-based therapy for up to 7 months after stopping Herceptin. If anthracyclines are used, closely monitor the patient's cardiac function."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Cardiomyopathy",
+        "text": "5.1 Cardiomyopathy: Herceptin can cause left ventricular cardiac dysfunction, arrhythmias, hypertension, disabling cardiac failure, cardiomyopathy, and cardiac death [see Boxed Warning: Cardiomyopathy]. Herceptin can also cause asymptomatic decline in left ventricular ejection fraction (LVEF). There is a 4–6 fold increase in the incidence of symptomatic myocardial dysfunction among patients receiving Herceptin as a single agent or in combination therapy compared with those not receiving Herceptin. The highest absolute incidence occurs when Herceptin is administered with an anthracycline. Withhold Herceptin for ≥ 16% absolute decrease in LVEF from pre-treatment values or an LVEF value below institutional limits of normal and ≥ 10% absolute decrease in LVEF from pretreatment values [see Dosage and Administration (2.5)]. The safety of continuation or resumption of Herceptin in patients with Herceptin-induced left ventricular cardiac dysfunction has not been studied. Patients who receive anthracycline after stopping Herceptin may also be at increased risk of cardiac dysfunction [see Drug Interactions (7) and Clinical Pharmacology (12.3)]. Cardiac Monitoring Conduct thorough cardiac assessment, including history, physical examination, and determination of LVEF by echocardiogram or MUGA scan. The following schedule is recommended: In NSABP B31, 15% (158/1031) of patients discontinued Herceptin due to clinical evidence of myocardial dysfunction or significant decline in LVEF after a median follow-up duration of 8.7 years in the AC-TH arm. In HERA (one-year Herceptin treatment), the number of patients who discontinued Herceptin due to cardiac toxicity at 12.6 months median duration of follow-up was 2.6% (44/1678). In BCIRG006, a total of 2.9% (31/1056) of patients in the TCH arm (1.5% during the chemotherapy phase and 1.4% during the monotherapy phase) and 5.7% (61/1068) of patients in the AC-TH arm (1.5% during the chemotherapy phase and 4.2% during the monotherapy phase) discontinued Herceptin due to cardiac toxicity. Among 64 patients receiving adjuvant chemotherapy (NSABP B31 and NCCTG N9831) who developed congestive heart failure, one patient died of cardiomyopathy, one patient died suddenly without documented etiology, and 33 patients were receiving cardiac medication at last follow-up. Approximately 24% of the surviving patients had recovery to a normal LVEF (defined as ≥ 50%) and no symptoms on continuing medical management at the time of last follow-up. Incidence of congestive heart failure (CHF) is presented in Table 1. The safety of continuation or resumption of Herceptin in patients with Herceptin-induced left ventricular cardiac dysfunction has not been studied. Incidence of Congestive Heart Failure % (n) Study Regimen Herceptin Control NSABP B31 & NCCTG N9831Median follow-up duration for NSABP B31 & NCCTG N9831 combined was 8.3 years in the AC→paclitaxel+Herceptin arm. ACAnthracycline (doxorubicin) and cyclophosphamide.→Paclitaxel+Herceptin 3.2% (64/2000)Includes 1 patient with fatal cardiomyopathy and 1 patient with sudden death without documented etiology. 1.3% (21/1655) HERAIncludes NYHA II-IV and cardiac death at 12.6 months median duration of follow-up in the one-year Herceptin arm. Chemotherapy → Herceptin 2% (30/1678) 0.3% (5/1708) BCIRG006 AC→Docetaxel+Herceptin 2% (20/1068) 0.3% (3/1050) BCIRG006 Docetaxel+Carboplatin+Herceptin 0.4% (4/1056) 0.3% (3/1050) In HERA (one-year Herceptin treatment), at a median follow-up duration of 8 years, the incidence of severe CHF (NYHA III & IV) was 0.8%, and the rate of mild symptomatic and asymptomatic left ventricular dysfunction was 4.6%. NYHA I–IV NYHA III–IV Study Event Herceptin Control Herceptin Control H0648g (AC)Anthracycline (doxorubicin or epirubicin) and cyclophosphamide. Cardiac Dysfunction 28% 7% 19% 3% H0648g (paclitaxel) Cardiac Dysfunction 11% 1% 4% 1% H0649g Cardiac DysfunctionIncludes 1 patient with fatal cardiomyopathy. 7% N/A 5% N/A In BCIRG006, the incidence of NCI-CTC Grade 3/4 cardiac ischemia/infarction was higher in the Herceptin containing regimens (AC-TH: 0.3% (3/1068) and TCH: 0.2% (2/1056)) as compared to none in AC-T.",
+        "char_len": 4175,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Cardiomyopathy",
+        "source_xml": "DRUG-BREAST-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Infusion Reactions",
+        "text": "5.2 Infusion Reactions: Infusion reactions consist of a symptom complex characterized by fever and chills, and on occasion included nausea, vomiting, pain (in some cases at tumor sites), headache, dizziness, dyspnea, hypotension, rash, and asthenia [see Adverse Reactions (6.1)]. In post-marketing reports, serious and fatal infusion reactions have been reported. Severe reactions, which include bronchospasm, anaphylaxis, angioedema, hypoxia, and severe hypotension, were usually reported during or immediately following the initial infusion. However, the onset and clinical course were variable, including progressive worsening, initial improvement followed by clinical deterioration, or delayed post-infusion events with rapid clinical deterioration. For fatal events, death occurred within hours to days following a serious infusion reaction. Interrupt Herceptin infusion in all patients experiencing dyspnea, clinically significant hypotension, and intervention of medical therapy administered (which may include epinephrine, corticosteroids, diphenhydramine, bronchodilators, and oxygen). Patients should be evaluated and carefully monitored until complete resolution of signs and symptoms. Permanent discontinuation should be strongly considered in all patients with severe infusion reactions. There are no data regarding the most appropriate method of identification of patients who may safely be retreated with Herceptin after experiencing a severe infusion reaction. Prior to resumption of Herceptin infusion, the majority of patients who experienced a severe infusion reaction were pre-medicated with antihistamines and/or corticosteroids. While some patients tolerated Herceptin infusions, others had recurrent severe infusion reactions despite pre-medications.",
+        "char_len": 1773,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Infusion Reactions",
+        "source_xml": "DRUG-BREAST-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Embryo-Fetal Toxicity",
+        "text": "5.3 Embryo-Fetal Toxicity: Herceptin can cause fetal harm when administered to a pregnant woman. In post-marketing reports, use of Herceptin during pregnancy resulted in cases of oligohydramnios and oligohydramnios sequence manifesting as pulmonary hypoplasia, skeletal abnormalities, and neonatal death. Verify the pregnancy status of females of reproductive potential prior to the initiation of Herceptin. Advise pregnant women and females of reproductive potential that exposure to Herceptin during pregnancy or within 7 months prior to conception can result in fetal harm. Advise females of reproductive potential to use effective contraception during treatment and for 7 months following the last dose of Herceptin [see Use in Specific Populations (8.1, 8.3) and Clinical Pharmacology (12.3)].",
+        "char_len": 798,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Pulmonary Toxicity",
+        "text": "5.4 Pulmonary Toxicity: Herceptin use can result in serious and fatal pulmonary toxicity. Pulmonary toxicity includes dyspnea, interstitial pneumonitis, pulmonary infiltrates, pleural effusions, non-cardiogenic pulmonary edema, pulmonary insufficiency and hypoxia, acute respiratory distress syndrome, and pulmonary fibrosis. Such events can occur as sequelae of infusion reactions [see Warnings and Precautions (5.2)]. Patients with symptomatic intrinsic lung disease or with extensive tumor involvement of the lungs, resulting in dyspnea at rest, appear to have more severe toxicity.",
+        "char_len": 585,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Pulmonary Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Exacerbation of Chemotherapy-Induced Neutropenia",
+        "text": "5.5 Exacerbation of Chemotherapy-Induced Neutropenia: In randomized, controlled clinical trials, the per-patient incidences of NCI-CTC Grade 3–4 neutropenia and of febrile neutropenia were higher in patients receiving Herceptin in combination with myelosuppressive chemotherapy as compared to those who received chemotherapy alone. The incidence of septic death was similar among patients who received Herceptin and those who did not [see Adverse Reactions (6.1)].",
+        "char_len": 464,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Exacerbation of Chemotherapy-Induced Neutropenia",
+        "source_xml": "DRUG-BREAST-FDA-001.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: CARDIOMYOPATHY, INFUSION REACTIONS, EMBRYO-FETAL TOXICITY, and PULMONARY TOXICITY",
+        "text": "WARNING: CARDIOMYOPATHY, INFUSION REACTIONS, EMBRYO-FETAL TOXICITY, and PULMONARY TOXICITY: WARNING: CARDIOMYOPATHY, INFUSION REACTIONS, EMBRYO-FETAL TOXICITY, and PULMONARY TOXICITY See full prescribing information for complete boxed warning Cardiomyopathy: Herceptin can result in subclinical and clinical cardiac failure manifesting as CHF, and decreased LVEF, with greatest risk when administered concurrently with anthracyclines. Evaluate cardiac function prior to and during treatment. Discontinue Herceptin for cardiomyopathy. (2.5, 5.1) Infusion Reactions, Pulmonary Toxicity: Discontinue Herceptin for anaphylaxis, angioedema, interstitial pneumonitis, or acute respiratory distress syndrome. (5.2, 5.4) Embryo-Fetal Toxicity: Exposure to Herceptin during pregnancy can result in oligohydramnios, in some cases complicated by pulmonary hypoplasia and neonatal death. Advise patients of these risks and the need for effective contraception. (5.3, 8.1, 8.3) Herceptin administration can result in sub-clinical and clinical cardiac failure. The incidence and severity was highest in patients receiving Herceptin with anthracycline-containing chemotherapy regimens. Evaluate left ventricular function in all patients prior to and during treatment with Herceptin. Discontinue Herceptin treatment in patients receiving adjuvant therapy and withhold Herceptin in patients with metastatic disease for clinically significant decrease in left ventricular function [see Dosage and Administration (2.5) and Warnings and Precautions (5.1)]. Infusion Reactions; Pulmonary Toxicity Herceptin administration can result in serious and fatal infusion reactions and pulmonary toxicity. Symptoms usually occur during or within 24 hours of Herceptin administration. Interrupt Herceptin infusion for dyspnea or clinically significant hypotension. Monitor patients until symptoms completely resolve. Discontinue Herceptin for anaphylaxis, angioedema, interstitial pneumonitis, or acute respiratory distress syndrome [see Warnings and Precautions (5.2, 5.4)]. Embryo-Fetal Toxicity Exposure to Herceptin during pregnancy can result in oligohydramnios and oligohydramnios sequence manifesting as pulmonary hypoplasia, skeletal abnormalities, and neonatal death. Advise patients of these risks and the need for effective contraception [see Warnings and Precautions (5.3) and Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 2398,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: CARDIOMYOPATHY, INFUSION REACTIONS, EMBRYO-FETAL TOXICITY, and PULMONARY TOXICITY",
+        "source_xml": "DRUG-BREAST-FDA-001.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modifications for Adverse Reactions",
+            "text": "2.5 Dosage Modifications for Adverse Reactions: Infusion Reactions Assess left ventricular ejection fraction (LVEF) prior to initiation of Herceptin and at regular intervals during treatment. Withhold Herceptin dosing for at least 4 weeks for either of the following: Herceptin may be resumed if, within 4–8 weeks, the LVEF returns to normal limits and the absolute decrease from baseline is ≤ 15%. Permanently discontinue Herceptin for a persistent (> 8 weeks) LVEF decline or for suspension of Herceptin dosing on more than 3 occasions for cardiomyopathy.",
+            "char_len": 557,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-BREAST-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-001.xml",
+      "xml_present": true
+    },
+    "guideline_use_cancers": [],
+    "patient_plain": "{\"what_is_it\": \"这是一种用于治疗某些HER2阳性乳腺癌和胃癌的靶向药物。\", \"how_to_use\": \"这个药只能通过静脉输注给药，不能直接推注或快速注射。\", \"cautions\": [\"用药前需用FDA批准的检测方法确认肿瘤为HER2阳性。\", \"乳腺癌和胃癌需使用各自对应的FDA批准检测方法。\", \"开始用药前和用药期间需定期检查心脏射血分数。\", \"有生育能力的女性在开始用药前需确认是否怀孕。\", \"本药与皮下注射的曲妥珠单抗产品用法不同，不可混用。\", \"不可用本药替代或混用其他曲妥珠单抗偶联药物。\", \"停用本药后如需使用蒽环类药物，可能增加心脏问题风险。\", \"如可能，停用本药后7个月内避免使用蒽环类药物治疗。\", \"如停用本药后使用蒽环类药物，需密切监测心脏功能。\"], \"side_effects\": [{\"term\": \"发热\", \"plain\": \"用药后可能出现体温升高。\", \"when_to_seek_help\": \"如发热持续不退或伴有其他不适，请及时就医。\"}, {\"term\": \"恶心\", \"plain\": \"用药后可能感到想吐。\", \"when_to_seek_help\": \"如恶心严重到影响进食或持续不缓解，请及时就医。\"}, {\"term\": \"呕吐\", \"plain\": \"用药后可能发生呕吐。\", \"when_to_seek_help\": \"如呕吐频繁或无法进食进水，请及时就医。\"}, {\"term\": \"输注反应\", \"plain\": \"输注过程中可能出现不适反应。\", \"when_to_seek_help\": \"输注时如有不适，请立即告知医护人员。\"}, {\"term\": \"尿路感染\", \"plain\": \"可能出现泌尿系统感染。\", \"when_to_seek_help\": \"如出现尿痛、尿频或发热，请及时就医。\"}, {\"term\": \"上腹部疼痛\", \"plain\": \"可能感到上腹部疼痛。\", \"when_to_seek_help\": \"如腹痛持续或加重，请及时就医。\"}, {\"term\": \"外周水肿\", \"plain\": \"可能出现手脚等部位肿胀。\", \"when_to_seek_help\": \"如肿胀明显或突然加重，请及时就医。\"}, {\"term\": \"流感样症状\", \"plain\": \"可能出现类似流感的全身不适。\", \"when_to_seek_help\": \"如症状持续或加重，请及时就医。\"}, {\"term\": \"咽喉疼痛\", \"plain\": \"可能感到咽喉部疼痛。\", \"when_to_seek_help\": \"如咽痛严重或伴有发热，请及时就医。\"}, {\"term\": \"射血分数下降\", \"plain\": \"检查可能发现心脏泵血功能指标下降。\", \"when_to_seek_help\": \"如出现气短、乏力或心慌，请及时就医。\"}, {\"term\": \"心律失常\", \"plain\": \"可能出现心跳节律异常。\", \"when_to_seek_help\": \"如感到心慌、心跳不规则或头晕，请及时就医。\"}], \"seek_help\": \"如出现发热不退、严重恶心呕吐、输注时不适、尿痛尿频、腹痛加重、明显肿胀、气短乏力、心慌或心跳不规则，请及时就医。\"}",
+    "patient_plain_at": "2026-11-03T11:44:26"
+  }
+]

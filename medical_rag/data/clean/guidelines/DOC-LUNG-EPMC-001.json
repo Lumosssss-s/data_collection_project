@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "DOC-LUNG-EPMC-001",
+    "title": "Program Guidelines for the National Lung Cancer Screening Program: Targeted Lung Cancer Screening in High‐Risk Individuals in Australia",
+    "summary": "ABSTRACT Introduction Lung cancer is the leading cause of cancer mortality in Australia. In July 2025, the Australian Government launched the National Lung Cancer Screening Program (the Program). The Program has been designed in accordance with the Medical Services Advisory Committee's recommendations. This article summarises the program guidelines, outlining Program parameters and delivery requirements. The screening and assessment pathway defines the Program structure. The purpose of the guidelines is to ensure safe, effective and high‐quality Program delivery, detailing key steps for clinical practice and information for participating healthcare providers. Main Recommendations The guidelines provide recommendations for the delivery of targeted low‐dose CT screening for lung cancer in the Australian context. Program eligibility is assessed using risk‐based eligibility criteria recommended by the Medical Services Advisory Committee, targeting people between 50 and 70 years of age with a history of tobacco cigarette smoking. Smoking cessation supports are to be offered to all potential participants by healthcare providers across the lung cancer screening and assessment pathway. Low‐dose CT scan assessment and reporting follow the National Lung Cancer Screening Program's nodule management protocol. Changes in Management as a Result of the Guideline This guideline provides recommendations for the delivery of targeted low‐dose CT screening for lung cancer in the Australian context. Content includes: guidance on assessing Program eligibility; enrolling eligible participants in the National Cancer Screening Register; completing and fulfilling low‐dose CT scan requests; assessing and reporting low‐dose CT scan results; managing scan outcomes and actionable additional findings; and communicating scan results. The full guideline is available at https://www.health.gov.au/resources/publications/nlcsp‐guidelines .",
+    "doc_type": "guideline",
+    "issuer": "The Medical Journal of Australia",
+    "publish_date": "2026-07-13",
+    "cancer_types": [
+      "lung"
+    ],
+    "license_note": "Open Access (Europe PMC)",
+    "file_path": "raw/guidelines/DOC-LUNG-EPMC-001.xml",
+    "doc_hash": "6789900888522cf3f30d1d636d6d50582e2f5a2e5de7119ec360ab0bbe5d5804",
+    "review_status": "approved",
+    "_source": "europepmc",
+    "_pmid": "42438375",
+    "_pmcid": "PMC13358458",
+    "_doi": "10.5694/mja2.70234",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13358458/fullTextXML",
+    "_xml_bytes": 106255,
+    "source_name": "Program Guidelines for the National Lung Cancer Screening Program: Targeted Lung Cancer Screening in High‐Risk Individuals in Australia",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DOC-LUNG-EPMC-001.xml",
+    "updated_at": "2026-10-21"
+  }
+]

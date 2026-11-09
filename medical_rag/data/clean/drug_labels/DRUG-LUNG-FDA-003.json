@@ -1,0 +1,217 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-003",
+    "generic_name": "BEVACIZUMAB",
+    "brand_names": [
+      "AVASTIN"
+    ],
+    "aliases_zh": [
+      "贝伐珠单抗"
+    ],
+    "title": "BEVACIZUMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "1 INDICATIONS AND USAGE Avastin is a vascular endothelial growth factor inhibitor indicated for the treatment of: Metastatic colorectal cancer, in combination with intravenous fluorouracil-based chemotherapy for first- or second-line treatment. ( 1.1 ) Metastatic colorectal cancer, in combination with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy for second-line treatment in patients who have progressed on a first-line bevacizumab product-containing regimen. ( 1.1 ) Limitations of Use : Avastin is not indicated for adjuvant treatment of colon cancer. ( 1.1 ) Unresectable, locally advanced, recurrent or metastatic non-squamous non-small cell lung cancer, in combination with carboplatin and paclitaxel for first-line treatment. ( 1.2 ) Recurrent glioblastoma in adults. ( 1.3 ) Metastatic renal cell carcinoma in combination with interferon alfa. ( 1.4 ) Persistent, recurrent, or metastatic cervical cancer, in combination with paclitaxel and cisplatin, or paclitaxel and topotecan. ( 1.5 ) Epithelial ovarian, fallopian tube, or primary peritoneal cancer: in combination with carboplatin and paclitaxel, followed by Avastin as a single agent, for stage III or IV disease following initial surgical resection ( 1.6 ) in combination with paclitaxel, pegylated liposomal doxorubicin, or topotecan for platinum-resistant recurrent disease who received no more than 2 prior chemotherapy regimens ( 1.6 ) in combination with carboplatin and paclitaxel or carboplatin and gemcitabine, followed by Avastin as a single agent, for platinum-sensitive recurrent disease ( 1.6 ) Hepatocellular Carcinoma (HCC) in combination with atezolizumab for the treatment of patients with unresectable or metastatic HCC who have not received prior systemic therapy ( 1.7 ) 1.1 Metastatic Colorectal Cancer Avastin, in combination with intravenous fluorouracil-based chemotherapy, is indicated for the first-or second-line treatment of patients with metastatic colorectal cancer (mCRC). Avastin, in combination with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy, is indicated for the second-line treatment of patients with mCRC who have progressed on a first-line bevacizumab product-containing regimen. Limitations of Use : Avastin is not indicated for adjuvant treatment of colon cancer. 1.2 First-Line Non-Squamous Non–Small Cell Lung Cancer Avastin, in combination with carboplatin and paclitaxel, is indicated for the first-line treatment of patients with unresectable, locally advanced, recurrent or metastatic non–squamous non–small cell lung cancer (NSCLC). 1.3 Recurrent Glioblastoma Avastin is indicated for the treatment of recurrent glioblastoma (GBM) in adults. 1.4 Metastatic Renal Cell Carcinoma Avastin, in combination with interferon alfa, is indicated for the treatment of metastatic renal cell carcinoma (mRCC). 1.5 Persistent, Recurrent, or Metastatic Cervical Cancer Avastin, in combination with paclitaxel and cisplatin or paclitaxel and topotecan, is indicated for the treatment of patients with persistent, recurrent, or metastatic cervical cancer. 1.6 Epithelial Ovarian, Fallopian Tube, or Primary Peritoneal Cancer Avastin, in combination with carboplatin and paclitaxel, followed by Avastin as a single agent, is indicated for the treatment of patients with stage III or IV epithelial ovarian, fallopian tube, or primary peritoneal cancer following initial surgical resection. Avastin, in combination with paclitaxel, pegylated liposomal doxorubicin, or topotecan, is indicated for the treatment of patients with platinum-resistant recurrent epithelial ovarian, fallopian tube or primary peritoneal cancer who received no more than 2 prior chemotherapy regimens. Avastin, in combination with carboplatin and paclitaxel, or with carboplatin and gemcitabine, followed by Avastin as a single agent, is indicated for the treatment of patients with platinum-sensitive recurrent epithelial ovari",
+      "【中文适应证】贝伐珠单抗联合以铂类为基础的化疗用于不可切除的晚期、转移性或复发性非鳞状NSCLC 患者的一线治疗。",
+      "【中文适应证】贝伐珠单抗（仅适用于贝伐珠单抗生物类似物达攸同）联合信迪利单抗、培美曲塞和顺铂，用于经EGFR-TKI 治疗失败的EGFR 基因突变阳性的局部晚期或转移性非鳞状NSCLC患者的治疗。",
+      "【中文适应证】贝伐珠单抗联合以氟尿嘧啶为基础的化疗适用于转移性结直肠癌患者的治疗。"
+    ],
+    "dosage": {
+      "standard": "2 DOSAGE AND ADMINISTRATION Withhold for at least 28 days prior to elective surgery. Do not administer Avastin for 28 days following major surgery and until adequate wound healing. ( 2.1 ) Metastatic colorectal cancer ( 2.2 ) 5 mg/kg every 2 weeks with bolus-IFL 10 mg/kg every 2 weeks with FOLFOX4 5 mg/ kg every 2 weeks or 7.5 mg/kg every 3 weeks with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy after progression on a first-line bevacizumab product-containing regimen First-line non–squamous non–small cell lung cancer ( 2.3 ) 15 mg/kg every 3 weeks with carboplatin and paclitaxel Recurrent glioblastoma ( 2.4 ) 10 mg/kg every 2 weeks Metastatic renal cell carcinoma ( 2.5 ) 10 mg/kg every 2 weeks with interferon alfa Persistent, recurrent, or metastatic cervical cancer ( 2.6 ) 15 mg/kg every 3 weeks with paclitaxel and cisplatin, or paclitaxel and topotecan Stage III or IV epithelial ovarian, fallopian tube or primary peritoneal cancer following initial surgical resection ( 2.7 ) 15 mg/kg every 3 weeks with carboplatin and paclitaxel for up to 6 cycles, followed by 15 mg/kg every 3 weeks as a single agent, for a total of up to 22 cycles Platinum-resistant recurrent epithelial ovarian, fallopian tube or primary peritoneal cancer ( 2.7 ) 10 mg/kg every 2 weeks with paclitaxel, pegylated liposomal doxorubicin, or topotecan given every week 15 mg/kg every 3 weeks with topotecan given every 3 weeks Platinum-sensitive recurrent epithelial ovarian, fallopian tube, or primary peritoneal cancer ( 2.7 ) 15 mg/kg every 3 weeks with carboplatin and paclitaxel for 6-8 cycles, followed by 15 mg/kg every 3 weeks as a single agent 15 mg/kg every 3 weeks with carboplatin and gemcitabine for 6-10 cycles, followed by 15 mg/kg every 3 weeks as a single agent Hepatocellular Carcinoma ( 2.8 ) 15 mg/kg after administration of 1,200 mg of atezolizumab every 3 weeks Administer as an intravenous infusion after dilution. See full Prescribing Information for preparation and administration instructions and dosage modifications for adverse reactions ( 2.9 , 2.10 ) 2.1 Important Administration Information Withhold for at least 28 days prior to elective surgery. Do not administer Avastin until at least 28 days following major surgery and until adequate wound healing. 2.2 Metastatic Colorectal Cancer The recommended dosage when Avastin is administered in combination with intravenous fluorouracil-based chemotherapy is: 5 mg/kg intravenously every 2 weeks in combination with bolus-IFL. 10 mg/kg intravenously every 2 weeks in combination with FOLFOX4. 5 mg/kg intravenously every 2 weeks or 7.5 mg/kg intravenously every 3 weeks in combination with fluoropyrimidine-irinotecan- or fluoropyrimidine-oxaliplatin-based chemotherapy in patients who have progressed on a first-line bevacizumab product-containing regimen. 2.3 First-Line Non-Squamous Non-Small Cell Lung Cancer The recommended dosage is 15 mg/kg intravenously every 3 weeks in combination with carboplatin and paclitaxel. 2.4 Recurrent Glioblastoma The recommended dosage is 10 mg/kg intravenously every 2 weeks. 2.5 Metastatic Renal Cell Carcinoma The recommended dosage is 10 mg/kg intravenously every 2 weeks in combination with interferon alfa. 2.6 Persistent, Recurrent, or Metastatic Cervical Cancer The recommended dosage is 15 mg/kg intravenously every 3 weeks in combination with paclitaxel and cisplatin or in combination with paclitaxel and topotecan. 2.7 Epithelial Ovarian, Fallopian Tube or Primary Peritoneal Cancer Stage III or IV Disease Following Initial Surgical Resection The recommended dosage is 15 mg/kg intravenously every 3 weeks in combination with carboplatin and paclitaxel for up to 6 cycles, followed by Avastin 15 mg/kg every 3 weeks as a single agent for a total of up to 22 cycles or until disease progression, whichever occurs earlier. Recurrent Disease Platinum Resistant The recommended dosage is 10 mg/kg intravenously every 2 weeks in combination with paclita",
+      "adjustment": ""
+    },
+    "contraindications": [
+      "尚无禁忌（FDA 说明书原文：None）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following clinically significant adverse reactions are described elsewhere in the labeling: Gastrointestinal Perforations and Fistulae . Surgery and Wound Healing Complications. Hemorrhage. Arterial Thromboembolic Events. Venous Thromboembolic Events. Hypertension. Posterior Reversible Encephalopathy Syndrome. Renal Injury and Proteinuria. Infusion-Related Reactions. Ovarian Failure. Congestive Heart Failure. Most common adverse reactions incidence (incidence > 10%) are epistaxis, headache, hypertension, rhinitis, proteinuria, taste alteration, dry skin, hemorrhage, lacrimation disorder, back pain and exfoliative dermatitis. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Genentech, Inc. at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. 6.1 Clinical Trials Experience Because clinical studies are conducted under widely varying conditions, adverse reaction rates observed in the clinical studies of a drug cannot be directly compared to rates in the clinical studies of another drug and may not reflect the rates observed in practice. The safety data in Warnings and Precautions and described below reflect exposure to Avastin in 4463 patients including those with mCRC (AVF2107g, E3200), non-squamous NSCLC (E4599), GBM (EORTC 26101), mRCC (BO17705), cervical cancer (GOG-0240), epithelial ovarian, fallopian tube, or primary peritoneal cancer (MO22224, AVF4095, GOG-0213, and GOG-0218), or HCC (IMbrave150) at the recommended dose and schedule for a median of 6 to 23 doses. The most common adverse reactions observed in patients receiving Avastin as a single agent or in combination with other anti-cancer therapies at a rate > 10% were epistaxis, headache, hypertension, rhinitis, proteinuria, taste alteration, dry skin, hemorrhage, lacrimation disorder, back pain, and exfoliative dermatitis. Across clinical studies, Avastin was discontinued in 8% to 22% of patients because of adverse reactions. Metastatic Colorectal Cancer In Combination with bolus-IFL The safety of Avastin was evaluated in 392 patients who received at least one dose of Avastin in a double-blind, active-controlled study (AVF2107g), which compared Avastin (5 mg/kg every 2 weeks) with bolus-IFL to placebo with bolus-IFL in patients with mCRC . Patients were randomized (1:1:1) to placebo with bolus-IFL, Avastin with bolus-IFL, or Avastin with fluorouracil and leucovorin. The demographics of the safety population were similar to the demographics of the efficacy population. All G",
+        "frequency": "10%",
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "FDA DailyMed public label",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-003.xml",
+    "doc_hash": "8f44417c744e1fb2d98ade54e9239bce91e63b20466cacef6e4efa198d4e094e",
+    "review_status": "approved",
+    "_source": "dailymed",
+    "_setid": "939b5d1f-9fb2-4499-80ef-0607aa6b114e",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/939b5d1f-9fb2-4499-80ef-0607aa6b114e.xml",
+    "atc_code": "L01FG01",
+    "approval_no": "国药准字SJ20170035",
+    "source_name": "BEVACIZUMAB 说明书（FDA DailyMed）",
+    "source_version": "2025",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-003.xml",
+    "updated_at": "2026-10-21",
+    "interactions": [
+      "Effects of Avastin on Other Drugs",
+      "No clinically meaningful effect on the pharmacokinetics of irinotecan or its active metabolite SN38, interferon alfa, carboplatin or paclitaxel was observed when Avastin was administered in combination with these drugs; however, 3 of the 8 patients receiving Avastin with paclitaxel and carboplatin had lower paclitaxel exposure after four cycles of treatment (at Day 63) than those at Day 0, while patients receiving paclitaxel and carboplatin alone had a greater paclitaxel exposure at Day 63 than at Day 0."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Gastrointestinal Perforations and Fistulae",
+        "text": "5.1 Gastrointestinal Perforations and Fistulae: Serious, and sometimes fatal, gastrointestinal perforation occurred at a higher incidence in patients receiving Avastin compared to patients receiving chemotherapy. The incidence ranged from 0.3% to 3% across clinical studies, with the highest incidence in patients with a history of prior pelvic radiation. Perforation can be complicated by intra-abdominal abscess, fistula formation, and the need for diverting ostomies. The majority of perforations occurred within 50 days of the first dose [see Adverse Reactions (6.1)]. Serious fistulae (including, tracheoesophageal, bronchopleural, biliary, vaginal, renal and bladder sites) occurred at a higher incidence in patients receiving Avastin compared to patients receiving chemotherapy. The incidence ranged from < 1% to 1.8% across clinical studies, with the highest incidence in patients with cervical cancer. The majority of fistulae occurred within 6 months of the first dose. Patients who develop a gastrointestinal vaginal fistula may also have a bowel obstruction and require surgical intervention, as well as a diverting ostomy. Avoid Avastin in patients with ovarian cancer who have evidence of recto-sigmoid involvement by pelvic examination or bowel involvement on CT scan or clinical symptoms of bowel obstruction. Discontinue in patients who develop gastrointestinal perforation, tracheoesophageal fistula or any Grade 4 fistula. Discontinue in patients with fistula formation involving any internal organ.",
+        "char_len": 1518,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Gastrointestinal Perforations and Fistulae",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Surgery and Wound Healing Complications",
+        "text": "5.2 Surgery and Wound Healing Complications: In a controlled clinical study in which Avastin was not administered within 28 days of major surgical procedures, the incidence of wound healing complications, including serious and fatal complications, was 15% in patients with mCRC who underwent surgery while receiving Avastin and 4% in patients who did not receive Avastin. In a controlled clinical study in patients with relapsed or recurrent GBM, the incidence of wound healing events was 5% in patients who received Avastin and 0.7% in patients who did not receive Avastin [see Adverse Reactions (6.1)]. In patients who experience wound healing complications during Avastin treatment, withhold Avastin until adequate wound healing. Withhold for at least 28 days prior to elective surgery. Do not administer for at least 28 days following major surgery and until adequate wound healing. The safety of resumption of AVASTIN after resolution of wound healing complications has not been established [see Dosage and Administration (2.9)]. Necrotizing fasciitis including fatal cases, has been reported in patients receiving Avastin, usually secondary to wound healing complications, gastrointestinal perforation or fistula formation. Discontinue Avastin in patients who develop necrotizing fasciitis.",
+        "char_len": 1296,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Surgery and Wound Healing Complications",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Hemorrhage",
+        "text": "5.3 Hemorrhage: Avastin can result in two distinct patterns of bleeding: minor hemorrhage, which is most commonly Grade 1 epistaxis, and serious hemorrhage, which in some cases has been fatal. Severe or fatal hemorrhage, including hemoptysis, gastrointestinal bleeding, hematemesis, CNS hemorrhage, epistaxis, and vaginal bleeding, occurred up to 5-fold more frequently in patients receiving Avastin compared to patients receiving chemotherapy alone. Across clinical studies, the incidence of Grades 3-5 hemorrhagic events ranged from 0.4% to 7% in patients receiving Avastin [see Adverse Reactions (6.1)]. Serious or fatal pulmonary hemorrhage occurred in 31% of patients with squamous NSCLC and 4% of patients with non-squamous NSCLC receiving Avastin with chemotherapy compared to none of the patients receiving chemotherapy alone. An evaluation for the presence of varices is recommended within 6 months of initiation of Avastin in patients with HCC. There is lack of clinical data to support the safety of Avastin in patients with variceal bleeding within 6 months prior to treatment, untreated or incompletely treated varices with bleeding, or high risk of bleeding because these patients were excluded from clinical trials of Avastin in HCC [see Clinical Studies (14.10)]. Do not administer Avastin to patients with recent history of hemoptysis of 1/2 teaspoon or more of red blood. Discontinue in patients who develop a Grades 3-4 hemorrhage.",
+        "char_len": 1450,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Hemorrhage",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Arterial Thromboembolic Events",
+        "text": "5.4 Arterial Thromboembolic Events: Serious, sometimes fatal, arterial thromboembolic events (ATE) including cerebral infarction, transient ischemic attacks, myocardial infarction, and angina, occurred at a higher incidence in patients receiving Avastin compared to patients receiving chemotherapy. Across clinical studies, the incidence of Grades 3-5 ATE was 5% in patients receiving Avastin with chemotherapy compared to ≤2% in patients receiving chemotherapy alone; the highest incidence occurred in patients with GBM. The risk of developing ATE was increased in patients with a history of arterial thromboembolism, diabetes, or >65 years [see Use in Specific Populations (8.5)]. Discontinue in patients who develop a severe ATE. The safety of reinitiating Avastin after an ATE is resolved is not known.",
+        "char_len": 806,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Arterial Thromboembolic Events",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Venous Thromboembolic Events",
+        "text": "5.5 Venous Thromboembolic Events: An increased risk of venous thromboembolic events (VTE) was observed across clinical studies [see Adverse Reactions (6.1)]. In Study GOG-0240, Grades 3-4 VTE occurred in 11% of patients receiving Avastin with chemotherapy compared with 5% of patients receiving chemotherapy alone. In EORTC 26101, the incidence of Grades 3-4 VTE was 5% in patients receiving Avastin with chemotherapy compared to 2% in patients receiving chemotherapy alone. Discontinue Avastin in patients with a Grade 4 VTE, including pulmonary embolism.",
+        "char_len": 556,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Venous Thromboembolic Events",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Hypertension",
+        "text": "5.6 Hypertension: Severe hypertension occurred at a higher incidence in patients receiving Avastin as compared to patients receiving chemotherapy alone. Across clinical studies, the incidence of Grades 3-4 hypertension ranged from 5% to 18%. Monitor blood pressure every two to three weeks during treatment with Avastin. Treat with appropriate anti-hypertensive therapy and monitor blood pressure regularly. Continue to monitor blood pressure at regular intervals in patients with Avastin-induced or -exacerbated hypertension after discontinuing Avastin. Withhold Avastin in patients with severe hypertension that is not controlled with medical management; resume once controlled with medical management. Discontinue in patients who develop hypertensive crisis or hypertensive encephalopathy.",
+        "char_len": 792,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Hypertension",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Posterior Reversible Encephalopathy Syndrome",
+        "text": "5.7 Posterior Reversible Encephalopathy Syndrome: Posterior reversible encephalopathy syndrome (PRES) was reported in < 0.5% of patients across clinical studies. The onset of symptoms occurred from 16 hours to 1 year after the first dose. PRES is a neurological disorder which can present with headache, seizure, lethargy, confusion, blindness and other visual and neurologic disturbances. Mild to severe hypertension may be present. Magnetic resonance imaging is necessary to confirm the diagnosis of PRES. Discontinue Avastin in patients who develop PRES. Symptoms usually resolve or improve within days after discontinuing Avastin, although some patients have experienced ongoing neurologic sequelae. The safety of reinitiating Avastin in patients who developed PRES is not known.",
+        "char_len": 783,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Posterior Reversible Encephalopathy Syndrome",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Renal Injury and Proteinuria",
+        "text": "5.8 Renal Injury and Proteinuria: The incidence and severity of proteinuria was higher in patients receiving Avastin as compared to patients receiving chemotherapy. Grade 3 (defined as urine dipstick 4+ or > 3.5 grams of protein per 24 hours) to Grade 4 (defined as nephrotic syndrome) ranged from 0.7% to 7% in clinical studies. The overall incidence of proteinuria (all grades) was only adequately assessed in Study BO17705, in which the incidence was 20%. Median onset of proteinuria was 5.6 months (15 days to 37 months) after initiating Avastin. Median time to resolution was 6.1 months (95% CI: 2.8, 11.3). Proteinuria did not resolve in 40% of patients after median follow-up of 11.2 months and required discontinuation of Avastin in 30% of the patients who developed proteinuria [see Adverse Reactions (6.1)]. In an exploratory, pooled analysis of patients from seven randomized clinical studies, 5% of patients receiving Avastin with chemotherapy experienced Grades 2-4 (defined as urine dipstick 2+ or greater or > 1 gram of protein per 24 hours or nephrotic syndrome) proteinuria. Grades 2-4 proteinuria resolved in 74% of patients. Avastin was reinitiated in 42% of patients. Of the 113 patients who reinitiated Avastin, 48% experienced a second episode of Grades 2-4 proteinuria. Nephrotic syndrome occurred in < 1% of patients receiving Avastin across clinical studies, in some instances with fatal outcome. In a published case series, kidney biopsy of 6 patients with proteinuria showed findings consistent with thrombotic microangiopathy. Results of a retrospective analysis of 5805 patients who received Avastin with chemotherapy and 3713 patients who received chemotherapy alone, showed higher rates of elevated serum creatinine levels (between 1.5 to 1.9 times baseline levels) in patients who received Avastin. Serum creatinine levels did not return to baseline in approximately one-third of patients who received Avastin. Monitor proteinuria by dipstick urine analysis for the development or worsening of proteinuria with serial urinalyses during Avastin therapy. Patients with a 2+ or greater urine dipstick reading should undergo further assessment with a 24-hour urine collection. Withhold for proteinuria greater than or equal to 2 grams per 24 hours and resume when less than 2 grams per 24 hours. Discontinue in patients who develop nephrotic syndrome. Data from a postmarketing safety study showed poor correlation between UPCR (Urine Protein/Creatinine Ratio) and 24-hour urine protein [Pearson Correlation 0.39 (95% CI: 0.17, 0.57)].",
+        "char_len": 2563,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Renal Injury and Proteinuria",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Infusion-Related Reactions",
+        "text": "5.9 Infusion-Related Reactions: Infusion-related reactions reported across clinical studies and postmarketing experience include hypertension, hypertensive crises associated with neurologic signs and symptoms, wheezing, oxygen desaturation, Grade 3 hypersensitivity, anaphylactoid/anaphylactic reactions, chest pain, headaches, rigors, and diaphoresis. In clinical studies, infusion-related reactions with the first dose occurred in < 3% of patients and severe reactions occurred in 0.4% of patients. Decrease the rate of infusion for mild, clinically insignificant infusion-related reactions. Interrupt the infusion in patients with clinically significant infusion-related reactions and consider resuming at a slower rate following resolution. Discontinue in patients who develop a severe infusion-related reaction and administer appropriate medical therapy (e.g., epinephrine, corticosteroids, intravenous antihistamines, bronchodilators and/or oxygen).",
+        "char_len": 955,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Infusion-Related Reactions",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Embryo-Fetal Toxicity",
+        "text": "5.10 Embryo-Fetal Toxicity: Based on its mechanism of action and findings from animal studies, Avastin may cause fetal harm when administered to pregnant women. Congenital malformations were observed with the administration of bevacizumab to pregnant rabbits during organogenesis every 3 days at a dose as low as a clinical dose of 10 mg/kg. Furthermore, animal models link angiogenesis and VEGF and VEGFR2 to critical aspects of female reproduction, embryo-fetal development, and postnatal development. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with Avastin and for 6 months after the last dose [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 744,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.11 Ovarian Failure",
+        "text": "5.11 Ovarian Failure: The incidence of ovarian failure was 34% vs. 2% in premenopausal women receiving Avastin with chemotherapy as compared to those receiving chemotherapy alone for adjuvant treatment of a solid tumor. After discontinuing Avastin, recovery of ovarian function at all time points during the post-treatment period was demonstrated in 22% of women receiving Avastin. Recovery of ovarian function is defined as resumption of menses, a positive serum β-HCG pregnancy test, or an FSH level < 30 mIU/mL during the post-treatment period. Long-term effects of Avastin on fertility are unknown. Inform females of reproductive potential of the risk of ovarian failure prior to initiating Avastin [see Adverse Reactions (6.1), Use in Specific Populations (8.3)].",
+        "char_len": 768,
+        "source_section_code": "42229-5",
+        "source_title": "5.11 Ovarian Failure",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.12 Congestive Heart Failure (CHF)",
+        "text": "5.12 Congestive Heart Failure (CHF): Avastin is not indicated for use with anthracycline-based chemotherapy. The incidence of Grade ≥ 3 left ventricular dysfunction was 1% in patients receiving Avastin compared to 0.6% of patients receiving chemotherapy alone. Among patients who received prior anthracycline treatment, the rate of CHF was 4% for patients receiving Avastin with chemotherapy as compared to 0.6% for patients receiving chemotherapy alone. In previously untreated patients with a hematological malignancy, the incidence of CHF and decline in left ventricular ejection fraction (LVEF) were increased in patients receiving Avastin with anthracycline-based chemotherapy compared to patients receiving placebo with the same chemotherapy regimen. The proportion of patients with a decline in LVEF from baseline of ≥ 20% or a decline from baseline of 10% to < 50%, was 10% in patients receiving Avastin with chemotherapy compared to 5% in patients receiving chemotherapy alone. Time to onset of left-ventricular dysfunction or CHF was 1 to 6 months after the first dose in at least 85% of the patients and was resolved in 62% of the patients who developed CHF in the Avastin arm compared to 82% in the placebo arm. Discontinue Avastin in patients who develop CHF.",
+        "char_len": 1272,
+        "source_section_code": "42229-5",
+        "source_title": "5.12 Congestive Heart Failure (CHF)",
+        "source_xml": "DRUG-LUNG-FDA-003.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.9 Dosage Modifications for Adverse Reactions",
+            "text": "2.9 Dosage Modifications for Adverse Reactions: Table 1 describes dosage modifications for specific adverse reactions. No dose reductions for Avastin are recommended. Adverse Reaction Severity Dosage Modification Gastrointestinal Perforations and Fistulae [see Warnings and Precautions (5.1)]. Gastrointestinal perforation, any grade Tracheoesophageal fistula, any grade Fistula, Grade 4 Fistula formation involving any internal organ Discontinue Avastin Wound Healing Complications [see Warnings and Precautions (5.2)]. Any Withhold AVASTIN until adequate wound healing.The safety of resumption of AVASTIN after resolution of wound healing complications has not been established. Necrotizing fasciitis Discontinue Avastin Hemorrhage [see Warnings and Precautions (5.3)]. Grade 3 or 4 Discontinue Avastin Recent history of hemoptysis of 1/2 teaspoon (2.5 mL) or more Withhold Avastin Thromboembolic Events [see Warnings and Precautions (5.4, 5.5)]. Arterial thromboembolism, severe Discontinue Avastin Venous thromboembolism, Grade 4 Discontinue Avastin Hypertension [see Warnings and Precautions (5.6)]. Hypertensive crisis Hypertensive encephalopathy Discontinue Avastin Hypertension, severe Withhold Avastin if not controlled with medical management; resume once controlled Posterior Reversible Encephalopathy Syndrome (PRES) [see Warnings and Precautions (5.7)]. Any Discontinue Avastin Renal Injury and Proteinuria [see Warnings and Precautions (5.8)]. Nephrotic syndrome Discontinue Avastin Proteinuria greater than or equal to 2 grams per 24 hours in absence of nephrotic syndrome Withhold Avastin until proteinuria less than 2 grams per 24 hours Infusion-Related Reactions [see Warnings and Precautions (5.9)]. Severe Discontinue Avastin Clinically significant Interrupt infusion; resume at a decreased rate of infusion after symptoms resolve Mild, clinically insignificant Decrease infusion rate Congestive Heart Failure [see Warnings and Precautions (5.12)]. Any Discontinue Avastin",
+            "char_len": 1992,
+            "source_section_code": "42229-5",
+            "source_title": "2.9 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-003.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-003.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种抑制血管内皮生长因子的药，用于治疗多种癌症，通常与其他抗癌药联合使用。\", \"how_to_use\": \"本药通过静脉输注给药，需稀释后使用。计划手术前至少28天应暂停用药。大手术后至少28天内不应使用，且需等伤口充分愈合。不同癌症的用量和用药间隔不同，需按医生方案执行。\", \"cautions\": [\"计划做手术前至少28天要暂停本药。\", \"大手术后至少28天内不要用本药。\", \"需等伤口充分愈合后才能使用本药。\", \"本药不用于结肠癌的辅助治疗。\", \"本药需稀释后通过静脉输注给药。\", \"不同癌症类型的用法用量不同，需遵医嘱。\", \"说明书未列出禁忌，但用药仍需医生评估。\"], \"side_effects\": [{\"term\": \"胃肠穿孔和瘘管\", \"plain\": \"胃肠道可能出现穿孔或异常通道。\", \"when_to_seek_help\": \"出现剧烈腹痛、发热或腹部异常时需及时就医。\"}, {\"term\": \"手术和伤口愈合并发症\", \"plain\": \"可能影响手术伤口愈合。\", \"when_to_seek_help\": \"伤口红肿、渗液、裂开或久不愈合时需就医。\"}, {\"term\": \"出血\", \"plain\": \"可能出现出血情况。\", \"when_to_seek_help\": \"出现明显或持续出血时需及时就医。\"}, {\"term\": \"动脉血栓栓塞事件\", \"plain\": \"动脉内可能形成血栓。\", \"when_to_seek_help\": \"出现胸痛、肢体无力或言语异常时需立即就医。\"}, {\"term\": \"静脉血栓栓塞事件\", \"plain\": \"静脉内可能形成血栓。\", \"when_to_seek_help\": \"出现单侧腿肿痛、气短或胸痛时需及时就医。\"}, {\"term\": \"高血压\", \"plain\": \"血压可能升高。\", \"when_to_seek_help\": \"出现头痛、头晕或血压明显升高时需就医。\"}, {\"term\": \"可逆性后部脑病综合征\", \"plain\": \"可能出现脑部相关症状。\", \"when_to_seek_help\": \"出现头痛、意识改变或视力异常时需及时就医。\"}, {\"term\": \"肾损伤和蛋白尿\", \"plain\": \"可能影响肾脏，尿中出现蛋白。\", \"when_to_seek_help\": \"出现尿量减少或水肿时需就医。\"}, {\"term\": \"输注相关反应\", \"plain\": \"输注时可能出现不适反应。\", \"when_to_seek_help\": \"输注中出现寒战、发热或不适时需告知医护人员。\"}, {\"term\": \"卵巢功能衰竭\", \"plain\": \"可能影响卵巢功能。\", \"when_to_seek_help\": \"出现月经异常等变化时需咨询医生。\"}, {\"term\": \"充血性心力衰竭\", \"plain\": \"可能影响心脏功能。\", \"when_to_seek_help\": \"出现气短、水肿或乏力加重时需就医。\"}, {\"term\": \"鼻出血\", \"plain\": \"常见不良反应之一，表现为鼻出血。\", \"when_to_seek_help\": \"鼻出血频繁或难以止住时需就医。\"}, {\"term\": \"头痛\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"头痛严重或持续不缓解时需就医。\"}, {\"term\": \"鼻炎\", \"plain\": \"常见不良反应之一，表现为鼻部不适。\", \"when_to_seek_help\": \"症状明显或持续时需咨询医生。\"}, {\"term\": \"蛋白尿\", \"plain\": \"尿中出现蛋白，常见不良反应之一。\", \"when_to_seek_help\": \"发现尿泡沫增多或水肿时需就医。\"}, {\"term\": \"味觉改变\", \"plain\": \"常见不良反应之一，味觉可能变化。\", \"when_to_seek_help\": \"影响进食或持续不缓解时需咨询医生。\"}, {\"term\": \"皮肤干燥\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"皮肤明显干燥、破损或不适时需就医。\"}, {\"term\": \"流泪障碍\", \"plain\": \"常见不良反应之一，可能影响流泪。\", \"when_to_seek_help\": \"眼部明显不适或持续异常时需就医。\"}, {\"term\": \"背痛\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"背痛严重或持续不缓解时需就医。\"}, {\"term\": \"剥脱性皮炎\", \"plain\": \"常见不良反应之一，皮肤可能脱屑。\", \"when_to_seek_help\": \"出现明显皮肤脱屑、红肿时需及时就医。\"}], \"seek_help\": \"出现剧烈腹痛、发热、明显出血、胸痛、气短、单侧腿肿痛、肢体无力、言语异常、意识改变、视力异常、尿量减少、水肿、输注中寒战发热、鼻出血难止、严重头痛、皮肤明显脱屑红肿等情况时，需及时就医。\"}",
+    "patient_plain_at": "2026-11-03T11:22:45"
+  }
+]

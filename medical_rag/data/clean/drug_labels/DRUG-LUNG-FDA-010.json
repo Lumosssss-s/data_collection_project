@@ -1,0 +1,358 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-010",
+    "generic_name": "DOCETAXEL",
+    "brand_names": [],
+    "aliases_zh": [
+      "多西他赛"
+    ],
+    "title": "DOCETAXEL 说明书（FDA DailyMed）",
+    "indications": [
+      "Docetaxel injection is a microtubule inhibitor indicated for:",
+      "Docetaxel injection is indicated for the treatment of patients with locally advanced or metastatic breast cancer after failure of prior chemotherapy.",
+      "Docetaxel injection in combination with doxorubicin and cyclophosphamide is indicated for the adjuvant treatment of patients with operable node-positive breast cancer.",
+      "Docetaxel injection as a single agent is indicated for the treatment of patients with locally advanced or metastatic non-small cell lung cancer after failure of prior platinum-based chemotherapy.",
+      "Docetaxel injection in combination with cisplatin is indicated for the treatment of patients with unresectable, locally advanced or metastatic non-small cell lung cancer who have not previously received chemotherapy for this condition.",
+      "Docetaxel injection in combination with prednisone is indicated for the treatment of patients with metastatic castration-resistant prostate cancer.",
+      "Docetaxel injection in combination with cisplatin and fluorouracil is indicated for the treatment of patients with advanced gastric adenocarcinoma, including adenocarcinoma of the gastroesophageal junction, who have not received prior chemotherapy for advanced disease.",
+      "Docetaxel injection in combination with cisplatin and fluorouracil is indicated for the induction treatment of patients with locally advanced squamous cell carcinoma of the head and neck (SCCHN)."
+    ],
+    "dosage": {
+      "standard": "For all indications, toxicities may warrant dosage adjustments [see Dosage and Administration (2.7)]. Administer in a facility equipped to manage possible complications (e.g., anaphylaxis). Administer in a facility equipped to manage possible complications (e.g., anaphylaxis). Administer intravenously (IV) over 1 hour every 3 weeks. PVC equipment is not recommended. Use only a 21 gauge needle to withdraw docetaxel injection from the vial. Patients must receive premedication with antiemetics, and appropriate hydration (prior to and after cisplatin administration). Prophylaxis for neutropenic infections should be administered. All patients treated on the docetaxel injection containing arms of the TAX323 and TAX324 studies received prophylactic antibiotics. For the induction treatment of locally advanced inoperable SCCHN, the recommended dose of docetaxel injection is 75 mg/m2 as a 1 hour intravenous infusion followed by cisplatin 75 mg/m2 intravenously over 1 hour, on day one, followed by fluorouracil as a continuous intravenous infusion at 750 mg/m2 per day for five days. This regimen is administered every 3 weeks for 4 cycles. Following chemotherapy, patients should receive radiotherapy [see Dosage and Administration (2.7)]. For the induction treatment of patients with locally advanced (unresectable, low surgical cure, or organ preservation) SCCHN, the recommended dose of docetaxel injection is 75 mg/m2 as a 1 hour intravenous infusion on day 1, followed by cisplatin 100 mg/m2 administered as a 30-minute to 3 hour infusion, followed by fluorouracil 1000 mg/m2/day as a continuous infusion from day 1 to day 4. This regimen is administered every 3 weeks for 3 cycles. Following chemotherapy, patients should receive chemoradiotherapy [ see Dosage and Administration (2.7)]. A",
+      "adjustment": "Patients must receive premedication with antiemetics, and appropriate hydration (prior to and after cisplatin administration). Prophylaxis for neutropenic infections should be administered. All patients treated on the docetaxel injection containing arms of the TAX323 and TAX324 studies received prophylactic antibiotics. For the induction treatment of locally advanced inoperable SCCHN, the recommended dose of docetaxel injection is 75 mg/m2 as a 1 hour intravenous infusion followed by cisplatin 75 mg/m2 intravenously over 1 hour, on day one, followed by fluorouracil as a continuous intravenous infusion at 750 mg/m2 per day for five days. This regimen is administered every 3 weeks for 4 cycles. Following chemotherapy, patients should receive radiotherapy [see Dosage and Administration (2.7)]. For the induction treatment of patients with locally advanced (unresectable, low surgical cure, or organ preservation) SCCHN, the recommended dose of docetaxel injection is 75 mg/m2 as a 1 hour intravenous infusion on day 1, followed by cisplatin 100 mg/m2 administered as a 30-minute to 3 hour infusion, followed by fluorouracil 1000 mg/m2/day as a continuous infusion from day 1 to day 4. This re"
+    },
+    "contraindications": [
+      "Docetaxel injection is contraindicated in patients with:"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The most serious adverse reactions from docetaxel are:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions across all docetaxel indications are infections, neutropenia, anemia, febrile neutropenia, hypersensitivity, thrombocytopenia,",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions are described according to indication. Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Responding patients may not experience an improvement in performance status on therapy and may experience worsening. The relationship between changes in perform",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Most common adverse reactions across all docetaxel indications are infections, neutropenia, anemia, febrile neutropenia, hypersensitivity, thrombocytopenia, neu",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Viatris at 1-877-446-3679 (1-877-4-INFO-RX) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Monotherapy with Docetaxel for Locally Advanced or Metastatic Breast Cancer after Failure of Prior Chemotherapy",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Docetaxel 100 mg/m2: Adverse drug reactions occurring in at least 5% of patients are compared for three populations who received docetaxel administered at 100 m",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction All Tumor Types Normal LFTs Normal Baseline LFTs: Transaminases ≤ 1.5 times ULN or alkaline phosphatase ≤ 2.5 times ULN or isolated elevations ",
+        "frequency": "2045 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Tumor Types Normal LFTs Normal Baseline LFTs: Transaminases ≤ 1.5 times ULN or alkaline phosphatase ≤ 2.5 times ULN or isolated elevations of transaminases ",
+        "frequency": "2045 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Tumor Types Elevated LFTs Elevated Baseline LFTs: AST and/or ALT > 1.5 times ULN concurrent with alkaline phosphatase > 2.5 times ULN n = 61%",
+        "frequency": "61%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Breast Cancer Normal LFTs n = 965 %",
+        "frequency": "965 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "< 2000 cells/mm3 96 96 99",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "< 500 cells/mm3 75 88 86",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "< 4000 cells/mm3 96 98 99",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "< 1000 cells/mm3 32 47 44",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "< 100,000 cells/mm3 8 25 9",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Febrile NeutropeniaFebrile Neutropenia: ANC grade 4 with fever > 38°C with intravenous antibiotics and/or hospitalization 11 26 12",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Febrile NeutropeniaFebrile Neutropenia: ANC grade 4 with fever > 38°C with intravenous antibiotics and/or hospitalization",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Non-Septic Death 1 7 1",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-10-05",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-010.xml",
+    "doc_hash": "ab4d9b2ecadd0276a49723d71168aa65839678b035e95f32aeacba6c7f604cfc",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "2fb017fd-e55e-43ef-9024-07f2d412b37b",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/2fb017fd-e55e-43ef-9024-07f2d412b37b.xml",
+    "atc_code": "L01CD02",
+    "approval_no": null,
+    "source_name": "DOCETAXEL 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-010.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "Docetaxel is a CYP3A4 substrate. In vitro studies have shown that the metabolism of docetaxel may be modified by the concomitant administration of compounds that induce, inhibit, or are metabolized by cytochrome P450 3A4.",
+      "In vivo studies showed that the exposure of docetaxel increased 2.2-fold when it was coadministered with ketoconazole, a potent inhibitor of CYP3A4. Protease inhibitors, particularly ritonavir, may increase the exposure of docetaxel. Concomitant use of docetaxel injection and drugs that inhibit CYP3A4 may increase exposure to docetaxel and should be avoided. In patients receiving treatment with docetaxel injection close monitoring for toxicity and a docetaxel injection dose reduction could be considered if systemic administration of a potent CYP3A4 inhibitor cannot be avoided [see Dosage and Administration (2.7), Clinical Pharmacology (12.3)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Toxic Deaths",
+        "text": "5.1 Toxic Deaths: Docetaxel administered at 100 mg/m2 was associated with deaths considered possibly or probably related to treatment in 2.0% (19/965) of metastatic breast cancer patients, both previously treated and untreated, with normal baseline liver function and in 11.5% (7/61) of patients with various tumor types who had abnormal baseline liver function (AST and/or ALT > 1.5 times ULN together with AP > 2.5 times ULN). Among patients dosed at 60 mg/m2, mortality related to treatment occurred in 0.6% (3/481) of patients with normal liver function, and in 3 of 7 patients with abnormal liver function. Approximately half of these deaths occurred during the first cycle. Sepsis accounted for the majority of the deaths. Docetaxel administered at a dose of 100 mg/m2 in patients with locally advanced or metastatic non-small cell lung cancer who had a history of prior platinum-based chemotherapy was associated with increased treatment-related mortality (14% and 5% in two randomized, controlled studies). There were 2.8% treatment-related deaths among the 176 patients treated at the 75 mg/m2 dose in the randomized trials. Among patients who experienced treatment-related mortality at the 75 mg/m2 dose level, 3 of 5 patients had an ECOG PS of 2 at study entry [see Dosage and Administration (2.2), Clinical Studies (14) ].",
+        "char_len": 1334,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Toxic Deaths",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Hepatic Impairment",
+        "text": "5.2 Hepatic Impairment: Patients with elevations of bilirubin or abnormalities of transaminase concurrent with alkaline phosphatase are at increased risk for the development of severe neutropenia, febrile neutropenia, infections, severe thrombocytopenia, severe stomatitis, severe skin toxicity, and toxic death. Avoid docetaxel injection in patients with bilirubin > upper limit of normal (ULN), or to patients with AST and/or ALT > 1.5 × ULN concomitant with alkaline phosphatase > 2.5 × ULN [see Warnings and Precautions (5.1)]. For patients with isolated elevations of transaminase > 1.5 × ULN, consider docetaxel injection dose modifications [see Dosage and Administration (2.7)]. Measure bilirubin, AST or ALT, and alkaline phosphatase prior to each cycle of docetaxel injection therapy.",
+        "char_len": 793,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Hepatic Impairment",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Hematologic Effects",
+        "text": "5.3 Hematologic Effects: Perform frequent peripheral blood cell counts on all patients receiving docetaxel injection. Do not retreat patients with subsequent cycles of docetaxel injection until neutrophils recover to a level > 1500 cells/mm3 [see Contraindications (4)]. Avoid retreating patients until platelets recover to a level > 100,000 cells/mm3. A 25% reduction in the dose of docetaxel injection is recommended during subsequent cycles following severe neutropenia (< 500 cells/mm3) lasting 7 days or more, febrile neutropenia, or a grade 4 infection in a docetaxel injection cycle [see Dosage and Administration (2.7)]. Neutropenia (< 2000 neutrophils/mm3) occurs in virtually all patients given 60 mg/m2 to 100 mg/m2 of docetaxel and grade 4 neutropenia (< 500 cells/mm3) occurs in 85% of patients given 100 mg/m2 and 75% of patients given 60 mg/m2. Frequent monitoring of blood counts is, therefore, essential so that dose can be adjusted. Docetaxel injection should not be administered to patients with neutrophils < 1500 cells/mm3. Febrile neutropenia occurred in about 12% of patients given 100 mg/m2 but was very uncommon in patients given 60 mg/m2. Hematologic responses, febrile reactions and infections, and rates of septic death for different regimens are dose related [see Adverse Reactions (6.1), Clinical Studies (14)]. Three breast cancer patients with severe liver impairment (bilirubin > 1.7 times ULN) developed fatal gastrointestinal bleeding associated with severe drug-induced thrombocytopenia. In gastric cancer patients treated with docetaxel in combination with cisplatin and fluorouracil (TCF), febrile neutropenia and/or neutropenic infection occurred in 12% of patients receiving G-CSF compared to 28% who did not. Patients receiving TCF should be closely monitored during the first and subsequent cycles for febrile neutropenia and neutropenic infection [see Dosage and Administration (2.7), Adverse Reactions (6)].",
+        "char_len": 1951,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Hematologic Effects",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Enterocolitis and Neutropenic Colitis",
+        "text": "5.4 Enterocolitis and Neutropenic Colitis: Enterocolitis and neutropenic colitis (typhlitis) have occurred in patients treated with docetaxel injection alone and in combination with other chemotherapeutic agents, despite the coadministration of G-CSF. Caution is recommended for patients with neutropenia, particularly at risk for developing gastrointestinal complications. Enterocolitis and neutropenic enterocolitis may develop at any time, and could lead to death as early as the first day of symptom onset. Monitor patients closely from onset of any symptoms of gastrointestinal toxicity. Inform patients to contact their healthcare provider with new, or worsening symptoms of gastrointestinal toxicity [see Dosage and Administration (2), Warnings and Precautions (5.3), Adverse Reactions (6.2)].",
+        "char_len": 800,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Enterocolitis and Neutropenic Colitis",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Hypersensitivity Reactions",
+        "text": "5.5 Hypersensitivity Reactions: Monitor patients closely for hypersensitivity reactions, especially during the first and second infusions. Severe hypersensitivity reactions characterized by generalized rash/erythema, hypotension and/or bronchospasm, or fatal anaphylaxis, have been reported in patients premedicated with 3 days of corticosteroids. Severe hypersensitivity reactions require immediate discontinuation of the docetaxel injection infusion and aggressive therapy. Do not rechallenge patients with a history of severe hypersensitivity reactions with docetaxel injection [see Contraindications (4)]. Patients who have previously experienced a hypersensitivity reaction to paclitaxel may develop a hypersensitivity reaction to docetaxel that may include severe or fatal reactions such as anaphylaxis. Monitor patients with a previous history of hypersensitivity to paclitaxel closely during initiation of docetaxel therapy. Hypersensitivity reactions may occur within a few minutes following initiation of a docetaxel injection infusion. If minor reactions such as flushing or localized skin reactions occur, interruption of therapy is not required. All patients should be premedicated with an oral corticosteroid prior to the initiation of the infusion of docetaxel injection [see Dosage and Administration (2.6)].",
+        "char_len": 1324,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Hypersensitivity Reactions",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Fluid Retention",
+        "text": "5.6 Fluid Retention: Severe fluid retention has been reported following docetaxel therapy. Patients should be premedicated with oral corticosteroids prior to each docetaxel injection administration to reduce the incidence and severity of fluid retention [see Dosage and Administration (2.6)]. Patients with pre-existing effusions should be closely monitored from the first dose for the possible exacerbation of the effusions. When fluid retention occurs, peripheral edema usually starts in the lower extremities and may become generalized with a median weight gain of 2 kg. Among 92 breast cancer patients premedicated with 3-day corticosteroids, moderate fluid retention occurred in 27.2% and severe fluid retention in 6.5%. The median cumulative dose to onset of moderate or severe fluid retention was 819 mg/m2. Nine of 92 patients (9.8%) of patients discontinued treatment due to fluid retention: 4 patients discontinued with severe fluid retention; the remaining 5 had mild or moderate fluid retention. The median cumulative dose to treatment discontinuation due to fluid retention was 1021 mg/m2. Fluid retention was completely, but sometimes slowly, reversible with a median of 16 weeks from the last infusion of docetaxel to resolution (range: 0 to 42+ weeks). Patients developing peripheral edema may be treated with standard measures, e.g., salt restriction, oral diuretic(s).",
+        "char_len": 1386,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Fluid Retention",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Second Primary Malignancies",
+        "text": "5.7 Second Primary Malignancies: Second primary malignancies, notably acute myeloid leukemia (AML), myelodysplastic syndrome (MDS), Non-Hodgkin’s Lymphoma (NHL), and renal cancer, have been reported in patients treated with docetaxel-containing regimens. These adverse reactions may occur several months or years after docetaxel-containing therapy. Treatment-related AML or MDS has occurred in patients given anthracyclines and/or cyclophosphamide, including use in adjuvant therapy for breast cancer. In the adjuvant breast cancer trial (TAX316) AML occurred in 3 of 744 patients who received docetaxel, doxorubicin, and cyclophosphamide (TAC) and in 1 of 736 patients who received fluorouracil, doxorubicin, and cyclophosphamide [see Clinical Studies (14.2)]. In TAC-treated patients, the risk of delayed myelodysplasia or myeloid leukemia requires hematological follow-up. Monitor patients for second primary malignancies [see Adverse Reactions (6.1)].",
+        "char_len": 955,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Second Primary Malignancies",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Cutaneous Reactions",
+        "text": "5.8 Cutaneous Reactions: Localized erythema of the extremities with edema followed by desquamation has been observed. In case of severe skin toxicity, an adjustment in dosage is recommended [see Dosage and Administration (2.7)]. The discontinuation rate due to skin toxicity was 1.6% (15/965) for metastatic breast cancer patients. Among 92 breast cancer patients premedicated with 3-day corticosteroids, there were no cases of severe skin toxicity reported and no patient discontinued docetaxel due to skin toxicity. Severe cutaneous adverse reactions (SCARs) such as Stevens-Johnson syndrome (SJS), toxic epidermal necrolysis (TEN), and acute generalized exanthematous pustulosis (AGEP) have been reported in association with docetaxel treatment. Patients should be informed about the signs and symptoms of serious skin manifestations and monitored closely. Permanent treatment discontinuation should be considered in patients who experience SCARs.",
+        "char_len": 950,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Cutaneous Reactions",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Neurologic Reactions",
+        "text": "5.9 Neurologic Reactions: Severe neurosensory symptoms (e.g.,paresthesia, dysesthesia, pain) were observed in 5.5% (53/965) of metastatic breast cancer patients, and resulted in treatment discontinuation in 6.1%. When these symptoms occur, dosage must be adjusted. If symptoms persist, treatment should be discontinued [see Dosage and Administration (2.7)]. Patients who experienced neurotoxicity in clinical trials and for whom follow-up information on the complete resolution of the event was available had spontaneous reversal of symptoms with a median of 9 weeks from onset (range: 0 to 106 weeks). Severe peripheral motor neuropathy mainly manifested as distal extremity weakness occurred in 4.4% (42/965).",
+        "char_len": 711,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Neurologic Reactions",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Eye Disorders",
+        "text": "5.10 Eye Disorders: Cystoid macular edema (CME) has been reported in patients treated with docetaxel injection. Patients with impaired vision should undergo a prompt and comprehensive ophthalmologic examination. If CME is diagnosed, docetaxel injection treatment should be discontinued and appropriate treatment initiated. Alternative non-taxane cancer treatment should be considered.",
+        "char_len": 384,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Eye Disorders",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.11 Asthenia",
+        "text": "5.11 Asthenia: Severe asthenia has been reported in 14.9% (144/965) of metastatic breast cancer patients but has led to treatment discontinuation in only 1.8%. Symptoms of fatigue and weakness may last a few days up to several weeks and may be associated with deterioration of performance status in patients with progressive disease.",
+        "char_len": 333,
+        "source_section_code": "42229-5",
+        "source_title": "5.11 Asthenia",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.12 Embryo-Fetal Toxicity",
+        "text": "5.12 Embryo-Fetal Toxicity: Based on findings from animal reproduction studies and its mechanism of action, docetaxel injection can cause fetal harm when administered to a pregnant woman [see Clinical Pharmacology (12.1)]. Available data from case reports in the literature and pharmacovigilance with docetaxel use in pregnant women are not sufficient to inform the drug-associated risk of major birth defects, miscarriage or adverse maternal or fetal outcomes. In animal reproduction studies, administration of docetaxel to pregnant rats and rabbits during the period of organogenesis caused embryo-fetal toxicities, including intrauterine mortality, at doses as low as 0.02 and 0.003 times the recommended human dose based on body surface area, respectively. Advise pregnant women and females of reproductive potential of the potential risk to a fetus. Verify pregnancy status in females of reproductive potential prior to initiating docetaxel injection. Advise females of reproductive potential to use effective contraception during treatment and for 2 months after the last dose of docetaxel injection. Advise male patients with female partners of reproductive potential to use effective contraception during treatment and for 4 months after the last dose of docetaxel injection [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 1328,
+        "source_section_code": "42229-5",
+        "source_title": "5.12 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.13 Alcohol Content",
+        "text": "5.13 Alcohol Content: Cases of intoxication have been reported with some formulations of docetaxel due to the alcohol content. The alcohol content in a dose of docetaxel injection may affect the central nervous system and should be taken into account for patients in whom alcohol intake should be avoided or minimized. Consideration should be given to the alcohol content in docetaxel injection on the ability to drive or use machines immediately after the infusion. Each administration of docetaxel injection at 100 mg/m2 delivers 1.8 g/m2 of ethanol. For a patient with a BSA of 2.0 m2, this would deliver 3.6 grams of ethanol [see Description (11)]. Other docetaxel products may have a different amount of alcohol.",
+        "char_len": 717,
+        "source_section_code": "42229-5",
+        "source_title": "5.13 Alcohol Content",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.14 Tumor Lysis Syndrome",
+        "text": "5.14 Tumor Lysis Syndrome: Tumor lysis syndrome has been reported with docetaxel [see Adverse Reactions (6.2)]. Patients at risk of tumor lysis syndrome (e.g., with renal impairment, hyperuricemia, bulky tumor) should be closely monitored prior to initiating docetaxel injection and periodically during treatment. Correction of dehydration and treatment of high uric acid levels are recommended prior to initiation of treatment.",
+        "char_len": 428,
+        "source_section_code": "42229-5",
+        "source_title": "5.14 Tumor Lysis Syndrome",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: TOXIC DEATHS, HEPATOTOXICITY, NEUTROPENIA, HYPERSENSITIVITY REACTIONS, and FLUID RETENTION",
+        "text": "WARNING: TOXIC DEATHS, HEPATOTOXICITY, NEUTROPENIA, HYPERSENSITIVITY REACTIONS, and FLUID RETENTION: Treatment-related mortality associated with docetaxel is increased in patients with abnormal liver function, in patients receiving higher doses, and in patients with non-small cell lung carcinoma and a history of prior treatment with platinum-based chemotherapy who receive docetaxel as a single agent at a dose of 100 mg/m2 [see Warnings and Precautions (5.1)]. Avoid the use of docetaxel injection in patients with bilirubin > upper limit of normal (ULN), or to patients with AST and/or ALT > 1.5 x ULN concomitant with alkaline phosphatase > 2.5 x ULN. Patients with elevations of bilirubin or abnormalities of transaminase concurrent with alkaline phosphatase are at increased risk for the development of severe neutropenia, febrile neutropenia, infections, severe thrombocytopenia, severe stomatitis, severe skin toxicity, and toxic death. Patients with isolated elevations of transaminase > 1.5 x ULN also had a higher rate of febrile neutropenia. Measure bilirubin, AST or ALT, and alkaline phosphatase prior to each cycle of docetaxel injection [see Warnings and Precautions (5.2)]. Do not administer docetaxel injection to patients with neutrophil counts of < 1500 cells/mm3. Monitor blood counts frequently as neutropenia may be severe and result in infection [see Warnings and Precautions (5.3)]. Do not administer docetaxel injection to patients who have a history of severe hypersensitivity reactions to docetaxel or to other drugs formulated with polysorbate 80 [see Contraindications (4)]. Severe hypersensitivity reactions have been reported in patients despite dexamethasone premedication. Hypersensitivity reactions require immediate discontinuation of the docetaxel injection infusion and administration of appropriate therapy [see Warnings and Precautions (5.5)]. Severe fluid retention occurred in 6.5% (6/92) of patients despite use of dexamethasone premedication. It was characterized by one or more of the following events: poorly tolerated peripheral edema, generalized edema, pleural effusion requiring urgent drainage, dyspnea at rest, cardiac tamponade, or pronounced abdominal distention (due to ascites) [see Warnings and Precautions (5.6)]. WARNING: TOXIC DEATHS, HEPATOTOXICITY, NEUTROPENIA, HYPERSENSITIVITY REACTIONS, and FLUID RETENTION See full prescribing information for complete boxed warning.",
+        "char_len": 2433,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: TOXIC DEATHS, HEPATOTOXICITY, NEUTROPENIA, HYPERSENSITIVITY REACTIONS, and FLUID RETENTION",
+        "source_xml": "DRUG-LUNG-FDA-010.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: Avoid docetaxel injection in patients with bilirubin > ULN and patients with AST and/or ALT > 1.5 × ULN concomitant with alkaline phosphatase > 2.5 × ULN [see Boxed Warning , Warnings and Precautions (5.2) , Clinical Pharmacology (12.3)]. The alcohol content of docetaxel injection should be taken into account when given to patients with hepatic impairment [see Warnings and Precautions (5.13)].",
+            "char_len": 420,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-010.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.7 Dosage Adjustments during Treatment",
+            "text": "2.7 Dosage Adjustments during Treatment: Patients who are dosed initially at 100 mg/m2 and who experience either febrile neutropenia, neutrophils < 500 cells/mm3 for more than 1 week, or severe or cumulative cutaneous reactions during docetaxel injection therapy should have the dosage adjusted from 100 mg/m2 to 75 mg/m2. If the patient continues to experience these reactions, the dosage should either be decreased from 75 mg/m2 to 55 mg/m2 or the treatment should be discontinued. Conversely, patients who are dosed initially at 60 mg/m2 and who do not experience febrile neutropenia, neutrophils < 500 cells/mm3 for more than 1 week, severe or cumulative cutaneous reactions, or severe peripheral neuropathy during docetaxel injection therapy may tolerate higher doses. Patients who develop ≥ grade 3 peripheral neuropathy should have docetaxel injection treatment discontinued entirely. Combination Therapy with Docetaxel Injection in the Adjuvant Treatment of Breast Cancer Docetaxel injection in combination with doxorubicin and cyclophosphamide should be administered when the neutrophil count is ≥ 1,500 cells/mm3. Patients who experience febrile neutropenia should receive G-CSF in all subsequent cycles. Patients who continue to experience this reaction should remain on G-CSF and have their docetaxel injection dose reduced to 60 mg/m2. Patients who experience grade 3 or 4 stomatitis should have their Docetaxel Injection dose decreased to 60 mg/m2. Patients who experience severe or cumulative cutaneous reactions or moderate neurosensory signs and/or symptoms during docetaxel injection therapy should have their dosage of docetaxel injection reduced from 75 mg/m2 to 60 mg/m2. If the patient continues to experience these reactions at 60 mg/m2, treatment should be discontinued. Monotherapy with Docetaxel Injection for NSCLC Treatment after Failure of Prior Platinum-Based Chemotherapy Patients who are dosed initially at 75 mg/m2 and who experience either febrile neutropenia, neutrophils < 500 cells/mm3 for more than one week, severe or cumulative cutaneous reactions, or other grade 3/4 non-hematological toxicities during docetaxel injection treatment should have treatment withheld until resolution of the toxicity and then resumed at 55 mg/m2. Patients who develop ≥ grade 3 peripheral neuropathy should have docetaxel injection treatment discontinued entirely. Combination Therapy with Docetaxel Injection for Chemotherapy-Naïve NSCLC For patients who are dosed initially at docetaxel injection 75 mg/m2 in combination with cisplatin, and whose nadir of platelet count during the previous course of therapy is < 25,000 cells/mm3, in patients who experience febrile neutropenia, and in patients with serious non-hematologic toxicities, the docetaxel injection dosage in subsequent cycles should be reduced to 65 mg/m2. In patients who require a further dose reduction, a dose of 50 mg/m2 is recommended. For cisplatin dosage adjustments, see manufacturers’ prescribing information. Combination Therapy with Docetaxel Injection for Metastatic Castration-Resistant Prostate Cancer Docetaxel injection should be administered when the neutrophil count is ≥ 1,500 cells/mm3. Patients who experience either febrile neutropenia, neutrophils < 500 cells/mm3 for more than one week, severe or cumulative cutaneous reactions or moderate neurosensory signs and/or symptoms during docetaxel injection therapy should have the dosage of docetaxel injection reduced from 75 mg/m2 to 60 mg/m2. If the patient continues to experience these reactions at 60 mg/m2, the treatment should be discontinued. Docetaxel Injection in Combination with Cisplatin and Fluorouracil in Gastric Cancer or Head and Neck Cancer Patients treated with docetaxel injection in combination with cisplatin and fluorouracil must receive antiemetics and appropriate hydration according to current institutional guidelines. In both studies, G-CSF was recommended during the second and/or subsequent cycles in case of febrile neutropenia, or documented infection with neutropenia, or neutropenia lasting more than 7 days. If an episode of febrile neutropenia, prolonged neutropenia or neutropenic infection occurs despite G-CSF use, the docetaxel injection dose should be reduced from 75 mg/m2 to 60 mg/m2. If subsequent episodes of complicated neutropenia occur the docetaxel injection dose should be reduced from 60 mg/m2 to 45 mg/m2. In case of grade 4 thrombocytopenia the docetaxel injection dose should be reduced from 75 mg/m2 to 60 mg/m2. Do not retreat patients with subsequent cycles of docetaxel injection until neutrophils recover to a level > 1500 cells/mm3 [see Contraindications (4)]. Avoid retreating patients until platelets recover to a level > 100,000 cells/mm3. Discontinue treatment if these toxicities persist [see Warnings and Precautions (5.3)]. Recommended dose modifications for toxicities in patients treated with docetaxel injection in combination with cisplatin and fluorouracil are shown in Table 1. Toxicity Dosage Adjustment Diarrhea grade 3 First episode: reduce fluorouracil dose by 20%. Second episode: then reduce docetaxel injection dose by 20%. Diarrhea grade 3 First episode: reduce fluorouracil dose by 20%. Second episode: then reduce docetaxel injection dose by 20%. Diarrhea grade 4 First episode: reduce docetaxel injection and fluorouracil doses by 20%. Second episode: discontinue treatment. Diarrhea grade 4 First episode: reduce docetaxel injection and fluorouracil doses by 20%. Second episode: discontinue treatment. Stomatitis/mucositis grade 3 First episode: reduce fluorouracil dose by 20%. Second episode: stop fluorouracil only, at all subsequent cycles. Third episode: reduce docetaxel injection dose by 20%. Stomatitis/mucositis grade 3 Second episode: stop fluorouracil only, at all subsequent cycles. Third episode: reduce docetaxel injection dose by 20%. Stomatitis/mucositis grade 4 First episode: stop fluorouracil only, at all subsequent cycles. Second episode: reduce docetaxel injection dose by 20%. Stomatitis/mucositis grade 4 First episode: stop fluorouracil only, at all subsequent cycles. Second episode: reduce docetaxel injection dose by 20%. Liver dysfunction: In case of AST/ALT > 2.5 to ≤ 5 x ULN and AP ≤ 2.5 x ULN, or AST/ALT > 1.5 to ≤ 5 x ULN and AP > 2.5 to ≤ 5 x ULN, docetaxel injection should be reduced by 20%. In case of AST/ALT > 5 x ULN and/or AP > 5 x ULN docetaxel injection should be stopped. The dose modifications for cisplatin and fluorouracil in the gastric cancer study are provided below. Cisplatin Dose Modifications and Delays Peripheral Neuropathy: A neurological examination should be performed before entry into the study, and then at least every 2 cycles and at the end of treatment. In the case of neurological signs or symptoms, more frequent examinations should be performed and the following dose modifications can be made according to NCI-CTCAE grade: Ototoxicity: In the case of grade 3 toxicity, discontinue treatment. Nephrotoxicity: In the event of a rise in serum creatinine ≥ grade 2 (>1.5 x normal value) despite adequate rehydration, CrCl should be determined before each subsequent cycle and the following dose reductions should be considered (see Table 2). For other cisplatin dosage adjustments, also refer to the manufacturers’ prescribing information. CrCl = Creatinine clearance Creatinine Clearance Result Before Next Cycle Cisplatin Dose Next Cycle Creatinine Clearance Result Before Next Cycle Cisplatin Dose Next Cycle CrCl ≥ 60 mL/min Full dose of cisplatin was given. CrCl was to be repeated before each treatment cycle. CrCl ≥ 60 mL/min Full dose of cisplatin was given. CrCl was to be repeated before each treatment cycle. CrCl between 40 and 59 mL/min Dose of cisplatin was reduced by 50% at subsequent cycle. If CrCl was > 60 mL/min at end of cycle, full cisplatin dose was reinstituted at the next cycle. If no recovery was observed, then cisplatin was omitted from the next treatment cycle. CrCl between 40 and 59 mL/min Dose of cisplatin was reduced by 50% at subsequent cycle. If CrCl was > 60 mL/min at end of cycle, full cisplatin dose was reinstituted at the next cycle. If no recovery was observed, then cisplatin was omitted from the next treatment cycle. CrCl < 40 mL/min Dose of cisplatin was omitted in that treatment cycle only. If CrCl was still < 40 mL/min at the end of cycle, cisplatin was discontinued. If CrCl was > 40 and < 60 mL/min at end of cycle, a 50% cisplatin dose was given at the next cycle. If CrCl was > 60 mL/min at end of cycle, full cisplatin dose was given at next cycle. CrCl < 40 mL/min Dose of cisplatin was omitted in that treatment cycle only. If CrCl was still < 40 mL/min at the end of cycle, cisplatin was discontinued. If CrCl was > 40 and < 60 mL/min at end of cycle, a 50% cisplatin dose was given at the next cycle. If CrCl was > 60 mL/min at end of cycle, full cisplatin dose was given at next cycle. Fluorouracil Dose Modifications and Treatment Delays For diarrhea and stomatitis, see Table 1. In the event of grade 2 or greater plantar-palmar toxicity, fluorouracil should be stopped until recovery. The fluorouracil dosage should be reduced by 20%. For other greater than grade 3 toxicities, except alopecia and anemia, chemotherapy should be delayed (for a maximum of 2 weeks from the planned date of infusion) until resolution to grade ≤ 1 and then recommenced, if medically appropriate. For other fluorouracil dosage adjustments, also refer to the manufacturers’ prescribing information. Avoid using concomitant strong CYP3A4 inhibitors (e.g., ketoconazole, itraconazole, clarithromycin, atazanavir, indinavir, nefazodone, nelfinavir, ritonavir, saquinavir, telithromycin and voriconazole). There are no clinical data with a dose adjustment in patients receiving strong CYP3A4 inhibitors. Based on extrapolation from a pharmacokinetic study with ketoconazole in 7 patients, consider a 50% docetaxel dose reduction if patients require coadministration of a strong CYP3A4 inhibitor [see Drug Interactions (7), Clinical Pharmacology (12.3)].",
+            "char_len": 10103,
+            "source_section_code": "42229-5",
+            "source_title": "2.7 Dosage Adjustments during Treatment",
+            "source_xml": "DRUG-LUNG-FDA-010.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-010.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung",
+      "gastric"
+    ],
+    "guideline_use_cancers": [],
+    "patient_plain": "{\"what_is_it\": \"这是一种叫多西他赛的注射用抗癌药，属于微管抑制剂，用于多种癌症的治疗。\", \"how_to_use\": \"一般每3周静脉输注一次，输注约1小时。需在能处理过敏等紧急情况的医疗机构给药。用药前需用止吐药并做好补液。中性粒细胞减少性感染需预防处理。部分方案中患者需预防性使用抗生素。不要用PVC器材。从药瓶抽药只用21号针头。具体方案和剂量由医生根据病情决定。\", \"cautions\": [\"可能出现毒性反应，医生可能会调整剂量。\", \"必须在能处理过敏反应等并发症的机构给药。\", \"用药前需用止吐药，并在用顺铂前后做好补液。\", \"需预防中性粒细胞减少引起的感染。\", \"部分研究方案中患者接受了预防性抗生素。\", \"此药经CYP3A4代谢，合用某些药物可能影响其代谢。\", \"与酮康唑合用可能使多西他赛暴露量增加约2.2倍。\", \"蛋白酶抑制剂（尤其利托那韦）可能增加多西他赛暴露量。\", \"应避免与抑制CYP3A4的药物同用。\", \"若无法避免强CYP3A4抑制剂，需密切监测毒性并考虑减量。\", \"头颈鳞癌诱导化疗后需按方案接受放疗或放化疗。\", \"部分患者用药后体力状况可能不会改善，甚至变差。\"], \"side_effects\": [{\"term\": \"感染\", \"plain\": \"用药后可能更容易发生感染。\", \"when_to_seek_help\": \"出现发热、寒战或其他感染迹象时应及时就医。\"}, {\"term\": \"中性粒细胞减少\", \"plain\": \"一种白细胞减少，身体抗感染能力下降。\", \"when_to_seek_help\": \"出现发热或反复感染表现时需及时就医。\"}, {\"term\": \"贫血\", \"plain\": \"红细胞减少，可能让人乏力、气短。\", \"when_to_seek_help\": \"明显乏力、头晕或气短加重时需就医。\"}, {\"term\": \"发热性中性粒细胞减少\", \"plain\": \"白细胞很低并伴发热，可能需要抗生素或住院。\", \"when_to_seek_help\": \"出现发热（如体温超过38℃）时需立即就医。\"}, {\"term\": \"过敏反应\", \"plain\": \"可能发生过敏，需在能处理过敏的机构用药。\", \"when_to_seek_help\": \"出现皮疹、瘙痒、呼吸困难等过敏表现时需立即就医。\"}, {\"term\": \"血小板减少\", \"plain\": \"血小板减少，可能增加出血倾向。\", \"when_to_seek_help\": \"出现异常出血或瘀斑时需及时就医。\"}], \"seek_help\": \"出现发热（如体温超过38℃）、寒战、感染迹象、明显乏力气短、异常出血或瘀斑、皮疹瘙痒呼吸困难等过敏表现，或体力状况变差时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:53"
+  }
+]

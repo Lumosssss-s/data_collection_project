@@ -1,0 +1,311 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-009",
+    "generic_name": "ABEMACICLIB",
+    "brand_names": [],
+    "aliases_zh": [
+      "阿贝西利"
+    ],
+    "title": "ABEMACICLIB 说明书（FDA DailyMed）",
+    "indications": [
+      "VERZENIO® is a kinase inhibitor indicated:",
+      "VERZENIO® (abemaciclib) is indicated:",
+      "VERZENIO (abemaciclib) is indicated:"
+    ],
+    "dosage": {
+      "standard": "VERZENIO in Combination with Imlunestrant Select patients for treatment of ER-positive, HER2-negative advanced or metastatic breast cancer with VERZENIO in combination with imlunestrant based on the presence of ESR1 mutation(s) in a plasma specimen using an FDA authorized test [see Indications and Usage (1.2) and Clinical Studies (14.2)]. Information on FDA-authorized tests for the detection of ESR1 mutations in breast cancer is available at: https://www.fda.gov/CompanionDiagnostics. VERZENIO in Combination with Fulvestrant, Tamoxifen, Imlunestrant or An Aromatase Inhibitor The recommended dosage of VERZENIO is 150 mg orally twice daily. For premenopausal and perimenopausal women and men treated with VERZENIO in combination with an aromatase inhibitor, imlunestrant, or fulvestrant should be treated with a gonadotropin-releasing hormone agonist (GnRH) according to current clinical practice standards. Refer to the Prescribing Information for the recommended dose of the fulvestrant, tamoxifen, imlunestrant or aromatase inhibitor being used. VERZENIO Monotherapy The recommended dosage of VERZENIO as monotherapy is 200 mg orally twice daily. Take VERZENIO orally, with or without food, at approximately the same times every day [see Clinical Pharmacology (12.3)]. Swallow VERZENIO tablets whole. Do not chew, crush, or split tablets. Do not ingest VERZENIO tablets if broken, cracked, or otherwise not intact. If a dose of VERZENIO is missed, skip the missed dose and take the next dose at the next scheduled time. If vomiting occurs after taking a dose of VERZENIO, do not take an additional dose. Take the next dose at the next scheduled time. The recommended VERZENIO dose reductions for adverse reactions are provided in Table 1. Permanently discontinue VERZENIO for patients unable ",
+      "adjustment": "VERZENIO in Combination with Fulvestrant, Tamoxifen, Imlunestrant or An Aromatase Inhibitor The recommended dosage of VERZENIO is 150 mg orally twice daily. For premenopausal and perimenopausal women and men treated with VERZENIO in combination with an aromatase inhibitor, imlunestrant, or fulvestrant should be treated with a gonadotropin-releasing hormone agonist (GnRH) according to current clinical practice standards. Refer to the Prescribing Information for the recommended dose of the fulvestrant, tamoxifen, imlunestrant or aromatase inhibitor being used. VERZENIO Monotherapy The recommended dosage of VERZENIO as monotherapy is 200 mg orally twice daily. Take VERZENIO orally, with or without food, at approximately the same times every day [see Clinical Pharmacology (12.3)]. Swallow VERZENIO tablets whole. Do not chew, crush, or split tablets. Do not ingest VERZENIO tablets if broken, cracked, or otherwise not intact. If a dose of VERZENIO is missed, skip the missed dose and take the next dose at the next scheduled time. If vomiting occurs after taking a dose of VERZENIO, do not take an additional dose. Take the next dose at the next scheduled time. The recommended VERZENIO dose "
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Most common adverse reactions (incidence ≥20%) were diarrhea, infections, neutropenia, fatigue, abdominal pain, nausea, leukopenia, anemia, and vomiting. (6).",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Eli Lilly and Company at 1-800-LillyRx (1-800-545-5979) or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety population described in the Warnings and Precautions reflect exposure to VERZENIO in 3899 patients from five clinical trials including 132 patients t",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "monarchE: VERZENIO in Combination with Tamoxifen or an Aromatase Inhibitor as Adjuvant Treatment",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adult patients with HR-positive, HER2-negative, node-positive early breast cancer at a high risk of recurrence",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of VERZENIO was evaluated in monarchE, a study of 5591 adult patients receiving VERZENIO in combination with endocrine therapy (tamoxifen or an aroma",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Serious adverse reactions occurred in 15% of patients who received VERZENIO in combination with endocrine therapy (tamoxifen or an aromatase inhibitor). Serious",
+        "frequency": "15%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Permanent discontinuation of VERZENIO due to an adverse reaction occurred in 19% of patients. Adverse reactions which resulted in permanent discontinuation in >",
+        "frequency": "19%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Dosage interruptions of VERZENIO due to an adverse reaction occurred in 62% of patients. Adverse reactions which required dosage interruptions in ≥5% of patient",
+        "frequency": "62%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Dose reductions of VERZENIO due to an adverse reaction occurred in 44% of patients. Adverse reactions which required dose reductions in ≥5% of patients were dia",
+        "frequency": "44%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common (>20%) adverse reactions, including laboratory abnormalities in the VERZENIO plus tamoxifen or an aromatase inhibitor arm and ≥2% higher than th",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions are shown in Table 8 and laboratory abnormalities are shown in Table 9.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "a Adverse reactions were graded using NCI CTCAE version 4.0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "b Includes other related terms.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction a VERZENIO Plus Tamoxifen or an Aromatase Inhibitor N=2791 Tamoxifen or an Aromatase Inhibitor N=2800",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades % Grade 3 % Grade 4 % All Grades % Grade 3 % Grade 4 %",
+        "frequency": "3 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal Disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Diarrhea 84 8 0 9 0.2 0",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-10-01",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-009.xml",
+    "doc_hash": "74623141bc96db7b8b06114c1d002e1607178891dd6a5feccb8790bcfb6fe82c",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "be4bc0de-0fdc-4d46-8d25-be43c79e6a06",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/be4bc0de-0fdc-4d46-8d25-be43c79e6a06.xml",
+    "atc_code": "L01EF03",
+    "approval_no": null,
+    "source_name": "ABEMACICLIB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-009.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "CYP3A Inhibitors",
+      "Strong and moderate CYP3A4 inhibitors increased the exposure of abemaciclib plus its active metabolites to a clinically meaningful extent and may lead to increased toxicity.",
+      "Avoid concomitant use of ketoconazole. Ketoconazole is predicted to increase the AUC of abemaciclib by up to 16-fold [see Clinical Pharmacology (12.3)].",
+      "Other Strong CYP3A Inhibitors",
+      "In patients with recommended starting doses of 200 mg twice daily or 150 mg twice daily, reduce the VERZENIO dose to 100 mg twice daily with concomitant use of strong CYP3A inhibitors other than ketoconazole. In patients who have had a dose reduction to 100 mg twice daily due to adverse reactions, further reduce the VERZENIO dose to 50 mg twice daily with concomitant use of strong CYP3A inhibitors. If a patient taking VERZENIO discontinues a strong CYP3A inhibitor, increase the VERZENIO dose (after 3-5 half-lives of the inhibitor) to the dose that was used before starting the inhibitor. Patien",
+      "Moderate CYP3A Inhibitors",
+      "With concomitant use of moderate CYP3A inhibitors, monitor for adverse reactions and consider reducing the VERZENIO dose in 50 mg decrements as demonstrated in Table 1, if necessary.",
+      "Strong and Moderate CYP3A Inducers",
+      "Coadministration of strong or moderate CYP3A inducers decreased the plasma concentrations of abemaciclib plus its active metabolites and may lead to reduced activity. Avoid concomitant use of strong or moderate CYP3A inducers and consider alternative agents [see Clinical Pharmacology (12.3)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Diarrhea",
+        "text": "5.1 Diarrhea: Severe diarrhea associated with dehydration and infection occurred in patients treated with VERZENIO. Across five clinical trials in 3899 patients, diarrhea occurred in 81% to 90% of patients who received VERZENIO. Grade 3 diarrhea occurred in 8% to 20% of patients receiving VERZENIO [see Adverse Reactions (6.1)]. Most patients experienced diarrhea during the first month of VERZENIO treatment. The median time to onset of the first diarrhea event ranged from 6 to 8 days; and the median duration of Grade 2 and Grade 3 diarrhea ranged from 6 to 11 days and 5 to 8 days, respectively. Across trials, 19% to 26% of patients with diarrhea required a VERZENIO dose interruption and 13% to 23% required a dose reduction. Instruct patients to start antidiarrheal therapy such as loperamide at the first sign of loose stools, increase oral fluids, and notify their healthcare provider for further instructions and appropriate follow up [see Patient Counseling Information (17)]. For Grade 3 or 4 diarrhea, or diarrhea that requires hospitalization, withhold VERZENIO until resolution to ≤Grade 1, and then resume VERZENIO at the next lower dose [see Dosage and Administration (2.2)].",
+        "char_len": 1193,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Diarrhea",
+        "source_xml": "DRUG-BREAST-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Neutropenia",
+        "text": "5.2 Neutropenia: Neutropenia, including febrile neutropenia and fatal neutropenic sepsis, occurred in patients treated with VERZENIO. Across five clinical trials in 3899 patients, neutropenia occurred in 37% to 51% of patients receiving VERZENIO. A Grade ≥3 decrease in neutrophil count (based on laboratory findings) occurred in 19% to 32% of patients receiving VERZENIO. Across trials, the median time to the first episode of Grade ≥3 neutropenia ranged from 29 days to 34 days, and the median duration of Grade ≥3 neutropenia ranged from 10 days to 16 days [see Adverse Reactions (6.1)]. Febrile neutropenia has been reported in <1% of patients receiving VERZENIO across trials. Two deaths due to neutropenic sepsis were observed in MONARCH 2. Inform patients to promptly report any episodes of fever to their healthcare provider [see Patient Counseling Information (17)]. Monitor complete blood counts prior to the start of VERZENIO therapy, every 2 weeks for the first 2 months, monthly for the next 2 months, and as clinically indicated. Dose interruption, dose reduction, or delay in starting treatment cycles is recommended for patients who develop Grade 3 or 4 neutropenia [see Dosage and Administration (2.2)].",
+        "char_len": 1220,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Neutropenia",
+        "source_xml": "DRUG-BREAST-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Interstitial Lung Disease (ILD) or Pneumonitis",
+        "text": "5.3 Interstitial Lung Disease (ILD) or Pneumonitis: Severe, life-threatening, or fatal interstitial lung disease (ILD) or pneumonitis can occur in patients treated with VERZENIO and other CDK4/6 inhibitors. In VERZENIO-treated patients in early breast cancer (monarchE, N=2791), 3% of patients experienced ILD or pneumonitis of any grade: 0.4% were Grade 3 or 4 and there was one fatality (0.1%). In VERZENIO-treated patients in advanced or metastatic breast cancer (N=1108) (MONARCH 1, MONARCH 2, MONARCH 3, EMBER-3), 3.2% of VERZENIO-treated patients had ILD or pneumonitis of any grade: 0.5% had Grade 3 or 4, and 0.5% had fatal outcomes. Additional cases of ILD or pneumonitis have been observed in the postmarketing setting, with fatalities reported [see Adverse Reactions (6.2)]. Monitor patients for pulmonary symptoms indicative of ILD or pneumonitis. Symptoms may include hypoxia, cough, dyspnea, or interstitial infiltrates on radiologic exams. Infectious, neoplastic, and other causes for such symptoms should be excluded by means of appropriate investigations. Withhold or reduce dose for patients who develop persistent or recurrent Grade 2 ILD or pneumonitis. Permanently discontinue VERZENIO in all patients with Grade 3 or 4 ILD or pneumonitis [see Dosage and Administration (2.2)].",
+        "char_len": 1298,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Interstitial Lung Disease (ILD) or Pneumonitis",
+        "source_xml": "DRUG-BREAST-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Hepatotoxicity",
+        "text": "5.4 Hepatotoxicity: Grade ≥3 ALT (2% to 6%) and AST (2% to 3%) were reported in patients receiving VERZENIO. Across four clinical trials in 3767 patients (monarchE, MONARCH 2, MONARCH 3, EMBER-3), the median time to onset of Grade ≥3 ALT increases ranged from 57 to 87 days and the median time to resolution to Grade <3 was 13 to 14 days. The median time to onset of Grade ≥3 AST increases ranged from 71 to 185 days and the median time to resolution to Grade <3 ranged from 11 to 15 days. Monitor liver function tests (LFTs) prior to the start of VERZENIO therapy, every 2 weeks for the first 2 months, monthly for the next 2 months, and as clinically indicated. Dose interruption, dose reduction, dose discontinuation, or delay in starting treatment cycles is recommended for patients who develop persistent or recurrent Grade 2, or any Grade 3 or Grade 4 hepatic transaminase elevation [see Dosage and Administration (2.2)].",
+        "char_len": 927,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Hepatotoxicity",
+        "source_xml": "DRUG-BREAST-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Venous Thromboembolism",
+        "text": "5.5 Venous Thromboembolism: Across four clinical trials in 3767 patients (monarchE, MONARCH 2, MONARCH 3, EMBER-3), venous thromboembolic (VTE) events occurred in 2% to 5% of patients treated with VERZENIO. VTE events included deep vein thrombosis, pulmonary embolism, pelvic venous thrombosis, cerebral venous sinus thrombosis, subclavian and axillary vein thrombosis, inferior vena cava thrombosis, jugular vein thrombosis, peripheral vein thrombosis and superficial vein thrombosis. In clinical trials, deaths due to VTE occurred in patients treated with VERZENIO. VERZENIO has not been studied in patients with early breast cancer who had a history of VTE. Monitor patients for signs and symptoms of venous thrombosis and pulmonary embolism and treat as medically appropriate. Dose interruption is recommended for early breast cancer patients with any grade VTE event and for advanced or metastatic breast cancer patients with a Grade 3 or 4 VTE event [see Dosage and Administration (2.2)].",
+        "char_len": 994,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Venous Thromboembolism",
+        "source_xml": "DRUG-BREAST-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Embryo-Fetal Toxicity",
+        "text": "5.6 Embryo-Fetal Toxicity: Based on findings from animal studies and the mechanism of action, VERZENIO can cause fetal harm when administered to a pregnant woman. In animal reproduction studies, administration of abemaciclib to pregnant rats during the period of organogenesis caused teratogenicity and decreased fetal weight at maternal exposures that were similar to the human clinical exposure based on area under the curve (AUC) at the maximum recommended human dose. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with VERZENIO and for 3 weeks after the last dose [see Use in Specific Populations (8.1, 8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 745,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Increased Serum Creatinine without Affecting Renal Function",
+        "text": "5.7 Increased Serum Creatinine without Affecting Renal Function: VERZENIO can increase serum creatinine. Across five clinical trials in 3899 patients (monarchE, MONARCH 1, MONARCH 2, MONARCH 3, and EMBER-3), increases in serum creatinine (mean increase, 0.2-0.3 mg/dL) occurred within the first 28-day cycle of VERZENIO treatment, remained elevated through the treatment, and were reversible upon treatment discontinuation. These increases were not associated with changes in glomerular function [see Adverse Reactions (6.1)]. The increases in serum creatinine may be due to inhibition of renal tubular secretion transporters [see Clinical Pharmacology (12.3)]. During VERZENIO treatment, use alternative measures that are not based on serum creatinine to assess renal function such as BUN, cystatin C, or calculated GFR.",
+        "char_len": 821,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Increased Serum Creatinine without Affecting Renal Function",
+        "source_xml": "DRUG-BREAST-FDA-009.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "88828-9",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: No dosage adjustment is required for patients with mild or moderate renal impairment (CLcr ≥30-89 mL/min, estimated by Cockcroft-Gault [C-G]). The pharmacokinetics of abemaciclib in patients with severe renal impairment (CLcr <30 mL/min, C-G), end stage renal disease, or in patients on dialysis is unknown [see Clinical Pharmacology (12.3)].",
+            "char_len": 364,
+            "source_section_code": "88828-9",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-BREAST-FDA-009.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modifications for Patients with Severe Hepatic Impairment",
+            "text": "2.5 Dosage Modifications for Patients with Severe Hepatic Impairment: For patients with severe hepatic impairment (Child Pugh-C), reduce the VERZENIO dosage frequency to once daily [see Use in Specific Populations (8.7) and Clinical Pharmacology (12.3)]. Refer to the Full Prescribing Information for the coadministered fulvestrant, tamoxifen, imlunestrant or aromatase inhibitor for dose modification requirements for severe hepatic impairment.",
+            "char_len": 445,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modifications for Patients with Severe Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-009.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "88829-7",
+            "title": "8.7 Hepatic Impairment",
+            "text": "8.7 Hepatic Impairment: No dosage adjustments are necessary in patients with mild or moderate hepatic impairment (Child-Pugh A or B). Reduce the dosing frequency when administering VERZENIO to patients with severe hepatic impairment (Child-Pugh C) [see Dosage and Administration (2.2) and Clinical Pharmacology (12.3)].",
+            "char_len": 319,
+            "source_section_code": "88829-7",
+            "source_title": "8.7 Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-009.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.3 Dosage Modification for Adverse Reactions",
+            "text": "2.3 Dosage Modification for Adverse Reactions: The recommended VERZENIO dose reductions for adverse reactions are provided in Table 1. Permanently discontinue VERZENIO for patients unable to tolerate 50 mg twice daily. Dosage Level VERZENIO Dose in Combination with Fulvestrant, Tamoxifen, Imlunestrant or an Aromatase Inhibitor VERZENIO Dose for Monotherapy Recommended starting dosage 150 mg twice daily 200 mg twice daily First dosage reduction 100 mg twice daily 150 mg twice daily Second dosage reduction 50 mg twice daily 100 mg twice daily Third dosage reduction not applicable 50 mg twice daily The recommended VERZENIO dosage modifications for adverse reactions are provided in Tables 2-7. Abbreviation: CTCAE = Common Terminology Criteria for Adverse Events. a If blood cell growth factors are required, withhold VERZENIO dosage for at least 48 hours after the last dose of blood cell growth factor and until toxicity resolves to ≤Grade 2. Resume at next lower dose unless already performed for the toxicity that led to the use of the growth factor. Growth factor use as per current treatment guidelines. Monitor complete blood counts prior to the start of VERZENIO therapy, every 2 weeks for the first 2 months, monthly for the next 2 months, and as clinically indicated. CTCAE Grade VERZENIO Dosage Modifications Grade 1 or 2 No dosage modification is required. Grade 3 Withhold until toxicity resolves to ≤Grade 2.Dosage reduction is not required. Grade 3 recurrent, or Grade 4 Withhold until toxicity resolves to ≤Grade 2.Resume at next lower dose. At the first sign of loose stools, start treatment with antidiarrheal agents and increase intake of oral fluids. Grade 1 No dosage modification is required. Grade 2 If toxicity does not resolve within 24 hours to ≤Grade 1, Withhold until resolution. No dosage reduction is required. Grade 2 that persists or recurs after resuming the same dose despite maximal supportive measures Withhold until toxicity resolves to ≤Grade 1.Resume at next lower dose. Grade 3 or 4 or requires hospitalization Withhold until toxicity resolves to ≤Grade 1.Resume at next lower dose. Abbreviations: ALT = alanine aminotransferase, AST = aspartate aminotransferase, ULN = upper limit of normal. Monitor ALT, AST, and serum bilirubin prior to the start of VERZENIO therapy, every 2 weeks for the first 2 months, monthly for the next 2 months, and as clinically indicated. CTCAE Grade for ALT and AST VERZENIO Dosage Modifications Grade 1 (>ULN-3.0 x ULN)Grade 2 (>3.0-5.0 x ULN),WITHOUT increase in total bilirubin above 2 x ULN No dosage modification is required. Persistent or Recurrent Grade 2, or Grade 3 (>5.0-20.0 x ULN), WITHOUT increase in total bilirubin above 2 x ULN Withhold until toxicity resolves to baseline or Grade 1.Resume at next lower dose. Elevation in AST and/or ALT >3 x ULN WITH total bilirubin >2 x ULN, in the absence of cholestasis Discontinue VERZENIO. Grade 4 (>20.0 x ULN) Discontinue VERZENIO. Persistent or recurrent Grade 2 toxicity that does not resolve with maximal supportive measures within 7 days to baseline or Grade 1 Withhold until toxicity resolves to baseline or ≤Grade 1.Resume at next lower dose. Grade 3 or 4 Discontinue VERZENIO. Early Breast Cancer Any Grade Withhold and treat as clinically indicated. Resume VERZENIO when the patient is clinically stable. Advanced or Metastatic Breast Cancer Grade 3 or 4 Withhold and treat as clinically indicated. Resume VERZENIO when the patient is clinically stable. a Excluding diarrhea, hematologic toxicity, hepatotoxicity, ILD/pneumonitis, and VTEs. Grade 3 or 4 Withhold until toxicity resolves to baseline or ≤Grade 1.Resume at next lower dose. Refer to the Prescribing Information for coadministered fulvestrant, tamoxifen, imlunestrant or an aromatase inhibitor for dose modifications and other relevant safety information.",
+            "char_len": 3861,
+            "source_section_code": "42229-5",
+            "source_title": "2.3 Dosage Modification for Adverse Reactions",
+            "source_xml": "DRUG-BREAST-FDA-009.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "42229-5",
+            "title": "2.4 Dosage Modifications for Use with Strong and Moderate CYP3A Inhibitors",
+            "text": "2.4 Dosage Modifications for Use with Strong and Moderate CYP3A Inhibitors: Avoid concomitant use of the strong CYP3A inhibitor ketoconazole. With concomitant use of strong CYP3A inhibitors other than ketoconazole, in patients with recommended starting dosage of 200 mg twice daily or 150 mg twice daily, reduce the VERZENIO dosage to 100 mg twice daily. In patients who have had a dosage reduction to 100 mg twice daily due to adverse reactions, further reduce the VERZENIO dosage to 50 mg twice daily. If a patient taking VERZENIO discontinues a CYP3A inhibitor, increase the VERZENIO dosage (after 3-5 half-lives of the inhibitor) to the dose that was used before starting the strong inhibitor [see Drug Interactions (7.1) and Clinical Pharmacology (12.3)]. With concomitant use of moderate CYP3A inhibitors, monitor for adverse reactions and consider reducing the VERZENIO dose in 50 mg decrements as demonstrated in Table 1, if necessary.",
+            "char_len": 943,
+            "source_section_code": "42229-5",
+            "source_title": "2.4 Dosage Modifications for Use with Strong and Moderate CYP3A Inhibitors",
+            "source_xml": "DRUG-BREAST-FDA-009.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-009.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种激酶抑制剂，用于治疗特定类型的乳腺癌。\", \"how_to_use\": \"与氟维司群、他莫昔芬、Imlunestrant或芳香化酶抑制剂联用时，推荐剂量为150毫克，每日口服两次。单药治疗时，推荐剂量为200毫克，每日口服两次。可随餐或空腹服用，尽量每天在相近时间服药。药片应整片吞服，不要咀嚼、压碎或掰开。若药片破损、开裂或不完整，请不要服用。如果漏服一次，跳过漏服剂量，按下次预定时间服药。如果服药后呕吐，不要补服，按下次预定时间服药。绝经前、围绝经期女性和男性在与芳香化酶抑制剂、Imlunestrant或氟维司群联用时，应按现行临床实践标准接受促性腺激素释放激素激动剂治疗。\", \"cautions\": [\"与强或中度CYP3A4抑制剂合用可能增加毒性，应避免与酮康唑同用。\", \"与酮康唑以外的强CYP3A抑制剂合用时，需按说明书调整剂量。\", \"因不良反应已减量至100毫克每日两次者，合用强CYP3A抑制剂时需进一步减量。\", \"停用强CYP3A抑制剂后，需在抑制剂3至5个半衰期后恢复原剂量。\", \"与中度CYP3A抑制剂合用时，需监测不良反应，必要时按说明书减量。\", \"应避免与强或中度CYP3A诱导剂合用，并考虑替代药物。\", \"说明书未列出禁忌证。\"], \"side_effects\": [{\"term\": \"腹泻\", \"plain\": \"常见不良反应之一，发生率较高。\", \"when_to_seek_help\": \"如腹泻严重或持续不缓解，请及时就医。\"}, {\"term\": \"感染\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"如出现感染迹象，请及时就医。\"}, {\"term\": \"中性粒细胞减少\", \"plain\": \"常见不良反应之一，属于血液指标异常。\", \"when_to_seek_help\": \"如出现相关异常表现，请及时就医。\"}, {\"term\": \"疲乏\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"如疲乏明显影响日常活动，请及时就医。\"}, {\"term\": \"腹痛\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"如腹痛严重或持续，请及时就医。\"}, {\"term\": \"恶心\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"如恶心严重或持续不缓解，请及时就医。\"}, {\"term\": \"白细胞减少\", \"plain\": \"常见不良反应之一，属于血液指标异常。\", \"when_to_seek_help\": \"如出现相关异常表现，请及时就医。\"}, {\"term\": \"贫血\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"如出现贫血相关表现，请及时就医。\"}, {\"term\": \"呕吐\", \"plain\": \"常见不良反应之一。\", \"when_to_seek_help\": \"如呕吐严重或持续不缓解，请及时就医。\"}], \"seek_help\": \"如出现严重或持续不缓解的腹泻、感染迹象、疲乏明显影响日常活动、严重腹痛、严重恶心或呕吐，或血液指标异常相关表现，请及时就医。\"}",
+    "patient_plain_at": "2026-11-03T14:57:01"
+  }
+]

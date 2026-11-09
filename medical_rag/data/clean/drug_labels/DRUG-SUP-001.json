@@ -1,0 +1,47 @@
+[
+  {
+    "drug_id": "DRUG-SUP-001",
+    "generic_name": "阿瑞匹坦",
+    "brand_names": [
+      "APONVIE",
+      "APREPITANT",
+      "Aprepitant",
+      "CINVANTI",
+      "EMEND",
+      "FOCINVEZ",
+      "FOSAPREPITANT",
+      "FOSAPREPITANT DIMEGLUMINE",
+      "Fosaprepitant",
+      "NAVITRUX",
+      "fosaprepitant"
+    ],
+    "aliases_zh": [
+      "阿瑞匹坦"
+    ],
+    "title": "阿瑞匹坦",
+    "indications": [
+      "阿瑞匹坦胶囊与其它止吐药物联合给药，适用于预防高度致吐性抗肿瘤化疗的初次和重复治疗过程中出现的急性和迟发性恶心和呕吐。"
+    ],
+    "dosage": {
+      "standard": "本品的剂型为口服胶囊。\n在阿瑞匹坦胶囊与一种糖皮质激素和一种5-HTs拮抗剂联合治疗方案中，\n本品给药3天。在开始治疗前需仔细阅读5-HTs措抗剂的说明书。本品的推荐\n剂量是在化疗前1小时口服125mg（第1天），在第2和第3天早晨每天一次口\n服80mgo\n在一项在中国开展的临床研究中，使用了以下治疗方案预防高度致吐性\n抗肿瘤化疗导致的恶心和呕吐·\n第1天第2天第3天第4天\n阿瑞匹坦口服125mg口服80mg口服80mg无\n地塞米松口服6mg口服3.75mg口服3.75mg口服3.75mg\n格拉司琼静脉输注3mg无无无\n*在第1天化疗前1小时以及第2天和第3天早晨口服阿瑞匹坦。\n**在第1天化疗前30分钟以及第2-4天的早晨服用地塞米松，服用剂量根据\n药物相互作用确定。\n十在第1天化疗前30分钟使用格拉司琼。\n一般信息\n关于本品与糖皮质激素联合应用时的其它信息参见“药物相互作用”。\n联合使用的止吐剂可参见其说明书。\n本品可以与食物同时服用，也可以不与食物同时服用。\n不同年龄、性别、种族及身体质量指数（BMI）的患者不需要调整药物的\n剂量。\n重度肾功能不全的患者（肌酐清除率<30ml/min）和进行血液透析的终\n末期肾病患者均不需要调整本品的给药剂量。\n轻、中度肝功能不全（Child-Pugh分级评分5一9分）的患者不需要调\n整本品的给药剂量。目前尚没有重度肝功能不全（Child-Pugh分级评分>9\n分）的患者使用本品的临床研究资料。",
+      "adjustment": null
+    },
+    "contraindications": [
+      "禁用于对本品中任何成份过敏者。",
+      "本品不应与匹莫齐特、特非那定、阿司咪唑、西沙比利同时使用。",
+      "阿瑞匹坦可对细胞色素P450的同功酶3A4（CYP3A4）产生剂量依赖性抑制，而使这些药物的血药浓度升高，从而有可能引起严重的或危及生命的不良反应（见“药物相互作用”）。"
+    ],
+    "adverse_reactions": [],
+    "interactions": [],
+    "approval_no": "国药准字HJ20150377；国药准字HJ20150380；国药准字HJ20150378；国药准字HJ20150381；国药准字HJ20150379",
+    "atc_code": "A04AD12",
+    "cancer_type": null,
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "内部知识库使用，不得再分发（来源: FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231））",
+    "file_path": "fetched/labels_cn/downloads/msd_aprepitant_1dd6935c8331.pdf",
+    "doc_hash": null,
+    "review_status": "draft"
+  }
+]

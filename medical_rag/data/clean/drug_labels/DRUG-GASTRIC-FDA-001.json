@@ -1,0 +1,232 @@
+[
+  {
+    "drug_id": "DRUG-GASTRIC-FDA-001",
+    "generic_name": "TISLELIZUMAB",
+    "brand_names": [],
+    "aliases_zh": [
+      "替雷利珠单抗"
+    ],
+    "title": "TISLELIZUMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "TEVIMBRA is a programmed death receptor-1 (PD-1)-blocking antibody indicated for:",
+      "Gastric, Gastroesophageal Junction, or Esophageal Adenocarcinoma",
+      "TEVIMBRA, in combination with platinum-containing chemotherapy, is indicated for the first-line treatment of adults with unresectable or metastatic esophageal squamous cell carcinoma (ESCC) whose tumors express PD-L1 (≥1).",
+      "TEVIMBRA, as a single agent, is indicated for the treatment of adults with unresectable or metastatic esophageal squamous cell carcinoma (ESCC) after prior systemic chemotherapy that did not include a PD-(L)1 inhibitor.",
+      "TEVIMBRA, in combination with platinum and fluoropyrimidine-based chemotherapy, is indicated for the first-line treatment of adults with unresectable or metastatic HER2-negative gastric or gastroesophageal junction adenocarcinoma (G/GEJ) whose tumors express PD-L1 (≥1).",
+      "TEVIMBRA, in combination with zanidatamab-hrii and fluoropyrimidine- and platinum-containing chemotherapy, is indicated for the first-line treatment for adults with HER2-positive (IHC 3+ or IHC 2+/ISH+) unresectable locally advanced or metastatic gastric, gastroesophageal junction, or esophageal adenocarcinoma as detected by an FDA-authorized test [see Dosage and Administration (2.1)]."
+    ],
+    "dosage": {
+      "standard": "Gastric, Gastroesophageal Junction, or Esophageal Adenocarcinoma Select patients for the first-line treatment of unresectable or metastatic esophageal squamous cell carcinoma based on the presence of PD-L1 in tumor specimens [see Clinical Studies (14.1)]. An FDA-authorized companion diagnostic for the detection of PD-L1 in patients with unresectable or metastatic esophageal squamous cell carcinoma is not available. Select patients for the first-line treatment of unresectable or metastatic HER2-negative gastric or gastroesophageal junction adenocarcinoma (G/GEJ) based on the presence of PD-L1 in tumor specimens [see Clinical Studies (14.2)]. An FDA-authorized companion diagnostic for the detection of PD-L1 in patients with unresectable or metastatic HER2-negative gastric or gastroesophageal junction adenocarcinoma (G/GEJ) is not available. Select patients for the first-line treatment of HER2-positive unresectable locally advanced or metastatic gastric, gastroesophageal junction, or esophageal adenocarcinoma based on HER2-positive status from tumor specimens, as detected by an FDA-authorized test [see Clinical Studies (14)]. Information on FDA-authorized tests for HER2 protein expression in gastric, gastroesophageal junction, or esophageal adenocarcinoma at: http://www.fda.gov/CompanionDiagnostics The recommended dosages of TEVIMBRA administered intravenously as a single agent or in combination with other therapeutic agents are presented in Table 1. Indication Recommended Dosage of TEVIMBRA Duration/Timing of Treatment Esophageal Squamous Cell CarcinomaOR First-Line HER2-Negative Gastric CancerORFirst-Line HER2-Positive Gastric, Gastroesophageal Junction, or Esophageal Adenocarcinoma 150 mg every 2 weeksOR200 mg every 3 weeksOR300 mg every 4 weeks OR 400 mg every 6 weeks ",
+      "adjustment": "Select patients for the first-line treatment of HER2-positive unresectable locally advanced or metastatic gastric, gastroesophageal junction, or esophageal adenocarcinoma based on HER2-positive status from tumor specimens, as detected by an FDA-authorized test [see Clinical Studies (14)]. Information on FDA-authorized tests for HER2 protein expression in gastric, gastroesophageal junction, or esophageal adenocarcinoma at: http://www.fda.gov/CompanionDiagnostics The recommended dosages of TEVIMBRA administered intravenously as a single agent or in combination with other therapeutic agents are presented in Table 1. Indication Recommended Dosage of TEVIMBRA Duration/Timing of Treatment Esophageal Squamous Cell CarcinomaOR First-Line HER2-Negative Gastric CancerORFirst-Line HER2-Positive Gastric, Gastroesophageal Junction, or Esophageal Adenocarcinoma 150 mg every 2 weeksOR200 mg every 3 weeksOR300 mg every 4 weeks OR 400 mg every 6 weeks Until disease progression or unacceptable toxicity. Refer to the respective Prescribing Information for each therapeutic agent administered in combination with TEVIMBRA for the recommended dosage information, including premedication requirements, as a"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following clinically significant adverse reactions are discussed in more detail in other sections of the label:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Most common adverse reactions (≥20%), including laboratory abnormalities, were:",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact BeOne Medicines at 1-877-828-5596 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The pooled safety population described in WARNINGS AND PRECAUTIONS reflect exposure to TEVIMBRA as a single agent in 2390 patients enrolled in three randomized ",
+        "frequency": "38%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "First-line Treatment of Unresectable or Metastatic Esophageal Carcinoma (ESCC)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of TEVIMBRA in combination with chemotherapy was evaluated in RATIONALE-306, a randomized, placebo-controlled, multicenter, double-blind trial in pat",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Patients were randomized (1:1) to receive either TEVIMBRA 200 mg by intravenous infusion over 30-60 minutes every 3 weeks or placebo plus a chemotherapy doublet",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Patients were treated until disease progression or unacceptable toxicity. The median duration of exposure was 6.4 months (range: 0.1 to 38.3 months) in TEVIMBRA",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Serious adverse reactions occurred in 48% of patients receiving TEVIMBRA in combination with chemotherapy. The most frequent serious adverse reactions (≥2%) wer",
+        "frequency": "48%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Permanent discontinuation of TEVIMBRA due to adverse reactions occurred in 13% of patients. The adverse reaction which resulted in discontinuation in ≥2% of pat",
+        "frequency": "13%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Dosage interruptions of TEVIMBRA due to adverse reactions occurred in 52% of patients. Adverse reactions which required dosage interruption in ≥2% of patients w",
+        "frequency": "52%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common (≥20%) adverse reactions including laboratory abnormalities were decreased neutrophil count, decreased sodium, increased glucose, anemia, fatigu",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions and laboratory abnormalities are listed in Table 3 and Table 4, respectively.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction TEVIMBRA + Chemotherapy N=324 Placebo + Chemotherapy N=321",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades (%) Grade 3 or 4 (%) All Grades (%) Grade 3 or 4 (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Blood and Lymphatic System Disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Neutropenia 16 7 15 10",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "General Disorders and Administration Site Conditions",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "FatigueRepresents a composite of multiple, related preferred terms. 45 9 45 4.7",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "gastric"
+    ],
+    "cancer_type": "gastric",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-10-08",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-GASTRIC-FDA-001.xml",
+    "doc_hash": "8af1c11913e7d06189d3dd8a1bbaca048c9f056b6d51cfcd0dd246c389da6b91",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "08ef1e3e-496f-4b0b-94ee-fbba3cc1985a",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/08ef1e3e-496f-4b0b-94ee-fbba3cc1985a.xml",
+    "atc_code": "L01FF09",
+    "approval_no": null,
+    "source_name": "TISLELIZUMAB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-GASTRIC-FDA-001.xml",
+    "updated_at": "2026-11-02",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions",
+        "text": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions: TEVIMBRA is a monoclonal antibody that belongs to a class of drugs that bind to either the programmed death receptor-1 (PD-1) or PD-ligand 1 (PD-L1), blocking the PD-1/PD-L1 pathway, thereby removing inhibition of the immune response, potentially breaking peripheral tolerance and inducing immune-mediated adverse reactions. Important immune-mediated adverse reactions listed under WARNINGS AND PRECAUTIONS may not include all possible severe and fatal immune-mediated reactions. Immune-mediated adverse reactions, which may be severe or fatal, can occur in any organ system or tissue. Immune-mediated adverse reactions can occur at any time after starting treatment with a PD-1/PD-L1 blocking antibody. While immune-mediated adverse reactions usually manifest during treatment with PD-1/PD-L1 blocking antibodies, immune-mediated adverse reactions can also manifest after discontinuation of PD-1/PD-L1 blocking antibodies. Early identification and management of immune-mediated adverse reactions are essential to ensure safe use of PD-1/PD-L1 blocking antibodies. Monitor patients closely for symptoms and signs that may be clinical manifestations of underlying immune-mediated adverse reactions. Evaluate liver enzymes, creatinine, and thyroid function at baseline and periodically during treatment. In cases of suspected immune-mediated adverse reactions, initiate appropriate workup to exclude alternative etiologies, including infection. Institute medical management promptly, including specialty consultation as appropriate. Withhold or permanently discontinue TEVIMBRA depending on severity [see Dosage and Administration (2.2)]. In general, if TEVIMBRA requires interruption or discontinuation, administer systemic corticosteroid therapy (1 to 2 mg/kg/day prednisone or equivalent) until improvement to Grade 1 or less. Upon improvement to Grade 1 or less, initiate corticosteroid taper and continue to taper over at least 1 month. Consider administration of other systemic immunosuppressants in patients whose immune-mediated adverse reactions are not controlled with corticosteroids. Toxicity management guidelines for adverse reactions that do not necessarily require systemic steroids (e.g., endocrinopathies and dermatologic reactions) are discussed below. Immune-Mediated Pneumonitis TEVIMBRA can cause immune-mediated pneumonitis, which can be fatal. In patients treated with other PD-1/PD-L1 blocking antibodies, the incidence of pneumonitis is higher in patients who have received prior thoracic radiation. Immune-mediated pneumonitis occurred in 4.7% (113/2390) of patients receiving TEVIMBRA, including fatal (0.1%), Grade 4 (0.3%), Grade 3 (1.4%), and Grade 2 (1.9%) adverse reactions. Pneumonitis led to permanent discontinuation of TEVIMBRA in 44 (1.8%) patients and withholding of TEVIMBRA in 40 (1.7%) patients. Eighty-one (71.7%) of the 113 patients received systemic corticosteroids. Seventy-four (65.5%) of the 113 patients received high-dose systemic corticosteroids. Immune-mediated pneumonitis resolved in 48.7% of the 113 patients. Of the 40 patients in whom TEVIMBRA was withheld for pneumonitis, 26 (65%) reinitiated TEVIMBRA after symptom improvement; of these, 5 (19%) patients had recurrence of pneumonitis. Immune-Mediated Colitis TEVIMBRA can cause immune-mediated colitis, which can be fatal. Cytomegalovirus infection/reactivation has been reported in patients with corticosteroid-refractory immune-mediated colitis treated with PD-1/PD-L1 blocking antibodies. In cases of corticosteroid-refractory colitis, consider repeating infectious workup to exclude alternative etiologies. Immune-mediated colitis occurred in 0.8% (19/2390) of patients receiving TEVIMBRA, including Grade 3 (0.3%) and Grade 2 (0.4%) adverse reactions. Colitis led to permanent discontinuation of TEVIMBRA in 5 (0.2%) patients and withholding of TEVIMBRA in 10 (0.4%) patients. Seventeen (89.5%) of the 19 patients received systemic corticosteroids. Twelve (63.2%) of the 19 patients received high-dose systemic corticosteroids. Two (10.5%) of the 19 patients received immunosuppressive treatment. Immune-mediated colitis resolved in 89.5% of the 19 patients. Of the 10 patients in whom TEVIMBRA was withheld for colitis, 9 (90%) reinitiated TEVIMBRA after symptom improvement; of these, 2 (22%) patients had recurrence of colitis. Immune-Mediated Hepatitis TEVIMBRA can cause immune-mediated hepatitis, which can be fatal. Immune-mediated hepatitis occurred in 1.3% (30/2390) of patients receiving TEVIMBRA, including Grade 4 (0.3%), Grade 3 (0.6%), and Grade 2 (0.3%) adverse reactions. Immune-mediated hepatitis led to permanent discontinuation in 6 (0.3%) patients and withholding of TEVIMBRA in 19 (0.8%) patients. Twenty-five (83.3%) of the 30 patients received systemic corticosteroids. Twenty-four (80%) of the 30 patients received high-dose systemic corticosteroids. Two (6.7%) of the 30 patients received immunosuppressive treatment. Immune-mediated hepatitis resolved in 66.7% of the 30 patients. Of the 19 patients in whom TEVIMBRA was withheld for hepatitis, 7 (37%) reinitiated TEVIMBRA after symptom improvement; of these, 1 (14%) patient had recurrence of hepatitis. Immune-Mediated Endocrinopathies Adrenal Insufficiency TEVIMBRA can cause immune-mediated adrenal insufficiency. For Grade 2 or higher adrenal insufficiency, initiate symptomatic treatment, including hormone replacement as clinically indicated. Withhold TEVIMBRA depending on severity [see Dosage and Administration (2.2)]. Immune-mediated adrenal insufficiency occurred in 0.5% (12/2390) of patients receiving TEVIMBRA, including Grade 4 (0.04%), Grade 3 (0.2%), and Grade 2 (0.3%) adverse reactions. Adrenal insufficiency did not lead to permanent discontinuation of TEVIMBRA. TEVIMBRA was withheld in 10 (0.4%) patients. All 12 patients received systemic corticosteroids. Three (25%) of the 12 patients received high-dose systemic corticosteroids. Adrenal insufficiency resolved in 25% of the 12 patients. Of the 10 patients in whom TEVIMBRA was withheld for adrenal insufficiency, 8 (80%) reinitiated TEVIMBRA after symptom improvement; of these, none of the patients had recurrence of adrenal insufficiency. TEVIMBRA can cause immune-mediated hypophysitis. Hypophysitis can present with acute symptoms associated with mass effect such as headache, photophobia, or visual field defects. Hypophysitis can cause hypopituitarism. Initiate hormone replacement as clinically indicated. Withhold or permanently discontinue TEVIMBRA depending on severity [see Dosage and Administration (2.2)]. Hypophysitis/hypopituitarism occurred in 0.3% (6/2390) of patients receiving TEVIMBRA; all were Grade 2 (0.3%). Hypophysitis did not lead to permanent discontinuation of TEVIMBRA. TEVIMBRA was withheld in 1 (0.04%) patient. Five (83.3%) of the 6 patients received systemic corticosteroids. One (17%) of the 6 patients received high-dose systemic corticosteroids. Hypophysitis/hypopituitarism resolved in 17% of the 6 patients. For the 1 patient where TEVIMBRA was withheld for hypophysitis/hypopituitarism, there was no recurrence of hypophysitis/hypopituitarism. Thyroid Disorders TEVIMBRA can cause immune-mediated thyroid disorders. Thyroiditis can present with or without endocrinopathy. Hypothyroidism can follow hyperthyroidism. Initiate hormone replacement for hypothyroidism or institute medical management of hyperthyroidism as clinically indicated. Withhold or permanently discontinue TEVIMBRA depending on severity [see Dosage and Administration (2.2)]. Thyroiditis: Immune-mediated thyroiditis occurred in 1% (25/2390) of patients receiving TEVIMBRA, including Grade 2 (0.5%) adverse reactions. Thyroiditis did not lead to permanent discontinuation of TEVIMBRA. TEVIMBRA was withheld in 5 (0.2%) patients. Two (8%) of the 25 patients received systemic corticosteroids. Thyroiditis resolved in 36% of the 25 patients. All 5 patients in whom TEVIMBRA was withheld for thyroiditis reinitiated TEVIMBRA after symptom improvement; of these, 1 (20%) patient had recurrence of thyroiditis. Hyperthyroidism: Immune-mediated hyperthyroidism occurred in 4.9% (118/2390) of patients receiving TEVIMBRA, including Grade 3 (0.04%) and Grade 2 (0.9%) adverse reactions. Hyperthyroidism led to the permanent discontinuation of TEVIMBRA in 1 (0.04%) patient and withholding of TEVIMBRA in 7 (0.3%) patients. Three (2.5%) of the 118 patients received systemic corticosteroids. Hyperthyroidism resolved in 76.3% of the 118 patients. Of the 7 patients in whom TEVIMBRA was withheld for hyperthyroidism, 5 (71.4%) reinitiated TEVIMBRA after symptom improvement; of these, none of the patients had recurrence of hyperthyroidism. Hypothyroidism: Immune-mediated hypothyroidism occurred in 12.5% (299/2390) of patients receiving TEVIMBRA, including Grade 4 (0.04%), Grade 3 (0.04%), and Grade 2 (6.7%) adverse reactions. TEVIMBRA was permanently discontinued in 2 (0.1%) patients and treatment was withheld in 12 (0.5%) patients. Two (0.7%) of the 299 patients received systemic corticosteroids. One hundred ninety-five patients received hormone replacement therapy. Hypothyroidism resolved in 34.4% of the 299 patients. The majority (83.6%) of patients with hypothyroidism required long-term thyroid hormone replacement. Of the 12 patients in whom TEVIMBRA was withheld for hypothyroidism, 11 (91.7%) reinitiated TEVIMBRA after symptom improvement; of these, 2 (18.2%) patients had recurrence of hypothyroidism. Type 1 Diabetes Mellitus, Which Can Present with Diabetic Ketoacidosis Diabetes mellitus has been reported with PD-1/PD-L1 blocking antibodies. Monitor patients for hyperglycemia or other signs and symptoms of diabetes. Initiate treatment with insulin as clinically indicated. Withhold or permanently discontinue TEVIMBRA depending on severity [see Dosage and Administration (2.2)]. Diabetes mellitus occurred in 0.7% (16/2390) of patients receiving TEVIMBRA, including Grade 4 (0.1%), Grade 3 (0.3%), and Grade 2 (0.3%) adverse reactions. TEVIMBRA was permanently discontinued in 4 (0.2%) patients, and TEVIMBRA treatment was withheld in 4 (0.2%) patients. Fourteen of the 16 patients received insulin therapy for diabetes mellitus. Diabetes mellitus resolved in 12.5% of the 16 patients. Of the 4 patients in whom TEVIMBRA was withheld for diabetes mellitus, 1 (25%) patient reinitiated TEVIMBRA after symptom improvement. Immune-Mediated Nephritis with Renal Dysfunction TEVIMBRA can cause immune-mediated nephritis, which can be fatal. Immune-mediated nephritis with renal dysfunction occurred in 0.2% (5/2390) of patients receiving TEVIMBRA, including Grade 3 (0.04%) and Grade 2 (0.1%) adverse reactions. TEVIMBRA was permanently discontinued in 1 (0.04%) patient and treatment was withheld in 3 (0.1%) patients. Three (60%) out of 5 patients received systemic corticosteroids. Three (60%) of the 5 patients received high-dose systemic corticosteroids. Nephritis with renal dysfunction resolved in 40% of the 5 patients. Of the 3 patients in whom TEVIMBRA was withheld for nephritis, 2 (66.7%) reinitiated TEVIMBRA after symptom improvement and no patients had recurrence of nephritis. Immune-Mediated Dermatologic Adverse Reactions TEVIMBRA can cause immune-mediated rash or dermatitis. Cases of severe cutaneous adverse reactions (SCARs), including exfoliative dermatitis, Stevens-Johnson syndrome (SJS), and toxic epidermal necrolysis (TEN), have been reported, some with fatal outcome. Topical emollients and/or topical corticosteroids may be adequate to treat mild to moderate non-exfoliative rashes. Withhold or permanently discontinue TEVIMBRA depending on severity [see Dosage and Administration (2.2)]. Immune-mediated dermatologic adverse reactions occurred in 13% (311/2390) of patients receiving TEVIMBRA, including Grade 4 (0.1%), Grade 3 (1.1%), and Grade 2 (3.4%) adverse reactions. Stevens-Johnson syndrome occurred in 1 (0.04%) patient. Dermatologic adverse reactions led to permanent discontinuation of TEVIMBRA in 3 (0.1%) patients and withholding of TEVIMBRA in 30 (1.3%) patients. Forty-four (14.1%) of the 311 patients received systemic corticosteroids. Nineteen (6.1%) of the 311 patients received high-dose systemic corticosteroids. Immune-mediated skin reactions resolved in 66.9% of the 311 patients. Of the 30 patients in whom TEVIMBRA was withheld for dermatologic adverse reactions, 26 (86.7%) reinitiated TEVIMBRA after symptom improvement; of these, 3 (12%) patients had recurrence of immune-mediated dermatologic adverse reactions. Other Immune-Mediated Adverse Reactions The following clinically significant immune-mediated adverse reactions occurred at an incidence of less than 1% in 2390 patients who received TEVIMBRA or were reported with the use of other PD-1/PD-L1 blocking antibodies. Severe or fatal cases have been reported for some of these adverse reactions. Cardiac/Vascular: Myocarditis, pericarditis, vasculitis. Nervous System: Meningitis, encephalitis, myelitis and demyelination, myasthenic syndrome/myasthenia gravis (including exacerbation), Guillain-Barre syndrome, nerve paresis, autoimmune neuropathy. Ocular: Uveitis, iritis, and other ocular inflammatory toxicities. Some cases can be associated with retinal detachment. Various grades of visual impairment, including blindness, can occur. If uveitis occurs in combination with other immune-mediated adverse reactions, consider a Vogt-Koyanagi-Harada–like syndrome, as this may require treatment with systemic steroids to reduce the risk of permanent vision loss. Gastrointestinal: Pancreatitis including increases in serum amylase and lipase levels, gastritis, duodenitis, stomatitis. Musculoskeletal and Connective Tissue: Myositis/polymyositis/dermatomyositis, rhabdomyolysis and associated sequelae including renal failure, arthritis, polymyalgia rheumatica. Endocrine: Hypoparathyroidism. Hematologic/Immune: Hemolytic anemia, aplastic anemia, hemophagocytic lymphohistiocytosis, systemic inflammatory response syndrome, histiocytic necrotizing lymphadenitis (Kikuchi lymphadenitis), sarcoidosis, immune thrombocytopenia, solid organ transplant rejection, other transplant (including corneal graft) rejection. Other: Myocarditis-myositis-myasthenia gravis (or myasthenia-like) overlap syndrome, reported as the co-occurrence of either two or all three adverse reactions.",
+        "char_len": 14434,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Severe and Fatal Immune-Mediated Adverse Reactions",
+        "source_xml": "DRUG-GASTRIC-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Infusion-Related Reactions",
+        "text": "5.2 Infusion-Related Reactions: TEVIMBRA can cause severe or life-threatening infusion-related reactions. Infusion-related reactions occurred in 4.7% (113/2390) patients receiving TEVIMBRA, including Grade 3 or higher (0.2%) reactions. Monitor patients for signs and symptoms of infusion-related reactions. Slow the rate of infusion for mild (Grade 1) and interrupt the infusion for moderate (Grade 2) infusion-related reactions. For severe (Grade 3) or life-threatening (Grade 4) infusion-related reactions, stop infusion and permanently discontinue TEVIMBRA [see Dosage and Administration (2.2)].",
+        "char_len": 598,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Infusion-Related Reactions",
+        "source_xml": "DRUG-GASTRIC-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Complications of Allogeneic HSCT",
+        "text": "5.3 Complications of Allogeneic HSCT: Fatal and other serious complications can occur in patients who receive allogeneic hematopoietic stem cell transplantation (HSCT) before or after being treated with a PD-1/PD-L1 blocking antibody. Transplant-related complications include hyperacute graft-versus-host disease (GVHD), acute GVHD, chronic GVHD, hepatic veno-occlusive disease after reduced intensity conditioning, and steroid-requiring febrile syndrome (without an identified infectious cause). These complications may occur despite intervening therapy between PD-1/PD-L1 blockade and allogeneic HSCT. Follow patients closely for evidence of transplant-related complications and intervene promptly. Consider the benefit versus risks of treatment with a PD-1/PD-L1 blocking antibody prior to or after an allogeneic HSCT.",
+        "char_len": 821,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Complications of Allogeneic HSCT",
+        "source_xml": "DRUG-GASTRIC-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Embryo-Fetal Toxicity",
+        "text": "5.4 Embryo-Fetal Toxicity: Based on its mechanism of action, TEVIMBRA can cause fetal harm when administered to a pregnant woman. Animal studies have demonstrated that inhibition of the PD-1/PD-L1 pathway can lead to increased risk of immune-mediated rejection of the developing fetus resulting in fetal death. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with TEVIMBRA and for 4 months after the last dose [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 552,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-GASTRIC-FDA-001.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.3 Dosage Modifications for Adverse Reactions",
+            "text": "2.3 Dosage Modifications for Adverse Reactions: No dose reduction of TEVIMBRA is recommended. In general, withhold TEVIMBRA for severe (Grade 3) immune-mediated adverse reactions. Permanently discontinue TEVIMBRA for life-threatening (Grade 4) immune-mediated adverse reactions, recurrent severe (Grade 3) immune-mediated reactions that require systemic immunosuppressive treatment, or an inability to reduce corticosteroid dose to 10 mg or less of prednisone equivalent per day within 12 weeks of initiating steroids [see Warnings and Precautions (5.1)]. Dosage modifications for TEVIMBRA for adverse reactions that require management different from these general guidelines are summarized in Table 2. Refer to the respective Prescribing Information of each of the individual therapeutic agents used in combination with TEVIMBRA for dosage modification recommendations. Adverse Reaction Severity of Adverse ReactionBased on Common Terminology Criteria for Adverse Events (CTCAE) Version 4. Dosage Modifications ALT = alanine aminotransferase, AST = aspartate aminotransferase, ULN = upper limit of normal, SJS = Stevens-Johnson syndrome, TEN = toxic epidermal necrolysis, DRESS = drug rash with eosinophilia and systemic symptoms. Immune-Mediated Adverse Reactions [see Warnings and Precautions (5.1)] Pneumonitis Grade 2 WithholdResume in patients with complete or partial resolution (Grades 0 to 1) after corticosteroid taper. Permanently discontinue if no complete or partial resolution within 12 weeks of initiating steroids or inability to reduce prednisone to 10 mg per day or less (or equivalent) within 12 weeks of initiating steroids. Grade 3 or 4 or recurrent Grade 2 Permanently discontinue Colitis Grade 2 or 3 Withhold Grade 4 Permanently discontinue Hepatitis with no tumor involvement of the liver AST or ALT increases to more than 3 and up to 8 times ULNorTotal bilirubin increases to more than 1.5 and up to 3 times ULN Withhold AST or ALT increases to more than 8 times ULNorTotal bilirubin increases to more than 3 times ULN Permanently discontinue Hepatitis with tumor involvement of the liverIf AST and ALT are less than or equal to ULN at baseline, withhold or permanently discontinue TEVIMBRA based on recommendations for hepatitis with no liver involvement. Baseline AST or ALT is more than 1 and up to 3 times ULN and increases to more than 5 and up to 10 times ULNorBaseline AST or ALT is more than 3 and up to 5 times ULN and increases to more than 8 and up to 10 times ULN Withhold ALT or AST increases to more than 10 times ULNorTotal bilirubin increases to more than 3 times ULN Permanently discontinue Endocrinopathies Grade 3 or 4 Withhold until clinically stable or permanently discontinue depending on severity Nephritis with renal dysfunction Grade 2 or 3 increased blood creatinine Withhold Grade 4 increased blood creatinine Permanently discontinue Exfoliative dermatologic conditions Grade 3, or suspected SJS, TEN, or DRESS Withhold Grade 4, or confirmed SJS, TEN, or DRESS Permanently discontinue Myocarditis Grade 2, 3, or 4 Permanently discontinue Neurological toxicities Grade 2 Withhold Grade 3 or 4 Permanently discontinue Other Adverse Reactions Infusion-related reactions [see Warnings and Precautions (5.2)] Grade 1 Slow infusion rate by 50% Grade 2 Interrupt infusionResume infusion if resolved or decreased to Grade 1, and slow rate of infusion by 50% of the previous rate.",
+            "char_len": 3424,
+            "source_section_code": "42229-5",
+            "source_title": "2.3 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-GASTRIC-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-GASTRIC-FDA-001.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种帮助身体免疫系统对抗某些胃癌和食管癌的药物。\", \"how_to_use\": \"此药通过静脉输注给药，具体剂量和用药间隔由医生根据病情决定。\", \"cautions\": [\"用于部分食管癌或胃癌患者前，需先检测肿瘤标本中的PD-L1或HER2状态。\", \"目前食管鳞癌和HER2阴性胃/胃食管结合部腺癌的PD-L1伴随诊断试剂尚未获得FDA批准。\", \"HER2阳性胃癌、胃食管结合部癌或食管腺癌患者，需经FDA批准的检测确认HER2阳性后方可使用。\", \"此药可单用，也可与含铂化疗等其他药物联合使用。\", \"联合用药时，其他药物的用法和预处理要求请参考各自说明书。\", \"通常持续用药直至疾病进展或出现无法耐受的毒性。\", \"说明书未列出本药的禁忌证。\"], \"side_effects\": [{\"term\": \"中性粒细胞减少\", \"plain\": \"血液中帮助抵抗感染的一种白细胞减少。\", \"when_to_seek_help\": \"出现发热、反复感染或明显乏力时需就医。\"}, {\"term\": \"血钠降低\", \"plain\": \"血液中的钠含量偏低。\", \"when_to_seek_help\": \"出现明显无力、意识模糊或抽搐时需就医。\"}, {\"term\": \"血糖升高\", \"plain\": \"血液中的葡萄糖水平升高。\", \"when_to_seek_help\": \"出现异常口渴、多尿或乏力加重时需就医。\"}, {\"term\": \"贫血\", \"plain\": \"血液中红细胞减少，可能让人容易疲劳。\", \"when_to_seek_help\": \"出现明显苍白、气短或极度疲劳时需就医。\"}, {\"term\": \"疲劳\", \"plain\": \"感到异常疲倦或没有力气。\", \"when_to_seek_help\": \"疲劳严重到影响日常活动时需就医。\"}], \"seek_help\": \"如出现严重或持续加重的不适，或上述需要就医的情况，请及时联系医生。\"}",
+    "patient_plain_at": "2026-11-04T06:16:11"
+  }
+]

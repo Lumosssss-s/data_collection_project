@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "DOC-LUNG-EPMC-003",
+    "title": "ESR Essentials: lung cancer screening with low-dose CT—practice recommendations by the European Society of Thoracic Imaging",
+    "summary": "Abstract Abstract Low-dose CT screening for lung cancer reduces the risk of death from lung cancer by at least 21% in high-risk participants and should be offered to people aged between 50 and 75 with at least 20 pack-years of smoking. Iterative reconstruction or deep learning algorithms should be used to keep the effective dose below 1 mSv. Deep learning algorithms are required to facilitate the detection of nodules and the measurement of their volumetric growth. Only large solid nodules larger than 500 mm 3 or those with spiculations, bubble-like lucencies, or pleural indentation and complex cysts should be investigated further. Short-term follow-up at 3 or 6 months is required for solid nodules of 100 to 500 mm 3 . A watchful waiting approach is recommended for most subsolid nodules, to limit the risk of overtreatment. Finally, the description of additional findings must be limited if LCS is to be cost-effective. Key Points Low-dose CT screening reduces the risk of death from lung cancer by at least 21% in high-risk individuals, with a greater benefit in women. Quality assurance of screening is essential to control radiation dose and the number of false positives. Screening with low-dose CT scans detects incidental findings of variable clinical relevance, only those of importance should be reported. Keywords: Lung cancer, Lung neoplasms, Screening programs (Diagnostic), Artificial intelligence, Multidetector computed tomography",
+    "doc_type": "guideline",
+    "issuer": "European Radiology",
+    "publish_date": "2025-08-23",
+    "cancer_types": [
+      "lung"
+    ],
+    "license_note": "Open Access (Europe PMC)",
+    "file_path": "raw/guidelines/DOC-LUNG-EPMC-003.xml",
+    "doc_hash": "231a153adec379b96c28ce9ad72f56bf0d469d1dbf2bb78df9983df3866512f2",
+    "review_status": "approved",
+    "_source": "europepmc",
+    "_pmid": "40848139",
+    "_pmcid": "PMC12963080",
+    "_doi": "10.1007/s00330-025-11910-9",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12963080/fullTextXML",
+    "_xml_bytes": 81372,
+    "source_name": "ESR Essentials: lung cancer screening with low-dose CT—practice recommendations by the European Society of Thoracic Imaging",
+    "source_version": "2025",
+    "source_section": "全文",
+    "source_file": "DOC-LUNG-EPMC-003.xml",
+    "updated_at": "2026-10-21"
+  }
+]

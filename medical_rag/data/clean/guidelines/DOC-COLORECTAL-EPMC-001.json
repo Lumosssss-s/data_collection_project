@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "DOC-COLORECTAL-EPMC-001",
+    "title": "ESMO Clinical Practice Guideline Express Update on the adoption of physical exercise in patients with localised colon cancer",
+    "summary": "Highlights • This ESMO CPG update addresses the adoption of physical exercise in patients with localised colon cancer. • Recommendations are given for the participation of eligible patients in structured exercise programmes. • An ESMO-MCBS score is provided to describe the level of evidence for physical exercise adoption. • An updated algorithm for the adjuvant treatment of localised stage II and stage III colon cancer is provided. • Recommendations are based on available scientific data and the authors’ collective expert opinion.",
+    "doc_type": "guideline",
+    "issuer": "ESMO Open",
+    "publish_date": "2026-02-27",
+    "cancer_types": [
+      "colorectal"
+    ],
+    "license_note": "Open Access (Europe PMC)",
+    "file_path": "raw/guidelines/DOC-COLORECTAL-EPMC-001.xml",
+    "doc_hash": "26f4395380d957d77c5c0c9f5321005c07a27052f0a838750aede67acf02ac2a",
+    "review_status": "approved",
+    "_source": "europepmc",
+    "_pmid": "41741110",
+    "_pmcid": "PMC12947638",
+    "_doi": "10.1016/j.esmoop.2025.106019",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12947638/fullTextXML",
+    "_xml_bytes": 44444,
+    "source_name": "ESMO Clinical Practice Guideline Express Update on the adoption of physical exercise in patients with localised colon cancer",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DOC-COLORECTAL-EPMC-001.xml",
+    "updated_at": "2026-10-21"
+  }
+]

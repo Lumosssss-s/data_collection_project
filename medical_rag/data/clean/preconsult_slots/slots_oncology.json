@@ -1,0 +1,191 @@
+[
+  {
+    "slot": "age",
+    "type": "int",
+    "required": true,
+    "trigger": "会话开始",
+    "prompt": "请问您的年龄？",
+    "example_answer": 58,
+    "properties": {"type": "integer", "minimum": 0, "maximum": 120},
+    "design_note": "会话开始类：服务按优先级 0 先问（preconsult_service._next_question）"
+  },
+  {
+    "slot": "sex",
+    "type": "enum",
+    "required": true,
+    "trigger": "会话开始",
+    "prompt": "请问您的性别？",
+    "example_answer": "男",
+    "properties": {"type": "string", "enum": ["男", "女"]}
+  },
+  {
+    "slot": "chief_complaint",
+    "type": "string",
+    "required": true,
+    "trigger": "会话开始",
+    "prompt": "您这次主要有什么不舒服？",
+    "example_answer": "咳嗽两周了",
+    "properties": {"type": "string", "maxLength": 200},
+    "design_note": "其他条件槽位的触发基准：trigger.when_chief_complaint_in 依据本槽位文本匹配"
+  },
+  {
+    "slot": "duration",
+    "type": "object",
+    "required": true,
+    "trigger": null,
+    "prompt": "这个问题持续多久了？",
+    "example_answer": {"value": 2, "unit": "week"},
+    "properties": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"type": "string", "enum": ["day", "week", "month", "year"]}
+      },
+      "note": "按 G11 用 {value,unit} 结构，不接受自由文本时长"
+    }
+  },
+  {
+    "slot": "symptom_site",
+    "type": "string",
+    "required": false,
+    "trigger": null,
+    "prompt": "不舒服主要在哪个部位？",
+    "example_answer": "胸口和喉咙",
+    "properties": {"type": "string", "maxLength": 100}
+  },
+  {
+    "slot": "severity",
+    "type": "enum",
+    "required": false,
+    "trigger": null,
+    "prompt": "程度是轻、中还是重？",
+    "example_answer": "中",
+    "properties": {"type": "string", "enum": ["轻", "中", "重"]}
+  },
+  {
+    "slot": "associated_symptoms",
+    "type": "array",
+    "required": true,
+    "trigger": null,
+    "prompt": "还有别的不舒服吗（如咯血、消瘦、发热、便血）？",
+    "example_answer": ["痰中带血"],
+    "properties": {"type": "array", "items": {"type": "string"}}
+  },
+  {
+    "slot": "weight_change",
+    "type": "object",
+    "required": true,
+    "trigger": null,
+    "prompt": "近半年体重有没有明显变化？",
+    "example_answer": {"value": -5, "unit": "kg"},
+    "properties": {
+      "type": "object",
+      "properties": {
+        "value": {"type": "number", "description": "相对变化，下降为负数"},
+        "unit": {"type": "string", "enum": ["kg"]}
+      }
+    }
+  },
+  {
+    "slot": "fever",
+    "type": "object",
+    "required": false,
+    "trigger": {"when_chief_complaint_in": ["发热", "发烧", "体温"]},
+    "prompt": "最近有没有发热，最高多少度？",
+    "example_answer": {"value": 38.5, "unit": "℃"},
+    "properties": {
+      "type": "object",
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"type": "string", "enum": ["℃"]}
+      }
+    }
+  },
+  {
+    "slot": "smoking_history",
+    "type": "object",
+    "required": false,
+    "trigger": {"when_chief_complaint_in": ["咳嗽", "咯血", "胸痛", "气促", "喘", "肺"]},
+    "prompt": "您抽烟吗，大概多少年、每天多少支？",
+    "example_answer": {"pack_years": 30},
+    "properties": {
+      "type": "object",
+      "properties": {
+        "pack_years": {"type": "number", "unit": "pack-year"},
+        "status": {"type": "string", "enum": ["从不", "已戒", "现吸"]}
+      }
+    },
+    "design_note": "条件触发：仅肺癌相关主诉时提问（需求清单 B2 条件触发逻辑）"
+  },
+  {
+    "slot": "alcohol_history",
+    "type": "string",
+    "required": false,
+    "trigger": {"when_chief_complaint_in": ["便血", "腹痛", "排便", "腹泻", "大便", "肠道"]},
+    "prompt": "平时饮酒吗？",
+    "example_answer": "偶尔",
+    "properties": {"type": "string", "maxLength": 100},
+    "design_note": "条件触发：仅消化道相关主诉时提问"
+  },
+  {
+    "slot": "past_history",
+    "type": "array",
+    "required": true,
+    "trigger": null,
+    "prompt": "以前得过什么病（如高血压、糖尿病、肿瘤）？",
+    "example_answer": ["高血压"],
+    "properties": {"type": "array", "items": {"type": "string"}}
+  },
+  {
+    "slot": "cancer_history",
+    "type": "object",
+    "required": true,
+    "trigger": null,
+    "prompt": "以前有没有得过肿瘤或正在治疗？",
+    "example_answer": {"has_cancer": false},
+    "properties": {
+      "type": "object",
+      "properties": {
+        "has_cancer": {"type": "boolean"},
+        "detail": {"type": "string"}
+      }
+    }
+  },
+  {
+    "slot": "family_history",
+    "type": "array",
+    "required": false,
+    "trigger": null,
+    "prompt": "家里有人得过肿瘤吗？",
+    "example_answer": ["父亲：胃癌"],
+    "properties": {"type": "array", "items": {"type": "string"}}
+  },
+  {
+    "slot": "medication",
+    "type": "array",
+    "required": false,
+    "trigger": null,
+    "prompt": "目前有在吃什么药吗？",
+    "example_answer": ["氨氯地平"],
+    "properties": {"type": "array", "items": {"type": "string"}}
+  },
+  {
+    "slot": "allergy",
+    "type": "array",
+    "required": false,
+    "trigger": null,
+    "prompt": "有没有药物过敏？",
+    "example_answer": ["青霉素"],
+    "properties": {"type": "array", "items": {"type": "string"}}
+  },
+  {
+    "slot": "lab_results",
+    "type": "array",
+    "required": false,
+    "trigger": null,
+    "prompt": "最近做过哪些检查，结果如何？",
+    "example_answer": ["胸部CT：肺结节"],
+    "properties": {"type": "array", "items": {"type": "string"}}
+  }
+]

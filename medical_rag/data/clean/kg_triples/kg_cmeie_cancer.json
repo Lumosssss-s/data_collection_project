@@ -1,0 +1,3555 @@
+[
+  {
+    "triple_id": "KG-CBLUE-00001",
+    "head": "原发性甲状腺淋巴瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@ * 原发性甲状腺淋巴瘤是最常见的类型，其5年生存率＜50%。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00002",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "体重减轻",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "消化性溃疡病@[ 食管癌 ](/topics/zh-cn/1029) ### 胃癌 体征/症状 检查 体征/症状 存在报警症状（如体重减轻，出血，贫血，呕吐，早饱，吞咽困难，或患者55岁后出现的消化不良症状），有上消化道家族史，黄疸，显而易见的肿物，或者淋巴结肿大均提示胃食管肿瘤。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00003",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "出血",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "消化性溃疡病@[ 食管癌 ](/topics/zh-cn/1029) ### 胃癌 体征/症状 检查 体征/症状 存在报警症状（如体重减轻，出血，贫血，呕吐，早饱，吞咽困难，或患者55岁后出现的消化不良症状），有上消化道家族史，黄疸，显而易见的肿物，或者淋巴结肿大均提示胃食管肿瘤。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00004",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "呕吐",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "消化性溃疡病@[ 食管癌 ](/topics/zh-cn/1029) ### 胃癌 体征/症状 检查 体征/症状 存在报警症状（如体重减轻，出血，贫血，呕吐，早饱，吞咽困难，或患者55岁后出现的消化不良症状），有上消化道家族史，黄疸，显而易见的肿物，或者淋巴结肿大均提示胃食管肿瘤。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00005",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "早饱",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "消化性溃疡病@[ 食管癌 ](/topics/zh-cn/1029) ### 胃癌 体征/症状 检查 体征/症状 存在报警症状（如体重减轻，出血，贫血，呕吐，早饱，吞咽困难，或患者55岁后出现的消化不良症状），有上消化道家族史，黄疸，显而易见的肿物，或者淋巴结肿大均提示胃食管肿瘤。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00006",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "吞咽困难",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "消化性溃疡病@[ 食管癌 ](/topics/zh-cn/1029) ### 胃癌 体征/症状 检查 体征/症状 存在报警症状（如体重减轻，出血，贫血，呕吐，早饱，吞咽困难，或患者55岁后出现的消化不良症状），有上消化道家族史，黄疸，显而易见的肿物，或者淋巴结肿大均提示胃食管肿瘤。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00007",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "消化不良",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "消化性溃疡病@[ 食管癌 ](/topics/zh-cn/1029) ### 胃癌 体征/症状 检查 体征/症状 存在报警症状（如体重减轻，出血，贫血，呕吐，早饱，吞咽困难，或患者55岁后出现的消化不良症状），有上消化道家族史，黄疸，显而易见的肿物，或者淋巴结肿大均提示胃食管肿瘤。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00008",
+    "head": "直肠恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "直肠肿块",
+    "tail_type": "symptom",
+    "cancer_type": "colorectal",
+    "evidence": "肛门癌@直肠癌可引起直肠肿块而非肛门肿块。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00009",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "甲状腺球蛋白测定",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 此后需进行放射性碘131消融治疗，继而开始服用左甲状腺素替代疗法以及TSH抑制治疗。甲状腺癌@ * 随访过程中最重要的是临床查体和甲状腺球蛋白测定。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00010",
+    "head": "甲状腺髓样癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@### 髓样癌 甲状腺髓样癌的手术方式为全甲状腺切除。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00011",
+    "head": "非小细胞肺癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "肺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "非小细胞肺癌@超过50%的肺癌患者在诊断时有咳嗽症状。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00012",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "咳嗽",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "非小细胞肺癌@超过50%的肺癌患者在诊断时有咳嗽症状。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00013",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "TSH水平",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ ### 化验 首先需检测TSH水平。甲状腺癌@如果TSH水平下降，下一步需检测甲状腺激素水平，并做放射性碘扫描。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00014",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "放射性碘扫描",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ ### 化验 首先需检测TSH水平。甲状腺癌@如果TSH水平下降，下一步需检测甲状腺激素水平，并做放射性碘扫描。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00015",
+    "head": "原位导管癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@原位导管癌 (DCIS) 可能是浸润性癌的前期病变，提示癌将在此部位浸润。 乳腺原位癌@小叶原位癌起源于乳腺小叶，通常是偶然发现的。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00016",
+    "head": "高钙血症",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "德尼单抗",
+    "tail_type": "drug",
+    "cancer_type": null,
+    "evidence": "转移性乳腺癌@德尼单抗是一种与人 RANKL 结合的人源化 IgG2 单克隆抗体。转移性乳腺癌@它目前可用作骨质疏松症、高钙血症和骨转移治疗所用双膦酸盐的替代药物。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00017",
+    "head": "乳腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "活检",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 诊断标准 ### 南加州大学 (USC)/原位导管癌 (DCIS) Van Nuys 预后指数 Van Nuys评分系统根据核级和坏死情况将乳腺导管原位癌归类为高核级、非高核级伴坏死以及非高核级不伴坏死三种。乳腺原位癌@ 病理学分类（分数）： * NG1 非高级别无坏死（1） * NG2 非高级别伴坏死（2） * NG3 高级别（3） ### 乳腺癌风险评估 Gail 模型 结合",
+    "confidence": "medium",
+    "raw_predicate": "组织学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00018",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳头溢液 单边溢液",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@### 其他诊断因素 ### 常见 查看全部   ### 乳头溢液 单边溢液，无论是否为血性溢液，提示可能存在良性肿瘤（如乳头状瘤），少见于乳腺导管原位癌或侵袭性乳腺癌。乳腺原位癌@ 诊断为 DCIS 男性的首发症状通常是乳头血性分泌物。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00019",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳头血性分泌物",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@### 其他诊断因素 ### 常见 查看全部   ### 乳头溢液 单边溢液，无论是否为血性溢液，提示可能存在良性肿瘤（如乳头状瘤），少见于乳腺导管原位癌或侵袭性乳腺癌。乳腺原位癌@ 诊断为 DCIS 男性的首发症状通常是乳头血性分泌物。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00020",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@### 其他诊断因素 ### 常见 查看全部   ### 乳头溢液 单边溢液，无论是否为血性溢液，提示可能存在良性肿瘤（如乳头状瘤），少见于乳腺导管原位癌或侵袭性乳腺癌。乳腺原位癌@ 诊断为 DCIS 男性的首发症状通常是乳头血性分泌物。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00021",
+    "head": "髓样癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@如怀疑髓样癌，应检查血清降钙素水平；例如，当有提示家族性髓样癌或多发性内分泌瘤形成 (MEN) 综合征的家族史时。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00022",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "上消化道内镜",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@## 检查 ### 首要检查 ### 查看全部   ### 上消化道内镜检查及活检 检查 结果 检查 怀疑存在胃部恶性肿瘤的患者都应进行此项检查。",
+    "confidence": "medium",
+    "raw_predicate": "内窥镜检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00023",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "活检",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@## 检查 ### 首要检查 ### 查看全部   ### 上消化道内镜检查及活检 检查 结果 检查 怀疑存在胃部恶性肿瘤的患者都应进行此项检查。",
+    "confidence": "medium",
+    "raw_predicate": "组织学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00024",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳头内陷",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 鉴别诊断 ### 查看全部  ### 局部侵袭性乳腺癌 体征/症状 检查 体征/症状 通常表现为乳房肿块，伴或不伴乳头内陷、溢液或压痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00025",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳房肿块",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 鉴别诊断 ### 查看全部  ### 局部侵袭性乳腺癌 体征/症状 检查 体征/症状 通常表现为乳房肿块，伴或不伴乳头内陷、溢液或压痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00026",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "溢液",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 鉴别诊断 ### 查看全部  ### 局部侵袭性乳腺癌 体征/症状 检查 体征/症状 通常表现为乳房肿块，伴或不伴乳头内陷、溢液或压痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00027",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "压痛",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 鉴别诊断 ### 查看全部  ### 局部侵袭性乳腺癌 体征/症状 检查 体征/症状 通常表现为乳房肿块，伴或不伴乳头内陷、溢液或压痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00028",
+    "head": "局部侵袭性乳腺癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@## 鉴别诊断 ### 查看全部  ### 局部侵袭性乳腺癌 体征/症状 检查 体征/症状 通常表现为乳房肿块，伴或不伴乳头内陷、溢液或压痛。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00029",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "左甲状腺素",
+    "tail_type": "drug",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@扫描可检测颈部残留的甲状腺组织以及转移灶。甲状腺癌@ 此后需进行放射性碘131消融治疗，继而开始服用左甲状腺素替代疗法以及TSH抑制治疗。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00030",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "颈部淋巴病变",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 颈部淋巴病变 提示颈部转移。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00031",
+    "head": "内分泌系统恶性肿瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@## 流行病学 甲状腺癌是最常见的内分泌系统恶性肿瘤，女性明显多于男性。甲状腺癌@ 其发生率具有地域性差异，北美地区发生率最高（15.1/10 万女性），中非地区发生率最低（1.2/10 万女性）。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00032",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "PET/CT",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@结果 转移病灶 ### PET/CT扫描 检查 结果 检查 PET/CT 对术前分期有帮助。胃癌@PET/CT诊断远端转移病变的敏感性优于CT，然而，仍可能漏诊高达40%的胃癌病变。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00033",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "环磷酰胺",
+    "tail_type": "drug",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 淋巴瘤 查看全部   首选 –   化疗+外放疗 #### 第一选择 ##### CHOP [ 环磷酰胺 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 多柔比星 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 长春新碱 ](/druglink?dd=MARTINDALE) open_in_new",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00034",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "多柔比星",
+    "tail_type": "drug",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 淋巴瘤 查看全部   首选 –   化疗+外放疗 #### 第一选择 ##### CHOP [ 环磷酰胺 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 多柔比星 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 长春新碱 ](/druglink?dd=MARTINDALE) open_in_new",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00035",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "长春新碱",
+    "tail_type": "drug",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 淋巴瘤 查看全部   首选 –   化疗+外放疗 #### 第一选择 ##### CHOP [ 环磷酰胺 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 多柔比星 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 长春新碱 ](/druglink?dd=MARTINDALE) open_in_new",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00036",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "强的松龙",
+    "tail_type": "drug",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 淋巴瘤 查看全部   首选 –   化疗+外放疗 #### 第一选择 ##### CHOP [ 环磷酰胺 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 多柔比星 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 长春新碱 ](/druglink?dd=MARTINDALE) open_in_new",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00037",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "阿霉素",
+    "tail_type": "drug",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 淋巴瘤 查看全部   首选 –   化疗+外放疗 #### 第一选择 ##### CHOP [ 环磷酰胺 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 多柔比星 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 长春新碱 ](/druglink?dd=MARTINDALE) open_in_new",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00038",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "泼尼松",
+    "tail_type": "drug",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 淋巴瘤 查看全部   首选 –   化疗+外放疗 #### 第一选择 ##### CHOP [ 环磷酰胺 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 多柔比星 ](/druglink?dd=MARTINDALE) open_in_new 和 [ 长春新碱 ](/druglink?dd=MARTINDALE) open_in_new",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00039",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "体重下降",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "慢性阻塞性肺疾病@### 肺癌 体征/症状 检查 体征/症状 患者可能出现体重下降、盗汗、咯血和/或胸痛或背痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00040",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "盗汗",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "慢性阻塞性肺疾病@### 肺癌 体征/症状 检查 体征/症状 患者可能出现体重下降、盗汗、咯血和/或胸痛或背痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00041",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "咯血",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "慢性阻塞性肺疾病@### 肺癌 体征/症状 检查 体征/症状 患者可能出现体重下降、盗汗、咯血和/或胸痛或背痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00042",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "胸痛",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "慢性阻塞性肺疾病@### 肺癌 体征/症状 检查 体征/症状 患者可能出现体重下降、盗汗、咯血和/或胸痛或背痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00043",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "背痛",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "慢性阻塞性肺疾病@### 肺癌 体征/症状 检查 体征/症状 患者可能出现体重下降、盗汗、咯血和/或胸痛或背痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00044",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "X 线",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@LCIS 没有典型的乳腺 X 线检查发现，但 DCIS 常表现为簇集的微钙化。 乳腺原位癌@### 临床评价 乳腺导管原位癌和小叶原位癌无典型症状 少数情况下，如果乳腺导管原位癌表现为佩吉特病，可出现湿疹样皮疹。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00045",
+    "head": "导管原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@LCIS 没有典型的乳腺 X 线检查发现，但 DCIS 常表现为簇集的微钙化。 乳腺原位癌@### 临床评价 乳腺导管原位癌和小叶原位癌无典型症状 少数情况下，如果乳腺导管原位癌表现为佩吉特病，可出现湿疹样皮疹。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00046",
+    "head": "小叶原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@LCIS 没有典型的乳腺 X 线检查发现，但 DCIS 常表现为簇集的微钙化。 乳腺原位癌@### 临床评价 乳腺导管原位癌和小叶原位癌无典型症状 少数情况下，如果乳腺导管原位癌表现为佩吉特病，可出现湿疹样皮疹。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00047",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "湿疹样皮疹",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@LCIS 没有典型的乳腺 X 线检查发现，但 DCIS 常表现为簇集的微钙化。 乳腺原位癌@### 临床评价 乳腺导管原位癌和小叶原位癌无典型症状 少数情况下，如果乳腺导管原位癌表现为佩吉特病，可出现湿疹样皮疹。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00048",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "腹/盆腔CT",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@结果 判断原发肿瘤（T）和淋巴结（N）的临床分期 ### 腹/盆腔CT 检查 结果 检查 所有胃癌患者均应进行腹/盆腔CT检查。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00049",
+    "head": "肺尖癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "肺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "非小细胞肺癌@肺癌也可以表现为肺尖癌（又称潘科斯特综合征），多表现为肩痛。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00050",
+    "head": "乳头状癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@ 乳头状癌：可见核孔核沟、毛玻璃状的核，以及沙砾体。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00051",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "颈部超声",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 其他表现 有时可在颈部超声、PET、CT等检查中意外发现甲状腺恶性结节，也可发生于多发性结节性甲状腺肿。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00052",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "甲状腺恶性结节",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@### 其他表现 有时可在颈部超声、PET、CT等检查中意外发现甲状腺恶性结节，也可发生于多发性结节性甲状腺肿。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00053",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "细针穿刺",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 通常发生在30岁到40岁之间的女性。甲状腺癌@ 细针穿刺是最重要的诊断性试验。",
+    "confidence": "medium",
+    "raw_predicate": "组织学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00054",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "超声",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ 大多数组织机构发行的指南中推荐年龄≥40岁的女性每年进行一次双侧乳腺X线检查作为筛查。乳腺原位癌@ 通过乳腺X线检查，以及其他影像学检查，如超声、核磁共振，以及活检进行诊断。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00055",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "核磁共振",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ 大多数组织机构发行的指南中推荐年龄≥40岁的女性每年进行一次双侧乳腺X线检查作为筛查。乳腺原位癌@ 通过乳腺X线检查，以及其他影像学检查，如超声、核磁共振，以及活检进行诊断。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00056",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "乳腺X线",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ 大多数组织机构发行的指南中推荐年龄≥40岁的女性每年进行一次双侧乳腺X线检查作为筛查。乳腺原位癌@ 通过乳腺X线检查，以及其他影像学检查，如超声、核磁共振，以及活检进行诊断。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00057",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "活检",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ 大多数组织机构发行的指南中推荐年龄≥40岁的女性每年进行一次双侧乳腺X线检查作为筛查。乳腺原位癌@ 通过乳腺X线检查，以及其他影像学检查，如超声、核磁共振，以及活检进行诊断。",
+    "confidence": "medium",
+    "raw_predicate": "组织学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00058",
+    "head": "小细胞肺癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "肺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "小细胞肺癌@肺癌经常蔓延到纵膈淋巴结。",
+    "confidence": "low",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00059",
+    "head": "高钙血症",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "血清PTH升高或不正常",
+    "tail_type": "symptom",
+    "cancer_type": null,
+    "evidence": "原发性高血压@检查 高钙血症，血清PTH升高或不正常。 原发性高血压@[ 甲状旁腺功能亢进 ](/topics/zh-cn/133) ### 库欣综合征 体征/症状 检查 体征/症状 典型症状和体征包括体重增加，满月脸，水牛背，腹部紫纹和易淤血。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00060",
+    "head": "单侧的分化性癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@甲状腺半切除术（腺叶及峡部切除，术后TSH抑制）适用于单侧的分化性癌、结节＜1cm、没有不良预后因素的患者。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00061",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "坏死",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@ ### 消化道出血 | 存在差异 | 低 伴有坏死或溃疡的肿瘤可出现较多的出血。 胃癌@对于那些出血已经基本稳定，但仍有缓慢出血，又不适合手术的患者，可以考虑进行放化疗。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00062",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "溃疡",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@ ### 消化道出血 | 存在差异 | 低 伴有坏死或溃疡的肿瘤可出现较多的出血。 胃癌@对于那些出血已经基本稳定，但仍有缓慢出血，又不适合手术的患者，可以考虑进行放化疗。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00063",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "淋巴结肿大",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@ ### 罕见 查看全部   ### 淋巴结肿大 左锁骨上肿大淋巴结（Virchow淋巴结）、脐周肿大淋巴结（Sister Mary Joseph淋巴结）或左腋窝肿大淋巴结（Irish淋巴结） ### 其他诊断因素 ### 常见 查看全部   ### 年龄50至70岁 50至70岁是胃癌的发病高峰。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00064",
+    "head": "乳腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "他莫西芬",
+    "tail_type": "drug",
+    "cancer_type": "breast",
+    "evidence": "子宫内膜癌@ ### 无拮抗的外源性雌激素 激素替代治疗（含孕激素）治疗者内膜癌风险增加（相对危险度为2-12）。 子宫内膜癌@患乳腺癌使用他莫西芬治疗的女性患子宫内膜癌的风险高7倍，且这些患者中，透明细胞癌更常见。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00065",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "无明显症状",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 诊断步骤 女性乳腺导管原位癌通常无明显症状，常规通过乳房X线检查进行诊断。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00066",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "乳房X线",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 诊断步骤 女性乳腺导管原位癌通常无明显症状，常规通过乳房X线检查进行诊断。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00067",
+    "head": "分化性甲状腺癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@### 女性 诊断为分化性甲状腺癌的，女性为男性的两倍。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00068",
+    "head": "鳞状细胞癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "肺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "非小细胞肺癌@大约25%到30%的肺癌是鳞状细胞癌。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00069",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "卡培他滨",
+    "tail_type": "drug",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@ 化疗与放化疗的比较 * 一项随机临床试验比较了术后应用卡培他滨和顺铂与术后应用卡培他滨和顺铂然后给予放疗加同步卡培他滨。胃癌@增加放疗并不会显著降低复发率，但一项计划外的亚组分析显示，淋巴结阳性疾病患者的无病生存期延长。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00070",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "顺铂",
+    "tail_type": "drug",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@ 化疗与放化疗的比较 * 一项随机临床试验比较了术后应用卡培他滨和顺铂与术后应用卡培他滨和顺铂然后给予放疗加同步卡培他滨。胃癌@增加放疗并不会显著降低复发率，但一项计划外的亚组分析显示，淋巴结阳性疾病患者的无病生存期延长。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00071",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "恶心",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@尽管放射性碘治疗是非常安全的，但仍可能出现恶心、呕吐、口干等不良反应。",
+    "confidence": "medium",
+    "raw_predicate": "治疗后症状",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00072",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "呕吐",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@尽管放射性碘治疗是非常安全的，但仍可能出现恶心、呕吐、口干等不良反应。",
+    "confidence": "medium",
+    "raw_predicate": "治疗后症状",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00073",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "口干",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@尽管放射性碘治疗是非常安全的，但仍可能出现恶心、呕吐、口干等不良反应。",
+    "confidence": "medium",
+    "raw_predicate": "治疗后症状",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00074",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "皮肤溃疡",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ ### 溃疡 表现为皮肤溃疡的乳腺癌易被忽略。乳腺原位癌@ ### 危险因素 ### 强 查看全部   ### 乳腺癌家族史 原位导管癌 (DCIS) 的风险增加 1.5 倍，原位小叶癌 (LCIS) 的风险增加 1.7 倍。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00075",
+    "head": "原位小叶癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@ ### 溃疡 表现为皮肤溃疡的乳腺癌易被忽略。乳腺原位癌@ ### 危险因素 ### 强 查看全部   ### 乳腺癌家族史 原位导管癌 (DCIS) 的风险增加 1.5 倍，原位小叶癌 (LCIS) 的风险增加 1.7 倍。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00076",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ ### 溃疡 表现为皮肤溃疡的乳腺癌易被忽略。乳腺原位癌@ ### 危险因素 ### 强 查看全部   ### 乳腺癌家族史 原位导管癌 (DCIS) 的风险增加 1.5 倍，原位小叶癌 (LCIS) 的风险增加 1.7 倍。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00077",
+    "head": "原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@### 缺乏体力活动 与采取不运动生活方式的女性相比，坚持体育活动可使原位癌的风险下降大约 35%。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00078",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "呼吸困难",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "非小细胞肺癌@### 呼吸困难 表现在大多数肺癌患者中。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00079",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "雷洛昔芬",
+    "tail_type": "drug",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ 雷洛昔芬是绝经后女性的一个治疗选择。乳腺原位癌@ 基于患者的偏好和进展为侵袭性癌的风险评估来选择观察或双侧乳房切除术。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00080",
+    "head": "未分化癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@ * 未分化癌：是一种未分化的肿瘤类型，可见有丝分裂和血管浸润。甲状腺癌@常伴有邻近组织侵犯，包括喉返神经、气管、肌肉、和/或食管。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00081",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "体格检查",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@ 吞咽困难在近端或胃食管结合部肿瘤患者中更常见，在晚期疾病中，体格检查可以发现左锁骨上淋巴结（Virchow 淋巴结）、脐周淋巴结（Sister Mary Joseph 淋巴结）或左腋窝淋巴结（Irish 淋巴结）肿大。",
+    "confidence": "medium",
+    "raw_predicate": "辅助检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00082",
+    "head": "甲状腺乳头状癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@ * 术前超声检查是术前评估甲状腺乳头状癌淋巴结分期的有价值的手段。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00083",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "超声",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ * 术前超声检查是术前评估甲状腺乳头状癌淋巴结分期的有价值的手段。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00084",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "TSH水平抑制（低于正常）",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@TSH水平抑制（低于正常）提示甲状腺功能亢进，或存在高功能性（热）结节。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00085",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "RET/PTC",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@结果 可显示低弹性 ### 细胞学样本的分子分析 检查 结果 检查 当细胞学无法明确时，对样本进行分子水平的分析，如检测BRAF、RET/PTC、RAS等基因突变，可作为进一步的阐述。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00086",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "磁共振",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@结果 坏死和核级别高 ### 磁共振 检查 结果 检查 乳房密度，尤其是在年轻女性中，可导致乳腺 X 线检查效果差，因此需要超声波检查法或 MRI。 乳腺原位癌@MRI 对于级别高的 DCIS 似乎尤为有帮助，但仅建议用于高风险女性的筛查。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00087",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "声嘶",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@患者偶尔会因晚期疾病就诊。甲状腺癌@他们将出现声嘶、呼吸困难、吞咽困难或咳嗽等症状。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00088",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "呼吸困难",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@患者偶尔会因晚期疾病就诊。甲状腺癌@他们将出现声嘶、呼吸困难、吞咽困难或咳嗽等症状。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00089",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "吞咽困难",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@患者偶尔会因晚期疾病就诊。甲状腺癌@他们将出现声嘶、呼吸困难、吞咽困难或咳嗽等症状。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00090",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "咳嗽",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@患者偶尔会因晚期疾病就诊。甲状腺癌@他们将出现声嘶、呼吸困难、吞咽困难或咳嗽等症状。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00091",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "激素受体检测",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@如 DCIS 级别高且根据影像学检查范围＞2.5 cm，推荐行前哨淋巴结活检。 乳腺原位癌@### 激素受体检测 通过对固定的肿瘤组织进行免疫组化染色，检测雌激素和孕激素受体的状态。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00092",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "行前哨淋巴结活检",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@如 DCIS 级别高且根据影像学检查范围＞2.5 cm，推荐行前哨淋巴结活检。 乳腺原位癌@### 激素受体检测 通过对固定的肿瘤组织进行免疫组化染色，检测雌激素和孕激素受体的状态。",
+    "confidence": "medium",
+    "raw_predicate": "组织学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00093",
+    "head": "滤泡癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@ * 滤泡癌：约占甲状腺癌的10%。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00094",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "他莫昔芬",
+    "tail_type": "drug",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@一些患者可能选择乳房切除术（不论预后评分如何），但有证据显示，完全切除联合体外放疗在总生存期方面与乳房切除术相同。乳腺原位癌@对于绝经前女性和年龄在 60 岁及以上的女性，认为对于降低完全切除联合/不联合放射治疗后的同侧乳腺风险，和降低乳房切除术或完全切除联合/不联合放射治疗后对侧乳腺风险，他莫昔芬是一线治疗。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00095",
+    "head": "乳腺囊肿",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳房肿块伴压痛",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@[ 纤维腺瘤 ](/topics/zh-cn/1003) ### 乳腺囊肿 体征/症状 检查 体征/症状 通常表现为乳房肿块伴压痛。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00096",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "可触及的结节",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@美国甲状腺协会（ATA）和美国临床内分泌协会（AACE）均提出，对于临床可触及的结节，细针穿刺之前需要先做超声检查，以确定结节的大小、位置和囊性成分。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00097",
+    "head": "乳腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "骨髓内检出 MRD",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "转移性乳腺癌@### 弱 查看全部   ### 微小残留病变 (minimal residual disease, MRD) 部分研究但并非所有研究指出，乳腺癌患者辅助治疗后骨髓内检出 MRD 与无病生存期较短有关。 转移性乳腺癌@临床标本中评估骨转移基因标记的一项临床研究在远处复发的一组肿瘤患者中预测了骨复发。",
+    "confidence": "medium",
+    "raw_predicate": "治疗后症状",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00098",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "色素沉着",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@皮肤可能会出现暂时或永久的色素沉着。 乳腺原位癌@### 年龄≤70岁女性：Van Nuys评分7～9分乳腺导管原位癌患者 查看全部   首选 –   切除+放疗 治疗方案依据USC/Van Nuys评分 中高级别乳腺导管原位癌，USC/Van Nuys评分7~9的患者如果可以保乳，应予以局部切除加放射治疗。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00099",
+    "head": "中高级别乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺导管原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@皮肤可能会出现暂时或永久的色素沉着。 乳腺原位癌@### 年龄≤70岁女性：Van Nuys评分7～9分乳腺导管原位癌患者 查看全部   首选 –   切除+放疗 治疗方案依据USC/Van Nuys评分 中高级别乳腺导管原位癌，USC/Van Nuys评分7~9的患者如果可以保乳，应予以局部切除加放射治疗。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00100",
+    "head": "DCIS",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@来自欧洲乳腺癌专家学会的指南显示，局限性 DCIS 健康女性（≥ 70 岁）应考虑保乳手术和术后放射治疗。 乳腺原位癌@### 男性：乳腺导管原位癌 查看全部   首选 –   乳房切除术 通常通过乳房切除术治疗男性的 DCIS。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00101",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "恶心",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@[ 急性冠脉综合征的概述 ](/topics/zh-cn/152) ### 术后肺炎 | 存在差异 | 低 已知的手术治疗并发症。 胃癌@[ 医院获得性肺炎 ](/topics/zh-cn/720) ### 化疗相关的并发症 | 存在差异 | 低 包括发热性中性粒细胞减少症、血小板减少症和恶心 [ 发热性中性粒细胞减少症 ](/topics/zh-cn/950) ### 放疗相关的并发症 |",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00102",
+    "head": "甲状腺结节癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@甲状腺癌多发于女性，但男性甲状腺结节癌变的患病率更高。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00103",
+    "head": "结肠恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "结肠镜",
+    "tail_type": "examination",
+    "cancer_type": "colorectal",
+    "evidence": "血吸虫病@检查 结肠镜检查是鉴别慢性血吸虫病和结肠癌推荐的检查方法。",
+    "confidence": "medium",
+    "raw_predicate": "内窥镜检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00104",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "腹痛",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@## 病史和查体 ### 关键诊断因素 ### 常见 查看全部   ### 存在危险因素 危险因素包括恶性贫血、 _幽门螺旋杆菌_ 感染和亚硝基化合物接触史 ### 腹痛 在早期疾病中，可能仅是上腹部隐痛。 胃癌@ ### 体重下降 体重下降是胃癌患者最常见的临床症状之一。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00105",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "上腹部隐痛",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@## 病史和查体 ### 关键诊断因素 ### 常见 查看全部   ### 存在危险因素 危险因素包括恶性贫血、 _幽门螺旋杆菌_ 感染和亚硝基化合物接触史 ### 腹痛 在早期疾病中，可能仅是上腹部隐痛。 胃癌@ ### 体重下降 体重下降是胃癌患者最常见的临床症状之一。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00106",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "体重下降",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@## 病史和查体 ### 关键诊断因素 ### 常见 查看全部   ### 存在危险因素 危险因素包括恶性贫血、 _幽门螺旋杆菌_ 感染和亚硝基化合物接触史 ### 腹痛 在早期疾病中，可能仅是上腹部隐痛。 胃癌@ ### 体重下降 体重下降是胃癌患者最常见的临床症状之一。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00107",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "乳腺X线",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@乳腺导管原位癌发病风险增加的原因有遗传因素、共同暴露于其他危险因素，以及有家族史的女性更有可能定期做乳腺X线检查。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00108",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "胸部CT",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@结果 转移病灶 ### 胸部CT 检查 结果 检查 近端胃或食管胃结合部肿瘤患者行胸部CT检查。 胃癌@结果 转移病灶 ### 腹腔镜 检查 结果 检查 在影像学检查结果阴性的胃癌患者中，开始明确治疗前，可以考虑腹腔镜探查。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00109",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "腹腔镜",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@结果 转移病灶 ### 胸部CT 检查 结果 检查 近端胃或食管胃结合部肿瘤患者行胸部CT检查。 胃癌@结果 转移病灶 ### 腹腔镜 检查 结果 检查 在影像学检查结果阴性的胃癌患者中，开始明确治疗前，可以考虑腹腔镜探查。",
+    "confidence": "medium",
+    "raw_predicate": "内窥镜检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00110",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "多普勒",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 结果 细胞学提示组织学特点 ### 颈部超声 检查 结果 检查 甲状腺超声和多普勒可用于结节的测量和实性/囊性成分的判断。甲状腺癌@ 可疑特征包括：微小钙化、纵径大于横径、血流丰富、显著的低回声 或边缘不规则。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00111",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "微小钙化",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 结果 细胞学提示组织学特点 ### 颈部超声 检查 结果 检查 甲状腺超声和多普勒可用于结节的测量和实性/囊性成分的判断。甲状腺癌@ 可疑特征包括：微小钙化、纵径大于横径、血流丰富、显著的低回声 或边缘不规则。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00112",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "纵径大于横径",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 结果 细胞学提示组织学特点 ### 颈部超声 检查 结果 检查 甲状腺超声和多普勒可用于结节的测量和实性/囊性成分的判断。甲状腺癌@ 可疑特征包括：微小钙化、纵径大于横径、血流丰富、显著的低回声 或边缘不规则。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00113",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "血流丰富",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 结果 细胞学提示组织学特点 ### 颈部超声 检查 结果 检查 甲状腺超声和多普勒可用于结节的测量和实性/囊性成分的判断。甲状腺癌@ 可疑特征包括：微小钙化、纵径大于横径、血流丰富、显著的低回声 或边缘不规则。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00114",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "显著的低回声",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 结果 细胞学提示组织学特点 ### 颈部超声 检查 结果 检查 甲状腺超声和多普勒可用于结节的测量和实性/囊性成分的判断。甲状腺癌@ 可疑特征包括：微小钙化、纵径大于横径、血流丰富、显著的低回声 或边缘不规则。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00115",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "甲状腺超声",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 结果 细胞学提示组织学特点 ### 颈部超声 检查 结果 检查 甲状腺超声和多普勒可用于结节的测量和实性/囊性成分的判断。甲状腺癌@ 可疑特征包括：微小钙化、纵径大于横径、血流丰富、显著的低回声 或边缘不规则。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00116",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "边缘不规则",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ 结果 细胞学提示组织学特点 ### 颈部超声 检查 结果 检查 甲状腺超声和多普勒可用于结节的测量和实性/囊性成分的判断。甲状腺癌@ 可疑特征包括：微小钙化、纵径大于横径、血流丰富、显著的低回声 或边缘不规则。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00117",
+    "head": "滤泡性肿瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@ 滤泡性肿瘤：细胞增多、微滤泡、缺乏胶质。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00118",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "检测雌激素和孕激素受体",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@对于实性病变，高度大于宽度的形态比宽度大于高度的形态更可疑。 乳腺原位癌@结果 囊性和实性病变，实性病变形态 ### 激素受体检测 检查 结果 检查 通过对固定的肿瘤组织进行免疫组化染色，检测雌激素和孕激素受体的状态。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00119",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "免疫组化染色",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@对于实性病变，高度大于宽度的形态比宽度大于高度的形态更可疑。 乳腺原位癌@结果 囊性和实性病变，实性病变形态 ### 激素受体检测 检查 结果 检查 通过对固定的肿瘤组织进行免疫组化染色，检测雌激素和孕激素受体的状态。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00120",
+    "head": "多灶性乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@大部分保乳研究显示，术后放射治疗可降低所有亚组的疾病复发风险。 乳腺原位癌@### 年龄≤70岁女性：Van Nuys评分10~12分或多灶性乳腺导管原位癌患者 查看全部   首选 –   乳房切除术±重建手术 治疗方案依据USC/Van Nuys评分 对于高级别乳腺导管原位癌，保乳手术并不是理想的治疗方法。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00121",
+    "head": "结节性甲状腺肿",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "甲状腺B超",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "【诊断及鉴别诊断】 甲亢典型者根据临床症状、实验室检查发现总T3和FT3增高而TSH水平低下可确立诊断，TRSAb的存在可确定弥漫性毒性甲状腺肿的原因。当甲状腺可触及结节或血清T3值极度增高时，应进行甲状腺B超和（或）同位素扫描检查，以正确诊断结节性甲状腺肿和鉴别癌肿；对甲状腺轻度肿大和甲亢症状轻微的患儿应考虑亚急性甲状腺炎（病毒感染所致）的可能性，必要时可以考虑同位素扫描检查和细针穿刺细胞学检查",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00122",
+    "head": "结节性甲状腺肿",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "同位素扫描检查",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "【诊断及鉴别诊断】 甲亢典型者根据临床症状、实验室检查发现总T3和FT3增高而TSH水平低下可确立诊断，TRSAb的存在可确定弥漫性毒性甲状腺肿的原因。当甲状腺可触及结节或血清T3值极度增高时，应进行甲状腺B超和（或）同位素扫描检查，以正确诊断结节性甲状腺肿和鉴别癌肿；对甲状腺轻度肿大和甲亢症状轻微的患儿应考虑亚急性甲状腺炎（病毒感染所致）的可能性，必要时可以考虑同位素扫描检查和细针穿刺细胞学检查",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00123",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "触诊",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@甲状腺癌最常表现为无症状的甲状腺结节，由触诊或超声检查发现。甲状腺癌@ 通常发生在30岁到40岁之间的女性。",
+    "confidence": "medium",
+    "raw_predicate": "辅助检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00124",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "无症状的甲状腺结节",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@甲状腺癌最常表现为无症状的甲状腺结节，由触诊或超声检查发现。甲状腺癌@ 通常发生在30岁到40岁之间的女性。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00125",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "厌食",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@ ### 胃梗阻 | 存在差异 | 低 局部肿瘤的增大可以引起恶性消化道梗阻。胃癌@患者临床表现为恶心、呕吐和厌食。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00126",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "前哨淋巴结活检",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@应考虑行前哨淋巴结活检，Van Nuys评分10~12分患者适合行淋巴结清扫术。 乳腺原位癌@### 年龄>70岁女性：乳腺导管原位癌 查看全部   首选 –   保乳手术+放疗70岁女性：乳腺导管原位癌]> 在治疗年龄＞70岁的乳腺导管原位癌的女性患者方面，目前缺乏强大的数据支持。",
+    "confidence": "medium",
+    "raw_predicate": "组织学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00127",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "F-18-FDG-PET",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@一项研究显示，采用F-18-FDG-PET/CT来检测甲状腺偶发肿瘤，可发现近1/3的局灶性甲状腺恶性肿瘤，其中大多数为甲状腺乳头状癌。甲状腺癌@肿瘤局部进展可能导致同侧声带麻痹，从而出现声音嘶哑症状，也可伴有呼吸困难或吞咽困难。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00128",
+    "head": "局灶性甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@一项研究显示，采用F-18-FDG-PET/CT来检测甲状腺偶发肿瘤，可发现近1/3的局灶性甲状腺恶性肿瘤，其中大多数为甲状腺乳头状癌。甲状腺癌@肿瘤局部进展可能导致同侧声带麻痹，从而出现声音嘶哑症状，也可伴有呼吸困难或吞咽困难。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00129",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "同侧声带麻痹",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@一项研究显示，采用F-18-FDG-PET/CT来检测甲状腺偶发肿瘤，可发现近1/3的局灶性甲状腺恶性肿瘤，其中大多数为甲状腺乳头状癌。甲状腺癌@肿瘤局部进展可能导致同侧声带麻痹，从而出现声音嘶哑症状，也可伴有呼吸困难或吞咽困难。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00130",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "声音嘶哑",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@一项研究显示，采用F-18-FDG-PET/CT来检测甲状腺偶发肿瘤，可发现近1/3的局灶性甲状腺恶性肿瘤，其中大多数为甲状腺乳头状癌。甲状腺癌@肿瘤局部进展可能导致同侧声带麻痹，从而出现声音嘶哑症状，也可伴有呼吸困难或吞咽困难。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00131",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "甲状腺球蛋白升高",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@复发或转移病灶可通过放射性I-131消除。甲状腺癌@ * 当甲状腺球蛋白升高，而放射性碘扫描为阴性时，PET/CT检查可用于寻找复发病灶。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00132",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳腺X线检查发现在集群的簇状微小钙化和软组织异常匮乏",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ ### 影像 乳腺X线检查发现在集群的簇状微小钙化和软组织异常匮乏提示乳腺导管原位癌。乳腺原位癌@在粉刺型乳腺导管内原位癌中，钙化可能是线性、分支性或奇形怪状的。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00133",
+    "head": "粉刺型乳腺导管内原位癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@ ### 影像 乳腺X线检查发现在集群的簇状微小钙化和软组织异常匮乏提示乳腺导管原位癌。乳腺原位癌@在粉刺型乳腺导管内原位癌中，钙化可能是线性、分支性或奇形怪状的。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00134",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "软组织异常匮乏",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ 诊断为 DCIS 男性的首发症状通常是乳头血性分泌物。乳腺原位癌@ ### 影像 乳腺X线检查发现在集群的簇状微小钙化和软组织异常匮乏提示乳腺导管原位癌。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00135",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "曲妥珠单抗",
+    "tail_type": "drug",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@## 新兴疗法 ### 曲妥珠单抗作为乳腺导管原位癌的辅助治疗 美国乳腺与肠道外科辅助治疗研究组(NSABP)正在进行一个Ⅲ期随机试验，研究曲妥珠单抗对既往进行保乳手术、切缘阴性和HER2过度表达的乳腺导管原位癌患者的治疗效果。乳腺原位癌@将患者随机分为6周全乳放疗伴或不伴同时使用曲妥珠单抗治疗。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00136",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "内镜检查",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃炎@内镜检查可确诊胃癌。",
+    "confidence": "low",
+    "raw_predicate": "内窥镜检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00137",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "TSH水平下降",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@如果TSH水平下降，下一步需检测甲状腺激素水平，并做放射性碘扫描。甲状腺癌@放射性碘扫描可能提示高功能结节（热结节），大多数为良性。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00138",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "甲状腺激素水平",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@如果TSH水平下降，下一步需检测甲状腺激素水平，并做放射性碘扫描。甲状腺癌@放射性碘扫描可能提示高功能结节（热结节），大多数为良性。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00139",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "乳房检查",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@尽管如此，筛查在很多女性中引发乳腺疾病的过度诊断和过度治疗，应将利弊同时告知被邀请接受筛查的女性。 乳腺原位癌@### 乳房检查 所有成年女性可每月进行一次乳房自我检查，查看是否有肿块。",
+    "confidence": "medium",
+    "raw_predicate": "筛查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00140",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "肿块",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@尽管如此，筛查在很多女性中引发乳腺疾病的过度诊断和过度治疗，应将利弊同时告知被邀请接受筛查的女性。 乳腺原位癌@### 乳房检查 所有成年女性可每月进行一次乳房自我检查，查看是否有肿块。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00141",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "盆腔检查",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@服用他莫昔芬的女性应每年进行一次盆腔检查。乳腺原位癌@进行乳房切除术的患者，可同期或延期进行重建手术。",
+    "confidence": "medium",
+    "raw_predicate": "辅助检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00142",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "全血细胞计数监测",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@## 监测 在治疗期间，推荐对患者进行全血细胞计数监测。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00143",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "乳头抽吸液",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@结果 阳性 ### 新兴检查 ### 查看全部   ### 乳头抽吸液 检查 结果 检查 细胞学对于乳腺癌检测极具特异性，但不敏感。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00144",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "细胞学",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@结果 阳性 ### 新兴检查 ### 查看全部   ### 乳头抽吸液 检查 结果 检查 细胞学对于乳腺癌检测极具特异性，但不敏感。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00145",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "游离T3",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@结果 正常 ### 游离T3 检查 结果 检查 可用总T3加结合率来替代。 甲状腺癌@如果TSH异常，则需测定游离T3，升高提示甲状腺功能亢进。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00146",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "基因检测",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@## 一级预防 对于具有遗传性甲状腺癌家族史者，通过基因检测，早期进行诊断和干预是十分必要的。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00147",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "咳嗽带血丝的痰",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "非小细胞肺癌@### 咯血 发生于约25%的患者中 虽然大量咯血是罕见的，但是肺癌患者经常咳嗽带血丝的痰。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00148",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "乳腺 X 线",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@超声用于区分囊性病变和实性病变。 乳腺原位癌@乳房密度，尤其是在年轻女性中，可导致乳腺 X 线检查效果差，因此需要超声波检查法或 MRI。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00149",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "超声波",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@超声用于区分囊性病变和实性病变。 乳腺原位癌@乳房密度，尤其是在年轻女性中，可导致乳腺 X 线检查效果差，因此需要超声波检查法或 MRI。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00150",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "内镜超声",
+    "tail_type": "examination",
+    "cancer_type": "gastric",
+    "evidence": "） ### 需要考虑的检查 ### 查看全部   ### 内镜超声 (endoscopic ultrasound, EUS) 检查 结果 检查 胃癌患者都应行内镜超声检查，其T分期和N分期的准确性分别为78%和77%。",
+    "confidence": "medium",
+    "raw_predicate": "内窥镜检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00151",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳头溢液",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@乳腺导管原位癌的其他不常见症状包括乳头溢液或乳房肿块。乳腺原位癌@ 诊断为 DCIS 男性的首发症状通常是乳头血性分泌物。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00152",
+    "head": "乳腺导管原位癌",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "乳房肿块",
+    "tail_type": "symptom",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@乳腺导管原位癌的其他不常见症状包括乳头溢液或乳房肿块。乳腺原位癌@ 诊断为 DCIS 男性的首发症状通常是乳头血性分泌物。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00153",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "treated_by",
+    "tail": "阿那曲唑",
+    "tail_type": "drug",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@ 对于 60 岁以下的绝经后女性和血栓栓塞风险增加的女性，认为芳香化酶抑制剂（例如阿那曲唑）是一线治疗。 乳腺原位癌@### 小叶原位癌 治疗包括观察和咨询，联合或不联合长期选择性雌激素受体调节剂或双侧预防性（预防性）乳房切除术。",
+    "confidence": "medium",
+    "raw_predicate": "药物治疗",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00154",
+    "head": "甲状腺淋巴瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@ ### 快速的颈部肿大 提示甲状腺淋巴瘤，尤其是存在桥本甲状腺炎者。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00155",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "肿块",
+    "tail_type": "symptom",
+    "cancer_type": "lung",
+    "evidence": "非小细胞肺癌@然而，肺癌可以表现为X射线或CT检查偶然发现的肿块而不伴有临床症状。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00156",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "X射线",
+    "tail_type": "examination",
+    "cancer_type": "lung",
+    "evidence": "非小细胞肺癌@然而，肺癌可以表现为X射线或CT检查偶然发现的肿块而不伴有临床症状。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00157",
+    "head": "肺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "CT检查",
+    "tail_type": "examination",
+    "cancer_type": "lung",
+    "evidence": "非小细胞肺癌@然而，肺癌可以表现为X射线或CT检查偶然发现的肿块而不伴有临床症状。",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00158",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "血清降钙素",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@结果 可显示淋巴病变 ### 血清降钙素 检查 结果 检查 正常为＜10 ng/L。甲状腺癌@对于可疑髓样癌的患者需要进行检测。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00159",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "淋巴病变",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@结果 可显示淋巴病变 ### 血清降钙素 检查 结果 检查 正常为＜10 ng/L。甲状腺癌@对于可疑髓样癌的患者需要进行检测。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00160",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "病毒阳性的肿瘤",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@这些亚型有不同的特征和分子学改变：1) EB 病毒阳性的肿瘤；2) 微卫星不稳定的肿瘤；3) 基因组稳定的肿瘤；4) 染色体不稳定的肿瘤。 胃癌@## 分类 ### Lauren分型 弥漫型（较常发生于青年人，比肠型预后差） 肠型（常呈溃疡性，与弥漫型相比更多发于远端胃） ### 日本内镜学会 (Japanese Endoscopy Society) 分期 I型：息肉样或巨块样肿瘤 II型：",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00161",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "微卫星不稳定的肿瘤",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@这些亚型有不同的特征和分子学改变：1) EB 病毒阳性的肿瘤；2) 微卫星不稳定的肿瘤；3) 基因组稳定的肿瘤；4) 染色体不稳定的肿瘤。 胃癌@## 分类 ### Lauren分型 弥漫型（较常发生于青年人，比肠型预后差） 肠型（常呈溃疡性，与弥漫型相比更多发于远端胃） ### 日本内镜学会 (Japanese Endoscopy Society) 分期 I型：息肉样或巨块样肿瘤 II型：",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00162",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "基因组稳定的肿瘤",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@这些亚型有不同的特征和分子学改变：1) EB 病毒阳性的肿瘤；2) 微卫星不稳定的肿瘤；3) 基因组稳定的肿瘤；4) 染色体不稳定的肿瘤。 胃癌@## 分类 ### Lauren分型 弥漫型（较常发生于青年人，比肠型预后差） 肠型（常呈溃疡性，与弥漫型相比更多发于远端胃） ### 日本内镜学会 (Japanese Endoscopy Society) 分期 I型：息肉样或巨块样肿瘤 II型：",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00163",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "染色体不稳定的肿瘤",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@这些亚型有不同的特征和分子学改变：1) EB 病毒阳性的肿瘤；2) 微卫星不稳定的肿瘤；3) 基因组稳定的肿瘤；4) 染色体不稳定的肿瘤。 胃癌@## 分类 ### Lauren分型 弥漫型（较常发生于青年人，比肠型预后差） 肠型（常呈溃疡性，与弥漫型相比更多发于远端胃） ### 日本内镜学会 (Japanese Endoscopy Society) 分期 I型：息肉样或巨块样肿瘤 II型：",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00164",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "息肉样或巨块样肿瘤",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@这些亚型有不同的特征和分子学改变：1) EB 病毒阳性的肿瘤；2) 微卫星不稳定的肿瘤；3) 基因组稳定的肿瘤；4) 染色体不稳定的肿瘤。 胃癌@## 分类 ### Lauren分型 弥漫型（较常发生于青年人，比肠型预后差） 肠型（常呈溃疡性，与弥漫型相比更多发于远端胃） ### 日本内镜学会 (Japanese Endoscopy Society) 分期 I型：息肉样或巨块样肿瘤 II型：",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00165",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "平坦或微抬高，或微凹陷样肿瘤",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@这些亚型有不同的特征和分子学改变：1) EB 病毒阳性的肿瘤；2) 微卫星不稳定的肿瘤；3) 基因组稳定的肿瘤；4) 染色体不稳定的肿瘤。 胃癌@## 分类 ### Lauren分型 弥漫型（较常发生于青年人，比肠型预后差） 肠型（常呈溃疡性，与弥漫型相比更多发于远端胃） ### 日本内镜学会 (Japanese Endoscopy Society) 分期 I型：息肉样或巨块样肿瘤 II型：",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00166",
+    "head": "胃恶性肿瘤",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "溃疡相关肿瘤",
+    "tail_type": "symptom",
+    "cancer_type": "gastric",
+    "evidence": "胃癌@这些亚型有不同的特征和分子学改变：1) EB 病毒阳性的肿瘤；2) 微卫星不稳定的肿瘤；3) 基因组稳定的肿瘤；4) 染色体不稳定的肿瘤。 胃癌@## 分类 ### Lauren分型 弥漫型（较常发生于青年人，比肠型预后差） 肠型（常呈溃疡性，与弥漫型相比更多发于远端胃） ### 日本内镜学会 (Japanese Endoscopy Society) 分期 I型：息肉样或巨块样肿瘤 II型：",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00167",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "临床查体",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@ * 随访过程中最重要的是临床查体和甲状腺球蛋白测定。甲状腺癌@甲状腺球蛋白升高提示可能存在肿瘤复发，多数发生在颈中部或侧颈部。",
+    "confidence": "medium",
+    "raw_predicate": "辅助检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00168",
+    "head": "LCIS",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "乳腺原位癌",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "乳腺原位癌@### 不育 可能与 DCIS 的风险增加有关，但对于 LCIS 不明确。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00169",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "游离T4",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@结果 可发现同侧声带麻痹 ### 需要考虑的检查 ### 查看全部   ### 游离T4 检查 结果 检查 如果无法获得，可用总T4加结合率来替代。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00170",
+    "head": "乳腺原位癌",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "BRCA基因检测",
+    "tail_type": "examination",
+    "cancer_type": "breast",
+    "evidence": "乳腺原位癌@检测结果有利于指导下一步治疗。 乳腺原位癌@结果 阳性或阴性 ### BRCA基因检测 检查 结果 检查 对于有≥2个BRCA危险因素的人群，推荐进行基因检测。",
+    "confidence": "medium",
+    "raw_predicate": "实验室检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00171",
+    "head": "腺癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "胃恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "） ### 定义 胃癌可以发生在胃的任何部位，并且可以向淋巴结和其他器官扩散，多数是腺癌，其他组织学类型包括：淋巴瘤、平滑肌肉瘤、神经内分泌肿瘤以及鳞状细胞癌，但是这些并不常见，在此不予讨论。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00172",
+    "head": "淋巴瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "胃恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "） ### 定义 胃癌可以发生在胃的任何部位，并且可以向淋巴结和其他器官扩散，多数是腺癌，其他组织学类型包括：淋巴瘤、平滑肌肉瘤、神经内分泌肿瘤以及鳞状细胞癌，但是这些并不常见，在此不予讨论。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00173",
+    "head": "平滑肌肉瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "胃恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "） ### 定义 胃癌可以发生在胃的任何部位，并且可以向淋巴结和其他器官扩散，多数是腺癌，其他组织学类型包括：淋巴瘤、平滑肌肉瘤、神经内分泌肿瘤以及鳞状细胞癌，但是这些并不常见，在此不予讨论。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00174",
+    "head": "神经内分泌肿瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "胃恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "） ### 定义 胃癌可以发生在胃的任何部位，并且可以向淋巴结和其他器官扩散，多数是腺癌，其他组织学类型包括：淋巴瘤、平滑肌肉瘤、神经内分泌肿瘤以及鳞状细胞癌，但是这些并不常见，在此不予讨论。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00175",
+    "head": "鳞状细胞癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "胃恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "） ### 定义 胃癌可以发生在胃的任何部位，并且可以向淋巴结和其他器官扩散，多数是腺癌，其他组织学类型包括：淋巴瘤、平滑肌肉瘤、神经内分泌肿瘤以及鳞状细胞癌，但是这些并不常见，在此不予讨论。",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00176",
+    "head": "甲状腺肿",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "咳嗽",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "根据甲状腺肿中是否有结节，临床上又可分为三型：①弥漫型：甲状腺均匀增大，摸不到结节；②结节型：在甲状腺上摸到一个或几个结节；③混合型：在弥漫肿大的甲状腺上，摸到一个或几个结节。 甲状腺如肿大明显，可压迫气管引起咳嗽和呼吸困难，压迫食管引起咽下困难，压迫喉返神经引起声音嘶哑，胸骨后甲状腺肿可使头部、颈部、上肢静脉回流受阻，表现为面部青紫、水肿。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00177",
+    "head": "甲状腺肿",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "呼吸困难",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "根据甲状腺肿中是否有结节，临床上又可分为三型：①弥漫型：甲状腺均匀增大，摸不到结节；②结节型：在甲状腺上摸到一个或几个结节；③混合型：在弥漫肿大的甲状腺上，摸到一个或几个结节。 甲状腺如肿大明显，可压迫气管引起咳嗽和呼吸困难，压迫食管引起咽下困难，压迫喉返神经引起声音嘶哑，胸骨后甲状腺肿可使头部、颈部、上肢静脉回流受阻，表现为面部青紫、水肿。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00178",
+    "head": "甲状腺肿",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "咽下困难",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "根据甲状腺肿中是否有结节，临床上又可分为三型：①弥漫型：甲状腺均匀增大，摸不到结节；②结节型：在甲状腺上摸到一个或几个结节；③混合型：在弥漫肿大的甲状腺上，摸到一个或几个结节。 甲状腺如肿大明显，可压迫气管引起咳嗽和呼吸困难，压迫食管引起咽下困难，压迫喉返神经引起声音嘶哑，胸骨后甲状腺肿可使头部、颈部、上肢静脉回流受阻，表现为面部青紫、水肿。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00179",
+    "head": "甲状腺肿",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "声音嘶哑",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "根据甲状腺肿中是否有结节，临床上又可分为三型：①弥漫型：甲状腺均匀增大，摸不到结节；②结节型：在甲状腺上摸到一个或几个结节；③混合型：在弥漫肿大的甲状腺上，摸到一个或几个结节。 甲状腺如肿大明显，可压迫气管引起咳嗽和呼吸困难，压迫食管引起咽下困难，压迫喉返神经引起声音嘶哑，胸骨后甲状腺肿可使头部、颈部、上肢静脉回流受阻，表现为面部青紫、水肿。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00180",
+    "head": "胸骨后甲状腺肿",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "面部青紫",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "根据甲状腺肿中是否有结节，临床上又可分为三型：①弥漫型：甲状腺均匀增大，摸不到结节；②结节型：在甲状腺上摸到一个或几个结节；③混合型：在弥漫肿大的甲状腺上，摸到一个或几个结节。 甲状腺如肿大明显，可压迫气管引起咳嗽和呼吸困难，压迫食管引起咽下困难，压迫喉返神经引起声音嘶哑，胸骨后甲状腺肿可使头部、颈部、上肢静脉回流受阻，表现为面部青紫、水肿。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00181",
+    "head": "胸骨后甲状腺肿",
+    "head_type": "disease",
+    "relation": "has_symptom",
+    "tail": "水肿",
+    "tail_type": "symptom",
+    "cancer_type": "thyroid",
+    "evidence": "根据甲状腺肿中是否有结节，临床上又可分为三型：①弥漫型：甲状腺均匀增大，摸不到结节；②结节型：在甲状腺上摸到一个或几个结节；③混合型：在弥漫肿大的甲状腺上，摸到一个或几个结节。 甲状腺如肿大明显，可压迫气管引起咳嗽和呼吸困难，压迫食管引起咽下困难，压迫喉返神经引起声音嘶哑，胸骨后甲状腺肿可使头部、颈部、上肢静脉回流受阻，表现为面部青紫、水肿。",
+    "confidence": "medium",
+    "raw_predicate": "临床表现",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00182",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "超声弹性成像",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@该基因突变存在于多发性内分泌肿瘤（MEN）2A型（甲状腺髓样癌、嗜铬细胞瘤、甲状旁腺功能亢进）、2B型（甲状腺髓样癌、嗜铬细胞瘤、马凡综合征样表现、黏膜神经瘤/神经纤维瘤），或孤立性家族性甲状腺髓样癌患者中。 甲状腺癌@结果 可发现RET原癌基因种系突变 ### 新兴检查 ### 查看全部   ### 超声弹性成像 检查 结果 检查 初步的研究数据显示，对于细胞学无法明确的患者，超声",
+    "confidence": "medium",
+    "raw_predicate": "影像学检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00183",
+    "head": "甲状腺恶性肿瘤",
+    "head_type": "disease",
+    "relation": "examined_by",
+    "tail": "超声弹性评分",
+    "tail_type": "examination",
+    "cancer_type": "thyroid",
+    "evidence": "甲状腺癌@该基因突变存在于多发性内分泌肿瘤（MEN）2A型（甲状腺髓样癌、嗜铬细胞瘤、甲状旁腺功能亢进）、2B型（甲状腺髓样癌、嗜铬细胞瘤、马凡综合征样表现、黏膜神经瘤/神经纤维瘤），或孤立性家族性甲状腺髓样癌患者中。 甲状腺癌@结果 可发现RET原癌基因种系突变 ### 新兴检查 ### 查看全部   ### 超声弹性成像 检查 结果 检查 初步的研究数据显示，对于细胞学无法明确的患者，超声",
+    "confidence": "medium",
+    "raw_predicate": "辅助检查",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00184",
+    "head": "嗜铬细胞瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@该基因突变存在于多发性内分泌肿瘤（MEN）2A型（甲状腺髓样癌、嗜铬细胞瘤、甲状旁腺功能亢进）、2B型（甲状腺髓样癌、嗜铬细胞瘤、马凡综合征样表现、黏膜神经瘤/神经纤维瘤），或孤立性家族性甲状腺髓样癌患者中。 甲状腺癌@结果 可发现RET原癌基因种系突变 ### 新兴检查 ### 查看全部   ### 超声弹性成像 检查 结果 检查 初步的研究数据显示，对于细胞学无法明确的患者，超声",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00185",
+    "head": "黏膜神经瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@该基因突变存在于多发性内分泌肿瘤（MEN）2A型（甲状腺髓样癌、嗜铬细胞瘤、甲状旁腺功能亢进）、2B型（甲状腺髓样癌、嗜铬细胞瘤、马凡综合征样表现、黏膜神经瘤/神经纤维瘤），或孤立性家族性甲状腺髓样癌患者中。 甲状腺癌@结果 可发现RET原癌基因种系突变 ### 新兴检查 ### 查看全部   ### 超声弹性成像 检查 结果 检查 初步的研究数据显示，对于细胞学无法明确的患者，超声",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00186",
+    "head": "神经纤维瘤",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@该基因突变存在于多发性内分泌肿瘤（MEN）2A型（甲状腺髓样癌、嗜铬细胞瘤、甲状旁腺功能亢进）、2B型（甲状腺髓样癌、嗜铬细胞瘤、马凡综合征样表现、黏膜神经瘤/神经纤维瘤），或孤立性家族性甲状腺髓样癌患者中。 甲状腺癌@结果 可发现RET原癌基因种系突变 ### 新兴检查 ### 查看全部   ### 超声弹性成像 检查 结果 检查 初步的研究数据显示，对于细胞学无法明确的患者，超声",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  },
+  {
+    "triple_id": "KG-CBLUE-00187",
+    "head": "孤立性家族性甲状腺髓样癌",
+    "head_type": "disease",
+    "relation": "subtype_of",
+    "tail": "甲状腺恶性肿瘤",
+    "tail_type": "disease",
+    "cancer_type": null,
+    "evidence": "甲状腺癌@该基因突变存在于多发性内分泌肿瘤（MEN）2A型（甲状腺髓样癌、嗜铬细胞瘤、甲状旁腺功能亢进）、2B型（甲状腺髓样癌、嗜铬细胞瘤、马凡综合征样表现、黏膜神经瘤/神经纤维瘤），或孤立性家族性甲状腺髓样癌患者中。 甲状腺癌@结果 可发现RET原癌基因种系突变 ### 新兴检查 ### 查看全部   ### 超声弹性成像 检查 结果 检查 初步的研究数据显示，对于细胞学无法明确的患者，超声",
+    "confidence": "medium",
+    "raw_predicate": "病理分型",
+    "source": "CBLUE CMeIE-V2 中文医疗关系抽取语料（train+dev 14,339 条文本），已按 5 癌种术语集筛子图",
+    "origin": "cblue",
+    "annotation": {
+      "annotator": "自动转换",
+      "date": "2026-10-27",
+      "status": "draft"
+    }
+  }
+]

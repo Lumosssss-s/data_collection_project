@@ -1,0 +1,286 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-014",
+    "generic_name": "GEFITINIB",
+    "brand_names": [],
+    "aliases_zh": [
+      "吉非替尼"
+    ],
+    "title": "GEFITINIB 说明书（FDA DailyMed）",
+    "indications": [
+      "Gefitinib tablets are indicated for the first-line treatment of patients with metastatic non-small cell lung cancer (NSCLC) whose tumors have epidermal growth factor receptor (EGFR) exon 19 deletions or exon 21 (L858R) substitution mutations as detected by an FDA-approved test [see Clinical Studies (14 ) ].",
+      "Limitation of Use: Safety and efficacy of gefitinib tablets have not been established in patients with metastatic NSCLC whose tumors have EGFR mutations other than exon 19 deletions or exon 21 (L858R) substitution mutations [see Clinical Studies (14) ].",
+      "Gefitinib tablets are a tyrosine kinase inhibitor indicated for the first-line treatment of patients with metastatic non-small cell lung cancer (NSCLC) whose tumors have epidermal growth factor receptor (EGFR) exon 19 deletions or exon 21 (L858R) substitution mutations as detected by an FDA-approved test. (1)",
+      "Limitation of Use: Safety and efficacy of gefitinib tablets have not been established in patients whose tumors have EGFR mutations other than exon 19 deletions or exon 21 (L858R) substitution mutations. (1)",
+      "【中文适应证】表皮生长因子受体（EGFR）基因具有敏感突变的局部晚期或转移性非小细胞肺癌（NSCLC）。"
+    ],
+    "dosage": {
+      "standard": "Recommended dose is 250 mg orally, once daily with or without food. (2.2) Select patients for the first-line treatment of metastatic NSCLC with gefitinib tablets based on the presence of EGFR exon 19 deletions or exon 21 L858R mutations in their tumor or plasma specimens [see Indications and Usage (1) , Clinical Studies (14)]. If these mutations are not detected in a plasma specimen, test tumor tissue if feasible. Information on FDA-approved tests for the detection of EGFR mutations in NSCLC is available at: http://www.fda.gov/CompanionDiagnostics. The recommended dose of gefitinib tablets is 250 mg orally once daily with or without food until disease progression or unacceptable toxicity. Do not take a missed dose within 12 hours of the next dose. Immerse gefitinib tablets in 4 to 8 ounces of water by dropping the tablet in water, and stir for approximately 15 minutes. Immediately drink the liquid or administer through a naso-gastric tube. Rinse the container with 4 to 8 ounces of water and immediately drink or administer through the naso-gastric tube. Dose Modifications for Adverse Drug Reactions Withhold gefitinib tablets (for up to 14 days) for any of the following: Resume treatment with gefitinib tablets when the adverse reaction fully resolves or improves to NCI CTCAE Grade 1. Permanently discontinue gefitinib tablets for: Dose Modifications for Drug Interactions Strong CYP3A4 Inducers Increase gefitinib tablets to 500 mg daily in the absence of severe adverse drug reaction, and resume gefitinib tablets at 250 mg seven days after discontinuation of the strong CYP3A4 inducer [see Drug Interactions (7) , Clinical Pharmacology (12.3) ].",
+      "adjustment": "The recommended dose of gefitinib tablets is 250 mg orally once daily with or without food until disease progression or unacceptable toxicity. Do not take a missed dose within 12 hours of the next dose. Immerse gefitinib tablets in 4 to 8 ounces of water by dropping the tablet in water, and stir for approximately 15 minutes. Immediately drink the liquid or administer through a naso-gastric tube. Rinse the container with 4 to 8 ounces of water and immediately drink or administer through the naso-gastric tube. Dose Modifications for Adverse Drug Reactions Withhold gefitinib tablets (for up to 14 days) for any of the following: Resume treatment with gefitinib tablets when the adverse reaction fully resolves or improves to NCI CTCAE Grade 1. Permanently discontinue gefitinib tablets for: Dose Modifications for Drug Interactions Strong CYP3A4 Inducers Increase gefitinib tablets to 500 mg daily in the absence of severe adverse drug reaction, and resume gefitinib tablets at 250 mg seven days after discontinuation of the strong CYP3A4 inducer [see Drug Interactions (7) , Clinical Pharmacology (12.3) ]."
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse drug reactions are discussed in more detail in other sections of the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most commonly reported adverse drug reactions (ADRs), reported in more than 20% of the patients and greater than placebo were skin reactions and diarrhea. (",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Teva at 1-888-838-2872 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of gefitinib tablets are based on the data from 2462 patients with NSCLC who received gefitinib tablets 250 mg daily monotherapy in three randomized ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Study 2 was a randomized, multicenter, open-label trial in which 1217 patients were randomized to receive first-line treatment for metastatic NSCLC; 607 patient",
+        "frequency": "73%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Study 3 was a randomized, multicenter, double-blind, placebo-controlled trial in which 1692 patients were randomized to receive second- or third-line treatment ",
+        "frequency": "60%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Study 4 was a randomized, multicenter, open-label trial in which 1466 patients were randomized to receive second-line treatment for metastatic NSCLC; 729 patien",
+        "frequency": "61%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The pooled safety database from the three randomized trials was used to evaluate for serious and uncommon adverse drug reactions. Common adverse reactions were ",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Approximately 5% of gefitinib tablets-treated patients and 2.3% of placebo-treated patients discontinued treatment due to an adverse event. The most frequent ad",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction Percentage (%) of patients",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gefitinib Tablets (N=1126) Placebo (N=562)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades Grade 3 and 4 All Grades Grade 3 and 4",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin and subcutaneous tissue disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin reactions 1 47% 2% 17% 0.4%",
+        "frequency": "47%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nail disorders 2 5% 0.1% 0.7% 0%",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Diarrhea 3 29% 3% 10% 1%",
+        "frequency": "29%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Vomiting 14% 1.2% 10% 0.4%",
+        "frequency": "14%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Stomatitis 4 7% 0.3% 4% 0.2%",
+        "frequency": "7%",
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-10-06",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-014.xml",
+    "doc_hash": "0ca66f878509cbec2baaeb3eb147b4f1d87ee1fa6c79e41e13271ab65fb5de97",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "3dd135f0-5db1-4236-9756-04533b66dc9d",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/3dd135f0-5db1-4236-9756-04533b66dc9d.xml",
+    "atc_code": "L01EB01",
+    "approval_no": null,
+    "source_name": "GEFITINIB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-014.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "Drugs that are strong inducers of CYP3A4 increase the metabolism of gefitinib and decrease gefitinib plasma concentrations. Increase gefitinib tablets to 500 mg daily in patients receiving a strong CYP3A4 inducer (e.g., rifampicin, phenytoin, or tricyclic antidepressant) and resume gefitinib tablets at 250 mg 7 days after discontinuation of the strong inducer [see Dosage and Administration (2.4) , Clinical Pharmacology (12.3)].",
+      "Drugs that are strong inhibitors of CYP3A4 (e.g., ketoconazole and itraconazole) decrease gefitinib metabolism and increase gefitinib plasma concentrations. Monitor adverse reactions when administering strong CYP3A4 inhibitors with gefitinib tablets.",
+      "Drugs Affecting Gastric pH",
+      "Drugs that elevate gastric pH (e.g., proton pump inhibitors, histamine H2-receptor antagonists, and antacids) may reduce plasma concentrations of gefitinib. Avoid concomitant use of gefitinib tablets with proton pump inhibitors, if possible. If treatment with a proton-pump inhibitor is required, take gefitinib tablets 12 hours after the last dose or 12 hours before the next dose of the proton-pump inhibitor. Take gefitinib tablets 6 hours after or 6 hours before an H2-receptor antagonist or an antacid [see Clinical Pharmacology (12.3)].",
+      "International Normalized Ratio (INR) elevations and/or hemorrhage have been reported in some patients taking warfarin while on gefitinib tablets therapy. Patients taking warfarin should be monitored regularly for changes in prothrombin time or INR."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Interstitial Lung Disease (ILD)",
+        "text": "5.1 Interstitial Lung Disease (ILD): ILD or ILD-like adverse drug reactions (e.g., lung infiltration, pneumonitis, acute respiratory distress syndrome, or pulmonary fibrosis) occurred in 1.3% of the 2462 patients who received gefitinib tablets across clinical trials; of these, 0.7% were Grade 3 or higher and 3 cases were fatal. Withhold gefitinib tablets and promptly investigate for ILD in any patient who presents with worsening of respiratory symptoms such as dyspnea, cough and fever. Permanently discontinue gefitinib tablets if ILD is confirmed [see Dosage and Administration (2.4) , Adverse Reactions (6.1)].",
+        "char_len": 617,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Interstitial Lung Disease (ILD)",
+        "source_xml": "DRUG-LUNG-FDA-014.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Hepatotoxicity",
+        "text": "5.2 Hepatotoxicity: In patients who received gefitinib tablets across clinical trials, 11.4% of patients had increased alanine aminotransferase (ALT), 7.9% of patients had increased aspartate aminotransferase (AST), and 2.7% of patients had increased bilirubin. Grade 3 or higher liver test abnormalities occurred in 5.1% (ALT), 3.0% (AST), and 0.7% (bilirubin) of patients. The incidence of fatal hepatotoxicity was 0.04%. Obtain periodic liver function testing. Withhold gefitinib tablets in patients with worsening liver function and discontinue in patients with severe hepatic impairment [see Dosage and Administration (2.4) , Adverse Reactions (6.1) , Use in Specific Populations (8.7) ].",
+        "char_len": 693,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Hepatotoxicity",
+        "source_xml": "DRUG-LUNG-FDA-014.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Gastrointestinal Perforation",
+        "text": "5.3 Gastrointestinal Perforation: Gastrointestinal perforation occurred in three (0.1%) of the 2462 gefitinib tablets-treated patients across clinical trials [see Adverse Reactions (6.1)]. Permanently discontinue gefitinib tablets in patients who develop gastrointestinal perforation [see Dosage and Administration (2.4)].",
+        "char_len": 322,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Gastrointestinal Perforation",
+        "source_xml": "DRUG-LUNG-FDA-014.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Severe or Persistent Diarrhea",
+        "text": "5.4 Severe or Persistent Diarrhea: Grade 3 or 4 diarrhea occurred in 3% of 2462 gefitinib tablets-treated patients across clinical trials. Withhold gefitinib tablets for severe or persistent (up to 14 days) diarrhea [see Dosage and Administration (2.4) , Adverse Reactions (6.1) ].",
+        "char_len": 281,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Severe or Persistent Diarrhea",
+        "source_xml": "DRUG-LUNG-FDA-014.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Ocular Disorders including Keratitis",
+        "text": "5.5 Ocular Disorders including Keratitis: Ocular disorders [keratitis (0.1%), corneal erosion and aberrant eyelash growth (0.2%), conjunctivitis, blephritis and dry eye (6.7%)] occurred in the 2462 gefitinib tablets-treated patients across clinical trials. The incidence of Grade 3 ocular disorders was 0.1% [see Adverse Reactions (6.1)]. Interrupt or discontinue gefitinib tablets for severe, or worsening ocular disorders [see Dosage and Administration (2.4)].",
+        "char_len": 462,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Ocular Disorders including Keratitis",
+        "source_xml": "DRUG-LUNG-FDA-014.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Bullous and Exfoliative Skin Disorders",
+        "text": "5.6 Bullous and Exfoliative Skin Disorders: Bullous conditions including toxic epidermal necrolysis, Stevens Johnson syndrome and erythema multiforme have been reported from treatment with gefitinib tablets. Erythema multiforme and dermatitis bullous have been reported in two patients (0.08%) across NSCLC trials (Study 2, Study 3 and Study 4). Gefitinib tablets treatment should be interrupted or discontinued if the patient develops severe bullous, blistering or exfoliating conditions.",
+        "char_len": 489,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Bullous and Exfoliative Skin Disorders",
+        "source_xml": "DRUG-LUNG-FDA-014.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Embryo-fetal Toxicity",
+        "text": "5.7 Embryo-fetal Toxicity: Based on its mechanism of action and data from animal reproduction studies gefitinib tablets can cause fetal harm when administered to a pregnant woman. In animal reproductive studies, oral administration of gefitinib from organogenesis through weaning resulted in fetotoxicity and neonatal death at doses below the recommended human dose. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with gefitinib tablets and for at least two weeks following completion of therapy [see Use in Specific Populations (8.1 , 8.3)].",
+        "char_len": 640,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Embryo-fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-014.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: Less than four percent (<4%) of gefitinib and its metabolites are excreted via the kidney. No clinical studies were conducted with gefitinib tablets in patients with severe renal impairment.",
+            "char_len": 212,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-014.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.7 Hepatic Impairment",
+            "text": "8.7 Hepatic Impairment: The systemic exposure of gefitinib was compared in patients with mild, moderate, or severe hepatic impairment due to cirrhosis (according to Child-Pugh classification) and healthy subjects with normal hepatic function (N=10/group). The mean systemic exposure (AUC0-∞) was increased by 40% in patients with mild impairment, 263% in patients with moderate impairment, and 166% in patients with severe hepatic impairment. Monitor adverse reactions when gefitinib tablets are administered to patients with moderate and severe hepatic impairment. In a study comparing 13 patients with liver metastases and moderate hepatic impairment (addition of CTC grade of baseline AST/SGOT, ALP, and bilirubin equals 3 to 5) to 14 patients with liver metastases and normal hepatic function, the systemic exposure of gefitinib was similar [see Warnings and Precautions (5.2)].",
+            "char_len": 882,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-014.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.4 Dose Modification",
+            "text": "2.4 Dose Modification: Dose Modifications for Adverse Drug Reactions Withhold gefitinib tablets (for up to 14 days) for any of the following: Resume treatment with gefitinib tablets when the adverse reaction fully resolves or improves to NCI CTCAE Grade 1. Permanently discontinue gefitinib tablets for: Dose Modifications for Drug Interactions Strong CYP3A4 Inducers Increase gefitinib tablets to 500 mg daily in the absence of severe adverse drug reaction, and resume gefitinib tablets at 250 mg seven days after discontinuation of the strong CYP3A4 inducer [see Drug Interactions (7) , Clinical Pharmacology (12.3) ].",
+            "char_len": 620,
+            "source_section_code": "42229-5",
+            "source_title": "2.4 Dose Modification",
+            "source_xml": "DRUG-LUNG-FDA-014.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-014.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种靶向药，用于特定基因突变的晚期非小细胞肺癌的一线治疗。\", \"how_to_use\": \"常规剂量为每天一次、每次250毫克，口服，随餐或空腹均可。\", \"cautions\": [\"需先经FDA批准的检测确认肿瘤有特定EGFR基因突变才适用。\", \"若血浆标本未检出该突变，条件允许时可再检测肿瘤组织。\", \"其他类型的EGFR突变者，本药的安全性和有效性尚未确立。\", \"通常持续用药，直到疾病进展或出现不能耐受的毒性。\", \"若漏服，且距下次服药不足12小时，则不要补服。\", \"可将药片放入4至8盎司水中，搅动约15分钟后立即喝下。\", \"也可经鼻胃管给药，喝完后再用4至8盎司水冲洗容器并喝下。\", \"出现某些不良反应时，可能需要暂停用药最多14天。\", \"不良反应完全消退或改善至1级后，可恢复用药。\", \"出现某些情况时需永久停药，具体请遵医嘱。\", \"同时使用强CYP3A4诱导剂时，剂量可能调整为每天500毫克。\", \"停用强CYP3A4诱导剂7天后，剂量恢复为每天250毫克。\", \"应避免与质子泵抑制剂同用；如必须使用，需错开服药时间。\", \"与H2受体拮抗剂或抗酸药同用，也需错开服药时间。\", \"服用华法林者需定期监测凝血酶原时间或INR。\"], \"side_effects\": [{\"term\": \"皮肤反应\", \"plain\": \"最常见的不良反应之一，发生率超过20%。\", \"when_to_seek_help\": \"皮肤反应严重或持续不缓解时，请及时就医。\"}, {\"term\": \"腹泻\", \"plain\": \"最常见的不良反应之一，发生率超过20%。\", \"when_to_seek_help\": \"腹泻严重或持续不缓解时，请及时就医。\"}, {\"term\": \"指甲疾病\", \"plain\": \"部分患者可能出现指甲相关改变。\", \"when_to_seek_help\": \"指甲问题明显或加重时，请及时就医。\"}, {\"term\": \"呕吐\", \"plain\": \"部分患者可能出现呕吐。\", \"when_to_seek_help\": \"呕吐严重或无法进食时，请及时就医。\"}, {\"term\": \"口腔炎\", \"plain\": \"部分患者可能出现口腔炎症。\", \"when_to_seek_help\": \"口腔炎症明显影响进食时，请及时就医。\"}], \"seek_help\": \"出现严重或持续不缓解的不良反应时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:17:12"
+  }
+]

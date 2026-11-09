@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "DOC-COLORECTAL-EPMC-002",
+    "title": "Japanese Society for Cancer of the Colon and Rectum (JSCCR) guidelines 2024 for the treatment of colorectal cancer",
+    "summary": "The number of deaths from colorectal cancer in Japan continues to rise, with over 50,000 deaths recorded in 2018. In the 2024 edition, revisions to all aspects of treatment were undertaken, with corrections and additions made based on knowledge gained since the 2022 version (drug therapy) and the 2019 version (other treatments). The Japanese Society for Cancer of the Colon and Rectum (JSCCR) guidelines 2024 for the treatment of colorectal cancer have been prepared to present standard treatment strategies, reduce disparities among institutions, avoid both unnecessary and insufficient treatment, and enhance mutual understanding between healthcare professionals and patients by making these guidelines accessible to the public. These guidelines were developed through consensus by the JSCCR Guideline Committee, following a careful review of evidence retrieved from literature searches and considering the medical insurance system and actual clinical practice in Japan. Therefore, these guidelines serve as a tool for managing colorectal cancer in real-world clinical settings. More specifically, they can be used to support obtaining informed consent from patients and selecting the most appropriate treatment method for each patient. Controversial topics were selected as clinical questions, and recommendations were provided. Each recommendation is accompanied by an evidence classification and a recommendation category, both based on consensus reached by the Guideline Committee members. This article presents the English version of the JSCCR guidelines 2024.",
+    "doc_type": "guideline",
+    "issuer": "International Journal of Clinical Oncology",
+    "publish_date": "2025-11-04",
+    "cancer_types": [
+      "colorectal"
+    ],
+    "license_note": "Open Access (Europe PMC)",
+    "file_path": "raw/guidelines/DOC-COLORECTAL-EPMC-002.xml",
+    "doc_hash": "77535ec50397de2795246129ca2a2595ab359df94ac2828e088bb09be0f9a887",
+    "review_status": "approved",
+    "_source": "europepmc",
+    "_pmid": "41186794",
+    "_pmcid": "PMC12644182",
+    "_doi": "10.1007/s10147-025-02899-8",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12644182/fullTextXML",
+    "_xml_bytes": 807758,
+    "source_name": "Japanese Society for Cancer of the Colon and Rectum (JSCCR) guidelines 2024 for the treatment of colorectal cancer",
+    "source_version": "2025",
+    "source_section": "全文",
+    "source_file": "DOC-COLORECTAL-EPMC-002.xml",
+    "updated_at": "2026-10-21"
+  }
+]

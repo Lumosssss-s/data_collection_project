@@ -1,0 +1,268 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-001",
+    "generic_name": "OSIMERTINIB",
+    "brand_names": [
+      "TAGRISSO"
+    ],
+    "aliases_zh": [
+      "奥希替尼"
+    ],
+    "title": "OSIMERTINIB 说明书（FDA DailyMed）",
+    "indications": [
+      "adjuvant therapy after tumor resection in adult patients with non-small cell lung cancer (NSCLC) whose tumors have epidermal growth factor receptor (EGFR) exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test.",
+      "the treatment of adult patients with locally advanced, unresectable (stage III) NSCLC whose disease has not progressed during or following concurrent or sequential platinum-based chemoradiation therapy and whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test.",
+      "the first-line treatment of adult patients with metastatic NSCLC whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test.",
+      "in combination with pemetrexed and platinum-based chemotherapy, the first-line treatment of adult patients with locally advanced or metastatic NSCLC whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test.",
+      "the treatment of adult patients with metastatic EGFR T790M mutation-positive NSCLC, as detected by an FDA-approved test, whose disease has progressed on or after EGFR TKI therapy. ( 1.5 , 2.2 ) 1.1 Adjuvant Treatment of EGFR Mutation-Positive Non-Small Cell Lung Cancer (NSCLC) TAGRISSO is indicated as adjuvant therapy after tumor resection in adult patients with non-small cell lung cancer (NSCLC) whose tumors have epidermal growth factor receptor (EGFR) exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test . 1.2 Locally Advanced, Unresectable (Stage III) EGFR Mutation-Positive NSCLC TAGRISSO is indicated for the treatment of adult patients with locally advanced, unresectable (stage III) NSCLC whose disease has not progressed during or following concurrent or sequential platinum-based chemoradiation therapy and whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test. 1.3 First-line Treatment of EGFR Mutation-Positive Metastatic NSCLC TAGRISSO is indicated for the first-line treatment of adult patients with metastatic NSCLC whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test. 1.4 First-line Treatment of EGFR Mutation-Positive Locally Advanced or Metastatic NSCLC TAGRISSO in combination with pemetrexed and platinum-based chemotherapy is indicated for the first-line treatment of adult patients with locally advanced or metastatic NSCLC whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations, as detected by an FDA-approved test . 1.5 Previously Treated EGFR T790M Mutation-Positive Metastatic NSCLC TAGRISSO is indicated for the treatment of adult patients with metastatic EGFR T790M mutation-positive NSCLC, as detected by an FDA-approved test, whose disease has progressed on or after EGFR tyrosine kinase inhibitor (TKI) therapy .",
+      "【中文适应证】单药适用于：（1）用于ⅠB～ⅢA 期EGFR19 外显子缺失或21 外显子L858R 置换突变的NSCLC 患者的术后辅助治疗，并由医师决定接受或不接受辅助化疗。（2）接受含铂放化疗期间或之后未出现疾病进展，并具有EGFR19 外显子缺失或21 外显子L858R 置换突变的局部晚期、不可切除（Ⅲ期）NSCLC 成人患者。（3）具有EGFR19 外显子缺失或21 外显子L858R 置换突变的局部晚期或转移性NSCLC 成人患者的一线治疗。（4）既往经EGFR-TKI 治疗时或治疗后出现疾病进展，并且经检测确认存在EGFR T790M 突变阳性的局部晚期或转移性NSCLC 成人患者。",
+      "【中文适应证】联合培美曲塞和铂类化疗药物适用于：具有EGFR19外显子缺失或21 外显子L858R 置换突变的局部晚期或转移性NSCLC 成人患者的一线治疗。",
+      "【中文适应证】联合赛沃替尼适用于：EGFR 基因突变阳性经EGFR-TKI治疗后进展的伴MET 扩增的局部晚期或转移性非鳞状NSCLC患者。"
+    ],
+    "dosage": {
+      "standard": "2 DOSAGE AND ADMINISTRATION Adjuvant treatment of early-stage NSCLC: 80 mg orally once daily, with or without food, until disease recurrence, or unacceptable toxicity, or for up to 3 years. ( 2.3 ) Locally advanced, unresectable (stage III) NSCLC: Following platinum-based chemoradiation therapy, 80 mg orally once daily, with or without food, until disease progression or unacceptable toxicity. ( 2.3 ) Metastatic NSCLC: 80 mg orally once daily, with or without food, until disease progression or unacceptable toxicity. ( 2.3 ) Locally advanced or metastatic NSCLC: 80 mg orally once daily administered in combination with pemetrexed and platinum-based chemotherapy, with or without food, until disease progression or unacceptable toxicity due to TAGRISSO. ( 2.3 ) 2.1 Recommended Evaluation and Testing Before Initiating TAGRISSO TAGRISSO Monotherapy • Before initiating TAGRISSO monotherapy in patients with cardiac risk factors , conduct cardiac monitoring, including assessment of left ventricular ejection fraction (LVEF) [see Warnings and Precautions (5.3) ] . • Before initiating TAGRISSO, perform complete blood count with differential [see Warnings and Precautions (5.7) ] . TAGRISSO in Combination with Pemetrexed and Platinum-based Chemotherapy • Before initiating TAGRISSO in combination with pemetrexed and platinum-based chemotherapy, conduct cardiac monitoring in all patients, including assessment of left ventricular ejection fraction (LVEF) [see Warnings and Precautions (5.3) ] . • Before initiating TAGRISSO, perform complete blood count with differential [see Warnings and Precautions (5.7) ] . 2.2 Patient Selection Table 1 below presents the patient selection criteria for treatment with TAGRISSO. Table 1: Patient Selection Select patients for treatment with TAGRISSO based on the presence of a mutation as detected by an FDA-approved test. Indication Treatment Regimen Required Mutation Source for Testing Adjuvant Treatment of EGFR Mutation-Positive NSCLC [see Indications and Usage (1.1) ] TAGRISSO monotherapy EGFR exon 19 deletions or exon 21 L858R mutations Tumor Locally Advanced, Unresectable (Stage III) EGFR Mutation-Positive NSCLC [see Indications and Usage (1.2) ] Following completion of platinum-based chemoradiation therapy, TAGRISSO monotherapy EGFR exon 19 deletions or exon 21 L858R mutations Tumor First-line Treatment of EGFR Mutation-Positive Metastatic NSCLC [see Indications and Usage (1.3) ] TAGRISSO monotherapy EGFR exon 19 deletions or exon 21 L858R mutations Plasma or tumor First-line Treatment of EGFR Mutation-Positive Locally Advanced or Metastatic NSCLC [see Indications and Usage (1.4) ] TAGRISSO in combination with pemetrexed and platinum-based chemotherapy EGFR exon 19 deletions or exon 21 L858R mutations Plasma or tumor Previously Treated EGFR T790M Mutation-Positive Metastatic NSCLC [see Indications and Usage (1.5) ] TAGRISSO monotherapy EGFR T790M Mutation Plasma or tumor Information on FDA-approved tests for the detection of EGFR mutations is available at http://www.fda.gov/companiondiagnostics . 2.3 Recommended Dosage and Administration Recommended Dosage Table 2 provides the recommended dosage of TAGRISSO by indication. Table 2: Recommended Dosage of TAGRISSO Indication Recommended Dosage of TAGRISSO Duration of Treatment Adjuvant Treatment of EGFR Mutation-Positive NSCLC 80 mg tablet orally once daily with or without food For a total of 3 years or until disease recurrence or unacceptable toxicity Locally Advanced, Unresectable (Stage III) EGFR Mutation-Positive NSCLC Following platinum-based chemoradiation therapy, 80 mg tablet orally once daily with or without food Until disease progression or unacceptable toxicity First-line Treatment of EGFR Mutation-Positive Metastatic NSCLC 80 mg tablet orally once daily with or without food Until disease progression or unacceptable toxicity First-line Treatment of EGFR Mutation-Positive Locally Advanced or Metastatic NSCLC 80 mg tablet orally once daily with or witho",
+      "adjustment": ""
+    },
+    "contraindications": [
+      "尚无禁忌（FDA 说明书原文：None）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "Interstitial Lung Disease/Pneumonitis",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "QTc Interval Prolongation",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Cardiomyopathy",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Keratitis",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Erythema multiforme, Stevens-Johnson syndrome, and Toxic epidermal necrolysis",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Cutaneous Vasculitis",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Aplastic Anemia",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Myalgia or Myositis with Creatine Phosphokinase Elevation Most common (≥20%) adverse reactions, including laboratory abnormalities, were:",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "TAGRISSO monotherapy: leukopenia, lymphopenia, thrombocytopenia, anemia, diarrhea, rash, musculoskeletal pain, neutropenia, nail toxicity, dry skin, stomatitis, and fatigue.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "TAGRISSO monotherapy following platinum-based chemoradiation therapy: lymphopenia, leukopenia, ILD/pneumonitis, thrombocytopenia, neutropenia, rash, diarrhea, nail toxicity, musculoskeletal pain, cough and COVID-19.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "TAGRISSO in combination with pemetrexed and platinum-based chemotherapy: leukopenia, thrombocytopenia, neutropenia, lymphopenia, rash, diarrhea, stomatitis, nail toxicity, dry skin, and increased blood creatinine. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact AstraZeneca at 1-800-236-9933 or www.TAGRISSO.com or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice. The data in the WARNINGS AND PRECAUTIONS section reflect exposure to TAGRISSO in 1813 patients with EGFR mutation-positive NSCLC who received TAGRISSO monotherapy at the recommended dose of 80 mg orally once daily until disease progression or unacceptable toxicity in four randomized, controlled trials [ADAURA (n=337), FLAURA (n=338), FLAURA2 (monotherapy arm; n=275), and AURA3 (n=279)] , two single arm trials [AURA Extension (n=201) {NCT01802632} and AURA2 (n=210)]{NCT02094261}, and one dose-finding study, AURA1 (n=173). Among 1813 patients who received TAGRISSO monotherapy, 82% were exposed for 6 months or longer and 67% were exposed for greater than one year. In this pooled safety population, the most common adverse reactions in ≥20% of 1813 patients who received TAGRISSO monotherapy were diarrhea (47%), rash (46%), musculoskeletal pain (38%), nail toxicity (34%), dry skin (32%), stomatitis (24%), and fatigue (21%). The most common laboratory abnormalities in ≥20% of 1813 patients who received TAGRISSO monotherapy were leukopenia (65%), lymphopenia (64%), thrombocytopenia (53%), anemia (52%), an",
+        "frequency": "82%",
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "FDA DailyMed public label",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-001.xml",
+    "doc_hash": "ca482d6d761146cb1af05eccb3a721deb009e094a4efdbe574ce04ba0940648c",
+    "review_status": "approved",
+    "_source": "dailymed",
+    "_setid": "5e81b4a7-b971-45e1-9c31-29cea8c87ce7",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/5e81b4a7-b971-45e1-9c31-29cea8c87ce7.xml",
+    "atc_code": "L01EB04",
+    "approval_no": null,
+    "source_name": "OSIMERTINIB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-001.xml",
+    "updated_at": "2026-10-21",
+    "interactions": [
+      "Strong CYP3A Inducers: Avoid concomitant use. If not possible, increase TAGRISSO to 160 mg daily in patients receiving a strong CYP3A4 inducer. (2.5, 7.1)",
+      "Strong CYP3A Inducers",
+      "Co-administering TAGRISSO with a strong CYP3A4 inducer decreased the exposure of osimertinib compared to administering TAGRISSO alone [see Clinical Pharmacology (12.3)]. Decreased osimertinib exposure may lead to reduced efficacy.",
+      "Avoid co-administering TAGRISSO with strong CYP3A inducers. Increase the TAGRISSO dosage when co-administering with a strong CYP3A4 inducer if concurrent use is unavoidable [see Dosage and Administration (2.5)]. No dose adjustments are required when TAGRISSO is used with moderate and/or weak CYP3A inducers.",
+      "Co-administering TAGRISSO with a breast cancer resistant protein (BCRP) or P-glycoprotein (P-gp) substrate increased the exposure of the substrate compared to administering it alone [see Clinical Pharmacology (12.3)]. Increased BCRP or P-gp substrate exposure may increase the risk of exposure-related toxicity.",
+      "Monitor for adverse reactions of the BCRP or P-gp substrate, unless otherwise instructed in its approved labeling, when co-administered with TAGRISSO.",
+      "The effect of co-administering medicinal products known to prolong the QTc interval with TAGRISSO is unknown. When feasible, avoid concomitant administration of drugs known to prolong the QTc interval with known risk of Torsades de pointes. If not feasible to avoid concomitant administration of such drugs, conduct periodic ECG monitoring [see Warnings and Precautions (5.2) and Clinical Pharmacology (12.2)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Interstitial Lung Disease/Pneumonitis",
+        "text": "5.1 Interstitial Lung Disease/Pneumonitis: TAGRISSO can cause severe and fatal ILD/pneumonitis. Across clinical trials, interstitial lung disease (ILD)/pneumonitis occurred in 4% of the 1813 patients treated with TAGRISSO monotherapy who had not received recent definitive chemoradiation therapy; 0.4% of cases were fatal. ILD/Pneumonitis with TAGRISSO in Combination with Pemetrexed and Platinum-based Chemotherapy In the FLAURA2 study, ILD/pneumonitis occurred in 3.3% of the 276 patients who received TAGRISSO in combination with pemetrexed and platinum-based chemotherapy; 0.4% of cases were fatal. ILD/Pneumonitis Following Definitive Platinum-based Chemoradiation Therapy In the LAURA study, following definitive platinum-based chemoradiation therapy, ILD/pneumonitis, including radiation pneumonitis, occurred in 80 of the 143 patients (56%) who received TAGRISSO monotherapy and 28 of the 73 patients (38%) who received placebo. There was one fatal case (0.7%), 3.5% Grade 3, 34% Grade 2, and 18% Grade 1 adverse reactions of ILD/pneumonitis in TAGRISSO-treated patients. For TAGRISSO-treated patients, ILD/pneumonitis led to permanent discontinuation of TAGRISSO in 7% of patients and dosage interruptions of TAGRISSO in 35% of patients. Among the 46 patients who were rechallenged with TAGRISSO, 11% had recurrence of ILD/pneumonitis. In the 80 TAGRISSO-treated patients, ILD/pneumonitis resolved in 40%, resolved with sequelae in 1.3%, were resolving in 16%, did not resolve in 41%, and resulted in death in 1.3%. For patients receiving TAGRISSO who have not received recent definitive platinum-based chemoradiation therapy, withhold TAGRISSO and promptly investigate for ILD in patients who present with worsening or respiratory symptoms which may be indicative of ILD (e.g., dyspnea, cough, and fever). Permanently discontinue TAGRISSO if ILD/pneumonitis is confirmed [see Dosage and Administration (2.5) and Adverse Reactions (6.1)]. For patients who have received recent definitive platinum-based chemoradiation therapy with Grade 1 ILD/pneumonitis continue TAGRISSO or interrupt and restart, as appropriate. Permanently discontinue TAGRISSO in patients diagnosed with Grade ≥2 ILD/pneumonitis [see Dosage and Administration (2.5) and Adverse Reactions (6.1)].",
+        "char_len": 2275,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Interstitial Lung Disease/Pneumonitis",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 QTc Interval Prolongation",
+        "text": "5.2 QTc Interval Prolongation: TAGRISSO can cause heart rate-corrected QT (QTc) interval prolongation. Of the 1813 patients treated with TAGRISSO monotherapy in clinical trials, 1.1% were found to have a QTc >500 msec, and 4.3% of patients had an increase from baseline QTc >60 msec [see Clinical Pharmacology (12.2)]. Of the 276 patients treated with TAGRISSO in combination with pemetrexed and platinum-based chemotherapy in the FLAURA2 study, 1.8% were found to have a QTc >500 msec, and 10.5% of patients had an increase from baseline QTc >60 msec. No QTc-related arrhythmias were reported. Clinical trials of TAGRISSO did not enroll patients with baseline QTc of >470 msec. Conduct periodic monitoring with ECGs and electrolytes in patients with congenital long QTc syndrome, congestive heart failure, electrolyte abnormalities, or those who are taking medications known to prolong the QTc interval. Permanently discontinue TAGRISSO in patients who develop QTc interval prolongation with signs/symptoms of life-threatening arrhythmia [see Dosage and Administration (2.5)].",
+        "char_len": 1077,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 QTc Interval Prolongation",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Cardiomyopathy",
+        "text": "5.3 Cardiomyopathy: TAGRISSO can cause cardiomyopathy, including cardiac failure, chronic cardiac failure, congestive heart failure, pulmonary edema or decreased ejection fraction. Across clinical trials, cardiomyopathy occurred in 3.8% of the 1813 TAGRISSO-treated patients; 0.1% of cardiomyopathy cases were fatal. In the FLAURA2 study, cardiomyopathy occurred in 9% of the 276 patients who received TAGRISSO in combination with pemetrexed and platinum-based chemotherapy; 1.1% of cardiomyopathy cases were fatal. A decline in left ventricular ejection fraction (LVEF) ≥10 percentage points from baseline and to less than 50% LVEF occurred in 4.2% of 1557 patients who had baseline and at least one follow-up LVEF assessment. In the ADAURA study, 1.5% (5/325) of patients treated with TAGRISSO experienced LVEF decreases greater than or equal to 10 percentage points and a drop to less than 50%. In the LAURA study, following platinum-based chemoradiation therapy, 3% (4/135) of patients treated with TAGRISSO and no patients treated with placebo experienced LVEF decreases greater than or equal to 10 percentage points and a drop to less than 50%. In the FLAURA2 study, 8% (21/262) of patients treated with TAGRISSO in combination with pemetrexed and platinum-based chemotherapy, who had baseline and at least one follow-up LVEF assessment, experienced LVEF decreases greater than or equal to 10 percentage points and a drop to less than 50%. For patients who will be receiving TAGRISSO monotherapy, conduct cardiac monitoring, including assessment of LVEF at baseline and during treatment, in patients with cardiac risk factors. For patients who will be receiving TAGRISSO in combination with pemetrexed and platinum-based chemotherapy, conduct cardiac monitoring, including assessment of LVEF at baseline and during treatment, in all patients. Assess LVEF in patients who develop relevant cardiac signs or symptoms during treatment. For symptomatic congestive heart failure, permanently discontinue TAGRISSO [see Dosage and Administration (2.5)].",
+        "char_len": 2051,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Cardiomyopathy",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Keratitis",
+        "text": "5.4 Keratitis: Keratitis was reported in 0.6% of 1813 patients treated with TAGRISSO monotherapy in clinical trials. Promptly refer patients with signs and symptoms suggestive of keratitis (such as eye inflammation, lacrimation, light sensitivity, blurred vision, eye pain and/or red eye) to an ophthalmologist.",
+        "char_len": 311,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Keratitis",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Erythema Multiforme Major, Stevens-Johnson Syndrome, and Toxic Epidermal Necrolysis",
+        "text": "5.5 Erythema Multiforme Major, Stevens-Johnson Syndrome, and Toxic Epidermal Necrolysis: Postmarketing cases consistent with erythema multiforme major (EMM), Stevens-Johnson syndrome (SJS) and toxic epidermal necrolysis (TEN) have been reported in patients receiving TAGRISSO [see Postmarketing (6.2)]. Withhold TAGRISSO if EMM, SJS, or TEN is suspected and permanently discontinue if confirmed.",
+        "char_len": 395,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Erythema Multiforme Major, Stevens-Johnson Syndrome, and Toxic Epidermal Necrolysis",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Cutaneous Vasculitis",
+        "text": "5.6 Cutaneous Vasculitis: Postmarketing cases of cutaneous vasculitis including leukocytoclastic vasculitis, urticarial vasculitis, and IgA vasculitis have been reported in patients receiving TAGRISSO [see Postmarketing (6.2)]. Withhold TAGRISSO if cutaneous vasculitis is suspected, evaluate for systemic involvement, and consider dermatology consultation. If no other etiology can be identified, consider permanent discontinuation of TAGRISSO based on severity.",
+        "char_len": 463,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Cutaneous Vasculitis",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Aplastic Anemia",
+        "text": "5.7 Aplastic Anemia: Aplastic anemia has been reported in patients treated with TAGRISSO in clinical trials (0.06% of 1813) and postmarketing [see Postmarketing (6.2)]. Some cases had a fatal outcome. Inform patients of the signs and symptoms of aplastic anemia including but not limited to, new or persistent fevers, bruising, bleeding, and pallor. If aplastic anemia is suspected, withhold TAGRISSO and obtain a hematology consultation. If aplastic anemia is confirmed, permanently discontinue TAGRISSO [see Dosage and Administration (2.5)]. Perform complete blood count with differential before starting TAGRISSO, periodically throughout treatment, and more frequently if indicated.",
+        "char_len": 685,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Aplastic Anemia",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Myalgia or Myositis with Creatine Phosphokinase Elevation",
+        "text": "5.8 Myalgia or Myositis with Creatine Phosphokinase Elevation: In the pooled safety population [see Adverse Reactions (6.1)], myalgia occurred in 4.8% of patients who received TAGRISSO as a monotherapy (N=1813), of these 0.1% were Grade 3. Myalgia with concurrent increased creatine phosphokinase (CPK) elevation occurred in 0.1% of patients. The median time to onset of myalgia for these patients with CPK elevation was 648 days (range: 141 days to 1155 days). Grade 1 myositis occurred in 0.2% of patients who received TAGRISSO. Rhabdomyolysis has been reported in the post marketing setting. Advise patients to report unexplained muscle pain or tenderness. Monitor CPK levels periodically during treatment with TAGRISSO and as clinically indicated in patients reporting unexplained muscle pain or tenderness. Withhold, then resume at the same or reduced dose [see Dosage and Administration (2.5)].",
+        "char_len": 900,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Myalgia or Myositis with Creatine Phosphokinase Elevation",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Embryo-Fetal Toxicity",
+        "text": "5.9 Embryo-Fetal Toxicity: Based on data from animal studies and its mechanism of action, TAGRISSO can cause fetal harm when administered to a pregnant woman. In animal reproduction studies, osimertinib caused post-implantation fetal loss when administered during early development at a dose exposure 1.5 times the exposure at the recommended clinical dose. When males were treated prior to mating with untreated females, there was an increase in preimplantation embryonic loss at plasma exposures of approximately 0.5 times those observed at the recommended dose of 80 mg once daily. Verify pregnancy status of females of reproductive potential prior to initiating TAGRISSO. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with TAGRISSO and for 6 weeks after the last dose. Advise males with female partners of reproductive potential to use effective contraception for 4 months after the last dose [see Use in Specific Populations (8.1 and 8.3)].",
+        "char_len": 1044,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-001.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: No dose adjustment is recommended in patients with creatinine clearance (CLcr) 15 - 89 mL/min, as estimated by Cockcroft-Gault. There is no recommended dose of TAGRISSO for patients with end-stage renal disease (CLcr <15 mL/min) [see Clinical Pharmacology (12.3)].",
+            "char_len": 286,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.7 Hepatic Impairment",
+            "text": "8.7 Hepatic Impairment: No dose adjustment is recommended in patients with mild to moderate hepatic impairment (Child-Pugh A and B or total bilirubin ≤ ULN and AST > ULN or total bilirubin 1 to 3 times ULN and any AST). There is no recommended dose for TAGRISSO for patients with severe hepatic impairment (total bilirubin between 3 to 10 times ULN and any AST) [see Clinical Pharmacology (12.3)].",
+            "char_len": 397,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modifications for Adverse Reactions",
+            "text": "2.5 Dosage Modifications for Adverse Reactions: The recommended dose reductions for adverse reactions are provided in Table 3. Target Organ Adverse ReactionAdverse reactions graded by the National Cancer Institute Common Terminology Criteria for Adverse Events version 5.0 (NCI CTCAE v5.0). Dosage Modification Pulmonary (Patients who have not received recent definitive platinum-based chemoradiation therapy) [see Warnings and Precautions (5.1)] Any Grade Interstitial lung disease (ILD)/Pneumonitis Permanently discontinue TAGRISSO. (Patients who have not received recent definitive platinum-based chemoradiation therapy) [see Warnings and Precautions (5.1)] Interstitial lung disease (ILD)/Pneumonitis Permanently discontinue TAGRISSO. Pulmonary (Patients who have received recent definitive platinum-based chemoradiation therapy) [see Warnings and Precautions (5.1)] Grade 1 ILD/Pneumonitis Withhold or continue TAGRISSO, as clinically indicated. (Patients who have received recent definitive platinum-based chemoradiation therapy) [see Warnings and Precautions (5.1)] ILD/Pneumonitis Withhold or continue TAGRISSO, as clinically indicated. Grade ≥2 ILD/Pneumonitis Permanently discontinue TAGRISSO. Cardiac [see Warnings and Precautions (5.2, 5.3)] QTcQTc = QT interval corrected for heart rate interval greater than 500 msec on at least 2 separate ECGsECGs = Electrocardiograms Withhold TAGRISSO until QTc interval is less than 481 msec or recovery to baseline if baseline QTc is greater than or equal to 481 msec, then resume at 40 mg dose. QTcQTc = QT interval corrected for heart rate interval greater than 500 msec on at least 2 separate ECGsECGs = Electrocardiograms Withhold TAGRISSO until QTc interval is less than 481 msec or recovery to baseline if baseline QTc is greater than or equal to 481 msec, then resume at 40 mg dose. QTc interval prolongation with signs/symptoms of life-threatening arrhythmia Permanently discontinue TAGRISSO. QTc interval prolongation with signs/symptoms of life-threatening arrhythmia Symptomatic congestive heart failure Permanently discontinue TAGRISSO. Symptomatic congestive heart failure Cutaneous [see Warnings and Precautions (5.5)] Erythema Multiforme Major (EMM), Stevens-Johnson syndrome (SJS), and Toxic Epidermal Necrolysis (TEN) Withhold TAGRISSO if suspected and permanently discontinue if confirmed. Erythema Multiforme Major (EMM), Stevens-Johnson syndrome (SJS), and Toxic Epidermal Necrolysis (TEN) Withhold TAGRISSO if suspected and permanently discontinue if confirmed. Blood and bone marrow [see Warnings and Precautions (5.7)] Aplastic anemia Withhold TAGRISSO if aplastic anemia is suspected and permanently discontinue if confirmed. Blood and bone marrow Aplastic anemia Withhold TAGRISSO if aplastic anemia is suspected and permanently discontinue if confirmed. Other [[see Warnings and Precautions (5.8), see Adverse Reactions (6.1)] Adverse reaction of Grade 3 or greater severity Withhold TAGRISSO for up to 3 weeks. Adverse reaction of Grade 3 or greater severity Withhold TAGRISSO for up to 3 weeks. If improvement to baseline or to Grade 0-2 within 3 weeks Resume at 80 mg or 40 mg daily. If improvement to baseline or to Grade 0-2 within 3 weeks Resume at 80 mg or 40 mg daily. If no improvement within 3 weeks Permanently discontinue TAGRISSO. If no improvement within 3 weeks Dosage Modifications for Combination Therapy When TAGRISSO is administered in combination with pemetrexed and platinum-based chemotherapy, modify the dose of any one of the treatments for the management of adverse reactions, as appropriate. For TAGRISSO dose modification instructions, see Table 3. Withhold, reduce the dose or permanently discontinue pemetrexed, cisplatin or carboplatin according to their respective Prescribing Information. Drug Interactions Strong CYP3A4 Inducers Avoid concomitant use of strong CYP3A4 inducers with TAGRISSO. If concurrent use is unavoidable, increase TAGRISSO dosage to 160 mg daily when co-administering with a strong CYP3A inducer. Resume TAGRISSO at 80 mg 3 weeks after discontinuation of the strong CYP3A4 inducer [see Drug Interactions (7) and Clinical Pharmacology (12.3)].",
+            "char_len": 4174,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-001.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种用于治疗特定类型非小细胞肺癌的靶向药，需经检测确认有相应基因突变才可使用。\", \"how_to_use\": \"常规剂量为每天口服80毫克一次，可与食物同服或空腹服用。不同治疗阶段用药时长不同，请遵医嘱。\", \"cautions\": [\"用药前需经FDA批准的检测确认存在EGFR特定基因突变。\", \"用药前医生可能会安排心脏检查，包括左心室射血分数评估。\", \"用药前医生可能会安排血常规检查。\", \"若同时使用强CYP3A诱导剂类药物，应避免合用；无法避免时需调整剂量。\", \"与BCRP或P-gp底物类药物合用时，需监测相关不良反应。\", \"尽量避免与可能延长QTc间期的药物合用，必要时需定期做心电图监测。\", \"目前说明书未列出禁忌证。\"], \"side_effects\": [{\"term\": \"间质性肺病/肺炎\", \"plain\": \"肺部可能出现炎症性病变。\", \"when_to_seek_help\": \"出现新发或加重的咳嗽、呼吸困难、发热时需及时就医。\"}, {\"term\": \"QTc间期延长\", \"plain\": \"心脏电活动时间可能延长。\", \"when_to_seek_help\": \"出现心悸、头晕、晕厥等情况需及时就医。\"}, {\"term\": \"心肌病\", \"plain\": \"心肌功能可能受到影响。\", \"when_to_seek_help\": \"出现气短、乏力、下肢水肿等情况需及时就医。\"}, {\"term\": \"角膜炎\", \"plain\": \"眼角膜可能发生炎症。\", \"when_to_seek_help\": \"出现眼痛、眼红、视力变化时需及时就医。\"}, {\"term\": \"多形性红斑、Stevens-Johnson综合征、中毒性表皮坏死松解症\", \"plain\": \"可能出现严重皮肤反应。\", \"when_to_seek_help\": \"出现皮疹迅速加重、水疱、皮肤剥脱时需立即就医。\"}, {\"term\": \"皮肤血管炎\", \"plain\": \"皮肤小血管可能发生炎症。\", \"when_to_seek_help\": \"出现皮肤紫癜、皮疹伴疼痛时需及时就医。\"}, {\"term\": \"再生障碍性贫血\", \"plain\": \"骨髓造血功能可能受影响。\", \"when_to_seek_help\": \"出现明显乏力、面色苍白、易出血或感染时需及时就医。\"}, {\"term\": \"肌痛或肌炎伴肌酸磷酸激酶升高\", \"plain\": \"肌肉可能疼痛或发炎，相关酶指标升高。\", \"when_to_seek_help\": \"出现明显肌肉疼痛、无力时需及时就医。\"}, {\"term\": \"常见不良反应（单药治疗）\", \"plain\": \"可能包括白细胞减少、淋巴细胞减少、血小板减少、贫血、腹泻、皮疹、肌肉骨骼疼痛、中性粒细胞减少、指甲毒性、皮肤干燥、口腔炎、乏力。\", \"when_to_seek_help\": \"这些反应明显或持续加重时需就医。\"}, {\"term\": \"常见不良反应（放化疗后单药治疗）\", \"plain\": \"可能包括淋巴细胞减少、白细胞减少、间质性肺病/肺炎、血小板减少、中性粒细胞减少、皮疹、腹泻、指甲毒性、肌肉骨骼疼痛、咳嗽、新冠感染。\", \"when_to_seek_help\": \"这些反应明显或持续加重时需就医。\"}, {\"term\": \"常见不良反应（联合培美曲塞和铂类化疗）\", \"plain\": \"可能包括白细胞减少、血小板减少、中性粒细胞减少、淋巴细胞减少、皮疹、腹泻、口腔炎、指甲毒性、皮肤干燥、血肌酐升高。\", \"when_to_seek_help\": \"这些反应明显或持续加重时需就医。\"}], \"seek_help\": \"出现新发或加重的咳嗽、呼吸困难、发热、心悸、晕厥、眼痛眼红、视力变化、严重或迅速加重的皮疹、水疱、皮肤剥脱、明显乏力、面色苍白、易出血、明显肌肉疼痛无力等情况，请及时就医。\"}",
+    "patient_plain_at": "2026-11-03T11:22:51"
+  }
+]

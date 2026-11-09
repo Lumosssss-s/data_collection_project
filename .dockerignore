@@ -1,3 +1,7 @@
 # 本地模型文件：运行时通过 bind mount 挂载，无需打进构建上下文
-# 若忽略此项，每次 docker compose build 都会向 daemon 传输约 6.4GB
+# 若忽略此项，每次 docker compose build 都会向 daemon 传输约 4.3GB
 models/
+
+# 小程序依赖与编译缓存：与后端镜像无关，加入上下文只会拖慢构建
+miniapp/node_modules/
+miniapp/.swc/

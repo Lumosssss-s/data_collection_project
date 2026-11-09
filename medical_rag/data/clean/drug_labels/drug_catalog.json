@@ -1,0 +1,411 @@
+{
+ "version": "2026-11-02",
+ "note": "cancer_types=说明书适应证依据；guideline_use_cancers=指南推荐但说明书未覆盖；GASTRIC-FDA-002 TORIPALIMAB 说明书仅含鼻咽癌适应证、无胃癌依据，2026-11-02 归档下架：ES 文档已删除、clean JSON 保留；review_status 枚举无 archived，取最接近值 draft",
+ "total_records": 39,
+ "independent_labels": 36,
+ "cancer_coverage": {
+  "breast": 10,
+  "gastric": 8,
+  "colorectal": 9,
+  "lung": 18
+ },
+ "items": [
+  {
+   "drug_id": "DRUG-BREAST-FDA-001",
+   "generic_name": "TRASTUZUMAB",
+   "cancer_types": [
+    "breast",
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-002",
+   "generic_name": "PERTUZUMAB",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-003",
+   "generic_name": "TAMOXIFEN",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-004",
+   "generic_name": "ANASTROZOLE",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-005",
+   "generic_name": "LETROZOLE",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-006",
+   "generic_name": "EXEMESTANE",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-007",
+   "generic_name": "PALBOCICLIB",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-008",
+   "generic_name": "RIBOCICLIB",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-009",
+   "generic_name": "ABEMACICLIB",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-BREAST-FDA-010",
+   "generic_name": "FULVESTRANT",
+   "cancer_types": [
+    "breast"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-001",
+   "generic_name": "CAPECITABINE",
+   "cancer_types": [
+    "colorectal",
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-002",
+   "generic_name": "CETUXIMAB",
+   "cancer_types": [
+    "colorectal"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-003",
+   "generic_name": "FLUOROURACIL",
+   "cancer_types": [
+    "colorectal",
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-004",
+   "generic_name": "IRINOTECAN",
+   "cancer_types": [
+    "colorectal"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-005",
+   "generic_name": "OXALIPLATIN",
+   "cancer_types": [
+    "colorectal"
+   ],
+   "guideline_use_cancers": [
+    "gastric"
+   ],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-006",
+   "generic_name": "PANITUMUMAB",
+   "cancer_types": [
+    "colorectal"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-007",
+   "generic_name": "REGORAFENIB",
+   "cancer_types": [
+    "colorectal"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-008",
+   "generic_name": "PEMBROLIZUMAB",
+   "cancer_types": [
+    "colorectal"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": "DRUG-LUNG-FDA-002",
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-COLORECTAL-FDA-009",
+   "generic_name": "BEVACIZUMAB",
+   "cancer_types": [
+    "colorectal"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": "DRUG-LUNG-FDA-003",
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-GASTRIC-FDA-001",
+   "generic_name": "TISLELIZUMAB",
+   "cancer_types": [
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-GASTRIC-FDA-002",
+   "generic_name": "TORIPALIMAB",
+   "cancer_types": [],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-001",
+   "generic_name": "OSIMERTINIB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "approved"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-002",
+   "generic_name": "PEMBROLIZUMAB",
+   "cancer_types": [
+    "lung",
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "approved"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-003",
+   "generic_name": "BEVACIZUMAB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "approved"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-004",
+   "generic_name": "PEMETREXED",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "approved"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-005",
+   "generic_name": "CRIZOTINIB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "approved"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-006",
+   "generic_name": "ALECTINIB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-007",
+   "generic_name": "ATEZOLIZUMAB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-008",
+   "generic_name": "CARBOPLATIN",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-009",
+   "generic_name": "CISPLATIN",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-010",
+   "generic_name": "DOCETAXEL",
+   "cancer_types": [
+    "lung",
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-011",
+   "generic_name": "DURVALUMAB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-012",
+   "generic_name": "ERLOTINIB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-013",
+   "generic_name": "ETOPOSIDE",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-014",
+   "generic_name": "GEFITINIB",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-015",
+   "generic_name": "GEMCITABINE",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-016",
+   "generic_name": "NIVOLUMAB",
+   "cancer_types": [
+    "lung",
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-017",
+   "generic_name": "PACLITAXEL",
+   "cancer_types": [
+    "lung"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  },
+  {
+   "drug_id": "DRUG-LUNG-FDA-018",
+   "generic_name": "RAMUCIRUMAB",
+   "cancer_types": [
+    "lung",
+    "gastric"
+   ],
+   "guideline_use_cancers": [],
+   "duplicate_of": null,
+   "review_status": "draft"
+  }
+ ]
+}

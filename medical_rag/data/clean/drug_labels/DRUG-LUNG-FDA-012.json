@@ -1,0 +1,312 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-012",
+    "generic_name": "ERLOTINIB",
+    "brand_names": [],
+    "aliases_zh": [
+      "盐酸厄洛替尼",
+      "厄洛替尼"
+    ],
+    "title": "ERLOTINIB 说明书（FDA DailyMed）",
+    "indications": [
+      "Erlotinib tablets are a kinase inhibitor indicated for: • The treatment of patients with metastatic non-small cell lung cancer (NSCLC) whose tumors have epidermal growth factor receptor (EGFR) exon 19 deletions or exon 21 (L858R) substitution mutations as detected by an FDA-approved test receiving first-line, maintenance, or second or greater line treatment after progression following at least one prior chemotherapy regimen. ( 1.1) • First-line treatment of patients with locally advanced, unresectable or metastatic pancreatic cancer, in combination with gemcitabine. ( 1.2) Limitations of Use: • Safety and efficacy of erlotinib tablets have not been established in patients with NSCLC whose tumors have other EGFR mutations. ( 1.1) • Erlotinib tablets are not recommended for use in combination with platinum-based chemotherapy. ( 1.1)",
+      "Erlotinib tablets are indicated for: • The treatment of patients with metastatic non-small cell lung cancer (NSCLC) whose tumors have epidermal growth factor receptor (EGFR) exon 19 deletions or exon 21 (L858R) substitution mutations as detected by an FDA-approved test receiving first-line, maintenance, or second or greater line treatment after progression following at least one prior chemotherapy regimen [see Clinical Studies (14.1, 14.3)] . Limitations of use: • Safety and efficacy of erlotinib tablets have not been established in patients with NSCLC whose tumors have other EGFR mutations [see Clinical Studies (14.1, 14.2)] . • Erlotinib tablets are not recommended for use in combination with platinum-based chemotherapy [see Clinical Studies (14.4)] .",
+      "Erlotinib tablet in combination with gemcitabine is indicated for the first-line treatment of patients with locally advanced, unresectable or metastatic pancreatic cancer [see Clinical Studies (14.5)] .",
+      "【中文适应证】EGFR 基因具有敏感突变的局部晚期或转移性NSCLC。"
+    ],
+    "dosage": {
+      "standard": "• NSCLC: 150 mg orally, on an empty stomach, once daily. ( 2.2) • Pancreatic cancer: 100 mg orally, on an empty stomach, once daily. ( 2.3) Select patients for the treatment of metastatic NSCLC with erlotinib tablets based on the presence of EGFR exon 19 deletions or exon 21 (L858R) substitution mutations in tumor or plasma specimens [See Clinical Studies (14.1, 14.2)] . If these mutations are not detected in a plasma specimen, test tumor tissue if available. Information on FDA-approved tests for the detection of EGFR mutations in NSCLC is available at: http://www.fda.gov/CompanionDiagnostics. The recommended daily dose of erlotinib tablets for NSCLC is 150 mg taken on an empty stomach, i.e., at least one hour before or two hours after the ingestion of food. Treatment should continue until disease progression or unacceptable toxicity occurs. The recommended daily dose of erlotinib tablets for pancreatic cancer is 100 mg taken once daily in combination with gemcitabine. Take erlotinib tablets on an empty stomach, i.e., at least one hour before or two hours after the ingestion of food. Treatment should continue until disease progression or unacceptable toxicity occurs [see Clinical Studies (14.5)]. Pulmonary † Interstitial Lung Disease (ILD) Discontinue erlotinib tablets During diagnostic evaluation for possible ILD Withhold erlotinib tablets * Hepatic † Severe hepatic toxicity that does not improve significantly or resolve within three weeks Discontinue erlotinib tablets In patients with pre-existing hepatic impairment or biliary obstruction for doubling of bilirubin or tripling of transaminases values over baseline Withhold erlotinib tablets *and consider discontinuation In patients without pre-existing hepatic impairment for total bilirubin levels greater than 3 times ",
+      "adjustment": "The recommended daily dose of erlotinib tablets for pancreatic cancer is 100 mg taken once daily in combination with gemcitabine. Take erlotinib tablets on an empty stomach, i.e., at least one hour before or two hours after the ingestion of food. Treatment should continue until disease progression or unacceptable toxicity occurs [see Clinical Studies (14.5)]. Pulmonary † Interstitial Lung Disease (ILD) Discontinue erlotinib tablets During diagnostic evaluation for possible ILD Withhold erlotinib tablets * Hepatic † Severe hepatic toxicity that does not improve significantly or resolve within three weeks Discontinue erlotinib tablets In patients with pre-existing hepatic impairment or biliary obstruction for doubling of bilirubin or tripling of transaminases values over baseline Withhold erlotinib tablets *and consider discontinuation In patients without pre-existing hepatic impairment for total bilirubin levels greater than 3 times the upper limit of normal or transaminases greater than 5 times the upper limit of normal Withhold erlotinib tablets *and consider discontinuation Renal † For severe (CTCAE grade 3 to 4) renal toxicity Withhold erlotinib tablets *and consider discontinua"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following serious adverse reactions, which may include fatalities, are discussed in greater detail in other sections of the labeling: • Interstitial Lung Di",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (≥ 20%) with erlotinib from a pooled analysis in patients with NSCLC across all approved lines of therapy, with and without EG",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Hetero Labs Limited at 1-866-495-1995 or FDA at 1-800-FDA-1088 or http://www.fda.gov/medwatch",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": "70%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Erlotinib N = 84 Chemotherapy † N = 83",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction All Grades % Grades 3 to 4 % All Grades % Grades 3 to 4 %",
+        "frequency": "4 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Chest pain 18 1 12 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Conjunctivitis 18 0 0 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Mucosal inflammation 18 1 6 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Musculoskeletal pain 11 1 1 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "†Platinum-based chemotherapy (cisplatin or carboplatin with gemcitabine or docetaxel). ‡Rash as a composite term includes rash, acne, folliculitis, erythema, ac",
+        "frequency": "3%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction ERLOTINIB N = 433 PLACEBO N = 445",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Any Grade Grade 3 Grade 4 Any Grade Grade 3 Grade 4",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Diarrhea 20 2 0 4 0 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "†Rash as a composite term includes: rash, acne, acneiform dermatitis, skin fissures, erythema, papular rash, rash generalized, pruritic rash, skin exfoliation, ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Liver test abnormalities including ALT elevations were observed at Grade 2 or greater severity in 3% of erlotinib-treated patients and 1% of placebo-treated pat",
+        "frequency": "3%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction Erlotinib 150 mg N=485 Placebo N=242",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Rash † 75 8 <1 17 0 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Diarrhea 54 6 <1 18 <1 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Anorexia 52 8 1 38 5 <1",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2024-07-10",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-012.xml",
+    "doc_hash": "0efe37af662ed7ccb2823b8b83514ffc132605020a8666df28808dbb233c36fa",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "a3b2d622-b4d5-4819-862b-f8fd3adcec6f",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/a3b2d622-b4d5-4819-862b-f8fd3adcec6f.xml",
+    "atc_code": "L01EB02",
+    "approval_no": null,
+    "source_name": "ERLOTINIB 说明书（FDA DailyMed）",
+    "source_version": "2024",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-012.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "CYP3A4 Inhibitors Co-administration of erlotinib with a strong CYP3A4 inhibitor or a combined CYP3A4 and CYP1A2 inhibitor increased erlotinib exposure. Erlotinib is metabolized primarily by CYP3A4 and to a lesser extent by CYP1A2. Increased erlotinib exposure may increase the risk of exposure-related toxicity [see Clinical Pharmacology (12.3)]. Avoid co-administering erlotinib with strong CYP3A4 inhibitors (e.g., boceprevir, clarithromycin, conivaptan, indinavir, itraconazole, ketoconazole, lopinavir/ritonavir, nefazodone, nelfinavir, posaconazole, ritonavir, saquinavir, telithromycin, voriconazole, grapefruit or grapefruit juice) or a combined CYP3A4 and CYP1A2 inhibitor (e.g., ciprofloxacin). Reduce the erlotinib dosage when co-administering with a strong CYP3A4 inhibitor or a combined CYP3A4 and CYP1A2 inhibitor if co-administration is unavoidable [see Dosage and Administration (2.4)]. CYP3A4 Inducers Pre-treatment with a CYP3A4 inducer prior to erlotinib decreased erlotinib exposure [see Clinical Pharmacology (12.3)]. Increase the erlotinib dosage if co-administration with CYP3A4 inducers (e.g., carbamazepine, phenytoin, rifampin, rifabutin, rifapentine, phenobarbital and St. John's wort) is unavoidable [see Dosage and Administration (2.4)]. CYP1A2 Inducers and Cigarette Smoking Cigarette smoking decreased erlotinib exposure. Avoid smoking tobacco (CYP1A2 inducer) and avoid concomitant use of erlotinib with moderate CYP1A2 inducers (e.g., teriflunomide, rifampin, or phenytoin). Increase the erlotinib dosage in patients that smoke tobacco or when co-administration with moderate CYP1A2 inducers is unavoidable [see Dosage and Administration (2.4) and Clinical Pharmacology (12.3)]. Drugs the Increase Gastric pH Co-administration of erlotinib with proton pump inhibitors (e.g., omeprazole) and H-2 receptor antagonists (e.g., ranitidine) decreased erlotinib exposure [see Clinical Pharmacology (12.3)]. For proton pump inhibitors, avoid concomitant use if possible. For H-2 receptor antagonists and antacids, modify the dosing schedule [see Dosage and Administration (2.4)]. Increasing the dose of erlotinib when co-administered with gastric pH elevating agents is not likely to compensate for the loss of exposure. Anticoagulants Interaction with coumarin-derived anticoagulants, including warfarin, leading to increased International Normalized Ratio (INR) and bleeding adverse reactions, which in some cases were fatal, have been reported in patients receiving erlotinib. Regularly monitor prothrombin time or INR in patients taking coumarin-derived anticoagulants. Dose modifications of erlotinib are not recommended [see Warnings and Precautions (5.9) and Adverse Reactions (6.1)].",
+      "• CYP3A4 inhibitors or a combined CYP3A4 and CYP1A2 inhibitor increase erlotinib plasma concentrations. Avoid concomitant use. If not possible, reduce erlotinib dose. ( 2.4, 7) • CYP3A4 inducers decrease erlotinib plasma concentrations. Avoid concomitant use. If not possible, increase erlotinib dose. ( 2.4, 7) • Cigarette smoking and CYP1A2 inducers decrease erlotinib plasma concentrations. Avoid concomitant use. If not possible, increase erlotinib dose. ( 2.4, 7) • Drugs that increase gastric pH decrease erlotinib plasma concentrations. For proton pump inhibitors avoid concomitant use if possible. For H-2 receptor antagonists, take erlotinib 10 hours after H-2 receptor antagonist dosing. For use with antacids, separate dosing by several hours. ( 2.4, 7)"
+    ],
+    "warnings": [
+      {
+        "code": "43685-7",
+        "title": "5 WARNINGS AND PRECAUTIONS",
+        "text": "5 WARNINGS AND PRECAUTIONS: • Interstitial lung disease (ILD):Occurs in 1.1% of patients. Withhold erlotinib for acute onset of new or progressive unexplained pulmonary symptoms, such as dyspnea, cough and fever. Discontinue erlotinib if ILD is diagnosed. ( 5.1) • Renal failure:Monitor renal function and electrolytes, particularly in patients at risk of dehydration. Withhold erlotinib for severe renal toxicity. ( 5.2) • Hepatotoxicity:Occurs with or without hepatic impairment, including hepatic failure and hepatorenal syndrome: Monitor periodic liver testing. Withhold or discontinue erlotinib for severe or worsening liver tests. ( 5.3) • Gastrointestinal perforations: Discontinue erlotinib. ( 5.4) • Bullous and exfoliative skin disorders:Discontinue erlotinib. ( 5.5) • Cerebrovascular accident (CVA):The risk of CVA is increased in patients with pancreatic cancer. ( 5.6) • Microangiopathic hemolytic anemia (MAHA):The risk of MAHA is increased in patients with pancreatic cancer. ( 5.7) • Ocular disorders:Discontinue erlotinib for corneal perforation, ulceration or persistent severe keratitis. ( 5.8) • Hemorrhage in patients taking warfarin:Regularly monitor INR in patients taking warfarin or other coumarin-derivative anticoagulants. ( 5.9) • Embryo-fetal toxicity:Can cause fetal harm. Advise females of reproductive potential of the potential risk to the fetus and to use effective contraception. ( 5.10, 8.1, 8.3)",
+        "char_len": 1433,
+        "source_section_code": "43685-7",
+        "source_title": "5 WARNINGS AND PRECAUTIONS",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.1 Interstitial Lung Disease (ILD)",
+        "text": "5.1 Interstitial Lung Disease (ILD): Cases of serious ILD, including fatal cases, can occur with erlotinib treatment. The overall incidence of ILD in approximately 32,000 erlotinib-treated patients in uncontrolled studies and studies with concurrent chemotherapy was approximately 1.1%. In patients with ILD, the onset of symptoms was between 5 days to more than 9 months (median 39 days) after initiating erlotinib therapy. Withhold erlotinib for acute onset of new or progressive unexplained pulmonary symptoms such as dyspnea, cough, and fever pending diagnostic evaluation. If ILD is confirmed, permanently discontinue erlotinib [see Dosage and Administration (2.4)].",
+        "char_len": 671,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Interstitial Lung Disease (ILD)",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Renal Failure",
+        "text": "5.2 Renal Failure: Hepatorenal syndrome, severe acute renal failure including fatal cases, and renal insufficiency can occur with erlotinib treatment. Renal failure may arise from exacerbation of underlying baseline hepatic impairment or severe dehydration. The pooled incidence of severe renal impairment in the 3 monotherapy lung cancer studies was 0.5% in the erlotinib arms and 0.8% in the control arms. The incidence of renal impairment in the pancreatic cancer study was 1.4% in the erlotinib plus gemcitabine arm and 0.4% in the control arm. Withhold erlotinib in patients developing severe renal impairment until renal toxicity is resolved. Perform periodic monitoring of renal function and serum electrolytes during erlotinib treatment [see Adverse Reactions (6.1) and Dosage and Administration (2.4)].",
+        "char_len": 811,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Renal Failure",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Hepatotoxicity with or without Hepatic Impairment",
+        "text": "5.3 Hepatotoxicity with or without Hepatic Impairment: Hepatic failure and hepatorenal syndrome, including fatal cases, can occur with erlotinib treatment in patients with normal hepatic function; the risk of hepatic toxicity is increased in patients with baseline hepatic impairment. In clinical studies where patients with moderate to severe hepatic impairment were excluded, the pooled incidence of hepatic failure in the 3 monotherapy lung cancer studies was 0.4% in the erlotinib arms and 0% in the control arms. The incidence of hepatic failure in the pancreatic cancer study was 0.4% in the erlotinib plus gemcitabine arm and 0.4% in the control arm. In a pharmacokinetic study in 15 patients with moderate hepatic impairment (Child-Pugh B) associated with significant liver tumor burden, 10 of these 15 patients died within 30 days of the last erlotinib dose. One patient died from hepatorenal syndrome, 1 patient died from rapidly progressing liver failure and the remaining 8 patients died from progressive disease. Six out of the 10 patients who died had baseline total bilirubin > 3 x ULN. Perform periodic liver testing (transaminases, bilirubin, and alkaline phosphatase) during treatment with erlotinib. Increased frequency of monitoring of liver function is required for patients with pre-existing hepatic impairment or biliary obstruction. Withhold erlotinib in patients without pre-existing hepatic impairment for total bilirubin levels greater than 3 times the upper limit of normal or transaminases greater than 5 times the upper limit of normal. Withhold erlotinib in patients with pre-existing hepatic impairment or biliary obstruction for doubling of bilirubin or tripling of transaminases values over baseline. Discontinue erlotinib in patients whose abnormal liver tests meeting the above criteria do not improve significantly or resolve within three weeks [see Dosage and Administration (2.4) and Clinical Pharmacology (12.3)].",
+        "char_len": 1953,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Hepatotoxicity with or without Hepatic Impairment",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Gastrointestinal Perforation",
+        "text": "5.4 Gastrointestinal Perforation: Gastrointestinal perforation, including fatal cases, can occur with erlotinib treatment. Patients receiving concomitant anti-angiogenic agents, corticosteroids, NSAIDs, or taxane-based chemotherapy, or who have prior history of peptic ulceration or diverticular disease may be at increased risk of perforation [see Adverse Reactions (6.1, 6.2)]. The pooled incidence of gastrointestinal perforation in the 3 monotherapy lung cancer studies was 0.2% in the erlotinib arms and 0.1% in the control arms. The incidence of gastrointestinal perforation in the pancreatic cancer study was 0.4% in the erlotinib plus gemcitabine arm and 0% in the control arm. Permanently discontinue erlotinib in patients who develop gastrointestinal perforation [see Dosage and Administration (2.4)].",
+        "char_len": 811,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Gastrointestinal Perforation",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Bullous and Exfoliative Skin Disorders",
+        "text": "5.5 Bullous and Exfoliative Skin Disorders: Bullous, blistering and exfoliative skin conditions, including cases suggestive of Stevens-Johnson syndrome/toxic epidermal necrolysis, which in some cases were fatal, can occur with erlotinib treatment [see Adverse Reactions (6.1, 6.2)]. The pooled incidence of bullous and exfoliative skin disorders in the 3 monotherapy lung cancer studies was 1.2% in the erlotinib arms and 0% in the control arms. The incidence of bullous and exfoliative skin disorders in the pancreatic cancer study was 0.4% in the erlotinib plus gemcitabine arm and 0% in the control arm. Discontinue erlotinib treatment if the patient develops severe bullous, blistering or exfoliating conditions [see Dosage and Administration (2.4)].",
+        "char_len": 754,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Bullous and Exfoliative Skin Disorders",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Cerebrovascular Accident",
+        "text": "5.6 Cerebrovascular Accident: In the pancreatic carcinoma trial, seven patients in the erlotinib/gemcitabine group developed cerebrovascular accidents (incidence: 2.5%). One of these was hemorrhagic and was the only fatal event. In comparison, in the placebo/gemcitabine group there were no cerebrovascular accidents. The pooled incidence of cerebrovascular accident in the 3 monotherapy lung cancer studies was 0.6% in the erlotinib arms and not higher than that observed in the control arms.",
+        "char_len": 493,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Cerebrovascular Accident",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Microangiopathic Hemolytic Anemia with Thrombocytopenia",
+        "text": "5.7 Microangiopathic Hemolytic Anemia with Thrombocytopenia: The pooled incidence of microangiopathic hemolytic anemia with thrombocytopenia in the 3 monotherapy lung cancer studies was 0% in the erlotinib arms and 0.1% in the control arms. The incidence of microangiopathic hemolytic anemia with thrombocytopenia in the pancreatic cancer study was 1.4% in the erlotinib plus gemcitabine arm and 0% in the control arm.",
+        "char_len": 418,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Microangiopathic Hemolytic Anemia with Thrombocytopenia",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Ocular Disorders",
+        "text": "5.8 Ocular Disorders: Decreased tear production, abnormal eyelash growth, keratoconjunctivitis sicca or keratitis can occur with erlotinib treatment and can lead to corneal perforation or ulceration [see A dverse Reactions (6.1)and (6.2)] . The pooled incidence of ocular disorders in the 3 monotherapy lung cancer studies was 17.8% in the erlotinib arms and 4% in the control arms. The incidence of ocular disorders in the pancreatic cancer study was 12.8% in the erlotinib plus gemcitabine arm and 11.4% in the control arm. Interrupt or discontinue erlotinib therapy if patients present with acute or worsening ocular disorders such as eye pain [see Dosage and Administration (2.4)].",
+        "char_len": 685,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Ocular Disorders",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Hemorrhage in Patients Taking Warfarin",
+        "text": "5.9 Hemorrhage in Patients Taking Warfarin: Severe and fatal hemorrhage associated with International Normalized Ratio (INR) elevations can occur when erlotinib and warfarin are administered concurrently. Regularly monitor prothrombin time and INR during erlotinib treatment in patients taking warfarin or other coumarin-derivative anticoagulants [see Adverse Reactions (6.1) and Drug Interactions (7)].",
+        "char_len": 403,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Hemorrhage in Patients Taking Warfarin",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Embryo-Fetal Toxicity",
+        "text": "5.10 Embryo-Fetal Toxicity: Based on animal data and its mechanism of action, erlotinib tablets can cause fetal harm when administered to a pregnant woman. When given during organogenesis, erlotinib administration resulted in embryo-fetal lethality and abortion in rabbits at exposures approximately 3 times the exposure at the recommended human daily dose of 150 mg. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during therapy and for one month after the last dose of erlotinib tablets [see Use in Specific Populations (8.1) and (8.3), Clinical Pharmacology (12.1)].",
+        "char_len": 650,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-012.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: Hepatic failure and hepatorenal syndrome, including fatal cases, can occur with erlotinib treatment in patients with normal hepatic function; the risk of hepatic toxicity is increased in patients with baseline hepatic impairment [see Warnings and Precautions (5.3), Adverse Reactions (6.1, 6.2), and Dosage and Administration]. Monitor patients with hepatic impairment (total bilirubin greater than upper limit of normal (ULN) or Child-Pugh A, B and C) during therapy with erlotinib. Treatment with erlotinib should be used with increased monitoring in patients with total bilirubin greater than 3 x ULN [see Warnings and Precautions (5.3), Adverse Reactions (6.1, 6.2), and Dosage and Administration (2.4)].",
+            "char_len": 732,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-012.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.4 Dose Modifications",
+            "text": "2.4 Dose Modifications: Adverse Reactions Pulmonary † Interstitial Lung Disease (ILD) Discontinue erlotinib tablets During diagnostic evaluation for possible ILD Withhold erlotinib tablets * Hepatic † Severe hepatic toxicity that does not improve significantly or resolve within three weeks Discontinue erlotinib tablets In patients with pre-existing hepatic impairment or biliary obstruction for doubling of bilirubin or tripling of transaminases values over baseline Withhold erlotinib tablets *and consider discontinuation In patients without pre-existing hepatic impairment for total bilirubin levels greater than 3 times the upper limit of normal or transaminases greater than 5 times the upper limit of normal Withhold erlotinib tablets *and consider discontinuation Renal † For severe (CTCAE grade 3 to 4) renal toxicity Withhold erlotinib tablets *and consider discontinuation Gastrointestinal † Gastrointestinal perforation Discontinue erlotinib tablets For persistent severe diarrhea not responsive to medical management (e.g., loperamide) Withhold erlotinib tablets * Skin † Severe bullous, blistering or exfoliating skin conditions Discontinue erlotinib tablets For severe rash not responsive to medical management Withhold erlotinib tablets * Ocular † Corneal perforation or severe ulceration Discontinue erlotinib tablets For keratitis of (NCI-CTC version 4.0) grade 3-4 or for grade 2 lasting more than 2 weeks Withhold erlotinib tablets * For acute/worsening ocular disorders such as eye pain Withhold erlotinib tablets *and consider discontinuation Drug Interactions CYP3A4 inhibitors ‡ If severe reactions occur with concomitant use of strong CYP3A4 inhibitors [such as atazanavir, clarithromycin, indinavir, itraconazole, ketoconazole, nefazodone, nelfinavir, ritonavir, saquinavir, telithromycin, troleandomycin (TAO), voriconazole, or grapefruit or grapefruit juice] or when using concomitantly with an inhibitor of both CYP3A4 and CYP1A2 (e.g., ciprofloxacin) Reduce erlotinib tablets by 50 mg decrements; avoid concomitant use if possible CYP3A4 inducers ‡ Concomitant use with CYP3A4 inducers, such as rifampin, rifabutin, rifapentine, phenytoin, carbamazepine, phenobarbital, or St. John’s Wort Increase erlotinib tablets by 50 mg increments at 2-week intervals to a maximum of 450 mg as tolerated. Avoid concomitant use if possible Concurrent Cigarette Smoking ‡§ Concurrent cigarette smoking Increase erlotinib tablets by 50 mg increments at 2-week intervals to a maximum of 300 mg. Immediately reduce the dose of erlotinib tablets to the recommended dose (150 mg or 100 mg daily) upon cessation of smoking Proton Pump inhibitors Separation of doses may not eliminate the interaction since proton pump inhibitors affect the pH of the upper GI tract for an extended period Avoid concomitant use if possible H 2-receptor antagonists If treatment with an H 2-receptor antagonist such as ranitidine is required, separate dosing. Erlotinib tablets must be taken 10 hours after the H 2-receptor antagonist dosing and at least 2 hours before the next dose of the H 2receptor antagonist Antacids The effect of antacids on erlotinib pharmacokinetics has not been evaluated. The antacid dose and the erlotinib tablets dose should be separated by several hours, if an antacid is necessary †For additional information see Warnings and Precautions (5). *Reduce erlotinib by 50 mg decrements when restarting therapy following withholding treatment for a dose-limiting toxicity that has resolved to baseline or grade ≤ 1. ‡For additional information see Drug Interactions (7) . §For additional information see Clinical Pharmacology (12.3).",
+            "char_len": 3651,
+            "source_section_code": "42229-5",
+            "source_title": "2.4 Dose Modifications",
+            "source_xml": "DRUG-LUNG-FDA-012.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-012.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种激酶抑制剂类抗肿瘤药，用于治疗特定基因类型的转移性非小细胞肺癌，以及局部晚期或转移性胰腺癌。\", \"how_to_use\": \"肺癌常规剂量为每天一次150毫克，空腹服用。胰腺癌常规剂量为每天一次100毫克，空腹服用，与吉西他滨联用。空腹指饭前至少1小时或饭后至少2小时服药。治疗持续到疾病进展或出现不能耐受的毒性。\", \"cautions\": [\"肺癌用药前需经FDA批准的检测确认肿瘤存在EGFR外显子19缺失或外显子21 L858R突变。\", \"若血浆标本未检出上述突变，如有肿瘤组织标本应进一步检测。\", \"其他EGFR突变的非小细胞肺癌患者中，本药的安全性和有效性尚未确立。\", \"不建议本药与铂类化疗联合使用。\", \"应避免与强CYP3A4抑制剂或CYP3A4与CYP1A2双重抑制剂同用，如无法避免需减量。\", \"应避免与CYP3A4诱导剂同用，如无法避免需增量。\", \"应避免吸烟，避免与中度CYP1A2诱导剂同用，如无法避免需增量。\", \"应尽量避免与质子泵抑制剂同用；与H-2受体拮抗剂或抗酸药同用需调整服药时间。\", \"与华法林等香豆素类抗凝药同用可能增加INR和出血风险，需定期监测凝血指标。\", \"出现可能为间质性肺病的情况时，需停药并进行诊断评估。\", \"出现严重肝毒性不改善或三周内不缓解时需停药；部分肝功能指标升高时需暂停用药并考虑停药。\", \"出现严重肾脏毒性时需暂停用药并考虑停药。\"], \"side_effects\": [{\"term\": \"间质性肺病\", \"plain\": \"属于严重不良反应，可能危及生命。\", \"when_to_seek_help\": \"出现可能提示间质性肺病的症状时，需停药并就医评估。\"}, {\"term\": \"皮疹\", \"plain\": \"皮肤出现皮疹、痤疮、红斑、脱皮等表现，较常见。\", \"when_to_seek_help\": \"皮疹严重或持续加重时需就医。\"}, {\"term\": \"腹泻\", \"plain\": \"排便次数增多或大便变稀，较常见。\", \"when_to_seek_help\": \"腹泻严重或持续不缓解时需就医。\"}, {\"term\": \"食欲减退\", \"plain\": \"不想吃东西或进食减少，较常见。\", \"when_to_seek_help\": \"食欲明显下降影响进食时需就医。\"}, {\"term\": \"肝功能异常\", \"plain\": \"化验可发现肝酶升高等肝脏指标异常。\", \"when_to_seek_help\": \"发现肝功能指标明显异常时需就医。\"}, {\"term\": \"出血风险增加\", \"plain\": \"与华法林等抗凝药同用时可增加出血风险。\", \"when_to_seek_help\": \"出现异常出血时需及时就医。\"}], \"seek_help\": \"出现可能提示间质性肺病的症状、严重或持续加重的皮疹和腹泻、明显食欲下降、肝功能指标明显异常、异常出血等情况时，需及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:17:01"
+  }
+]

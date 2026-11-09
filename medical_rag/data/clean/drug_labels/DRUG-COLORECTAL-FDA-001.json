@@ -1,0 +1,369 @@
+[
+  {
+    "drug_id": "DRUG-COLORECTAL-FDA-001",
+    "generic_name": "CAPECITABINE",
+    "brand_names": [],
+    "aliases_zh": [
+      "卡培他滨"
+    ],
+    "title": "CAPECITABINE 说明书（FDA DailyMed）",
+    "indications": [
+      "Capecitabine is a nucleoside metabolic inhibitor indicated for: Colorectal Cancer • adjuvant treatment of patients with Stage III colon cancer as a single agent or as a component of a combination chemotherapy regimen. ( 1.1) • perioperative treatment of adults with locally advanced rectal cancer as a component of chemoradiotherapy. ( 1.1) • treatment of patients with unresectable or metastatic colorectal cancer as a single agent or as a component of a combination chemotherapy regimen. ( 1.1) Breast Cancer • treatment of patients with advanced or metastatic breast cancer as a single agent if an anthracycline-or taxane-containing chemotherapy is not indicated. ( 1.2) • treatment of patients with advanced or metastatic breast cancer in combination with docetaxel after disease progression on prior anthracycline-containing chemotherapy. ( 1.2) Gastric, Esophageal, or Gastroesophageal Junction Cancer • treatment of adults with unresectable or metastatic gastric, esophageal, or gastroesophageal junction cancer as a component of a combination chemotherapy regimen. ( 1.3) • treatment of adults with HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma who have not received prior treatment for metastatic disease as a component of a combination regimen. ( 1.3) Pancreatic Cancer • adjuvant treatment of adults with pancreatic adenocarcinoma as a component of a combination chemotherapy regimen. ( 1.4)",
+      "Capecitabine tablet is indicated for the: • adjuvant treatment of patients with Stage III colon cancer as a single agent or as a component of a combination chemotherapy regimen. • perioperative treatment of adults with locally advanced rectal cancer as a component of chemoradiotherapy. • treatment of patients with unresectable or metastatic colorectal cancer as a single agent or as a component of a combination chemotherapy regimen.",
+      "Capecitabine tablet is indicated for the: • treatment of patients with advanced or metastatic breast cancer as a single agent if an anthracycline-or taxane-containing chemotherapy is not indicated. • treatment of patients with advanced or metastatic breast cancer in combination with docetaxel after disease progression on prior anthracycline-containing chemotherapy.",
+      "Capecitabine tablet is indicated for the: • treatment of adults with unresectable or metastatic gastric, esophageal, or gastroesophageal junction cancer as a component of a combination chemotherapy regimen. • treatment of adults with HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma who have not received prior treatment for metastatic disease as a component of a combination regimen.",
+      "Capecitabine tablet is indicated for the adjuvant treatment of adults with pancreatic adenocarcinoma as a component of a combination chemotherapy regimen."
+    ],
+    "dosage": {
+      "standard": "Adjuvant Treatment of Colon Cancer • Single agent: 1,250 mg/m2 twice daily orally for the first 14 days of each 21-day cycle for a maximum of 8 cycles. ( 2.1) In combination with Oxaliplatin-Containing Regimens: 1,000 mg/m2 orally twice daily for the first 14 days of each 21-day cycle for a maximum of 8 cycles in combination with oxaliplatin 130 mg/m2 administered intravenously on day 1 of each cycle. ( 2.2) Perioperative Treatment of Rectal Cancer • With Concomitant Radiation Therapy: 825 mg/m2 orally twice daily ( 2.2) • Without Radiation Therapy: 1,250 mg/m2 orally twice daily ( 2.2) Unresectable or Metastatic Colorectal Cancer: • Single agent: 1,250 mg/m2 twice daily orally for the first 14 days of each 21-day cycle until disease progression or unacceptable toxicity. ( 2.2) • In Combination with Oxaliplatin: 1,000 mg/m2 orally twice daily for the first 14 days of each 21-day cycle until disease progression or unacceptable toxicity in combination with oxaliplatin 130 mg/m2 administered intravenously on day 1 of each cycle. ( 2.2) Advanced or Metastatic Breast Cancer: • Single agent: 1,000 mg/m2 or 1,250 mg/m2 twice daily orally for the first 14 days of each 21-day cycle until disease progression or unacceptable toxicity. ( 2.3) • In combination with docetaxel: 1,000 mg/m2 or 1,250 mg/m2 orally twice daily for the first 14 days of a 21-day cycle, until disease progression or unacceptable toxicity in combination with docetaxel at 75 mg/m2 administered intravenously on day 1 of each cycle ( 2.3) Unresectable or Metastatic Gastric, Esophageal, or Gastroesophageal Junction Cancer • 625 mg/m2 orally twice daily on days 1 to 21 of each 21-day cycle for a maximum of 8 cycles in combination with platinum-containing chemotherapy. ( 2.4) OR • 850 mg/m2 or 1,000 mg/m2 orally twi",
+      "adjustment": "The recommended dosage of capecitabine tablet for unresectable or metastatic gastric, esophageal, or gastroesophageal junction cancer is: • 625 mg/m 2orally twice daily on days 1 to 21 of each 21-day cycle for a maximum of 8 cycles in combination with platinum-containing chemotherapy. OR • 850 mg/m 2or 1,000 mg/m 2orally twice daily for the first 14 days of each 21-day cycle until disease progression or unacceptable toxicity in combination with oxaliplatin 130 mg/m 2administered intravenously on day 1 of each cycle. Individualize the dose and dosing schedule of capecitabine tablet based on patient risk factors and adverse reactions. The recommended dosage of capecitabine tablet for HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma is 1,000 mg/m 2orally twice daily for the first 14 days of each 21-day cycle until disease progression or unacceptable toxicity in combination with cisplatin and trastuzumab. Refer to the Prescribing Information for agents used in combination for additional dosing information as appropriate. The recommended dosage of capecitabine tablet is 830 mg/m 2orally twice daily for the first 21 days of each 28-day cycle until diseas"
+    },
+    "contraindications": [
+      "Capecitabine is contraindicated in patients with history of severe hypersensitivity reaction to fluorouracil or capecitabine [see Adverse Reactions (6.1)].",
+      "History of severe hypersensitivity reactions to fluorouracil or capecitabine ( 4)"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following clinically significant adverse reactions are described elsewhere in the labeling: • Cardiotoxicity [see Warnings and Precautions (5.3)] • Diarrhea",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "• Most common adverse reactions in patients who received capecitabine as a single agent for the adjuvant treatment for colon cancer ( >30%) were palmar-plantar ",
+        "frequency": "30%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": "0.8%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 2 Adverse Reactions (>10%) in Patients Who Received Capecitabine for Adjuvant Treatment of Colon Cancer in X-ACT",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction Capecitabine (N=995) Fluorouracil + Leucovorin (N=974)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades (%) Grade 3 or 4 (%) All Grades (%) Grade 3 or 4 (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin and Subcutaneous Tissue",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Palmar-plantar erythrodysesthesia syndrome 60 17 9 <1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Diarrhea 47 12 65 14",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Stomatitis 22 2 60 14",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Abdominal pain 14 3 16 2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Clinically relevant adverse reactions in <10% of patients are presented below: Eye: conjunctivitis Gastrointestinal: constipation, upper abdominal pain, dyspeps",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 3 Grade 3 or 4 Laboratory Abnormalities (>1%) in Patients Who Received Capecitabine as a Single Agent for Adjuvant Treatment of Colon Cancer in X-ACT",
+        "frequency": "1%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Laboratory Abnormality Capecitabine (N=995) Fluorouracil + Leucovorin (N=974)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Grade 3 or 4 (%) Grade 3 or 4 (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Bilirubin increased 20 6",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Lymphocytes decreased 13 13",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Neutrophils/granulocytes decreased 2.4 26",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Calcium decreased 2.3 2.2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Neutrophils decreased 2.2 26",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "colorectal",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-07-23",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-COLORECTAL-FDA-001.xml",
+    "doc_hash": "292b48de7f2ce140512a991c878fc39df6abf411211d821248b6e7ccd57ef549",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "0b59e98c-5b34-4b93-90f6-20526f4d4f88",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/0b59e98c-5b34-4b93-90f6-20526f4d4f88.xml",
+    "atc_code": "L01BC06",
+    "approval_no": null,
+    "source_name": "CAPECITABINE 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-COLORECTAL-FDA-001.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "• Allopurinol:Avoid concomitant use of allopurinol with capecitabine. ( 7.1) • Leucovorin:Closely monitor for toxicities when capecitabine is coadministered with leucovorin. ( 7.1) • CYP2C9 substrates: Closely monitor for adverse reactions when CYP2C9 substrates are coadministered with capecitabine. ( 7.2) • Vitamin K antagonists: Monitor INR more frequently and dose adjust oral vitamin K antagonist as appropriate • Phenytoin:Closely monitor phenytoin levels in patients taking capecitabine concomitantly with phenytoin and adjust the phenytoin dose as appropriate. ( 7.2) • Nephrotoxic drugs: Closely monitor for signs of renal toxicity when capecitabine is used concomitantly with nephrotoxic drugs. ( 7.3)",
+      "Allopurinol Concomitant use with allopurinol may decrease concentration of capecitabine’s active metabolites [see Clinical Pharmacology (12.3)], which may decrease efficacy. Avoid concomitant use of allopurinol with capecitabine. LeucovorinThe concentration of fluorouracil is increased and its toxicity may be enhanced by leucovorin, folic acid, or folate analog products. Deaths from severe enterocolitis, diarrhea, and dehydration have been reported in elderly patients receiving weekly leucovorin and fluorouracil. Instruct patients not to take products containing folic acid or folate analog products unless directed to do so by their healthcare provider.",
+      "CYP2C9 Substrates Capecitabine increased exposure of CYP2C9 substrates [see Clinical Pharmacology (12.3)], which may increase the risk of adverse reactions related to these substrates. Closely monitor for adverse reactions of CYP2C9 substrates where minimal concentration changes may lead to serious adverse reactions when used concomitantly with capecitabine (e.g., anticoagulants, antidiabetic drugs). Vitamin K Antagonists Capecitabine increases exposure of vitamin K antagonist [see Clinical Pharmacology (12.3)] , which may alter coagulation parameters and/or bleeding and could result in death [see Warning and Precautions (5.1)]. These events may occur within days of treatment initiation and up to 1 month after discontinuation of capecitabine. Monitor INR more frequently and refer to the prescribing information of oral vitamin K antagonist for dosage adjustment, as appropriate, when capecitabine is used concomitantly with vitamin K antagonist. Phenytoin Capecitabine may increases exposure of phenytoin, which may increase the risk of adverse reactions related to phenytoin. Closely monitor phenytoin levels and refer to the prescribing information of phenytoin for dosage adjustment, as appropriate, when capecitabine is used concomitantly with phenytoin.",
+      "Due of the additive pharmacologic effect, concomitant use of capecitabine with other drugs known to cause renal toxicity may increase the risk of renal toxicity [see Warnings and Precautions (5.6)] . Closely monitor for signs of renal toxicity when capecitabine is used concomitantly with nephrotoxic drugs (e.g. platinum salts, irinotecan, methotrexate, intravenous bisphosphonates)."
+    ],
+    "warnings": [
+      {
+        "code": "43685-7",
+        "title": "5 WARNINGS AND PRECAUTIONS",
+        "text": "5 WARNINGS AND PRECAUTIONS: • Serious Adverse Reactions from Dihydropyrimidine Dehydrogenase (DPD) Deficiency: Patients with certain homozygous or compound heterozygous variants in the DPYD gene are at increased risk for acute early-onset toxicity and serious, including fatal, adverse reactions due to capecitabine (e.g., mucositis, diarrhea, neutropenia, and neurotoxicity). Capecitabine is not recommended for use in patients known to have certain homozygous or compound heterozygous DPYD variants that result in complete absence of DPD activity. Withhold or permanently discontinue based on clinical assessment. No capecitabine dose has been proven safe in patients with complete absence of DPD activity. (5.2) • Cardiotoxicity:May be more common in patients with a prior history of coronary artery disease. Withhold capecitabine for cardiotoxicity as appropriate. The safety of resumption of capecitabine in patients with cardiotoxicity that has resolved has not been established. ( 2.5, 5.3) • Diarrhea:Withhold capecitabine and then resume at same or reduced dose, or permanently discontinue, based on severity and occurrence. ( 2.5, 5.4) • Dehydration:Optimize hydration before starting capecitabine. Monitor hydration status and kidney function at baseline and as clinically indicated. Withhold capecitabine and then resume at same or reduced dose, or permanently discontinue, based on severity and occurrence. ( 2.5, 5.5) • Renal Toxicity:Monitor renal function at baseline and as clinically indicated. Optimize hydration before starting capecitabine. Withhold capecitabine and then resume at same or reduced dose, or permanently discontinue, based on severity and occurrence. ( 2.5, 5.6) • Serious Skin Toxicities:Monitor for new or worsening serious skin reactions. Permanently discontinue capecitabine in patients who experience a severe cutaneous adverse reaction. ( 5.7) • Palmar-Plantar Erythrodysesthesia Syndrome:Withhold capecitabine then resume at same or reduced dose, or permanently discontinue, based on severity and occurrence. ( 2.5, 5.8) • Myelosuppression:Monitor complete blood count at baseline and before each cycle. Capecitabine is not recommended in patients with baseline neutrophil counts <1.5 x 10 9/L or platelet counts <100 x 10 9/L. For grade 3 or 4 myelosuppression, withhold capecitabine and then resume at same or reduced dose, or permanently discontinue, based on occurrence. ( 2.5, 5.9) • Hyperbilirubinemia:Patients with Grade 3 to 4 hyperbilirubinemia may resume treatment once the event is Grade 2 or less ( <3 x ULN), using the percent of current dose as shown in column 3 of Table 1 ( 2.5, 5.10) • Embryo-Fetal Toxicity:Can cause fetal harm. Advise patients of the potential risk to a fetus and to use effective contraception. ( 5.11, 8.1, 8.3)",
+        "char_len": 2792,
+        "source_section_code": "43685-7",
+        "source_title": "5 WARNINGS AND PRECAUTIONS",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.1 Increased Risk of Bleeding With Concomitant Use of Vitamin K Antagonists",
+        "text": "5.1 Increased Risk of Bleeding With Concomitant Use of Vitamin K Antagonists: Altered coagulation parameters and/or bleeding, including death, have been reported in patients taking capecitabine concomitantly with vitamin K antagonists, such as warfarin. Clinically significant increases in PT and INR have been reported in patients who were on stable doses of oral vitamin K antagonists at the time capecitabine was introduced. These events occurred within several days and up to several months after initiating capecitabine and, in a few cases, within 1 month after stopping capecitabine. These events occurred in patients with and without liver metastases. Monitor INR more frequently and adjust the dose of the vitamin K antagonist as appropriate [see Drug Interactions (7.1)].",
+        "char_len": 780,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Increased Risk of Bleeding With Concomitant Use of Vitamin K Antagonists",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Serious Adverse Reactions from Dihydropyrimidine Dehydrogenase (DPD) Deficiency",
+        "text": "5.2 Serious Adverse Reactions from Dihydropyrimidine Dehydrogenase (DPD) Deficiency: Patients with certain homozygous or compound heterozygous variants in the DPYDgene known to result in complete or near complete absence of DPD activity (complete DPD deficiency) are at increased risk for acute early-onset toxicity and serious, including fatal, adverse reactions due to capecitabine (e.g., mucositis, diarrhea, neutropenia, and neurotoxicity). Patients with partial DPD activity (partial DPD deficiency) may also have increased risk of serious, including fatal, adverse reactions. Capecitabine is not recommended for use in patients known to have certain homozygous or compound heterozygous DPYDvariants that result in complete DPD deficiency. Withhold or permanently discontinue capecitabine based on clinical assessment of the onset, duration, and severity of the observed adverse reactions in patients with evidence of acute early-onset or unusually severe reactions, which may indicate complete DPD deficiency. No capecitabine dose has been proven safe for patients with complete DPD deficiency. There are insufficient data to recommend a specific dose in patients with partial DPD deficiency. Consider testing for genetic variants of DPYDprior to initiating capecitabine to reduce the risk of serious adverse reactions if the patient’s clinical status permits and based on clinical judgement [see Clinical Pharmacology (12.5)]. Serious adverse reactions may still occur even if no DPYDvariants are identified. An FDA-authorized test for the detection of genetic variants of DPYDto identify patients at risk of serious adverse reactions due to increased systemic exposure to capecitabine is not currently available. Currently available tests used to identify DPYDvariants may vary in accuracy and design (e.g., which DPYDvariant(s) they identify).",
+        "char_len": 1852,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Serious Adverse Reactions from Dihydropyrimidine Dehydrogenase (DPD) Deficiency",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Cardiotoxicity",
+        "text": "5.3 Cardiotoxicity: Cardiotoxicity can occur with capecitabine. Myocardial infarction/ischemia, angina, dysrhythmias, cardiac arrest, cardiac failure, sudden death, electrocardiographic changes, and cardiomyopathy have been reported with capecitabine. These adverse reactions may be more common in patients with a prior history of coronary artery disease. Withhold capecitabine for cardiotoxicity as appropriate [see Dosage and Administration (2.5)] . The safety of resumption of capecitabine in patients with cardiotoxicity that has resolved have not been established.",
+        "char_len": 569,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Cardiotoxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Diarrhea",
+        "text": "5.4 Diarrhea: Diarrhea, sometimes severe, can occur with capecitabine. In 875 patients with metastatic breast or colorectal cancer who received capecitabine as a single agent, the median time to first occurrence of grade 2 to 4 diarrhea was 34 days (range: 1 day to 1 year). The median duration of grade 3 to 4 diarrhea was 5 days. Withhold capecitabine and then resume at same or reduced dose or permanently discontinue based on severity and occurrence [see Dosage and Administration (2.5)].",
+        "char_len": 492,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Diarrhea",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Dehydration",
+        "text": "5.5 Dehydration: Dehydration can occur with capecitabine. Patients with anorexia, asthenia, nausea, vomiting, or diarrhea may be at an increased risk of developing dehydration with capecitabine. Optimize hydration before starting capecitabine. Monitor hydration status and kidney function at baseline and as clinically indicated. Withhold capecitabine and then resume at same or reduced dose, or permanently discontinue, based on severity and occurrence [see Dosage and Administration (2.5)].",
+        "char_len": 492,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Dehydration",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Renal Toxicity",
+        "text": "5.6 Renal Toxicity: Serious renal failure, sometimes fatal, can occur with capecitabine. Renal impairment or coadministration of capecitabine with other products known to cause renal toxicity may increase the risk of renal toxicity [see Drug Interactions (7.3)]. Monitor renal function at baseline and as clinically indicated. Optimize hydration before starting capecitabine. Withhold capecitabine and then resume at same or reduced dose, or permanently discontinue, based on severity and occurrence [see Dosage and Administration (2.5)].",
+        "char_len": 538,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Renal Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Serious Skin Toxicities",
+        "text": "5.7 Serious Skin Toxicities: Severe cutaneous adverse reactions (SCARs), including Stevens-Johnson Syndrome and toxic epidermal necrolysis (TEN), which can be fatal, can occur with capecitabine [see Adverse Reactions (6.2)]. Monitor for new or worsening serious skin reactions. Permanently discontinue capecitabine for severe cutaneous adverse reactions.",
+        "char_len": 354,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Serious Skin Toxicities",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Palmar-Plantar Erythrodysesthesia Syndrome",
+        "text": "5.8 Palmar-Plantar Erythrodysesthesia Syndrome: Palmar-plantar erythrodysesthesia syndrome (PPES) can occur with capecitabine. In patients with metastatic breast or colorectal cancer who received capecitabine as a single agent, the median time to onset of grades 1 to 3 PPES was 2.6 months (range: 11 days to 1 year). Withhold capecitabine and then resume at same or reduced dose or permanently discontinue based on severity and occurrence [see Dosage and Administration (2.5)].",
+        "char_len": 478,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Palmar-Plantar Erythrodysesthesia Syndrome",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Myelosuppression",
+        "text": "5.9 Myelosuppression: Myelosuppression can occur with capecitabine. In the 875 patients with metastatic breast or colorectal cancer who received capecitabine as a single agent, 3.2% had grade 3 or 4 neutropenia, 1.7% had grade 3 or 4 thrombocytopenia, and 2.4% had grade 3 or 4 anemia. In the 251 patients with metastatic breast cancer who received capecitabine with docetaxel, 68% had grade 3 or 4 neutropenia, 2.8% had grade 3 or 4 thrombocytopenia, and 10% had grade 3 or 4 anemia. Necrotizing enterocolitis (typhlitis) has been reported. Consider typhlitis in patients with fever, neutropenia and abdominal pain. Monitor complete blood count at baseline and before each cycle. Capecitabine is not recommended if baseline neutrophil count <1.5 x 10 9/L or platelet count <100 x 10 9/L. For grade 3 to 4 myelosuppression, withhold capecitabine and then resume at same or reduced dose, or permanently discontinue, based on occurrence [see Dosage and Administration (2.5)].",
+        "char_len": 973,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Myelosuppression",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Hyperbilirubinemia",
+        "text": "5.10 Hyperbilirubinemia: Hyperbilirubinemia can occur with capecitabine. In the 875 patients with metastatic breast or colorectal cancer who received capecitabine as a single agent, grade 3 hyperbilirubinemia occurred in 15% of patients and grade 4 hyperbilirubinemia occurred in 3.9%. Of the 566 patients who had hepatic metastases at baseline and the 309 patients without hepatic metastases at baseline, grade 3 or 4 hyperbilirubinemia occurred in 23% and 12%, respectively. Of these 167 patients with grade 3 or 4 hyperbilirubinemia, 19% had postbaseline increased alkaline phosphatase and 28% had postbaseline increased transaminases at any time (not necessarily concurrent). The majority of these patients with increased transaminases or alkaline phosphatase had liver metastases at baseline. In addition, 58% and 35% of the 167 patients with grade 3 or 4 hyperbilirubinemia had pre- and postbaseline increased alkaline phosphatase or transaminases (grades 1 to 4), respectively. Only 8% (n=13) and 3% (n=5) had grade 3 or 4 increased alkaline phosphatase or transaminases. In the 596 patients who received capecitabine for metastatic colorectal cancer, the incidence of grade 3 or 4 hyperbilirubinemia was similar to that observed for the pooled population of patients with metastatic breast and colorectal cancer. The median time to onset for grade 3 or 4 hyperbilirubinemia was 64 days and median total bilirubin increased from 8 μm/L at baseline to 13 μm/L during treatment with capecitabine. Of the 136 patients with grade 3 or 4 hyperbilirubinemia, 49 patients had grade 3 or 4 hyperbilirubinemia as their last measured value, of which 46 had liver metastases at baseline. In the 251 patients with metastatic breast cancer who received capecitabine with docetaxel, grade 3 hyperbilirubinemia occurred in 7% and grade 4 hyperbilirubinemia occurred in 2%. Withhold capecitabine and then resume at a same or reduced dose, or permanently discontinue, based on occurrence [see Dosage and Administration (2.5)]. Patients with Grade 3-4 hyperbilirubinemia may resume treatment once the event is Grade 2 or less than three times the upper limit of normal, using the percent of current dose as shown in Table 1 [see Dosage and Administration (2.5)].",
+        "char_len": 2251,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Hyperbilirubinemia",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.11 Embryo-Fetal Toxicity",
+        "text": "5.11 Embryo-Fetal Toxicity: Based on findings from animal reproduction studies and its mechanism of action, capecitabine can cause fetal harm when administered to a pregnant woman. Insufficient data is available on capecitabine use in pregnant women to evaluate a drug-associated risk. In animal reproduction studies, administration of capecitabine to pregnant animals during the period of organogenesis caused embryolethality and teratogenicity in mice and embryolethality in monkeys at 0.2 and 0.6 times the human exposure (AUC) in patients who received a dosage of 1,250 mg/m 2twice daily, respectively. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with capecitabine and for 6 months following the last dose. Advise males with female partners of reproductive potential to use effective contraception during treatment with capecitabine and for 3 months following the last dose [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 1024,
+        "source_section_code": "42229-5",
+        "source_title": "5.11 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.12 Eye Irritation, Skin Rash, and Other Adverse Reactions from Exposure to Crushed Tablets",
+        "text": "5.12 Eye Irritation, Skin Rash, and Other Adverse Reactions from Exposure to Crushed Tablets: In instances of exposure to crushed capecitabine tablets, the following adverse reactions have been reported: eye irritation and swelling, skin rash, diarrhea, paresthesia, headache, gastric irritation, vomiting and nausea. Advise patients not to cut or crush tablets. If capecitabine tablets must be cut or crushed, this should be done by a professional trained in safe handling of cytotoxic drugs using appropriate equipment and safety procedures [see Dosage and Administration (2.7)]. The safety and effectiveness have not been established for the administration of crushed capecitabine tablets.",
+        "char_len": 692,
+        "source_section_code": "42229-5",
+        "source_title": "5.12 Eye Irritation, Skin Rash, and Other Adverse Reactions from Exposure to Crushed Tablets",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: INCREASED RISK OF BLEEDING WITH CONCOMITANT USE OF VITAMIN K ANTAGONISTS",
+        "text": "WARNING: INCREASED RISK OF BLEEDING WITH CONCOMITANT USE OF VITAMIN K ANTAGONISTS: Altered coagulation parameters and/or bleeding, including death, have been reported in patients taking capecitabine concomitantly with oral vitamin K antagonists, such as warfarin [see Warnings and Precautions (5.1), Drug Interactions (7.2)]. Clinically significant increases in prothrombin time (PT) and international normalized ratio (INR) have been reported in patients who were on stable doses of a vitamin K antagonist at the time capecitabine was introduced. These events occurred within several days and up to several months after initiating capecitabine and, in a few cases, within 1 month after stopping capecitabine. These events occurred in patients with and without liver metastases. Monitor INR more frequently and adjust the dose of the vitamin K antagonist as appropriate [see Drug Interactions (7.2)]. WARNING: INCREASED RISK OF BLEEDING WITH CONCOMITANT USE OF VITAMIN K ANTAGONISTS See full prescribing information for complete boxed warning. Altered coagulation parameters and/or bleeding, including death, have been reported in patients taking capecitabine concomitantly with oral vitamin K antagonists. ( 5.1, 7.2) Monitor international normalized ratio (INR) more frequently and adjust the dose of the vitamin K antagonist as appropriate. ( 7.2)",
+        "char_len": 1350,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: INCREASED RISK OF BLEEDING WITH CONCOMITANT USE OF VITAMIN K ANTAGONISTS",
+        "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.6 Dosage Modification For Renal Impairment",
+            "text": "2.6 Dosage Modification For Renal Impairment: Reduce the dose of capecitabine tablet by 25% for patients with creatinine clearance (CLcr) of 30 to 50 mL/min as determined by Cockcroft-Gault equation. A dosage has not been established in patients with severe renal impairment (CLcr <30 mL/min) [see Use in Specific Populations (8.6)].",
+            "char_len": 333,
+            "source_section_code": "42229-5",
+            "source_title": "2.6 Dosage Modification For Renal Impairment",
+            "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "42229-5",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: The exposure of capecitabine and its inactive metabolites (5-DFUR and FBAL) increases in patients with CLcr <50 mL/min as determined by Cockcroft-Gault [see Clinical Pharmacology (12.3)]. Reduce the dosage for patients with CLcr of 30 to 50 mL/min [see Dosage and Administration (2.6)]. There is limited experience with capecitabine in patients with CLcr <30 mL/min, and a dosage has not been established in those patients. If no treatment alternative exists, capecitabine could be administered to such patients on an individual basis applying a reduced starting dose, close monitoring of a patient's clinical and biochemical data and dose modifications guided by observed adverse reactions.",
+            "char_len": 713,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.7 Hepatic Impairment",
+            "text": "8.7 Hepatic Impairment: The exposure of capecitabine increases in patients with mild to moderate hepatic impairment. The effect of severe hepatic impairment on the safety and pharmacokinetics of capecitabine is unknown [see Clinical Pharmacology (12.3)]. Monitor patients with hepatic impairment more frequently for adverse reactions.",
+            "char_len": 334,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Hepatic Impairment",
+            "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modifications for Adverse Reactions",
+            "text": "2.5 Dosage Modifications for Adverse Reactions: Monitor patients for adverse reactions and modify dosages of capecitabine tablet as described in Table 1. Do not replace missed doses of capecitabine tablet; instead resume capecitabine tablet with the next planned dosage. When capecitabine tablet is administered with docetaxel, withhold capecitabine tablet and docetaxel until the requirements for resuming both capecitabine tablet and docetaxel are met. Refer to the Prescribing Information for docetaxel for additional dosing information as appropriate. Table 1 Recommended Dosage Modifications for Adverse Reactions Severity Dosage Modification Resume at Same or Reduced Dose (Percent of Current Dose) 1st appearance Withhold until resolved to grade 0-1. 100% 2nd appearance 75% 3rd appearance 50% 4th appearance Permanently discontinue. - 1st appearance Withhold until resolved to grade 0-1. 75% 2nd appearance 50% 3rd appearance Permanently discontinue. - 1st appearance Permanently discontinue OR Withhold until resolved to grade 0-1. 50% Hyperbilirubinemia Patients with Grade 3-4 hyperbilirubinemia may resume treatment once the event is Grade 2 or less (less than three times the upper limit of normal), using the percent of current dose as shown in column 3 of Table 1 [see Warnings and Precautions (5.10)].",
+            "char_len": 1317,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modifications for Adverse Reactions",
+            "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-COLORECTAL-FDA-001.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "colorectal",
+      "gastric"
+    ],
+    "guideline_use_cancers": [],
+    "patient_plain": "{\"what_is_it\": \"这是一种口服抗癌药，用于结直肠癌、乳腺癌、胃癌、食管癌、胰腺癌等多种癌症的治疗。\", \"how_to_use\": \"通常每天口服两次，多数方案为每3周一个周期，前14天服药、后7天停药。具体剂量和周期由医生根据病情和体表面积决定。\", \"cautions\": [\"对氟尿嘧啶或本药曾出现严重过敏者禁用。\", \"服药期间避免同时使用别嘌醇，可能降低本药疗效。\", \"与亚叶酸钙同用时需密切监测毒性反应。\", \"不要自行服用含叶酸或叶酸类产品，除非医生指示。\", \"与华法林等维生素K拮抗剂同用可能影响凝血，需更频繁监测INR。\", \"与苯妥英同用可能升高苯妥英水平，需密切监测。\", \"与已知伤肾的药物同用可能增加肾毒性风险，需密切监测。\", \"与某些降糖药、抗凝药等CYP2C9底物同用可能增加不良反应风险。\", \"医生会根据患者风险因素和不良反应个体化调整剂量和方案。\"], \"side_effects\": [{\"term\": \"手足综合征\", \"plain\": \"手掌或脚底发红、脱皮、疼痛或麻木。\", \"when_to_seek_help\": \"手脚皮肤出现明显红肿、水疱、脱皮或疼痛影响活动时，应及时就医。\"}, {\"term\": \"腹泻\", \"plain\": \"大便次数增多或变稀。\", \"when_to_seek_help\": \"腹泻频繁、持续不缓解或伴有脱水表现时，应及时就医。\"}, {\"term\": \"口腔炎\", \"plain\": \"口腔黏膜发红、疼痛或溃疡。\", \"when_to_seek_help\": \"口腔溃疡严重、影响进食或饮水时，应及时就医。\"}, {\"term\": \"腹痛\", \"plain\": \"腹部疼痛或不适。\", \"when_to_seek_help\": \"腹痛剧烈、持续加重或伴发热时，应及时就医。\"}, {\"term\": \"结膜炎\", \"plain\": \"眼睛发红、不适或分泌物增多。\", \"when_to_seek_help\": \"眼部症状明显或影响视力时，应及时就医。\"}, {\"term\": \"便秘\", \"plain\": \"排便困难或次数减少。\", \"when_to_seek_help\": \"便秘持续不缓解或伴明显腹胀腹痛时，应及时就医。\"}, {\"term\": \"上腹痛\", \"plain\": \"上腹部疼痛或不适。\", \"when_to_seek_help\": \"上腹痛持续或加重时，应及时就医。\"}, {\"term\": \"消化不良\", \"plain\": \"胃部不适、胀气或消化不好。\", \"when_to_seek_help\": \"消化不良症状持续或加重时，应及时就医。\"}, {\"term\": \"心脏毒性\", \"plain\": \"药物可能对心脏产生影响。\", \"when_to_seek_help\": \"出现胸痛、心悸、气短或明显乏力时，应及时就医。\"}, {\"term\": \"实验室异常\", \"plain\": \"可能出现胆红素升高、淋巴细胞或中性粒细胞减少、血钙降低等。\", \"when_to_seek_help\": \"复查发现明显异常或伴发热、乏力、出血倾向时，应及时就医。\"}], \"seek_help\": \"出现严重过敏、严重腹泻、手足皮肤严重反应、口腔溃疡影响进食、胸痛心悸气短、发热乏力或出血倾向等情况，请及时就医。\"}",
+    "patient_plain_at": "2026-11-03T14:54:23"
+  }
+]

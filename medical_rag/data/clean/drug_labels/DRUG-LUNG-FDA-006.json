@@ -1,0 +1,301 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-006",
+    "generic_name": "ALECTINIB",
+    "brand_names": [],
+    "aliases_zh": [
+      "盐酸阿来替尼",
+      "阿来替尼"
+    ],
+    "title": "ALECTINIB 说明书（FDA DailyMed）",
+    "indications": [
+      "ALECENSA is a kinase inhibitor indicated for:",
+      "ALECENSA is indicated as adjuvant treatment in adult patients following tumor resection of anaplastic lymphoma kinase (ALK)-positive non-small cell lung cancer (NSCLC) (tumors ≥ 4 cm or node positive), as detected by an FDA-approved test [see Dosage & Administration (2.1)].",
+      "ALECENSA is indicated for the treatment of adult patients with ALK-positive metastatic NSCLC as detected by an FDA-approved test [see Dosage & Administration (2.1)].",
+      "【中文适应证】ALK 阳性的ⅠB 期至ⅢA 期NSCLC 患者术后辅助治疗。",
+      "【中文适应证】ALK 阳性的局部晚期或转移性NSCLC 患者的治疗。"
+    ],
+    "dosage": {
+      "standard": "600 mg orally twice daily. Administer ALECENSA with food. (2.2) Select patients with resectable tumors for the adjuvant treatment of NSCLC with ALECENSA based on the presence of ALK positivity in tumor tissue [see Indications and Usage (1.1) and Clinical Studies (14.1)]. Select patients for the treatment of metastatic NSCLC with ALECENSA based on the presence of ALK positivity in tumor tissue or plasma specimens [see Indications and Usage (1.2) and Clinical Studies (14.2)]. If ALK rearrangements are not detected in a plasma specimen, test tumor tissue if feasible. Information on FDA-approved tests for the detection of ALK rearrangements in NSCLC is available at http://www.fda.gov/CompanionDiagnostics. The recommended dosage information for ALECENSA is provided in Table 1. Indication Recommended Dosage of ALECENSA Duration Adjuvant treatment of resected NSCLC 600 mg orally twice daily with food [see Clinical Pharmacology (12.3)] For a total of 2 years or until disease recurrence or unacceptable toxicity Metastatic NSCLC Until disease progression or unacceptable toxicity Swallow capsules whole, do not open or dissolve the contents of the capsule. If a dose of ALECENSA is missed or vomiting occurs after taking a dose of ALECENSA, take the next dose at the scheduled time. The recommended dose of ALECENSA in patients with severe hepatic impairment (Child-Pugh C) is 450 mg orally twice daily [see Use in Specific Populations (8.7) and Clinical Pharmacology (12.3)]. The dose reduction schedule for ALECENSA is provided in Table 2. Dose Reduction Schedule Dose Level Starting dose 600 mg taken orally twice daily First dose reduction 450 mg taken orally twice daily Second dose reduction 300 mg taken orally twice daily Discontinue if patients are unable to tolerate the 300 mg twice ",
+      "adjustment": "Information on FDA-approved tests for the detection of ALK rearrangements in NSCLC is available at http://www.fda.gov/CompanionDiagnostics. The recommended dosage information for ALECENSA is provided in Table 1. Indication Recommended Dosage of ALECENSA Duration Adjuvant treatment of resected NSCLC 600 mg orally twice daily with food [see Clinical Pharmacology (12.3)] For a total of 2 years or until disease recurrence or unacceptable toxicity Metastatic NSCLC Until disease progression or unacceptable toxicity Swallow capsules whole, do not open or dissolve the contents of the capsule. If a dose of ALECENSA is missed or vomiting occurs after taking a dose of ALECENSA, take the next dose at the scheduled time. The recommended dose of ALECENSA in patients with severe hepatic impairment (Child-Pugh C) is 450 mg orally twice daily [see Use in Specific Populations (8.7) and Clinical Pharmacology (12.3)]. The dose reduction schedule for ALECENSA is provided in Table 2. Dose Reduction Schedule Dose Level Starting dose 600 mg taken orally twice daily First dose reduction 450 mg taken orally twice daily Second dose reduction 300 mg taken orally twice daily Discontinue if patients are unable "
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the label:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (incidence ≥20%) were hepatotoxicity, constipation, fatigue, myalgia, edema, rash and cough. (6.1)",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Genentech at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The pooled safety population described in the WARNINGS AND PRECAUTIONS reflects exposure to ALECENSA as a single agent at 600 mg orally twice daily in 533 patie",
+        "frequency": "75%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adjuvant Treatment of Resected ALK-Positive NSCLC",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of ALECENSA was evaluated in ALINA, a multi-center, open-label, randomized trial for the adjuvant treatment of patients with resected ALK-positive NS",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Serious adverse reactions occurred in 13% of patients treated with ALECENSA; the most frequent serious adverse reactions (≥ 1%) were pneumonia (3.9%), appendici",
+        "frequency": "13%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Dosage interruptions of ALECENSA due to an adverse reaction occurred in 27% of patients. Adverse reactions which required dosage interruption in ≥ 2% of patient",
+        "frequency": "27%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Dose reductions of ALECENSA due to an adverse reaction occurred in 26% of patients. Adverse reactions which required dose reductions in ≥ 2% of patients include",
+        "frequency": "26%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 4 and 5 summarize the common adverse reactions and laboratory abnormalities observed in ALINA.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reaction ALECENSAN=128 ChemotherapyN=120",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades (%) Grades 3-4 (%) All Grades (%) Grades 3-4 (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Based on NCI CTCAE v5.0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hepatobiliary System Disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "HepatotoxicityIncludes increased alanine aminotransferase, increased aspartate aminotransferase, increased bile acids, increased conjugated bilirubin, increased",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal Disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Constipation 42 0.8 25 0.8",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Abdominal painIncludes abdominal discomfort, abdominal pain, lower abdominal pain, upper abdominal pain, abdominal tenderness, epigastric discomfort and gastroi",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "DiarrheaIncludes colitis and diarrhea. 13 0.8 9 1.7",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-08-27",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-006.xml",
+    "doc_hash": "c5387367cbe651787b3d8f85e231e5288604595831c98ca44b0d7d9ac291eb4a",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "42c49deb-713b-427a-9670-08af08adcffb",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/42c49deb-713b-427a-9670-08af08adcffb.xml",
+    "atc_code": "L01ED03",
+    "approval_no": "国药准字HJ20180047",
+    "source_name": "ALECTINIB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-006.xml",
+    "updated_at": "2026-10-26",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Hepatotoxicity",
+        "text": "5.1 Hepatotoxicity: Severe hepatotoxicity, including drug-induced liver injury, occurred in patients treated with ALECENSA. In the pooled safety population [see Adverse Reactions (6.1)] of patients who received ALECENSA, hepatotoxicity occurred in 41% of patients and the incidence of Grade ≥ 3 hepatotoxicity was 8%. In the ALINA study, hepatotoxicity occurred in 61% of patients treated with ALECENSA and the incidence of Grade ≥ 3 hepatotoxicity was 4.7%. The majority (72% of 136 patients) of elevated transaminases occurred during the first 3 months of treatment. Treatment discontinuation due to hepatotoxicity occurred in 3.6% of patients who received ALECENSA in the pooled safety population and 1.6% of patients treated in the ALINA study. In the pooled safety population, concurrent elevations in ALT or AST greater than or equal to 3 times the ULN and total bilirubin greater than or equal to 2 times the ULN, with normal alkaline phosphatase, occurred in less than 1% of patients treated with ALECENSA. Three patients with Grades 3–4 AST/ALT elevations had drug-induced liver injury (documented by liver biopsy in two cases). Monitor liver function tests including ALT, AST, and total bilirubin every 2 weeks during the first 3 months of treatment, then once a month and as clinically indicated, with more frequent testing in patients who develop transaminase and bilirubin elevations. Based on the severity of the adverse drug reaction, withhold ALECENSA and resume at a reduced dose or permanently discontinue ALECENSA as described in Table 3 [see Dosage and Administration (2.4)].",
+        "char_len": 1595,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Hepatotoxicity",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Interstitial Lung Disease (ILD)/Pneumonitis",
+        "text": "5.2 Interstitial Lung Disease (ILD)/Pneumonitis: ILD/pneumonitis occurred in patients treated with ALECENSA. In the pooled safety population [see Adverse Reactions (6.1)], ILD/pneumonitis occurred in 1.3% of patients treated with ALECENSA with 0.4% of patients experiencing Grade 3 ILD/pneumonitis. Five patients (0.9%) in the pooled safety population discontinued ALECENSA due to ILD/pneumonitis. The median time-to-onset of Grade 3 or higher ILD/pneumonitis was 2.1 months (range: 0.6 months to 3.6 months). Promptly investigate for ILD/pneumonitis in any patient who presents with worsening of respiratory symptoms indicative of ILD/pneumonitis (e.g., dyspnea, cough, and fever). Immediately withhold ALECENSA treatment in patients diagnosed with ILD/pneumonitis and permanently discontinue ALECENSA if no other potential causes of ILD/pneumonitis have been identified [see Dosage and Administration (2.4) and Adverse Reactions (6)].",
+        "char_len": 936,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Interstitial Lung Disease (ILD)/Pneumonitis",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Renal Impairment",
+        "text": "5.3 Renal Impairment: Renal impairment, including fatal cases, occurred in patients treated with ALECENSA. In the pooled safety population [see Adverse Reactions (6.1)], renal impairment occurred in 12% of patients treated with ALECENSA, including Grade ≥ 3 in 1.7% of patients, of which 0.4% were fatal events. The median time to Grade ≥ 3 renal impairment was 3.7 months (range 0.5 to 31.8 months). Dosage modifications for renal impairment were required in 2.4% of patients. Permanently discontinue ALECENSA for Grade 4 renal toxicity. Withhold ALECENSA for Grade 3 renal toxicity until recovery to less than or equal to 1.5 times ULN, then resume at reduced dose [see Dosage and Administration (2.4)].",
+        "char_len": 705,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Renal Impairment",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Bradycardia",
+        "text": "5.4 Bradycardia: Symptomatic bradycardia occurred in patients treated with ALECENSA. In the pooled safety population [see Adverse Reactions (6.1)], bradycardia occurred in 11% of patients treated with ALECENSA. Twenty percent of 521 patients treated with ALECENSA, for whom serial electrocardiograms (ECGs) were available, had post-dose heart rates of less than 50 beats per minute (bpm). Monitor heart rate and blood pressure regularly. For asymptomatic bradycardia dose modification is not required. For symptomatic bradycardia that is not life-threatening, withhold ALECENSA until recovery to asymptomatic bradycardia or to a heart rate ≥ 60 bpm and evaluate concomitant medications known to cause bradycardia, as well as anti-hypertensive medications. If bradycardia is attributable to a concomitant medication, resume ALECENSA at a reduced dose (see Table 2) upon recovery to asymptomatic bradycardia or to a heart rate of ≥ 60 bpm, with frequent monitoring as clinically indicated. Permanently discontinue ALECENSA in cases of life-threatening bradycardia if no contributing concomitant medication is identified [see Dosage and Administration (2.4)]. Permanently discontinue ALECENSA for recurrence of life-threatening bradycardia.",
+        "char_len": 1237,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Bradycardia",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Severe Myalgia and Creatine Phosphokinase (CPK) Elevation",
+        "text": "5.5 Severe Myalgia and Creatine Phosphokinase (CPK) Elevation: Severe myalgia and creatine phosphokinase (CPK) elevation occurred in patients treated with ALECENSA. In the pooled safety population [see Adverse Reactions (6.1)], myalgia (including muscle- and musculoskeletal-related reactions) occurred in 31% of patients treated with ALECENSA, including Grade ≥ 3 in 0.8% of patients. Dosage modifications for myalgia events were required in 2.1% of patients. In the pooled safety population, of the 491 patients with CPK laboratory data available, elevated CPK occurred in 56% of patients treated with ALECENSA, including 6% Grade ≥ 3. The median time to Grade ≥ 3 CPK elevation was 15 days (interquartile range: 15 to 337 days). Dosage modifications for elevation of CPK occurred in 5% of patients. In the ALINA study, elevated CPK occurred in 77% of 128 patients with CPK laboratory data, including 6% Grade ≥ 3 elevations. Advise patients to report any unexplained muscle pain, tenderness, or weakness. Assess CPK levels every 2 weeks for the first month of treatment and as clinically indicated in patients reporting symptoms. Based on the severity of the CPK elevation, withhold ALECENSA, then resume or reduce dose [see Dosage and Administration (2.4)].",
+        "char_len": 1261,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Severe Myalgia and Creatine Phosphokinase (CPK) Elevation",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Hemolytic Anemia",
+        "text": "5.6 Hemolytic Anemia: Hemolytic anemia occurred in patients treated with ALECENSA. Hemolytic anemia was initially reported with ALECENSA in the postmarketing setting, including cases associated with a negative direct antiglobulin test (DAT) result. Assessments for the determination of hemolytic anemia were subsequently collected in the ALINA study, where hemolytic anemia was observed in 3.1% of patients treated with ALECENSA. If hemolytic anemia is suspected, withhold ALECENSA and initiate appropriate laboratory testing. If hemolytic anemia is confirmed, consider resuming at a reduced dose upon resolution or permanently discontinue ALECENSA [see Dosage and Administration (2.4)].",
+        "char_len": 687,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Hemolytic Anemia",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Severe Hypertriglyceridemia Leading to Pancreatitis",
+        "text": "5.7 Severe Hypertriglyceridemia Leading to Pancreatitis: Hypertriglyceridemia, including severe cases associated with life-threatening acute pancreatitis, has been reported in patients treated with ALECENSA in the postmarketing setting. In Study NP28761 [see Adverse Reactions (6.1)], which included systematic monitoring of blood triglycerides, of 98 patients with laboratory data available, hypertriglyceridemia occurred in 57%, including Grade 3 elevations in 7% of patients. Dose modifications due to hypertriglyceridemia occurred in 0.9% of patients, and permanent discontinuation occurred in 0.2% of patients. Monitor blood triglycerides before initiation and periodically during treatment with ALECENSA. In patients with triglyceride levels ≥ 500 mg/dL, withhold ALECENSA and monitor for signs and symptoms of pancreatitis and monitor lipase and amylase periodically until triglyceride levels recover to blood triglycerides ≤ 500 mg/dL or ≤ 5.7 mmol/L. If an acute episode of pancreatitis occurs, temporarily withhold ALECENSA until full recovery. Withhold, then resume at the same or reduced dose or permanently discontinue ALECENSA based on severity [see Dosage and Administration (2.4)].",
+        "char_len": 1197,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Severe Hypertriglyceridemia Leading to Pancreatitis",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Embryo-Fetal Toxicity",
+        "text": "5.8 Embryo-Fetal Toxicity: Based on findings from animal studies and its mechanism of action, ALECENSA can cause fetal harm when administered to pregnant women. Oral administration of alectinib to pregnant rats and rabbits during the period of organogenesis resulted in embryo-fetal toxicity and abortion at maternally toxic doses with exposures approximately 2.7-fold those observed in humans with alectinib 600 mg twice daily. Advise pregnant women and females of reproductive potential of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with ALECENSA and for 5 weeks following the last dose [see Use in Specific Populations (8.1 and 8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 747,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-006.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: No dose adjustment is recommended for patients with mild or moderate renal impairment. The safety of ALECENSA in patients with severe renal impairment (creatinine clearance less than 30 mL/min) or end-stage renal disease has not been studied [see Clinical Pharmacology (12.3)].",
+            "char_len": 299,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-006.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.3 Recommended Dosage for Hepatic Impairment",
+            "text": "2.3 Recommended Dosage for Hepatic Impairment: The recommended dose of ALECENSA in patients with severe hepatic impairment (Child-Pugh C) is 450 mg orally twice daily [see Use in Specific Populations (8.7) and Clinical Pharmacology (12.3)].",
+            "char_len": 240,
+            "source_section_code": "42229-5",
+            "source_title": "2.3 Recommended Dosage for Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-006.xml",
+            "match_by_title": true
+          },
+          {
+            "code": "42229-5",
+            "title": "8.7 Hepatic Impairment",
+            "text": "8.7 Hepatic Impairment: No dose adjustment is recommended for patients with mild (Child-Pugh A) or moderate (Child-Pugh B) hepatic impairment. Increased exposure of alectinib occurred in patients with severe hepatic impairment (Child-Pugh C). The recommended dose of ALECENSA in patients with severe hepatic impairment (Child-Pugh C) is 450 mg orally twice daily [see Dosage and Administration (2.3) and Clinical Pharmacology (12.3)].",
+            "char_len": 434,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Hepatic Impairment",
+            "source_xml": "DRUG-LUNG-FDA-006.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.4 Dose Modifications for Adverse Reactions",
+            "text": "2.4 Dose Modifications for Adverse Reactions: The dose reduction schedule for ALECENSA is provided in Table 2. Dose Reduction Schedule Dose Level Starting dose 600 mg taken orally twice daily First dose reduction 450 mg taken orally twice daily Second dose reduction 300 mg taken orally twice daily Discontinue if patients are unable to tolerate the 300 mg twice daily dose. Recommendations for dose modifications of ALECENSA in case of adverse reactions are provided in Table 3. CriteriaALT = alanine transaminase; AST = aspartate transaminase; ULN = upper limit of normal; ILD = interstitial lung disease; CPK = blood creatine phosphokinase ALECENSA Dose Modification ALT or AST elevation of greater than 5 times upper limit of normal (ULN) with total bilirubin less than or equal to 2 times ULN Temporarily withhold until recovery to baseline or to less than or equal to 3 times ULN, then resume at reduced dose as per Table 2. ALT or AST elevation greater than 3 times ULN with total bilirubin elevation greater than 2 times ULN in the absence of cholestasis or hemolysis Permanently discontinue ALECENSA. Total bilirubin elevation of greater than 3 times ULN Temporarily withhold until recovery to baseline or to less than or equal to 1.5 times ULN, then resume at reduced dose as per Table 2. Any grade treatment-related interstitial lung disease (ILD)/pneumonitis Permanently discontinue ALECENSA. Grade 3 renal impairment Temporarily withhold until serum creatinine recovers to less than or equal to 1.5 times ULN, then resume at reduced dose. Grade 4 renal impairment Permanently discontinue ALECENSA. Symptomatic bradycardia Withhold ALECENSA until recovery to asymptomatic bradycardia or to a heart rate of 60 bpm or above.If contributing concomitant medication is identified and discontinued, or its dose is adjusted, resume ALECENSA at previous dose upon recovery to asymptomatic bradycardia or to a heart rate of 60 bpm or above. If no contributing concomitant medication is identified, or if contributing concomitant medications are not discontinued or dose modified, resume ALECENSA at reduced dose (see Table 2) upon recovery to asymptomatic bradycardia or to a heart rate of 60 bpm or above. BradycardiaHeart rate less than 60 beats per minute (bpm) (life-threatening consequences, urgent intervention indicated) Permanently discontinue ALECENSA if no contributing concomitant medication is identified.If contributing concomitant medication is identified and discontinued, or its dose is adjusted, resume ALECENSA at reduced dose (see Table 2) upon recovery to asymptomatic bradycardia or to a heart rate of 60 bpm or above, with frequent monitoring as clinically indicated. Permanently discontinue ALECENSA in case of recurrence. CPK elevation greater than 5 times ULN Temporarily withhold until recovery to baseline or to less than or equal to 2.5 times ULN, then resume at same dose. CPK elevation greater than 10 times ULN or second occurrence of CPK elevation of greater than 5 times ULN Temporarily withhold until recovery to baseline or to less than or equal to 2.5 times ULN, then resume at reduced dose as per Table 2. Hemolytic Anemia Withhold ALECENSA if hemolytic anemia is suspected.Upon resolution, resume at reduced dose or permanently discontinue. Severe hypertriglyceridemia (blood triglycerides from 501 to 1,000 mg/dL or from 5.71 to 11.4 mmol/L) OR Life-threatening hypertriglyceridemia (blood triglycerides over 1,000 mg/dL or over 11.4 mmol/L) Temporarily withhold until recovery to at least moderate hypertriglyceridemia (i.e., until blood triglycerides are ≤ 500 mg/dL or ≤ 5.7 mmol/L). Evaluate risk factors for pancreatitis and address those that are treatable before resuming treatment with ALECENSA. If an acute episode of pancreatitis occurs, temporarily withhold until full recovery before resuming treatment with ALECENSA. Resume ALECENSA at the same dose, with regular monitoring of blood triglyceride levels. If hypertriglyceridemia reoccurs, consider dose reduction of ALECENSA.",
+            "char_len": 4030,
+            "source_section_code": "42229-5",
+            "source_title": "2.4 Dose Modifications for Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-006.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-006.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种靶向药，用于治疗ALK阳性的非小细胞肺癌。\", \"how_to_use\": \"常规剂量是每次600毫克，每天两次，随餐口服。胶囊要整粒吞服，不要打开或溶解。如果漏服或服药后呕吐，按原定时间服下一次药。严重肝功能损害者剂量为每次450毫克，每天两次。\", \"cautions\": [\"用药前需经FDA批准的检测确认肿瘤为ALK阳性。\", \"辅助治疗用于肿瘤切除后，肿瘤≥4厘米或淋巴结阳性的成人患者。\", \"辅助治疗总疗程为2年，或直到疾病复发或出现不能耐受的毒性。\", \"转移性肺癌治疗持续到疾病进展或出现不能耐受的毒性。\", \"胶囊需整粒吞服，不要打开或溶解胶囊内容物。\", \"漏服或服药后呕吐，按原定时间服下一次药，不补服。\", \"严重肝功能损害者推荐剂量为每次450毫克，每天两次。\", \"剂量可因不良反应下调：首次减至450毫克每天两次，再次减至300毫克每天两次。\", \"若无法耐受300毫克每天两次，应停药。\"], \"side_effects\": [{\"term\": \"肝毒性\", \"plain\": \"可能影响肝脏功能，属于需要关注的常见不良反应。\", \"when_to_seek_help\": \"如出现相关不适或检查异常，应及时就医。\"}, {\"term\": \"便秘\", \"plain\": \"常见不良反应之一，发生率为20%及以上。\", \"when_to_seek_help\": \"如便秘严重或持续不缓解，需就医。\"}, {\"term\": \"疲劳\", \"plain\": \"常见不良反应之一，发生率为20%及以上。\", \"when_to_seek_help\": \"如疲劳明显加重影响日常，需就医。\"}, {\"term\": \"肌痛\", \"plain\": \"常见不良反应之一，发生率为20%及以上。\", \"when_to_seek_help\": \"如肌肉疼痛严重或持续，需就医。\"}, {\"term\": \"水肿\", \"plain\": \"常见不良反应之一，发生率为20%及以上。\", \"when_to_seek_help\": \"如水肿明显或加重，需就医。\"}, {\"term\": \"皮疹\", \"plain\": \"常见不良反应之一，发生率为20%及以上。\", \"when_to_seek_help\": \"如皮疹严重或范围扩大，需就医。\"}, {\"term\": \"咳嗽\", \"plain\": \"常见不良反应之一，发生率为20%及以上。\", \"when_to_seek_help\": \"如咳嗽加重或伴其他不适，需就医。\"}, {\"term\": \"肺炎\", \"plain\": \"临床试验中较常见的严重不良反应之一。\", \"when_to_seek_help\": \"如出现发热、咳嗽加重或呼吸困难，需及时就医。\"}, {\"term\": \"阑尾炎\", \"plain\": \"临床试验中较常见的严重不良反应之一。\", \"when_to_seek_help\": \"如出现腹痛加重等情况，需及时就医。\"}], \"seek_help\": \"如出现严重不良反应或不能耐受的情况，应及时就医。临床试验中常见严重不良反应包括肺炎和阑尾炎等。\"}",
+    "patient_plain_at": "2026-11-04T06:16:27"
+  }
+]

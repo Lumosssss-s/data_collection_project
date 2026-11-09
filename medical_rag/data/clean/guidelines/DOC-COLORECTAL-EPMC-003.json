@@ -1,0 +1,28 @@
+[
+  {
+    "doc_id": "DOC-COLORECTAL-EPMC-003",
+    "title": "Japanese society for cancer of the colon and rectum (JSCCR) guidelines 2024 for the clinical practice of hereditary colorectal cancer",
+    "summary": "Approximately 5% of all colorectal cancers have a strong genetic component and are classified as hereditary colorectal cancer (HCRC). Some of the unique features commonly seen in HCRC cases include early age of onset, synchronous/metachronous cancer occurrence, and multiple cancers in other organs. These characteristics require different management approaches, including diagnosis, treatment or surveillance, from those used in the management of sporadic colorectal cancer. Accurate diagnosis of HCRC is essential because it enables targeted surveillance and risk reduction strategies that improve patient outcomes. Recent genetic advances revealed several causative genes for polyposis and non-polyposis syndromes. The Japanese Society for Cancer of the Colon and Rectum (JSCCR) first published guidelines for the management of HCRC in 2012, with subsequent revisions every 4 years. The 2024 update to the JSCCR guidelines for HCRC was developed by meticulously reviewing evidence from systematic reviews and the consensus of the JSCCR HCRC Guidelines Committee, which includes representatives from patient advocacy groups for FAP and Lynch syndrome. These guidelines provide an up-to-date summary of HCRC, along with clinical recommendations for managing FAP and Lynch syndrome.",
+    "doc_type": "guideline",
+    "issuer": "International Journal of Clinical Oncology",
+    "publish_date": "2025-11-10",
+    "cancer_types": [
+      "colorectal"
+    ],
+    "license_note": "Open Access (Europe PMC)",
+    "file_path": "raw/guidelines/DOC-COLORECTAL-EPMC-003.xml",
+    "doc_hash": "c48c8288ea9e5790b296e5b1a29b0c1c50b92860e4251711938b60c32a923627",
+    "review_status": "approved",
+    "_source": "europepmc",
+    "_pmid": "41214301",
+    "_pmcid": "PMC12770061",
+    "_doi": "10.1007/s10147-025-02892-1",
+    "_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12770061/fullTextXML",
+    "_xml_bytes": 945589,
+    "source_name": "Japanese society for cancer of the colon and rectum (JSCCR) guidelines 2024 for the clinical practice of hereditary colorectal cancer",
+    "source_version": "2025",
+    "source_section": "全文",
+    "source_file": "DOC-COLORECTAL-EPMC-003.xml",
+    "updated_at": "2026-10-21"
+  }
+]

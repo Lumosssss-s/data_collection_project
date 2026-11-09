@@ -1,0 +1,311 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-009",
+    "generic_name": "CISPLATIN",
+    "brand_names": [],
+    "aliases_zh": [
+      "顺铂"
+    ],
+    "title": "CISPLATIN 说明书（FDA DailyMed）",
+    "indications": [
+      "Cisplatin for injection is a platinum-based drug indicated for the treatment of:",
+      "• Advanced testicular cancer (1.1)",
+      "• Advanced ovarian cancer (1.2)",
+      "• Advanced bladder cancer (1.3)",
+      "Cisplatin for injection is indicated for the treatment of advanced testicular cancer.",
+      "Cisplatin for injection is indicated for the treatment of advanced ovarian cancer.",
+      "Cisplatin for injection is indicated for the treatment of advanced bladder cancer.",
+      "【中文适应证】小细胞与非小细胞肺癌、睾丸癌、卵巢癌、宫颈癌、子宫内膜癌、前列腺癌、膀胱癌、黑色素瘤、肉瘤、头颈部肿瘤及各种鳞状上皮癌和恶性淋巴瘤的治疗。"
+    ],
+    "dosage": {
+      "standard": "• Administer pre-treatment hydration and pre- and post-treatment antiemetics. (2.1) • Cisplatin for injection has been administered intravenously at: • Administer by slow intravenous infusion. Avoid contact of cisplatin for injection with aluminum parts. (2.6) Patients treated with cisplatin for injection must receive appropriate pre-treatment hydration. Maintain adequate hydration and urinary output for 24 hours after cisplatin for injection administration [see Warnings and Precautions (5.1)]. Administer pre-treatment and post-treatment antiemetics as appropriate [see Warnings and Precautions (5.7)]. Cisplatin for injection has been administered at 20 mg/m2 intravenously daily for 5 days per cycle. Other doses and combination regimens have been used. Cisplatin for injection has been administered at 75 mg/m2 to 100 mg/m2 intravenously per cycle once every 3 to 4 weeks on Day 1. Other doses and combination regimens have been used. Cisplatin for injection has been administered at 50 mg/m2 to 70 mg/m2 intravenously per cycle once every 3 to 4 weeks. For heavily pretreated patients, an initial dose of 50 mg/m2 per cycle repeated every 4 weeks is recommended. Other doses and combination in regimens have been used. Consider alternative treatments or dose reductions for patients with impaired creatinine clearance, myelosuppression, or neuropathy. Consider permanent discontinuation for Grade 3-4 neuropathy. [See Warnings and Precautions (5.1)] Do not use needles or intravenous sets containing aluminum parts that can come in contact with cisplatin for injection during preparation or administration. Aluminum reacts with cisplatin for injection, causing precipitate formation and a loss of potency. Cisplatin for injection is a cytotoxic drug. Follow applicable special handling and ",
+      "adjustment": "Patients treated with cisplatin for injection must receive appropriate pre-treatment hydration. Maintain adequate hydration and urinary output for 24 hours after cisplatin for injection administration [see Warnings and Precautions (5.1)]. Administer pre-treatment and post-treatment antiemetics as appropriate [see Warnings and Precautions (5.7)]. Cisplatin for injection has been administered at 20 mg/m2 intravenously daily for 5 days per cycle. Other doses and combination regimens have been used. Cisplatin for injection has been administered at 75 mg/m2 to 100 mg/m2 intravenously per cycle once every 3 to 4 weeks on Day 1. Other doses and combination regimens have been used. Cisplatin for injection has been administered at 50 mg/m2 to 70 mg/m2 intravenously per cycle once every 3 to 4 weeks. For heavily pretreated patients, an initial dose of 50 mg/m2 per cycle repeated every 4 weeks is recommended. Other doses and combination in regimens have been used. Consider alternative treatments or dose reductions for patients with impaired creatinine clearance, myelosuppression, or neuropathy. Consider permanent discontinuation for Grade 3-4 neuropathy. [See Warnings and Precautions (5.1)] D"
+    },
+    "contraindications": [
+      "Cisplatin for injection is contraindicated in patients with severe hypersensitivity to cisplatin [see Warnings and Precautions (5.4)].",
+      "Severe hypersensitivity to cisplatin (4)"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are described in greater detail, in other sections:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Common adverse reactions are nephrotoxicity, peripheral neuropathy, nausea and vomiting myelosuppression, and ototoxicity. The following adverse reactions have ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Blood and lymphatic system disorders: Coombs‑positive hemolytic anemia. hemolytic uremic syndrome, thrombotic thrombocytopenic purpura",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Cardiovasculardisorders: Venous thromboembolism, arterial thromboembolism, myocardial infarction, cerebrovascular accident, thrombotic microangiopathy, cerebral",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Eye disorders: Optic neuritis, papilledema, cortical blindness, blurred vision, color blindness, retinal pigmentation",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal disorders: Nausea, vomiting, anorexia, diarrhea, stomatitis, gastrointestinal perforation, pancreatitis, hiccups",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "General disorders: Asthenia, malaise",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hepatobiliary disorders: Elevations of aminotransferases, lactate dehydrogenase, and bilirubin; hepatic failure",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hypersensitivity: Anaphylaxis, facial edema, wheezing, tachycardia, and hypotension",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Local Site Reactions: Tissue cellulitis, fibrosis, necrosis, pain, edema, and erythema",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metabolism and nutrition disorders: Hypomagnesemia, often requiring magnesium supplementation; hyperuricemia, other electrolyte abnormalities (hypocalcemia, hyp",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Musculoskeletal disorders: Muscle cramps (localized, painful, involuntary skeletal muscle contractions of sudden onset and short duration)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nervous system disorders: Peripheral neuropathy, Encephalopathy, loss of motor function, loss of taste, leukoencephalopathy, reversible posterior leukoencephalo",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Ototoxicity: Tinnitus, hearing loss, deafness, vestibular toxicity",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Renal and urinary disorders: Nephrotoxicity including renal failure, renal electrolyte wasting, azotemia, decreased creatinine clearance",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Respiratory disorders: pneumonitis/interstitial lung disease, pulmonary embolism",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin and subcutaneous tissue disorders: Alopecia, rash",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Common adverse reactions are nephrotoxicity, peripheral neuropathy, nausea and vomiting, myelosuppression, and ototoxicity. (6)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact WG Critical Care at 1-866-562-4708 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-07-06",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-009.xml",
+    "doc_hash": "6475b0888758b6efcda16f9b698afbdba5ea4b27fe8f1707bdef50f0ef2454b5",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "508496cb-3441-46b3-a4fe-e0d440e6adc6",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/508496cb-3441-46b3-a4fe-e0d440e6adc6.xml",
+    "atc_code": "L01XA01",
+    "approval_no": "国药准字H20040813",
+    "source_name": "CISPLATIN 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-009.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "The following drug interactions are described in other sections:"
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Nephrotoxicity",
+        "text": "5.1 Nephrotoxicity: Cisplatin for injectioncan cause dose-related nephrotoxicity, including acute renal failure that becomes more prolonged and severe with repeated courses of the drug. Renal toxicity typically begins during the second week after a dose ofcisplatin for injection. Patients with baseline renal impairment, geriatric patients, patients who are taking other nephrotoxic drugs, or patients who are not well hydrated may be more susceptible to nephrotoxicity [see Use in Specific Populations (8.5, 8.6)]. Ensure adequate hydration before, during, and after cisplatin for injectionadministration [see Dosage and Administration (2.1)]. Measure serum creatinine, blood urea nitrogen, creatinine clearance, and serum electrolytes including magnesium prior to initiating therapy, and as clinically indicated. Consider magnesium supplementation as clinically needed. Consider alternative treatments or reduce the dose of cisplatin for injection for patients with baseline renal impairment or who develop significant reductions in creatinine clearance during treatment with cisplatin for injection according to clinical treatment guidelines [see Dosage and Administration (2.5)].",
+        "char_len": 1184,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Nephrotoxicity",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Peripheral Neuropathy",
+        "text": "5.2 Peripheral Neuropathy: Cisplatin for injectioncan cause dose-related peripheral neuropathy that becomes more severe with repeated courses of the drug. Neurologic symptoms have been reported to occur after a single dose. Neuropathy can also have a delayed onset from 3 to 8 weeks after the last dose of cisplatin for injection. Manifestations include paresthesias in a stocking-glove distribution, areflexia, and loss of proprioception and vibratory sensation. The neuropathy may progress further even after stopping treatment. Peripheral neuropathy may be irreversible in some patients. Perform a neurological examination before initiating cisplatin for injection, at appropriate intervals during therapy, and after completion of therapy. Consider discontinuation of cisplatin for injection for patients who develop symptomatic peripheral neuropathy. Geriatric patients may be more susceptible to peripheral neuropathy [see Use in Specific Populations (8.5)].",
+        "char_len": 963,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Peripheral Neuropathy",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Nausea and Vomiting",
+        "text": "5.3 Nausea and Vomiting: Cisplatin for injection is a highly emetogenic antineoplastic agent. Premedicate with anti-emetic agents [see Dosage and Administration (2.1)]. Without antiemetic therapy, marked nausea and vomiting occur in almost all patients treated with cisplatin for injection and may be so severe that the drug must be discontinued. Nausea and vomiting may begin within 1 to 4 hours after treatment and last up to 72 hours. Maximal intensity occurs 48 to 72 hours after administration. Various degrees of vomiting, nausea, and/or anorexia may persist for up to 1 week after treatment. Delayed nausea and vomiting (begins or persists 24 hours or more after chemotherapy) has occurred in patients attaining complete emetic control on the day of cisplatin for injection therapy. Consider the use of additional anti-emetics following infusion.",
+        "char_len": 853,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Nausea and Vomiting",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Myelosuppression",
+        "text": "5.4 Myelosuppression: Myelosuppression suppression occurs in 25% to 30% of patients treated with cisplatin for injection. Fever and infection have been reported in patients with neutropenia. Potential fatalities due to infection (secondary to myelosuppression) have been reported. Geriatric patients may be more susceptible to myelosuppression [see Use in Specific Populations (8.5)]. Perform standard hematologic tests before initiating cisplatin for injection, before each subsequent course, and as clinically indicated. Closely monitor patients for the development of signs and symptoms of infection during and after treatment with cisplatin for injection. For patients who develop severe myelosuppression during treatment with cisplatin for injection, consider dose modifications and manage according to clinical treatment guidelines.",
+        "char_len": 838,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Myelosuppression",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Hypersensitivity Reactions",
+        "text": "5.5 Hypersensitivity Reactions: Cisplatin for injection can cause severe hypersensitivity reactions, including anaphylaxis and death. Manifestations have included facial edema, wheezing, tachycardia, and hypotension. Hypersensitivity reactions have occurred within minutes of administration to patients with prior exposure tocisplatin for injection. Monitor patients receiving cisplatin for injection for possible hypersensitivity reactions. Ensure supportive equipment and medications are available to treat severe hypersensitivity reactions. Severe hypersensitivity reactions require immediate discontinuation of cisplatin for injection and aggressive therapy. Patients with a history of severe hypersensitivity reactions should not be rechallenged with cisplatin for injection [see Contraindications (4)]. Cross-reactivity between platinum-based antineoplastic agents has been reported. Cases of severe hypersensitivity reactions have recurred after rechallenging patients with a different platinum agent.",
+        "char_len": 1008,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Hypersensitivity Reactions",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Ototoxicity",
+        "text": "5.6 Ototoxicity: Cisplatin for injection can cause ototoxicity, which is cumulative and may be severe. Consider audiometric and vestibular function monitoring. Ototoxicity is manifested by tinnitus, hearing loss in the high frequency range (4,000 to 8,000 Hz) and/or decreased ability to hear normal conversational tones. Ototoxicity can occur during or after treatment and can be unilateral or bilateral. Deafness after the initial dose of cisplatin for injection has been reported. Vestibular toxicity has also been reported. Ototoxic effects can be more severe and detrimental in pediatric patients, particularly in patients less than 5 years of age. The prevalence of hearing loss in pediatric patients is estimated to be 40-60%. Additional risk factors for ototoxicity include simultaneous cranial irradiation, treatment with other ototoxic drugs and renal impairment. Consider audiometric and vestibular testing in all pediatric patients receiving cisplatin [see Use in Specific Populations (8.4)]. Genetic factors (e.g. variants in the thiopurine S-methyltransferase [TPMT] gene) may also contribute to the cisplatin-induced ototoxicity; although this association has not been consistent across populations and study designs.",
+        "char_len": 1232,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Ototoxicity",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Ocular Toxicity",
+        "text": "5.7 Ocular Toxicity: Optic neuritis, papilledema, and cortical blindness have been reported in patients receiving standard recommended doses ofcisplatin for injection. Blurred vision and altered color perception have been reported after the use of regimens with higher doses and dose frequencies of cisplatin for injection. The altered color perception manifests as a loss of color discrimination, particularly in the blue-yellow axis and irregular retinal pigmentation of the macular area on fundoscopic exam. Improvement and/or total recovery usually occurs after discontinuing cisplatin for injection but can be delayed.",
+        "char_len": 623,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Ocular Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Secondary Malignancies",
+        "text": "5.8 Secondary Malignancies: The development of acute leukemia secondary to the use of cisplatin for injection has been reported. In these reports, cisplatin for injection was generally given in combination with other leukemogenic agents.",
+        "char_len": 237,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Secondary Malignancies",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Embryo-Fetal Toxicity",
+        "text": "5.9 Embryo-Fetal Toxicity: Based on human data, cisplatin for injection can cause fetal harm when administered to a pregnant woman. Advise pregnant women and females of reproductive potential of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment and for 14 months after the last dose of cisplatin for injection. Advise male patients with female partners of reproductive potential to use effective contraception during treatment and for 11 months after the last dose of cisplatin for injection [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 607,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Injection Site Reactions",
+        "text": "5.10 Injection Site Reactions: Injection site reactions can occur during the administration of cisplatin for injection. Local soft tissue toxicity has been reported following extravasation of cisplatin for injection. Severity of the local tissue toxicity appears to be related to the concentration of the cisplatin for injection solution. Infusion of solutions with a cisplatin for injection concentration greater than 0.5 mg/mL may result in tissue cellulitis, fibrosis, necrosis, pain, edema, and erythema. Because of the possibility of extravasation, closely monitor the infusion site during drug administration.",
+        "char_len": 615,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Injection Site Reactions",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: NEPHROTOXICITY, PERIPHERAL NEUROPATHY, NAUSEA AND VOMITING and MYELOSUPPRESSION.",
+        "text": "WARNING: NEPHROTOXICITY, PERIPHERAL NEUROPATHY, NAUSEA AND VOMITING and MYELOSUPPRESSION.: WARNING: NEPHROTOXICITY, PERIPHERAL NEUROPATHY, NAUSEA AND VOMITING, and MYELOSUPPRESSION See full prescribing information for complete boxed warning.",
+        "char_len": 241,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: NEPHROTOXICITY, PERIPHERAL NEUROPATHY, NAUSEA AND VOMITING and MYELOSUPPRESSION.",
+        "source_xml": "DRUG-LUNG-FDA-009.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Use in Patients with Renal Impairment",
+            "text": "8.6 Use in Patients with Renal Impairment: Patients with baseline renal impairment may be more susceptible to nephrotoxicity [see Warnings and Precautions (5.1)]. Ensure adequate hydration before, during, and after cisplatin for injection administration [see Dosage and Administration (2.1)]. Measure serum creatinine, blood urea nitrogen, creatinine clearance, and serum electrolytes prior to initiating therapy, and as clinically indicated. Consider alternative treatments or reduce the dose of cisplatin for injection for patients with baseline renal impairment or who develop significant reductions in creatinine clearance during treatment with cisplatin for injection according to clinical treatment guidelines [see Dosage and Administration (2.5)].",
+            "char_len": 754,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Use in Patients with Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-009.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dose Modifications",
+            "text": "2.5 Dose Modifications: Consider alternative treatments or dose reductions for patients with impaired creatinine clearance, myelosuppression, or neuropathy. Consider permanent discontinuation for Grade 3-4 neuropathy. [See Warnings and Precautions (5.1)]",
+            "char_len": 254,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dose Modifications",
+            "source_xml": "DRUG-LUNG-FDA-009.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-009.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种含铂的注射用抗癌药，用于治疗晚期睾丸癌、晚期卵巢癌和晚期膀胱癌。\", \"how_to_use\": \"此药通过静脉缓慢输注给药。用药前需要先补充水分，并使用止吐药。用药后24小时内要保持充足水分和尿量。具体剂量和疗程由医生根据病情决定。配药和输注时避免接触含铝的针头或输液器。\", \"cautions\": [\"用药前必须进行适当的水分补充。\", \"用药后24小时内要保持充足的水分和尿量。\", \"用药前后需按医嘱使用止吐药。\", \"配药和输注时避免接触含铝的针头或输液器。\", \"铝会与本品反应，产生沉淀并降低药效。\", \"本品为细胞毒性药物，需遵循相关特殊操作规范。\", \"肾功能下降、骨髓抑制或神经病变患者，医生会考虑换药或减量。\", \"出现3至4级神经病变时，医生会考虑永久停药。\", \"对顺铂有严重过敏者禁用。\"], \"side_effects\": [{\"term\": \"肾毒性\", \"plain\": \"可能影响肾脏功能，包括肾衰竭和电解质流失。\", \"when_to_seek_help\": \"尿量明显减少或水肿时需就医。\"}, {\"term\": \"周围神经病变\", \"plain\": \"可能出现手脚麻木、刺痛等神经异常。\", \"when_to_seek_help\": \"麻木加重或影响活动时需就医。\"}, {\"term\": \"恶心呕吐\", \"plain\": \"用药后可能出现恶心和呕吐。\", \"when_to_seek_help\": \"呕吐严重无法进食时需就医。\"}, {\"term\": \"骨髓抑制\", \"plain\": \"可能影响血细胞生成，如贫血、易感染。\", \"when_to_seek_help\": \"发热、乏力明显或出血时需就医。\"}, {\"term\": \"耳毒性\", \"plain\": \"可能出现耳鸣、听力下降甚至耳聋。\", \"when_to_seek_help\": \"出现耳鸣或听力变化时需就医。\"}, {\"term\": \"过敏反应\", \"plain\": \"可能出现面部水肿、喘息、心跳快、血压低。\", \"when_to_seek_help\": \"出现呼吸困难或面部肿胀需立即就医。\"}, {\"term\": \"血栓\", \"plain\": \"可能出现静脉或动脉血栓、心梗、中风。\", \"when_to_seek_help\": \"胸痛、肢体肿痛或言语异常需立即就医。\"}, {\"term\": \"眼部问题\", \"plain\": \"可能出现视神经炎、视力模糊、色盲等。\", \"when_to_seek_help\": \"视力突然变化时需就医。\"}, {\"term\": \"胃肠道问题\", \"plain\": \"可能出现腹泻、口腔炎、胃肠穿孔、胰腺炎。\", \"when_to_seek_help\": \"剧烈腹痛或持续腹泻需就医。\"}, {\"term\": \"肝损伤\", \"plain\": \"可能出现肝酶升高，严重时肝衰竭。\", \"when_to_seek_help\": \"皮肤发黄或右上腹痛需就医。\"}, {\"term\": \"注射部位反应\", \"plain\": \"可能出现局部炎症、纤维化、坏死、疼痛。\", \"when_to_seek_help\": \"注射处红肿疼痛加重需就医。\"}, {\"term\": \"电解质紊乱\", \"plain\": \"常见低镁血症，可能需要补镁。\", \"when_to_seek_help\": \"肌肉抽搐或乏力明显时需就医。\"}, {\"term\": \"肌肉痉挛\", \"plain\": \"可能出现局部疼痛性不自主肌肉收缩。\", \"when_to_seek_help\": \"痉挛频繁或疼痛剧烈时需就医。\"}, {\"term\": \"神经系统问题\", \"plain\": \"可能出现脑病、运动功能丧失、味觉丧失。\", \"when_to_seek_help\": \"意识改变或肢体无力需就医。\"}, {\"term\": \"肺部问题\", \"plain\": \"可能出现肺炎、间质性肺病、肺栓塞。\", \"when_to_seek_help\": \"呼吸困难或胸痛需立即就医。\"}, {\"term\": \"脱发和皮疹\", \"plain\": \"可能出现脱发和皮肤皮疹。\", \"when_to_seek_help\": \"皮疹严重或伴发热时需就医。\"}], \"seek_help\": \"出现严重过敏、呼吸困难、胸痛、尿量明显减少、视力突变、剧烈腹痛、意识改变、发热或出血时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:47"
+  }
+]

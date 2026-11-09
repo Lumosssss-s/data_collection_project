@@ -1,0 +1,293 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-015",
+    "generic_name": "GEMCITABINE",
+    "brand_names": [],
+    "aliases_zh": [
+      "吉西他滨"
+    ],
+    "title": "GEMCITABINE 说明书（FDA DailyMed）",
+    "indications": [
+      "Gemcitabine for Injection is a nucleoside metabolic inhibitor indicated:",
+      "Gemcitabine for Injection, USP in combination with carboplatin is indicated for the treatment of patients with advanced ovarian cancer that has relapsed at least 6 months after completion of platinum-based therapy.",
+      "Gemcitabine for Injection, USP in combination with paclitaxel is indicated for the first-line treatment of patients with metastatic breast cancer after failure of prior anthracycline-containing adjuvant chemotherapy, unless anthracyclines were clinically contraindicated.",
+      "Gemcitabine for Injection, USP in combination with cisplatin is indicated for the first-line treatment of patients with inoperable, locally advanced (Stage IIIA or IIIB) or metastatic (Stage IV) non-small cell lung cancer (NSCLC).",
+      "Gemcitabine for Injection, USP is indicated as first-line treatment for patients with locally advanced (nonresectable Stage II or Stage III) or metastatic (Stage IV) adenocarcinoma of the pancreas. Gemcitabine for Injection, USP is indicated for patients previously treated with fluorouracil.",
+      "【中文适应证】本品可用于治疗以下疾病：局部晚期或已转移的非小细胞肺癌；",
+      "【中文适应证】局部晚期或已转移的胰腺癌；",
+      "【中文适应证】吉西他滨与紫杉醇联合，可用于治疗经辅助/新辅助化疗后复发，不能切除的、局部复发或转移性乳腺癌。",
+      "【中文适应证】除非临床上有禁忌，否则既往化疗中应使用过蒽环类抗生素。"
+    ],
+    "dosage": {
+      "standard": "Gemcitabine for Injection is for intravenous use only. Recommended Dose and Schedule The recommended dosage of Gemcitabine for Injection, USP is 1000 mg/m2 intravenously over 30 minutes on Days 1 and 8 of each 21-day cycle in combination with carboplatin AUC 4 administered intravenously on Day 1 after Gemcitabine for Injection, USP administration. Refer to carboplatin prescribing information for additional information. Dosage Modifications Recommended Gemcitabine for Injection, USP dosage modifications for myelosuppression are described in Tables 1 and 2 [see Warnings and Precautions (5.2)]. Refer to the recommended dosage modifications for non-hematologic adverse reactions [see Dosage and Administration (2.5)]. Treatment Day Absolute Neutrophil Count (x 10 6 /L) Platelet Count (x 10 6 /L) Dosage Modification Day 1 Greater than or equal to 1500 And Greater than or equal to 100,000 None Less than 1500 Or Less than 100,000 Delay Treatment Cycle Day 8 Greater than or equal to 1500 And Greater than or equal to 100,000 None 1000 to 1499 Or 75,000 to 99,999 50% of full dose Less than 1000 Or Less than 75,000 Hold Occurrence Myelosuppression During Treatment Cycle Dosage Modification Initial Occurrence Absolute neutrophil count less than 500 x 106/L for more than 5 days or Absolute neutrophil count less than 100 x 106/L for more than 3 days or Febrile neutropenia or Platelets less than 25,000x106/L or Cycle delay for more than one week due to toxicity Permanently reduce Gemcitabine for Injection, USP to 800 mg/m2 on Days 1 and 8 Subsequent Occurrence If any of the above toxicities occur after the initial dose reduction: Permanently reduce Gemcitabine for Injection, USP to 800 mg/m2 on Day 1 only The recommended dosage of Gemcitabine for Injection, USP is 1250 mg/m2 intravenous",
+      "adjustment": "Dosage Modifications Recommended Gemcitabine for Injection, USP dosage modifications for myelosuppression are described in Tables 1 and 2 [see Warnings and Precautions (5.2)]. Refer to the recommended dosage modifications for non-hematologic adverse reactions [see Dosage and Administration (2.5)]. Treatment Day Absolute Neutrophil Count (x 10 6 /L) Platelet Count (x 10 6 /L) Dosage Modification Day 1 Greater than or equal to 1500 And Greater than or equal to 100,000 None Less than 1500 Or Less than 100,000 Delay Treatment Cycle Day 8 Greater than or equal to 1500 And Greater than or equal to 100,000 None 1000 to 1499 Or 75,000 to 99,999 50% of full dose Less than 1000 Or Less than 75,000 Hold Occurrence Myelosuppression During Treatment Cycle Dosage Modification Initial Occurrence Absolute neutrophil count less than 500 x 106/L for more than 5 days or Absolute neutrophil count less than 100 x 106/L for more than 3 days or Febrile neutropenia or Platelets less than 25,000x106/L or Cycle delay for more than one week due to toxicity Permanently reduce Gemcitabine for Injection, USP to 800 mg/m2 on Days 1 and 8 Subsequent Occurrence If any of the above toxicities occur after the initia"
+    },
+    "contraindications": [
+      "Gemcitabine for Injection, USP is contraindicated in patients with a known hypersensitivity to gemcitabine. Reactions include anaphylaxis [see Adverse Reactions (6.1)].",
+      "Patients with a known hypersensitivity to gemcitabine. (4)"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following clinically significant adverse reactions are described elsewhere in the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions for the single agent (≥20%) are nausea/vomiting, anemia, increased aspartate aminotransferase (AST), increased alanine aminotr",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Sagent Pharmaceuticals at 1-866-625-1618 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch .",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data described below reflect exposure to Gemcitabine for Injection as a single agent administered at doses between 800 mg/m2 to 1250 mg/m2 intravenously ove",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Tables 5 and 6 present the incidence of selected adverse reactions and laboratory abnormalities reported in patients with various malignancies receiving single ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "a Grade based on criteria from the World Health Organization (WHO).",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "b For approximately 60% of patients, non-laboratory adverse reactions were graded only if assessed to be possibly drug-related.",
+        "frequency": "60%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "c N=699 to 974; all patients with laboratory or non-laboratory data.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions b Gemcitabine for Injection c",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades (%) Grade 3 (%) Grade 4 (%)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nausea and Vomiting 69 13 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Paresthesias 10 <1 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "a Grade based on criteria from the WHO.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "b Regardless of causality.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Laboratory Abnormality b Gemcitabine for Injection c",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Thrombocytopenia 24 4 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Increased ALT 68 8 2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Increased AST 67 6 2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Increased Alkaline Phosphatase 55 7 2",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-09-21",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-015.xml",
+    "doc_hash": "1b8f2fd76ec48d190053b178a9a30ad3ac10261c1de49b1ecc53dd31ce944895",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "44bcc16c-341d-49e8-a1c6-95d084667aca",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/44bcc16c-341d-49e8-a1c6-95d084667aca.xml",
+    "atc_code": "L01BC05",
+    "approval_no": "国药准字H20030104",
+    "source_name": "GEMCITABINE 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-015.xml",
+    "updated_at": "2026-10-26",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Schedule-Dependent Toxicity",
+        "text": "5.1 Schedule-Dependent Toxicity: In clinical trials evaluating the maximum tolerated dose of Gemcitabine for Injection, prolongation of the infusion time beyond 60 minutes or more frequent than weekly dosing resulted in an increased incidence of clinically significant hypotension, severe flu-like symptoms, myelosuppression, and asthenia. The half-life of Gemcitabine for Injection is influenced by the length of the infusion [see Clinical Pharmacology (12.3)]. Refer to the recommended Gemcitabine for Injection dosage [see Dosage and Administration (2.1, 2.2, 2.3, 2.4)].",
+        "char_len": 574,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Schedule-Dependent Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Myelosuppression",
+        "text": "5.2 Myelosuppression: Myelosuppression manifested by neutropenia, thrombocytopenia, and anemia occurs with Gemcitabine for Injection as a single agent and the risks are increased when Gemcitabine for Injection is combined with other cytotoxic drugs. In clinical trials, Grade 3 or 4 neutropenia, anemia, and thrombocytopenia occurred in 25%, 8%, and 5%, respectively of the 979 patients who received single agent Gemcitabine for Injection. The frequencies of Grade 3 or 4 neutropenia, anemia, and thrombocytopenia varied from 48% to 71%, 8% to 28%, and 5% to 55%, respectively, in patients receiving Gemcitabine for Injection in combination with another drug [see Adverse Reactions (6.1)]. Prior to each dose of Gemcitabine for Injection, obtain a complete blood count (CBC) with a differential and a platelet count. Modify the dosage as recommended [see Dosage and Administration (2.1, 2.2, 2.3, 2.4)].",
+        "char_len": 903,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Myelosuppression",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Severe Cutaneous Adverse Reactions (SCARS)",
+        "text": "5.3 Severe Cutaneous Adverse Reactions (SCARS): SCARs, including Stevens-Johnson syndrome (SJS), toxic epidermal necrolysis (TEN), drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis (AGEP), which can be life-threatening or fatal, have been reported in association with gemcitabine treatment [see Adverse Reactions (6.2)]. Monitor patients for signs and symptoms of severe cutaneous adverse reactions. Permanently discontinue gemcitabine in patients who develop SCARs.",
+        "char_len": 526,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Severe Cutaneous Adverse Reactions (SCARS)",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Pulmonary Toxicity and Respiratory Failure",
+        "text": "5.4 Pulmonary Toxicity and Respiratory Failure: Pulmonary toxicity, including interstitial pneumonitis, pulmonary fibrosis, pulmonary edema, and adult respiratory distress syndrome (ARDS), has been reported. In some cases, these pulmonary events can lead to fatal respiratory failure despite the discontinuation of therapy. The onset of pulmonary symptoms may occur up to 2 weeks after the last dose of Gemcitabine for Injection [see Adverse Reactions (6.1, 6.2)]. Permanently discontinue Gemcitabine for Injection in patients who develop unexplained dyspnea, with or without bronchospasm, or evidence of severe pulmonary toxicity.",
+        "char_len": 631,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Pulmonary Toxicity and Respiratory Failure",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Hemolytic Uremic Syndrome",
+        "text": "5.5 Hemolytic Uremic Syndrome: Hemolytic uremic syndrome (HUS), including fatalities from renal failure or the requirement for dialysis, can occur with Gemcitabine for Injection. In clinical trials, HUS occurred in 0.25% of 2429 patients. Most fatal cases of renal failure were due to HUS [see Adverse Reactions (6.1)]. Serious cases of thrombotic microangiopathy other than HUS have been reported with Gemcitabine for Injection [see Adverse Reactions (6.2)]. Assess renal function prior to initiation of Gemcitabine for Injection and periodically during treatment. Consider the diagnosis of HUS in patients who develop anemia with evidence of microangiopathic hemolysis; increased bilirubin or LDH; reticulocytosis; severe thrombocytopenia; or renal failure (increased serum creatinine or BUN). Permanently discontinue Gemcitabine for Injection in patients with HUS or severe renal impairment. Renal failure may not be reversible even with the discontinuation of therapy.",
+        "char_len": 972,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Hemolytic Uremic Syndrome",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Hepatic Toxicity",
+        "text": "5.6 Hepatic Toxicity: Drug-induced liver injury, including liver failure and death, has been reported in patients receiving Gemcitabine for Injection alone or with other potentially hepatotoxic drugs [see Adverse Reactions (6.1, 6.2)]. Administration of Gemcitabine for Injection in patients with concurrent liver metastases or a pre-existing medical history of hepatitis, alcoholism, or liver cirrhosis can lead to exacerbation of the underlying hepatic insufficiency. Assess hepatic function prior to initiation of Gemcitabine for Injection and periodically during treatment. Permanently discontinue Gemcitabine for Injection in patients who develop severe hepatic toxicity.",
+        "char_len": 676,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Hepatic Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Embryo-Fetal Toxicity",
+        "text": "5.7 Embryo-Fetal Toxicity: Based on animal data and its mechanism of action, Gemcitabine for Injection can cause fetal harm when administered to a pregnant woman. Gemcitabine was teratogenic, embryotoxic, and fetotoxic in mice and rabbits. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with Gemcitabine for Injection and for 6 months after the final dose. Advise male patients with female partners of reproductive potential to use effective contraception during treatment with Gemcitabine for Injection and for 3 months following the final dose [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 689,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Exacerbation of Radiation Therapy Toxicity",
+        "text": "5.8 Exacerbation of Radiation Therapy Toxicity: Gemcitabine for Injection is not recommended for use in combination with radiation therapy. Concurrent (given together or ≤7 days apart) Life-threatening mucositis, especially esophagitis and pneumonitis occurred in a trial in which Gemcitabine for Injection was administered at a dose of 1000 mg/m2 to patients with non-small cell lung cancer for up to 6 consecutive weeks concurrently with thoracic radiation. Non-concurrent (given >7 days apart) Excessive toxicity has not been observed when Gemcitabine for Injection is administered more than 7 days before or after radiation. Radiation recall has been reported in patients who received Gemcitabine for Injection after prior radiation.",
+        "char_len": 737,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Exacerbation of Radiation Therapy Toxicity",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Capillary Leak Syndrome",
+        "text": "5.9 Capillary Leak Syndrome: Capillary leak syndrome (CLS) with severe consequences has been reported in patients receiving Gemcitabine for Injection as a single agent or in combination with other chemotherapeutic agents [see Adverse Reactions (6.2)]. Permanently discontinue Gemcitabine for Injection if CLS develops during therapy.",
+        "char_len": 333,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Capillary Leak Syndrome",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Posterior Reversible Encephalopathy Syndrome",
+        "text": "5.10 Posterior Reversible Encephalopathy Syndrome: Posterior reversible encephalopathy syndrome (PRES) has been reported in patients receiving Gemcitabine for Injection as a single agent or in combination with other chemotherapeutic agents [see Adverse Reactions (6.2)]. PRES can present with headache, seizure, lethargy, hypertension, confusion, blindness, and other visual and neurologic disturbances. Confirm the diagnosis of PRES with magnetic resonance imaging (MRI). Permanently discontinue Gemcitabine for Injection if PRES develops during therapy.",
+        "char_len": 555,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Posterior Reversible Encephalopathy Syndrome",
+        "source_xml": "DRUG-LUNG-FDA-015.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modifications for Non-Hematologic Adverse Reactions",
+            "text": "2.5 Dosage Modifications for Non-Hematologic Adverse Reactions: Permanently discontinue Gemcitabine for Injection, USP for any of the following: Withhold Gemcitabine for Injection, USP or reduce dose by 50% for other Grade 3 or 4 non-hematological adverse reactions until resolved. No dose modifications are recommended for alopecia, nausea, or vomiting.",
+            "char_len": 354,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modifications for Non-Hematologic Adverse Reactions",
+            "source_xml": "DRUG-LUNG-FDA-015.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-015.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种叫吉西他滨的注射用抗癌药，常与其他抗癌药联合使用。\", \"how_to_use\": \"只能静脉输注，不能口服或自行注射。\", \"cautions\": [\"每21天为一个周期，通常在第1天和第8天给药。\", \"联合卡铂时，第1天先输吉西他滨，再输卡铂。\", \"医生会根据血细胞计数调整剂量或推迟治疗。\", \"第1天中性粒细胞低于1500或血小板低于10万时需推迟周期。\", \"第8天中性粒细胞1000到1499或血小板7.5万到9.9万时用半量。\", \"第8天中性粒细胞低于1000或血小板低于7.5万时需暂停给药。\", \"出现严重骨髓抑制时，医生可能永久降低剂量。\", \"对吉西他滨过敏者禁用，曾出现过敏反应者不能用。\"], \"side_effects\": [{\"term\": \"恶心呕吐\", \"plain\": \"可能出现恶心和呕吐。\", \"when_to_seek_help\": \"呕吐严重或无法进食时请就医。\"}, {\"term\": \"贫血\", \"plain\": \"可能引起贫血，让人容易疲劳。\", \"when_to_seek_help\": \"明显乏力、头晕或气短时请就医。\"}, {\"term\": \"肝酶升高\", \"plain\": \"化验可能显示肝酶升高。\", \"when_to_seek_help\": \"出现黄疸或右上腹不适时请就医。\"}, {\"term\": \"血小板减少\", \"plain\": \"血小板可能减少，容易出血。\", \"when_to_seek_help\": \"出现异常出血或瘀斑时请就医。\"}, {\"term\": \"感觉异常\", \"plain\": \"可能出现手脚麻木或刺痛感。\", \"when_to_seek_help\": \"麻木加重或影响活动时请就医。\"}], \"seek_help\": \"出现严重呕吐、明显乏力气短、异常出血瘀斑、黄疸或手脚麻木加重时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:17:15"
+  }
+]

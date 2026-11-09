@@ -1,0 +1,36 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-013",
+    "generic_name": "曲妥珠单抗-emtansine",
+    "brand_names": [
+      "KADCYLA"
+    ],
+    "aliases_zh": [
+      "曲妥珠单抗-emtansine"
+    ],
+    "title": "曲妥珠单抗-emtansine",
+    "indications": [
+      "乳腺癌辅助治疗：单药适用于接受了紫杉类联合曲妥珠单抗为基础的新辅助治疗后，仍残存侵袭性病灶的HER2阳性早期乳腺癌患者的辅助治疗。",
+      "转移性乳腺癌治疗：单药适用于接受了紫杉类和曲妥珠单抗治疗的HER2 阳性、不可切除局部晚期或转移性乳腺癌患者。且患者应具备以下任一情形：既往接受过针对局部晚期或转移性乳腺癌的治疗，或在辅助治疗期间或完成辅助治疗后6 个月内出现疾病复发。"
+    ],
+    "dosage": {
+      "standard": "T-DM1 的推荐剂量为3.6mg/kg，每3 周一次（21 天为一个周期），静脉输注。",
+      "adjustment": "发生不良反应时应根据说明书及时调整剂量，剂量降低方案如下表。降低剂量后，不应再增加T-DM1 剂量。表48恩美曲妥珠单抗剂量降低方案剂量降低方案剂量水平起始剂量3.6mg/kg第1 次降低剂量3mg/kg第2 次降低剂量2.4mg/kg需要进一步降低剂量终止治疗4.临床实践中要对既往史、体格检查、心电图、超声心动图LVEF 基线评估后，再开始应用T-DM1，使用期间应每3个月监测LVEF。"
+    },
+    "contraindications": [
+      "已知对本品或其任何赋形剂有超敏反应的患者禁用本品。"
+    ],
+    "adverse_reactions": [],
+    "interactions": [],
+    "approval_no": "国药准字SJ20200002；国药准字SJ20200003",
+    "atc_code": "L01FD03",
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "内部知识库使用，不得再分发（来源: FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231））",
+    "file_path": "fetched/labels_cn/downloads/roche_tdm1_31283a8e548f.pdf",
+    "doc_hash": null,
+    "review_status": "draft"
+  }
+]

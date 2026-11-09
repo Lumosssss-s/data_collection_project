@@ -1,0 +1,399 @@
+[
+  {
+    "tpl_id": "TPL-LUNG-001",
+    "cancer_type": "lung",
+    "stage": [
+      "I",
+      "II",
+      "III",
+      "unknown"
+    ],
+    "phase": "postoperative",
+    "schedule": [
+      {
+        "timepoint": "术后3个月",
+        "interval_days": 90,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后6个月",
+        "interval_days": 180,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后12个月",
+        "interval_days": 365,
+        "items": [
+          "胸部CT",
+          "腹部超声",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后18个月",
+        "interval_days": 545,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后24个月",
+        "interval_days": 730,
+        "items": [
+          "胸部CT",
+          "腹部超声",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后36个月",
+        "interval_days": 1095,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后48个月",
+        "interval_days": 1460,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后60个月",
+        "interval_days": 1825,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "术后5年后每年",
+        "interval_days": 2190,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "中性粒细胞减少",
+        "grade_action": {
+          "1-2": "观察并复查血常规",
+          "3": "停药并尽快就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "腹泻",
+        "grade_action": {
+          "1-2": "补液、观察",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "皮疹",
+        "grade_action": {
+          "1-2": "保湿防晒、观察",
+          "3": "停药并皮肤科就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "间质性肺炎",
+        "grade_action": {
+          "1-2": "监测症状并复查影像",
+          "3": "停药并立即就诊",
+          "4": "急诊处理（呼吸支持）"
+        }
+      },
+      {
+        "ctcae_term": "肝功能异常",
+        "grade_action": {
+          "1-2": "监测并复查肝功",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-followup-001",
+      "MSG-followup-005",
+      "MSG-alert-001"
+    ],
+    "timepoint_basis": "指南原文：治疗后2年内每3月复查1次，2年至5年内每半年1次，5年后每1年1次（本表取代表性节点，原文规则见 source_section）",
+    "source_name": "原发性肺癌诊疗指南（2022年版）",
+    "source_version": "2022",
+    "source_section": "六、随访（治疗后定期复查）",
+    "source_file": "nhc2022_01_lung.pdf",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "rule-extract（基于 A3 疾病档案 sections.followup 原文）",
+      "date": "2026-11-01",
+      "note": "时间点与复查频次来自指南原文；检查项目按原文「以影像检查为主」补全为胸部CT，未逐项对应指南表格"
+    }
+  },
+  {
+    "tpl_id": "TPL-LUNG-002",
+    "cancer_type": "lung",
+    "stage": [
+      "II",
+      "III",
+      "IV",
+      "unknown"
+    ],
+    "phase": "on_treatment",
+    "schedule": [
+      {
+        "timepoint": "第1周期末",
+        "interval_days": 21,
+        "items": [
+          "血常规",
+          "肝肾功能",
+          "不良反应评估"
+        ]
+      },
+      {
+        "timepoint": "每2周期",
+        "interval_days": 42,
+        "items": [
+          "血常规",
+          "肝肾功能",
+          "不良反应分级"
+        ]
+      },
+      {
+        "timepoint": "每3周期影像评估",
+        "interval_days": 63,
+        "items": [
+          "胸部CT（含上腹部）",
+          "疗效评估"
+        ]
+      },
+      {
+        "timepoint": "治疗结束时",
+        "interval_days": 126,
+        "items": [
+          "全面评估",
+          "后续随访计划"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "中性粒细胞减少",
+        "grade_action": {
+          "1-2": "观察并复查血常规",
+          "3": "停药并尽快就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "腹泻",
+        "grade_action": {
+          "1-2": "补液、观察",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "皮疹",
+        "grade_action": {
+          "1-2": "保湿防晒、观察",
+          "3": "停药并皮肤科就诊",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "间质性肺炎",
+        "grade_action": {
+          "1-2": "监测症状并复查影像",
+          "3": "停药并立即就诊",
+          "4": "急诊处理（呼吸支持）"
+        }
+      },
+      {
+        "ctcae_term": "肝功能异常",
+        "grade_action": {
+          "1-2": "监测并复查肝功",
+          "3": "停药并就诊",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-alert-002",
+      "MSG-alert-003",
+      "MSG-edu-003",
+      "MSG-adherence-001"
+    ],
+    "timepoint_basis": "需求清单 B4 时间点设计原则：治疗中随访常按「每 1~2 个周期」评估",
+    "source_name": "医疗数据需求清单 B4（时间点设计原则），非指南原文",
+    "source_version": "需求清单 v1.0",
+    "source_section": "B4 ⑤/⑥ 时间点设计原则",
+    "source_file": "医疗数据需求清单.md",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "design（无指南章节支撑治疗中随访时间点）",
+      "date": "2026-11-01",
+      "note": "本套为按需求清单设计原则派生的演示模板，时间点未经指南原文确认，正式交付前需医学顾问复核"
+    }
+  },
+  {
+    "tpl_id": "TPL-LUNG-003",
+    "cancer_type": "lung",
+    "stage": [
+      "I",
+      "II",
+      "III",
+      "unknown"
+    ],
+    "phase": "rehabilitation",
+    "schedule": [
+      {
+        "timepoint": "治疗后3个月",
+        "interval_days": 90,
+        "items": [
+          "症状评估",
+          "肺功能评估",
+          "运动耐量评估"
+        ]
+      },
+      {
+        "timepoint": "治疗后6个月",
+        "interval_days": 180,
+        "items": [
+          "症状评估",
+          "影像复查"
+        ]
+      },
+      {
+        "timepoint": "治疗后12个月",
+        "interval_days": 365,
+        "items": [
+          "症状评估",
+          "影像复查",
+          "康复计划调整"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "疲乏",
+        "grade_action": {
+          "1-2": "休息与运动调整",
+          "3": "就诊评估",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "呼吸困难",
+        "grade_action": {
+          "1-2": "观察并康复训练",
+          "3": "就诊评估",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-followup-006",
+      "MSG-edu-002"
+    ],
+    "timepoint_basis": "需求清单 B4 时间点设计原则：康复按阶段评估，无指南专章",
+    "source_name": "医疗数据需求清单 B4（时间点设计原则），非指南原文",
+    "source_version": "需求清单 v1.0",
+    "source_section": "B4 ⑤ 时间点设计原则",
+    "source_file": "医疗数据需求清单.md",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "design（A3 档案 rehabilitation 节为空，无原文可抽）",
+      "date": "2026-11-01",
+      "note": "演示级模板，未经指南原文确认"
+    }
+  },
+  {
+    "tpl_id": "TPL-LUNG-004",
+    "cancer_type": "lung",
+    "stage": [
+      "I",
+      "II",
+      "III",
+      "unknown"
+    ],
+    "phase": "survivorship",
+    "schedule": [
+      {
+        "timepoint": "术后5年（长期生存期起点）",
+        "interval_days": 1825,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      },
+      {
+        "timepoint": "此后每年1次",
+        "interval_days": 365,
+        "items": [
+          "胸部CT",
+          "症状评估"
+        ]
+      }
+    ],
+    "ae_monitoring": [
+      {
+        "ctcae_term": "疲乏",
+        "grade_action": {
+          "1-2": "休息与运动调整",
+          "3": "就诊评估",
+          "4": "急诊处理"
+        }
+      },
+      {
+        "ctcae_term": "咳嗽",
+        "grade_action": {
+          "1-2": "观察",
+          "3": "就诊评估",
+          "4": "急诊处理"
+        }
+      }
+    ],
+    "patient_messages": [
+      "MSG-followup-002",
+      "MSG-edu-005"
+    ],
+    "timepoint_basis": "指南原文：5年后每1年复查1次",
+    "source_name": "原发性肺癌诊疗指南（2022年版）",
+    "source_version": "2022",
+    "source_section": "六、随访（5年后每1年复查1次）",
+    "source_file": "nhc2022_01_lung.pdf",
+    "updated_at": "2026-11-01",
+    "review_status": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "annotation": {
+      "annotator": "rule-extract（基于 A3 疾病档案 sections.followup 原文）",
+      "date": "2026-11-01",
+      "note": "复查频次来自原文末段；「胸部CT」为按原文「以影像检查为主」补全"
+    }
+  }
+]

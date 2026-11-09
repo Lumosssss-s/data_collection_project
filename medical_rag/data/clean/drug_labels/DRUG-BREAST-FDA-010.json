@@ -1,0 +1,264 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-010",
+    "generic_name": "FULVESTRANT",
+    "brand_names": [],
+    "aliases_zh": [
+      "氟维司群"
+    ],
+    "title": "FULVESTRANT 说明书（FDA DailyMed）",
+    "indications": [
+      "FASLODEX is indicated for the treatment of:",
+      "FASLODEX is an estrogen receptor antagonist indicated for the treatment of:",
+      "【中文适应证】本品可用于在抗雌激素辅助治疗后或治疗过程中复发的，或是在抗雌激素治疗中进展的绝经后（包括自然绝经和人工绝经）雌激素受体阳性的局部晚期或转移性乳腺癌。",
+      "【中文适应证】本品与阿贝西利联合治疗适用于激素受体（HR）阳性、人表皮生长因子受体2（HER2）阴性的局部晚期或转移性乳腺癌，用于既往曾接受内分泌治疗后出现疾病进展的患者。"
+    ],
+    "dosage": {
+      "standard": "The recommended dose of FASLODEX is 500 mg to be administered intramuscularly into the buttocks (gluteal area) slowly (1 - 2 minutes per injection) as two 5 mL injections, one in each buttock, on Days 1, 15, 29, and once monthly thereafter [see Clinical Studies (14)]. When FASLODEX is used in combination with palbociclib, abemaciclib, or ribociclib, the recommended dose of FASLODEX is 500 mg to be administered intramuscularly into the buttocks (gluteal area) slowly (1 - 2 minutes per injection) as two 5 mL injections, one in each buttock, on Days 1, 15, 29, and once monthly thereafter. When FASLODEX is used in combination with palbociclib, the recommended dose of palbociclib is a 125 mg capsule taken orally once daily for 21 consecutive days followed by 7 days off treatment to comprise a complete cycle of 28 days. Palbociclib should be taken with food. Refer to the Full Prescribing Information for palbociclib. When FASLODEX is used in combination with abemaciclib, the recommended dose of abemaciclib is 150 mg orally, twice daily. Abemaciclib may be taken with or without food. Refer to the Full Prescribing Information for abemaciclib. When FASLODEX is used in combination with ribociclib, the recommended dose of ribociclib is 600 mg taken orally, once daily for 21 consecutive days followed by 7 days off treatment resulting in a complete cycle of 28 days. Ribociclib can be taken with or without food. Refer to the Full Prescribing Information for ribociclib. Pre/perimenopausal women treated with the combination of FASLODEX plus palbociclib, abemaciclib, or ribociclib, should be treated with luteinizing hormone-releasing hormone (LHRH) agonists according to current clinical practice standards [see Clinical Studies (14)]. A dose of 250 mg is recommended for patients with mode",
+      "adjustment": "When FASLODEX is used in combination with abemaciclib, the recommended dose of abemaciclib is 150 mg orally, twice daily. Abemaciclib may be taken with or without food. Refer to the Full Prescribing Information for abemaciclib. When FASLODEX is used in combination with ribociclib, the recommended dose of ribociclib is 600 mg taken orally, once daily for 21 consecutive days followed by 7 days off treatment resulting in a complete cycle of 28 days. Ribociclib can be taken with or without food. Refer to the Full Prescribing Information for ribociclib. Pre/perimenopausal women treated with the combination of FASLODEX plus palbociclib, abemaciclib, or ribociclib, should be treated with luteinizing hormone-releasing hormone (LHRH) agonists according to current clinical practice standards [see Clinical Studies (14)]. A dose of 250 mg is recommended for patients with moderate hepatic impairment (Child-Pugh class B) to be administered intramuscularly into the buttock (gluteal area) slowly (1 - 2 minutes) as one 5 mL injection on Days 1, 15, 29, and once monthly thereafter. FASLODEX has not been evaluated in patients with severe hepatic impairment (Child-Pugh class C) [see Warnings and Preca"
+    },
+    "contraindications": [
+      "FASLODEX is contraindicated in patients with a known hypersensitivity to the drug or to any of its components. Hypersensitivity reactions, including urticaria and angioedema, have been reported in association with FASLODEX [see Adverse Reactions (6.2)]."
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in more detail in other sections of the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact AstraZeneca at 1-800-236-9933 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, the adverse reaction rates observed cannot be directly compared to rates in other trials ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Comparison of FASLODEX 500 mg and FASLODEX 250 mg (CONFIRM)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The following adverse reactions (ARs) were calculated based on the safety analysis of CONFIRM comparing the administration of FASLODEX 500 mg intramuscularly on",
+        "frequency": "11.6%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 1 lists adverse reactions reported with an incidence of 5% or greater, regardless of assessed causality, from CONFIRM.",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions FASLODEX 500 mg N=361 % FASLODEX 250 mg N=374 %",
+        "frequency": "361 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Injection Site PainIncluding more severe injection site related sciatica, neuralgia, neuropathic pain, and peripheral neuropathy. 12 9",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Injection Site PainIncluding more severe injection site related sciatica, neuralgia, neuropathic pain, and peripheral neuropathy.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Pain in Extremity 7 7",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Musculoskeletal System",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Musculoskeletal Pain 6 3",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Musculoskeletal Pain",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the pooled safety population (N=1127) from clinical trials comparing FASLODEX 500 mg to FASLODEX 250 mg, post-baseline increases of ≥1 CTC grade in either AS",
+        "frequency": "15%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Comparison of FASLODEX 500 mg and Anastrozole 1 mg (FALCON)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of FASLODEX 500 mg versus anastrozole 1 mg was evaluated in FALCON. The data described below reflect exposure to FASLODEX in 228 out of 460 patients ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Permanent discontinuation associated with an adverse reaction occurred in 4 of 228 (1.8%) patients receiving FASLODEX and in 3 of 232 (1.3%) patients receiving ",
+        "frequency": "1.8%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (≥10%) of any grade reported in patients in the FASLODEX arm were arthralgia, hot flash, fatigue, and nausea.",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse reactions reported in patients who received FASLODEX in FALCON at an incidence of ≥5% in either treatment arm are listed in Table 2, and laboratory abno",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions FASLODEX 500 mg N=228 Anastrozole 1 mg N=232",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-02-16",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-010.xml",
+    "doc_hash": "3ba1ba0f102d76a3c56caaa43521859eda3bb5cfc953153900bfb12283dc7835",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "83d7a440-e904-4e36-afb5-cb02b1c919f7",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/83d7a440-e904-4e36-afb5-cb02b1c919f7.xml",
+    "atc_code": "L02BA03",
+    "approval_no": "国药准字H20213861",
+    "source_name": "FULVESTRANT 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-010.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "There are no known drug-drug interactions. Although, fulvestrant is metabolized by CYP 3A4 in vitro, drug interactions studies with ketoconazole or rifampin did not alter fulvestrant pharmacokinetics. Dose adjustment is not needed in patients co-prescribed CYP 3A4 inhibitors or inducers [see Clinical Pharmacology (12.3)]."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Risk of Bleeding",
+        "text": "5.1 Risk of Bleeding: Because FASLODEX is administered intramuscularly, it should be used with caution in patients with bleeding diatheses, thrombocytopenia, or anticoagulant use.",
+        "char_len": 179,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Risk of Bleeding",
+        "source_xml": "DRUG-BREAST-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Increased Exposure in Patients with Hepatic Impairment",
+        "text": "5.2 Increased Exposure in Patients with Hepatic Impairment: The safety and pharmacokinetics of FASLODEX were evaluated in a study in seven subjects with moderate hepatic impairment (Child-Pugh class B) and seven subjects with normal hepatic function. Exposure was increased in patients with moderate hepatic impairment, therefore, a dose of 250 mg is recommended [see Dosage and Administration (2.2)]. FASLODEX has not been studied in patients with severe hepatic impairment (Child-Pugh class C) [see Use in Specific Populations (8.6)].",
+        "char_len": 536,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Increased Exposure in Patients with Hepatic Impairment",
+        "source_xml": "DRUG-BREAST-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Injection Site Reaction",
+        "text": "5.3 Injection Site Reaction: Injection site related events including sciatica, neuralgia, neuropathic pain, and peripheral neuropathy have been reported with FASLODEX injection. Caution should be taken while administering FASLODEX at the dorsogluteal injection site due to the proximity of the underlying sciatic nerve [see Dosage and Administration (2.3) and Adverse Reactions (6.1)].",
+        "char_len": 385,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Injection Site Reaction",
+        "source_xml": "DRUG-BREAST-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Embryo-Fetal Toxicity",
+        "text": "5.4 Embryo-Fetal Toxicity: Based on findings from animal studies and its mechanism of action, FASLODEX can cause fetal harm when administered to a pregnant woman. In animal reproduction studies, administration of fulvestrant to pregnant rats and rabbits during organogenesis resulted in embryo-fetal toxicity at daily doses that are significantly less than the maximum recommended human dose. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with FASLODEX and for one year after the last dose [see Use in Specific Populations (8.1), (8.3) and Clinical Pharmacology (12.1)].",
+        "char_len": 669,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-010.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Immunoassay Measurement of Serum Estradiol",
+        "text": "5.5 Immunoassay Measurement of Serum Estradiol: Due to structural similarity of fulvestrant and estradiol, FASLODEX can interfere with estradiol measurement by immunoassay, resulting in falsely elevated estradiol levels.",
+        "char_len": 220,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Immunoassay Measurement of Serum Estradiol",
+        "source_xml": "DRUG-BREAST-FDA-010.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": null,
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.7 Renal Impairment",
+            "text": "8.7 Renal Impairment: Negligible amounts of fulvestrant are eliminated in urine; therefore, a study in patients with renal impairment was not conducted. In the advanced breast cancer trials, fulvestrant concentrations in women with estimated creatinine clearance as low as 30 mL/min were similar to women with normal creatinine.",
+            "char_len": 328,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Renal Impairment",
+            "source_xml": "DRUG-BREAST-FDA-010.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: FASLODEX is metabolized primarily in the liver. The pharmacokinetics of fulvestrant were evaluated after a single dose of 100 mg in subjects with mild and moderate hepatic impairment and normal hepatic function (n=7 subjects/group), using a shorter-acting intramuscular injection formulation. Subjects with mild hepatic impairment (Child-Pugh class A) had comparable mean AUC and clearance values to those with normal hepatic function. In subjects with moderate hepatic impairment (Child-Pugh class B), the average AUC of fulvestrant increased by 70% compared to patients with normal hepatic function. AUC was positively correlated with total bilirubin concentration (p=0.012). FASLODEX has not been studied in patients with severe hepatic impairment (Child-Pugh class C). A dose of FASLODEX 250 mg is recommended in patients with moderate hepatic impairment (Child-Pugh class B) [see Dosage and Administration (2.2) and Warnings and Precautions (5.2)].",
+            "char_len": 977,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-BREAST-FDA-010.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.2 Dose Modification",
+            "text": "2.2 Dose Modification: Hepatic Impairment: A dose of 250 mg is recommended for patients with moderate hepatic impairment (Child-Pugh class B) to be administered intramuscularly into the buttock (gluteal area) slowly (1 - 2 minutes) as one 5 mL injection on Days 1, 15, 29, and once monthly thereafter. FASLODEX has not been evaluated in patients with severe hepatic impairment (Child-Pugh class C) [see Warnings and Precautions (5.2) and Use in Specific Populations (8.6)]. Combination Therapy When FASLODEX is used in combination with palbociclib, abemaciclib, or ribociclib, refer to monotherapy dose modification instructions for FASLODEX. Refer to the Full Prescribing Information of co-administered palbociclib, abemaciclib, or ribociclib for dose modification guidelines in the event of toxicities, for use with concomitant medications, and other relevant safety information.",
+            "char_len": 881,
+            "source_section_code": "42229-5",
+            "source_title": "2.2 Dose Modification",
+            "source_xml": "DRUG-BREAST-FDA-010.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-010.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种雌激素受体拮抗剂，用于治疗乳腺癌。\", \"how_to_use\": \"常规剂量为500毫克，臀部肌肉缓慢注射，每侧臀部各一针，每针5毫升，注射时间1到2分钟。第1天、第15天、第29天各注射一次，之后每月一次。与某些口服靶向药联用时，注射用法相同。与哌柏西利联用时，哌柏西利为125毫克胶囊，每天口服一次，连服21天停7天为一个周期，随餐服用。与阿贝西利联用时，阿贝西利为150毫克，每天口服两次，可与食物同服或不同服。与瑞博西利联用时，瑞博西利为600毫克，每天口服一次，连服21天停7天为一个周期，可与食物同服或不同服。绝经前或围绝经期女性联用上述口服药时，应按临床标准使用促黄体生成素释放激素激动剂。中度肝功能损害患者推荐剂量为250毫克，臀部肌肉缓慢注射一针5毫升，第1天、第15天、第29天各一次，之后每月一次。重度肝功能损害患者尚未评估。\", \"cautions\": [\"对本品或任何成分过敏者禁用。\", \"曾报告与本品相关的荨麻疹和血管性水肿等过敏反应。\", \"中度肝功能损害患者需调整剂量，重度肝功能损害患者尚未评估。\", \"目前未发现已知的药物相互作用。\", \"本品体外经CYP 3A4代谢，但与酮康唑或利福平的药物相互作用研究未改变本品药代动力学。\", \"合用CYP 3A4抑制剂或诱导剂时无需调整剂量。\"], \"side_effects\": [{\"term\": \"注射部位疼痛\", \"plain\": \"打针的地方可能疼痛，包括较严重的坐骨神经痛、神经痛、神经病理性疼痛和周围神经病。\", \"when_to_seek_help\": \"注射部位疼痛严重或持续不缓解时需就医。\"}, {\"term\": \"肢体疼痛\", \"plain\": \"可能出现手臂或腿部疼痛。\", \"when_to_seek_help\": \"肢体疼痛明显或影响日常活动时需就医。\"}, {\"term\": \"肌肉骨骼疼痛\", \"plain\": \"可能出现肌肉或骨骼疼痛。\", \"when_to_seek_help\": \"肌肉骨骼疼痛严重或持续不缓解时需就医。\"}, {\"term\": \"关节痛\", \"plain\": \"可能出现关节疼痛。\", \"when_to_seek_help\": \"关节痛明显或影响活动时需就医。\"}, {\"term\": \"潮热\", \"plain\": \"可能出现潮热感。\", \"when_to_seek_help\": \"潮热严重或难以忍受时需就医。\"}, {\"term\": \"疲劳\", \"plain\": \"可能感到疲倦乏力。\", \"when_to_seek_help\": \"疲劳严重或影响日常生活时需就医。\"}, {\"term\": \"恶心\", \"plain\": \"可能出现恶心感。\", \"when_to_seek_help\": \"恶心严重或持续不缓解时需就医。\"}], \"seek_help\": \"出现过敏反应如荨麻疹、血管性水肿，或注射部位疼痛严重、肢体疼痛、肌肉骨骼疼痛、关节痛、潮热、疲劳、恶心明显或持续不缓解时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:15:43"
+  }
+]

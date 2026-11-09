@@ -1,0 +1,64 @@
+[
+  {
+    "drug_id": "DRUG-SUP-002",
+    "generic_name": "地舒单抗",
+    "brand_names": [
+      "AUKELSO",
+      "BILDYOS",
+      "BOMYNTRA",
+      "BOSAYA",
+      "Bilprevda",
+      "Boncresa",
+      "CONEXXENCE",
+      "Denosumab-BMWO",
+      "ENOBY",
+      "JUBBONTI",
+      "JUBEREQ",
+      "OSPOMYV",
+      "OSVYRTI",
+      "Osenvelt",
+      "Oziltus",
+      "Prolia",
+      "Stoboclo",
+      "WYOST",
+      "XGEVA",
+      "XTRENBO"
+    ],
+    "aliases_zh": [
+      "地舒单抗"
+    ],
+    "title": "地舒单抗",
+    "indications": [
+      "治疗不可手术切除或手术切除可能导致严重功能障碍的骨巨细胞瘤，包括成人和骨骼发育成熟（定义为至少一处成熟长骨且体重≥45kg）的青少年患者。",
+      "用于实体肿瘤骨转移患者和多发性骨髓瘤患者的治疗，以延迟或降低骨相关事件（病理性骨折、脊髓压迫、骨放疗或骨手术）的发生风险。"
+    ],
+    "dosage": {
+      "standard": "实体肿瘤骨转移和多发性骨髓瘤：地舒单抗的推荐剂量为120mg 每4 周1 次，于上臂、大腿上部或腹部皮下给药。骨巨细胞瘤：地舒单抗的推荐剂量为120mg 每4 周一次，治疗第1 个月的第8 日和第15 日分别给予120mg 额外给药。",
+      "adjustment": "如发生下颌骨坏死，针对下颌骨坏死的治疗可能反倒加重病情，此时应考虑停药。"
+    },
+    "contraindications": [
+      "Bildyos is contraindicated in: Patients with hypocalcemia: Pre-existing hypocalcemia must be corrected prior to initiating therapy with Bildyos.",
+      "Pregnant women: Denosumab products may cause fetal harm when administered to a pregnant woman.",
+      "In women of reproductive potential, pregnancy testing should be performed prior to initiating treatment with Bildyos.",
+      "Patients with hypersensitivity to denosumab products: Bildyos is contraindicated in patients with a history of systemic hypersensitivity to any component of the product.",
+      "Reactions have included anaphylaxis, facial swelling, and urticaria.",
+      "( 4, 5.1 ) Pregnancy.",
+      "( 4, 8.1 ) Known hypersensitivity to denosumab products."
+    ],
+    "adverse_reactions": [],
+    "interactions": [
+      "地舒单抗不宜与双膦酸盐联合使用。",
+      "服用免疫抑制剂或免疫系统受损的患者接受地舒单抗治疗发生严重感染的风险可能会增加，用药前需充分考虑效益-风险比。"
+    ],
+    "approval_no": null,
+    "atc_code": "M05BX04",
+    "cancer_type": null,
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": null,
+    "license_note": "内部知识库使用，不得再分发（来源: FDA NDC Directory（美国 FDA 公开数据 product.txt，公有领域，快照至 20271231））",
+    "file_path": null,
+    "doc_hash": null,
+    "review_status": "draft"
+  }
+]

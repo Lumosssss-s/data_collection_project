@@ -1,0 +1,325 @@
+[
+  {
+    "drug_id": "DRUG-COLORECTAL-FDA-007",
+    "generic_name": "REGORAFENIB",
+    "brand_names": [],
+    "aliases_zh": [
+      "瑞戈非尼"
+    ],
+    "title": "REGORAFENIB 说明书（FDA DailyMed）",
+    "indications": [
+      "STIVARGA is a kinase inhibitor indicated for the treatment of adult patients with:",
+      "STIVARGA is indicated for the treatment of adult patients with metastatic colorectal cancer (CRC) who have been previously treated with fluoropyrimidine-, oxaliplatin- and irinotecan-based chemotherapy, an anti-VEGF therapy, and, if RAS wild-type, an anti-EGFR therapy.",
+      "STIVARGA is indicated for the treatment of adult patients with locally advanced, unresectable or metastatic gastrointestinal stromal tumor (GIST) who have been previously treated with imatinib mesylate and sunitinib malate.",
+      "STIVARGA is indicated for the treatment of adult patients with hepatocellular carcinoma (HCC) who have been previously treated with sorafenib.",
+      "【中文适应证】既往接受过氟尿嘧啶、奥沙利铂和伊立替康为基础的化疗，以及既往接受过或不适合接受抗VEGF 治疗、抗EGFR治疗（RAS 野生型）的转移性结直肠癌患者。"
+    ],
+    "dosage": {
+      "standard": "The recommended dose is 160 mg STIVARGA (four 40 mg tablets) taken orally once daily for the first 21 days of each 28-day cycle. Continue treatment until disease progression or unacceptable toxicity. Take STIVARGA at the same time each day. Swallow tablet whole with water after a low-fat meal that contains less than 600 calories and less than 30% fat [see Clinical Pharmacology (12.3)]. Do not take two doses of STIVARGA on the same day to make up for a missed dose from the previous day. If dose modifications are required, reduce the dose in 40 mg (one tablet) increments; the lowest recommended daily dose of STIVARGA is 80 mg daily. Interrupt STIVARGA for the following: Reduce the dose of STIVARGA to 120 mg: Reduce the dose of STIVARGA to 80 mg: Discontinue STIVARGA permanently for the following:",
+      "adjustment": "Interrupt STIVARGA for the following: Reduce the dose of STIVARGA to 120 mg: Reduce the dose of STIVARGA to 80 mg: Discontinue STIVARGA permanently for the following:"
+    },
+    "contraindications": [
+      "无（FDA 说明书原文标注 None，未列出禁忌证）"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following serious adverse reactions are discussed elsewhere in the labeling:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (≥20%) are pain (including gastrointestinal and abdominal pain), HFSR, asthenia/fatigue, diarrhea, decreased appetite/food int",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Bayer HealthCare Pharmaceuticals Inc. at 1-888-842-2937 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The data described in the WARNINGS AND PRECAUTIONS section reflect exposure to STIVARGA in more than 4800 patients who were enrolled in four randomized, placebo",
+        "frequency": "80%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "In randomized placebo-controlled trials (CORRECT, GRID, RESORCE and CONCUR), the most frequently observed adverse drug reactions (≥20%) in patients receiving ST",
+        "frequency": "20%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety data described below, except where noted, are derived from a randomized (2:1), double-blind, placebo-controlled trial (CORRECT) in which 500 patients",
+        "frequency": "61%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 1 provides the incidence of adverse reactions (≥10%) in patients in CORRECT.",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions STIVARGA (N=500) Placebo (N=253)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "All % ≥ 3 % All % ≥ 3 %",
+        "frequency": "3 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "General disorders and administration site conditions Asthenia/fatigue Pain Fever 64 59 28 15 9 2 46 48 15 9 7 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "General disorders and administration site conditions",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metabolism and nutrition disorders Decreased appetite and food intake 47 5 28 4",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metabolism and nutrition disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Decreased appetite and food intake",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin and subcutaneous tissue disorders HFSR/PPES Rash b 45 26 17 6 7 4 0 <1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin and subcutaneous tissue disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal disorders Diarrhea Mucositis 43 33 8 4 17 5 2 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Investigations Weight loss 32 <1 10 0",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "colorectal",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-02-18",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-COLORECTAL-FDA-007.xml",
+    "doc_hash": "19a136b38f2808cf7566a15470af75e19e8c3d224bec7b3da4ab96d8190cb7a4",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "824f19c9-0546-4a8a-8d8f-c4055c04f7c7",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/824f19c9-0546-4a8a-8d8f-c4055c04f7c7.xml",
+    "atc_code": "L01EX05",
+    "approval_no": null,
+    "source_name": "REGORAFENIB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-COLORECTAL-FDA-007.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "Co-administration of a strong CYP3A4 inducer with STIVARGA decreased the plasma concentrations of regorafenib, increased the plasma concentrations of the active metabolite M-5, and resulted in no change in the plasma concentrations of the active metabolite M-2 [see Clinical Pharmacology (12.3)], and may lead to decreased efficacy. Avoid concomitant use of STIVARGA with strong CYP3A4 inducers (e.g. rifampin, phenytoin, carbamazepine, phenobarbital, and St. John's Wort).",
+      "Co-administration of a strong CYP3A4 inhibitor with STIVARGA increased the plasma concentrations of regorafenib and decreased the plasma concentrations of the active metabolites M-2 and M-5 [see Clinical Pharmacology (12.3)], and may lead to increased toxicity. Avoid concomitant use of STIVARGA with strong CYP3A4 inhibitors (e.g. clarithromycin, grapefruit juice, itraconazole, ketoconazole, nefazodone, posaconazole, telithromycin, and voriconazole).",
+      "Co-administration of STIVARGA with a BCRP substrate increased the plasma concentrations of the BCRP substrate [see Clinical Pharmacology (12.3)]. Monitor patients closely for signs and symptoms of exposure related toxicity to the BCRP substrate (e.g. methotrexate, fluvastatin, atorvastatin). Consult the concomitant BCRP substrate product information when considering administration of such products together with STIVARGA."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Hepatotoxicity",
+        "text": "5.1 Hepatotoxicity: Severe drug-induced liver injury with fatal outcome occurred in STIVARGA-treated patients in clinical trials. In most cases, liver dysfunction occurred within the first 2 months of therapy and was characterized by a hepatocellular pattern of injury. Additionally, hyperammonemic encephalopathy, including fatal cases, have been reported in the postmarketing setting in patients treated with STIVARGA. The risk of hyperammonemic encephalopathy appears increased in patients with liver dysfunction, liver metastases, or primary liver cancer. In the CORRECT study, fatal hepatic failure occurred in 1.6% of patients in the regorafenib arm and in 0.4% of patients in the placebo arm. In the GRID study, fatal hepatic failure occurred in 0.8% of patients in the regorafenib arm. In the RESORCE study, there was no increase in the incidence of fatal hepatic failure as compared to placebo [see Adverse Reactions (6.1)]. Obtain liver function tests (ALT, AST, and bilirubin) before initiation of STIVARGA and monitor at least every two weeks during the first 2 months of treatment. Thereafter, monitor monthly or more frequently as clinically indicated. Monitor liver function tests weekly in patients experiencing elevated liver function tests until improvement to less than 3 times the ULN or baseline. For patients who develop unexplained lethargy or changes in mental status, measure ammonia level and initiate appropriate clinical management. Temporarily hold and then reduce or permanently discontinue STIVARGA depending on the severity and persistence of hepatotoxicity as manifested by elevated liver function tests or hepatocellular necrosis [see Dosage and Administration (2.2) and Use in Specific Populations (8.6)]. If hyperammonemic encephalopathy is confirmed, withhold and consider permanent discontinuation of STIVARGA.",
+        "char_len": 1848,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Hepatotoxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Infections",
+        "text": "5.2 Infections: STIVARGA caused an increased risk of infections. The overall incidence of infection (Grades 1-5) was higher (32% vs. 17%) in 1142 STIVARGA-treated patients as compared to the control arm in randomized placebo‑controlled trials.The incidence of grade 3 or greater infections in STIVARGA treated patients was 9%. The most common infections were urinary tract infections (5.7%), nasopharyngitis (4.0%), mucocutaneous and systemic fungal infections (3.3%) and pneumonia (2.6%). Fatal outcomes caused by infection occurred more often in patients treated with STIVARGA (1.0%) as compared to patients receiving placebo (0.3%); the most common fatal infections were respiratory (0.6% in STIVARGA-treated patients vs 0.2% in patients receiving placebo). Withhold STIVARGA for Grade 3 or 4 infections, or worsening infection of any grade. Resume STIVARGA at the same dose following resolution of infection [see Dosage and Administration (2.2)].",
+        "char_len": 950,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Infections",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Hemorrhage",
+        "text": "5.3 Hemorrhage: STIVARGA caused an increased incidence of hemorrhage. The overall incidence (Grades 1-5) was 18.2% in 1142 patients treated with STIVARGA and 9.5% in patients receiving placebo in randomized, placebo‑controlled trials. The incidence of grade 3 or greater hemorrhage in patients treated with STIVARGA was 3.0%. The incidence of fatal hemorrhagic events was 0.7%, involving the central nervous system or the respiratory, gastrointestinal, or genitourinary tracts. Permanently discontinue STIVARGA in patients with severe or life-threatening hemorrhage. Monitor INR levels more frequently in patients receiving warfarin [see Clinical Pharmacology (12.3)].",
+        "char_len": 668,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Hemorrhage",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Gastrointestinal Perforation or Fistula",
+        "text": "5.4 Gastrointestinal Perforation or Fistula: Gastrointestinal perforation occurred in 0.6% of 4518 patients treated with STIVARGA across all clinical trials of STIVARGA administered as a single agent; this included eight fatal events. Gastrointestinal fistula occurred in 0.8% of patients treated with STIVARGA and 0.2% of patients in placebo arm across randomized, placebo-controlled trials. Permanently discontinue STIVARGA in patients who develop gastrointestinal perforation or fistula.",
+        "char_len": 490,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Gastrointestinal Perforation or Fistula",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Dermatologic Toxicity",
+        "text": "5.5 Dermatologic Toxicity: In randomized, placebo-controlled trials, adverse skin reactions occurred in 71.9% of patients in the regorafenib arm and in 25.5% of patients in the placebo arm, including hand-foot skin reaction (HFSR) also known as palmar-plantar erythrodysesthesia syndrome (PPES), and severe rash requiring dose modification. In the randomized, placebo-controlled trials, the overall incidence of HFSR was higher in 1142 STIVARGA-treated patients (53%) than in the placebo-treated patients (8%). Most cases of HFSR in STIVARGA-treated patients appeared during the first cycle of treatment. The incidences of Grade 3 HFSR (16% versus <1%), Grade 3 rash (3% versus <1%), serious adverse reactions of erythema multiforme (<0.1% vs. 0%) and Stevens-Johnson Syndrome (<0.1% vs. 0%) were also higher in STIVARGA-treated patients [see Adverse Reactions (6.1)]. Across all trials, a higher incidence of HFSR was observed in Asian patients treated with STIVARGA (all grades: 72%; Grade 3: 18%) [see Use in Specific Populations (8.8 )]. Toxic epidermal necrolysis occurred in 0.02% of 4518 STIVARGA-treated patients across all clinical trials of STIVARGA administered as a single agent. Withhold STIVARGA, reduce the dose, or permanently discontinue STIVARGA depending on the severity and persistence of dermatologic toxicity [see Dosage and Administration (2.2)]. Institute supportive measures for symptomatic relief.",
+        "char_len": 1423,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Dermatologic Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Hypertension",
+        "text": "5.6 Hypertension: In randomized, placebo-controlled trials, hypertensive crisis occurred in 0.2% of patients in the regorafenib arms and in none of the patients in the placebo arms. STIVARGA caused an increased incidence of hypertension (30% versus 8% in CORRECT, 59% versus 27% in GRID, and 31% versus 6% in RESORCE) [see Adverse Reactions ( 6.1)]. The onset of hypertension occurred during the first cycle of treatment in most patients who developed hypertension (67% in randomized, placebo-controlled trials). Do not initiate STIVARGA unless blood pressure is adequately controlled. Monitor blood pressure weekly for the first 6 weeks of treatment and then every cycle, or more frequently, as clinically indicated. Temporarily or permanently withhold STIVARGA for severe or uncontrolled hypertension [see Dosage and Administration (2.2)].",
+        "char_len": 841,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Hypertension",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Cardiac Ischemia and Infarction",
+        "text": "5.7 Cardiac Ischemia and Infarction: STIVARGA increased the incidence of myocardial ischemia and infarction (0.9% vs 0.2%) in randomized placebo-controlled trials [see Adverse Reactions (6.1)]. Withhold STIVARGA in patients who develop new or acute onset cardiac ischemia or infarction. Resume STIVARGA only after resolution of acute cardiac ischemic events, if the potential benefits outweigh the risks of further cardiac ischemia.",
+        "char_len": 432,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Cardiac Ischemia and Infarction",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Reversible Posterior Leukoencephalopathy Syndrome",
+        "text": "5.8 Reversible Posterior Leukoencephalopathy Syndrome: Reversible posterior leukoencephalopathy syndrome (RPLS), a syndrome of subcortical vasogenic edema diagnosed by characteristic finding on MRI, occurred in one of 4800 STIVARGA-treated patients across all clinical trials. Perform an evaluation for RPLS in any patient presenting with seizures, severe headache, visual disturbances, confusion or altered mental function. Discontinue STIVARGA in patients who develop RPLS.",
+        "char_len": 475,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Reversible Posterior Leukoencephalopathy Syndrome",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Risk of Impaired Wound Healing",
+        "text": "5.9 Risk of Impaired Wound Healing: Impaired wound healing complications can occur in patients who receive drugs that inhibit the VEGF signaling pathway. Therefore, STIVARGA has the potential to adversely affect wound healing. Withhold STIVARGA for at least 2 weeks prior to elective surgery. Do not administer for at least 2 weeks following major surgery and until adequate wound healing. The safety of resumption of STIVARGA after resolution of wound healing complications has not been established.",
+        "char_len": 500,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Risk of Impaired Wound Healing",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Embryo-Fetal Toxicity",
+        "text": "5.10 Embryo-Fetal Toxicity: Based on animal studies and its mechanism of action, STIVARGA can cause fetal harm when administered to a pregnant woman. There are no available data on STIVARGA use in pregnant women. Regorafenib was embryolethal and teratogenic in rats and rabbits at exposures lower than human exposures at the recommended dose, with increased incidences of cardiovascular, genitourinary, and skeletal malformations. Advise pregnant women of the potential risk to a fetus. Advise females of reproductive potential to use effective contraception during treatment with STIVARGA and for 2 months after the final dose. Advise males with female partners of reproductive potential to use effective contraception during treatment with STIVARGA and for 2 months after the final dose [see Use in Specific Populations (8.1), (8.3)].",
+        "char_len": 836,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: HEPATOTOXICITY",
+        "text": "WARNING: HEPATOTOXICITY: WARNING: HEPATOTOXICITY See full prescribing information for complete boxed warning.",
+        "char_len": 109,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: HEPATOTOXICITY",
+        "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.7 Renal Impairment",
+            "text": "8.7 Renal Impairment: No dose adjustment is recommended for patients with renal impairment. The pharmacokinetics of regorafenib have not been studied in patients who are on dialysis and there is no recommended dose for this patient population [see Clinical Pharmacology (12.3)].",
+            "char_len": 278,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Renal Impairment",
+            "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Hepatic Impairment",
+            "text": "8.6 Hepatic Impairment: No dose adjustment is recommended in patients with mild (total bilirubin ≤ULN and AST >ULN, or total bilirubin >ULN to ≤1.5 times ULN) or moderate (total bilirubin >1.5 to ≤3 times ULN and any AST) hepatic impairment, [see Clinical Pharmacology (12.3)]. Closely monitor patients with hepatic impairment for adverse reactions [see Warnings and Precautions (5.1)]. STIVARGA is not recommended for use in patients with severe hepatic impairment (total bilirubin >3x ULN) as STIVARGA has not been studied in this population.",
+            "char_len": 544,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Hepatic Impairment",
+            "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.2 Dose Modifications",
+            "text": "2.2 Dose Modifications: If dose modifications are required, reduce the dose in 40 mg (one tablet) increments; the lowest recommended daily dose of STIVARGA is 80 mg daily. Interrupt STIVARGA for the following: Reduce the dose of STIVARGA to 120 mg: Reduce the dose of STIVARGA to 80 mg: Discontinue STIVARGA permanently for the following:",
+            "char_len": 338,
+            "source_section_code": "42229-5",
+            "source_title": "2.2 Dose Modifications",
+            "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-COLORECTAL-FDA-007.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "colorectal"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种激酶抑制剂类抗癌药，用于治疗成人结直肠癌、胃肠道间质瘤和肝癌。\", \"how_to_use\": \"每28天为一个周期，前21天每天同一时间吃一次。每次160毫克，即4片40毫克药片。整片用水吞服，不要掰碎。饭后吃，选择低脂餐，少于600卡路里且脂肪低于30%。如果漏服，第二天不要补吃双倍剂量。需要调整剂量时，每次减40毫克，最低每天80毫克。\", \"cautions\": [\"每天固定时间服药，整片用水吞服。\", \"随低脂餐服用，餐食少于600卡路里、脂肪低于30%。\", \"漏服后不要第二天补吃双倍剂量。\", \"需要减量时每次减40毫克，最低每日80毫克。\", \"避免与强CYP3A4诱导剂同用，如利福平、苯妥英等。\", \"避免与强CYP3A4抑制剂同用，如克拉霉素、葡萄柚汁等。\", \"与BCRP底物同用时需密切监测相关毒性表现。\", \"出现需中断、减量或永久停药的情况时，按说明书处理。\"], \"side_effects\": [{\"term\": \"疼痛（包括胃肠和腹痛）\", \"plain\": \"可能出现身体各部位疼痛，包括肚子痛。\", \"when_to_seek_help\": \"疼痛严重或持续不缓解时需就医。\"}, {\"term\": \"手足皮肤反应\", \"plain\": \"手掌或脚底可能发红、脱皮、疼痛。\", \"when_to_seek_help\": \"皮肤反应严重或影响日常活动时需就医。\"}, {\"term\": \"乏力/疲劳\", \"plain\": \"可能感觉没力气、容易累。\", \"when_to_seek_help\": \"乏力严重或明显加重时需就医。\"}, {\"term\": \"腹泻\", \"plain\": \"可能拉肚子。\", \"when_to_seek_help\": \"腹泻频繁或导致脱水时需就医。\"}, {\"term\": \"食欲和进食减少\", \"plain\": \"可能不想吃东西、吃得少。\", \"when_to_seek_help\": \"进食明显减少或体重下降时需就医。\"}, {\"term\": \"皮疹\", \"plain\": \"皮肤可能出现皮疹。\", \"when_to_seek_help\": \"皮疹严重或扩散时需就医。\"}, {\"term\": \"黏膜炎\", \"plain\": \"口腔或消化道黏膜可能发炎。\", \"when_to_seek_help\": \"黏膜炎严重或影响进食时需就医。\"}, {\"term\": \"体重下降\", \"plain\": \"体重可能减轻。\", \"when_to_seek_help\": \"体重明显下降时需就医。\"}, {\"term\": \"发热\", \"plain\": \"可能发烧。\", \"when_to_seek_help\": \"发热持续或较高时需就医。\"}], \"seek_help\": \"出现严重疼痛、严重皮肤反应、严重腹泻、明显乏力、进食明显减少或体重明显下降、严重皮疹、严重黏膜炎、持续发热时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:07"
+  }
+]

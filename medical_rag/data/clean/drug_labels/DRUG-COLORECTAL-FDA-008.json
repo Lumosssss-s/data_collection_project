@@ -1,0 +1,77 @@
+[
+ {
+  "drug_id": "DRUG-COLORECTAL-FDA-008",
+  "generic_name": "PEMBROLIZUMAB",
+  "brand_names": [
+   "KEYTRUDA QLEX"
+  ],
+  "title": "PEMBROLIZUMAB 说明书（FDA DailyMed，结直肠癌适应证）",
+  "indications": [
+   "1 INDICATIONS AND USAGE KEYTRUDA QLEX is a combination of pembrolizumab, a programmed death receptor-1 (PD-1)-blocking antibody, and berahyaluronidase alfa, an endoglycosidase, indicated: Melanoma for the treatment of adult patients with unresectable or metastatic melanoma. ( 1.1 ) for the adjuvant treatment of adult and pediatric patients 12 years and older with Stage IIB, IIC, or III melanoma following complete resection. ( 1.1 ) Non-Small Cell Lung Cancer (NSCLC) in combination with pemetrexed and platinum chemotherapy, as first-line treatment of adult patients with metastatic nonsquamous NSCLC, with no EGFR or ALK genomic tumor aberrations. ( 1.2 ) in combination with carboplatin and either paclitaxel or paclitaxel protein-bound, as first-line treatment of adult patients with metastatic squamous NSCLC. ( 1.2 ) as a single agent for the first-line treatment of adult patients with NSCLC expressing PD-L1 [Tumor Proportion Score (TPS) ≥1%] as determined by an FDA-authorized test, with no EGFR or ALK genomic tumor aberrations, and is: Stage III where patients are not candidates for surgical resection or definitive chemoradiation, or metastatic. ( 1.2 , 2.1 ) as a single agent for the treatment of adult patients with metastatic NSCLC whose tumors express PD-L1 (TPS ≥1%) as determined by an FDA-authorized test, with disease progression on or after platinum-containing chemotherapy. Patients with EGFR or ALK genomic tumor aberrations should have disease progression on FDA-approved therapy for these aberrations prior to receiving KEYTRUDA QLEX. ( 1.2 , 2.1 ) for the treatment of adult patients with resectable (tumors ≥4 cm or node positive) NSCLC in combination with platinum-containing chemotherapy as neoadjuvant treatment, and then continued as a single agent as adjuvant treatment after surgery. ( 1.2 ) as a single agent, for adjuvant treatment following resection and platinum-based chemotherapy for adult patients with Stage IB (T2a ≥4 cm), II, or IIIA NSCLC. ( 1.2 ) Malignant Pleural Mesothelioma (MPM) in combination with pemetrexed and platinum chemotherapy, as first-line treatment of adult patients with unresectable advanced or metastatic MPM. ( 1.3 ) Head and Neck Squamous Cell Cancer (HNSCC) for the treatment of adult patients with resectable locally advanced HNSCC whose tumors express PD-L1 [Combined Positive Score (CPS) ≥1] as determined by an FDA-authorized test, as a single agent as neoadjuvant treatment, continued as adjuvant treatment in combination with radiotherapy (RT) with or without cisplatin and then as a single agent. ( 1.4 ) in combination with platinum and FU for the first-line treatment of adult patients with metastatic or with unresectable, recurrent HNSCC. ( 1.4 ) as a single agent for the first-line treatment of adult patients with metastatic or with unresectable, recurrent HNSCC whose tumors express PD-L1 [Combined Positive Score (CPS) ≥1] as determined by an FDA-authorized test. ( 1.4 , 2.1 ) as a single agent for the treatment of adult patients with recurrent or metastatic HNSCC with disease progression on or after platinum-containing chemotherapy. ( 1.4 ) Urothelial Cancer in combination with enfortumab vedotin-ejfv, for the treatment of adult patients with locally advanced or metastatic urothelial cancer. ( 1.5 ) as a single agent for the treatment of adult patients with locally advanced or metastatic urothelial carcinoma who: are not eligible for any platinum-containing chemotherapy, or who have disease progression during or following platinum-containing chemotherapy or within 12 months of neoadjuvant or adjuvant treatment with platinum-containing chemotherapy. ( 1.5 ) in combination with enfortumab vedotin-ejfv, as neoadjuvant treatment and then continued after cystectomy as adjuvant treatment of adult patients with muscle invasive bladder cancer (MIBC). ( 1.5 ) as a single agent for the treatment of adult patients with Bacillus Calmette-Guerin (BCG)-unresponsive, high-risk, non-muscle invasive bladde"
+  ],
+  "dosage": {
+   "standard": "2 DOSAGE AND ADMINISTRATION KEYTRUDA QLEX has different recommended dosage and administration than intravenous pembrolizumab. ( 2.2 ) KEYTRUDA QLEX is for subcutaneous use in the thigh or abdomen only. ( 2.2 ) Do not administer KEYTRUDA QLEX intravenously. ( 2.2 ) KEYTRUDA QLEX must be administered by a healthcare provider. ( 2.2 ) The recommended dose for adults and pediatric patients 12 years and older who weigh greater than 40 kg is: Every 3-week dosing (395 mg/4,800 units): Inject 2.4 mL subcutaneously in the abdomen or thigh over 1 minute. ( 2.3 ) Every 6-week dosing (790 mg/9,600 units): Inject 4.8 mL subcutaneously in the abdomen or thigh over 2 minutes. ( 2.3 ) For RCC, administer KEYTRUDA QLEX as a single agent in the adjuvant setting, or in the advanced setting with either: axitinib 5 mg orally twice daily or lenvatinib 20 mg orally once daily. ( 2.3 ) For ccRCC, administer KEYTRUDA QLEX in combination with belzutifan 120 mg orally once daily in the adjuvant setting. ( 2.3 ) For Endometrial Carcinoma, administer KEYTRUDA QLEX: in combination with carboplatin and paclitaxel regardless of MMR or MSI status, or in combination with lenvatinib 20 mg orally once daily for pMMR or not MSI-H tumors, or as a single agent for MSI-H or dMMR tumors. ( 2.3 ) See Full Prescribing Information for dosage modifications for adverse reactions and preparation and administration instructions. ( 2.4 , 2.5 ) 2.1 Patient Selection See information on FDA-authorized tests for intravenous pembrolizumab. Information on FDA-authorized tests for patient selection is available at: http://www.fda.gov/CompanionDiagnostics . Patient Selection for Single-Agent Treatment Select patients for treatment with KEYTRUDA QLEX as a single agent based on the presence of positive PD-L1 expression in: Stage III NSCLC who are not candidates for surgical resection or definitive chemoradiation [see Clinical Studies (14.4) ] . metastatic NSCLC [see Clinical Studies (14.4) ]. first-line treatment of metastatic or unresectable, recurrent HNSCC [see Clinical Studies (14.6) ] . previously treated recurrent locally advanced or metastatic esophageal cancer [see Clinical Studies (14.11) ] . recurrent or metastatic cervical cancer with disease progression on or after chemotherapy [see Clinical Studies (14.12) ] . For the MSI-H/dMMR indications, select patients for treatment with KEYTRUDA QLEX as a single agent based on MSI-H/dMMR status in tumor specimens [see Clinical Studies (14.8 , 14.9) ]. For the TMB-H indication, select patients for treatment with KEYTRUDA QLEX as a single agent based on TMB-H status in tumor specimens [see Clinical Studies (14.18) ]. Because subclonal dMMR mutations and microsatellite instability may arise in high-grade gliomas during temozolomide therapy, it is recommended to test for TMB-H, MSI-H, and dMMR in the primary tumor specimens obtained prior to initiation of temozolomide chemotherapy in patients with high-grade gliomas. Additional Patient Selection Information for MSI-H or dMMR in Patients with non-CRC Solid Tumors Due to discordance between local tests and FDA-authorized tests, confirmation of MSI-H or dMMR status is recommended by an FDA-authorized test in patients with MSI-H or dMMR solid tumors, if feasible. If unable to perform confirmatory MSI-H/dMMR testing, the presence of TMB ≥10 mut/Mb, as determined by an FDA-authorized test, may be used to select patients for treatment [see Clinical Studies (14.8) ] . Patient Selection for Combination Therapy For use of KEYTRUDA QLEX as a single agent as neoadjuvant treatment, then in combination with radiotherapy (RT) with or without chemotherapy then continued as a single agent as adjuvant treatment, select patients based on presence of positive PD-L1 expression (CPS ≥1) in resectable locally advanced HNSCC [see Clinical Studies (14.6) ] . For use of KEYTRUDA QLEX in combination with chemotherapy, select patients based on the presence of positive PD-L1 expression (CPS ≥1) in locally advanced ",
+   "adjustment": ""
+  },
+  "contraindications": [
+   "KEYTRUDA QLEX is contraindicated in patients with known hypersensitivity to berahyaluronidase alfa, hyaluronidase or to any of its excipients.",
+   "KEYTRUDA QLEX is contraindicated in patients with known hypersensitivity to berahyaluronidase alfa, hyaluronidase or to any of its excipients."
+  ],
+  "adverse_reactions": [
+   {
+    "term": "The following clinically significant adverse reactions are described elsewhere in the labeling. Severe and fatal immune-mediated adverse reactions . Hypersensitivity and Administration-Related Reactions. The most common adverse reactions (≥20%) in patients treated with KEYTRUDA QLEX in combination with chemotherapy were nausea, fatigue, and musculoskeletal pain. ( 6.1 ) The safety of KEYTRUDA QLEX for the approved indications is also based on the safety of intravenous pembrolizumab given as a single agent or in combination with other antitumor medicines. The most common adverse reactions (reported in ≥20% of patients) with intravenous pembrolizumab were: As a single agent: fatigue, musculoskeletal pain, rash, diarrhea, pyrexia, cough, decreased appetite, pruritus, dyspnea, constipation, pain, abdominal pain, nausea, and hypothyroidism. ( 6.1 ) In combination with chemotherapy or chemoradiotherapy: fatigue/asthenia, nausea, constipation, diarrhea, decreased appetite, rash, vomiting, cough, dyspnea, pyrexia, alopecia, peripheral neuropathy, mucosal inflammation, stomatitis, headache, weight loss, abdominal pain, arthralgia, myalgia, insomnia, palmar-plantar erythrodysesthesia, urinary tract infection, hypothyroidism, radiation skin injury, dysphagia, dry mouth and musculoskeletal pain. ( 6.1 ) In combination with chemotherapy and bevacizumab: peripheral neuropathy, alopecia, anemia, fatigue/asthenia, nausea, neutropenia, diarrhea, hypertension, thrombocytopenia, constipation, arthralgia, vomiting, urinary tract infection, rash, leukopenia, hypothyroidism, decreased appetite, pyrexia, epistaxis, decreased white blood cell count, and stomatitis. ( 6.1 ) In combination with axitinib: diarrhea, fatigue/asthenia, hypertension, hepatotoxicity, hypothyroidism, decreased appetite, palmar-plantar erythrodysesthesia, nausea, stomatitis/mucosal inflammation, dysphonia, rash, cough, and constipation. ( 6.1 ) In combination with lenvatinib: hypothyroidism, hypertension, fatigue, diarrhea, musculoskeletal disorders, nausea, decreased appetite, vomiting, stomatitis, weight loss, abdominal pain, urinary tract infection, proteinuria, constipation, headache, hemorrhagic events, palmar-plantar erythrodysesthesia, dysphonia, rash, hepatotoxicity, and acute kidney injury. ( 6.1 ) In combination with belzutifan (reported in ≥25%): decreased hemoglobin, increased alanine aminotransferase, fatigue, increased aspartate aminotransferase, decreased lymphocytes, and increased alkaline phosphatase. ( 6.1 ) In combination with enfortumab vedotin-ejfv: rash, peripheral neuropathy, fatigue, pruritus, diarrhea, alopecia, weight loss, decreased appetite, dry eye, nausea, constipation, dysgeusia, and urinary tract infection. ( 6.1 ) In combination with sacituzumab govitecan-hziy: anemia, neutropenia, diarrhea, nausea, fatigue, alopecia, constipation, rash, vomiting, headache and abdominal",
+    "frequency": "20%",
+    "ctcae_hint": null
+   }
+  ],
+  "cancer_type": "colorectal",
+  "doc_type": "drug_label",
+  "issuer": "FDA / DailyMed",
+  "publish_date": null,
+  "license_note": "FDA DailyMed public label",
+  "file_path": "raw/drug_labels/DRUG-LUNG-FDA-002.xml",
+  "doc_hash": "dc375a0b3f464baa968f2fdd0a6beb7813b6be166dec533c97d5b73399bbbb34",
+  "review_status": "draft",
+  "_source": "dailymed",
+  "_setid": "097d166f-b73b-41d3-9b37-7653cd2a0c41",
+  "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/097d166f-b73b-41d3-9b37-7653cd2a0c41.xml",
+  "atc_code": "L01FF02",
+  "approval_no": null,
+  "source_name": "PEMBROLIZUMAB 说明书（FDA DailyMed，结直肠癌适应证）",
+  "source_version": "2026",
+  "source_section": "全文",
+  "source_file": "DRUG-LUNG-FDA-002.xml",
+  "updated_at": "2026-10-26",
+  "interactions": null,
+  "warnings": null,
+  "boxed_warning": null,
+  "dosage_adjustment": {
+   "renal": {
+    "located": false,
+    "reason": "source XML missing（无原始 XML，无法规则抽取）",
+    "items": []
+   },
+   "hepatic": {
+    "located": false,
+    "reason": "source XML missing（无原始 XML，无法规则抽取）",
+    "items": []
+   },
+   "toxicity_modification": {
+    "located": false,
+    "reason": "source XML missing（无原始 XML，无法规则抽取）",
+    "items": []
+   }
+  },
+  "safety_extraction_meta": {
+   "extractor": "extract_drug_safety_v2.py",
+   "extracted_at": "2026-11-02",
+   "source_xml": "DRUG-COLORECTAL-FDA-008.xml",
+   "xml_present": false
+  },
+  "cancer_types": [
+   "colorectal"
+  ],
+  "duplicate_of": "DRUG-LUNG-FDA-002",
+  "duplicate_reason": "同上：克隆自 DRUG-LUNG-FDA-002（PEMBROLIZUMAB），无独立 XML；入库时应跳过"
+ }
+]

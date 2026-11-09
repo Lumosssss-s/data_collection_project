@@ -1,0 +1,220 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-013",
+    "generic_name": "ETOPOSIDE",
+    "brand_names": [],
+    "aliases_zh": [
+      "依托泊苷"
+    ],
+    "title": "ETOPOSIDE 说明书（FDA DailyMed）",
+    "indications": [
+      "Etoposide Injection, USP is indicated in the management of the following neoplasms:",
+      "Etoposide Injection, USP in combination therapy with other approved chemotherapeutic agents in patients with refractory testicular tumors who have already received appropriate surgical, chemotherapeutic, and radiotherapeutic therapy.",
+      "Adequate data on the use of etoposide capsules in the treatment of testicular cancer are not available.",
+      "Etoposide Injection, USP and/or capsules in combination with other approved chemotherapeutic agents as first line treatment in patients with small cell lung cancer."
+    ],
+    "dosage": {
+      "standard": "Note: Plastic devices made of acrylic or ABS (a polymer composed of acrylonitrile, butadiene, and styrene) have been reported to crack and leak when used with undiluted Etoposide Injection, USP. Etoposide Injection, USP The usual dose of Etoposide Injection, USP in testicular cancer in combination with other approved chemotherapeutic agents ranges from 50 to 100 mg/m 2/day on days 1 through 5 to 100 mg/m 2/day on days 1, 3, and 5. In small cell lung cancer, the Etoposide Injection, USP dose in combination with other approved chemotherapeutic drugs ranges from 35 mg/m 2/day for 4 days to 50 mg/m 2/day for 5 days. For recommended dosing adjustments in patients with renal impairment (see PRECAUTIONS) . Chemotherapy courses are repeated at 3- to 4-week intervals after adequate recovery from any toxicity. In small cell lung cancer, the recommended dose of etoposide capsules is two times the IV dose rounded to the nearest 50 mg. The dosage, by either route, should be modified to take into account the myelosuppressive effects of other drugs in the combination or the effects of prior x-ray therapy or chemotherapy which may have compromised bone marrow reserve. As with other potentially toxic compounds, caution should be exercised in handling and preparing the solution of etoposide. Skin reactions associated with accidental exposure to etoposide may occur. The use of gloves is recommended. If etoposide solution contacts the skin or mucosa, immediately and thoroughly wash the skin with soap and water and flush the mucosa with water. Etoposide Injection, USP must be diluted prior to use with either 5% Dextrose Injection, USP, or 0.9% Sodium Chloride Injection, USP, to give a final concentration of 0.2 to 0.4 mg/mL. If solutions are prepared at concentrations above 0.4 mg/mL, preci",
+      "adjustment": "In small cell lung cancer, the Etoposide Injection, USP dose in combination with other approved chemotherapeutic drugs ranges from 35 mg/m 2/day for 4 days to 50 mg/m 2/day for 5 days. For recommended dosing adjustments in patients with renal impairment (see PRECAUTIONS) . Chemotherapy courses are repeated at 3- to 4-week intervals after adequate recovery from any toxicity. In small cell lung cancer, the recommended dose of etoposide capsules is two times the IV dose rounded to the nearest 50 mg. The dosage, by either route, should be modified to take into account the myelosuppressive effects of other drugs in the combination or the effects of prior x-ray therapy or chemotherapy which may have compromised bone marrow reserve. As with other potentially toxic compounds, caution should be exercised in handling and preparing the solution of etoposide. Skin reactions associated with accidental exposure to etoposide may occur. The use of gloves is recommended. If etoposide solution contacts the skin or mucosa, immediately and thoroughly wash the skin with soap and water and flush the mucosa with water. Etoposide Injection, USP must be diluted prior to use with either 5% Dextrose Injectio"
+    },
+    "contraindications": [
+      "Etoposide Injection, USP is contraindicated in patients who have demonstrated a previous hypersensitivity to etoposide or any component of the formulation."
+    ],
+    "adverse_reactions": [
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Fresenius Kabi USA, LLC at 1-800-551-7176 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The following data on adverse reactions are based on both oral and intravenous administration of etoposide as a single agent, using several different dose sched",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Myelosuppression is dose related and dose limiting, with granulocyte nadirs occurring 7 to 14 days after drug administration and platelet nadirs occurring 9 to ",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The occurrence of acute leukemia with or without a preleukemic phase has been reported rarely in patients treated with etoposide in association with other antin",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nausea and vomiting are the major gastrointestinal toxicities. The severity of such nausea and vomiting is generally mild to moderate with treatment discontinua",
+        "frequency": "1%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Transient hypotension following rapid intravenous administration has been reported in 1% to 2% of patients. It has not been associated with cardiac toxicity or ",
+        "frequency": "1%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Anaphylactic-like reactions characterized by chills, fever, tachycardia, bronchospasm, dyspnea, and/or hypotension have been reported to occur in 0.7% to 2% of ",
+        "frequency": "0.7%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Facial/tongue swelling, coughing, diaphoresis, cyanosis, tightness in throat, laryngospasm, back pain, and/or loss of consciousness have sometimes occurred in a",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Rash, urticaria, and/or pruritus have infrequently been reported at recommended doses. At investigational doses, a generalized pruritic erythematous maculopapul",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Reversible alopecia, sometimes progressing to total baldness, was observed in up to 66% of patients.",
+        "frequency": "66%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The following adverse reactions have been infrequently reported: abdominal pain, aftertaste, constipation, dysphagia, asthenia, fatigue, malaise, somnolence, tr",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hepatic toxicity, generally in patients receiving higher doses of the drug than those recommended, has been reported with etoposide. Metabolic acidosis has also",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Reports of extravasation with swelling have been received postmarketing. Rarely extravasation has been associated with necrosis and venous induration.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The incidences of adverse reactions in the table that follows are derived from multiple data bases from studies in 2,081 patients when etoposide was used either",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "ADVERSE DRUG EFFECT PERCENT RANGE OF REPORTED INCIDENCE",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "PERCENT RANGE OF REPORTED INCIDENCE",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Hematologic toxicity",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Leukopenia (less than 1,000 WBC/mm 3) 3 to 17",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Leukopenia (less than 1,000 WBC/mm 3)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Leukopenia (less than 4,000 WBC/mm 3) 60 to 91",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-08-03",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-013.xml",
+    "doc_hash": "66e90f44ee0b06ae5dca219d8956a8f81358d10362db78e1eee8a3ea5c654eb3",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "fe870629-104d-4d67-a7c6-f53bc588121e",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/fe870629-104d-4d67-a7c6-f53bc588121e.xml",
+    "atc_code": "L01CB01",
+    "approval_no": null,
+    "source_name": "ETOPOSIDE 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-013.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "High-dose cyclosporin A resulting in concentrations above 2,000 ng/mL administered with oral etoposide has led to an 80% increase in etoposide exposure with a 38% decrease in total body clearance of etoposide compared to etoposide alone."
+    ],
+    "warnings": [
+      {
+        "code": "34071-1",
+        "title": "WARNINGS:",
+        "text": "WARNINGS:: Patients being treated with etoposide must be frequently observed for myelosuppression both during and after therapy. Myelosuppression resulting in death has been reported. Dose-limiting bone marrow suppression is the most significant toxicity associated with etoposide therapy. Therefore, the following studies should be obtained at the start of therapy and prior to each subsequent cycle of etoposide: platelet count, hemoglobin, white blood cell count, and differential. The occurrence of a platelet count below 50,000/mm 3 or an absolute neutrophil count below 500/mm 3 is an indication to withhold further therapy until the blood counts have sufficiently recovered. Physicians should be aware of the possible occurrence of an anaphylactic reaction manifested by chills, fever, tachycardia, bronchospasm, dyspnea, and hypotension. Higher rates of anaphylactic-like reactions have been reported in children who received infusions at concentrations higher than those recommended. The role that concentration of infusion (or rate of infusion) plays in the development of anaphylactic-like reactions is uncertain (see ADVERSE REACTIONS). Treatment is symptomatic. The infusion should be terminated immediately, followed by the administration of pressor agents, corticosteroids, antihistamines, or volume expanders at the discretion of the physician. For parenteral administration, Etoposide Injection, USP should be given only by slow intravenous infusion (usually over a 30- to 60-minute period) since hypotension has been reported as a possible side effect of rapid intravenous injection.",
+        "char_len": 1601,
+        "source_section_code": "34071-1",
+        "source_title": "WARNINGS:",
+        "source_xml": "DRUG-LUNG-FDA-013.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "34071-1",
+        "title": "Pregnancy",
+        "text": "Pregnancy: Etoposide can cause fetal harm when administered to a pregnant woman. Etoposide has been shown to be teratogenic in mice and rats. In rats, an intravenous etoposide dose of 0.4 mg/kg/day (about 1/20th of the human dose on a mg/m 2 basis) during organogenesis caused maternal toxicity, embryotoxicity, and teratogenicity (skeletal abnormalities, exencephaly, encephalocele, and anophthalmia); higher doses of 1.2 and 3.6 mg/kg/day (about 1/7th and 1/2 of human dose on a mg/m 2 basis) resulted in 90 and 100% embryonic resorptions. In mice, a single 1 mg/kg (1/16th of human dose on a mg/m 2 basis) dose of etoposide administered intraperitoneally on days 6, 7, or 8 of gestation caused embryotoxicity, cranial abnormalities, and major skeletal malformations. An I.P. dose of 1.5 mg/kg (about 1/10th of human dose on a mg/m 2 basis) on day 7 of gestation caused an increase in the incidence of intrauterine death and fetal malformations and a significant decrease in the average fetal body weight. Women of childbearing potential should be advised to avoid becoming pregnant. If this drug is used during pregnancy, or if the patient becomes pregnant while receiving this drug, the patient should be warned of the potential hazard to the fetus. Etoposide should be considered a potential carcinogen in humans. The occurrence of acute leukemia with or without a preleukemic phase has been reported in rare instances in patients treated with etoposide alone or in association with other neoplastic agents. The risk of development of a preleukemic or leukemic syndrome is unclear. Carcinogenicity tests with etoposide have not been conducted in laboratory animals.",
+        "char_len": 1670,
+        "source_section_code": "34071-1",
+        "source_title": "Pregnancy",
+        "source_xml": "DRUG-LUNG-FDA-013.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNINGS",
+        "text": "WARNINGS: Etoposide should be administered under the supervision of a qualified physician experienced in the use of cancer chemotherapeutic agents. Severe myelosuppression with resulting infection or bleeding may occur.",
+        "char_len": 219,
+        "source_section_code": "34066-1",
+        "source_title": "WARNINGS",
+        "source_xml": "DRUG-LUNG-FDA-013.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42232-9",
+            "title": "Renal Impairment",
+            "text": "Renal Impairment: In patients with impaired renal function, the following initial dose modification should be considered based on measured creatinine clearance: Measured Creatinine Clearance > 50 mL/min 15 to 50 mL/min Measured Creatinine Clearance 15 to 50 mL/min etoposide 100% of dose 75% of dose Subsequent etoposide dosing should be based on patient tolerance and clinical effect. Data are not available in patients with creatinine clearances < 15 mL/min and further dose reduction should be considered in these patients.",
+            "char_len": 526,
+            "source_section_code": "42232-9",
+            "source_title": "Renal Impairment",
+            "source_xml": "DRUG-LUNG-FDA-013.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": false,
+        "reason": "D&A 树下无标题含 dosage/dose modification 的子节",
+        "items": []
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-013.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种化疗药，用于治疗睾丸癌和小细胞肺癌，常与其他化疗药联合使用。\", \"how_to_use\": \"此药需先稀释后才能使用，常用5%葡萄糖或0.9%氯化钠注射液稀释。\", \"cautions\": [\"睾丸癌联合化疗时，剂量范围通常为每天50至100毫克每平方米体表面积，连用5天，或第1、3、5天每天100毫克每平方米体表面积。\", \"小细胞肺癌联合化疗时，剂量范围通常为每天35毫克每平方米体表面积连用4天，或每天50毫克每平方米体表面积连用5天。\", \"肾功能不好的患者，医生可能会调整剂量。\", \"每个化疗疗程通常间隔3至4周，需等毒性反应充分恢复后再进行下一疗程。\", \"小细胞肺癌口服胶囊的推荐剂量是静脉剂量的两倍，并取整到最接近的50毫克。\", \"联合用药或既往做过放疗、化疗可能影响骨髓储备，剂量可能需要调整。\", \"配制和处理药液时要小心，建议戴手套。\", \"药液不慎接触皮肤或黏膜，立即用肥皂和水彻底清洗皮肤，并用清水冲洗黏膜。\", \"稀释后最终浓度应为0.2至0.4毫克每毫升；浓度高于0.4毫克每毫升时可能出现问题。\", \"不要用丙烯酸或ABS塑料制成的器具接触未稀释的药液，有开裂和泄漏的报道。\", \"对依托泊苷或本药任何成分曾过敏者禁用。\", \"高剂量环孢素A（血药浓度超过2000纳克每毫升）与口服依托泊苷同用，可能增加依托泊苷暴露并降低其清除。\"], \"side_effects\": [{\"term\": \"骨髓抑制\", \"plain\": \"骨髓抑制与剂量相关，也是限制剂量的主要毒性。\", \"when_to_seek_help\": \"粒细胞最低点出现在用药后7至14天，血小板最低点出现在用药后9天起，需按医生安排复查血象。\"}, {\"term\": \"急性白血病\", \"plain\": \"与其他抗癌药联用时，罕见出现急性白血病，可伴或不伴白血病前期。\", \"when_to_seek_help\": \"如出现异常出血、反复感染或持续乏力，应及时就医。\"}, {\"term\": \"恶心和呕吐\", \"plain\": \"这是主要的胃肠道毒性，程度一般为轻到中度。\", \"when_to_seek_help\": \"如恶心呕吐严重到无法进食或停药，应及时就医。\"}, {\"term\": \"暂时性低血压\", \"plain\": \"快速静脉给药后，约1%至2%的患者可能出现暂时性低血压。\", \"when_to_seek_help\": \"如出现头晕、眼前发黑或晕倒，应及时就医。\"}, {\"term\": \"过敏样反应\", \"plain\": \"约0.7%至2%的患者可能出现寒战、发热、心跳快、支气管痉挛、呼吸困难或低血压。\", \"when_to_seek_help\": \"如出现寒战、发热、心跳快、呼吸困难或低血压，应立即就医。\"}, {\"term\": \"面部或舌部肿胀等\", \"plain\": \"有时可能出现面部或舌部肿胀、咳嗽、出汗、发绀、喉咙发紧、喉痉挛、背痛或意识丧失。\", \"when_to_seek_help\": \"如出现面部或舌部肿胀、喉咙发紧、呼吸困难或意识丧失，应立即就医。\"}, {\"term\": \"皮疹、荨麻疹和瘙痒\", \"plain\": \"在推荐剂量下不常出现皮疹、荨麻疹和瘙痒。\", \"when_to_seek_help\": \"如皮疹范围扩大或伴呼吸困难，应及时就医。\"}, {\"term\": \"脱发\", \"plain\": \"最多66%的患者可能出现可逆性脱发，有时会发展到全部秃发。\", \"when_to_seek_help\": \"脱发通常可恢复，如伴随其他不适可咨询医生。\"}, {\"term\": \"其他不常报告的反应\", \"plain\": \"不常报告的有腹痛、口中异味、便秘、吞咽困难、无力、疲劳、不适、嗜睡等。\", \"when_to_seek_help\": \"如这些症状持续或加重，应及时就医。\"}, {\"term\": \"肝脏毒性\", \"plain\": \"肝脏毒性一般见于接受高于推荐剂量的患者，也有代谢性酸中毒的报告。\", \"when_to_seek_help\": \"如出现皮肤或眼白发黄、尿色加深，应及时就医。\"}, {\"term\": \"药液外渗\", \"plain\": \"上市后收到药液外渗伴肿胀的报告，罕见情况下外渗与坏死和静脉硬结相关。\", \"when_to_seek_help\": \"如注射部位出现肿胀、疼痛或皮肤变色，应立即告知医护人员。\"}], \"seek_help\": \"出现寒战、发热、心跳快、呼吸困难、低血压、面部或舌部肿胀、喉咙发紧、意识丧失、注射部位肿胀疼痛、皮肤或眼白发黄、异常出血或反复感染时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:17:08"
+  }
+]

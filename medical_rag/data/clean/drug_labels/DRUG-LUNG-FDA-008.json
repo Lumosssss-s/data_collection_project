@@ -1,0 +1,202 @@
+[
+  {
+    "drug_id": "DRUG-LUNG-FDA-008",
+    "generic_name": "CARBOPLATIN",
+    "brand_names": [],
+    "aliases_zh": [
+      "卡铂"
+    ],
+    "title": "CARBOPLATIN 说明书（FDA DailyMed）",
+    "indications": [
+      "Initial Treatment of Advanced Ovarian Carcinoma Carboplatin injection is indicated for the initial treatment of advanced ovarian carcinoma in established combination with other approved chemotherapeutic agents. One established combination regimen consists of carboplatin and cyclophosphamide. Two randomized controlled studies conducted by the NCIC and SWOG with carboplatin versus cisplatin, both in combination with cyclophosphamide, have demonstrated equivalent overall survival between the two groups (see CLINICAL STUDIES ). There is limited statistical power to demonstrate equivalence in overall pathologic complete response rates and long-term survival (≥ 3 years) because of the small number of patients with these outcomes: the small number of patients with residual tumor < 2 cm after initial surgery also limits the statistical power to demonstrate equivalence in this subgroup. Secondary Treatment of Advanced Ovarian Carcinoma Carboplatin injection is indicated for the palliative treatment of patients with ovarian carcinoma recurrent after prior chemotherapy, including patients who have been previously treated with cisplatin. Within the group of patients previously treated with cisplatin, those who have developed progressive disease while receiving cisplatin therapy may have a decreased response rate."
+    ],
+    "dosage": {
+      "standard": "NOTE: Aluminium reacts with carboplatin causing precipitate formation and loss of potency, therefore, needles or intravenous sets containing aluminium parts that may come in contact with the drug must not be used for the preparation or administration of carboplatin injection. Single Agent Therapy Carboplatin injection, as a single agent, has been shown to be effective in patients with recurrent ovarian carcinoma at a dosage of 360 mg/m2 IV on day 1 every 4 weeks (alternatively see Formula Dosing). In general, however, single intermittent courses of carboplatin should not be repeated until the neutrophil count is at least 2,000 and the platelet count is at least 100,000. Combination Therapy with Cyclophosphamide In the chemotherapy of advanced ovarian cancer, an effective combination for previously untreated patients consists of: Carboplatin - 300 mg/m2 IV on day 1 every 4 weeks for 6 cycles (alternatively see Formula Dosing). Cyclophosphamide - 600 mg/m2 IV on day 1 every 4 weeks for 6 cycles. For directions regarding the use and administration of cyclophosphamide please refer to its package insert (See CLINICAL STUDIES .) Intermittent courses of carboplatin in combination with cyclophosphamide should not be repeated until the neutrophil count is at least 2,000 and the platelet count is at least 100,000. Dose Adjustment Recommendations Pretreatment platelet count and performance status are important prognostic factors for severity of myelosuppression in previously treated patients. The suggested dose adjustments for single agent or combination therapy shown in the table below are modified from controlled trials in previously treated and untreated patients with ovarian carcinoma. Blood counts were done weekly, and the recommendations are based on the lowest post-treatmen",
+      "adjustment": ">100,000 >2,000 125% 50 - 100,000 500 - 2,000 No Adjustment *Percentages apply to carboplatin injection as a single agent or to both carboplatin and cyclophosphamide in combination. In the controlled studies, dosages were also adjusted at a lower level (50% to 60%) for severe myelosuppression. Escalations above 125% were not recommended for these studies. Carboplatin injection is usually administered by an infusion lasting 15 minutes or longer. No pre- or post-treatment hydration or forced diuresis is required. Patients with Impaired Kidney Function Patients with creatinine clearance values below 60 mL/min are at increased risk of severe bone marrow suppression. In renally-impaired patients who received single agent carboplatin therapy, the incidence of severe leukopenia, neutropenia, or thrombocytopenia has been about 25% when the dosage modifications in the table below have been used. Baseline Creatinine Clearance Recommended Dose on Day 1 41 - 59 mL/min 250 mg/m2 16 - 40 mL/min 200 mg/m2 The data available for patients with severely impaired kidney function (creatinine clearance below 15 m L/min) are too limited to permit a recommendation for treatment. These dosing recommendati"
+    },
+    "contraindications": [
+      "Carboplatin injection is contraindicated in patients with a history of severe allergic reactions to cisplatin or other platinum-containing compounds. Carboplatin injection should not be employed in patients with severe bone marrow depression or significant bleeding."
+    ],
+    "adverse_reactions": [
+      {
+        "term": "For a comparison of toxicities when carboplatin or cisplatin was given in combination with cyclophosphamide, see CLINICAL STUDIES: Use with Cyclophosphamide for",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "ADVERSE EXPERIENCES IN PATIENTS WITH OVARIAN CANCER",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "First LineCombination Therapy *Percent Second Line Single Agent Therapy **Percent",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Thrombocytopenia <100,000/mm3 66 62",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Neutropenia <2,000 cells/mm3 96 67",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "<1,000 cells/mm3 82 21",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Leukopenia <4,000 cells/mm3 97 85",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "<2,000 cells/mm3 71 26",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Anemia <11 g/d L 90 90",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nausea and vomiting 93 92",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Other GI side effects 46 21",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Peripheral neuropathies 15 6",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Other sensory side effects 5 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Central neurotoxicity 26 5",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Serum creatinine elevations 6 10",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Blood urea elevations 17 22",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Bilirubin elevations 5 5",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "SGOT elevations 20 19",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Alkaline phosphataseelevations 29 37",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "*Use with Cyclophosphamide for Initial Treatment of Ovarian Cancer: Data are based on the experience of 393 patients with ovarian cancer (regardless of baseline",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "lung",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-08-04",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-LUNG-FDA-008.xml",
+    "doc_hash": "ad894bf2aa62d63329b068b2b1046634fb03177db904669730de7b3a42016e1c",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "4c89cedc-e48b-445c-ad05-54dbe60e4fb0",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/4c89cedc-e48b-445c-ad05-54dbe60e4fb0.xml",
+    "atc_code": "L01XA02",
+    "approval_no": null,
+    "source_name": "CARBOPLATIN 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-LUNG-FDA-008.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "Needles or intravenous administration sets containing aluminium parts that may come in contact with carboplatin injection should not be used for the preparation or administration of the drug. Aluminium can react with carboplatin causing precipitate formation and loss of potency.",
+      "The renal effects of nephrotoxic compounds may be potentiated by carboplatin.",
+      "The carcinogenic potential of carboplatin has not been studied, but compounds with similar mechanisms of action and mutagenicity profiles have been reported to be carcinogenic. Carboplatin has been shown to be mutagenic both in vitro and in vivo. It has also been shown to be embryotoxic and teratogenic in rats receiving the drug during organogenesis. Secondary malignancies have been reported in association with multi-drug therapy.",
+      "Pregnancy Category D",
+      "It is not known whether carboplatin is excreted in human milk. Because there is a possibility of toxicity in nursing infants secondary to carboplatin treatment of the mother, it is recommended that breast-feeding be discontinued if the mother is treated with carboplatin injection.",
+      "Safety and effectiveness in pediatric patients have not been established (seeWARNINGS : \"audiologic toxicity\").",
+      "Of the 789 patients in initial treatment combination therapy studies (NCIC and SWOG), 395 patients were treated with carboplatin in combination with cyclophosphamide. Of these, 141 were over 65 years of age and 22 were 75 years or older. In these trials, age was not a prognostic factor for survival. In terms of safety, elderly patients treated with carboplatin were more likely to develop severe thrombocytopenia than younger patients. In a combined database of 1,942 patients (414 were ≥ 65 years of age) that received single agent carboplatin for different tumor types, a similar incidence of adverse events was seen in patients 65 years and older and in patients less than 65. Other reported clinical experience has not identified differences in responses between elderly and younger patients, but greater sensitivity of some older individuals cannot be ruled out. Because renal function is often decreased in the elderly, renal function should be considered in the selection of carboplatin injection dosage (see DOSAGE AND ADMINISTRATION) ."
+    ],
+    "warnings": [
+      {
+        "code": "34071-1",
+        "title": "WARNINGS",
+        "text": "WARNINGS: Bone marrow suppression (leukopenia, neutropenia, and thrombocytopenia) is dose-dependent and is also the dose-limiting toxicity. Peripheral blood counts should be frequently monitored during carboplatin injection treatment and, when appropriate, until recovery is achieved. Median nadir occurs at day 21 in patients receiving single agent carboplatin. In general, single intermittent courses of carboplatin should not be repeated until leukocyte, neutrophil, and platelet counts have recovered. Since anemia is cumulative, transfusions may be needed during treatment with carboplatin, particularly in patients receiving prolonged therapy. Bone marrow suppression is increased in patients who have received prior therapy, especially regimens including cisplatin. Marrow suppression is also increased in patients with impaired kidney function. Initial carboplatin injection dosages in these patients should be appropriately reduced (see DOSAGE AND ADMINISTRATION)and blood counts should be carefully monitored between courses. The use of carboplatin in combination with other bone marrow suppressing therapies must be carefully managed with respect to dosage and timing in order to minimize additive effects. Carboplatin has limited nephrotoxic potential, but concomitant treatment with aminoglycosides has resulted in increased renal and/or audiologic toxicity, and caution must be exercised when a patient receives both drugs. Clinically significant hearing loss has been reported to occur in pediatric patients when carboplatin was administered at higher than recommended doses in combination with other ototoxic agents. Carboplatin can induce emesis, which can be more severe in patients previously receiving emetogenic therapy. The incidence and intensity of emesis have been reduced by using premedication with antiemetics. Although no conclusive efficacy data exist with the following schedules of carboplatin, lengthening the duration of single intravenous administration to 24 hours or dividing the total dose over 5 consecutive daily pulse doses has resulted in reduced emesis. Although peripheral neurotoxicity is infrequent, its incidence is increased in patients older than 65 years and in patients previously treated with cisplatin. Pre-existing cisplatin-induced neurotoxicity does not worsen in about 70% of the patients receiving carboplatin as secondary treatment. Loss of vision, which can be complete for light and colors, has been reported after the use of carboplatin with doses higher than those recommended in the package insert. Vision appears to recover totally or to a significant extent within weeks of stopping these high doses. As in the case of other platinum-coordination compounds, allergic reactions to carboplatin have been reported. These may occur within minutes of administration and should be managed with appropriate supportive therapy. There is increased risk of allergic reactions including anaphylaxis in patients previously exposed to platinum therapy. (See CONTRAINDICATIONSand ADVERSE REACTIONS: Allergic Reactions) High dosages of carboplatin (more than 4 times the recommended dose) have resulted in severe abnormalities of liver function tests. Carboplatin injection may cause fetal harm when administered to a pregnant woman. Carboplatin has been shown to be embryotoxic and teratogenic in rats. There are no adequate and well-controlled studies in pregnant women. If this drug is used during pregnancy, or if the patient becomes pregnant while receiving this drug, the patient should be apprised of the potential hazard to the fetus. Women of childbearing potential should be advised to avoid becoming pregnant.",
+        "char_len": 3671,
+        "source_section_code": "34071-1",
+        "source_title": "WARNINGS",
+        "source_xml": "DRUG-LUNG-FDA-008.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNINGS",
+        "text": "WARNINGS: Carboplatin injection should be administered under the supervision of a qualified physician experienced in the use of cancer chemotherapeutic agents. Appropriate management of therapy and complications is possible only when adequate treatment facilities are readily available. Bone marrow suppression is dose related and may be severe, resulting in infection and/or bleeding. Anemia may be cumulative and may require transfusion support. Vomiting is another frequent drug related side effect. Anaphylactic-like reactions to carboplatin have been reported and may occur within minutes of carboplatin injection administration. Epinephrine, corticosteroids, and antihistamines have been employed to alleviate symptoms.",
+        "char_len": 725,
+        "source_section_code": "34066-1",
+        "source_title": "WARNINGS",
+        "source_xml": "DRUG-LUNG-FDA-008.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": false,
+        "reason": "D&A 树下无标题含 dosage/dose modification 的子节",
+        "items": []
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-LUNG-FDA-008.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "lung"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种含铂的化疗药，用于晚期卵巢癌的初始联合治疗和复发后的姑息治疗。\", \"how_to_use\": \"单药治疗时，每4周第1天静脉输注一次，剂量为360 mg/m²。\", \"cautions\": [\"与环磷酰胺联合时，卡铂300 mg/m²，每4周第1天一次，共6个周期。\", \"环磷酰胺600 mg/m²，每4周第1天一次，共6个周期。\", \"输注通常持续15分钟或更长时间。\", \"一般不需要治疗前后补液或强制利尿。\", \"配制和给药时，不能使用含铝的针头或输液器。\", \"铝会与卡铂反应，产生沉淀并降低药效。\", \"中性粒细胞低于2000或血小板低于10万时，不应重复下一疗程。\", \"肾功能差者骨髓抑制风险更高，剂量需按肌酐清除率调整。\", \"肌酐清除率41-59 mL/min者，第1天推荐剂量250 mg/m²。\", \"肌酐清除率16-40 mL/min者，第1天推荐剂量200 mg/m²。\", \"严重肾功能损害（肌酐清除率低于15 mL/min）数据有限，无法给出建议。\", \"对顺铂或其他含铂药物有严重过敏史者禁用。\", \"严重骨髓抑制或明显出血者不应使用。\", \"孕妇使用属于D类，可能对胎儿有害。\", \"尚不清楚卡铂是否进入人乳，用药期间建议停止哺乳。\", \"儿童的安全性和有效性尚未确定。\", \"老年人肾功能常下降，选择剂量时应考虑肾功能。\", \"老年人比年轻人更容易出现严重血小板减少。\", \"卡铂可能增强其他肾毒性药物的肾脏影响。\", \"卡铂在动物中显示有致突变、胚胎毒性和致畸性。\", \"与多药治疗相关的继发性恶性肿瘤已有报告。\"], \"side_effects\": [{\"term\": \"血小板减少\", \"plain\": \"血小板低于10万/mm³，可能增加出血倾向。\", \"when_to_seek_help\": \"出现异常出血或瘀斑时需就医。\"}, {\"term\": \"中性粒细胞减少\", \"plain\": \"中性粒细胞低于2000/mm³，感染风险增加。\", \"when_to_seek_help\": \"出现发热或感染迹象时需就医。\"}, {\"term\": \"白细胞减少\", \"plain\": \"白细胞低于4000/mm³，抵抗力下降。\", \"when_to_seek_help\": \"出现发热或反复感染时需就医。\"}, {\"term\": \"贫血\", \"plain\": \"血红蛋白低于11 g/dL，可能感到乏力。\", \"when_to_seek_help\": \"出现明显乏力、气短时需就医。\"}, {\"term\": \"恶心和呕吐\", \"plain\": \"用药后可能出现恶心、呕吐。\", \"when_to_seek_help\": \"呕吐严重无法进食或饮水时需就医。\"}, {\"term\": \"其他胃肠道反应\", \"plain\": \"可能出现其他消化道不适。\", \"when_to_seek_help\": \"症状持续或加重时需就医。\"}, {\"term\": \"周围神经病变\", \"plain\": \"可能出现手脚麻木或感觉异常。\", \"when_to_seek_help\": \"麻木影响日常活动时需就医。\"}, {\"term\": \"其他感觉副作用\", \"plain\": \"可能出现其他感觉方面的异常。\", \"when_to_seek_help\": \"感觉异常明显或加重时需就医。\"}, {\"term\": \"中枢神经毒性\", \"plain\": \"可能影响中枢神经系统。\", \"when_to_seek_help\": \"出现意识或神经系统异常时需就医。\"}, {\"term\": \"血清肌酐升高\", \"plain\": \"可能提示肾功能变化。\", \"when_to_seek_help\": \"检查发现肌酐升高时需就医评估。\"}, {\"term\": \"血尿素升高\", \"plain\": \"可能提示肾功能变化。\", \"when_to_seek_help\": \"检查发现尿素升高时需就医评估。\"}, {\"term\": \"胆红素升高\", \"plain\": \"可能提示肝功能变化。\", \"when_to_seek_help\": \"检查发现胆红素升高时需就医评估。\"}, {\"term\": \"SGOT升高\", \"plain\": \"可能提示肝功能变化。\", \"when_to_seek_help\": \"检查发现SGOT升高时需就医评估。\"}, {\"term\": \"碱性磷酸酶升高\", \"plain\": \"可能提示肝功能或骨骼变化。\", \"when_to_seek_help\": \"检查发现碱性磷酸酶升高时需就医评估。\"}], \"seek_help\": \"出现异常出血或瘀斑、发热或感染迹象、严重呕吐无法进食饮水、手脚麻木影响活动、意识或神经系统异常时，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:16:37"
+  }
+]

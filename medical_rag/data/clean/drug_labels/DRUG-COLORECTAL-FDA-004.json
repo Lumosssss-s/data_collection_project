@@ -1,0 +1,324 @@
+[
+  {
+    "drug_id": "DRUG-COLORECTAL-FDA-004",
+    "generic_name": "IRINOTECAN",
+    "brand_names": [],
+    "aliases_zh": [
+      "伊立替康"
+    ],
+    "title": "IRINOTECAN 说明书（FDA DailyMed）",
+    "indications": [
+      "Irinotecan hydrochloride injection is a topoisomerase inhibitor indicated for:",
+      "• First-line therapy in combination with 5-fluorouracil and leucovorin for patients with metastatic carcinoma of the colon or rectum. (1)",
+      "• Patients with metastatic carcinoma of the colon or rectum whose disease has recurred or progressed following initial fluorouracil-based therapy. (1)"
+    ],
+    "dosage": {
+      "standard": "Administer irinotecan hydrochloride injection as a 90-minute intravenous infusion followed by LV and 5-FU. The currently recommended regimens are shown in Table 1. A reduction in the starting dose by one dose level of irinotecan hydrochloride injection may be considered for patients with any of the following conditions: prior pelvic/abdominal radiotherapy, performance status of 2, or increased bilirubin levels. Dosing for patients with bilirubin >2 mg/dL cannot be recommended because there is insufficient information to recommend a dose in these patients. Table 1: Combination-Agent Dosage Regimens and Dose Modifications a Regimen 1 6-wk cycle with bolus 5-FU/LV (next cycle begins on day 43) Irinotecan Hydrochloride Injection LV 5-FU 125 mg/m 2intravenous infusion over 90 minutes, days 1,8,15,22 20 mg/m 2intravenous injection bolus, days 1,8,15,22 500 mg/m 2intravenous injection bolus, days 1,8,15,22 Regimen 1 6-wk cycle with bolus 5-FU/LV (next cycle begins on day 43) Irinotecan Hydrochloride Injection LV 5-FU 125 mg/m 2intravenous infusion over 90 minutes, days 1,8,15,22 20 mg/m 2intravenous injection bolus, days 1,8,15,22 500 mg/m 2intravenous injection bolus, days 1,8,15,22 Starting Dose & Modified Dose Levels (mg/m 2) Starting Dose Dose Level -1 Dose Level -2 Irinotecan Hydrochloride Injection LV 5-FU 125 20 500 100 20 400 75 20 300 Regimen 2 6-wk cycle with infusional 5-FU/LV (next cycle begins on day 43) Irinotecan Hydrochloride Injection LV 5-FU Bolus 5-FU Infusion b 180 mg/m 2intravenous infusion over 90 minutes, days 1,15,29 200 mg/m 2intravenous infusion over 2 hours, days 1,2,15,16,29,30 400 mg/m 2intravenous injection bolus, days 1,2,15,16,29,30 600 mg/m 2intravenous infusion over 22 hours, days 1,2,15,16,29,30 Regimen 2 6-wk cycle with infusional 5-FU/LV (n",
+      "adjustment": "Regimen 1 6-wk cycle with bolus 5-FU/LV (next cycle begins on day 43) Irinotecan Hydrochloride Injection LV 5-FU 125 mg/m 2intravenous infusion over 90 minutes, days 1,8,15,22 20 mg/m 2intravenous injection bolus, days 1,8,15,22 500 mg/m 2intravenous injection bolus, days 1,8,15,22 Regimen 1 6-wk cycle with bolus 5-FU/LV (next cycle begins on day 43) Irinotecan Hydrochloride Injection LV 5-FU 125 mg/m 2intravenous infusion over 90 minutes, days 1,8,15,22 20 mg/m 2intravenous injection bolus, days 1,8,15,22 500 mg/m 2intravenous injection bolus, days 1,8,15,22 Starting Dose & Modified Dose Levels (mg/m 2) Starting Dose Dose Level -1 Dose Level -2 Irinotecan Hydrochloride Injection LV 5-FU 125 20 500 100 20 400 75 20 300 Regimen 2 6-wk cycle with infusional 5-FU/LV (next cycle begins on day 43) Irinotecan Hydrochloride Injection LV 5-FU Bolus 5-FU Infusion b 180 mg/m 2intravenous infusion over 90 minutes, days 1,15,29 200 mg/m 2intravenous infusion over 2 hours, days 1,2,15,16,29,30 400 mg/m 2intravenous injection bolus, days 1,2,15,16,29,30 600 mg/m 2intravenous infusion over 22 hours, days 1,2,15,16,29,30 Regimen 2 6-wk cycle with infusional 5-FU/LV (next cycle begins on day 43) Ir"
+    },
+    "contraindications": [
+      "• Irinotecan hydrochloride injection is contraindicated in patients with a known hypersensitivity to the drug or its excipients.",
+      "• Hypersensitivity to irinotecan hydrochloride injection or its excipients (4)"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "Common adverse reactions (≥30%) observed in combination therapy clinical studies are: nausea, vomiting, abdominal pain, diarrhea, constipation, anorexia, mucosi",
+        "frequency": "30%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Common adverse reactions (≥30%) observed in single agent therapy clinical studies are: nausea, vomiting, abdominal pain, diarrhea, constipation, anorexia, neutr",
+        "frequency": "30%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact BluePoint Laboratories at 1-800-707-4621 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Common adverse reactions (≥30%) observed in combination therapy clinical studies are: nausea, vomiting, abdominal pain, diarrhea, constipation, anorexia, mucosi",
+        "frequency": "30%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Common adverse reactions (≥30%) observed in single agent therapy clinical studies are: nausea, vomiting, abdominal pain, diarrhea, constipation, anorexia, neutr",
+        "frequency": "30%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "First-Line Combination Therapy",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "A total of 955 patients with metastatic colorectal cancer received the recommended regimens of irinotecan in combination with 5-FU/LV, 5-FU/LV alone, or irinote",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In Study 1, 49 (7.3%) patients died within 30 days of last study treatment: 21 (9.3%) received irinotecan in combination with 5-FU/LV, 15 (6.8%) received 5-FU/L",
+        "frequency": "7.3%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "In Study 2, 10 (3.5%) patients died within 30 days of last study treatment: 6 (4.1%) received irinotecan in combination with 5-FU/LV and 4 (2.8%) received 5-FU/",
+        "frequency": "3.5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most clinically significant adverse events for patients receiving irinotecan-based therapy were diarrhea, nausea, vomiting, neutropenia, and alopecia. The m",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Tables 5 and 6 list the clinically relevant adverse events reported in Studies 1 and 2, respectively.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 5: Study 1: Percent (%) of Patients Experiencing Clinically Relevant Adverse Events in Combination Therapies a",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Event Study 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Irinotecan + Bolus 5- FU/LV weekly x 4 every 6 weeks N=225 Bolus 5-FU/LV daily x 5 every 4 weeks N=219 Irinotecan weekly x 4 every 6 weeks N=223",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Irinotecan + Bolus 5- FU/LV weekly x 4 every 6 weeks N=225",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Bolus 5-FU/LV daily x 5 every 4 weeks N=219",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Irinotecan weekly x 4 every 6 weeks N=223",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Grade 1 to 4 Grade 3&4 Grade 1 to 4 Grade 3&4 Grade 1 to 4 Grade 3&4",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "TOTAL Adverse Events 100 53.3 100 45.7 99.6 45.7",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_type": "colorectal",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-08-24",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "file_path": "raw/drug_labels/DRUG-COLORECTAL-FDA-004.xml",
+    "doc_hash": "490abff23a94a96cc7062d9889aa2ac74af4080dd0774efd7d3ffcff02ad8a35",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "b66dbd6d-6ccb-ce9d-e053-2995a90a4c3c",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/b66dbd6d-6ccb-ce9d-e053-2995a90a4c3c.xml",
+    "atc_code": "L01CE02",
+    "approval_no": null,
+    "source_name": "IRINOTECAN 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-COLORECTAL-FDA-004.xml",
+    "updated_at": "2026-10-26",
+    "interactions": [
+      "• Strong CYP3A4 Inducers:Do not administer strong CYP3A4 inducers with irinotecan hydrochloride injection. ( 7.2) • Strong CYP3A4 Inhibitors:Do not administer strong CYP3A4 inhibitors with irinotecan hydrochloride injection. ( 7.3)",
+      "In a phase 1 clinical study involving irinotecan, 5-fluorouracil (5-FU), and leucovorin (LV) in 26 patients with solid tumors, the disposition of irinotecan was not substantially altered when the drugs were co-administered. Although the C maxand AUC 0-24of SN-38,the active metabolite, were reduced (by 14% and 8%, respectively) when irinotecan was followed by 5-FU and LV administration compared with when irinotecan was given alone, this sequence of administration was used in the combination trials and is recommended [see Dosage and Administration (2)] . Formal in vivoor in vitrodrug interaction studies to evaluate the influence of irinotecan on the disposition of 5-FU and LV have not been conducted.",
+      "Exposure to irinotecan or its active metabolite SN-38 is substantially reduced in adult and pediatric patients concomitantly receiving the CYP3A4 enzyme-inducing anticonvulsants phenytoin, phenobarbital, carbamazepine, or St. John's wort. The appropriate starting dose for patients taking these or other strong inducers such as rifampin and rifabutin has not been defined. Consider substituting non-enzyme inducing therapies at least 2 weeks prior to initiation of irinotecan hydrochloride injection therapy. Do not administer strong CYP3A4 inducers with irinotecan hydrochloride injection unless there are no therapeutic alternatives.",
+      "Irinotecan and its active metabolite, SN-38, are metabolized via the human cytochrome P450 3A4 isoenzyme (CYP3A4) and uridine diphosphate-glucuronosyl transferase 1A1 (UGT1A1), respectively, [see Clinical Pharmacology (12.3)]. Patients receiving concomitant ketoconazole, a CYP3A4 and UGT1A1 inhibitor, have increased exposure to irinotecan and its active metabolite SN-38. Coadministration of irinotecan hydrochloride injection with other inhibitors of CYP3A4 (e.g., clarithromycin, indinavir, itraconazole, lopinavir, nefazodone, nelfinavir, ritonavir, saquinavir, telaprevir, voriconazole) or UGT1A1 (e.g., atazanavir, gemfibrozil, indinavir) may increase systemic exposure to irinotecan or SN-38. Discontinue strong CYP3A4 inhibitors at least 1 week prior to starting irinotecan hydrochloride injection therapy. Do not administer strong CYP3A4 or UGT1A1 inhibitors with irinotecan hydrochloride injection unless there are no therapeutic alternatives."
+    ],
+    "warnings": [
+      {
+        "code": "43685-7",
+        "title": "5 WARNINGS AND PRECAUTIONS",
+        "text": "5 WARNINGS AND PRECAUTIONS: • Diarrhea and Cholinergic Reactions:Early diarrhea (occurring during or shortly after infusion of irinotecan hydrochloride injection) is usually transient and may be accompanied by cholinergic symptoms. Consider prophylactic or therapeutic administration of 0.25 mg to 1 mg of intravenous or subcutaneous atropine (unless clinically contraindicated). Late diarrhea (generally occurring more than 24 hours after administration of irinotecan hydrochloride injection) can occur. Monitor and replace fluid and electrolytes. Treat with loperamide. Use antibiotic support for ileus and fever. Interrupt irinotecan hydrochloride injection and reduce subsequent doses if severe diarrhea occurs. ( 5.1) • Myelosuppression:Manage promptly with antibiotic support. Interrupt irinotecan hydrochloride injection and reduce subsequent doses if necessary. ( 5.2) • Increased Risk of Neutropenia in Patients with Reduced UGT1A1 Activity:Individuals with UGT1A1*28/*28 , or *6/*6, or *6/*28 genotypes are at increased risk for neutropenia following initiation of irinotecan hydrochloride injection treatment. ( 5.3) • Hypersensitivity:Hypersensitivity reactions including severe anaphylactic or anaphylactoid reactions have been observed. Discontinue irinotecan hydrochloride injection if this occurs. ( 5.4) • Renal Impairment/Renal Failure:Rare cases of renal impairment and acute renal failure have been identified, usually in patients who became volume depleted from severe vomiting and/or diarrhea. ( 5.5) • Pulmonary Toxicity: Interstitial Pulmonary Disease (IPD)-like events, including fatalities, have occurred. Interrupt for new or progressive dyspnea, cough, and fever pending evaluation. If IPD diagnosed, discontinue and institute appropriate treatment as needed. ( 5.6) • Toxicity of the 5 Day Regimen:Irinotecan hydrochloride injection should not be used in combination with a regimen of 5-FU/LV administered for 4 to 5 consecutive days every 4 weeks outside of a clinical study. ( 5.7) • Embryo-Fetal Toxicity:Irinotecan hydrochloride injection can cause fetal harm. Advise females of reproductive potential of the potential risk to a fetus and to use effective contraception. Advise male patients with female partners of reproductive potential to use condoms. ( 5.9, 8.1, 8.3) • Patients with Hepatic Impairment:In clinical trials, irinotecan hydrochloride injection has not been administered to patients with serum bilirubin > 2.0 mg/dL, or transaminases > 3 times ULN if no liver metastases, or transaminases > 5 times ULN if liver metastases. With the weekly dosage schedule, patients with total bilirubin levels 1.0 to 2.0 mg/dL had greater likelihood of grade 3 to 4 neutropenia. ( 5.10)",
+        "char_len": 2720,
+        "source_section_code": "43685-7",
+        "source_title": "5 WARNINGS AND PRECAUTIONS",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.1 Diarrhea and Cholinergic Reactions",
+        "text": "5.1 Diarrhea and Cholinergic Reactions: Early diarrhea (occurring during or shortly after infusion of irinotecan hydrochloride injection) is usually transient and infrequently severe. It may be accompanied by cholinergic symptoms of rhinitis, increased salivation, miosis, lacrimation, diaphoresis, flushing, and intestinal hyperperistalsis that can cause abdominal cramping. Bradycardia may also occur. Early diarrhea and other cholinergic symptoms may be prevented or treated. Consider prophylactic or therapeutic administration of 0.25 mg to 1 mg of intravenous or subcutaneous atropine (unless clinically contraindicated). These symptoms are expected to occur more frequently with higher irinotecan doses. Late diarrhea (generally occurring more than 24 hours after administration of irinotecan hydrochloride injection) can be life threatening since it may be prolonged and may lead to dehydration, electrolyte imbalance, or sepsis. Grade 3 to 4 late diarrhea occurred in 23 to 31% of patients receiving weekly dosing. In the clinical studies, the median time to the onset of late diarrhea was 5 days with 3-week dosing and 11 days with weekly dosing. Late diarrhea can be complicated by colitis, ulceration, bleeding, ileus, obstruction, and infection. Cases of megacolon and intestinal perforation have been reported. Patients should have loperamide readily available to begin treatment for late diarrhea. Begin loperamide at the first episode of poorly formed or loose stools or the earliest onset of bowel movements more frequent than normal. One dosage regimen for loperamide is 4 mg at the first onset of late diarrhea and then 2 mg every 2 hours until the patient is diarrhea-free for at least 12 hours. Loperamide is not recommended to be used for more than 48 consecutive hours at these doses, because of the risk of paralytic ileus. During the night, the patient may take 4 mg of loperamide every 4 hours. Monitor and replace fluid and electrolytes. Use antibiotic support for ileus, fever, or severe neutropenia. Subsequent weekly chemotherapy treatments should be delayed in patients until return of pretreatment bowel function for at least 24 hours without anti-diarrhea medication. Patients must not be treated with irinotecan hydrochloride injection until resolution of the bowel obstruction. If grade 2, 3, or 4 late diarrhea recurs, subsequent doses of irinotecan hydrochloride injection should be decreased [see Dosage and Administration (2)]. Avoid diuretics or laxatives in patients with diarrhea.",
+        "char_len": 2521,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Diarrhea and Cholinergic Reactions",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Myelosuppression",
+        "text": "5.2 Myelosuppression: Irinotecan hydrochloride injection can cause severe myelosuppression. Bacterial, viral, and fungal infections have occurred in patients treated with irinotecan hydrochloride injection. Deaths due to sepsis following severe neutropenia have been reported in patients treated with irinotecan hydrochloride injection. In the clinical studies evaluating the weekly dosage schedule, neutropenic fever (concurrent NCI grade 4 neutropenia and fever of grade 2 or greater) occurred in 3% of the patients; 6% of patients received G-CSF for the treatment of neutropenia. Manage febrile neutropenia promptly with antibiotic support [see Warnings and Precautions (5.2)]. Hold irinotecan hydrochloride injection if neutropenic fever occurs or if the absolute neutrophil count drops <1000/mm 3. After recovery to an absolute neutrophil count ≥1000/mm 3, subsequent doses of irinotecan hydrochloride injection should be reduced [see Dosage and Administration (2)]. When evaluated in the trials of weekly administration, the frequency of grade 3 and 4 neutropenia was higher in patients who received previous pelvic/abdominal irradiation than in those who had not received such irradiation (48% [13/27] versus 24% [67/277]; p=0.04). Patients who have previously received pelvic/abdominal irradiation are at increased risk of severe myelosuppression following the administration of irinotecan hydrochloride injection. Based on sparse available data, the concurrent administration of irinotecan hydrochloride injection with irradiation is not recommended. Patients with baseline serum total bilirubin levels of 1.0 mg/dL or more also had a greater likelihood of experiencing first-cycle grade 3 or 4 neutropenia than those with bilirubin levels that were less than 1.0 mg/dL (50% [19/38] versus 18% [47/266]; p<0.001). Patients with deficient glucuronidation of bilirubin, such as those with Gilbert’s syndrome, may be at greater risk of myelosuppression when receiving therapy with irinotecan hydrochloride injection.",
+        "char_len": 2022,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Myelosuppression",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Increased Risk of Neutropenia in Patients With Reduced UGT1A1 Activity",
+        "text": "5.3 Increased Risk of Neutropenia in Patients With Reduced UGT1A1 Activity: Published studies have shown that individuals who are homozygous for either the UGT1A1*28 or *6 alleles (*28/*28, *6/*6) or who are compound or double heterozygous for the UGT1A1*28 and *6 alleles (*6/*28) are at increased risk for severe or life-threatening neutropenia during treatment with irinotecan hydrochloride injection. These individuals are UGT1A1 poor metabolizers and experience increased systemic exposure to SN-38, an active metabolite of irinotecan. Individuals who are heterozygous for either the UGT1A1*28 or *6 alleles (*1/*28, *1/*6) are intermediate metabolizers and may also have an increased risk of severe or life-threatening neutropenia [see Dosage and Administration ( 2) and Clinical Pharmacology ( 12.3 , 12.5)]. Consider UGT1A1 genotype testing for the *28 and *6 alleles to determine UGT1A1 metabolizer status [see Clinical Pharmacology ( 12.5)]. When administering irinotecan hydrochloride injection, consider a reduction in the irinotecan hydrochloride injection starting dose by at least one level for patients known to be homozygous or compound heterozygous for the UGT1A1*28 and/or *6 alleles (*28/*28, *6/*6, *6/*28). Closely monitor patients with UGT1A1*28 or *6 alleles for neutropenia during and after treatment with irinotecan hydrochloride injection. The precise dosage reduction in this patient population is not known. Subsequent dosage modifications may be required based on individual patient tolerance to treatment [see Dosage and Administration ( 2.1 , 2.2)].",
+        "char_len": 1581,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Increased Risk of Neutropenia in Patients With Reduced UGT1A1 Activity",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Hypersensitivity",
+        "text": "5.4 Hypersensitivity: Hypersensitivity reactions including severe anaphylactic or anaphylactoid reactions have been observed. Discontinue irinotecan hydrochloride injection if anaphylactic reaction occurs.",
+        "char_len": 205,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Hypersensitivity",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.5 Renal Impairment/Renal Failure",
+        "text": "5.5 Renal Impairment/Renal Failure: Renal impairment and acute renal failure have been identified, usually in patients who became volume depleted from severe vomiting and/or diarrhea.",
+        "char_len": 183,
+        "source_section_code": "42229-5",
+        "source_title": "5.5 Renal Impairment/Renal Failure",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.6 Pulmonary Toxicity",
+        "text": "5.6 Pulmonary Toxicity: Interstitial Pulmonary Disease (IPD)-like events, including fatalities, have occurred in patients receiving irinotecan (in combination and as monotherapy). Risk factors include pre-existing lung disease, use of pneumotoxic drugs, radiation therapy, and colony stimulating factors. Patients with risk factors should be closely monitored for respiratory symptoms before and during irinotecan hydrochloride injection therapy. In Japanese studies, a reticulonodular pattern on chest x-ray was observed in a small percentage of patients. New or progressive, dyspnea, cough, and fever should prompt interruption of chemotherapy, pending diagnostic evaluation. If IPD is diagnosed, irinotecan hydrochloride injection and other chemotherapy should be discontinued and appropriate treatment instituted as needed [see Adverse Reactions (6.1)].",
+        "char_len": 857,
+        "source_section_code": "42229-5",
+        "source_title": "5.6 Pulmonary Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.7 Toxicity of the 5 Day Regimen",
+        "text": "5.7 Toxicity of the 5 Day Regimen: Outside of a well-designed clinical study, irinotecan hydrochloride injection should not be used in combination with a regimen of 5-FU/LV administered for 4 to 5 consecutive days every 4 weeks because of reports of increased toxicity, including toxic deaths. Irinotecan hydrochloride injection should be used as recommended in Table 2 [see Dosage and Administration (2)].",
+        "char_len": 406,
+        "source_section_code": "42229-5",
+        "source_title": "5.7 Toxicity of the 5 Day Regimen",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.8 Increased Toxicity in Patients with Performance Status 2",
+        "text": "5.8 Increased Toxicity in Patients with Performance Status 2: In patients receiving either irinotecan/5-FU/LV or 5-FU/LV in the clinical trials, higher rates of hospitalization, neutropenic fever, thromboembolism, first-cycle treatment discontinuation, and early deaths were observed in patients with a baseline performance status of 2 than in patients with a baseline performance status of 0 or 1.",
+        "char_len": 398,
+        "source_section_code": "42229-5",
+        "source_title": "5.8 Increased Toxicity in Patients with Performance Status 2",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.9 Embryo-Fetal Toxicity",
+        "text": "5.9 Embryo-Fetal Toxicity: Based on its mechanism of action and findings in animals, irinotecan hydrochloride injection can cause fetal harm when administered to a pregnant women. In animal studies, intravenous administration of irinotecan during the period of organogenesis resulted in embryofetal mortality and teratogenicity in pregnant animals at exposures lower than the human exposure based on area under the curve (AUC) at the clinical dose of 125 mg/m 2. Advise pregnant women of the potential risk to a fetus. Advise female patients of reproductive potential to avoid becoming pregnant and to use highly effective contraception during treatment with irinotecan hydrochloride injection and for 6 months after the final dose. Advise male patients with female partners of reproductive potential to use condoms during treatment and for 3 months after the final dose of irinotecan hydrochloride injection [see Use in Specific Populations (8.1), (8.3)andW Nonclinical Toxicology (13.1)].",
+        "char_len": 990,
+        "source_section_code": "42229-5",
+        "source_title": "5.9 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.10 Patients with Hepatic Impairment",
+        "text": "5.10 Patients with Hepatic Impairment: The use of irinotecan hydrochloride injection in patients with significant hepatic impairment has not been established. In clinical trials of either dosing schedule, irinotecan was not administered to patients with serum bilirubin >2.0 mg/dL, or transaminase >3 times the upper limit of normal if no liver metastasis, or transaminase >5 times the upper limit of normal with liver metastasis. In clinical trials of the weekly dosage schedule, patients with modestly elevated baseline serum total bilirubin levels (1.0 to 2.0 mg/dL) had a significantly greater likelihood of experiencing first-cycle, grade 3 or 4 neutropenia than those with bilirubin levels that were less than 1.0 mg/dL (50% [19/38] versus 18% [47/226]; p<0.001) [see Dosage and Administration (2.1), Use in Specific Populations (8.7) and Clinical Pharmacology (12.3)] .",
+        "char_len": 876,
+        "source_section_code": "42229-5",
+        "source_title": "5.10 Patients with Hepatic Impairment",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "BOXED WARNING",
+        "text": "BOXED WARNING: WARNING: DIARRHEA and MYELOSUPRESSION WARNING: DIARRHEA and MYELOSUPPRESSION",
+        "char_len": 91,
+        "source_section_code": "34066-1",
+        "source_title": "BOXED WARNING",
+        "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: The influence of renal impairment on the pharmacokinetics of irinotecan has not been evaluated. Therefore, use caution in patients with impaired renal function. Irinotecan hydrochloride injection is not recommended for use in patients on dialysis.",
+            "char_len": 269,
+            "source_section_code": "42229-5",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "hepatic": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "8.7 Hepatic Impairment",
+            "text": "8.7 Hepatic Impairment: Irinotecan clearance is diminished in patients with hepatic impairment while exposure to the active metabolite SN-38 is increased relative to that in patients with normal hepatic function. The magnitude of these effects is proportional to the degree of liver impairment as measured by elevations in total bilirubin and transaminase concentrations. Therefore, use caution when administering irinotecan hydrochloride injection to patients with hepatic impairment. The tolerability of irinotecan in patients with hepatic dysfunction (bilirubin greater than 2 mg/dl) has not been assessed sufficiently, and no recommendations for dosing can be made [see Dosage and Administration (2.1), Warnings and Precautions (5.10) and Clinical Pharmacology (12.3)].",
+            "char_len": 773,
+            "source_section_code": "42229-5",
+            "source_title": "8.7 Hepatic Impairment",
+            "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+            "match_by_title": true
+          }
+        ]
+      },
+      "toxicity_modification": {
+        "located": false,
+        "reason": "D&A 树下无标题含 dosage/dose modification 的子节",
+        "items": []
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-COLORECTAL-FDA-004.xml",
+      "xml_present": true
+    },
+    "cancer_types": [
+      "colorectal"
+    ],
+    "patient_plain": "{\"what_is_it\": \"这是一种注射用抗癌药，用于治疗已转移的结肠癌或直肠癌。\", \"how_to_use\": \"通常经静脉输注90分钟给药，常与5-氟尿嘧啶和亚叶酸钙联合使用。具体方案和剂量由医生根据情况决定。\", \"cautions\": [\"对本品或其辅料过敏者禁用。\", \"曾做过盆腔或腹部放疗、体力状态较差或胆红素升高者，医生可能考虑降低起始剂量。\", \"胆红素超过2 mg/dL者，因信息不足，无法推荐剂量。\", \"不要与强CYP3A4诱导剂合用。\", \"不要与强CYP3A4抑制剂合用。\", \"如正在服用苯妥英、苯巴比妥、卡马西平或贯叶连翘等，需告知医生。\", \"如正在服用酮康唑等药物，需告知医生。\", \"开始本品治疗前，医生可能考虑换用非酶诱导类药物至少2周。\", \"开始本品治疗前，强CYP3A4抑制剂需至少停用1周。\", \"除非无其他治疗选择，否则不使用强CYP3A4或UGT1A1抑制剂。\"], \"side_effects\": [{\"term\": \"恶心\", \"plain\": \"感到想吐或胃部不适。\", \"when_to_seek_help\": \"恶心严重或持续不缓解时，请及时就医。\"}, {\"term\": \"呕吐\", \"plain\": \"出现呕吐。\", \"when_to_seek_help\": \"呕吐严重或持续不缓解时，请及时就医。\"}, {\"term\": \"腹痛\", \"plain\": \"肚子疼痛。\", \"when_to_seek_help\": \"腹痛严重或持续不缓解时，请及时就医。\"}, {\"term\": \"腹泻\", \"plain\": \"大便次数增多或变稀。\", \"when_to_seek_help\": \"腹泻严重或持续不缓解时，请及时就医。\"}, {\"term\": \"便秘\", \"plain\": \"排便困难或次数减少。\", \"when_to_seek_help\": \"便秘严重或持续不缓解时，请及时就医。\"}, {\"term\": \"食欲减退\", \"plain\": \"不想吃东西或吃得少。\", \"when_to_seek_help\": \"食欲明显下降或持续不缓解时，请及时就医。\"}, {\"term\": \"黏膜炎\", \"plain\": \"口腔或消化道黏膜发炎不适。\", \"when_to_seek_help\": \"黏膜炎严重或持续不缓解时，请及时就医。\"}, {\"term\": \"中性粒细胞减少\", \"plain\": \"一种白细胞减少，可能增加感染风险。\", \"when_to_seek_help\": \"出现发热或感染迹象时，请及时就医。\"}, {\"term\": \"脱发\", \"plain\": \"头发脱落。\", \"when_to_seek_help\": \"脱发明显或困扰时，可咨询医生。\"}], \"seek_help\": \"如出现严重腹泻、恶心、呕吐、腹痛、便秘、食欲减退、黏膜炎、中性粒细胞减少或脱发等情况，请及时就医。\"}",
+    "patient_plain_at": "2026-11-04T06:15:52"
+  }
+]

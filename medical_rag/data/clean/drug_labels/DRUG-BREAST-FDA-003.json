@@ -1,0 +1,330 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-003",
+    "generic_name": "TAMOXIFEN",
+    "brand_names": [],
+    "aliases_zh": [
+      "他莫昔芬",
+      "他莫西芬"
+    ],
+    "title": "TAMOXIFEN 说明书（FDA DailyMed）",
+    "indications": [
+      "Tamoxifen citrate tablets are effective in the treatment of metastatic breast cancer in women and men. In premenopausal women with metastatic breast cancer, tamoxifen citrate tablets are an alternative to oophorectomy or ovarian irradiation. Available evidence indicates that patients whose tumors are estrogen receptor positive are more likely to benefit from tamoxifen citrate tablet therapy.",
+      "Tamoxifen citrate tablets are indicated for the treatment of node-positive breast cancer in postmenopausal women following total mastectomy or segmental mastectomy, axillary dissection, and breast irradiation. In some tamoxifen adjuvant studies, most of the benefit to date has been in the subgroup with four or more positive axillary nodes.",
+      "Tamoxifen citrate tablets are indicated for the treatment of axillary node-negative breast cancer in women following total mastectomy or segmental mastectomy, axillary dissection, and breast irradiation.",
+      "The estrogen- and progesterone-receptor values may help to predict whether adjuvant tamoxifen citrate tablet therapy is likely to be beneficial.",
+      "Tamoxifen citrate tablets reduce the occurrence of contralateral breast cancer in patients receiving adjuvant tamoxifen citrate tablet therapy for breast cancer.",
+      "In women with DCIS, following breast surgery and radiation, tamoxifen citrate tablets are indicated to reduce the risk of invasive breast cancer (see BOXED WARNING). The decision regarding therapy with tamoxifen citrate tablets for the reduction in breast cancer incidence should be based upon an individual assessment of the benefits and risks of tamoxifen citrate tablet therapy.",
+      "Current data from clinical trials support 5 years of adjuvant tamoxifen citrate tablet therapy for patients with breast cancer.",
+      "Tamoxifen citrate tablets are indicated to reduce the incidence of breast cancer in women at high risk for breast cancer. This effect was shown in a study of 5 years planned duration with a median follow-up of 4.2 years. Twenty-five percent of the participants received drug for 5 years. The longer-term effects are not known. In this study, there was no impact of tamoxifen citrate tablets on overall or breast cancer-related mortality (see BOXED WARNING).",
+      "Tamoxifen citrate tablets are indicated only for high risk women. \"High risk\" is defined as women at least 35 years of age with a 5 year predicted risk of breast cancer ≥ 1.67%, as calculated by the Gail Model.",
+      "Examples of combinations of factors predicting a 5 year risk ≥ 1.67% are:"
+    ],
+    "dosage": {
+      "standard": "For patients with breast cancer, the recommended daily dose is 20 mg to 40 mg. Dosages greater than 20 mg per day should be given in divided doses (morning and evening). In three single agent adjuvant studies in women, one 10 mg tamoxifen citrate tablet was administered two (ECOG and NATO) or three (Toronto) times a day for 2 years. In the NSABP B-14 adjuvant study in women with node-negative breast cancer, one 10 mg tamoxifen citrate tablet was given twice a day for at least 5 years. Results of the B-14 study suggest that continuation of therapy beyond 5 years does not provide additional benefit (see CLINICAL PHARMACOLOGY). In the EBCTCG 1995 overview, the reduction in recurrence and mortality was greater in those studies that used tamoxifen for about 5 years than in those that used tamoxifen for a shorter period of therapy. There was no indication that doses greater than 20 mg per day were more effective. Current data from clinical trials support 5 years of adjuvant tamoxifen therapy for patients with breast cancer. The recommended dose is tamoxifen citrate tablet 20 mg daily for 5 years. The recommended dose is tamoxifen citrate tablets 20 mg daily for 5 years. There are no data to support the use of tamoxifen other than for 5 years (see CLINICAL PHARMACOLOGY: Clinical Studies: Reduction in Breast Cancer Incidence in High Risk Women).",
+      "adjustment": "The recommended dose is tamoxifen citrate tablets 20 mg daily for 5 years. There are no data to support the use of tamoxifen other than for 5 years (see CLINICAL PHARMACOLOGY: Clinical Studies: Reduction in Breast Cancer Incidence in High Risk Women)."
+    },
+    "contraindications": [
+      "Tamoxifen citrate tablets are contraindicated in patients with known hypersensitivity to the drug or any of its ingredients.",
+      "Tamoxifen citrate tablets are contraindicated in women who require concomitant coumarin-type anticoagulant therapy or in women with a history of deep vein thrombosis or pulmonary embolus."
+    ],
+    "adverse_reactions": [
+      {
+        "term": "Adverse reactions to tamoxifen are relatively mild and rarely severe enough to require discontinuation of treatment in breast cancer patients.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Continued clinical studies have resulted in further information which better indicates the incidence of adverse reactions with tamoxifen as compared to placebo.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Increased bone and tumor pain and, also, local disease flare have occurred, which are sometimes associated with a good tumor response. Patients with increased b",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In patients treated with tamoxifen for metastatic breast cancer, the most frequent adverse reaction to tamoxifen is hot flashes.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Other adverse reactions which are seen infrequently are hypercalcemia, peripheral edema, distaste for food, pruritus vulvae, depression, dizziness, light-headed",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The following table summarizes the incidence of adverse reactions reported at a frequency of 2% or greater from clinical trials (Ingle, Pritchard, Buchanan) whi",
+        "frequency": "2%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "TAMOXIFEN All Effects % of Women OVARIAN ABLATION All Effects % of Women",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions Some women had more than one adverse reaction. n = 104 n = 100",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Menstrual Disorder 6 4",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Musculoskeletal Pain 3 0",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Musculoskeletal Pain",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Abdominal Cramps 1 2",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Tamoxifen is well tolerated in males with breast cancer. Reports from the literature and case reports suggest that the safety profile of tamoxifen in males is s",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "In the NSABP B-14 study, women with axillary node-negative breast cancer were randomized to 5 years of tamoxifen 20 mg/day or placebo following primary surgery.",
+        "frequency": "64%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Effect TAMOXIFEN (n = 1,422) Placebo (n = 1,437)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Fluid Retention 32 30",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Vaginal Discharge 30 15",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Irregular Menses 25 19",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Weight Loss (> 5%) 23 18",
+        "frequency": "5%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Increased Bilirubin 2 1",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-08-20",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-003.xml",
+    "doc_hash": "920b979d60e759c0e0df43eeeb09d398a1fb207273a696d2f3f1f9cc7ca8939b",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "7ee3d3d2-85d1-4018-8e70-5ed8a64ae1f0",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/7ee3d3d2-85d1-4018-8e70-5ed8a64ae1f0.xml",
+    "atc_code": "L02BA01",
+    "approval_no": null,
+    "source_name": "TAMOXIFEN 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-003.xml",
+    "updated_at": "2026-11-02",
+    "interactions": [
+      "Decreases in platelet counts, usually to 50,000 to 100,000/mm3, infrequently lower, have been occasionally reported in patients taking tamoxifen for breast cancer. In patients with significant thrombocytopenia, rare hemorrhagic episodes have occurred, but it is uncertain if these episodes are due to tamoxifen therapy. Leukopenia has been observed, sometimes in association with anemia and/or thrombocytopenia. There have been rare reports of neutropenia and pancytopenia in patients receiving tamoxifen; this can sometimes be severe.",
+      "In the NSABP P-1 trial, six women on tamoxifen and two on placebo experienced grade 3 to 4 drops in platelet counts (≤ 50,000/mm3).",
+      "Patients should be instructed to read the Medication Guide supplied as required by law when tamoxifen is dispensed. The complete text of the Medication Guide is reprinted at the end of this document.",
+      "Women with DCIS treated with lumpectomy and radiation therapy who are considering tamoxifen to reduce the incidence of a second breast cancer event should assess the risks and benefits of therapy, since treatment with tamoxifen decreased the incidence of invasive breast cancer, but has not been shown to affect survival (see CLINICAL PHARMACOLOGY: Table 1).",
+      "Women who are at high risk for breast cancer can consider taking tamoxifen therapy to reduce the incidence of breast cancer. Whether the benefits of treatment are considered to outweigh the risks depends on a woman's personal health history and on how she weighs the benefits and risks. Tamoxifen therapy to reduce the incidence of breast cancer may therefore not be appropriate for all women at high risk for breast cancer. Women who are considering tamoxifen therapy should consult their health care professional for an assessment of the potential benefits and risks prior to starting therapy for r",
+      "Women who are pregnant or who plan to become pregnant should not take tamoxifen to reduce her risk of breast cancer. Effective nonhormonal contraception must be used by all premenopausal women taking tamoxifen and for approximately 2 months after discontinuing therapy if they are sexually active. Tamoxifen does not cause infertility, even in the presence of menstrual irregularity. For sexually active women of childbearing potential, tamoxifen therapy should be initiated during menstruation. In women with menstrual irregularity, a negative B-HCG immediately prior to the initiation of therapy is",
+      "Two European trials of tamoxifen to reduce the risk of breast cancer were conducted and showed no difference in the number of breast cancer cases between the tamoxifen and placebo arms. These studies had trial designs that differed from that of NSABP P-1, were smaller than NSABP P-1, and enrolled women at a lower risk for breast cancer than those in P-1.",
+      "Women taking or having previously taken tamoxifen should be instructed to seek prompt medical attention for new breast lumps, vaginal bleeding, gynecologic symptoms (menstrual irregularities, changes in vaginal discharge, or pelvic pain or pressure), symptoms of leg swelling or tenderness, unexplained shortness of breath, or changes in vision. Women should inform all care providers, regardless of the reason for evaluation, that they take tamoxifen.",
+      "Women taking tamoxifen to reduce the incidence of breast cancer should have a breast examination, a mammogram, and a gynecologic examination prior to the initiation of therapy. These studies should be repeated at regular intervals while on therapy, in keeping with good medical practice. Women taking tamoxifen as adjuvant breast cancer therapy should follow the same monitoring procedures as for women taking tamoxifen for the reduction in the incidence of breast cancer. Women taking tamoxifen as treatment for metastatic breast cancer should review this monitoring plan with their care provider an",
+      "Periodic complete blood counts, including platelet counts, and periodic liver function tests should be obtained.",
+      "During the ATAC trial, more patients receiving anastrozole were reported to have an elevated serum cholesterol compared to patients receiving tamoxifen (9% vs. 3.5%, respectively).",
+      "When tamoxifen is used in combination with coumarin-type anticoagulants, a significant increase in anticoagulant effect may occur. Where such coadministration exists, careful monitoring of the patient's prothrombin time is recommended.",
+      "In the NSABP P-1 trial, women who required coumarin-type anticoagulants for any reason were ineligible for participation in the trial (see CONTRAINDICATIONS).",
+      "There is an increased risk of thromboembolic events occurring when cytotoxic agents are used in combination with tamoxifen.",
+      "Tamoxifen reduced letrozole plasma concentrations by 37%. The effect of tamoxifen on metabolism and excretion of other antineoplastic drugs, such as cyclophosphamide and other drugs that require mixed function oxidases for activation, is not known. Tamoxifen and N-desmethyl tamoxifen plasma concentrations have been shown to be reduced when coadministered with rifampin or aminoglutethimide. Induction of CYP3A4-mediated metabolism is considered to be the mechanism by which these reductions occur; other CYP3A4 inducing agents have not been studied to confirm this effect.",
+      "One patient receiving tamoxifen with concomitant phenobarbital exhibited a steady-state serum level of tamoxifen lower than that observed for other patients (i.e., 26 ng/mL vs. mean value of 122 ng/mL). However, the clinical significance of this finding is not known. Rifampin induced the metabolism of tamoxifen and significantly reduced the plasma concentrations of tamoxifen in ten patients. Aminoglutethimide reduces tamoxifen and N-desmethyl tamoxifen plasma concentrations. Medroxyprogesterone reduces plasma concentrations of N-desmethyl, but not tamoxifen.",
+      "Concomitant bromocriptine therapy has been shown to elevate serum tamoxifen and N-desmethyl tamoxifen.",
+      "Based on clinical and pharmacokinetic results from the anastrozole adjuvant trial, tamoxifen should not be administered with anastrozole (see CLINICAL PHARMACOLOGY: Drug-Drug Interactions).",
+      "During post-marketing surveillance, T4 elevations were reported for a few postmenopausal patients which may be explained by increases in thyroid-binding globulin. These elevations were not accompanied by clinical hyperthyroidism.",
+      "Variations in the karyopyknotic index on vaginal smears and various degrees of estrogen effect on Pap smears have been infrequently seen in postmenopausal patients given tamoxifen.",
+      "In the post-marketing experience with tamoxifen, infrequent cases of hyperlipidemias have been reported. Periodic monitoring of plasma triglycerides and cholesterol may be indicated in patients with preexisting hyperlipidemias (see ADVERSE REACTIONS: Post-Marketing Experience).",
+      "A conventional carcinogenesis study in rats at doses of 5, 20, and 35 mg/kg/day (about 1-, 3- and 7-fold the daily maximum recommended human dose on a mg/m2 basis) administered by oral gavage for up to 2 years revealed a significant increase in hepatocellular carcinoma at all doses. The incidence of these tumors was significantly greater among rats administered 20 or 35 mg/kg/day (69%) compared to those administered 5 mg/kg/day (14%). In a separate study, rats were administered tamoxifen at 45 mg/kg/day (about 9-fold the daily maximum recommended human dose on a mg/m2 basis); hepatocellular ne",
+      "Granulosa cell ovarian tumors and interstitial cell testicular tumors were observed in two separate mouse studies. The mice were administered the trans and racemic forms of tamoxifen for 13 to 15 months at doses of 5, 20 and 50 mg/kg/day (about one-half, 2- and 5-fold the daily recommended human dose on a mg/m2 basis).",
+      "No genotoxic potential was found in a conventional battery of in vivo and in vitro tests with pro- and eukaryotic test systems with drug metabolizing systems. However, increased levels of DNA adducts were observed by 32P post-labeling in DNA from rat liver and cultured human lymphocytes. Tamoxifen also has been found to increase levels of micronucleus formation in vitro in human lymphoblastoid cell line (MCL-5). Based on these findings, tamoxifen is genotoxic in rodent and human MCL-5 cells.",
+      "Tamoxifen produced impairment of fertility and conception in female rats at doses of 0.04 mg/kg/day (about 0.01-fold the daily maximum recommended human dose on a mg/m2 basis) when dosed for 2 weeks prior to mating through day 7 of pregnancy. At this dose, fertility and reproductive indices were markedly reduced with total fetal mortality. Fetal mortality was also increased at doses of 0.16 mg/kg/day (about 0.03-fold the daily maximum recommended human dose on a mg/m2 basis) when female rats were dosed from days 7 to 17 of pregnancy. Tamoxifen produced abortion, premature delivery and fetal de",
+      "Tamoxifen has been reported to inhibit lactation. Two placebo-controlled studies in over 150 women have shown that tamoxifen significantly inhibits early postpartum milk production. In both studies tamoxifen was administered within 24 hours of delivery for between 5 and 18 days. The effect of tamoxifen on established milk production is not known.",
+      "There are no data that address whether tamoxifen is excreted into human milk. If excreted, there are no data regarding the effects of tamoxifen in breast milk on the breastfed infant or breastfed animals. However, direct neonatal exposure of tamoxifen to mice and rats (not via breast milk) produced 1) reproductive tract lesions in female rodents (similar to those seen in humans after intrauterine exposure to diethylstilbestrol) and 2) functional defects of the reproductive tract in male rodents such as testicular atrophy and arrest of spermatogenesis.",
+      "It is not known if tamoxifen is excreted in human milk. Because of the potential for serious adverse reactions in nursing infants from tamoxifen, women taking tamoxifen should not breast-feed.",
+      "The safety and efficacy of tamoxifen for girls aged 2 to 10 years with McCune-Albright Syndrome and precocious puberty have not been studied beyond one year of treatment. The long-term effects of tamoxifen therapy for girls have not been established. In adults treated with tamoxifen, an increase in incidence of uterine malignancies, stroke and pulmonary embolism has been noted (see BOXED WARNING, and CLINICAL PHARMACOLOGY: Clinical Studies: McCune-Albright Syndrome).",
+      "In the NSABP P-1 trial, the percentage of women at least 65 years of age was 16%. Women at least 70 years of age accounted for 6% of the participants. A reduction in breast cancer incidence was seen among participants in each of the subsets: A total of 28 and ten invasive breast cancers were seen among participants 65 and older in the placebo and tamoxifen groups, respectively. Across all other outcomes, the results in this subset reflect the results observed in the subset of women at least 50 years of age. No overall differences in tolerability were observed between older and younger patients",
+      "In the NSABP B-24 trial, the percentage of women at least 65 years of age was 23%. Women at least 70 years of age accounted for 10% of participants. A total of 14 and 12 invasive breast cancers were seen among participants 65 and older in the placebo and tamoxifen groups, respectively. This subset is too small to reach any conclusions on efficacy. Across all other endpoints, the results in this subset were comparable to those of younger women enrolled in this trial. No overall differences in tolerability were observed between older and younger patients."
+    ],
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "Effects in Metastatic Breast Cancer Patients",
+        "text": "Effects in Metastatic Breast Cancer Patients: As with other additive hormonal therapy (estrogens and androgens), hypercalcemia has been reported in some breast cancer patients with bone metastases within a few weeks of starting treatment with tamoxifen. If hypercalcemia does occur, appropriate measures should be taken and, if severe, tamoxifen should be discontinued.",
+        "char_len": 369,
+        "source_section_code": "42229-5",
+        "source_title": "Effects in Metastatic Breast Cancer Patients",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Effects on the Uterus",
+        "text": "Effects on the Uterus: An increased incidence of uterine malignancies has been reported in association with tamoxifen treatment. The underlying mechanism is unknown, but may be related to the estrogen-like effect of tamoxifen. Most uterine malignancies seen in association with tamoxifen are classified as adenocarcinoma of the endometrium. However, rare uterine sarcomas, including malignant mixed mullerian tumors (MMMT), have also been reported. Uterine sarcoma is generally associated with a higher FIGO stage (III/IV) at diagnosis, poorer prognosis, and shorter survival. Uterine sarcoma has been reported to occur more frequently among long-term users ( ≥ 2 years) of tamoxifen than non-users. Some of the uterine malignancies (endometrial carcinoma or uterine sarcoma) have been fatal. In the NSABP P-1 trial, among participants randomized to tamoxifen there was a statistically significant increase in the incidence of endometrial cancer (33 cases of invasive endometrial cancer, compared to 14 cases among participants randomized to placebo (RR = 2.48, 95% CI: 1.27 to 4.92). The 33 cases in participants receiving tamoxifen were FIGO Stage I, including 20 IA, 12 IB, and 1 IC endometrial adenocarcinomas. In participants randomized to placebo, 13 were FIGO Stage I (8 IA and 5 IB) and 1 was FIGO Stage IV. Five women on tamoxifen and one on placebo received postoperative radiation therapy in addition to surgery. This increase was primarily observed among women at least 50 years of age at the time of randomization (26 cases of invasive endometrial cancer, compared to six cases among participants randomized to placebo (RR = 4.50, 95% CI: 1.78 to 13.16). Among women ≤ 49 years of age at the time of randomization there were seven cases of invasive endometrial cancer, compared to eight cases among participants randomized to placebo (RR = 0.94, 95% CI: 0.28 to 2.89). If age at the time of diagnosis is considered, there were four cases of endometrial cancer among participants ≤ 49 randomized to tamoxifen compared to two among participants randomized to placebo (RR = 2.21, 95% CI: 0.4 to 12.0). For women ≥ 50 at the time of diagnosis, there were 29 cases among participants randomized to tamoxifen compared to 12 among women on placebo (RR = 2.5, 95% CI: 1.3 to 4.9). The risk ratios were similar in the two groups, although fewer events occurred in younger women. Most (29 of 33 cases in the tamoxifen group) endometrial cancers were diagnosed in symptomatic women, although 5 of 33 cases in the tamoxifen group occurred in asymptomatic women. Among women receiving tamoxifen the events appeared between 1 and 61 months (average = 32 months) from the start of treatment. In an updated review of long-term data (median length of total follow-up is 6.9 years, including blinded follow-up) on 8,306 women with an intact uterus at randomization in the NSABP P-1 risk reduction trial, the incidence of both adenocarcinomas and rare uterine sarcomas was increased in women taking tamoxifen. During blinded follow-up, there were 36 cases of FIGO Stage I endometrial adenocarcinoma (22 were FIGO Stage IA, 13 IB, and 1 IC) in women receiving tamoxifen and 15 cases in women receiving placebo [14 were FIGO Stage I (9 IA and 5 IB), and one case was FIGO Stage IV]. Of the patients receiving tamoxifen who developed endometrial cancer, one with Stage IA and 4 with Stage IB cancers received radiation therapy. In the placebo group, one patient with FIGO Stage IB cancer received radiation therapy and the patient with FIGO Stage IVB cancer received chemotherapy and hormonal therapy. During total follow-up, endometrial adenocarcinoma was reported in 53 women randomized to tamoxifen (30 cases of FIGO Stage IA, 20 were Stage IB, 1 was Stage IC, and two were Stage IIIC) and 17 women randomized to placebo (nine cases were FIGO Stage IA, six were Stage IB, one was Stage IIIC, and one was Stage IVB (incidence per 1,000 women-years of 2.20 and 0.71, respectively). Some patients received postoperative radiation therapy in addition to surgery. Uterine sarcomas were reported in four women randomized to tamoxifen (one was FIGO IA, one was FIGO IB, one was FIGO IIA, and one was FIGO IIIC) and one patient randomized to placebo (FIGO IA); incidence per 1,000 women-years of 0.17 and 0.04, respectively. Of the patients randomized to tamoxifen, the FIGO IA and IB cases were a MMMT and sarcoma, respectively; the FIGO II was a MMMT; and the FIGO III was a sarcoma; and the one patient randomized to placebo had a MMMT. A similar increased incidence in endometrial adenocarcinoma and uterine sarcoma was observed among women receiving tamoxifen in five other NSABP clinical trials. Any patient receiving or who has previously received tamoxifen who reports abnormal vaginal bleeding should be promptly evaluated. Patients receiving or who have previously received tamoxifen should have annual gynecological examinations and they should promptly inform their physicians if they experience any abnormal gynecological symptoms, e.g., menstrual irregularities, abnormal vaginal bleeding, changes in vaginal discharge, or pelvic pain or pressure. In the P-1 trial, endometrial sampling did not alter the endometrial cancer detection rate compared to women who did not undergo endometrial sampling (0.6% with sampling, 0.5% without sampling) for women with an intact uterus. There are no data to suggest that routine endometrial sampling in asymptomatic women taking tamoxifen to reduce the incidence of breast cancer would be beneficial.",
+        "char_len": 5538,
+        "source_section_code": "42229-5",
+        "source_title": "Effects on the Uterus",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Non-Malignant Effects on the Uterus",
+        "text": "Non-Malignant Effects on the Uterus: An increased incidence of endometrial changes including hyperplasia and polyps have been reported in association with tamoxifen treatment. The incidence and pattern of this increase suggest that the underlying mechanism is related to the estrogenic properties of tamoxifen. There have been a few reports of endometriosis and uterine fibroids in women receiving tamoxifen. The underlying mechanism may be due to the partial estrogenic effect of tamoxifen. Ovarian cysts have also been observed in a small number of premenopausal patients with advanced breast cancer who have been treated with tamoxifen. Tamoxifen has been reported to cause menstrual irregularity or amenorrhea.",
+        "char_len": 714,
+        "source_section_code": "42229-5",
+        "source_title": "Non-Malignant Effects on the Uterus",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Thromboembolic Effects of Tamoxifen",
+        "text": "Thromboembolic Effects of Tamoxifen: There is evidence of an increased incidence of thromboembolic events, including deep vein thrombosis and pulmonary embolism, during tamoxifen therapy. When tamoxifen is coadministered with chemotherapy, there may be a further increase in the incidence of thromboembolic effects. For treatment of breast cancer, the risks and benefits of tamoxifen should be carefully considered in women with a history of thromboembolic events. In a small substudy (N = 81) of the NSABP P-1 trial, there appeared to be no benefit to screening women for Factor V Leiden and Prothrombin mutations G20210A as a means to identify those who may not be appropriate candidates for tamoxifen therapy. Data from the NSABP P-1 trial show that participants receiving tamoxifen without a history of pulmonary emboli (PE) had a statistically significant increase in pulmonary emboli (18-tamoxifen, 6-placebo, RR = 3.01, 95% CI: 1.15 to 9.27). Three of the pulmonary emboli, all in the tamoxifen arm, were fatal. Eighty-seven percent of the cases of pulmonary embolism occurred in women at least 50 years of age at randomization. Among women receiving tamoxifen, the events appeared between 2 and 60 months (average = 27 months) from the start of treatment. In this same population, a non-statistically significant increase in deep vein thrombosis (DVT) was seen in the tamoxifen group (30-tamoxifen, 19-placebo; RR = 1.59, 95% CI: 0.86 to 2.98). The same increase in relative risk was seen in women ≤ 49 and in women ≥ 50, although fewer events occurred in younger women. Women with thromboembolic events were at risk for a second related event (seven out of 25 women on placebo, five out of 48 women on tamoxifen) and were at risk for complications of the event and its treatment (0/25 on placebo, 4/48 on tamoxifen). Among women receiving tamoxifen, deep vein thrombosis events occurred between 2 and 57 months (average = 19 months) from the start of treatment. There was a non-statistically significant increase in stroke among patients randomized to tamoxifen (24-placebo; 34-tamoxifen; RR = 1.42; 95% CI: 0.82 to 2.51). Six of the 24 strokes in the placebo group were considered hemorrhagic in origin and 10 of the 34 strokes in the tamoxifen group were categorized as hemorrhagic. Seventeen of the 34 strokes in the tamoxifen group were considered occlusive and seven were considered to be of unknown etiology. Fourteen of the 24 strokes on the placebo arm were reported to be occlusive and four of unknown etiology. Among these strokes three strokes in the placebo group and four strokes in the tamoxifen group were fatal. Eighty-eight percent of the strokes occurred in women at least 50 years of age at the time of randomization. Among women receiving tamoxifen, the events occurred between 1 and 63 months (average = 30 months) from the start of treatment.",
+        "char_len": 2873,
+        "source_section_code": "42229-5",
+        "source_title": "Thromboembolic Effects of Tamoxifen",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Effects on the Liver: Liver Cancer",
+        "text": "Effects on the Liver: Liver Cancer: In the Swedish trial using adjuvant tamoxifen 40 mg/day for 2 to 5 years, three cases of liver cancer have been reported in the tamoxifen-treated group vs. one case in the observation group (see PRECAUTIONS: Carcinogenesis). In other clinical trials evaluating tamoxifen, no cases of liver cancer have been reported to date. One case of liver cancer was reported in NSABP P-1 in a participant randomized to tamoxifen.",
+        "char_len": 453,
+        "source_section_code": "42229-5",
+        "source_title": "Effects on the Liver: Liver Cancer",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Effects on the Liver: Non-Malignant Effects",
+        "text": "Effects on the Liver: Non-Malignant Effects: Tamoxifen has been associated with changes in liver enzyme levels, and on rare occasions, a spectrum of more severe liver abnormalities including fatty liver, cholestasis, hepatitis and hepatic necrosis. A few of these serious cases included fatalities. In most reported cases the relationship to tamoxifen is uncertain. However, some positive rechallenges and dechallenges have been reported. In the NSABP P-1 trial, few grade 3 to 4 changes in liver function (SGOT, SGPT, bilirubin, alkaline phosphatase) were observed (10 on placebo and six on tamoxifen). Serum lipids were not systematically collected.",
+        "char_len": 651,
+        "source_section_code": "42229-5",
+        "source_title": "Effects on the Liver: Non-Malignant Effects",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Other Cancers",
+        "text": "Other Cancers: A number of second primary tumors, occurring at sites other than the endometrium, have been reported following the treatment of breast cancer with tamoxifen in clinical trials. Data from the NSABP B-14 and P-1 studies show no increase in other (non-uterine) cancers among patients receiving tamoxifen. Whether an increased risk for other (non-uterine) cancers is associated with tamoxifen is still uncertain and continues to be evaluated.",
+        "char_len": 453,
+        "source_section_code": "42229-5",
+        "source_title": "Other Cancers",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Effects on the Eye",
+        "text": "Effects on the Eye: Ocular disturbances, including corneal changes, decrement in color vision perception, retinal vein thrombosis, and retinopathy have been reported in patients receiving tamoxifen. An increased incidence of cataracts and the need for cataract surgery have been reported in patients receiving tamoxifen. In the NSABP P-1 trial, an increased risk of borderline significance of developing cataracts among those women without cataracts at baseline (540-tamoxifen; 483-placebo; RR = 1.13, 95% CI: 1.00 to 1.28) was observed. Among these same women, tamoxifen was associated with an increased risk of having cataract surgery (101-tamoxifen; 63-placebo; RR = 1.62, 95% CI 1.18 to 2.22) (see CLINICAL PHARMACOLOGY: Table 3). Among all women on the trial (with or without cataracts at baseline), tamoxifen was associated with an increased risk of having cataract surgery (201-tamoxifen; 129-placebo; RR = 1.58, 95% CI 1.26 to 1.97). Eye examinations were not required during the study. No other conclusions regarding non-cataract ophthalmic events can be made.",
+        "char_len": 1069,
+        "source_section_code": "42229-5",
+        "source_title": "Effects on the Eye",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Pregnancy",
+        "text": "Pregnancy: Tamoxifen may cause fetal harm when administered to a pregnant woman. Women should be advised not to become pregnant while taking tamoxifen or within 2 months of discontinuing tamoxifen and should use barrier or nonhormonal contraceptive measures if sexually active. Tamoxifen does not cause infertility, even in the presence of menstrual irregularity. Effects on reproductive functions are expected from the antiestrogenic properties of the drug. In reproductive studies in rats at dose levels equal to or below the human dose, nonteratogenic developmental skeletal changes were seen and were found reversible. In addition, in fertility studies in rats and in teratology studies in rabbits using doses at or below those used in humans, a lower incidence of embryo implantation and a higher incidence of fetal death or retarded in utero growth were observed, with slower learning behavior in some rat pups when compared to historical controls. Several pregnant marmosets were dosed with 10 mg/kg/day (about 2-fold the daily maximum recommended human dose on a mg/m2 basis) during organogenesis or in the last half of pregnancy. No deformations were seen and, although the dose was high enough to terminate pregnancy in some animals, those that did maintain pregnancy showed no evidence of teratogenic malformations. In rodent models of fetal reproductive tract development, tamoxifen (at doses 0.002-fold to 2.4-fold the daily maximum recommended human dose on a mg/m2 basis) caused changes in both sexes that are similar to those caused by estradiol, ethynylestradiol and diethylstilbestrol. Although the clinical relevance of these changes is unknown, some of these changes, especially vaginal adenosis, are similar to those seen in young women who were exposed to diethylstilbestrol in utero and who have a 1 in 1,000 risk of developing clear-cell adenocarcinoma of the vagina or cervix. To date, in utero exposure to tamoxifen has not been shown to cause vaginal adenosis, or clear-cell adenocarcinoma of the vagina or cervix, in young women. However, only a small number of young women have been exposed to tamoxifen in utero, and a smaller number have been followed long enough (to age 15 to 20) to determine whether vaginal or cervical neoplasia could occur as a result of this exposure. There are no adequate and well controlled trials of tamoxifen in pregnant women. There have been a small number of reports of vaginal bleeding, spontaneous abortions, birth defects, and fetal deaths in pregnant women. If this drug is used during pregnancy, or the patient becomes pregnant while taking this drug, or within approximately 2 months after discontinuing therapy, the patient should be apprised of the potential risks to the fetus including the potential long-term risk of a DES-like syndrome.",
+        "char_len": 2810,
+        "source_section_code": "42229-5",
+        "source_title": "Pregnancy",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "Reduction in Breast Cancer Incidence in High Risk Women",
+        "text": "Reduction in Breast Cancer Incidence in High Risk Women: For sexually active women of childbearing potential, tamoxifen therapy should be initiated during menstruation. In women with menstrual irregularity, a negative B-HCG immediately prior to the initiation of therapy is sufficient (see PRECAUTIONS: Information for Patients: Reduction in Breast Cancer Incidence in High Risk Women).",
+        "char_len": 386,
+        "source_section_code": "42229-5",
+        "source_title": "Reduction in Breast Cancer Incidence in High Risk Women",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING",
+        "text": "WARNING: For Women with Ductal Carcinoma in Situ (DCIS) and Women at High Risk for Breast Cancer Serious and life threatening events associated with tamoxifen in the risk reduction setting (women at high risk for cancer and women with DCIS) include uterine malignancies, stroke and pulmonary embolism. Incidence rates for these events were estimated from the NSABP P-1 trial (see CLINICAL PHARMACOLOGY: Clinical Studies: Reduction in Breast Cancer Incidence in High Risk Women). Uterine malignancies consist of both endometrial adenocarcinoma (incidence rate per 1,000 women-years of 2.20 for tamoxifen vs. 0.71 for placebo) and uterine sarcoma (incidence rate per 1,000 women-years of 0.17 for tamoxifen vs. 0.4 for placebo)*. For stroke, the incidence rate per 1,000 women-years was 1.43 for tamoxifen vs. 1.00 for placebo**. For pulmonary embolism, the incidence rate per 1,000 women-years was 0.75 for tamoxifen vs. 0.25 for placebo**. Some of the strokes, pulmonary emboli, and uterine malignancies were fatal. Healthcare providers should discuss the potential benefits vs. the potential risks of these serious events with women at high risk of breast cancer and women with DCIS considering tamoxifen to reduce their risk of developing breast cancer. The benefits of tamoxifen outweigh its risks in women already diagnosed with breast cancer. *Updated long-term follow-up data (median length of follow-up is 6.9 years) from NSABP P-1 study. See WARNINGS: Effects on the Uterus: Endometrial Cancer and Uterine Sarcoma. **See CLINICAL PHARMACOLOGY: Clinical Studies: Table 3.",
+        "char_len": 1578,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING",
+        "source_xml": "DRUG-BREAST-FDA-003.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 renal impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": false,
+        "reason": "D&A 树下无标题含 dosage/dose modification 的子节",
+        "items": []
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-003.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"他莫昔芬是一种用于治疗和预防某些类型乳腺癌的口服药。\", \"how_to_use\": \"乳腺癌患者常规每日20毫克至40毫克。每日超过20毫克时分早晚两次服用。\", \"cautions\": [\"对本品或任何成分过敏者禁用。\", \"需要同时使用香豆素类抗凝药的女性禁用。\", \"有深静脉血栓或肺栓塞病史的女性禁用。\", \"用于降低乳腺癌风险时，仅限高风险女性。\", \"高风险指35岁以上、5年预测风险≥1.67%的女性。\", \"用药前应做乳腺检查、钼靶和妇科检查。\", \"用药期间应按医生安排定期复查这些项目。\", \"用药期间应定期查血常规（含血小板）和肝功能。\", \"服药期间不要哺乳。\", \"育龄女性用药期间及停药后约2个月需有效非激素避孕。\", \"他莫昔芬不会导致不孕，即使月经不规律。\", \"性活跃的育龄女性应在月经期开始服药。\", \"月经不规律者开始用药前需确认未怀孕。\", \"怀孕或计划怀孕者不应使用他莫昔芬降低风险。\", \"服药期间出现新乳房肿块、阴道出血等应尽快就医。\", \"就诊时应告知所有医护人员你正在服用他莫昔芬。\", \"与华法林等抗凝药合用可能增强抗凝效果，需密切监测。\", \"与某些化疗药合用可能增加血栓栓塞事件风险。\", \"利福平、氨鲁米特等可能降低他莫昔芬血药浓度。\", \"他莫昔芬可能降低来曲唑的血药浓度。\", \"他莫昔芬不应与阿那曲唑同时使用。\", \"有高脂血症者可能需要定期监测血脂。\", \"用于降低风险时，需个体化评估获益与风险。\", \"他莫昔芬对总死亡率或乳腺癌相关死亡率的影响尚未明确。\"], \"side_effects\": [{\"term\": \"潮热\", \"plain\": \"转移性乳腺癌患者中最常见的不良反应。\", \"when_to_seek_help\": \"潮热严重或难以忍受时请咨询医生。\"}, {\"term\": \"骨痛和肿瘤痛加重\", \"plain\": \"有时与肿瘤好转相关，但也可能让人不适。\", \"when_to_seek_help\": \"疼痛明显加重或难以忍受时请就医。\"}, {\"term\": \"局部病情 flare（病灶反应）\", \"plain\": \"用药后局部病灶可能出现暂时性反应。\", \"when_to_seek_help\": \"出现明显局部变化时请告知医生。\"}, {\"term\": \"高钙血症\", \"plain\": \"血钙升高，较少见。\", \"when_to_seek_help\": \"出现不适或怀疑高钙时请就医。\"}, {\"term\": \"外周水肿\", \"plain\": \"手脚等部位水肿，较少见。\", \"when_to_seek_help\": \"水肿明显或加重时请就医。\"}, {\"term\": \"食欲不振\", \"plain\": \"对食物兴趣下降，较少见。\", \"when_to_seek_help\": \"持续食欲差或体重明显下降时请就医。\"}, {\"term\": \"外阴瘙痒\", \"plain\": \"外阴部位瘙痒，较少见。\", \"when_to_seek_help\": \"瘙痒持续或加重时请就医。\"}, {\"term\": \"抑郁\", \"plain\": \"情绪低落，较少见。\", \"when_to_seek_help\": \"情绪明显低落或影响生活时请就医。\"}, {\"term\": \"头晕、头昏\", \"plain\": \"感觉头晕或头昏，较少见。\", \"when_to_seek_help\": \"头晕明显或反复发作时请就医。\"}, {\"term\": \"月经紊乱\", \"plain\": \"月经周期不规律，临床试验中可见。\", \"when_to_seek_help\": \"月经异常明显或持续时请就医。\"}, {\"term\": \"肌肉骨骼疼痛\", \"plain\": \"肌肉或骨骼疼痛，临床试验中可见。\", \"when_to_seek_help\": \"疼痛明显或持续时请就医。\"}, {\"term\": \"腹部绞痛\", \"plain\": \"腹部痉挛性疼痛，临床试验中可见。\", \"when_to_seek_help\": \"腹痛明显或持续时请就医。\"}, {\"term\": \"体液潴留\", \"plain\": \"身体水分潴留，临床试验中较安慰剂常见。\", \"when_to_seek_help\": \"水肿明显或体重快速增加时请就医。\"}, {\"term\": \"阴道分泌物\", \"plain\": \"阴道分泌物增多，临床试验中较安慰剂常见。\", \"when_to_seek_help\": \"分泌物异常或伴有不适时请就医。\"}, {\"term\": \"体重下降（超过5%）\", \"plain\": \"体重明显下降，临床试验中可见。\", \"when_to_seek_help\": \"体重持续下降时请就医。\"}, {\"term\": \"胆红素升高\", \"plain\": \"血液检查可见胆红素升高，临床试验中可见。\", \"when_to_seek_help\": \"发现胆红素升高时请咨询医生。\"}, {\"term\": \"血小板减少\", \"plain\": \"血小板计数下降，偶有报告。\", \"when_to_seek_help\": \"出现异常出血或瘀斑时请立即就医。\"}, {\"term\": \"白细胞减少\", \"plain\": \"白细胞计数下降，有时伴贫血或血小板减少。\", \"when_to_seek_help\": \"出现发热或反复感染时请就医。\"}, {\"term\": \"中性粒细胞减少和全血细胞减少\", \"plain\": \"罕见报告，有时可能较严重。\", \"when_to_seek_help\": \"出现发热、乏力或出血倾向时请立即就医。\"}, {\"term\": \"出血事件\", \"plain\": \"显著血小板减少者中罕见发生出血。\", \"when_to_seek_help\": \"出现不明原因出血时请立即就医。\"}], \"seek_help\": \"出现新乳房肿块、阴道出血、月经异常、阴道分泌物改变、盆腔疼痛或压迫感、腿部肿胀或压痛、不明原因气短、视力变化，请及时就医。\"}",
+    "patient_plain_at": "2026-11-03T14:45:21"
+  }
+]

@@ -1,0 +1,255 @@
+[
+  {
+    "drug_id": "DRUG-BREAST-FDA-002",
+    "generic_name": "PERTUZUMAB",
+    "brand_names": [],
+    "aliases_zh": [
+      "帕妥珠单抗"
+    ],
+    "title": "PERTUZUMAB 说明书（FDA DailyMed）",
+    "indications": [
+      "PERJETA is a HER2/neu receptor antagonist indicated for:",
+      "PERJETA is indicated for use in combination with trastuzumab and docetaxel for the treatment of adults with HER2-positive metastatic breast cancer who have not received prior anti-HER2 therapy or chemotherapy for metastatic disease [see Dosage and Administration (2.2) and Clinical Studies (14.1)].",
+      "PERJETA is indicated for use in combination with trastuzumab and chemotherapy for",
+      "【中文适应证】乳腺癌辅助治疗：本品与曲妥珠单抗和化疗联合，用于高复发风险的HER2 阳性早期乳腺癌患者的辅助治疗。",
+      "【中文适应证】乳腺癌新辅助治疗：本品与曲妥珠单抗和化疗联合，用于HER2 阳性、局部晚期、炎性或早期乳腺癌患者（肿瘤直径＞2cm 或淋巴结阳性）的新辅助治疗。",
+      "【中文适应证】复发或转移性乳腺癌治疗：本品与曲妥珠单抗和多西他赛联合适用于HER2 阳性、转移性或不可切除的局部复发性乳腺癌患者。患者既往针对转移性疾病应未接受过抗HER2治疗，或既往辅助治疗阶段接受过抗HER2 治疗，停止抗HER2治疗后一年以上复发或转移的患者。"
+    ],
+    "dosage": {
+      "standard": "Assess left ventricular ejection fraction (LVEF) prior to initiation of PERJETA and at regular intervals during treatment [see Boxed Warning, Dosage and Administration (2.4), Warnings and Precautions (5.1)]. Verify the pregnancy status of females of reproductive potential prior to the initiation of PERJETA [see Warnings and Precautions (5.2), Use in Specific Populations (8.1, 8.3)]. Select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens [see Indications and Usage (1) and Clinical Studies (14)]. Assessment of HER2 protein overexpression and HER2 gene amplification should be performed using FDA-approved tests specific for breast cancer by laboratories with demonstrated proficiency. Information on the FDA-approved tests for the detection of HER2 protein overexpression and HER2 gene amplification is available at: http://www.fda.gov/CompanionDiagnostics. Improper assay performance, including use of suboptimally fixed tissue, failure to utilize specified reagents, deviation from specific assay instructions, and failure to include appropriate controls for assay validation, can lead to unreliable results. The initial dose of PERJETA is 840 mg administered as a 60-minute intravenous infusion, followed every 3 weeks by a dose of 420 mg administered as an intravenous infusion over 30 to 60 minutes. When administered with PERJETA, the recommended initial dose of trastuzumab is 8 mg/kg administered as a 90-minute intravenous infusion, followed every 3 weeks by a dose of 6 mg/kg administered as an intravenous infusion over 30 to 90 minutes. When administered with PERJETA, the recommended initial dose of trastuzumab hyaluronidase-oysk is 600 mg/10,000 units (600 mg trastuzumab and 10,000 units hyaluronidase) administered subcutaneously over ",
+      "adjustment": "Information on the FDA-approved tests for the detection of HER2 protein overexpression and HER2 gene amplification is available at: http://www.fda.gov/CompanionDiagnostics. Improper assay performance, including use of suboptimally fixed tissue, failure to utilize specified reagents, deviation from specific assay instructions, and failure to include appropriate controls for assay validation, can lead to unreliable results. The initial dose of PERJETA is 840 mg administered as a 60-minute intravenous infusion, followed every 3 weeks by a dose of 420 mg administered as an intravenous infusion over 30 to 60 minutes. When administered with PERJETA, the recommended initial dose of trastuzumab is 8 mg/kg administered as a 90-minute intravenous infusion, followed every 3 weeks by a dose of 6 mg/kg administered as an intravenous infusion over 30 to 90 minutes. When administered with PERJETA, the recommended initial dose of trastuzumab hyaluronidase-oysk is 600 mg/10,000 units (600 mg trastuzumab and 10,000 units hyaluronidase) administered subcutaneously over approximately 2 to 5 minutes once every three weeks irrespective of the patient's body weight. Administer PERJETA, trastuzumab or tra"
+    },
+    "contraindications": [
+      "PERJETA is contraindicated in patients with known hypersensitivity to pertuzumab or to any of its excipients [see Warnings and Precautions (5.4)].",
+      "PERJETA is contraindicated in patients with known hypersensitivity to pertuzumab or to any of its excipients. (4)"
+    ],
+    "adverse_reactions": [
+      {
+        "term": "The following adverse reactions are discussed in greater detail in other sections of the label:",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metastatic Breast Cancer",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Neoadjuvant Treatment of Breast Cancer",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adjuvant Treatment of Breast Cancer",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "To report SUSPECTED ADVERSE REACTIONS, contact Genentech at 1-888-835-2555 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compa",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Metastatic Breast Cancer (MBC)",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety of PERJETA in combination with trastuzumab and docetaxel was evaluated in a randomized trial (CLEOPATRA) in patients with HER2-positive metastatic br",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Permanent discontinuation of PERJETA, trastuzumab, and docetaxel due to adverse reactions occurred in 6% of patients. Adverse reactions that led to permanent di",
+        "frequency": "6%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "The safety profile of PERJETA remained unchanged with an additional 2.75 years of follow-up (median total follow-up of 50 months) in CLEOPATRA.",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "The most common adverse reactions (> 30%) with PERJETA in combination with trastuzumab and docetaxel were diarrhea, alopecia, neutropenia, nausea, fatigue, rash",
+        "frequency": "30%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Table 3 summarizes the adverse reactions in CLEOPATRA that occurred ≥ 10% of patients in the PERJETA-treated group.",
+        "frequency": "10%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Adverse Reactions PERJETA + trastuzumab + docetaxeln=407% Placebo + trastuzumab + docetaxeln=397%",
+        "frequency": "407%",
+        "ctcae_hint": null
+      },
+      {
+        "term": "All Grades % Grades 3 – 4 % All Grades% Grades 3 – 4%",
+        "frequency": "4 %",
+        "ctcae_hint": null
+      },
+      {
+        "term": "Gastrointestinal disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Stomatitis 19 0.5 15 0.3",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Constipation 15 0 25 1",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Skin and subcutaneous tissue disorders",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Alopecia 61 0 60 0.3",
+        "frequency": null,
+        "ctcae_hint": null
+      },
+      {
+        "term": "Nail disorder 23 1 23 0.3",
+        "frequency": null,
+        "ctcae_hint": null
+      }
+    ],
+    "cancer_types": [
+      "breast"
+    ],
+    "cancer_type": "breast",
+    "doc_type": "drug_label",
+    "issuer": "FDA / DailyMed",
+    "publish_date": "2026-05-04",
+    "license": "Public Domain (NLM)",
+    "license_evidence": "https://www.nlm.nih.gov/copyright.html",
+    "license_note": "FDA DailyMed public label（公有领域，可引用）",
+    "fetched_at": "2026-11-02",
+    "file_path": "raw/drug_labels/DRUG-BREAST-FDA-002.xml",
+    "doc_hash": "2666bede5d211d0b142801425924d9ab545e6284f13085fbf78061b8480f6454",
+    "review_status": "draft",
+    "_source": "dailymed",
+    "_setid": "17f85d17-ab71-4f5b-9fe3-0b8c822f69ff",
+    "_source_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/17f85d17-ab71-4f5b-9fe3-0b8c822f69ff.xml",
+    "atc_code": "L01FD02",
+    "approval_no": "国药准字SJ20180029",
+    "source_name": "PERTUZUMAB 说明书（FDA DailyMed）",
+    "source_version": "2026",
+    "source_section": "全文",
+    "source_file": "DRUG-BREAST-FDA-002.xml",
+    "updated_at": "2026-11-02",
+    "interactions": null,
+    "warnings": [
+      {
+        "code": "42229-5",
+        "title": "5.1 Left Ventricular Dysfunction",
+        "text": "5.1 Left Ventricular Dysfunction: PERJETA can cause left ventricular dysfunction, including symptomatic heart failure. Decreases in LVEF have been reported with drugs that block HER2 activity, including PERJETA. Assess LVEF prior to initiation of PERJETA and at regular intervals during treatment to ensure that LVEF is within normal limits. If the LVEF declines and has not improved, or has declined further at the subsequent assessment, consider permanent discontinuation of PERJETA and trastuzumab [see Dosage Modification for Adverse Reactions (2.5)]. In the PERJETA-treated patients with MBC in CLEOPATRA, left ventricular dysfunction occurred in 4% of patients and symptomatic left ventricular systolic dysfunction (LVSD) (congestive heart failure) occurred in 1% of patients. Patients who received prior anthracyclines or prior radiotherapy to the chest area may be at higher risk of decreased LVEF or left ventricular dysfunction. In patients receiving PERJETA as a neoadjuvant treatment in combination with trastuzumab and docetaxel in NeoSphere, LVEF decline > 10% and a drop to < 50% occurred in 8% of patients and left ventricular dysfunction occurred in 3% of patients. LVEF recovered to ≥ 50% in all these patients. In patients receiving neoadjuvant PERJETA in TRYPHAENA, LVEF decline > 10% and a drop to < 50% occurred in 7% of patients treated with PERJETA plus trastuzumab and FEC followed by PERJETA plus trastuzumab and docetaxel, 16% of patients treated with PERJETA plus trastuzumab and docetaxel following FEC, and 11% of patients treated with PERJETA in combination with TCH. Left ventricular dysfunction occurred in 6% of patients treated with PERJETA plus trastuzumab and FEC followed by PERJETA plus trastuzumab and docetaxel, 4% of patients treated with PERJETA plus trastuzumab and docetaxel following FEC, and 3% of patients treated with PERJETA in combination with TCH. Symptomatic LVSD occurred in 4% of patients treated with PERJETA plus trastuzumab and docetaxel following FEC, 1% of patients treated with PERJETA in combination with TCH, and none of the patients treated with PERJETA plus trastuzumab and FEC followed by PERJETA plus trastuzumab and docetaxel. LVEF recovered to ≥ 50% in all but one patient. In patients receiving neoadjuvant PERJETA in BERENICE, in the neoadjuvant period, LVEF decline ≥ 10% and a drop to < 50% as measured by ECHO/MUGA assessment occurred in 7% of patients treated with PERJETA plus trastuzumab and paclitaxel following ddAC, and 2% of patients treated with PERJETA plus trastuzumab and docetaxel following FEC. Ejection fraction decreased (asymptomatic LVD) occurred in 7% of patients treated with PERJETA plus trastuzumab and paclitaxel following ddAC and 4% of the patients treated with PERJETA plus trastuzumab and docetaxel following FEC in the neoadjuvant period. Symptomatic LVSD (NYHA Class III/IV Congestive Heart Failure) occurred in 2% of patients treated with PERJETA plus trastuzumab and paclitaxel following ddAC and none of the patients treated with PERJETA plus trastuzumab and docetaxel following FEC in the neoadjuvant period. In patients receiving adjuvant PERJETA in APHINITY, the incidence of symptomatic heart failure (NYHA Class III/IV) with a LVEF decline ≥ 10% and a drop to < 50% was 0.6%. Of the patients who experienced symptomatic heart failure, 47% of PERJETA-treated patients had recovered (defined as 2 consecutive LVEF measurements above 50%) at the data cutoff. The majority of the events (86%) were reported in anthracycline-treated patients. Asymptomatic or mildly symptomatic (NYHA Class II) declines in LVEF ≥ 10% and a drop to < 50% were reported in 3% of PERJETA-treated patients, of whom 80% recovered at the data cutoff. PERJETA has not been studied in patients with a pretreatment LVEF value of < 50%, a prior history of CHF, decreases in LVEF to < 50% during prior trastuzumab therapy, or conditions that could impair left ventricular function such as uncontrolled hypertension, recent myocardial infarction, serious cardiac arrhythmia requiring treatment or a cumulative prior anthracycline exposure to > 360 mg/m2 of doxorubicin or its equivalent.",
+        "char_len": 4163,
+        "source_section_code": "42229-5",
+        "source_title": "5.1 Left Ventricular Dysfunction",
+        "source_xml": "DRUG-BREAST-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.2 Embryo-Fetal Toxicity",
+        "text": "5.2 Embryo-Fetal Toxicity: Based on its mechanism of action and findings in animal studies, PERJETA can cause fetal harm when administered to a pregnant woman. PERJETA is a HER2/neu receptor antagonist. Cases of oligohydramnios and oligohydramnios sequence manifesting as pulmonary hypoplasia, skeletal abnormalities, and neonatal death have been reported with use of another HER2/neu receptor antagonist (trastuzumab) during pregnancy. In an animal reproduction study, administration of pertuzumab to pregnant cynomolgus monkeys during the period of organogenesis resulted in oligohydramnios, delayed fetal kidney development, and embryo-fetal death at exposures 2.5 to 20 times the exposure in humans at the recommended dose, based on Cmax. Verify the pregnancy status of females of reproductive potential prior to the initiation of PERJETA. Advise pregnant women and females of reproductive potential that exposure to PERJETA in combination with trastuzumab during pregnancy or within 7 months prior to conception can result in fetal harm, including embryo-fetal death or birth defects. Advise females of reproductive potential to use effective contraception during treatment and for 7 months following the last dose of PERJETA in combination with trastuzumab [see Use in Specific Populations (8.1, 8.3)].",
+        "char_len": 1308,
+        "source_section_code": "42229-5",
+        "source_title": "5.2 Embryo-Fetal Toxicity",
+        "source_xml": "DRUG-BREAST-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.3 Infusion-Related Reactions",
+        "text": "5.3 Infusion-Related Reactions: PERJETA can cause serious infusion reactions, including fatal events [see Adverse Reactions (6.1)]. In CLEOPATRA, on the first day, when only PERJETA was administered, infusion-related reactions occurred in 13% of patients and < 1% were Grade 3 or 4. The most common infusion reactions (≥ 1%) were pyrexia, chills, fatigue, headache, asthenia, hypersensitivity, and vomiting. During the second cycle when all drugs were administered on the same day, the most common infusion reactions in the PERJETA-treated group (≥ 1%) were fatigue, dysgeusia, hypersensitivity, myalgia, and vomiting. In APHINITY, when PERJETA was administered in combination with trastuzumab and chemotherapy on the same day, infusion-related reactions occurred in 21% of patients with <1% of patients experiencing Grade 3-4 events. Observe patients closely for 60 minutes after the first infusion and for 30 minutes after subsequent infusions of PERJETA. If a significant infusion-related reaction occurs, slow or interrupt the infusion, and administer appropriate medical therapies. Monitor patients carefully until complete resolution of signs and symptoms. Consider permanent discontinuation in patients with severe infusion reactions [see Dosage and Administration (2.5)].",
+        "char_len": 1279,
+        "source_section_code": "42229-5",
+        "source_title": "5.3 Infusion-Related Reactions",
+        "source_xml": "DRUG-BREAST-FDA-002.xml",
+        "match_by_title": false
+      },
+      {
+        "code": "42229-5",
+        "title": "5.4 Hypersensitivity Reactions/Anaphylaxis",
+        "text": "5.4 Hypersensitivity Reactions/Anaphylaxis: PERJETA can cause hypersensitivity reactions, including anaphylaxis. In CLEOPATRA, the overall frequency of hypersensitivity/anaphylaxis reactions was 11% in PERJETA-treated patients, with Grade 3 – 4 hypersensitivity reactions and anaphylaxis occurring in 2% of patients. In NeoSphere, TRYPHAENA, BERENICE, and APHINITY, hypersensitivity/anaphylaxis events were consistent with those observed in CLEOPATRA. In APHINITY, the overall frequency of hypersensitivity/anaphylaxis was 5% in the PERJETA treated group. The incidence was highest in the PERJETA plus TCH treated group (8%) with 1% Grade 3 – 4 events. Observe patients closely for hypersensitivity reactions. Severe hypersensitivity, including anaphylaxis and fatal events, have been observed in patients treated with PERJETA [see Clinical Trials Experience (6.1)]. Angioedema has been described in post-marketing reports. Medications to treat such reactions, as well as emergency equipment, should be available for immediate use prior to administration of PERJETA. PERJETA is contraindicated in patients with known hypersensitivity to pertuzumab or to any of its excipients [see Contraindications (4)].",
+        "char_len": 1204,
+        "source_section_code": "42229-5",
+        "source_title": "5.4 Hypersensitivity Reactions/Anaphylaxis",
+        "source_xml": "DRUG-BREAST-FDA-002.xml",
+        "match_by_title": false
+      }
+    ],
+    "boxed_warning": [
+      {
+        "code": "34066-1",
+        "title": "WARNING: LEFT VENTRICULAR DYSFUNCTION and EMBRYO-FETAL TOXICITY",
+        "text": "WARNING: LEFT VENTRICULAR DYSFUNCTION and EMBRYO-FETAL TOXICITY: WARNING: LEFT VENTRICULAR DYSFUNCTION and EMBRYO-FETAL TOXICITY See full prescribing information for complete boxed warning.",
+        "char_len": 189,
+        "source_section_code": "34066-1",
+        "source_title": "WARNING: LEFT VENTRICULAR DYSFUNCTION and EMBRYO-FETAL TOXICITY",
+        "source_xml": "DRUG-BREAST-FDA-002.xml",
+        "match_by_title": false
+      }
+    ],
+    "dosage_adjustment": {
+      "renal": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "88828-9",
+            "title": "8.6 Renal Impairment",
+            "text": "8.6 Renal Impairment: Dose adjustments of PERJETA are not needed in patients with mild (creatinine clearance [CLcr] 60 to 90 mL/min) or moderate (CLcr 30 to 60 mL/min) renal impairment. No dose adjustment can be recommended for patients with severe renal impairment (CLcr less than 30 mL/min) because of the limited pharmacokinetic data available [see Clinical Pharmacology (12.3)].",
+            "char_len": 382,
+            "source_section_code": "88828-9",
+            "source_title": "8.6 Renal Impairment",
+            "source_xml": "DRUG-BREAST-FDA-002.xml",
+            "match_by_title": false
+          }
+        ]
+      },
+      "hepatic": {
+        "located": false,
+        "reason": "D&A/USP/PRECAUTIONS 树下无标题含 hepatic impairment 的子节（调整信息可能在正文无标题段落）",
+        "items": []
+      },
+      "toxicity_modification": {
+        "located": true,
+        "reason": null,
+        "items": [
+          {
+            "code": "42229-5",
+            "title": "2.5 Dosage Modification for Adverse Reactions",
+            "text": "2.5 Dosage Modification for Adverse Reactions: Left Ventricular Dysfunction Assess left ventricular ejection fraction (LVEF) prior to initiation of PERJETA and at regular intervals during treatment. The recommended dosage modifications for LVEF decrease are listed in Table 2 [see Warnings and Precautions (5.1)]. Pre-treatment LVEF: Monitor LVEF every: Withhold PERJETA and trastuzumab or trastuzumab hyaluronidase-oysk for at least 3 weeks for an LVEF decrease to: Resume PERJETA and trastuzumab or trastuzumab hyaluronidase-oysk after 3 weeks if LVEF has recovered to: Metastatic Breast Cancer ≥ 50% ~12 weeks Either Either <40% 40%-45% with a fall of ≥10%-points below pre-treatment value >45% 40%-45% with a fall of <10%-points below pre-treatment value Early Breast Cancer ≥ 55%For patients receiving anthracycline-based chemotherapy, a LVEF of ≥ 50% is required after completion of anthracyclines, before starting PERJETA and trastuzumab or trastuzumab hyaluronidase-oysk. ~12 weeks (once during neoadjuvant therapy) <50% with a fall of ≥10%-points below pre-treatment value Either ≥50% <10% points below pre-treatment value Infusion-Related Reactions The infusion rate of PERJETA may be slowed or interrupted if the patient develops an infusion-related reaction [see Warnings and Precautions (5.3)]. Hypersensitivity Reactions/Anaphylaxis The infusion should be discontinued immediately if the patient experiences a serious hypersensitivity reaction [see Warnings and Precautions (5.4)].",
+            "char_len": 1495,
+            "source_section_code": "42229-5",
+            "source_title": "2.5 Dosage Modification for Adverse Reactions",
+            "source_xml": "DRUG-BREAST-FDA-002.xml",
+            "match_by_title": true
+          }
+        ]
+      }
+    },
+    "safety_extraction_meta": {
+      "extractor": "extract_drug_safety_v2.py",
+      "extracted_at": "2026-11-02",
+      "source_xml": "DRUG-BREAST-FDA-002.xml",
+      "xml_present": true
+    },
+    "patient_plain": "{\"what_is_it\": \"这是一种用于治疗HER2阳性乳腺癌的靶向药，需与曲妥珠单抗等药物联合使用。\", \"how_to_use\": \"用药前需评估心脏功能和确认怀孕状态。\", \"cautions\": [\"用药前需检测肿瘤标本的HER2蛋白或基因状态。\", \"检测需使用FDA批准的乳腺癌专用检测方法。\", \"检测需由熟练实验室完成，否则结果可能不可靠。\", \"首次剂量840毫克，静脉输注60分钟。\", \"之后每3周一次，剂量420毫克，输注30至60分钟。\", \"与曲妥珠单抗合用时，后者首次8毫克/千克，输注90分钟。\", \"之后每3周一次，曲妥珠单抗6毫克/千克，输注30至90分钟。\", \"与曲妥珠单抗透明质酸酶合用时，剂量600毫克/10000单位。\", \"该联合制剂皮下注射约2至5分钟，每3周一次。\", \"该联合制剂剂量不受体重影响。\", \"对本品或其辅料过敏者禁用。\"], \"side_effects\": [{\"term\": \"腹泻\", \"plain\": \"常见不良反应之一，发生率超过30%。\", \"when_to_seek_help\": \"如腹泻严重或持续不缓解，需及时就医。\"}, {\"term\": \"脱发\", \"plain\": \"常见不良反应之一，发生率超过30%。\", \"when_to_seek_help\": \"如脱发伴随其他不适，需咨询医生。\"}, {\"term\": \"中性粒细胞减少\", \"plain\": \"常见不良反应之一，发生率超过30%。\", \"when_to_seek_help\": \"如出现发热或感染迹象，需及时就医。\"}, {\"term\": \"恶心\", \"plain\": \"常见不良反应之一，发生率超过30%。\", \"when_to_seek_help\": \"如恶心严重无法进食，需及时就医。\"}, {\"term\": \"疲劳\", \"plain\": \"常见不良反应之一，发生率超过30%。\", \"when_to_seek_help\": \"如疲劳严重影响日常活动，需咨询医生。\"}, {\"term\": \"皮疹\", \"plain\": \"常见不良反应之一，发生率超过30%。\", \"when_to_seek_help\": \"如皮疹严重或伴瘙痒，需及时就医。\"}, {\"term\": \"口腔炎\", \"plain\": \"口腔黏膜炎症，发生率约19%。\", \"when_to_seek_help\": \"如口腔疼痛影响进食，需咨询医生。\"}, {\"term\": \"便秘\", \"plain\": \"排便困难，发生率约15%。\", \"when_to_seek_help\": \"如便秘持续不缓解，需咨询医生。\"}, {\"term\": \"指甲异常\", \"plain\": \"指甲改变，发生率约23%。\", \"when_to_seek_help\": \"如指甲感染或疼痛，需咨询医生。\"}], \"seek_help\": \"如出现严重腹泻、发热、感染迹象、严重皮疹或过敏反应，需及时就医。\"}",
+    "patient_plain_at": "2026-11-03T14:53:22"
+  }
+]
