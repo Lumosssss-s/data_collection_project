@@ -41,6 +41,70 @@ SECTION_ORDER: List[Dict[str, str]] = [
     {"key": "care_seeking", "label": "就医指引", "group": "患者关怀"},
 ]
 
+# 结构化节值（list[dict]，含 name）转叙述文本时的类别名，用于范围限定句。
+_STRUCTURED_LIST_TITLES = {
+    "pathology_subtypes": "病理类型列表",
+    "symptoms_early": "症状列表",
+    "symptoms_late": "症状列表",
+    "signs": "体征列表",
+}
+# 无法识别的结构统一提示语：不再回退 str()，避免把 Python repr 抛给前端。
+_STRUCTURED_UNSUPPORTED = "该节为结构化数据，暂不支持展示"
+_FREQ_LABELS = {"common": "常见", "uncommon": "少见"}
+
+
+def structured_section_to_text(key: str, value) -> str:
+    """把结构化节值转成叙述文本。
+
+    规则（2026-11-05 定稿）：病理类型用顿号连接，有 ICD-O-3 编码的写在名字后括号内，
+    缺失编码的只写名字，末尾补一句「其余未见 ICD-O-3 编码标注」；症状/体征按 frequency
+    括注，连续 frequency 为 None 的项合并为一段并标注「以上频次未标注」——None 一律
+    只写「频次未标注」，不翻译成任何临床判断。无法识别的结构返回提示语，绝不回退 repr。
+    """
+    if (not isinstance(value, list) or not value
+            or not all(isinstance(v, dict) and v.get("name") for v in value)):
+        return _STRUCTURED_UNSUPPORTED
+
+    kind = _STRUCTURED_LIST_TITLES.get(key, "结构化字段列表")
+    names = [str(v["name"]) for v in value]
+
+    if kind == "病理类型列表":
+        parts, missing_icd = [], False
+        for name, item in zip(names, value):
+            code = item.get("icd_o3")
+            if code:
+                parts.append("%s（ICD-O-3：%s）" % (name, code))
+            else:
+                missing_icd = True
+                parts.append(name)
+        body = "、".join(parts) + "。"
+        if missing_icd:
+            body = body[:-1] + "；其余未见 ICD-O-3 编码标注。"
+        return body
+
+    parts, run = [], []
+
+    def _flush_run() -> None:
+        if not run:
+            return
+        if len(run) == 1:
+            parts.append(run[0] + "（频次未标注）")
+        else:
+            parts.append("、".join(run) + "（以上频次未标注）")
+
+    for name, item in zip(names, value):
+        freq = item.get("frequency")
+        if freq is None:
+            run.append(name)
+            continue
+        _flush_run()
+        run = []
+        label = _FREQ_LABELS.get(freq)
+        # 未知枚举只回显原值，不臆造临床含义
+        parts.append("%s（%s）" % (name, label if label else "频次：%s" % freq))
+    _flush_run()
+    return "、".join(parts) + "。"
+
 # 收录类别中文标签（DiseaseCategory，§5.7.3）
 CATEGORY_LABELS: Dict[str, str] = {
     DiseaseCategory.PRIMARY_CANCER.value: "原发恶性肿瘤",
@@ -126,7 +190,7 @@ class DiseaseService:
             if text is None:
                 continue
             if not isinstance(text, str):
-                text = str(text)
+                text = structured_section_to_text(item["key"], text)
             text = text.strip()
             if not text:
                 continue

@@ -134,11 +134,12 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
         + '</div>'
         + '<p class="d2-view-note">' + (version === 'patient' ? '患者版：通俗表述' : '专业版：面向临床的结构化描述') + '</p>'
         + '</div>';
-    if (d.name_en) html += '<p class="d2-sub">' + escapeHtml(d.name_en) + '</p>';
+    // 西文单独包 .latin：字号在中文字号基础上 +1 档（见 d2.css 8d 块）
+    if (d.name_en) html += '<p class="d2-sub"><span class="latin">' + escapeHtml(d.name_en) + '</span></p>';
     html += '<div class="d2-profile-meta">';
     if (d.category_label) html += '<span class="badge badge-info">' + escapeHtml(d.category_label) + '</span>';
-    if (d.cancer_type) html += '<span class="badge badge-muted">' + escapeHtml(d.cancer_type) + '</span>';
-    if (d.icd10) html += '<span class="badge badge-muted">ICD-10 ' + escapeHtml(d.icd10) + '</span>';
+    if (d.cancer_type) html += '<span class="badge badge-muted"><span class="latin">' + escapeHtml(d.cancer_type) + '</span></span>';
+    if (d.icd10) html += '<span class="badge badge-muted"><span class="latin">ICD-10 ' + escapeHtml(d.icd10) + '</span></span>';
     html += '<span class="badge badge-primary">' + (version === 'patient' ? '患者版' : '专业版') + '</span>';
     html += '</div>';
     if (d.departments && d.departments.length) {
@@ -149,7 +150,7 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
     // ── 癌种切换器 ──
     html += '<div class="card" style="padding:0.75rem 1rem;">';
     html += '<div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">';
-    html += '<span style="font-size:0.8125rem;color:var(--color-text-secondary);margin-right:0.25rem;">切换档案：</span>';
+    html += '<span class="d2-switch-label">切换档案：</span>';
     Object.keys(D2_CANCER_LABELS).forEach(function (code) {
         const label = D2_CANCER_LABELS[code];
         const active = d.cancer_type === code;
@@ -171,10 +172,12 @@ function renderDiseaseDetail(container, d, version, onSwitch) {
             const n = i + 1;
             let secBody;
             if (version === 'patient') {
-                const r = renderPatientSectionWithRefs(escapeHtml(s.text || ''));
+                // latinizeText 内部已 escapeHtml；先包 .latin 再替换【来源】角标，
+                // 避免正文里的拉丁串把 sup 标记一起包进 span。
+                const r = renderPatientSectionWithRefs(latinizeText(s.text || ''));
                 secBody = '<p class="d2-sec-text">' + r.body + '</p>' + renderRefsTable(r.refs);
             } else {
-                secBody = '<p class="d2-sec-text">' + escapeHtml(s.text || '') + '</p>';
+                secBody = '<p class="d2-sec-text">' + latinizeText(s.text || '') + '</p>';
             }
             html += '<div class="d2-sec">'
                 + '<div class="d2-sec-head"><span class="d2-sec-no">' + (n < 10 ? '0' : '') + n + '</span>'

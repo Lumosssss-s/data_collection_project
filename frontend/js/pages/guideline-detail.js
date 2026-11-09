@@ -8,6 +8,11 @@
  *   - 相关指南推荐（/search/doc/{doc_id}/similar → similar_guides）
  */
 registerPage('guideline', function (container) {
+    // 本页独立作用域：字号整体 +1 档（见 d2.css §8f），只影响指南详情页与它所在的二级 Tab 条
+    container.classList.add('d2-gl');
+    const groupTabs = container.parentElement && container.parentElement.querySelector('.group-tabs');
+    if (groupTabs) groupTabs.classList.add('d2-gl');
+
     // 从 hash 中提取条目 ID
     const hash = window.location.hash;
     const docId = hash.replace('#/guideline/', '');
@@ -77,10 +82,10 @@ function renderGuideDetail(container, item) {
     if (item.publish_date) metaParts.push('发布日期: ' + item.publish_date);
     if (item.version) metaParts.push('版本: ' + item.version);
     if (metaParts.length) {
-        html += '<p style="font-size:0.875rem;color:var(--color-text-secondary);margin-bottom:0.5rem;">' + escapeHtml(metaParts.join(' | ')) + '</p>';
+        html += '<p style="font-size:var(--text-md);color:var(--color-text-secondary);margin-bottom:0.5rem;">' + escapeHtml(metaParts.join(' | ')) + '</p>';
     }
     if (item.breadcrumb) {
-        html += '<p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.5rem;">位置：' + escapeHtml(item.breadcrumb) + '</p>';
+        html += '<p style="font-size:var(--text-base);color:var(--color-text-muted);margin-bottom:0.5rem;">位置：' + escapeHtml(item.breadcrumb) + '</p>';
     }
     html += '<hr class="divider">';
 
@@ -97,18 +102,18 @@ function renderGuideDetail(container, item) {
         if (item.evidence_level) bd.push('证据等级: ' + (EVIDENCE_LABELS[item.evidence_level] || item.evidence_level));
         if (item.rec_strength) bd.push('推荐强度: ' + (STRENGTH_LABELS[item.rec_strength] || item.rec_strength));
         if (bd.length) {
-            html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.5rem;">' + escapeHtml(bd.join(' · ')) + '</div>';
+            html += '<div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:0.5rem;">' + escapeHtml(bd.join(' · ')) + '</div>';
         }
         html += '<div class="card" style="padding:1rem;">';
-        html += '<div style="font-size:0.875rem;line-height:1.8;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(item.content || '（无正文）') + '</div>';
+        html += '<div style="font-size:var(--text-md);line-height:calc(1.9 * var(--text-md));letter-spacing:0.02em;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(item.content || '（无正文）') + '</div>';
         if (item.verbatim && item.verbatim !== item.content) {
-            html += '<div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px dashed var(--color-border);font-size:0.8125rem;color:var(--color-text-muted);">原文：' + escapeHtml(item.verbatim) + '</div>';
+            html += '<div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px dashed var(--color-border);font-size:var(--text-base);line-height:calc(1.9 * var(--text-base));letter-spacing:0.02em;color:var(--color-text-muted);">原文：' + escapeHtml(item.verbatim) + '</div>';
         }
         html += '</div>';
         html += '<hr class="divider">';
     } else if (item.content) {
         html += '<h2 class="section-title">内容</h2>';
-        html += '<div class="card" style="padding:1rem;"><div style="font-size:0.875rem;line-height:1.8;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(item.content) + '</div></div>';
+        html += '<div class="card" style="padding:1rem;"><div style="font-size:var(--text-md);line-height:calc(1.9 * var(--text-md));letter-spacing:0.02em;color:var(--color-text-secondary);white-space:pre-wrap;">' + escapeHtml(item.content) + '</div></div>';
         html += '<hr class="divider">';
     }
 
@@ -135,18 +140,18 @@ function summaryBlockHtml(summary) {
     html += '<div class="card" style="padding:1rem;margin-bottom:1rem;">';
 
     if (summary.overview) {
-        html += '<div style="font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary);margin-bottom:0.75rem;">' + escapeHtml(summary.overview) + '</div>';
+        html += '<div style="font-size:var(--text-md);line-height:calc(1.9 * var(--text-md));letter-spacing:0.02em;color:var(--color-text-secondary);margin-bottom:0.75rem;">' + escapeHtml(summary.overview) + '</div>';
     }
     const recs = summary.key_recommendations || [];
     if (recs.length) {
         html += '<div class="sub-title">核心推荐要点</div>';
-        html += '<ul style="margin:0 0 0.75rem 1.1rem;padding:0;font-size:0.8125rem;line-height:1.7;color:var(--color-text-secondary);">';
+        html += '<ul style="margin:0 0 0.75rem 1.1rem;padding:0;font-size:var(--text-base);line-height:calc(1.9 * var(--text-base));letter-spacing:0.02em;color:var(--color-text-secondary);">';
         recs.forEach(function (r) { html += '<li>' + escapeHtml(r) + '</li>'; });
         html += '</ul>';
     }
     if (summary.evidence_notes) {
         html += '<div class="sub-title">证据特点</div>';
-        html += '<div style="font-size:0.8125rem;line-height:1.7;color:var(--color-text-secondary);margin-bottom:0.75rem;">' + escapeHtml(summary.evidence_notes) + '</div>';
+        html += '<div style="font-size:var(--text-base);line-height:calc(1.9 * var(--text-base));letter-spacing:0.02em;color:var(--color-text-secondary);margin-bottom:0.75rem;">' + escapeHtml(summary.evidence_notes) + '</div>';
     }
     const kw = summary.keywords || {};
     const kwGroups = [];
@@ -154,10 +159,10 @@ function summaryBlockHtml(summary) {
     if ((kw.cancers || []).length) kwGroups.push('癌种：' + kw.cancers.join('、'));
     if ((kw.scenarios || []).length) kwGroups.push('场景：' + kw.scenarios.join('、'));
     if (kwGroups.length) {
-        html += '<div style="font-size:0.75rem;color:var(--color-text-muted);">' + escapeHtml(kwGroups.join('｜')) + '</div>';
+        html += '<div style="font-size:var(--text-sm);color:var(--color-text-muted);">' + escapeHtml(kwGroups.join('｜')) + '</div>';
     }
     if (summary.basic_info && summary.basic_info.item_count) {
-        html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.375rem;">收录推荐条目 ' + summary.basic_info.item_count + ' 条</div>';
+        html += '<div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:0.375rem;">收录推荐条目 ' + summary.basic_info.item_count + ' 条</div>';
     }
     html += '</div>';
     return html;
@@ -174,7 +179,7 @@ function similarBlockHtml(similar) {
     if (!guides.length) {
         return html + emptyState('暂未找到相关指南');
     }
-    html += '<p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:1rem;">基于主题与内容相似度，共 ' + (similar.total_found || guides.length) + ' 篇相关指南：</p>';
+    html += '<p style="font-size:var(--text-base);color:var(--color-text-muted);margin-bottom:1rem;">基于主题与内容相似度，共 ' + (similar.total_found || guides.length) + ' 篇相关指南：</p>';
     guides.forEach(function (g) {
         const simPercent = Math.round((g.similarity || 0) * 100);
         let barColor = '#B91C1C';
@@ -183,11 +188,11 @@ function similarBlockHtml(similar) {
 
         html += '<div style="margin-bottom:1rem;">';
         html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:0.375rem;">';
-        html += '<span style="font-size:0.75rem;color:var(--color-text-muted);min-width:42px;">相似度</span>';
+        html += '<span style="font-size:var(--text-sm);color:var(--color-text-muted);min-width:42px;">相似度</span>';
         html += '<div style="flex:1;background:var(--color-border);height:8px;border-radius:4px;">';
         html += '<div style="width:' + simPercent + '%;background:' + barColor + ';height:100%;border-radius:4px;"></div>';
         html += '</div>';
-        html += '<span style="font-size:0.75rem;font-weight:600;color:' + barColor + ';min-width:38px;text-align:right;">' + simPercent + '%</span>';
+        html += '<span style="font-size:var(--text-sm);font-weight:600;color:' + barColor + ';min-width:38px;text-align:right;">' + simPercent + '%</span>';
         html += '</div>';
 
         html += '<div style="background:var(--color-bg);border:1px solid var(--color-border);padding:0.75rem 1rem;border-radius:6px;">';
@@ -236,7 +241,7 @@ function fillSimilarSlot(data) {
 function fulltextPendingHtml() {
     return '<h2 class="section-title">指南全文</h2>'
         + '<div class="card" style="padding:1rem;">'
-        + '<p style="font-size:0.8125rem;color:var(--color-text-muted);margin:0 0 0.75rem;">直接解析指南原始 XML（Europe PMC 全文），不影响检索索引；已排除参考文献、致谢与利益冲突等后置部分。</p>'
+        + '<p style="font-size:var(--text-base);line-height:calc(1.9 * var(--text-base));letter-spacing:0.02em;color:var(--color-text-muted);margin:0 0 0.75rem;">直接解析指南原始 XML（Europe PMC 全文），不影响检索索引；已排除参考文献、致谢与利益冲突等后置部分。</p>'
         + '<button class="btn btn-secondary btn-sm" onclick="loadGuideFulltext()">展开全文</button>'
         + '</div>';
 }
@@ -248,7 +253,7 @@ function fulltextSectionHtml(sec, idx) {
     html += '<summary class="sub-title" style="cursor:pointer;">'
         + escapeHtml(sec.heading || '（未命名章节）') + '</summary>';
     (sec.paragraphs || []).forEach(function (p) {
-        html += '<p style="font-size:0.8125rem;line-height:1.75;color:var(--color-text-secondary);margin:0.45rem 0;">'
+        html += '<p style="font-size:var(--text-base);line-height:calc(1.9 * var(--text-base));letter-spacing:0.02em;color:var(--color-text-secondary);margin:0.45rem 0;">'
             + escapeHtml(p) + '</p>';
     });
     (sec.children || []).forEach(function (child) {
@@ -304,7 +309,7 @@ function fulltextHtml(data) {
     if (data.abstract) {
         html += '<div class="card" style="padding:1rem;margin-bottom:1rem;">';
         html += '<div class="sub-title">摘要</div>';
-        html += '<div style="font-size:0.8125rem;line-height:1.75;color:var(--color-text-secondary);">'
+        html += '<div style="font-size:var(--text-base);line-height:calc(1.9 * var(--text-base));letter-spacing:0.02em;color:var(--color-text-secondary);">'
             + escapeHtml(data.abstract) + '</div>';
         html += '</div>';
     }
@@ -313,7 +318,7 @@ function fulltextHtml(data) {
     (data.sections || []).forEach(function (s, i) { html += fulltextSectionHtml(s, i + 1); });
     html += '</div>';
     const st = data.stats || {};
-    html += '<p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem;">'
+    html += '<p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:0.5rem;">'
         + '来源：原始 XML（Europe PMC）｜一级章节 ' + (st.section_count || 0)
         + ' 个｜正文 ' + (st.char_count || 0).toLocaleString() + ' 字符</p>';
     return html;

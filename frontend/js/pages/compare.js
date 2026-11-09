@@ -5,6 +5,10 @@
  * 推荐条目，按维度聚合展示；可选生成 AI 深度对比报告（流式）。
  */
 registerPage('compare', function (container) {
+    // 本板块独立作用域：只影响证据检索 / 癌种对照两页（见 d2.css §8e）
+    container.classList.add('d2-ev');
+    const groupTabs = container.parentElement && container.parentElement.querySelector('.group-tabs');
+    if (groupTabs) groupTabs.classList.add('d2-ev');
     container.innerHTML = `
         <h1 class="page-title">癌种对照</h1>
         <p class="page-desc">选择两个癌种，按临床维度对照其循证推荐要点；可进一步生成 AI 深度对比报告。</p>
@@ -119,7 +123,7 @@ function renderCompareResult(container, r) {
     // 自动总结
     if (r.auto_summary) {
         html += '<div class="card" style="padding:0.875rem 1rem;margin-bottom:1rem;">';
-        html += '<div style="font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary);">' + escapeHtml(r.auto_summary) + '</div>';
+        html += '<div style="font-size:var(--text-md);line-height:1.9;letter-spacing:0.02em;color:var(--color-text-secondary);">' + escapeHtml(r.auto_summary) + '</div>';
         html += '</div>';
     }
 
@@ -151,7 +155,7 @@ function renderCompareResult(container, r) {
     html += '<h2 class="section-title">AI 深度对比报告</h2>';
     html += '<div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.75rem;">';
     html += '<button id="cmp-ai-btn" class="btn btn-primary">生成 AI 深度对比报告</button>';
-    html += '<span style="font-size:0.75rem;color:var(--color-text-muted);">基于两癌种检索到的推荐条目生成，需调用 AI（约 20-40 秒）</span>';
+    html += '<span style="font-size:var(--text-sm);color:var(--color-text-muted);">基于两癌种检索到的推荐条目生成，需调用 AI（约 20-40 秒）</span>';
     html += '</div>';
     html += '<div id="cmp-ai-result" class="card markdown-body" style="padding:1rem;display:none;"></div>';
 
@@ -174,9 +178,9 @@ function renderDimensionItems(items) {
         if (it.rec_strength) badges.push('<span class="badge badge-warning">推荐 ' + escapeHtml(CMP_STRENGTH_LABELS[it.rec_strength] || it.rec_strength) + '</span>');
         if (badges.length) html += '<div style="display:flex;gap:0.25rem;flex-wrap:wrap;margin-bottom:0.25rem;">' + badges.join('') + '</div>';
         // 溯源
-        if (it.breadcrumb) html += '<div style="font-size:0.7rem;color:var(--color-text-muted);margin-bottom:0.2rem;">' + escapeHtml(it.breadcrumb) + '</div>';
+        if (it.breadcrumb) html += '<div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:0.2rem;">' + escapeHtml(it.breadcrumb) + '</div>';
         // 正文
-        html += '<div style="line-height:1.6;color:var(--color-text-secondary);">' + escapeHtml(it.content || '') + '</div>';
+        html += '<div style="font-size:var(--text-md);line-height:1.9;letter-spacing:0.02em;color:var(--color-text-secondary);">' + escapeHtml(it.content || '') + '</div>';
         html += '</div>';
     });
     return html;

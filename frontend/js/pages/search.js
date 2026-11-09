@@ -33,6 +33,10 @@ function docTypeTag(t) {
 }
 
 registerPage('search', function (container) {
+    // 本板块独立作用域：只影响证据检索 / 癌种对照两页（见 d2.css §8e）
+    container.classList.add('d2-ev');
+    const groupTabs = container.parentElement && container.parentElement.querySelector('.group-tabs');
+    if (groupTabs) groupTabs.classList.add('d2-ev');
     container.innerHTML = `
         <h1 class="page-title">证据检索</h1>
         <p class="page-desc">输入临床问题或关键词，返回肿瘤循证推荐条目（含证据等级、推荐强度与出处溯源）</p>
@@ -172,7 +176,7 @@ registerPage('search', function (container) {
                 const item = document.createElement('div');
                 item.className = 'search-topic-item';
                 item.dataset.value = value;
-                item.innerHTML = '<span class="search-topic-check"></span><span>' + escapeHtml(value) + ' <span style="color:var(--color-text-muted);font-size:0.75rem;">(' + (t.count || 0) + ')</span></span>';
+                item.innerHTML = '<span class="search-topic-check"></span><span>' + escapeHtml(value) + ' <span style="color:var(--color-text-muted);font-size:var(--text-sm);">(' + (t.count || 0) + ')</span></span>';
                 item.addEventListener('click', function (e) {
                     e.stopPropagation();
                     const optToToggle = Array.from(topicSelect.options).find(function (o) { return o.value === value; });

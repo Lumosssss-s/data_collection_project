@@ -75,26 +75,26 @@ function renderDiseaseBrowse(box, data) {
     const cats = (data.facets && data.facets.category) || [];
     const cts = (data.facets && data.facets.cancer_type) || [];
     if (cats.length || cts.length) {
-        html += '<div class="card" style="padding:0.75rem 1rem;margin-bottom:0.75rem;">';
+        html += '<div class="card d2-lib-filter">';
         if (cats.length) {
-            html += '<div style="margin-bottom:0.5rem;"><span style="font-size:0.8125rem;color:var(--color-text-muted);margin-right:0.5rem;">类别</span>';
+            html += '<div class="d2-lib-facet-row"><span class="d2-lib-facet-label">类别</span>';
             html += facetChips(cats, 'category');
             html += '</div>';
         }
         if (cts.length) {
-            html += '<div><span style="font-size:0.8125rem;color:var(--color-text-muted);margin-right:0.5rem;">癌种</span>';
+            html += '<div class="d2-lib-facet-row"><span class="d2-lib-facet-label">癌种</span>';
             html += facetChips(cts, 'cancer_type');
             html += '</div>';
         }
         html += '</div>';
     }
 
-    html += '<div style="font-size:0.875rem;color:var(--color-text-muted);margin-bottom:0.5rem;">共 ' + (data.total || 0) + ' 个疾病档案</div>';
+    html += '<div class="d2-lib-count">共 ' + (data.total || 0) + ' 个疾病档案</div>';
 
     if (!data.items || !data.items.length) {
         if (!data.degraded) html += emptyState('暂无疾病档案');
     } else {
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0.75rem;">';
+        html += '<div class="d2-lib-grid">';
         data.items.forEach(function (it) { html += diseaseCard(it); });
         html += '</div>';
     }
@@ -105,14 +105,14 @@ function renderDiseaseBrowse(box, data) {
 
 function facetChips(items, key) {
     const cur = _diseaseFilter[key] || '';
-    let html = '<button class="badge ' + (cur === '' ? 'badge-primary' : 'badge-muted') +
-        '" style="cursor:pointer;border:none;margin-right:0.375rem;" data-facet="' + key + '" data-value="">全部</button>';
+    let html = '<button class="badge d2-lib-chip ' + (cur === '' ? 'badge-primary' : 'badge-muted') +
+        '" data-facet="' + key + '" data-value="">全部</button>';
     items.forEach(function (f) {
         const val = f.value || '';
         const label = f.label || val;
         const active = cur === val;
-        html += '<button class="badge ' + (active ? 'badge-primary' : 'badge-muted') +
-            '" style="cursor:pointer;border:none;margin-right:0.375rem;" data-facet="' + key +
+        html += '<button class="badge d2-lib-chip ' + (active ? 'badge-primary' : 'badge-muted') +
+            '" data-facet="' + key +
             '" data-value="' + escapeHtml(val) + '">' + escapeHtml(label) + ' (' + f.count + ')</button>';
     });
     return html;
@@ -139,9 +139,9 @@ function renderDiseaseResult(box, data, q, mode) {
         html += '<div class="alert alert-info">名称已归一：「' + escapeHtml(q) + '」→「' + escapeHtml(data.normalized) + '」</div>';
     }
 
-    html += '<div style="font-size:0.875rem;color:var(--color-text-muted);margin:0.75rem 0;">命中 ' + (data.total || 0) + ' 个疾病</div>';
+    html += '<div class="d2-lib-count" style="margin:0.75rem 0;">命中 ' + (data.total || 0) + ' 个疾病</div>';
     if (data.items && data.items.length) {
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0.75rem;">';
+        html += '<div class="d2-lib-grid">';
         data.items.forEach(function (it) { html += diseaseCard(it); });
         html += '</div>';
     } else {
@@ -150,18 +150,38 @@ function renderDiseaseResult(box, data, q, mode) {
     box.innerHTML = html;
 }
 
+// 拉丁串单独包裹：仅作用于卡片正文，让英文/数字上调一档而不带动周围汉字。
+// 先按原始文本切段再转义，避免把 &amp; 这类实体切成碎片。
+function latinizeText(raw) {
+    const re = /[A-Za-z0-9][A-Za-z0-9 \t\-–—:;.,%()\/+'’]*/g;
+    let out = '';
+    let last = 0;
+    let m;
+    while ((m = re.exec(raw))) {
+        out += escapeHtml(raw.slice(last, m.index));
+        let s = m[0];
+        const tm = s.match(/\s+$/);
+        const trail = tm ? tm[0] : '';
+        if (trail) s = s.slice(0, s.length - trail.length);
+        if (s) out += '<span class="latin">' + escapeHtml(s) + '</span>';
+        out += escapeHtml(trail);
+        last = m.index + m[0].length;
+    }
+    return out + escapeHtml(raw.slice(last));
+}
+
 function diseaseCard(it) {
     const name = it.name_canonical || it.disease_id || '未命名';
-    let html = '<a class="card" href="#/disease/' + encodeURIComponent(it.disease_id) + '" style="text-decoration:none;color:inherit;padding:1rem;display:block;">';
-    html += '<div class="item-title">' + escapeHtml(name) + '</div>';
-    if (it.name_en) html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.375rem;">' + escapeHtml(it.name_en) + '</div>';
-    html += '<div style="margin-bottom:0.5rem;">';
-    if (it.category_label) html += '<span class="badge badge-info">' + escapeHtml(it.category_label) + '</span> ';
-    if (it.cancer_type) html += '<span class="badge badge-muted">' + escapeHtml(it.cancer_type) + '</span>';
+    let html = '<a class="card d2-lib-card" href="#/disease/' + encodeURIComponent(it.disease_id) + '">';
+    html += '<div class="item-title d2-lib-title">' + escapeHtml(name) + '</div>';
+    if (it.name_en) html += '<div class="d2-lib-sub">' + escapeHtml(it.name_en) + '</div>';
+    html += '<div class="d2-lib-tags">';
+    if (it.category_label) html += '<span class="badge badge-info d2-lib-tag">' + escapeHtml(it.category_label) + '</span>';
+    if (it.cancer_type) html += '<span class="badge badge-muted d2-lib-tag">' + escapeHtml(it.cancer_type) + '</span>';
     html += '</div>';
-    if (it.overview) html += '<div style="font-size:0.8125rem;color:var(--color-text-secondary);line-height:1.5;">' + escapeHtml(it.overview) + '…</div>';
+    if (it.overview) html += '<div class="d2-lib-desc">' + latinizeText(it.overview) + '…</div>';
     if (it.departments && it.departments.length) {
-        html += '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem;">就诊科室：' + escapeHtml(it.departments.join('、')) + '</div>';
+        html += '<div class="d2-lib-dept">就诊科室：' + escapeHtml(it.departments.join('、')) + '</div>';
     }
     html += '</a>';
     return html;
